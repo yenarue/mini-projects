@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주식 투자 시뮬레이터</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0b0d11;
+    --surface: #13161d;
+    --surface2: #1a1e28;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --accent: #4f8ef7;
+    --accent2: #34d399;
+    --warn: #f97316;
+    --danger: #f87171;
+    --font-display: 'Sora', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* subtle grid bg */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Header */
+  header { margin-bottom: 48px; }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  h1 span {
+    color: var(--accent);
+  }
+  .subtitle {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* Stat grid */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat {
+    background: var(--surface2);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+
+  .stat:hover { border-color: var(--border2); }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .stat-value.accent { color: var(--accent); }
+  .stat-value.green { color: var(--accent2); }
+  .stat-value.warn { color: var(--warn); }
+
+  /* Input group */
+  .input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 560px) {
+    .input-grid { grid-template-columns: 1fr; }
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .field-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .field-prefix {
+    position: absolute;
+    left: 14px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--muted);
+    pointer-events: none;
+  }
+
+  .field input[type="text"],
+  .field input[type="number"] {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 11px 14px 11px 28px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -moz-appearance: textfield;
+  }
+
+  .field input::-webkit-outer-spin-button,
+  .field input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  .field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(79,142,247,0.12);
+  }
+
+  /* Sliders */
+  .slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .slider-label {
+    font-size: 12px;
+    color: var(--muted);
+    min-width: 90px;
+    font-weight: 400;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--surface2);
+    outline: none;
+    cursor: pointer;
+    border: 1px solid var(--border2);
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  input[type="range"]::-moz-range-thumb {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    cursor: pointer;
+  }
+
+  .slider-val {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    min-width: 80px;
+    text-align: right;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+  }
+
+  .legend-dash {
+    width: 18px; height: 2px;
+    border-radius: 1px;
+  }
+
+  /* Chart */
+  .chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 320px;
+  }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; margin-top: 8px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead th {
+    text-align: right;
+    padding: 10px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border2);
+    white-space: nowrap;
+  }
+
+  thead th:first-child { text-align: left; }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  tbody tr:hover { background: var(--surface2); }
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody td {
+    padding: 10px 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-align: right;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  tbody td:first-child {
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  tbody td.base-col { color: var(--accent); font-weight: 500; }
+  tbody td.opt-col { color: var(--accent2); }
+
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 32px 16px 24px;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  footer p { margin-bottom: 14px; }
+  footer strong { color: var(--text); font-weight: 500; }
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    align-items: center;
+  }
+
+  .footer-icons a {
+    color: var(--muted);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  .disclaimer {
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--muted);
+    opacity: 0.6;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Investment Simulator</p>
+    <h1>주식 <span>복리</span> 시뮬레이터</h1>
+    <p class="subtitle">현재 평가금 기준으로 장기 투자 수익을 시뮬레이션합니다.</p>
+  </header>
+
+  <!-- 입력 설정 -->
+  <div class="card">
+    <p class="card-title">기본 설정</p>
+    <div class="input-grid" style="margin-bottom: 24px;">
+      <div class="field">
+        <label>현재 평가금 (원)</label>
+        <div class="field-inner">
+          <span class="field-prefix">₩</span>
+          <input type="text" id="init-input" value="100,000,000" inputmode="numeric">
+        </div>
+      </div>
+      <div class="field">
+        <label>월 추가 납입금 (원)</label>
+        <div class="field-inner">
+          <span class="field-prefix">₩</span>
+          <input type="text" id="deposit-input" value="0" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+    <div class="slider-group">
+      <div class="slider-row">
+        <span class="slider-label">연 수익률</span>
+        <input type="range" id="rate-slider" min="1" max="30" step="0.5" value="10.71">
+        <span class="slider-val" id="rate-out">10.71%</span>
+      </div>
+      <div class="slider-row">
+        <span class="slider-label">투자 기간</span>
+        <input type="range" id="years-slider" min="5" max="40" step="1" value="20">
+        <span class="slider-val" id="years-out">20년</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 요약 통계 -->
+  <div class="stat-grid">
+    <div class="stat">
+      <p class="stat-label">현재 평가금</p>
+      <p class="stat-value" id="s-init">₩6,641만</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">목표 시점 (기준)</p>
+      <p class="stat-value accent" id="s-target">-</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">총 납입 원금</p>
+      <p class="stat-value" id="s-principal">-</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">수익 배수 (기준)</p>
+      <p class="stat-value green" id="s-multiple">-</p>
+    </div>
+  </div>
+
+  <!-- 차트 -->
+  <div class="card">
+    <p class="card-title">평가금 추이</p>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div>낙관 (+5%p)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#4f8ef7;"></div>기준</div>
+      <div class="legend-item"><div class="legend-dash" style="background:#f97316;"></div>보수 (-5%p)</div>
+      <div class="legend-item"><div class="legend-dash" style="background:#4b5563;"></div>납입 원금</div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="simChart" role="img" aria-label="연도별 투자 평가금 시뮬레이션 차트">투자 평가금 시뮬레이션</canvas>
+    </div>
+  </div>
+
+  <!-- 테이블 -->
+  <div class="card">
+    <p class="card-title">연도별 예측 금액</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align:left;">연도</th>
+            <th>납입 원금</th>
+            <th>보수</th>
+            <th>기준</th>
+            <th>낙관</th>
+          </tr>
+        </thead>
+        <tbody id="sim-table"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <p class="disclaimer">* 본 시뮬레이터는 투자 조언이 아닙니다. 과거 수익률이 미래를 보장하지 않으며, 참고 목적으로만 활용하세요.</p>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Made by <strong>Yena Kim (Yenarue)</strong> · <span id="footer-year"></span></p>
+  <div class="footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#e8eaf0'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+const BASE_YEAR = 2025;
+let myChart = null;
+
+// ── Formatting ──
+function parseKRW(str) {
+  return parseInt(String(str).replace(/,/g, '')) || 0;
+}
+
+function formatComma(n) {
+  return Math.round(n).toLocaleString('ko-KR');
+}
+
+function fmtShort(v) {
+  if (v >= 1e12) return (v / 1e12).toFixed(1) + '조';
+  if (v >= 1e8)  return (v / 1e8).toFixed(1) + '억';
+  return Math.round(v / 10000).toLocaleString() + '만';
+}
+
+function fmtFull(v) {
+  return '₩' + formatComma(v);
+}
+
+// ── Comma input binding ──
+function bindCommaInput(id) {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => {
+    const raw = el.value.replace(/[^0-9]/g, '');
+    const cursor = el.selectionStart;
+    const prev = el.value.length;
+    el.value = raw ? parseInt(raw).toLocaleString('ko-KR') : '';
+    const diff = el.value.length - prev;
+    el.setSelectionRange(cursor + diff, cursor + diff);
+    redraw();
+  });
+}
+
+bindCommaInput('init-input');
+bindCommaInput('deposit-input');
+
+// ── Simulation ──
+function simulate(initVal, rate, years, annualDeposit) {
+  const labels = [], base = [], opt = [], con = [], principal = [];
+  const rBase = rate / 100;
+  const rOpt  = (rate + 5) / 100;
+  const rCon  = Math.max(rate - 5, 1) / 100;
+
+  let vBase = initVal, vOpt = initVal, vCon = initVal;
+  let totalP = initVal;
+
+  labels.push(BASE_YEAR + '년');
+  base.push(Math.round(vBase));
+  opt.push(Math.round(vOpt));
+  con.push(Math.round(vCon));
+  principal.push(Math.round(totalP));
+
+  for (let i = 1; i <= years; i++) {
+    vBase = vBase * (1 + rBase) + annualDeposit;
+    vOpt  = vOpt  * (1 + rOpt)  + annualDeposit;
+    vCon  = vCon  * (1 + rCon)  + annualDeposit;
+    totalP += annualDeposit;
+    labels.push((BASE_YEAR + i) + '년');
+    base.push(Math.round(vBase));
+    opt.push(Math.round(vOpt));
+    con.push(Math.round(vCon));
+    principal.push(Math.round(totalP));
+  }
+  return { labels, base, opt, con, principal };
+}
+
+// ── Stats ──
+function updateStats(initVal, data, years) {
+  document.getElementById('s-init').textContent = '₩' + fmtShort(initVal);
+  document.getElementById('s-target').textContent = '₩' + fmtShort(data.base[years]);
+  document.getElementById('s-principal').textContent = '₩' + fmtShort(data.principal[years]);
+  const mul = (data.base[years] / data.principal[years]);
+  document.getElementById('s-multiple').textContent = mul.toFixed(2) + 'x';
+}
+
+// ── Table ──
+function updateTable(data, years) {
+  const tbody = document.getElementById('sim-table');
+  const milestones = [1, 3, 5, 10, 15, 20, 25, 30, 35, 40].filter(y => y <= years);
+  if (!milestones.includes(years)) milestones.push(years);
+  tbody.innerHTML = milestones.map(y => `
+    <tr>
+      <td>${BASE_YEAR + y}년 <span style="color:var(--muted);font-size:11px;">(+${y}년)</span></td>
+      <td>${fmtFull(data.principal[y])}</td>
+      <td style="color:#f97316;">${fmtFull(data.con[y])}</td>
+      <td class="base-col">${fmtFull(data.base[y])}</td>
+      <td class="opt-col">${fmtFull(data.opt[y])}</td>
+    </tr>
+  `).join('');
+}
+
+// ── Chart ──
+function drawChart(data) {
+  const ctx = document.getElementById('simChart').getContext('2d');
+  if (myChart) myChart.destroy();
+
+  myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: data.labels,
+      datasets: [
+        {
+          label: '낙관',
+          data: data.opt,
+          borderColor: '#34d399',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.35
+        },
+        {
+          label: '기준',
+          data: data.base,
+          borderColor: '#4f8ef7',
+          borderWidth: 2.5,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.35
+        },
+        {
+          label: '보수',
+          data: data.con,
+          borderColor: '#f97316',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          fill: false,
+          tension: 0.35,
+          borderDash: [5, 4]
+        },
+        {
+          label: '납입 원금',
+          data: data.principal,
+          borderColor: '#374151',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+          borderDash: [3, 3]
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1e28',
+          borderColor: 'rgba(255,255,255,0.1)',
+          borderWidth: 1,
+          titleColor: '#9ca3af',
+          bodyColor: '#e8eaf0',
+          padding: 12,
+          callbacks: {
+            label: ctx => ' ' + ctx.dataset.label + ': ' + fmtFull(ctx.raw)
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { autoSkip: true, maxTicksLimit: 10, color: '#4b5563', font: { size: 11, family: 'DM Mono' } },
+          grid: { color: 'rgba(255,255,255,0.04)' },
+          border: { color: 'rgba(255,255,255,0.06)' }
+        },
+        y: {
+          ticks: { color: '#4b5563', font: { size: 11, family: 'DM Mono' }, callback: v => fmtShort(v) },
+          grid: { color: 'rgba(255,255,255,0.04)' },
+          border: { color: 'rgba(255,255,255,0.06)' }
+        }
+      }
+    }
+  });
+}
+
+// ── Main redraw ──
+function redraw() {
+  const initVal = parseKRW(document.getElementById('init-input').value);
+  const monthlyDeposit = parseKRW(document.getElementById('deposit-input').value);
+  const annualDeposit = monthlyDeposit * 12;
+  const rate  = parseFloat(document.getElementById('rate-slider').value);
+  const years = parseInt(document.getElementById('years-slider').value);
+
+  document.getElementById('rate-out').textContent = rate.toFixed(2) + '%';
+  document.getElementById('years-out').textContent = years + '년';
+
+  const data = simulate(initVal, rate, years, annualDeposit);
+  updateStats(initVal, data, years);
+  updateTable(data, years);
+  drawChart(data);
+}
+
+document.getElementById('rate-slider').addEventListener('input', redraw);
+document.getElementById('years-slider').addEventListener('input', redraw);
+
+redraw();
+</script>
+</body>
+</html>
