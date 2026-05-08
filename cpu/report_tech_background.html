@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A12 기술 배경 리포트 | AI 모델 증류 방지 및 추적 기술</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700;900&family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c0f;
+    --surface: #111318;
+    --surface2: #181c22;
+    --border: #1e2530;
+    --accent: #00d4a8;
+    --accent2: #ff6b35;
+    --accent3: #6c8ef7;
+    --text: #e8eaf0;
+    --text-muted: #6b7589;
+    --text-dim: #3a4255;
+    --red: #ff4444;
+    --yellow: #ffd166;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,212,168,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,107,53,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta span { color: var(--text-muted); }
+
+  .hero h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 5px 14px;
+    border: 1px solid;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+
+  .tag-green { border-color: var(--accent); color: var(--accent); }
+  .tag-orange { border-color: var(--accent2); color: var(--accent2); }
+  .tag-blue { border-color: var(--accent3); color: var(--accent3); }
+  .tag-red { border-color: var(--red); color: var(--red); }
+
+  /* ── GRID LAYOUT ── */
+  .grid-line {
+    position: fixed;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .section-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 700;
+    margin-bottom: 40px;
+    line-height: 1.3;
+  }
+
+  .section-title .accent { color: var(--accent); }
+
+  /* ── ALERT BOX ── */
+  .alert {
+    border-left: 3px solid var(--red);
+    background: rgba(255,68,68,0.05);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .alert-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  /* ── CARDS ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  .card {
+    background: var(--surface);
+    padding: 28px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .card:hover { background: var(--surface2); }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .card-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .card-body {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .card-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    margin-top: 12px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent3), var(--accent2));
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 32px;
+    padding-left: 20px;
+  }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 8px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+
+  .tl-item.orange::before { background: var(--accent2); box-shadow: 0 0 0 2px var(--accent2); }
+  .tl-item.blue::before { background: var(--accent3); box-shadow: 0 0 0 2px var(--accent3); }
+  .tl-item.red::before { background: var(--red); box-shadow: 0 0 0 2px var(--red); }
+
+  .tl-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .tl-item.orange .tl-date { color: var(--accent2); }
+  .tl-item.blue .tl-date { color: var(--accent3); }
+  .tl-item.red .tl-date { color: var(--red); }
+
+  .tl-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .tl-body {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── TECH TREE ── */
+  .tech-tree {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    line-height: 2.2;
+    overflow-x: auto;
+    border-radius: 2px;
+  }
+
+  .tt-root { color: var(--text); font-size: 13px; font-weight: 500; }
+  .tt-l1 { color: var(--accent3); padding-left: 20px; }
+  .tt-l2 { color: var(--text-muted); padding-left: 44px; font-size: 11px; }
+  .tt-label { color: var(--accent); }
+  .tt-star { color: var(--yellow); }
+  .tt-new { color: var(--accent2); }
+
+  /* ── TABLE ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 24px 0;
+  }
+
+  .data-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+  }
+
+  .data-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(30,37,48,0.5);
+    color: var(--text-muted);
+    vertical-align: top;
+  }
+
+  .data-table tr:hover td { background: var(--surface2); }
+
+  .data-table td:first-child { color: var(--text); font-weight: 500; }
+
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .dot-green { background: var(--accent); }
+  .dot-orange { background: var(--accent2); }
+  .dot-blue { background: var(--accent3); }
+  .dot-red { background: var(--red); }
+  .dot-dim { background: var(--text-dim); }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(0,212,168,0.06) 0%, rgba(108,142,247,0.06) 100%);
+    border: 1px solid rgba(0,212,168,0.15);
+    padding: 28px 32px;
+    border-radius: 2px;
+    margin: 24px 0;
+  }
+
+  .highlight-box h3 {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* ── TRADEOFF ── */
+  .tradeoff {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: start;
+    margin: 28px 0;
+  }
+
+  .tradeoff-side {
+    background: var(--surface);
+    padding: 24px;
+    border: 1px solid var(--border);
+  }
+
+  .tradeoff-side.left { border-right: none; border-radius: 2px 0 0 2px; }
+  .tradeoff-side.right { border-left: none; border-radius: 0 2px 2px 0; }
+
+  .tradeoff-mid {
+    background: var(--border);
+    width: 1px;
+    align-self: stretch;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tradeoff-mid-label {
+    position: absolute;
+    background: var(--yellow);
+    color: var(--bg);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    padding: 4px 6px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .tradeoff-title {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  .tradeoff-side.left .tradeoff-title { color: var(--accent); }
+  .tradeoff-side.right .tradeoff-title { color: var(--accent2); }
+
+  .tradeoff-list { list-style: none; }
+  .tradeoff-list li {
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .tradeoff-list li:last-child { border: none; }
+
+  /* ── STAT BLOCKS ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    margin: 28px 0;
+  }
+
+  .stat {
+    background: var(--surface);
+    padding: 28px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── QUOTE ── */
+  .pull-quote {
+    border-left: 4px solid var(--accent);
+    padding: 16px 24px;
+    margin: 28px 0;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    display: inline-block;
+    min-width: 320px;
+    margin-bottom: 40px;
+  }
+
+  .toc-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc ol li {
+    counter-increment: toc;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 12px;
+  }
+  .toc ol li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* ── TWO COL ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin: 28px 0;
+  }
+
+  @media (max-width: 768px) {
+    .two-col { grid-template-columns: 1fr; }
+    .tradeoff { grid-template-columns: 1fr; }
+    .tradeoff-mid { display: none; }
+    .section { padding: 48px 24px; }
+    .hero { padding: 60px 24px; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 48px 60px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 2;
+  }
+
+  /* ── PLAYER COMPARISON ── */
+  .player-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 80px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .player-name { font-weight: 600; font-size: 14px; }
+
+  .progress-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+
+  .progress-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  /* animate on load */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up { animation: fadeUp 0.6s ease forwards; }
+  .fade-up-2 { animation: fadeUp 0.6s ease 0.15s both; }
+  .fade-up-3 { animation: fadeUp 0.6s ease 0.3s both; }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-meta">
+    <span>A12 · 특허전략수립</span>
+    IT · 전기 · 전자
+    <span>2026 캠퍼스 특허 유니버시아드</span>
+    기술배경 리포트
+  </div>
+  <h1 class="fade-up">
+    AI 모델 증류 방지<br>및 <em>추적 기술</em>
+  </h1>
+  <p class="hero-sub fade-up-2">
+    기술 배경 · 역사 · 트렌드 종합 분석<br>
+    특허 분석에 앞서 기술 지형을 이해하기 위한 사전 리포트
+  </p>
+  <div class="hero-tags fade-up-3">
+    <span class="tag tag-green">Knowledge Distillation</span>
+    <span class="tag tag-orange">Model Extraction Attack</span>
+    <span class="tag tag-blue">LLM Watermarking</span>
+    <span class="tag tag-blue">Anomaly Detection</span>
+    <span class="tag tag-green">Antidistillation Sampling</span>
+    <span class="tag tag-orange">AI IP Protection</span>
+    <span class="tag tag-red">DeepSeek 사건</span>
+  </div>
+</section>
+
+<!-- TOC -->
+<section class="section">
+  <div class="toc">
+    <div class="toc-title">목차 · Table of Contents</div>
+    <ol>
+      <li>기술의 기원 — Knowledge Distillation이란</li>
+      <li>공격 벡터 — 증류 공격의 작동 원리</li>
+      <li>기술 분류 체계 (Tech Tree)</li>
+      <li>핵심 방어 기술 심층 분석</li>
+      <li>역사 타임라인 — 2015→2026</li>
+      <li>글로벌 빅테크 동향</li>
+      <li>최신 연구 트렌드 (2025–2026)</li>
+      <li>한국의 현황과 기회</li>
+      <li>연관 정보보안 요소기술</li>
+      <li>핵심 Trade-off 분석</li>
+    </ol>
+  </div>
+</section>
+
+<!-- SECTION 1: 기원 -->
+<section class="section" id="s1">
+  <div class="section-num">SECTION 01</div>
+  <h2 class="section-title">기술의 기원<br><span class="accent">Knowledge Distillation이란 무엇인가</span></h2>
+
+  <p style="color:var(--text-muted); max-width:720px; margin-bottom:28px;">
+    AI 모델 증류(Model Distillation)는 원래 <strong style="color:var(--text);">합법적인 모델 경량화 기술</strong>로 탄생했다. Geoffrey Hinton et al.이 2015년 공식 정립한 이 기법은, 크고 성능 좋은 '교사(Teacher) 모델'의 지식을 작고 효율적인 '학생(Student) 모델'에게 전달하는 것을 목표로 한다.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <div class="card-num">CONCEPT · 01</div>
+      <div class="card-title">Teacher Model</div>
+      <div class="card-body">GPT-4, Claude, Gemini처럼 막대한 컴퓨팅 자원을 투입해 학습된 대형 기반 모델. 높은 성능을 가지지만 추론 비용이 크다.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <div class="card-num">CONCEPT · 02</div>
+      <div class="card-title">Knowledge Transfer</div>
+      <div class="card-body">교사 모델의 출력(소프트 레이블, 확률 분포)을 학습 신호로 활용. 단순 정답만 학습하는 것보다 훨씬 효율적인 지식 전달.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <div class="card-num">CONCEPT · 03</div>
+      <div class="card-title">Student Model</div>
+      <div class="card-body">교사의 지식을 흡수해 유사한 성능을 훨씬 작은 크기로 구현한 경량 모델. 엣지 디바이스 배포 등에 적합.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <h3>⚠ 합법과 불법의 경계</h3>
+    <p style="color:var(--text-muted); font-size:13px; line-height:1.8;">
+      합법적 증류는 자사 모델을 경량화하는 내부 작업이다. 문제는 <strong style="color:var(--text);">경쟁사의 상용 API에 수만~수십만 건의 쿼리를 날려 출력값을 수집</strong>하고, 이를 학습 데이터로 삼아 유사 모델을 만드는 '증류 공격(Distillation Attack)'이다. 
+      기술적 원리는 동일하지만, 권한 없이 타인의 지식재산을 착취하는 행위가 된다.
+    </p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" style="color:var(--accent);">560만</div>
+      <div class="stat-label">달러 · DeepSeek R1 개발 비용</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:var(--accent2);">수천억</div>
+      <div class="stat-label">달러 · 빅테크 LLM 학습 비용</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:var(--accent3);">1/10</div>
+      <div class="stat-label">컴퓨팅 자원으로 유사 성능 달성</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: 공격 벡터 -->
+<section class="section" id="s2">
+  <div class="section-num">SECTION 02</div>
+  <h2 class="section-title">공격 벡터<br><span class="accent">증류 공격은 어떻게 작동하는가</span></h2>
+
+  <div class="alert">
+    <div class="alert-title">⚡ 핵심 위협</div>
+    <p style="color:var(--text-muted); font-size:13px;">
+      AI 모델의 능력은 API 출력값을 관찰하는 것만으로 복제 가능하다. 
+      수억~수조 원의 R&D 투자가 API 접근 비용(쿼리당 수십 원)만으로 무력화될 수 있다.
+    </p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--text); margin-bottom:16px; font-size:15px;">공격 단계별 프로세스</h3>
+      <div style="background:var(--surface); border:1px solid var(--border); padding:24px; font-family:'IBM Plex Mono', monospace; font-size:12px; line-height:2.5;">
+        <div style="color:var(--text-dim);">// Distillation Attack Flow</div>
+        <div style="color:var(--accent);">Step 1.</div><div style="color:var(--text-muted);">&nbsp;&nbsp;대상 API 식별 및 프록시 계정 다수 생성</div>
+        <div style="color:var(--accent);">Step 2.</div><div style="color:var(--text-muted);">&nbsp;&nbsp;체계적 쿼리 설계 (도메인 전방위 커버)</div>
+        <div style="color:var(--accent);">Step 3.</div><div style="color:var(--text-muted);">&nbsp;&nbsp;대량 쿼리 실행 → 출력값 수집·저장</div>
+        <div style="color:var(--accent);">Step 4.</div><div style="color:var(--text-muted);">&nbsp;&nbsp;수집 데이터로 Student 모델 파인튜닝</div>
+        <div style="color:var(--yellow);">Result.</div><div style="color:var(--text-muted);">&nbsp;&nbsp;유사 성능 모델 완성 (비용 1/10~1/100)</div>
+      </div>
+    </div>
+    <div>
+      <h3 style="color:var(--text); margin-bottom:16px; font-size:15px;">공격 유형 분류</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>유형</th>
+            <th>특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="dot dot-red"></span>산업 규모 공격</td>
+            <td>수만 개 계정 동원, 프록시 서비스 활용. Anthropic 2026.02 사례</td>
+          </tr>
+          <tr>
+            <td><span class="dot dot-orange"></span>체계적 추출</td>
+            <td>특정 도메인 특화 쿼리로 전문 지식 집중 수집</td>
+          </tr>
+          <tr>
+            <td><span class="dot dot-blue"></span>소프트 레이블</td>
+            <td>확률 분포까지 수집해 더 정밀한 지식 이전</td>
+          </tr>
+          <tr>
+            <td><span class="dot dot-green"></span>하드 레이블</td>
+            <td>최종 응답만 수집. 탐지 어려움</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: 기술 분류 체계 -->
+<section class="section" id="s3">
+  <div class="section-num">SECTION 03</div>
+  <h2 class="section-title">기술 분류 체계<br><span class="accent">AI 모델 보호 기술 Tech Tree</span></h2>
+
+  <p style="color:var(--text-muted); margin-bottom:28px; max-width:680px; font-size:13px;">
+    공격 라이프사이클을 시간축으로 분류한 5단계 체계. 출제 명시 3대 기술(Detection, Mitigation, Tracing)을 포함하며, 
+    Verification 계층은 향후 특허 전략상 신규 제안 가능한 공백 영역이다.
+  </p>
+
+  <div class="tech-tree">
+    <div class="tt-root">📦 AI 모델 보호 기술 (AI Model Protection)</div>
+    <br>
+    <div class="tt-l1">├── ① Prevention &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text-dim)">// 공격 시도 차단 (사전)</span></div>
+    <div class="tt-l2">├── API Rate Limiting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text-dim)">// 쿼리 수 제한</span></div>
+    <div class="tt-l2">├── 접근 제어 &amp; 인증 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text-dim)">// API Key, OAuth</span></div>
+    <div class="tt-l2">└── 계정 검증 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text-dim)">// 사용자 신원 확인</span></div>
+    <br>
+    <div class="tt-l1">├── ② Detection &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tt-star">★ 출제 명시</span>&nbsp;&nbsp;<span style="color:var(--text-dim)">// 실시간 감지</span></div>
+    <div class="tt-l2">├── <span class="tt-label">이상 쿼리 탐지 (Anomaly Query Detection)</span></div>
+    <div class="tt-l2">├── 사용자 행동 분석 (UBA) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text-dim)">// 패턴 이상 탐지</span></div>
+    <div class="tt-l2">├── Out-of-Distribution (OOD) 탐지</div>
+    <div class="tt-l2">└── ML 기반 공격 분류기 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text-dim)">// 정상 vs 공격 쿼리 분류</span></div>
+    <br>
+    <div class="tt-l1">├── ③ Mitigation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tt-star">★ 출제 명시</span>&nbsp;&nbsp;<span style="color:var(--text-dim)">// 공격 무력화 (중)</span></div>
+    <div class="tt-l2">├── <span class="tt-label">응답 교란 (Response Perturbation)</span></div>
+    <div class="tt-l2">├── 의미 보존 변형 (Semantic-Preserving Noise)</div>
+    <div class="tt-l2">├── 적응형 응답 (Adaptive Response)</div>
+    <div class="tt-l2">└── <span class="tt-label">Antidistillation Sampling</span>&nbsp;<span class="tt-star">★ 2025 NeurIPS 최신 기법</span></div>
+    <br>
+    <div class="tt-l1">├── ④ Tracing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tt-star">★ 출제 명시</span>&nbsp;&nbsp;<span style="color:var(--text-dim)">// 사후 추적</span></div>
+    <div class="tt-l2">├── <span class="tt-label">출력 워터마킹 (Output Watermarking)</span>&nbsp;<span class="tt-star">★ LLM 시대 주류</span></div>
+    <div class="tt-l2">├── 가중치 워터마킹 (Weight Watermarking)</div>
+    <div class="tt-l2">├── 모델 핑거프린팅 (Model Fingerprinting)</div>
+    <div class="tt-l2">└── <span class="tt-label">Antidistillation Fingerprinting (ADFP)</span>&nbsp;<span class="tt-star">★ 2026 최신</span></div>
+    <br>
+    <div class="tt-l1">└── ⑤ Verification &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tt-new">★ 신규 제안 가능 영역</span>&nbsp;&nbsp;<span style="color:var(--text-dim)">// 법적 입증</span></div>
+    <div class="tt-l2">├── 멤버십 추론 공격 (MIA) 기반 입증</div>
+    <div class="tt-l2">└── 모델 유사도 측정 (Behavioral Similarity)</div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:28px;">
+    <h3>💡 Watermarking 세부 분류 — 가장 중요한 구분</h3>
+    <table class="data-table" style="margin:12px 0 0 0;">
+      <thead><tr><th>구분</th><th>Weight WM (가중치)</th><th>Output WM (출력) ★</th><th>Backdoor-based</th></tr></thead>
+      <tbody>
+        <tr><td>삽입 위치</td><td>모델 파라미터 자체</td><td>생성 출력값</td><td>특정 트리거 응답 패턴</td></tr>
+        <tr><td>검증 방식</td><td>White-box (가중치 접근)</td><td>Black-box (API만)</td><td>트리거 입력 시 확인</td></tr>
+        <tr><td>LLM 적용성</td><td>어려움 (모델 비공개)</td><td><strong style="color:var(--accent);">★ 현재 주류</strong></td><td>중간</td></tr>
+        <tr><td>대표 연구</td><td>Uchida et al. (2017)</td><td>Kirchenbauer et al. (2023), Google SynthID</td><td>Adi et al. (2018)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 4: 핵심 방어 기술 심층 분석 -->
+<section class="section" id="s4">
+  <div class="section-num">SECTION 04</div>
+  <h2 class="section-title">핵심 방어 기술<br><span class="accent">3대 기술 심층 분석</span></h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <div class="card-num">TECH · 01 | DETECTION</div>
+      <div class="card-title">이상 쿼리 탐지</div>
+      <div class="card-body">
+        정상 사용자와 공격자를 실시간 구분하는 기술. 
+        <br><br>
+        <strong>주요 시그널:</strong> ① 단기간 대량 쿼리 ② 쿼리 주제 다양성 과도 ③ 체계적 패턴 (자동화 흔적) ④ IP/계정 이상 집중
+        <br><br>
+        <strong>기법:</strong> 통계 기반 이상탐지 · ML 분류기 · 그래프 분석 · OOD 탐지
+        <br><br>
+        Anthropic이 2026.02 중국 3사 공격 탐지에 실제 활용. 이용약관 집행의 기술적 근거로 기능.
+      </div>
+      <span class="card-badge" style="background:rgba(0,212,168,0.1); color:var(--accent);">실시간 · 공격 중</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🌫️</div>
+      <div class="card-num">TECH · 02 | MITIGATION</div>
+      <div class="card-title">응답 교란 / Antidistillation</div>
+      <div class="card-body">
+        공격자가 수집한 출력값이 학습에 쓸모없도록 만드는 기술. 정상 사용자에겐 올바른 응답, 공격자에겐 "독이 든" 데이터 제공.
+        <br><br>
+        <strong>전통적 방식:</strong> 응답에 노이즈 추가, 확률 분포 왜곡
+        <br><br>
+        <strong>최신 기법 — Antidistillation Sampling (NeurIPS 2025):</strong> Student 모델의 학습 역학을 역이용해 reasoning trace를 오염시킴. 모델 성능은 유지하면서 증류 효과만 선택적으로 차단.
+      </div>
+      <span class="card-badge" style="background:rgba(255,107,53,0.1); color:var(--accent2);">공격 무력화 · 중</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔏</div>
+      <div class="card-num">TECH · 03 | TRACING</div>
+      <div class="card-title">워터마킹 / 핑거프린팅</div>
+      <div class="card-body">
+        출력값에 검출 가능한 비밀 신호를 삽입해 사후 침해 추적. "디지털 지폐 위조방지 마크"에 비유.
+        <br><br>
+        <strong>Output Watermarking:</strong> 토큰 샘플링 시 통계적 편향 삽입 (Kirchenbauer 2023). 텍스트 품질 거의 유지.
+        <br><br>
+        <strong>최신 기법 — ADFP (2026.02):</strong> Antidistillation Fingerprinting. 핑거프린트가 Student 모델에 능동적으로 흡수되도록 설계. 탐지 신뢰도 대폭 향상.
+        <br><br>
+        <strong>Google SynthID:</strong> 유일하게 상용 배포된 LLM 워터마킹.
+      </div>
+      <span class="card-badge" style="background:rgba(108,142,247,0.1); color:var(--accent3);">사후 추적 · 법적 입증</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: 타임라인 -->
+<section class="section" id="s5">
+  <div class="section-num">SECTION 05</div>
+  <h2 class="section-title">기술 역사 타임라인<br><span class="accent">2015 → 2026</span></h2>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">2015</div>
+      <div class="tl-title">Knowledge Distillation 공식 정립</div>
+      <div class="tl-body">Geoffrey Hinton et al. 논문 발표. 대형 모델 압축의 표준 기법으로 자리잡음. 합법적 경량화 목적. → 특허 검색 시작점 (출제 조건: 2015.01 이후)</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2017</div>
+      <div class="tl-title">가중치 워터마킹 선구 연구</div>
+      <div class="tl-body">Uchida et al. — DNN 파라미터에 워터마크 삽입하는 최초 체계적 연구. White-box 방식. 이후 연구의 기반이 됨.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2018</div>
+      <div class="tl-title">백도어 기반 모델 소유권 증명</div>
+      <div class="tl-body">Adi et al. — 특정 트리거 입력에 대한 고정 응답으로 모델 소유권 주장. 최초의 Black-box 검증 방식.</div>
+    </div>
+
+    <div class="tl-item blue">
+      <div class="tl-date">2019–2022</div>
+      <div class="tl-title">모델 추출 공격 연구 본격화</div>
+      <div class="tl-body">Tramèr, Wallace, Krishna 등 — API 블랙박스 환경에서 모델 기능 복제 가능함을 실증. NLP 영역으로 공격 범위 확대. 방어 기술 연구의 필요성 부각.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2023. 8</div>
+      <div class="tl-title">Google SynthID 이미지 워터마킹 프로토타입</div>
+      <div class="tl-body">Imagen 생성 이미지에 비가시적 워터마크 삽입. LLM 시대 워터마킹의 출발점.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2023. 10</div>
+      <div class="tl-title">Kirchenbauer et al. — LLM 텍스트 워터마킹</div>
+      <div class="tl-body">Red-and-Green 토큰 리스트 방식. 샘플링 시 특정 토큰 그룹에 통계적 편향 부여. Output Watermarking의 사실상 표준 알고리즘 제안.</div>
+    </div>
+
+    <div class="tl-item blue">
+      <div class="tl-date">2024. 5</div>
+      <div class="tl-title">SynthID 텍스트·비디오 확장</div>
+      <div class="tl-body">Gemini 텍스트 + Veo 비디오 콘텐츠로 워터마킹 범위 확장. Google DeepMind가 멀티모달 AI 보호 선도.</div>
+    </div>
+
+    <div class="tl-item blue">
+      <div class="tl-date">2024. 10</div>
+      <div class="tl-title">SynthID Text 오픈소스 공개</div>
+      <div class="tl-body">Hugging Face를 통해 오픈소스 배포. 생태계 표준화 촉진. 독립 개발자도 워터마킹 기술 활용 가능하게 됨.</div>
+    </div>
+
+    <div class="tl-item orange">
+      <div class="tl-date">2025. 1</div>
+      <div class="tl-title">DeepSeek R1 공개 — AI 업계 충격</div>
+      <div class="tl-body">560만 달러 개발 비용, GPT-o1급 성능. OpenAI, "출력값 무단 수집·증류" 의혹 제기 (FT 보도). 법적 소송은 불가 — 표준화된 대응 체계 부재 현실 노출.</div>
+    </div>
+
+    <div class="tl-item orange">
+      <div class="tl-date">2025. 5</div>
+      <div class="tl-title">SynthID Detector — 통합 검증 시스템</div>
+      <div class="tl-body">텍스트·이미지·비디오 워터마크 통합 탐지. AI 콘텐츠 출처 추적의 단일 플랫폼 구축.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2025. 8</div>
+      <div class="tl-title">한국 K-AI 소버린 AI 5개 정예팀 선정</div>
+      <div class="tl-body">과기정통부+NIPA. 예산 1조 4,600억 원. 네이버·업스테이지·SK텔레콤·NC AI·LG AI연구원. AI 주권 보호 필요성 대두.</div>
+    </div>
+
+    <div class="tl-item blue">
+      <div class="tl-date">2025. 9</div>
+      <div class="tl-title">Antidistillation Sampling — NeurIPS 2025 채택</div>
+      <div class="tl-body">Savani & Trockman et al. — Reasoning trace 오염 기법. 출력 품질 유지하면서 증류 효과만 선택적 차단. 방어 기술의 새 패러다임.</div>
+    </div>
+
+    <div class="tl-item blue">
+      <div class="tl-date">2025. 11</div>
+      <div class="tl-title">SynthID Gemini 3 Pro 글로벌 롤아웃</div>
+      <div class="tl-body">상용 LLM 중 유일한 워터마킹 실제 배포. 글로벌 표준화 가속.</div>
+    </div>
+
+    <div class="tl-item red">
+      <div class="tl-date">2026. 1</div>
+      <div class="tl-title">네이버·알리바바 인코더 사태</div>
+      <div class="tl-body">네이버클라우드, 자사 모델에 중국 알리바바 비전 인코더 탑재 사실 인정. "국산 주권 AI" 취지와 정면 충돌. 한국 AI 자립 기술의 현실적 한계 노출.</div>
+    </div>
+
+    <div class="tl-item red">
+      <div class="tl-date">2026. 2</div>
+      <div class="tl-title">Anthropic — 산업 규모 증류 공격 공식 비난</div>
+      <div class="tl-body">DeepSeek·Moonshot AI·MiniMax 대상. 수만 개 프록시 계정 동원 증류 캠페인. "산업 표준 대응 체계" 필요성 본격 부각. Antidistillation Fingerprinting(ADFP) 논문 동시 발표.</div>
+    </div>
+
+    <div class="tl-item orange">
+      <div class="tl-date">2026. 4</div>
+      <div class="tl-title">A12 출제 — CPU 특허 전략수립</div>
+      <div class="tl-body">산업 위기와 기술 부재가 동시에 가시화된 시점. 특허 공백이 오히려 선점 기회. 표준 주도 전략 수립의 타이밍.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: 빅테크 동향 -->
+<section class="section" id="s6">
+  <div class="section-num">SECTION 06</div>
+  <h2 class="section-title">글로벌 빅테크 동향<br><span class="accent">전략 비교 분석</span></h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🟢</div>
+      <div class="card-num">PLAYER · 01</div>
+      <div class="card-title">Google DeepMind</div>
+      <div class="card-body">
+        <strong>전략: 워터마킹 선도</strong><br><br>
+        SynthID를 이미지→텍스트→비디오로 단계적 확장. 2024년 오픈소스 공개로 생태계 표준화 주도. 2025년 통합 Detector 출시. Gemini 3 Pro 전면 배포.
+        <br><br>
+        상용 LLM 중 <strong style="color:var(--accent);">유일하게 워터마킹 실제 배포</strong>한 기업.
+      </div>
+      <span class="card-badge" style="background:rgba(0,212,168,0.1); color:var(--accent);">표준 선도 · 가장 앞섬</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚫</div>
+      <div class="card-num">PLAYER · 02</div>
+      <div class="card-title">OpenAI</div>
+      <div class="card-body">
+        <strong>전략: 사실상 워터마킹 미도입</strong><br><br>
+        Scott Aaronson이 Gumbel-max 워터마킹 내부 제안했으나 채택 불가. 이유: 사용자 이탈 우려, 경쟁사가 도입 안 하면 자사만 서비스 품질 저하.
+        <br><br>
+        "책임지는 회사가 시장에서 불리한" <strong style="color:var(--accent2);">보안 딜레마</strong>의 대표 사례.
+      </div>
+      <span class="card-badge" style="background:rgba(255,107,53,0.1); color:var(--accent2);">도입 포기 · 시장 딜레마</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔵</div>
+      <div class="card-num">PLAYER · 03</div>
+      <div class="card-title">Anthropic</div>
+      <div class="card-body">
+        <strong>전략: 탐지 중심 접근</strong><br><br>
+        워터마킹보다 이상 쿼리 탐지에 집중. 2026.02에 자체 탐지 시스템으로 중국 3사 증류 공격 식별 성공.
+        <br><br>
+        이용약관 위반 + 기술적 탐지 결합 전략. 법적 카드는 여전히 제한적.
+      </div>
+      <span class="card-badge" style="background:rgba(108,142,247,0.1); color:var(--accent3);">탐지 중심 · 약관 집행</span>
+    </div>
+  </div>
+
+  <h3 style="color:var(--text); margin:32px 0 16px; font-size:15px;">기술 성숙도 비교</h3>
+  <div style="background:var(--surface); border:1px solid var(--border); padding:24px;">
+    <div class="player-row">
+      <div class="player-name">Google</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:90%; background:linear-gradient(90deg, var(--accent), #00ffcc);"></div></div>
+      <div class="progress-label" style="color:var(--accent);">● 상용 배포</div>
+    </div>
+    <div class="player-row">
+      <div class="player-name">Meta (연구)</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:65%; background:var(--accent3);"></div></div>
+      <div class="progress-label" style="color:var(--accent3);">● 연구 수준</div>
+    </div>
+    <div class="player-row">
+      <div class="player-name">Anthropic</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:55%; background:var(--accent2);"></div></div>
+      <div class="progress-label" style="color:var(--accent2);">● 탐지 집중</div>
+    </div>
+    <div class="player-row">
+      <div class="player-name">OpenAI</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:25%; background:var(--text-dim);"></div></div>
+      <div class="progress-label" style="color:var(--text-dim);">● 미도입</div>
+    </div>
+    <div class="player-row" style="border:none;">
+      <div class="player-name" style="color:var(--yellow);">한국 (전체)</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:15%; background:var(--yellow);"></div></div>
+      <div class="progress-label" style="color:var(--yellow);">● 공백 단계</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: 최신 연구 트렌드 -->
+<section class="section" id="s7">
+  <div class="section-num">SECTION 07</div>
+  <h2 class="section-title">최신 연구 트렌드<br><span class="accent">2025–2026 핵심 논문 동향</span></h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--text); margin-bottom:20px; font-size:15px;">① Antidistillation Sampling (NeurIPS 2025)</h3>
+      <div class="highlight-box">
+        <h3>핵심 아이디어</h3>
+        <p style="color:var(--text-muted); font-size:13px; line-height:1.8;">
+          프론티어 LLM의 extended reasoning trace가 증류에 취약하다는 점을 역이용. Student 모델의 다음 토큰 예측 학습을 방해하도록 토큰 확률 분포를 전략적으로 수정. 
+          <strong style="color:var(--text);">출력 품질은 유지, 증류 효과만 선택적 차단.</strong>
+          <br><br>
+          모든 규모의 조직이 자체 API 보호에 배포 가능. 오픈소스 툴셋 제공 예정.
+        </p>
+      </div>
+
+      <h3 style="color:var(--text); margin:28px 0 20px; font-size:15px;">② Antidistillation Fingerprinting — ADFP (2026.02)</h3>
+      <div class="highlight-box">
+        <h3>기존 방식의 한계를 극복</h3>
+        <p style="color:var(--text-muted); font-size:13px; line-height:1.8;">
+          기존 Red-Green 워터마킹은 Student가 핑거프린트를 흡수하지 않는 문제. 
+          ADFP는 <strong style="color:var(--text);">Student의 파라미터 업데이트 역학을 직접 고려</strong>해 핑거프린트를 설계.
+          Proxy 모델로 최적 토큰 식별 → 탐지 신뢰도 대폭 향상.
+          GSM8K, OASST1 벤치마크에서 기존 대비 Pareto 우위 입증.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="color:var(--text); margin-bottom:20px; font-size:15px;">③ Trace Rewriting 방어 (2026.02)</h3>
+      <div class="highlight-box">
+        <h3>Reasoning Trace 수준 보호</h3>
+        <p style="color:var(--text-muted); font-size:13px; line-height:1.8;">
+          LLM의 Chain-of-Thought 추론 과정이 증류에 특히 취약. 
+          Instruction rewriting과 embedding 공간 최적화로 reasoning trace를 재작성해 학습 효용 저하.
+          <strong style="color:var(--text);">Teacher 모델 수정 불필요, 의미 일관성 보장.</strong>
+        </p>
+      </div>
+
+      <h3 style="color:var(--text); margin:28px 0 20px; font-size:15px;">④ 공격 방어 군비경쟁 가속화</h3>
+      <div class="highlight-box">
+        <h3>Arms Race 현황</h3>
+        <p style="color:var(--text-muted); font-size:13px; line-height:1.8;">
+          <strong style="color:var(--accent2);">공격:</strong> 수만 계정 분산, 쿼리 정상화, 워터마크 제거 공격<br>
+          <strong style="color:var(--accent);">방어:</strong> 워터마킹, 이상탐지, antidistillation<br><br>
+          기존 방어 6가지 카테고리 모두 "정상 사용자 경험을 해치지 않고 공격자를 막는" 근본 한계 직면. <strong style="color:var(--yellow);">현재 가장 유망한 방향: 수집해도 쓸모없게 만들기</strong> (Antidistillation)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert" style="border-color:var(--accent3);">
+    <div class="alert-title" style="color:var(--accent3);">📡 표준화 동향</div>
+    <p style="color:var(--text-muted); font-size:13px; line-height:1.8;">
+      OWASP가 AI 워터마킹 프로젝트 개발 중 (AI 모델 인증·추적 목적). EU AI Act (2024~2025 단계 시행)에서 AI 투명성 조항 포함. 증류 공격 관련 특정 규정은 아직 미비 — 이 공백이 한국의 표준 선점 기회.
+      ISO/IEC JTC 1/SC 42 (AI 표준화 소위) 대응 전략이 중요.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 8: 한국 -->
+<section class="section" id="s8">
+  <div class="section-num">SECTION 08</div>
+  <h2 class="section-title">한국의 현황과 기회<br><span class="accent">기술 주권과 표준 선점</span></h2>
+
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--text); margin-bottom:16px; font-size:15px;">현실 진단</h3>
+      <table class="data-table">
+        <thead><tr><th>국가</th><th>글로벌 주목 AI 모델 수</th></tr></thead>
+        <tbody>
+          <tr><td><span class="dot dot-red"></span>미국</td><td>40개</td></tr>
+          <tr><td><span class="dot dot-orange"></span>중국</td><td>15개</td></tr>
+          <tr><td><span class="dot dot-blue"></span>유럽</td><td>3개</td></tr>
+          <tr><td><span class="dot dot-dim"></span>한국</td><td style="color:var(--yellow);">1개 ★</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--text-muted); font-size:12px; margin-top:8px;">
+        인구 10만 명당 AI 특허 수는 세계 1위. "기술은 있는데 글로벌 임팩트는 약하다"는 구조.
+      </p>
+    </div>
+
+    <div>
+      <h3 style="color:var(--text); margin-bottom:16px; font-size:15px;">K-AI 5개 정예팀 (2025.08)</h3>
+      <div style="background:var(--surface); border:1px solid var(--border); padding:20px;">
+        <div style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--text-muted);">
+          <div>🟢 네이버클라우드 — 옴니 파운데이션 모델</div>
+          <div>🟢 업스테이지 — Solar WBL (글로벌)</div>
+          <div>🟢 SK텔레콤 — 차세대 트랜스포머</div>
+          <div>🟢 NC AI</div>
+          <div>🟢 LG AI연구원 — 엑사원 4.0</div>
+        </div>
+        <div style="margin-top:16px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--yellow);">
+          예산: 1조 4,600억 원 | 2027년까지 서바이벌
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert" style="border-color:var(--yellow); background:rgba(255,209,102,0.05); margin:28px 0;">
+    <div class="alert-title" style="color:var(--yellow);">⚡ 네이버·알리바바 사태 (2026.01)</div>
+    <p style="color:var(--text-muted); font-size:13px; line-height:1.8;">
+      네이버클라우드가 자사 소버린 AI 모델에 중국 알리바바의 비전 인코더를 탑재했음을 인정. 
+      "처음부터 설계한 국산 모델"이라는 정부 사업 취지와 정면 충돌.
+      <strong style="color:var(--text);">한국이 주권 AI를 외친다면, 그 모델을 어떻게 보호할 것인가에 대한 기술·제도가 동반되어야 한다.</strong>
+      A12 주제가 정확히 이 질문에 답한다.
+    </p>
+  </div>
+
+  <div class="highlight-box">
+    <h3>💡 한국의 특허 선점 기회</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:12px;">
+      <div style="font-size:13px; color:var(--text-muted); line-height:1.8;">
+        <strong style="color:var(--text);">기회 요인:</strong><br>
+        • 2015년 이후 특허 출원이 이제 막 활성화 단계<br>
+        • 한·미 합산 수백 건 수준 → 공백 영역 다수<br>
+        • 글로벌 표준이 아직 굳어지지 않음<br>
+        • OWASP, ISO/IEC 표준화 논의 초기 단계
+      </div>
+      <div style="font-size:13px; color:var(--text-muted); line-height:1.8;">
+        <strong style="color:var(--text);">전략 방향:</strong><br>
+        • Verification 계층 (법적 입증) 특허 선점<br>
+        • 한국형 AI 모델 보호 표준 제안<br>
+        • 증류 공격 입증 프로토콜 설계<br>
+        • ISO/IEC JTC 1/SC 42 대응 전략 수립
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: 연관 정보보안 -->
+<section class="section" id="s9">
+  <div class="section-num">SECTION 09</div>
+  <h2 class="section-title">연관 정보보안 요소기술<br><span class="accent">AI 보안 생태계 맥락</span></h2>
+
+  <p style="color:var(--text-muted); max-width:720px; margin-bottom:28px; font-size:13px;">
+    AI 모델 증류 방지·추적 기술은 독립적 영역이 아니라, 정보보안 분야의 여러 기술과 깊이 연결된다. 
+    특허 분석 시 이 연관 기술들과의 경계 설정이 핵심이다.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <div class="card-num">RELATED · 01</div>
+      <div class="card-title">멤버십 추론 공격 (MIA)</div>
+      <div class="card-body">
+        특정 데이터가 모델 학습에 사용됐는지 통계적으로 추론하는 기법. AI 모델 증류 여부의 <strong>법적 입증 수단</strong>으로 전용 가능. 현재 가장 유망한 Verification 계층 기술.
+      </div>
+      <span class="card-badge" style="background:rgba(0,212,168,0.1); color:var(--accent);">Verification 계층</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔐</div>
+      <div class="card-num">RELATED · 02</div>
+      <div class="card-title">차분 프라이버시 (Differential Privacy)</div>
+      <div class="card-body">
+        학습 데이터 정보가 모델 출력에 누출되지 않도록 수학적 보장. 증류 방어에서 MIA 입증을 어렵게 만드는 역할도. 프라이버시와 보안의 교차점.
+      </div>
+      <span class="card-badge" style="background:rgba(108,142,247,0.1); color:var(--accent3);">Privacy-Security 교차</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <div class="card-num">RELATED · 03</div>
+      <div class="card-title">모델 암호화 & TEE</div>
+      <div class="card-body">
+        Trusted Execution Environment(신뢰 실행 환경)에서 모델을 구동해 가중치 자체를 보호. 클라우드 AI 서비스의 IP 보호와 직결. Prevention 계층의 하드웨어 수준 접근.
+      </div>
+      <span class="card-badge" style="background:rgba(255,107,53,0.1); color:var(--accent2);">Prevention 계층</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🌊</div>
+      <div class="card-num">RELATED · 04</div>
+      <div class="card-title">디지털 워터마킹 (전통)</div>
+      <div class="card-body">
+        이미지·음성·영상 저작권 보호를 위해 개발된 오랜 기술. AI 출력 워터마킹의 직접적 선행 기술. 신호처리 기반 삽입/탐지 알고리즘이 LLM에 맞게 재설계 중.
+      </div>
+      <span class="card-badge" style="background:rgba(108,142,247,0.1); color:var(--accent3);">선행 기술</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🕵️</div>
+      <div class="card-num">RELATED · 05</div>
+      <div class="card-title">이상 행위 탐지 (UBA/UEBA)</div>
+      <div class="card-body">
+        기업 보안에서 오래 쓰인 사용자 행동 분석 기술. API 이상 쿼리 탐지에 동일한 원리 적용. 통계적 기저선 → 편차 탐지 → 알림의 파이프라인이 공유됨.
+      </div>
+      <span class="card-badge" style="background:rgba(0,212,168,0.1); color:var(--accent);">Detection 계층 기반</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">☁️</div>
+      <div class="card-num">RELATED · 06</div>
+      <div class="card-title">API 보안 & 제로 트러스트</div>
+      <div class="card-body">
+        Rate limiting · API Gateway · 인증 체계가 1차 방어선. Zero Trust 아키텍처가 AI API 접근에 적용되는 추세. 규제 환경(GDPR, EU AI Act)과 결합.
+      </div>
+      <span class="card-badge" style="background:rgba(255,107,53,0.1); color:var(--accent2);">Prevention 계층</span>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:8px;">
+    <h3>📋 법·제도 연관 환경</h3>
+    <table class="data-table" style="margin:8px 0 0 0;">
+      <thead><tr><th>법/제도</th><th>AI 증류 관련 내용</th><th>현황</th></tr></thead>
+      <tbody>
+        <tr><td>저작권법</td><td>AI 출력값 저작권 보호 여부 불명확. 미국 저작권청 "인간 저작자성 필요"</td><td style="color:var(--red);">공백</td></tr>
+        <tr><td>영업비밀법</td><td>직접 접근 증거 없으면 적용 한계. OpenAI vs DeepSeek 처벌 불가</td><td style="color:var(--red);">한계</td></tr>
+        <tr><td>EU AI Act</td><td>AI 투명성 조항 포함. 증류 공격 특정 규정은 미비</td><td style="color:var(--yellow);">초기</td></tr>
+        <tr><td>이용약관(계약)</td><td>현재 가장 현실적 카드. 중국 회사 강제집행 어려움</td><td style="color:var(--yellow);">제한적</td></tr>
+        <tr><td>한국 특허법</td><td>컴퓨터프로그램 발명 보호 범위 분석 필요</td><td style="color:var(--accent);">기회</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 10: Trade-off -->
+<section class="section" id="s10">
+  <div class="section-num">SECTION 10</div>
+  <h2 class="section-title">핵심 Trade-off 분석<br><span class="accent">보안 vs 서비스 품질의 딜레마</span></h2>
+
+  <p style="color:var(--text-muted); max-width:720px; margin-bottom:28px; font-size:13px;">
+    이것이 특허 분석(문항 2)의 진짜 핵심이다. 왜 빅테크가 더 강한 보호를 배포하지 못하는지를 이해해야 특허의 기술적 가치를 평가할 수 있다.
+  </p>
+
+  <div class="tradeoff">
+    <div class="tradeoff-side left">
+      <div class="tradeoff-title">🔒 보안 내구성 (Robustness)</div>
+      <ul class="tradeoff-list">
+        <li>강한 워터마킹 삽입</li>
+        <li>응답 교란 강도 높임</li>
+        <li>쿼리 제한 강화</li>
+        <li>탐지 민감도 최대화</li>
+        <li>증류 흔적 명확히 남김</li>
+      </ul>
+    </div>
+    <div class="tradeoff-mid">
+      <div class="tradeoff-mid-label">TRADE-OFF</div>
+    </div>
+    <div class="tradeoff-side right">
+      <div class="tradeoff-title">⚡ 서비스 품질 (API 응답속도·품질)</div>
+      <ul class="tradeoff-list">
+        <li>응답 지연 발생 (레이턴시 증가)</li>
+        <li>텍스트 자연스러움 저하</li>
+        <li>정상 사용자 경험 훼손</li>
+        <li>False Positive → 정상 차단</li>
+        <li>경쟁사 대비 품질 열위</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:24px;">
+    <h3>💡 이 Trade-off를 해결하는 방향이 특허 공백 영역</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:12px;">
+      <div style="font-size:13px; color:var(--text-muted); line-height:1.8;">
+        <strong style="color:var(--text);">기존 특허 접근:</strong><br>
+        • 선택적 워터마킹 (위험 사용자만)<br>
+        • 캐싱 기반 (반복 쿼리 캐싱)<br>
+        • 경량 알고리즘 (임베딩 효율화)
+      </div>
+      <div style="font-size:13px; color:var(--text-muted); line-height:1.8;">
+        <strong style="color:var(--text);">최신·미래 방향:</strong><br>
+        • Antidistillation Sampling (품질 유지, 증류 차단)<br>
+        • 적응형 방어 강도 (리스크 스코어 기반)<br>
+        • AI가 AI를 방어 (자동화 방어 시스템)
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "In 2026, the model wars became the AI security wars.<br>
+    The frontier is no longer measured in model size —<br>
+    it's measured in how well you defend your model."
+  </div>
+  <p style="font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-dim); margin-top:-8px;">— rakeshkhanduja.tech, Feb 2026</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-meta">
+    <div style="color:var(--accent); margin-bottom:8px; font-size:13px; font-family:'Noto Serif KR', serif;">A12 기술 배경 리포트</div>
+    <div>AI 모델 증류 방지 및 추적 기술 | 특허전략수립 부문</div>
+    <div>2026 캠퍼스 특허 유니버시아드</div>
+    <div style="margin-top:16px; color:var(--text-dim);">
+      참고: Hinton et al. (2015) · Kirchenbauer et al. (2023) · Google SynthID (2023–2025)<br>
+      Savani & Trockman et al. NeurIPS 2025 · Xu et al. ADFP (2026.02) · Anthropic Press Release (2026.02)<br>
+      NIST CAISI · OWASP AI Watermarking Project · ISO/IEC JTC 1/SC 42
+    </div>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div style="
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  ">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-dim); letter-spacing:1px;">
+      Made by <span style="color:var(--text-muted);">Yena Kim</span>
+      <span style="color:var(--text-dim);">(Yenarue)</span>
+      <span style="color:var(--border); margin:0 6px;">·</span>
+      <span style="color:var(--text-dim);">2026</span>
+    </div>
+
+    <div style="display:flex; gap:16px; align-items:center;">
+      <!-- Email -->
+      <a href="mailto:yenarue@gmail.com" title="yenarue@gmail.com" style="
+        color: var(--text-dim);
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      " onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-dim)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener" title="LinkedIn" style="
+        color: var(--text-dim);
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      " onmouseover="this.style.color='var(--accent3)'" onmouseout="this.style.color='var(--text-dim)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/yenarue" target="_blank" rel="noopener" title="GitHub" style="
+        color: var(--text-dim);
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      " onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='var(--text-dim)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+          <path d="M9 18c-4.51 2-5-2-7-2"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
