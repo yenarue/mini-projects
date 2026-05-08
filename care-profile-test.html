@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.A.R.E. Profile — 혁신 유형 진단</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FDFAF4;
+    --ink: #1A1510;
+    --ink-light: #3D3530;
+    --gold: #C4963A;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E8C0;
+    --creator: #D4691A;
+    --advancer: #2B6CB0;
+    --refiner: #276749;
+    --executor: #6B46A0;
+    --facilitator: #8B4513;
+    --shadow: rgba(26,21,16,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(196,150,58,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(196,150,58,0.1) 0%, transparent 50%);
+  }
+  .header-label {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    position: relative;
+  }
+  .header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    position: relative;
+  }
+  .header-title span { color: var(--gold); }
+  .header-subtitle {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: rgba(245,240,232,0.65);
+    margin-top: 1rem;
+    letter-spacing: 0.08em;
+    position: relative;
+  }
+  .header-deco {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto 0;
+    position: relative;
+  }
+
+  /* ── INTRO ── */
+  .intro-section {
+    max-width: 720px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  .intro-card {
+    background: var(--warm-white);
+    border: 1px solid rgba(196,150,58,0.25);
+    border-radius: 2px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 20px var(--shadow);
+  }
+  .intro-card h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .intro-card p {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+  .types-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  .type-chip {
+    padding: 0.6rem 0.3rem;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  .type-chip.cr { background: rgba(212,105,26,0.12); color: var(--creator); border: 1px solid rgba(212,105,26,0.25); }
+  .type-chip.ad { background: rgba(43,108,176,0.1); color: var(--advancer); border: 1px solid rgba(43,108,176,0.2); }
+  .type-chip.re { background: rgba(39,103,73,0.1); color: var(--refiner); border: 1px solid rgba(39,103,73,0.2); }
+  .type-chip.ex { background: rgba(107,70,160,0.1); color: var(--executor); border: 1px solid rgba(107,70,160,0.2); }
+  .type-chip.fa { background: rgba(139,69,19,0.1); color: var(--facilitator); border: 1px solid rgba(139,69,19,0.2); }
+  .type-chip .emoji { font-size: 1.2rem; display: block; margin-bottom: 0.25rem; }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    padding: 0 1.5rem;
+    display: none;
+  }
+  .progress-bar-wrap.visible { display: block; }
+  .progress-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .progress-track {
+    height: 4px;
+    background: rgba(196,150,58,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  /* ── QUESTION CARDS ── */
+  .questions-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    display: none;
+  }
+  .questions-container.visible { display: block; }
+
+  .question-block {
+    background: var(--warm-white);
+    border: 1px solid rgba(196,150,58,0.2);
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 8px var(--shadow);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .question-block.appear {
+    opacity: 1;
+    transform: none;
+  }
+  .question-header {
+    background: var(--ink);
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .question-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 1.5rem;
+  }
+  .question-instruction {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+  .question-body {
+    padding: 1.25rem 1.5rem;
+  }
+
+  /* rank items */
+  .rank-instructions {
+    font-size: 0.75rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .rank-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(196,150,58,0.12);
+  }
+  .rank-row:last-child { border-bottom: none; }
+  .rank-selector {
+    display: flex;
+    gap: 0.3rem;
+  }
+  .rank-btn {
+    width: 32px; height: 32px;
+    border: 1.5px solid rgba(196,150,58,0.4);
+    background: transparent;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink-light);
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: all 0.15s ease;
+  }
+  .rank-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .rank-btn.selected-4 { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .rank-btn.selected-3 { background: #b8860b; border-color: #b8860b; color: white; }
+  .rank-btn.selected-2 { background: #8B7355; border-color: #8B7355; color: white; }
+  .rank-btn.selected-1 { background: #A0998A; border-color: #A0998A; color: white; }
+  .statement-text {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.5;
+    font-weight: 400;
+    flex: 1;
+  }
+  .type-badge {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    opacity: 0.4;
+  }
+  .badge-x { background: var(--creator); }
+  .badge-triangle { background: var(--advancer); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); border-radius: 0; }
+  .badge-circle { background: var(--executor); }
+  .badge-square { background: var(--refiner); border-radius: 2px; }
+
+  .validation-msg {
+    font-size: 0.75rem;
+    color: #c0392b;
+    margin-top: 0.5rem;
+    display: none;
+    font-weight: 500;
+  }
+  .validation-msg.show { display: block; }
+
+  /* ── BUTTONS ── */
+  .btn-row {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+    display: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-row.visible { display: flex; }
+  .btn {
+    padding: 0.9rem 2.5rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--gold);
+    border: 1px solid var(--ink);
+  }
+  .btn-primary:hover { background: var(--gold); color: var(--ink); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink-light);
+    border: 1px solid rgba(26,21,16,0.3);
+  }
+  .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+  .btn-start {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 1rem 3rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    background: var(--ink);
+    color: var(--gold);
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .btn-start:hover { background: var(--gold); color: var(--ink); }
+
+  /* ── RESULT ── */
+  .result-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+    display: none;
+  }
+  .result-section.visible { display: block; }
+
+  .result-hero {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 3rem 2.5rem;
+    border-radius: 2px;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .result-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(196,150,58,0.15) 0%, transparent 70%);
+  }
+  .result-hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    position: relative;
+  }
+  .result-type-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.1;
+    position: relative;
+  }
+  .result-type-name .accent { color: var(--gold); }
+  .result-combo-label {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.6);
+    margin-top: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    position: relative;
+  }
+
+  .scores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 480px) { .scores-grid { grid-template-columns: 1fr; } }
+
+  .score-card {
+    background: var(--warm-white);
+    border: 1px solid rgba(196,150,58,0.2);
+    border-radius: 2px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 8px var(--shadow);
+  }
+  .score-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .score-type-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .score-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .score-bar-track {
+    height: 6px;
+    background: rgba(196,150,58,0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1s ease 0.3s;
+  }
+  .score-rank-label {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    font-weight: 500;
+  }
+
+  /* 촉진자 카드 */
+  .facilitator-card {
+    border: 1px solid rgba(139,69,19,0.25);
+    background: rgba(139,69,19,0.03);
+    grid-column: 1 / -1; /* 항상 전체 너비 */
+  }
+  .facilitator-card.facilitator-active {
+    border: 1.5px solid rgba(139,69,19,0.5);
+    background: rgba(139,69,19,0.07);
+  }
+  /* 촉진자 판정 시 모든 카드에 은은한 금빛 테두리 */
+  .facilitator-glow {
+    border-color: rgba(196,150,58,0.45) !important;
+  }
+
+  .result-desc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 560px) { .result-desc-grid { grid-template-columns: 1fr; } }
+
+  .desc-card {
+    background: var(--warm-white);
+    border: 1px solid rgba(196,150,58,0.2);
+    border-radius: 2px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 8px var(--shadow);
+  }
+  .desc-card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(196,150,58,0.2);
+  }
+  .desc-card p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  .approaches-card {
+    background: var(--warm-white);
+    border: 1px solid rgba(196,150,58,0.2);
+    border-radius: 2px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 8px var(--shadow);
+  }
+  .approaches-card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+  .diamond-chart {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .diamond-svg { max-width: 320px; width: 100%; }
+
+  .team-need {
+    background: var(--gold-pale);
+    border: 1px solid rgba(196,150,58,0.3);
+    border-radius: 2px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .team-need h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+  .team-need p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--ink-light);
+    font-weight: 300;
+  }
+
+  .btn-restart {
+    display: block;
+    margin: 0 auto;
+    padding: 0.9rem 3rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    background: var(--ink);
+    color: var(--gold);
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .btn-restart:hover { background: var(--gold); color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .footer-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .footer-credit-line {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+  }
+  .footer-credit-line span {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .footer-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(196,150,58,0.35);
+    margin: 1rem auto;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .footer-icon-link {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: rgba(245,240,232,0.55);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    transition: color 0.2s ease;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid rgba(196,150,58,0.15);
+    border-radius: 2px;
+  }
+  .footer-icon-link:hover {
+    color: var(--gold);
+    border-color: rgba(196,150,58,0.45);
+  }
+  .footer-icon-link svg {
+    flex-shrink: 0;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+  }
+  .footer-icon-link:hover svg { opacity: 1; }
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.28);
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in { animation: fadeInUp 0.6s ease forwards; }
+
+  /* ── PRINT / PDF ── */
+  @media print {
+    @page { margin: 1.5cm; size: A4; }
+
+    body { background: #fff !important; }
+
+    /* hide everything except result section */
+    .site-header, footer, #introSection, #progressWrap,
+    #questionsContainer, #btnRow { display: none !important; }
+
+    .result-section {
+      display: block !important;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    /* hide action buttons in print */
+    .result-section > div:last-child { display: none !important; }
+
+    /* keep colors for print */
+    .result-hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .score-bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .type-chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .team-need { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    /* prevent page breaks inside cards */
+    .score-card, .desc-card, .approaches-card, .team-need { break-inside: avoid; }
+
+    /* compact spacing for print */
+    .scores-grid, .result-desc-grid { gap: 0.6rem; }
+    .result-hero { padding: 1.5rem; }
+    .approaches-card, .desc-card, .score-card, .team-need { padding: 1rem; }
+  }
+
+  body.printing .site-header,
+  body.printing footer,
+  body.printing #introSection,
+  body.printing #progressWrap,
+  body.printing #questionsContainer,
+  body.printing #btnRow { display: none !important; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-label">Innovate with</div>
+  <h1 class="header-title"><span>C.A.R.E.</span> Profile</h1>
+  <p class="header-subtitle">혁신 유형 진단 — Team Dimensions Profile</p>
+  <div class="header-deco"></div>
+</header>
+
+<!-- INTRO -->
+<div class="intro-section" id="introSection">
+  <div class="intro-card">
+    <h2>나의 혁신 역할은 무엇인가?</h2>
+    <p>
+      팀이 새로운 목표를 달성하기 위해 함께 일할 때, 사람들은 각자의 자연스러운 사고 방식과
+      선호하는 행동 양식을 결합합니다. C.A.R.E. Profile은 혁신 과정에서
+      당신이 어떤 접근 방식을 취하는지 파악하고, 팀 내 최적의 역할을 찾도록 돕습니다.
+    </p>
+    <div class="types-grid">
+      <div class="type-chip cr"><span class="emoji">💡</span>창조자<br><small>Creator</small></div>
+      <div class="type-chip ad"><span class="emoji">🚀</span>추진자<br><small>Advancer</small></div>
+      <div class="type-chip re"><span class="emoji">🔍</span>개선자<br><small>Refiner</small></div>
+      <div class="type-chip ex"><span class="emoji">⚙️</span>실행자<br><small>Executor</small></div>
+      <div class="type-chip fa"><span class="emoji">🎯</span>촉진자<br><small>Facilitator</small></div>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.83rem; color:var(--ink-light);">
+      12개 문항이 있으며, 각 문항에서 4개의 진술문에 <strong>4·3·2·1</strong> 순서로 순위를 매겨주세요.<br>
+      (4 = 나와 가장 일치 / 1 = 나와 가장 일치하지 않음)
+    </p>
+    <button class="btn-start" onclick="startTest()">진단 시작하기</button>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar-wrap" id="progressWrap">
+  <div class="progress-meta">
+    <span id="progressText">문항 0 / 12</span>
+    <span id="progressPct">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill" style="width:0%"></div>
+  </div>
+</div>
+
+<!-- QUESTIONS -->
+<div class="questions-container" id="questionsContainer"></div>
+
+<!-- SUBMIT -->
+<div class="btn-row" id="btnRow">
+  <button class="btn btn-primary" onclick="submitTest()">결과 확인하기</button>
+  <button class="btn btn-secondary" onclick="resetTest()">처음부터</button>
+</div>
+
+<!-- RESULT -->
+<div class="result-section" id="resultSection"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-credit-line">Made by <span>Yena Kim (Yenarue)</span> · 2026</div>
+    <div class="footer-divider"></div>
+    <div class="footer-links">
+      <!-- Email -->
+      <a class="footer-icon-link" href="mailto:yenarue@gmail.com" title="Email">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="2,4 12,13 22,4"/>
+        </svg>
+        yenarue@gmail.com
+      </a>
+      <!-- LinkedIn -->
+      <a class="footer-icon-link" href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener" title="LinkedIn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        yena-kim-yenarue
+      </a>
+      <!-- GitHub -->
+      <a class="footer-icon-link" href="https://github.com/yenarue" target="_blank" rel="noopener" title="GitHub">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        yenarue
+      </a>
+    </div>
+    <div class="footer-copy">
+      Inspired by <em>Principles</em> by Ray Dalio &nbsp;·&nbsp; C.A.R.E. Profile — Innovate with C.A.R.E. &nbsp;·&nbsp; Based on Team Dimensions Profile 2.0 by Inscape Publishing &nbsp;·&nbsp; Korean adaptation by KECI
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────
+// DATA: 12 questions × 4 items ranked 4/3/2/1
+// Symbols: ✕ = Creator(C), ▲ = Advancer(A), ● = Executor(E), ■ = Refiner(R)
+// ─────────────────────────────────────────────
+const QUESTIONS = [
+  {
+    id: 1,
+    items: [
+      { sym: 'R', text: '나는 세세하게 검토하는 것을 좋아한다.' },
+      { sym: 'C', text: '나는 여러가지 대안들을 식별하는데 능숙하다.' },
+      { sym: 'A', text: '나는 한번에 여러 가지 일에 집중하는 경향이 있다.' },
+      { sym: 'E', text: '나는 행동하기 전에 일의 결과를 먼저 생각한다.' },
+    ]
+  },
+  {
+    id: 2,
+    items: [
+      { sym: 'C', text: '나는 어떤 일에 적극적으로 참여하기를 좋아한다.' },
+      { sym: 'R', text: '나는 한번에 한 가지씩 일을 처리한다.' },
+      { sym: 'E', text: '나는 다른 사람이 내놓은 아이디어를 활용하기를 좋아한다.' },
+      { sym: 'A', text: '나는 사람들로부터 주목받기를 좋아한다.' },
+    ]
+  },
+  {
+    id: 3,
+    items: [
+      { sym: 'A', text: '나는 반드시 전통이나 관례를 따라야 할 필요를 느끼지 않는다.' },
+      { sym: 'R', text: '나는 조화를 이루고 균형잡힌 것을 좋아한다.' },
+      { sym: 'C', text: '나는 개념에 관해 토의하기를 좋아한다.' },
+      { sym: 'E', text: '나는 변화를 시도하기 전, 새로운 것을 세밀하게 검증하기를 좋아한다.' },
+    ]
+  },
+  {
+    id: 4,
+    items: [
+      { sym: 'A', text: '나는 느낌에 따라 행동한다.' },
+      { sym: 'E', text: '나는 변화가 일어날 때 불편함을 느낀다.' },
+      { sym: 'R', text: '나는 순차적으로 생각하기를 좋아한다.' },
+      { sym: 'C', text: '나는 대체 안을 개발하는데 능숙하다.' },
+    ]
+  },
+  {
+    id: 5,
+    items: [
+      { sym: 'R', text: '나는 행동하기 전에 신중하게 검토하기를 좋아한다.' },
+      { sym: 'A', text: '나는 하나의 주제에서 다른 주제로 쉽게 넘어가는 경향이 있다.' },
+      { sym: 'C', text: '나는 새로운 아이디어를 만들기 좋아한다.' },
+      { sym: 'E', text: '나는 규칙과 기대에 따라 행동한다.' },
+    ]
+  },
+  {
+    id: 6,
+    items: [
+      { sym: 'C', text: '나는 이론과 원리를 개발하는 것을 좋아한다.' },
+      { sym: 'E', text: '나는 새로운 접근방식을 시도하는데 신중한 경향이 있다.' },
+      { sym: 'R', text: '나는 질서정연한 것을 좋아한다.' },
+      { sym: 'A', text: '나는 아무런 변화가 없으면 가만있지 못한다.' },
+    ]
+  },
+  {
+    id: 7,
+    items: [
+      { sym: 'C', text: '나는 마스터 플랜을 가시화하는데 능숙하다.' },
+      { sym: 'E', text: '나는 현재상태를 굳이 바꾸려 하지 않는다.' },
+      { sym: 'R', text: '나는 사실로 입증될 수 있는 것에 관심을 둔다.' },
+      { sym: 'A', text: '다른 사람들은 내가 한 가지 생각에서 다른 생각으로 쉽게 전환한다고 말한다.' },
+    ]
+  },
+  {
+    id: 8,
+    items: [
+      { sym: 'E', text: '나는 다른 사람에게 맞추려 한다.' },
+      { sym: 'A', text: '나는 때때로 참을 수가 없다.' },
+      { sym: 'R', text: '나는 문제를 해결할 때 정해진 절차를 따르려 한다.' },
+      { sym: 'C', text: '나는 종종 앞으로 일어날 일을 예상한다.' },
+    ]
+  },
+  {
+    id: 9,
+    items: [
+      { sym: 'R', text: '나는 체계적일 때 편안함을 느낀다.' },
+      { sym: 'A', text: '나는 내 취향대로 행동한다.' },
+      { sym: 'C', text: '나는 문제 핵심을 파악하는데 능숙하다.' },
+      { sym: 'E', text: '나는 다른 사람이 앞장 서 리드하는 것을 좋아한다.' },
+    ]
+  },
+  {
+    id: 10,
+    items: [
+      { sym: 'E', text: '나는 정확히 잘 짜여진 것을 좋아한다.' },
+      { sym: 'C', text: '나는 분석하는데 능숙하다.' },
+      { sym: 'A', text: '나는 존경받기를 좋아한다.' },
+      { sym: 'R', text: '나는 어떤 것을 정리하는데 능숙하다.' },
+    ]
+  },
+  {
+    id: 11,
+    items: [
+      { sym: 'A', text: '나는 때때로 충동적으로 행동한다.' },
+      { sym: 'E', text: '나는 새로운 아이디어에 대해 초기에는 회의적이다.' },
+      { sym: 'R', text: '나는 어떤 것을 순서대로 계열화하는데 시간 사용하기를 좋아한다.' },
+      { sym: 'C', text: '나는 실행방안을 토의하기를 좋아한다.' },
+    ]
+  },
+  {
+    id: 12,
+    items: [
+      { sym: 'R', text: '나는 체계적이고 순차적으로 사고한다.' },
+      { sym: 'C', text: '나는 장래의 것에 관심을 둔다.' },
+      { sym: 'E', text: '나는 검증되지 않은 해결책보다는 검증된 해결책을 실행하려 한다.' },
+      { sym: 'A', text: '나는 다른 사람에게 영향주는 것을 좋아한다.' },
+    ]
+  }
+];
+
+// sym → score key mapping
+const SYM_MAP = { C: 'C', A: 'A', R: 'R', E: 'E' };
+
+// Answers: answers[qIndex][itemIndex] = rank value (1-4) or null
+let answers = Array.from({length: 12}, () => [null, null, null, null]);
+
+// ─── TYPE INFO ───────────────────────────────
+const TYPE_INFO = {
+  C: {
+    name: '창조자',
+    eng: 'Creator',
+    color: '#D4691A',
+    emoji: '💡',
+    approach: '개념적 접근 (Conceptual Approach)',
+    desc: '독창적인 아이디어와 새로운 개념을 만들어내는 역할. 새로운 사고를 추구하며, 대안을 탐색하고 마스터 플랜을 가시화하는데 능숙합니다. 미래에 초점을 두고 이론·원리·아이디어를 개발하는 것을 즐깁니다.',
+    strengths: '다양한 아이디어 생성, 큰 그림 조망, 독창적 해결책, 개념적 프레임워크 설계, 이론과 논리의 융합',
+    challenges: '세부 일정 준수, 루틴 작업 유지, 구체적 follow-through, 체계적 조직화',
+    teamNeed: '실용성을 제공하고 세부사항을 처리하며 결과 지향적인 파트너가 필요합니다.',
+  },
+  A: {
+    name: '추진자',
+    eng: 'Advancer',
+    color: '#2B6CB0',
+    emoji: '🚀',
+    approach: '자발적 접근 (Spontaneous Approach)',
+    desc: '아이디어를 앞으로 밀고나가며 사람들의 설득과 장애 극복을 담당. 자유를 원하며 여러 주제를 동시에 다루고, 감정적으로 의사결정하는 경향이 있습니다. 영향력을 행사하고 존경받는 것을 좋아합니다.',
+    strengths: '열정 생성, 아이디어 소통·설득, 관계 관리, 인간적 요소 조율, 변화 추진',
+    challenges: '논리적 일관성 유지, 세부 분석, 인내심 필요한 업무',
+    teamNeed: '객관적 분석과 체계적 검토를 제공하는 파트너가 필요합니다.',
+  },
+  R: {
+    name: '개선자',
+    eng: 'Refiner',
+    color: '#276749',
+    emoji: '🔍',
+    approach: '체계적 접근 (Methodical Approach)',
+    desc: '아이디어를 수정하고 명료화하는 역할. 논리와 합리성을 선호하며 순서와 절차를 중시합니다. 세세한 것을 검토하고 행동에 앞서 전체를 생각하며, 사실로 입증될 수 있는 것에 집중합니다.',
+    strengths: '아이디어 결함 분석, 시스템적 접근, 논리적 정밀성, 오류 포착, 품질 관리',
+    challenges: '모호성 수용, 빠른 결정, 관계 중심 커뮤니케이션',
+    teamNeed: '창의적 발상과 에너지를 불어넣어 주는 파트너가 필요합니다.',
+  },
+  E: {
+    name: '실행자',
+    eng: 'Executor',
+    color: '#6B46A0',
+    emoji: '⚙️',
+    approach: '규범적 접근 (Normative Approach)',
+    desc: '실행상의 문제를 확인하고 업무를 관리하는 역할. 익숙한 맥락 안에서 새로운 아이디어를 보고, 과거 경험에 의존하며 행동 전 결과를 예측합니다. 조화를 지향하고 Follower 경향이 있습니다.',
+    strengths: '구체적 결과 달성, 세부사항 관리, 후속 조치, 조직적 실행, 일정 준수',
+    challenges: '추상적 사고, 불확실성 수용, 급격한 변화 적응',
+    teamNeed: '위험을 감수하고 큰 그림을 사고하며 창의적 아이디어를 제공하는 파트너가 필요합니다.',
+  },
+  F: {
+    name: '촉진자',
+    eng: 'Facilitator',
+    color: '#8B4513',
+    emoji: '🎯',
+    approach: '균형적 접근 (Balanced Approach)',
+    desc: '4가지 유형의 강점을 고루 갖춘 유형. 특정 역할에 치우치지 않고 상황에 따라 창조자·추진자·개선자·실행자 역할을 유연하게 전환할 수 있습니다. 팀 과정 전체를 모니터하고 구성원 간 차이를 조율하며 갈등을 중재하는 데 탁월합니다.',
+    strengths: '유연한 역할 전환, 다양한 관점 수용, 팀 조율 및 갈등 중재, 전 과정 통찰, 상황 적응력',
+    challenges: '강한 주도성 발휘가 필요한 상황, 특정 역할에 깊이 몰입해야 할 때',
+    teamNeed: '뚜렷한 전문성을 가진 각 역할의 팀원과 협력할 때 가장 큰 시너지를 냅니다.',
+  }
+};
+
+const RANK_COMBOS = {
+  'CC': '핵심 창조자',  'CA': '추진형 창조자', 'CR': '개선형 창조자', 'CE': '실행형 창조자',
+  'AC': '창조형 추진자', 'AA': '핵심 추진자',  'AR': '개선형 추진자', 'AE': '실행형 추진자',
+  'RC': '창조형 개선자', 'RA': '추진형 개선자', 'RR': '핵심 개선자',  'RE': '실행형 개선자',
+  'EC': '창조형 실행자', 'EA': '추진형 실행자', 'ER': '개선형 실행자', 'EE': '핵심 실행자',
+};
+
+// ─── RENDER QUESTIONS ────────────────────────
+function startTest() {
+  document.getElementById('introSection').style.display = 'none';
+  document.getElementById('progressWrap').classList.add('visible');
+  document.getElementById('questionsContainer').classList.add('visible');
+  document.getElementById('btnRow').classList.add('visible');
+  renderQuestions();
+  updateProgress();
+}
+
+function renderQuestions() {
+  const container = document.getElementById('questionsContainer');
+  container.innerHTML = '';
+  QUESTIONS.forEach((q, qi) => {
+    const block = document.createElement('div');
+    block.className = 'question-block';
+    block.id = `q-block-${qi}`;
+    block.innerHTML = `
+      <div class="question-header">
+        <span class="question-num">${q.id}</span>
+        <span class="question-instruction">4개 문장에 4·3·2·1 순위를 하나씩 매겨주세요</span>
+      </div>
+      <div class="question-body">
+        <div class="rank-instructions">각 숫자는 한 번씩만 사용 가능합니다</div>
+        ${q.items.map((item, ii) => `
+          <div class="rank-row" id="row-${qi}-${ii}">
+            <div class="rank-selector">
+              ${[4,3,2,1].map(v => `
+                <button class="rank-btn" id="btn-${qi}-${ii}-${v}"
+                  onclick="selectRank(${qi},${ii},${v})">${v}</button>
+              `).join('')}
+            </div>
+            <span class="statement-text">${item.text}</span>
+          </div>
+        `).join('')}
+        <div class="validation-msg" id="val-${qi}">각 숫자(4·3·2·1)를 하나씩 모두 배정해주세요.</div>
+      </div>
+    `;
+    container.appendChild(block);
+    setTimeout(() => block.classList.add('appear'), qi * 80);
+  });
+}
+
+function selectRank(qi, ii, val) {
+  // If this item already has this value, deselect
+  if (answers[qi][ii] === val) {
+    answers[qi][ii] = null;
+    updateUI(qi);
+    updateProgress();
+    return;
+  }
+  // Remove this val from other items in same question
+  for (let k = 0; k < 4; k++) {
+    if (answers[qi][k] === val) answers[qi][k] = null;
+  }
+  answers[qi][ii] = val;
+  updateUI(qi);
+  updateProgress();
+}
+
+function updateUI(qi) {
+  for (let ii = 0; ii < 4; ii++) {
+    for (let v of [1,2,3,4]) {
+      const btn = document.getElementById(`btn-${qi}-${ii}-${v}`);
+      btn.className = 'rank-btn';
+      if (answers[qi][ii] === v) btn.classList.add(`selected-${v}`);
+      // Dim unavailable values (already used in this question)
+      const usedVals = answers[qi].filter((x, k) => k !== ii && x !== null);
+      if (usedVals.includes(v) && answers[qi][ii] !== v) {
+        btn.style.opacity = '0.3';
+        btn.style.cursor = 'default';
+      } else {
+        btn.style.opacity = '';
+        btn.style.cursor = '';
+      }
+    }
+  }
+}
+
+function updateProgress() {
+  let completed = 0;
+  for (let qi = 0; qi < 12; qi++) {
+    if (isQuestionComplete(qi)) completed++;
+  }
+  const pct = Math.round(completed / 12 * 100);
+  document.getElementById('progressText').textContent = `문항 ${completed} / 12`;
+  document.getElementById('progressPct').textContent = `${pct}%`;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function isQuestionComplete(qi) {
+  const vals = answers[qi].filter(x => x !== null);
+  return vals.length === 4 && new Set(vals).size === 4;
+}
+
+// ─── SUBMIT ──────────────────────────────────
+function submitTest() {
+  let allGood = true;
+  for (let qi = 0; qi < 12; qi++) {
+    const msg = document.getElementById(`val-${qi}`);
+    if (!isQuestionComplete(qi)) {
+      msg.classList.add('show');
+      if (allGood) {
+        document.getElementById(`q-block-${qi}`).scrollIntoView({behavior:'smooth', block:'center'});
+      }
+      allGood = false;
+    } else {
+      msg.classList.remove('show');
+    }
+  }
+  if (!allGood) return;
+
+  // Calculate scores
+  const scores = { C: 0, A: 0, R: 0, E: 0 };
+  for (let qi = 0; qi < 12; qi++) {
+    QUESTIONS[qi].items.forEach((item, ii) => {
+      scores[item.sym] += answers[qi][ii];
+    });
+  }
+
+  showResult(scores);
+}
+
+// ─── FACILITATOR 판정 ────────────────────────
+// 최고-최저 점수 차이로 촉진자 여부 판정
+// ≤6: 강한 촉진자 / 7~10: 약한 촉진자 경향 / ≥11: 주유형 존재
+function getFacilitatorScore(scores) {
+  const vals = Object.values(scores);
+  const maxVal = Math.max(...vals);
+  const minVal = Math.min(...vals);
+  const gap = maxVal - minVal;
+  // 촉진자 균형도 점수: gap이 작을수록 높음 (0~100 스케일)
+  // gap 0 → 100점, gap 10 → 50점, gap 20 이상 → 0점
+  const balanceScore = Math.max(0, Math.round((1 - gap / 20) * 100));
+  return { gap, balanceScore, isFacilitator: gap <= 10 };
+}
+
+// ─── RESULT ──────────────────────────────────
+function showResult(scores) {
+  document.getElementById('progressWrap').classList.remove('visible');
+  document.getElementById('questionsContainer').classList.remove('visible');
+  document.getElementById('btnRow').classList.remove('visible');
+
+  // Sort by score descending
+  const ranked = Object.entries(scores).sort((a,b) => b[1]-a[1]);
+  const [first, second] = ranked;
+  const firstKey = first[0], secondKey = second[0];
+  const maxScore = 48;
+
+  // 촉진자 판정
+  const facResult = getFacilitatorScore(scores);
+  const isFacilitator = facResult.isFacilitator;
+  const isStrongFacilitator = facResult.gap <= 6;
+
+  // 결과 유형명 결정
+  let displayEmoji, displayName, displaySubLabel;
+  if (isFacilitator) {
+    displayEmoji = TYPE_INFO['F'].emoji;
+    displayName = isStrongFacilitator ? '촉진자 (Facilitator)' : '촉진자 경향 (Facilitator)';
+    displaySubLabel = isStrongFacilitator
+      ? `4가지 유형이 균형적으로 고루 분포됩니다 (점수 차: ${facResult.gap}점)`
+      : `균형적 성향이 있으나 ${TYPE_INFO[firstKey].name} 경향이 다소 높습니다 (점수 차: ${facResult.gap}점)`;
+  } else {
+    const comboKey = firstKey + secondKey;
+    displayEmoji = TYPE_INFO[firstKey].emoji;
+    displayName = RANK_COMBOS[comboKey] || `${TYPE_INFO[firstKey].name} / ${TYPE_INFO[secondKey].name}`;
+    displaySubLabel = `1순위: ${TYPE_INFO[firstKey].name} (${TYPE_INFO[firstKey].eng}) &nbsp;+&nbsp; 2순위: ${TYPE_INFO[secondKey].name} (${TYPE_INFO[secondKey].eng})`;
+  }
+
+  // 결과 설명에 쓸 주유형
+  const primaryKey = isFacilitator ? 'F' : firstKey;
+  const secondaryKey = isFacilitator ? null : secondKey;
+
+  const result = document.getElementById('resultSection');
+  result.innerHTML = `
+    <div class="result-hero animate-in">
+      <div class="result-hero-label">당신의 C.A.R.E. 유형</div>
+      <div class="result-type-name">
+        ${displayEmoji} <span class="accent">${displayName}</span>
+      </div>
+      <div class="result-combo-label">${displaySubLabel}</div>
+    </div>
+
+    <!-- 그래프: 헤더 바로 아래 -->
+    <div class="approaches-card" style="margin-bottom:1.5rem;">
+      <h3 style="text-align:center; margin-bottom:0.25rem;">나의 혁신 접근 방식 프로파일</h3>
+      <p style="font-size:0.78rem; color:var(--ink-light); text-align:center; margin-bottom:0.5rem; font-weight:300;">
+        각 축의 점수가 높을수록 해당 유형의 성향이 강합니다 (최대 48점)
+      </p>
+      ${renderDiamondSVG(scores, maxScore)}
+    </div>
+
+    <!-- 점수 카드: C/A/R/E 4장 + 촉진자 균형도 1장 -->
+    <div class="scores-grid">
+      ${ranked.map(([key, val], idx) => `
+        <div class="score-card ${isFacilitator && isStrongFacilitator ? 'facilitator-glow' : ''}">
+          <div class="score-card-header">
+            <div class="score-type-label" style="color:${TYPE_INFO[key].color}">
+              ${TYPE_INFO[key].emoji} ${TYPE_INFO[key].name}
+            </div>
+            <div class="score-value" style="color:${TYPE_INFO[key].color}">${val}</div>
+          </div>
+          <div class="score-bar-track">
+            <div class="score-bar-fill" style="background:${TYPE_INFO[key].color}; width:${Math.round(val/maxScore*100)}%"></div>
+          </div>
+          <div class="score-rank-label">${['1순위','2순위','3순위','4순위'][idx]} &nbsp;·&nbsp; ${Math.round(val/maxScore*100)}점</div>
+        </div>
+      `).join('')}
+      <!-- 촉진자 균형도 카드 -->
+      <div class="score-card facilitator-card ${isFacilitator ? 'facilitator-active' : ''}">
+        <div class="score-card-header">
+          <div class="score-type-label" style="color:${TYPE_INFO['F'].color}">
+            ${TYPE_INFO['F'].emoji} ${TYPE_INFO['F'].name}
+            <span style="font-size:0.65rem; font-weight:400; margin-left:0.4rem; opacity:0.7;">(균형도)</span>
+          </div>
+          <div class="score-value" style="color:${TYPE_INFO['F'].color}">${facResult.balanceScore}</div>
+        </div>
+        <div class="score-bar-track">
+          <div class="score-bar-fill" style="background:${TYPE_INFO['F'].color}; width:${facResult.balanceScore}%"></div>
+        </div>
+        <div class="score-rank-label">
+          ${isStrongFacilitator
+            ? '✅ 강한 촉진자 — 4유형이 매우 균등합니다'
+            : facResult.isFacilitator
+              ? '🔶 촉진자 경향 — 균형적 성향이 있습니다'
+              : '점수 차 ' + facResult.gap + '점 — 주유형이 뚜렷합니다'}
+        </div>
+        ${isFacilitator ? `
+          <div style="margin-top:0.6rem; padding:0.5rem 0.6rem; background:rgba(139,69,19,0.08); border-radius:2px; font-size:0.72rem; line-height:1.6; color:var(--ink-light);">
+            점수 차 <strong>${facResult.gap}점</strong> &nbsp;·&nbsp;
+            판정 기준: ≤6점 강한 촉진자 / 7~10점 촉진자 경향
+          </div>` : ''}
+      </div>
+    </div>
+
+    <div class="result-desc-grid">
+      <div class="desc-card">
+        <h3 style="color:${TYPE_INFO[primaryKey].color}">
+          ${isFacilitator ? '촉진자란?' : '1순위: ' + TYPE_INFO[primaryKey].name}
+        </h3>
+        <p>${TYPE_INFO[primaryKey].desc}</p>
+      </div>
+      ${!isFacilitator ? `
+      <div class="desc-card">
+        <h3 style="color:${TYPE_INFO[secondaryKey].color}">2순위: ${TYPE_INFO[secondaryKey].name}</h3>
+        <p>${TYPE_INFO[secondaryKey].desc}</p>
+      </div>` : `
+      <div class="desc-card">
+        <h3>촉진자의 역할</h3>
+        <p>팀 과정을 모니터하고, 절차나 방법상 팀원 간 차이를 조절하며 갈등을 중재합니다. 창조자·추진자·개선자·실행자 역할 모두에 공감하며 팀 전체의 흐름을 이어줍니다.</p>
+      </div>`}
+      <div class="desc-card">
+        <h3>주요 강점</h3>
+        <p>${TYPE_INFO[primaryKey].strengths}</p>
+      </div>
+      <div class="desc-card">
+        <h3>성장 영역</h3>
+        <p>${TYPE_INFO[primaryKey].challenges}</p>
+      </div>
+    </div>
+
+    <div class="approaches-card">
+      <h3>혁신 접근 방식</h3>
+      <p style="font-size:0.85rem; color:var(--ink-light); margin-bottom:0; line-height:1.7;">
+        ${TYPE_INFO[primaryKey].approach} — ${getApproachDesc(primaryKey)}
+      </p>
+    </div>
+
+    <div class="team-need">
+      <h3>팀에서 필요한 파트너 유형</h3>
+      <p>${TYPE_INFO[primaryKey].teamNeed}</p>
+    </div>
+
+    <div style="background:var(--warm-white); border:1px solid rgba(196,150,58,0.2); border-radius:2px; padding:1.5rem; margin-bottom:2rem; box-shadow:0 1px 8px var(--shadow);">
+      <h3 style="font-family:'Noto Serif KR',serif; font-size:1rem; font-weight:600; margin-bottom:0.75rem;">Z 프로세스에서의 역할</h3>
+      <p style="font-size:0.85rem; line-height:1.8; color:var(--ink-light); font-weight:300;">
+        팀 혁신은 <strong>창조 → 추진 → 개선 → 실행</strong>의 Z 프로세스를 따릅니다.
+        ${isFacilitator
+          ? `당신은 <strong style="color:${TYPE_INFO['F'].color}">촉진자</strong>로서 Z 프로세스 전 단계에 걸쳐 팀원 간 소통을 돕고 흐름을 이어주는 역할을 합니다.`
+          : `당신은 <strong style="color:${TYPE_INFO[primaryKey].color}">${TYPE_INFO[primaryKey].name}</strong> 단계에서 가장 자연스럽게 빛납니다. 이 단계를 적극 주도하되, 다른 역할의 팀원과 협력해 전체 과정을 완성하세요.`}
+      </p>
+    </div>
+
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-bottom:1rem;">
+      <button class="btn-restart" onclick="downloadResultPDF()">📄 결과 PDF로 저장</button>
+      <button class="btn-restart" style="background:transparent; color:var(--ink-light); border:1px solid rgba(26,21,16,0.3);" onclick="resetTest()">다시 진단하기</button>
+    </div>
+  `;
+
+  result.classList.add('visible');
+  result.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function getApproachDesc(key) {
+  const map = {
+    C: '새로운 아이디어를 만들기 좋아하며, 대안을 개발하고 개념에 관해 토의하는데 능숙합니다. 마스터 플랜을 시각화하고, 미래에 초점을 두며 이론과 원리를 개발합니다.',
+    A: '구속에서 벗어나 자유를 원하며, 한 주제에서 다른 주제로 쉽게 전환합니다. 한번에 많은 것에 관심을 두고, 존경받고 영향력을 행사하는 것을 좋아하며 감정에 따라 의사결정합니다.',
+    R: '질서와 합리성을 좋아하며 순서적 절차를 따르려 합니다. 세세한 것을 검토하고 행동에 앞서 전체를 생각하며, 사실로 입증될 수 있는 것에 초점을 두고 잘 짜여진 것을 선호합니다.',
+    E: '새로운 아이디어를 기존의 친숙한 맥락 안에서 보기를 좋아합니다. 과거의 경험에 의존하여 행동하고, 행동하기 전에 결과를 보고자 하며 다른 사람이 먼저 시작하기를 원합니다.',
+    F: '4가지 접근 방식을 모두 유연하게 활용합니다. 상황과 팀의 필요에 따라 창조·추진·개선·실행 역할을 자유롭게 전환하며, 팀 전체의 균형을 유지하는 데 탁월합니다.',
+  };
+  return map[key];
+}
+
+function renderDiamondSVG(scores, maxScore) {
+  const cx = 160, cy = 160, maxR = 110;
+  // 4 axes on a diamond: C=left, A=top, E=right, R=bottom
+  // Order matters for polygon: go around clockwise → C(left) → A(top) → E(right) → R(bottom) = quadrilateral
+  const axes = [
+    { key: 'C', x: -1, y:  0 },  // left
+    { key: 'A', x:  0, y: -1 },  // top
+    { key: 'E', x:  1, y:  0 },  // right
+    { key: 'R', x:  0, y:  1 },  // bottom
+  ];
+
+  // Score points (clockwise order = proper quadrilateral, no hourglass)
+  const ptsArr = axes.map(ax => {
+    const r = (scores[ax.key] / maxScore) * maxR;
+    return { x: cx + ax.x * r, y: cy + ax.y * r, key: ax.key };
+  });
+  const polyPts = ptsArr.map(p => `${p.x},${p.y}`).join(' ');
+
+  // Background grid lines at 25%, 50%, 75%, 100%
+  const gridLevels = [0.25, 0.5, 0.75, 1.0];
+  const gridLines = gridLevels.map(lvl => {
+    const gPts = axes.map(ax => `${cx + ax.x * maxR * lvl},${cy + ax.y * maxR * lvl}`).join(' ');
+    return `<polygon points="${gPts}" fill="none" stroke="rgba(196,150,58,${lvl === 1.0 ? 0.25 : 0.12})" stroke-width="${lvl === 1.0 ? 1.5 : 0.8}"/>`;
+  }).join('');
+
+  // Axis lines from center to edge
+  const axisLines = axes.map(ax =>
+    `<line x1="${cx}" y1="${cy}" x2="${cx + ax.x * maxR}" y2="${cy + ax.y * maxR}" stroke="rgba(196,150,58,0.2)" stroke-width="1" stroke-dasharray="3,3"/>`
+  ).join('');
+
+  // Label positions (outside the diamond)
+  const labelData = [
+    { key: 'C', lx: cx - maxR - 52, ly: cy + 4,  anchor: 'start' },
+    { key: 'A', lx: cx,              ly: cy - maxR - 22, anchor: 'middle' },
+    { key: 'E', lx: cx + maxR + 8,  ly: cy + 4,  anchor: 'start' },
+    { key: 'R', lx: cx,              ly: cy + maxR + 28, anchor: 'middle' },
+  ];
+
+  // Score value nudge so it doesn't overlap dots
+  const scoreNudge = [
+    { key: 'C', dx: -26, dy: -8 },
+    { key: 'A', dx:  6,  dy: -10 },
+    { key: 'E', dx:  8,  dy: -8 },
+    { key: 'R', dx:  6,  dy:  16 },
+  ];
+
+  return `
+    <div class="diamond-chart">
+      <svg class="diamond-svg" viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- grid rings -->
+        ${gridLines}
+        <!-- axis dashes -->
+        ${axisLines}
+        <!-- score quadrilateral (clockwise C→A→E→R = proper convex quad, no hourglass) -->
+        <polygon points="${polyPts}" fill="rgba(196,150,58,0.22)" stroke="#C4963A" stroke-width="2" stroke-linejoin="round"/>
+        <!-- dots at each score point -->
+        ${ptsArr.map(p => `
+          <circle cx="${p.x}" cy="${p.y}" r="6" fill="${TYPE_INFO[p.key].color}" stroke="white" stroke-width="1.5"/>
+        `).join('')}
+        <!-- score numbers near dots -->
+        ${ptsArr.map((p, i) => {
+          const n = scoreNudge[i];
+          return `<text x="${p.x + n.dx}" y="${p.y + n.dy}" font-size="11" fill="${TYPE_INFO[p.key].color}" font-weight="700" font-family="'DM Serif Display',serif" text-anchor="middle">${scores[p.key]}</text>`;
+        }).join('')}
+        <!-- axis labels -->
+        ${labelData.map(l => `
+          <text x="${l.lx}" y="${l.ly}" font-size="10.5" fill="#1A1510" font-family="'Noto Sans KR',sans-serif" font-weight="600" text-anchor="${l.anchor}">
+            ${TYPE_INFO[l.key].name}
+          </text>
+          <text x="${l.lx}" y="${l.ly + 13}" font-size="9" fill="#8B7A6A" font-family="'Noto Sans KR',sans-serif" font-weight="300" text-anchor="${l.anchor}">
+            ${TYPE_INFO[l.key].eng}
+          </text>
+        `).join('')}
+      </svg>
+    </div>
+  `;
+}
+
+function resetTest() {
+  answers = Array.from({length: 12}, () => [null, null, null, null]);
+  document.getElementById('resultSection').classList.remove('visible');
+  document.getElementById('resultSection').innerHTML = '';
+  document.getElementById('introSection').style.display = 'block';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function downloadResultPDF() {
+  document.body.classList.add('printing');
+  window.print();
+  document.body.classList.remove('printing');
+}
+</script>
+</body>
+</html>
