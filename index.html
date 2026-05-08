@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>예나르의 미니 프로젝트 공간</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Jua&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #f9f7f4;
+      --card-bg:  #ffffff;
+      --accent:   #5c9e7e;
+      --accent2:  #e07b5a;
+      --text:     #2e2e2e;
+      --muted:    #9a9a9a;
+      --border:   #ebebeb;
+      --shadow:   rgba(0,0,0,0.06);
+      --radius:   14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nanum Gothic', sans-serif;
+      min-height: 100vh;
+      padding: 56px 24px 64px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 48px;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'Jua', sans-serif;
+      font-size: 28px;
+      color: var(--text);
+    }
+
+    .header-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Cards */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px var(--shadow);
+      transform: translateY(-2px);
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-icon {
+      font-size: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-name {
+      font-family: 'Jua', sans-serif;
+      font-size: 15px;
+    }
+
+    .card-path {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .card-arrow {
+      color: var(--border);
+      font-size: 16px;
+      transition: color 0.18s, transform 0.18s;
+    }
+
+    .card:hover .card-arrow {
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+
+    /* Folder */
+    .folder-children {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+      padding-left: 16px;
+      border-left: 2px solid var(--border);
+    }
+    .folder-children.open { display: flex; }
+
+    .count-badge {
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 2px 8px;
+      margin-right: 6px;
+    }
+
+    /* State */
+    .state-msg {
+      text-align: center;
+      padding: 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: color 0.18s;
+      display: flex;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="header-top">
+      <h1>예나르의 미니 프로젝트 공간 ✨</h1>
+      <div class="header-dot"></div>
+    </div>
+    <p class="subtitle">작고 소중한 실험들을 모아두는 곳</p>
+  </header>
+
+  <div id="content">
+    <div class="state-msg">불러오는 중...</div>
+  </div>
+
+  <footer>
+    <span>Made by <strong>Yena Kim</strong> · <span id="footer-year"></span></span>
+    <div class="footer-links">
+      <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#e07b5a'" onmouseout="this.style.color=''">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color=''">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#2e2e2e'" onmouseout="this.style.color=''">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  const OWNER = 'yenarue';
+  const REPO  = 'mini-projects';
+  const PAGES_BASE = `https://${OWNER}.github.io/${REPO}`;
+
+  const FILE_META = {
+    'care-profile-test.html': { emoji: '🌿', name: '케어 프로필 테스트' },
+    'invest-simulator.html':  { emoji: '📈', name: '투자 시뮬레이터' },
+  };
+
+  const DIR_META = {
+    'cpu':   { emoji: '🖥️', label: 'CPU' },
+    'guide': { emoji: '📖', label: 'Guide' },
+  };
+
+  function nameOf(filename) {
+    return FILE_META[filename]?.name
+      || filename.replace(/\.html$/, '').replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  function makeFileCard(path) {
+    const filename = path.split('/').pop();
+    const a = document.createElement('a');
+    a.href = `${PAGES_BASE}/${path}`;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.className = 'card';
+    a.innerHTML = `
+      <div class="card-left">
+        <div class="card-icon">${FILE_META[filename]?.emoji ?? '📄'}</div>
+        <div>
+          <div class="card-name">${nameOf(filename)}</div>
+          <div class="card-path">${path}</div>
+        </div>
+      </div>
+      <span class="card-arrow">›</span>
+    `;
+    return a;
+  }
+
+  function makeFolderBlock(dir, paths) {
+    const meta = DIR_META[dir] || { emoji: '📁', label: dir };
+    const wrap = document.createElement('div');
+
+    const toggle = document.createElement('div');
+    toggle.className = 'card';
+    const arrId = `arr-${dir}`;
+    toggle.innerHTML = `
+      <div class="card-left">
+        <div class="card-icon">${meta.emoji}</div>
+        <div>
+          <div class="card-name">${meta.label}</div>
+          <div class="card-path">${dir}/</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;">
+        <span class="count-badge">${paths.length}개</span>
+        <span class="card-arrow" id="${arrId}">›</span>
+      </div>
+    `;
+
+    const children = document.createElement('div');
+    children.className = 'folder-children';
+    paths.forEach(p => children.appendChild(makeFileCard(p)));
+
+    let open = false;
+    toggle.addEventListener('click', () => {
+      open = !open;
+      children.classList.toggle('open', open);
+      const arr = document.getElementById(arrId);
+      arr.textContent = open ? '⌄' : '›';
+      arr.style.color = open ? 'var(--accent)' : '';
+    });
+
+    wrap.appendChild(toggle);
+    wrap.appendChild(children);
+    return wrap;
+  }
+
+  async function render() {
+    const el = document.getElementById('content');
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${OWNER}/${REPO}/git/trees/HEAD?recursive=1`,
+        { headers: { Accept: 'application/vnd.github.v3+json' } }
+      );
+      if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+      const { tree } = await res.json();
+
+      const html = tree.filter(f => f.path.endsWith('.html'));
+      const root = [], dirs = {};
+      for (const f of html) {
+        const parts = f.path.split('/');
+        if (parts.length === 1) root.push(f.path);
+        else { if (!dirs[parts[0]]) dirs[parts[0]] = []; dirs[parts[0]].push(f.path); }
+      }
+
+      el.innerHTML = '';
+
+      if (root.length) {
+        const sec = document.createElement('div');
+        sec.className = 'section';
+        sec.innerHTML = '<div class="section-label">Pages</div>';
+        const list = document.createElement('div');
+        list.className = 'card-list';
+        root.forEach(p => list.appendChild(makeFileCard(p)));
+        sec.appendChild(list);
+        el.appendChild(sec);
+      }
+
+      for (const [dir, paths] of Object.entries(dirs)) {
+        const meta = DIR_META[dir] || { emoji: '📁', label: dir };
+        const sec = document.createElement('div');
+        sec.className = 'section';
+        sec.innerHTML = `<div class="section-label">${meta.label}</div>`;
+        const list = document.createElement('div');
+        list.className = 'card-list';
+        list.appendChild(makeFolderBlock(dir, paths));
+        sec.appendChild(list);
+        el.appendChild(sec);
+      }
+
+      if (!html.length)
+        el.innerHTML = '<div class="state-msg">아직 파일이 없어요</div>';
+
+    } catch (err) {
+      el.innerHTML = `<div class="state-msg">목록을 불러올 수 없어요<br><small>${err.message}</small></div>`;
+    }
+  }
+
+  render();
+</script>
+</body>
+</html>
