@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>C.A.R.E. Profile — 혁신 유형 진단</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -25,12 +25,19 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   body {
     font-family: 'Noto Sans KR', sans-serif;
     background: var(--cream);
     color: var(--ink);
     min-height: 100vh;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
 
   /* ── HEADER ── */
@@ -134,8 +141,10 @@
   /* ── PROGRESS ── */
   .progress-bar-wrap {
     max-width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     background: var(--cream);
     border-bottom: 1px solid rgba(196,150,58,0.18);
@@ -173,7 +182,8 @@
   .questions-container {
     max-width: 720px;
     margin: 0 auto;
-    padding: 2rem 1.5rem 3rem;
+    /* fixed progress bar 높이(약 56px) 만큼 상단 여백 확보 */
+    padding: 5rem 1.5rem 3rem;
     display: none;
   }
   .questions-container.visible { display: block; }
@@ -430,7 +440,20 @@
     gap: 1rem;
     margin-bottom: 2rem;
   }
-  @media (max-width: 480px) { .scores-grid { grid-template-columns: 1fr; } }
+  .diamond-svg { max-width: 320px; width: 100%; }
+
+  @media (max-width: 480px) {
+    .types-grid { grid-template-columns: repeat(3, 1fr); }
+    .result-section { padding: 0 1rem 3rem; }
+    .questions-container { padding: 1.5rem 1rem 3rem; }
+    .diamond-svg { max-width: 100%; }
+    /* 1순위/2순위 설명 카드 — 1열 세로 */
+    .result-desc-grid { grid-template-columns: 1fr; }
+    /* footer 링크 — 아이콘만, 텍스트 숨김 */
+    .footer-icon-link .link-text { display: none; }
+    .footer-icon-link { padding: 0.5rem 0.65rem; }
+    .footer-links { gap: 0.6rem; flex-wrap: wrap; }
+  }
 
   .score-card {
     background: var(--warm-white);
@@ -491,11 +514,17 @@
 
   .result-desc-grid {
     display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .strengths-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-bottom: 2rem;
   }
-  @media (max-width: 560px) { .result-desc-grid { grid-template-columns: 1fr; } }
 
   .desc-card {
     background: var(--warm-white);
@@ -727,7 +756,93 @@
   }
   .animate-in { animation: fadeInUp 0.6s ease forwards; }
 
-  /* ── PRINT / PDF ── */
+  /* ── IMAGE SAVE DIALOG ── */
+  .img-dialog-backdrop {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(26,21,16,0.6);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    overflow: hidden;
+  }
+  .img-dialog-backdrop.open { display: flex; }
+  .img-dialog {
+    background: var(--warm-white);
+    border: 1px solid rgba(196,150,58,0.3);
+    border-radius: 2px;
+    padding: 2rem 1.75rem;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 8px 40px rgba(26,21,16,0.25);
+    animation: fadeInUp 0.25s ease;
+  }
+  .img-dialog h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+  }
+  .img-dialog p {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .img-dialog-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .img-option-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.1rem 0.75rem;
+    border: 1.5px solid rgba(196,150,58,0.3);
+    border-radius: 2px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  .img-option-btn:hover {
+    border-color: var(--gold);
+    background: rgba(196,150,58,0.06);
+  }
+  .img-option-btn .opt-icon { font-size: 1.6rem; }
+  .img-option-btn .opt-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .img-option-btn .opt-desc {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .img-dialog-cancel {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    background: none;
+    border: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(26,21,16,0.4);
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.15s;
+  }
+  .img-dialog-cancel:hover { color: var(--ink); }
   @media print {
     @page { margin: 1.5cm; size: A4; }
 
@@ -822,6 +937,27 @@
 <!-- QUESTIONS -->
 <div class="questions-container" id="questionsContainer"></div>
 
+<!-- IMAGE SAVE DIALOG -->
+<div class="img-dialog-backdrop" id="imgDialog">
+  <div class="img-dialog">
+    <h3>이미지 저장 방식 선택</h3>
+    <p>저장할 이미지 유형을 선택해주세요.</p>
+    <div class="img-dialog-options">
+      <button class="img-option-btn" onclick="confirmImageSave('preview')">
+        <span class="opt-icon">🪟</span>
+        <span class="opt-title">프리뷰</span>
+        <span class="opt-desc">유형 결과와<br>그래프만 표시</span>
+      </button>
+      <button class="img-option-btn" onclick="confirmImageSave('full')">
+        <span class="opt-icon">📋</span>
+        <span class="opt-title">전체 결과</span>
+        <span class="opt-desc">모든 분석 내용<br>포함</span>
+      </button>
+    </div>
+    <button class="img-dialog-cancel" onclick="closeImageDialog()">취소</button>
+  </div>
+</div>
+
 <!-- SUBMIT -->
 <div class="btn-row" id="btnRow">
   <button class="btn btn-primary" onclick="submitTest()">결과 확인하기</button>
@@ -837,37 +973,33 @@
     <div class="footer-divider"></div>
     <div class="footer-links">
       <!-- Email -->
-      <a class="footer-icon-link" href="mailto:yenarue@gmail.com" title="Email">
+      <a class="footer-icon-link" href="mailto:yenarue@gmail.com" title="yenarue@gmail.com">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"/>
           <polyline points="2,4 12,13 22,4"/>
         </svg>
-        yenarue@gmail.com
       </a>
       <!-- LinkedIn -->
-      <a class="footer-icon-link" href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener" title="LinkedIn">
+      <a class="footer-icon-link" href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener" title="yena-kim-yenarue">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
           <rect x="2" y="9" width="4" height="12"/>
           <circle cx="4" cy="4" r="2"/>
         </svg>
-        yena-kim-yenarue
       </a>
       <!-- GitHub -->
-      <a class="footer-icon-link" href="https://github.com/yenarue" target="_blank" rel="noopener" title="GitHub">
+      <a class="footer-icon-link" href="https://github.com/yenarue" target="_blank" rel="noopener" title="yenarue">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
         </svg>
-        yenarue
       </a>
       <!-- Instagram -->
-      <a class="footer-icon-link" href="https://www.instagram.com/yenarue/" target="_blank" rel="noopener" title="Instagram">
+      <a class="footer-icon-link" href="https://www.instagram.com/yenarue/" target="_blank" rel="noopener" title="yenarue">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
           <circle cx="12" cy="12" r="4"/>
           <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
         </svg>
-        yenarue
       </a>
     </div>
     <div class="footer-copy">
@@ -1072,6 +1204,14 @@ function startTest() {
   document.getElementById('btnRow').classList.add('visible');
   renderQuestions();
   updateProgress();
+  // 렌더링 완료 후 최상단으로 — requestAnimationFrame 2번으로 모바일 보장
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+  });
 }
 
 function renderQuestions() {
@@ -1219,7 +1359,55 @@ function submitTest() {
   showResult(scores);
 }
 
-// ─── FACILITATOR 판정 ────────────────────────
+// 특정 유형(key)의 문항별 선택 순위 목록 반환
+// returns: [{rank, text}, ...] sorted by rank ascending (1순위 먼저)
+function getSelectedItemsForType(key) {
+  const items = [];
+  for (let qi = 0; qi < 12; qi++) {
+    QUESTIONS[qi].items.forEach((item, ii) => {
+      if (item.sym === key) {
+        const rank = answers[qi][ii]; // 1~4 (1=가장 일치)
+        items.push({ rank, text: item.text, q: qi + 1 });
+      }
+    });
+  }
+  return items.sort((a, b) => a.rank - b.rank);
+}
+
+function renderSelectedItems(key) {
+  const items = getSelectedItemsForType(key);
+  const rankColors = { 1: '#C4963A', 2: '#8B7A5A', 3: '#A0998A', 4: '#C8C0B4' };
+  const uid = `accordion-${key}-${Date.now()}`;
+  return `
+    <div class="no-capture" style="margin-top:1rem; border-top:1px solid rgba(196,150,58,0.15); padding-top:0.75rem;">
+      <button
+        onclick="toggleAccordion('${uid}')"
+        style="
+          width:100%; display:flex; align-items:center; justify-content:space-between;
+          background:none; border:none; cursor:pointer; padding:0;
+          font-family:'Noto Sans KR',sans-serif;
+        "
+      >
+        <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.08em; color:var(--ink-light); text-transform:uppercase;">내 선택 순위 보기</span>
+        <span id="${uid}-icon" style="font-size:0.75rem; color:var(--gold); transition:transform 0.25s; display:inline-block;">▼</span>
+      </button>
+      <div id="${uid}" style="display:none; margin-top:0.65rem;">
+        ${items.map(item => `
+          <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.45rem;">
+            <span style="
+              flex-shrink:0; min-width:1.6rem; height:1.6rem;
+              background:${rankColors[item.rank]};
+              color:${item.rank <= 2 ? '#1A1510' : '#fff'};
+              border-radius:2px; font-size:0.68rem; font-weight:700;
+              display:flex; align-items:center; justify-content:center;
+            ">${item.rank}순위</span>
+            <span style="font-size:0.78rem; color:var(--ink-light); line-height:1.55; font-weight:300; padding-top:0.15rem;">${item.text}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
 // 최고-최저 점수 차이로 촉진자 여부 판정
 // ≤6: 강한 촉진자 / 7~10: 약한 촉진자 경향 / ≥11: 주유형 존재
 function getFacilitatorScore(scores) {
@@ -1337,16 +1525,21 @@ function showResult(scores) {
           ${isFacilitator ? '촉진자란?' : '1순위: ' + TYPE_INFO[primaryKey].name}
         </h3>
         <p>${TYPE_INFO[primaryKey].desc}</p>
+        ${!isFacilitator ? renderSelectedItems(primaryKey) : ''}
       </div>
       ${!isFacilitator ? `
       <div class="desc-card">
         <h3 style="color:${TYPE_INFO[secondaryKey].color}">2순위: ${TYPE_INFO[secondaryKey].name}</h3>
         <p>${TYPE_INFO[secondaryKey].desc}</p>
+        ${renderSelectedItems(secondaryKey)}
       </div>` : `
       <div class="desc-card">
         <h3>촉진자의 역할</h3>
         <p>팀 과정을 모니터하고, 절차나 방법상 팀원 간 차이를 조절하며 갈등을 중재합니다. 창조자·추진자·개선자·실행자 역할 모두에 공감하며 팀 전체의 흐름을 이어줍니다.</p>
       </div>`}
+    </div>
+
+    <div class="strengths-grid">
       <div class="desc-card">
         <h3>주요 강점</h3>
         <p>${TYPE_INFO[primaryKey].strengths}</p>
@@ -1391,7 +1584,7 @@ function showResult(scores) {
           PDF로 저장
           <span class="action-btn-sub">데스크탑 추천</span>
         </button>
-        <button class="action-btn action-btn-secondary" onclick="downloadResultImage()">
+        <button class="action-btn action-btn-secondary" onclick="showImageDialog()">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="2"/>
             <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -1498,6 +1691,15 @@ function renderDiamondSVG(scores, maxScore) {
   `;
 }
 
+function toggleAccordion(uid) {
+  const panel = document.getElementById(uid);
+  const icon  = document.getElementById(uid + '-icon');
+  if (!panel) return;
+  const isOpen = panel.style.display !== 'none';
+  panel.style.display = isOpen ? 'none' : 'block';
+  if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
 function resetTest() {
   answers = Array.from({length: 12}, () => [null, null, null, null]);
   document.getElementById('resultSection').classList.remove('visible');
@@ -1512,125 +1714,104 @@ function downloadResultPDF() {
   document.body.classList.remove('printing');
 }
 
-async function downloadResultImage() {
-  const btn = document.querySelector('[onclick="downloadResultImage()"]');
+// ─── IMAGE DIALOG ────────────────────────────
+function showImageDialog() {
+  document.getElementById('imgDialog').classList.add('open');
+}
+function closeImageDialog() {
+  document.getElementById('imgDialog').classList.remove('open');
+}
+
+async function confirmImageSave(mode) {
+  closeImageDialog();
+  const btn = document.querySelector('[onclick="showImageDialog()"]');
   const originalHTML = btn.innerHTML;
   btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 저장 중...`;
   btn.disabled = true;
 
-  // ── 모바일용 캡처 컨테이너 생성 (390px, 화면 밖에 렌더) ──
   const MOBILE_W = 390;
-  const wrapper = document.createElement('div');
-  wrapper.style.cssText = `
-    position: absolute;
-    left: -9999px; top: 0;
-    width: ${MOBILE_W}px;
-    background: #F5F0E8;
-    font-family: 'Noto Sans KR', sans-serif;
-    padding: 0 0 2rem 0;
-    box-sizing: border-box;
-  `;
-
-  // 결과 섹션 클론
   const resultEl = document.getElementById('resultSection');
+
+  const wrapper = document.createElement('div');
+  wrapper.style.cssText = `position:absolute;left:-9999px;top:0;width:${MOBILE_W}px;background:#F5F0E8;font-family:'Noto Sans KR',sans-serif;padding:0 0 1.5rem 0;box-sizing:border-box;`;
+
   const clone = resultEl.cloneNode(true);
+  clone.querySelector('.result-actions')?.remove();
+  clone.style.cssText = 'display:block;max-width:100%;width:100%;padding:0 1rem 0.5rem;box-sizing:border-box;';
 
-  // 클론에서 버튼 영역 제거
-  const cloneAction = clone.querySelector('.result-actions');
-  if (cloneAction) cloneAction.remove();
-
-  // ── 모바일 인라인 스타일 강제 적용 ──
-  // result-section 자체
-  clone.style.cssText = `
-    display: block; max-width: 100%; width: 100%;
-    padding: 0 1rem 1rem; box-sizing: border-box;
-  `;
-
-  // result-hero: ::before pseudo-element를 html2canvas가 밝게 렌더링하는 문제
-  // → hero 내용을 꺼내서, 배경색이 명시된 새 div로 완전히 교체
+  // hero 어두운 배경 강제
   const hero = clone.querySelector('.result-hero');
   if (hero) {
-    const heroInner = hero.innerHTML;
     const newHero = document.createElement('div');
-    newHero.innerHTML = heroInner;
-    newHero.style.cssText = [
-      'background-color:#1A1510',
-      'color:#F5F0E8',
-      'padding:2rem 1.25rem',
-      'border-radius:2px',
-      'text-align:center',
-      'margin-bottom:1.25rem',
-      'box-sizing:border-box',
-      'width:100%',
-    ].join(';');
-    // 자식 텍스트 색상 보정
+    newHero.innerHTML = hero.innerHTML;
+    newHero.style.cssText = 'background-color:#1A1510;color:#F5F0E8;padding:2rem 1.25rem;border-radius:2px;text-align:center;margin-bottom:1.25rem;box-sizing:border-box;width:100%;';
     newHero.querySelectorAll('*').forEach(el => {
       const cs = window.getComputedStyle(el);
-      // gold 컬러 요소 유지
-      if (cs.color && cs.color.includes('196') ) {
-        el.style.color = '#C4963A';
-      } else {
-        el.style.color = '#F5F0E8';
-      }
+      el.style.color = (cs.color && cs.color.includes('196')) ? '#C4963A' : '#F5F0E8';
     });
     hero.replaceWith(newHero);
   }
 
-  // scores-grid: 1열로
-  const scoresGrid = clone.querySelector('.scores-grid');
-  if (scoresGrid) {
-    scoresGrid.style.cssText = `
-      display: grid; grid-template-columns: 1fr;
-      gap: 0.65rem; margin-bottom: 1.25rem;
-    `;
+  if (mode === 'preview') {
+    // ── 프리뷰: 헤더 + 그래프 + 촉진자 균형도 카드만 표시 ──
+    const kids = Array.from(clone.children);
+    // kids[0]=hero대체, kids[1]=그래프카드, kids[2]=scores-grid, 나머지 숨김
+    kids.forEach((kid, i) => {
+      if (i >= 3) kid.style.display = 'none';
+    });
+
+    // scores-grid(kids[2])에서 촉진자 카드만 남기고 나머지 숨김
+    const scoresGrid = kids[2];
+    if (scoresGrid) {
+      scoresGrid.style.cssText = 'display:grid;grid-template-columns:1fr;gap:0.65rem;margin-bottom:0;padding:0 0;';
+      Array.from(scoresGrid.children).forEach(card => {
+        if (!card.classList.contains('facilitator-card')) {
+          card.style.display = 'none';
+        } else {
+          card.style.padding = '1rem';
+          card.style.marginBottom = '0';
+          // grid-column 리셋 (1열이라 불필요)
+          card.style.gridColumn = '1 / -1';
+        }
+      });
+    }
+
+    // 그래프 카드 margin 축소
+    if (kids[1]) kids[1].style.marginBottom = '0.75rem';
+
+  } else {
+    // ── 전체: 기존 모바일 레이아웃 적용 ──
+    // 프라이버시 — "내 선택 순위 보기" 섹션 제거
+    clone.querySelectorAll('.no-capture').forEach(el => el.remove());
+    clone.querySelectorAll('[id^="accordion-"]').forEach(el => {
+      if (!el.id.includes('-icon')) el.style.display = 'block';
+    });
+    const scoresGrid = clone.querySelector('.scores-grid');
+    if (scoresGrid) scoresGrid.style.cssText = 'display:grid;grid-template-columns:1fr;gap:0.65rem;margin-bottom:1.25rem;';
+    const descGrid = clone.querySelector('.result-desc-grid');
+    if (descGrid) descGrid.style.cssText = 'display:grid;grid-template-columns:1fr;gap:0.65rem;margin-bottom:1.25rem;';
+    clone.querySelectorAll('.score-card,.desc-card,.approaches-card,.team-need').forEach(el => {
+      el.style.padding = '1rem'; el.style.marginBottom = '0';
+    });
+    const facCard = clone.querySelector('.facilitator-card');
+    if (facCard) facCard.style.gridColumn = '1 / -1';
+    clone.querySelectorAll('[style*="margin-bottom:2rem"]').forEach(el => { el.style.marginBottom = '1rem'; });
+    const svgEl = clone.querySelector('.diamond-svg');
+    if (svgEl) svgEl.style.maxWidth = '280px';
   }
-
-  // result-desc-grid: 1열로
-  const descGrid = clone.querySelector('.result-desc-grid');
-  if (descGrid) {
-    descGrid.style.cssText = `
-      display: grid; grid-template-columns: 1fr;
-      gap: 0.65rem; margin-bottom: 1.25rem;
-    `;
-  }
-
-  // 모든 카드 padding 축소
-  clone.querySelectorAll('.score-card, .desc-card, .approaches-card, .team-need').forEach(el => {
-    el.style.padding = '1rem';
-    el.style.marginBottom = '0';
-  });
-
-  // diamond SVG 너비 제한
-  const svg = clone.querySelector('.diamond-svg');
-  if (svg) svg.style.maxWidth = '280px';
-
-  // facilitator-card: 1열 전체
-  const facCard = clone.querySelector('.facilitator-card');
-  if (facCard) facCard.style.gridColumn = '1 / -1';
-
-  // 하단 카드(Z프로세스 등) margin 축소
-  clone.querySelectorAll('[style*="margin-bottom:2rem"]').forEach(el => {
-    el.style.marginBottom = '1rem';
-  });
 
   wrapper.appendChild(clone);
   document.body.appendChild(wrapper);
 
   try {
-    // 폰트 로딩 대기 후 캡처
     await document.fonts.ready;
-
     const canvas = await html2canvas(wrapper, {
-      scale: 2.5,
-      backgroundColor: '#F5F0E8',
-      useCORS: true,
-      logging: false,
-      width: MOBILE_W,
-      windowWidth: MOBILE_W,
+      scale: 2.5, backgroundColor: '#F5F0E8',
+      useCORS: true, logging: false,
+      width: MOBILE_W, windowWidth: MOBILE_W,
     });
-
     const link = document.createElement('a');
-    link.download = 'CARE_Profile_결과.png';
+    link.download = mode === 'preview' ? 'CARE_Profile_프리뷰.png' : 'CARE_Profile_전체결과.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
   } catch (e) {
