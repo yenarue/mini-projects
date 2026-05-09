@@ -1503,27 +1503,120 @@ function downloadResultPDF() {
 async function downloadResultImage() {
   const btn = document.querySelector('[onclick="downloadResultImage()"]');
   const originalHTML = btn.innerHTML;
-
-  // 버튼 로딩 상태
   btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 저장 중...`;
   btn.disabled = true;
 
+  // ── 모바일용 캡처 컨테이너 생성 (390px, 화면 밖에 렌더) ──
+  const MOBILE_W = 390;
+  const wrapper = document.createElement('div');
+  wrapper.style.cssText = `
+    position: absolute;
+    left: -9999px; top: 0;
+    width: ${MOBILE_W}px;
+    background: #F5F0E8;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 0 0 2rem 0;
+    box-sizing: border-box;
+  `;
+
+  // 결과 섹션 클론
   const resultEl = document.getElementById('resultSection');
-  const actionEl = resultEl.querySelector('.result-actions');
+  const clone = resultEl.cloneNode(true);
+
+  // 클론에서 버튼 영역 제거
+  const cloneAction = clone.querySelector('.result-actions');
+  if (cloneAction) cloneAction.remove();
+
+  // ── 모바일 인라인 스타일 강제 적용 ──
+  // result-section 자체
+  clone.style.cssText = `
+    display: block; max-width: 100%; width: 100%;
+    padding: 0 1rem 1rem; box-sizing: border-box;
+  `;
+
+  // result-hero: ::before pseudo-element를 html2canvas가 밝게 렌더링하는 문제
+  // → hero 내용을 꺼내서, 배경색이 명시된 새 div로 완전히 교체
+  const hero = clone.querySelector('.result-hero');
+  if (hero) {
+    const heroInner = hero.innerHTML;
+    const newHero = document.createElement('div');
+    newHero.innerHTML = heroInner;
+    newHero.style.cssText = [
+      'background-color:#1A1510',
+      'color:#F5F0E8',
+      'padding:2rem 1.25rem',
+      'border-radius:2px',
+      'text-align:center',
+      'margin-bottom:1.25rem',
+      'box-sizing:border-box',
+      'width:100%',
+    ].join(';');
+    // 자식 텍스트 색상 보정
+    newHero.querySelectorAll('*').forEach(el => {
+      const cs = window.getComputedStyle(el);
+      // gold 컬러 요소 유지
+      if (cs.color && cs.color.includes('196') ) {
+        el.style.color = '#C4963A';
+      } else {
+        el.style.color = '#F5F0E8';
+      }
+    });
+    hero.replaceWith(newHero);
+  }
+
+  // scores-grid: 1열로
+  const scoresGrid = clone.querySelector('.scores-grid');
+  if (scoresGrid) {
+    scoresGrid.style.cssText = `
+      display: grid; grid-template-columns: 1fr;
+      gap: 0.65rem; margin-bottom: 1.25rem;
+    `;
+  }
+
+  // result-desc-grid: 1열로
+  const descGrid = clone.querySelector('.result-desc-grid');
+  if (descGrid) {
+    descGrid.style.cssText = `
+      display: grid; grid-template-columns: 1fr;
+      gap: 0.65rem; margin-bottom: 1.25rem;
+    `;
+  }
+
+  // 모든 카드 padding 축소
+  clone.querySelectorAll('.score-card, .desc-card, .approaches-card, .team-need').forEach(el => {
+    el.style.padding = '1rem';
+    el.style.marginBottom = '0';
+  });
+
+  // diamond SVG 너비 제한
+  const svg = clone.querySelector('.diamond-svg');
+  if (svg) svg.style.maxWidth = '280px';
+
+  // facilitator-card: 1열 전체
+  const facCard = clone.querySelector('.facilitator-card');
+  if (facCard) facCard.style.gridColumn = '1 / -1';
+
+  // 하단 카드(Z프로세스 등) margin 축소
+  clone.querySelectorAll('[style*="margin-bottom:2rem"]').forEach(el => {
+    el.style.marginBottom = '1rem';
+  });
+
+  wrapper.appendChild(clone);
+  document.body.appendChild(wrapper);
 
   try {
-    // visibility:hidden — 레이아웃 공간은 유지하면서 화면에서만 숨김 (깜빡임 방지)
-    if (actionEl) actionEl.style.visibility = 'hidden';
+    // 폰트 로딩 대기 후 캡처
+    await document.fonts.ready;
 
-    const canvas = await html2canvas(resultEl, {
-      scale: 2,
+    const canvas = await html2canvas(wrapper, {
+      scale: 2.5,
       backgroundColor: '#F5F0E8',
       useCORS: true,
       logging: false,
-      windowWidth: 800,
+      width: MOBILE_W,
+      windowWidth: MOBILE_W,
     });
 
-    // PNG 다운로드
     const link = document.createElement('a');
     link.download = 'CARE_Profile_결과.png';
     link.href = canvas.toDataURL('image/png');
@@ -1531,8 +1624,7 @@ async function downloadResultImage() {
   } catch (e) {
     alert('이미지 저장에 실패했습니다. 잠시 후 다시 시도해주세요.');
   } finally {
-    // 성공·실패 모두 복원
-    if (actionEl) actionEl.style.visibility = '';
+    document.body.removeChild(wrapper);
     btn.innerHTML = originalHTML;
     btn.disabled = false;
   }
