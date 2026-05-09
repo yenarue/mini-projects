@@ -132,12 +132,21 @@
 
   /* ── PROGRESS ── */
   .progress-bar-wrap {
-    max-width: 720px;
-    margin: 0 auto 2rem;
-    padding: 0 1.5rem;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(196,150,58,0.18);
+    padding: 0.85rem 1.5rem 0.75rem;
     display: none;
+    box-shadow: 0 2px 12px rgba(26,21,16,0.07);
   }
   .progress-bar-wrap.visible { display: block; }
+  .progress-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
   .progress-meta {
     display: flex;
     justify-content: space-between;
@@ -163,7 +172,7 @@
   .questions-container {
     max-width: 720px;
     margin: 0 auto;
-    padding: 0 1.5rem 3rem;
+    padding: 2rem 1.5rem 3rem;
     display: none;
   }
   .questions-container.visible { display: block; }
@@ -227,6 +236,48 @@
   .rank-selector {
     display: flex;
     gap: 0.3rem;
+  }
+
+  /* 첫 번째 행에만 표시되는 순위 가이드 */
+  .rank-guide {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 0.3rem;
+    width: 100%;
+  }
+  .rank-guide-label {
+    font-size: 0.62rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    width: 32px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .rank-guide-arrow {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 0.15rem;
+  }
+  .rank-guide-arrow svg {
+    width: 100%;
+    height: 10px;
+  }
+  /* 첫 번째 rank-row는 상단에 가이드 공간 확보 */
+  .rank-row-first {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    padding-top: 0.3rem;
+  }
+  .rank-row-first .rank-row-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
   }
   .rank-btn {
     width: 32px; height: 32px;
@@ -675,12 +726,14 @@
 
 <!-- PROGRESS -->
 <div class="progress-bar-wrap" id="progressWrap">
-  <div class="progress-meta">
-    <span id="progressText">문항 0 / 12</span>
-    <span id="progressPct">0%</span>
-  </div>
-  <div class="progress-track">
-    <div class="progress-fill" id="progressFill" style="width:0%"></div>
+  <div class="progress-inner">
+    <div class="progress-meta">
+      <span id="progressText">문항 0 / 12</span>
+      <span id="progressPct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
   </div>
 </div>
 
@@ -943,8 +996,41 @@ function renderQuestions() {
         <span class="question-instruction">4개 문장에 4·3·2·1 순위를 하나씩 매겨주세요</span>
       </div>
       <div class="question-body">
-        <div class="rank-instructions">각 숫자는 한 번씩만 사용 가능합니다</div>
-        ${q.items.map((item, ii) => `
+        ${q.items.map((item, ii) => {
+          const isFirst = ii === 0;
+          return isFirst ? `
+          <div class="rank-row rank-row-first" id="row-${qi}-${ii}">
+            <!-- 순위 가이드: 버튼 너비(4×32px + 3×0.3rem gap)에 맞춤 -->
+            <div class="rank-guide" style="width: calc(4 * 32px + 3 * 0.3rem);">
+              <div class="rank-guide-label">4순위</div>
+              <div class="rank-guide-arrow">
+                <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <marker id="arrow-l-${qi}" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                      <path d="M6,1 L1,3 L6,5" fill="none" stroke="#C4963A" stroke-width="1.2"/>
+                    </marker>
+                    <marker id="arrow-r-${qi}" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                      <path d="M1,1 L6,3 L1,5" fill="none" stroke="#C4963A" stroke-width="1.2"/>
+                    </marker>
+                  </defs>
+                  <line x1="8" y1="5" x2="92" y2="5"
+                    stroke="#C4963A" stroke-width="1"
+                    marker-start="url(#arrow-l-${qi})"
+                    marker-end="url(#arrow-r-${qi})"/>
+                </svg>
+              </div>
+              <div class="rank-guide-label">1순위</div>
+            </div>
+            <div class="rank-row-inner">
+              <div class="rank-selector">
+                ${[4,3,2,1].map(v => `
+                  <button class="rank-btn" id="btn-${qi}-${ii}-${v}"
+                    onclick="selectRank(${qi},${ii},${v})">${v}</button>
+                `).join('')}
+              </div>
+              <span class="statement-text">${item.text}</span>
+            </div>
+          </div>` : `
           <div class="rank-row" id="row-${qi}-${ii}">
             <div class="rank-selector">
               ${[4,3,2,1].map(v => `
@@ -953,8 +1039,8 @@ function renderQuestions() {
               `).join('')}
             </div>
             <span class="statement-text">${item.text}</span>
-          </div>
-        `).join('')}
+          </div>`;
+        }).join('')}
         <div class="validation-msg" id="val-${qi}">각 숫자(4·3·2·1)를 하나씩 모두 배정해주세요.</div>
       </div>
     `;
