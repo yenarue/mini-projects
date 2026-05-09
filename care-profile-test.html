@@ -799,8 +799,8 @@
       <div class="type-chip fa"><span class="emoji">🎯</span>촉진자<br><small>Facilitator</small></div>
     </div>
     <p style="margin-top:1.5rem; font-size:0.83rem; color:var(--ink-light);">
-      12개 문항이 있으며, 각 문항에서 4개의 진술문에 <strong>4·3·2·1</strong> 순서로 순위를 매겨주세요.<br>
-      (4 = 나와 가장 일치 / 1 = 나와 가장 일치하지 않음)
+      12개 문항이 있으며, 각 문항에서 4개의 진술문에 <strong>1·2·3·4 순위</strong>를 하나씩 매겨주세요.<br>
+      (1순위 = 나와 가장 일치 / 4순위 = 나와 가장 일치하지 않음)
     </p>
     <button class="btn-start" onclick="startTest()">진단 시작하기</button>
   </div>
@@ -1075,16 +1075,15 @@ function renderQuestions() {
     block.innerHTML = `
       <div class="question-header">
         <span class="question-num">${q.id}</span>
-        <span class="question-instruction">4개 문장에 4·3·2·1 순위를 하나씩 매겨주세요</span>
+        <span class="question-instruction">4개 문장에 1·2·3·4 순위를 하나씩 매겨주세요</span>
       </div>
       <div class="question-body">
         ${q.items.map((item, ii) => {
           const isFirst = ii === 0;
           return isFirst ? `
           <div class="rank-row rank-row-first" id="row-${qi}-${ii}">
-            <!-- 순위 가이드: 버튼 너비(4×32px + 3×0.3rem gap)에 맞춤 -->
             <div class="rank-guide" style="width: calc(4 * 32px + 3 * 0.3rem);">
-              <div class="rank-guide-label">4순위</div>
+              <div class="rank-guide-label">1순위</div>
               <div class="rank-guide-arrow">
                 <svg viewBox="0 0 100 10" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -1101,11 +1100,11 @@ function renderQuestions() {
                     marker-end="url(#arrow-r-${qi})"/>
                 </svg>
               </div>
-              <div class="rank-guide-label">1순위</div>
+              <div class="rank-guide-label">4순위</div>
             </div>
             <div class="rank-row-inner">
               <div class="rank-selector">
-                ${[4,3,2,1].map(v => `
+                ${[1,2,3,4].map(v => `
                   <button class="rank-btn" id="btn-${qi}-${ii}-${v}"
                     onclick="selectRank(${qi},${ii},${v})">${v}</button>
                 `).join('')}
@@ -1115,7 +1114,7 @@ function renderQuestions() {
           </div>` : `
           <div class="rank-row" id="row-${qi}-${ii}">
             <div class="rank-selector">
-              ${[4,3,2,1].map(v => `
+              ${[1,2,3,4].map(v => `
                 <button class="rank-btn" id="btn-${qi}-${ii}-${v}"
                   onclick="selectRank(${qi},${ii},${v})">${v}</button>
               `).join('')}
@@ -1123,7 +1122,7 @@ function renderQuestions() {
             <span class="statement-text">${item.text}</span>
           </div>`;
         }).join('')}
-        <div class="validation-msg" id="val-${qi}">각 숫자(4·3·2·1)를 하나씩 모두 배정해주세요.</div>
+        <div class="validation-msg" id="val-${qi}">각 순위(1·2·3·4)를 하나씩 모두 배정해주세요.</div>
       </div>
     `;
     container.appendChild(block);
@@ -1200,11 +1199,11 @@ function submitTest() {
   }
   if (!allGood) return;
 
-  // Calculate scores
+  // Calculate scores — 1순위=4점, 2순위=3점, 3순위=2점, 4순위=1점으로 역전
   const scores = { C: 0, A: 0, R: 0, E: 0 };
   for (let qi = 0; qi < 12; qi++) {
     QUESTIONS[qi].items.forEach((item, ii) => {
-      scores[item.sym] += answers[qi][ii];
+      scores[item.sym] += (5 - answers[qi][ii]); // 1→4, 2→3, 3→2, 4→1
     });
   }
 
