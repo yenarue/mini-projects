@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITM501 Innovation Management · 기말시험 대비 요약</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { display: block; }
+  .container { max-width: 920px; margin: 0 auto; padding: 64px 32px; }
+  .home-header { margin-bottom: 48px; }
+  .home-header .label { font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .home-header h1 { font-size: 40px; margin: 8px 0 12px 0; line-height: 1.2; }
+  .home-header p { font-size: 17px; color: var(--muted); max-width: 640px; margin: 0; }
+  .chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .chapter-card {
+    display: block;
+    padding: 20px 22px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.15s;
+    position: relative;
+  }
+  .chapter-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(31, 78, 121, 0.08);
+    transform: translateY(-2px);
+  }
+  .chapter-card .num { font-size: 12px; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; }
+  .chapter-card h3 { margin: 4px 0 6px 0; color: var(--accent); font-size: 17px; }
+  .chapter-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .info-box {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin: 32px 0;
+  }
+  .info-box p { margin: 4px 0; font-size: 14px; }
+  .info-box strong { color: var(--accent); }
+  .section-h { margin-top: 48px; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+  .study-tips {
+    margin-top: 48px;
+    padding: 24px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .study-tips h3 { margin-top: 0; color: var(--accent); }
+  .timeline {
+    margin-top: 24px;
+    padding: 0;
+    list-style: none;
+  }
+  .timeline li {
+    padding: 8px 0 8px 24px;
+    border-left: 2px solid var(--accent-soft);
+    margin-left: 8px;
+    position: relative;
+  }
+  .timeline li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 14px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="home-header">
+    <div class="label">ITM501 · Innovation Management</div>
+    <h1>기말 시험 대비 요약</h1>
+    <p>강의자료(IM01~IM11) 기반 핵심 개념 정리. 각 챕터별로 풀어 쓸 수 있는 수준으로 정리하고,
+       강의자료 내 그림·그래프와 함께 예상 문제를 매칭하였다.</p>
+  </div>
+
+  <div class="info-box">
+    <p><strong>📖 사용법</strong></p>
+    <p>각 챕터 카드를 클릭하면 해당 챕터의 요약 페이지로 이동한다. 페이지 좌측 사이드바에서 섹션 이동, 하단에서 이전/다음 챕터로 이동할 수 있다.</p>
+    <p><strong>🎯 학습 포인트</strong>: 강조된 <span style="background:#fff3b0;padding:1px 4px;border-radius:2px;">키워드</span>와
+       <span style="color:#b8336a;font-weight:600;">핵심 용어</span>를 우선 익히고,
+       각 챕터 끝의 <span style="color:#c44536;font-weight:600;">예상 문제 매칭</span> 섹션을 통해 실제 답안 작성을 연습한다.
+       <span class="exam-tag">EXAM</span> 태그가 붙은 섹션은 시험 빈출 영역이다.</p>
+  </div>
+
+  <h2 class="section-h">챕터 목록</h2>
+  <div class="chapter-grid">
+    <a class="chapter-card" href="IM01.html">
+      <div class="num">CHAPTER 01</div>
+      <h3>Introduction</h3>
+      <p>혁신과 기술경영의 출발점 · MOT 정의 · R&D 진화 · Marx·Schumpeter·Keynes</p>
+    </a>
+    <a class="chapter-card" href="IM02.html">
+      <div class="num">CHAPTER 02</div>
+      <h3>Classics & Evolutionary Theory</h3>
+      <p>슘페터 가설 · Nelson & Winter · 패러다임 전환 · GPT · Perez 라이프사이클</p>
+    </a>
+    <a class="chapter-card" href="IM03.html">
+      <div class="num">CHAPTER 03</div>
+      <h3>Sources of Innovation</h3>
+      <p>Tech Push vs Demand Pull · Drucker 7원천 · Chain-Link · SECI · Pasteur</p>
+    </a>
+    <a class="chapter-card" href="IM04.html">
+      <div class="num">CHAPTER 04</div>
+      <h3>Type, Architecture, Taxonomy</h3>
+      <p>제품/공정 · Henderson & Clark 2×2 · Integral vs Modular · Pavitt 분류</p>
+    </a>
+    <a class="chapter-card" href="IM05.html">
+      <div class="num">CHAPTER 05</div>
+      <h3>Dynamic Model</h3>
+      <p>S-curve · Utterback & Abernathy 3단계 · Dominant Design · QWERTY · 융합</p>
+    </a>
+    <a class="chapter-card" href="IM06.html">
+      <div class="num">CHAPTER 06</div>
+      <h3>Open & Core</h3>
+      <p>Chesbrough Open Innovation · Prahalad & Hamel 핵심역량 · SBU의 한계</p>
+    </a>
+    <a class="chapter-card" href="IM07.html">
+      <div class="num">CHAPTER 07</div>
+      <h3>Diffusion & Disruptive</h3>
+      <p>Rogers 5계층 · Chasm · Bass curve · Christensen 파괴적 혁신 · RPV</p>
+    </a>
+    <a class="chapter-card" href="IM09.html">
+      <div class="num">CHAPTER 09</div>
+      <h3>PFI · Absorptive Capacity</h3>
+      <p>Teece PFI · 전유성 5가지 메커니즘 · 보완자산 · Cohen & Levinthal 흡수역량</p>
+    </a>
+    <a class="chapter-card" href="IM10.html">
+      <div class="num">CHAPTER 10</div>
+      <h3>NIS</h3>
+      <p>국가혁신시스템 · Triple Helix · 기술추격 3패턴 · Geels 전환이론</p>
+    </a>
+  </div>
+
+  <h2 class="section-h">학습 흐름 — 강의 전체의 큰 그림</h2>
+  <p>이 강의는 시간 흐름과 분석 단위가 점차 확장되는 구조다. 아래 흐름을 머리에 그려두면 각 챕터의 위치가 명확해진다.</p>
+
+  <ul class="timeline">
+    <li><strong>출발점 (IM01)</strong>: 슘페터를 중심으로 한 혁신 연구의 역사와 MOT 정의</li>
+    <li><strong>고전 이론 (IM02)</strong>: 슘페터 가설과 진화경제학 — 혁신 이론의 토대</li>
+    <li><strong>원천 (IM03)</strong>: 혁신이 어디서 오는가 — 과학·기술·지식의 흐름</li>
+    <li><strong>유형 (IM04)</strong>: 혁신을 어떻게 분류할 것인가 — 제품/공정, 점진/급진, 아키텍처, Pavitt</li>
+    <li><strong>동태 (IM05)</strong>: 시간에 따른 혁신 패턴 — S-curve, Dominant Design, 융합</li>
+    <li><strong>전략 (IM06)</strong>: 기업은 어떻게 혁신을 다룰 것인가 — Open Innovation vs Core Competence</li>
+    <li><strong>확산과 와해 (IM07)</strong>: 혁신이 어떻게 퍼지고 기존 기업을 무너뜨리는가 — 확산·캐즘·파괴적 혁신</li>
+    <li><strong>이익 확보 (IM09)</strong>: 혁신으로부터 이익을 얻는 방법 — PFI, 보완자산, 흡수역량</li>
+    <li><strong>국가 차원 (IM11)</strong>: 국가 혁신 시스템과 사회기술 전환 — NIS, Triple Helix, Geels</li>
+  </ul>
+
+  <div class="study-tips">
+    <h3>🎯 시험 대비 학습 전략</h3>
+    <ol>
+      <li><strong>핵심 용어부터</strong>: 각 챕터의 <span style="color:#b8336a;font-weight:600;">분홍색 용어</span>들을 풀어 쓸 수 있어야 한다. 정의를 외우는 것이 아니라 자신의 말로 설명할 수 있어야 함.</li>
+      <li><strong>그림과 표 위주로</strong>: 강의자료의 다이어그램(Henderson & Clark 2×2, Pavitt 분류, NIS 구성도, RPV 등)은 답안에 그릴 수 있으면 좋다.</li>
+      <li><strong>저자-개념 매핑</strong>: Schumpeter-신결합/창조적파괴, Nelson&Winter-진화경제학, Henderson&Clark-아키텍처혁신, Chesbrough-Open Innovation, Christensen-Disruptive, Teece-PFI, Cohen&Levinthal-흡수역량, Lundvall-NIS, Geels-전환이론. 누가 무엇을 말했는지 짝지을 수 있어야 한다.</li>
+      <li><strong>예상 문제 매칭 섹션 활용</strong>: 각 챕터 끝의 <span style="color:#c44536;font-weight:600;">예상 문제 매칭</span>을 보고 실제 답안을 작성해 보면 효과적.</li>
+      <li><strong>챕터 간 연결</strong>: 예를 들어 Henderson & Clark(IM04) ↔ Architectural Innovation in IM07, Chain-Link(IM03) ↔ Open Innovation(IM06), Open Innovation(IM06) ↔ 흡수역량(IM09) — 이런 연결을 인식하면 통합 사고 문제에 강해진다.</li>
+    </ol>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+  </div>
+</footer>
+<script>document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IM05 · Dynamic Model | ITM501 Innovation Management</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="chapter-label">Chapter 05</div>
+    <h1>Dynamic Model<br>of Innovation<br><span style="font-size:14px;color:var(--muted);font-weight:normal;">정적에서 동태적 혁신 모델로</span></h1>
+    <nav>
+      <div class="nav-section">목차</div>
+      <ul>
+        <li><a href="#sec-overview">학습 개요</a></li>
+        <li><a href="#sec-scurve">1. S-curve와 기술 진화</a></li>
+        <li><a href="#sec-utterback">2. Utterback & Abernathy 모델</a></li>
+        <li><a href="#sec-dominant">3. Dominant Design</a></li>
+        <li><a href="#sec-qwerty">4. QWERTY · 경로의존성</a></li>
+        <li><a href="#sec-convergence">5. 융합(Convergence)</a></li>
+        <li><a href="#sec-exam">예상 문제 매칭</a></li>
+      </ul>
+      <div class="chapter-nav">
+        <a href="IM04.html">← 이전</a>
+        <a href="IM06.html">다음 →</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="breadcrumb"><a href="index.html">목록</a> › Chapter 05 · Dynamic Model</div>
+    <div class="title-block">
+      <div class="chapter-num">CHAPTER 05</div>
+      <h1>Dynamic Model · 동태적 혁신 모델</h1>
+    </div>
+
+    <p class="lead">
+      슘페터부터 강조해온 핵심 — <strong>"Dynamic을 봐야 한다"</strong> — 를 실제 모델로 구현한 챕터다.
+      <strong>S-curve</strong>(Foster)로 기술 진화의 동태를 잡고, <strong>Utterback & Abernathy</strong>로 한 산업이 어떻게 변해가는지를 본다.
+      그 핵심에 <span class="term">Dominant Design</span>이 있고, 한 번 자리잡은 표준이 비효율적이어도 유지되는 이유 — <strong>경로의존성(QWERTY)</strong> — 도 함께 다룬다.
+      마지막으로 동시대의 큰 흐름인 <strong>융합(Convergence)</strong>을 정리한다.
+    </p>
+
+    <section id="sec-overview">
+      <h2>학습 개요</h2>
+      <ul>
+        <li><span class="term">S-curve</span>의 3단계와 기술 불연속(Discontinuity)을 통한 신기술의 대체</li>
+        <li><span class="term">Utterback & Abernathy</span>의 3단계: Fluid Phase → Transitional Phase → Specific Phase</li>
+        <li>제품 혁신과 공정 혁신의 시기별 강조 변화 + <span class="term">Dominant Design</span>의 등장</li>
+        <li><span class="term">QWERTY 경제학</span>: 경로의존성(Path Dependency)의 세 가지 원인</li>
+        <li><span class="term">융합(Convergence)</span>의 정의와 5단계 동태 + Performance Trade-off</li>
+      </ul>
+    </section>
+
+    <section id="sec-scurve">
+      <h2>1. S-curve와 기술 진화 (Foster, 1986)</h2>
+
+      <p>
+        Richard Foster가 <em>Innovation: The Attacker's Advantage</em>(1986)에서 정립한 모델.
+        한 기술의 성능(Performance)은 투입 노력(Effort)에 따라 <strong>S자 형태</strong>로 발전한다는 관찰이다.
+      </p>
+
+      <figure>
+        <img src="images/im05/s_curve.jpeg" alt="S-curve">
+        <figcaption>IM05 슬라이드 — 기술 S-curve의 3단계와 물리적 한계</figcaption>
+      </figure>
+
+      <h3>S-curve의 3단계</h3>
+      <table>
+        <thead>
+          <tr><th>단계</th><th>특징</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>초기 (Slow)</strong></td><td>기술에 대한 이해 부족 → 성능 향상이 더딤</td></tr>
+          <tr><td><strong>중기 (Rapid)</strong></td><td>개발자들의 이해와 학습이 누적 → 성능이 급격히 향상</td></tr>
+          <tr><td><strong>후기 (Plateau)</strong></td><td>물리적 한계 도달 → 한계 체감, 성능 향상 정체</td></tr>
+        </tbody>
+      </table>
+
+      <h3>S-curve 간의 전환과 Discontinuity</h3>
+
+      <figure>
+        <img src="images/im05/technology_evolution.jpeg" alt="Technology Evolution Discontinuity">
+        <figcaption>IM05 슬라이드 — 두 개의 S-curve 사이의 기술 불연속(Discontinuity)</figcaption>
+      </figure>
+
+      <p>
+        한 기술이 한계에 도달하면, 전혀 다른 원리에 기반한 <strong>새로운 기술</strong>이 등장하여 더 높은 S-curve를 그린다.
+        이 사이의 공백이 <strong>Discontinuity(불연속)</strong>이며, 여기에서 <strong>"공격자의 우위(Attacker's Advantage)"</strong>가 발생한다 — 기존 기업은 옛 기술에 묶여 있어 새 기술로 점프하지 못하기 때문이다.
+      </p>
+
+      <blockquote>
+        진공관 → 반도체 / 프로펠러 → 제트엔진 / 천연 세제 → 합성 세제 / 천연 섬유 → 합성 섬유 / LP → CD / 설탕 → 인공 감미료
+      </blockquote>
+    </section>
+
+    <section id="sec-utterback">
+      <h2>2. Utterback & Abernathy의 동태적 모델 <span class="exam-tag">EXAM</span></h2>
+
+      <p>
+        James Utterback이 <em>Mastering the Dynamics of Innovation</em>(1994)에서 정립한 모델.
+        기업과 산업 부문에서의 <strong>혁신 유형(Types)과 혁신 과정(Process)을 통합한 관점</strong>을 제시한다.
+        Myers & Marquis의 연구 데이터를 이용해 모델의 타당성을 시험했다.
+      </p>
+
+      <figure>
+        <img src="images/im05/three_phases_table.jpeg" alt="3단계 비교표">
+        <figcaption>IM05 슬라이드 — Utterback의 3단계: Fluid / Transitional / Specific Phase</figcaption>
+      </figure>
+
+      <table>
+        <thead>
+          <tr><th></th><th>Fluid Phase (유동기)</th><th>Transitional Phase (전환기)</th><th>Specific Phase (정착기)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Innovation</strong></td>
+            <td>제품 변화 / 급진적 혁신</td>
+            <td>주요 공정 변화 / 아키텍처 혁신</td>
+            <td>점진적 혁신, 품질 개선</td>
+          </tr>
+          <tr>
+            <td><strong>Product</strong></td>
+            <td>다양한 디자인, 맞춤화</td>
+            <td>대량생산으로 차별화 감소</td>
+            <td>제품 디자인의 강한 표준화</td>
+          </tr>
+          <tr>
+            <td><strong>Competitors</strong></td>
+            <td>많은 작은 기업, 직접 경쟁 없음</td>
+            <td>많지만 지배적 설계 등장 후 감소</td>
+            <td>소수, 고전적 과점(oligopoly)</td>
+          </tr>
+          <tr>
+            <td><strong>Organization</strong></td>
+            <td>기업가적, 유기적(organic) 구조</td>
+            <td>작업 그룹이 있는 더 공식적 구조</td>
+            <td>전통적 위계 조직</td>
+          </tr>
+          <tr>
+            <td><strong>Threats</strong></td>
+            <td>옛 기술, 신규 진입자</td>
+            <td>모방자와 성공적 제품 돌파구</td>
+            <td>새로운 기술과 <strong>파괴적 혁신</strong>을 가져오는 기업들</td>
+          </tr>
+          <tr>
+            <td><strong>Process</strong></td>
+            <td>유연하지만 비효율</td>
+            <td>더 경직, 큰 단계로 변화</td>
+            <td>효율적, 자본집약적, 경직됨</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sec-dominant">
+      <h2>3. Dominant Design (지배적 설계) <span class="exam-tag">EXAM</span></h2>
+
+      <p>
+        3단계 모델의 핵심 전환점은 <strong>Dominant Design의 등장</strong>이다.
+        Fluid Phase에서 다양했던 디자인들 중 시장이 받아들이는 <strong>표준 설계</strong>가 자리잡으면, 이후 모든 경쟁은 그 설계를 전제로 한다.
+      </p>
+
+      <figure>
+        <img src="images/im05/dominant_design_curve.jpeg" alt="Product / Process Innovation 곡선">
+        <figcaption>IM05 슬라이드 — Dominant Design을 중심으로 한 제품·공정 혁신의 시기별 비중 변화</figcaption>
+      </figure>
+
+      <h3>제품 혁신과 공정 혁신의 시기별 변화</h3>
+      <ul>
+        <li><strong>Fluid Phase</strong>: <strong>제품 혁신(Product Innovation) 우세</strong> — 다양한 설계가 경쟁, 차별화가 핵심</li>
+        <li><strong>Dominant Design 등장 시점</strong>: 표준이 정해지는 결정적 분기점</li>
+        <li><strong>Transitional Phase</strong>: 제품 혁신 감소, <strong>공정 혁신(Process Innovation) 증가</strong> — 대량생산을 위한 효율화</li>
+        <li><strong>Specific Phase</strong>: 두 혁신 모두 점진적 수준으로 안정, <strong>Lowest Cost</strong>가 경쟁의 핵심</li>
+      </ul>
+
+      <h3>예시: TV 디스플레이의 진화</h3>
+      <p>PDP → LCD → LED → OLED. 시장이 점차 LCD/LED 계열로 표준화되면서 가격 경쟁이 격화되었다. 이것이 곧 <strong>Standardization</strong>의 과정이다.</p>
+
+      <div class="takeaway">
+        <h4>핵심 통찰</h4>
+        <p style="margin:0;">Dominant Design은 <strong>"가장 기술적으로 우월한" 설계가 아니다</strong>. 시장·소비자·표준 기구·네트워크 효과 등 다양한 요인이 작용한 결과다.
+          때로는 더 우수한 기술이 표준 경쟁에서 패배한다 (예: VHS vs Betamax).</p>
+      </div>
+    </section>
+
+    <section id="sec-qwerty">
+      <h2>4. QWERTY와 경로의존성 (Path Dependency)</h2>
+
+      <p>
+        Paul David(1985)의 고전 논문 <em>Clio and the Economics of QWERTY</em>가 다룬 주제.
+        Dominant Design이 한 번 자리 잡으면, 그것이 <strong>비효율적이어도 바뀌지 않는다</strong>는 현상을 설명한다.
+      </p>
+
+      <div class="definition">
+        <div class="label">DEFINITION · Path Dependency</div>
+        <p>경제적 효율성이 아니라 <strong>역사적 우연</strong>과 <strong>초기 조건</strong>에 의해 기술·제도·표준이 채택되고, 한 번 채택되면 그 경로를 벗어나기 어려운 현상.</p>
+      </div>
+
+      <h3>QWERTY 자판이 유지되는 이유 — 쿼티노믹스의 3가지 요소</h3>
+      <ol>
+        <li><strong>기술적 상호연관성 (Technical Interrelatedness)</strong>: 자판은 사용자·교육·소프트웨어 등 다른 요소들과 강하게 연결되어 있어 단독 교체가 어려움</li>
+        <li><strong>규모의 경제 (Economies of Scale)</strong>: 다수가 사용하면 사용할수록 비용이 떨어지고 표준 지위가 강화됨</li>
+        <li><strong>투자의 준비가역성 (Quasi-irreversibility of Investment)</strong>: 학습과 습관화로 인한 비가역성 — 한 번 익힌 자판을 바꾸려면 큰 학습 비용 발생</li>
+      </ol>
+
+      <p>이는 Dvorak 자판이 더 효율적임에도 QWERTY가 표준으로 유지되는 이유다. 같은 원리가 비디오테이프(VHS), 운영체제(Windows), 프로그래밍 언어 등 다양한 영역에 적용된다.</p>
+    </section>
+
+    <section id="sec-convergence">
+      <h2>5. 융합 (Convergence) <span class="exam-tag">EXAM</span></h2>
+
+      <p>
+        2000년대 이후 혁신의 가장 큰 흐름. 정보통신·바이오·나노 기술이 서로 결합하며 산업의 경계 자체가 흐려지고 있다.
+      </p>
+
+      <h3>5.1 융합의 정의 (예상문제집 빈출)</h3>
+
+      <figure>
+        <img src="images/im05/convergence_characteristics.jpeg" alt="융합의 특성">
+        <figcaption>IM05 슬라이드 — 융합의 특성 (기술/제품 관점)</figcaption>
+      </figure>
+
+      <div class="definition">
+        <div class="label">DEFINITION · Convergence</div>
+        <ul style="margin:0;padding-left:22px;">
+          <li><strong>(기술/제품 수준)</strong> 기술융합은 각 요소기술들이 <strong>화학적인(Chemical) 결합(Blending)</strong>을 통해 기존의 기술발달 경로에서 이탈한 새로운 경로와 기술로 변화하는 것</li>
+          <li><strong>(기술/제품 수준)</strong> 기술융합 과정은 <strong>"각 요소기술 성능의 Trade-off를 통해 최적의 균형 상태를 찾는 과정"</strong></li>
+          <li><strong>(산업/시장 수준)</strong> 산업/시장의 경계를 넘나듦</li>
+          <li><strong>(산업/시장 수준)</strong> 융합은 시장에서 <strong>Disruptive Innovation</strong>을 창출 (IM07로 연결)</li>
+          <li><strong>(산업/시장 수준)</strong> 융합은 <strong>가치사슬의 전면적인 재편 과정</strong></li>
+        </ul>
+      </div>
+
+      <p>핵심 키워드는 두 가지: <span class="keyword">화학적 결합(Chemical Blending)</span>과 <span class="keyword">성능 Trade-off</span>. 단순히 "더하는 것(addition)"이 아니라 요소들이 서로 영향을 주며 새로운 균형을 찾는 과정이다.</p>
+
+      <h3>5.2 융합의 동태 5단계 (Conceptual Framework)</h3>
+
+      <figure>
+        <img src="images/im05/convergence_framework.jpeg" alt="Convergence Framework">
+        <figcaption>IM05 슬라이드 — Dynamics of Technology Convergence 개념 프레임워크</figcaption>
+      </figure>
+
+      <table>
+        <thead>
+          <tr><th>단계</th><th>핵심</th><th>설명</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1. Emerging New Needs (Problems)</strong></td><td>Needs, Problems</td><td>새로운 니즈 또는 필요 성능의 등장</td></tr>
+          <tr><td><strong>2. Various Ideas</strong></td><td>Ideas</td><td>여러 가지 융합 형태에 대한 아이디어 도출</td></tr>
+          <tr><td><strong>3. Adoption of Technologies</strong></td><td>Tunability</td><td>여러 융합 형태 중 요소기술의 <strong>Tunability(조정 가능성)</strong>가 높은 기술이 채택</td></tr>
+          <tr><td><strong>4. Tuning Phase</strong></td><td>Performance Trade-off</td><td>각 요소기술 성능의 Trade-off를 통해 <strong>최적의 균형 상태</strong>를 찾음</td></tr>
+          <tr><td><strong>5. Standardization → Coevolution</strong></td><td>Standardization</td><td>융합 방식과 조건에 대한 표준화 → 융합된 요소기술 성능 및 대표 성능의 공진화 진행</td></tr>
+        </tbody>
+      </table>
+
+      <div class="takeaway">
+        <h4>왜 어떤 기술은 융합되고 어떤 기술은 융합되지 않는가</h4>
+        <p style="margin:0;">핵심은 <strong>Tunability</strong> — 한 요소기술이 다른 요소기술과 조합되었을 때 성능을 조정할 여지가 있는지 여부.
+          Tunability가 높을수록 융합 후보로 채택될 가능성이 높다. 또 다른 핵심은 <strong>"Technological disequilibrium"</strong> — 융합이 시작되는 시점에는 요소기술 간 균형이 깨져 있고,
+          이를 새로운 균형으로 끌고 가는 과정이 곧 융합이다.</p>
+      </div>
+    </section>
+
+    <section id="sec-exam">
+      <h2>예상 문제 매칭</h2>
+
+      <div class="exam-section">
+        <h4>📌 Utterback & Abernathy 동태 모델 (빈출)</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"Utterback & Abernathy의 동태적 혁신 모델 3단계를 설명하고, 각 단계에서 제품 혁신과 공정 혁신의 비중 변화를 서술하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>:</p>
+        <ul>
+          <li>3단계: Fluid → Transitional → Specific</li>
+          <li>각 단계의 핵심 변수: Innovation 유형 / Product / Competitors / Organization / Threats / Process</li>
+          <li>제품혁신: Fluid에서 정점 → 점차 감소 / 공정혁신: 점진적으로 증가 → Transitional에서 정점</li>
+          <li>핵심 분기점: <strong>Dominant Design의 등장</strong></li>
+        </ul>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 S-curve와 기술 불연속</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"기술 S-curve를 설명하고, 기술 불연속(Discontinuity) 시 신기술이 어떻게 기존 기술을 대체하는지 사례와 함께 서술하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>: 3단계(초기·중기·후기) → 물리적 한계 → 새로운 S-curve로 점프 → 공격자의 우위. 사례: 진공관 → 반도체, LP → CD 등.</p>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 QWERTY와 경로의존성 (예상문제집 19번)</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"QWERTY 사례를 통해 경로의존성(Path Dependency) 개념을 설명하고, 쿼티노믹스의 3가지 구성요소를 서술하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>: 경로의존성 정의(역사적·초기조건) → 기술적 상호연관성 / 규모의 경제 / 투자의 준비가역성. 학습·습관화의 비가역성 강조.</p>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 융합(Convergence) (예상문제집 20번)</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"기술 융합(Convergence)의 정의와 특성을 기술/제품 수준과 산업/시장 수준에서 각각 설명하시오. 융합의 동태적 5단계도 함께 서술하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>:</p>
+        <ul>
+          <li>기술/제품 수준: <strong>화학적 결합 + Performance Trade-off</strong>를 통한 새 경로 창출</li>
+          <li>산업/시장 수준: 경계 넘나듦 + 파괴적 혁신 창출 + 가치사슬 재편</li>
+          <li>5단계: Needs → Ideas → Tunability 기반 채택 → Trade-off 튜닝 → 표준화·공진화</li>
+        </ul>
+      </div>
+    </section>
+
+    <p style="margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid var(--border);padding-top:20px;">
+      ※ 이 페이지의 모든 그림은 강의자료 <code>IM05_Dynamic_Model.pdf</code>에서 발췌한 것이며, 학습 목적으로만 사용된다.
+    </p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+  </div>
+</footer>
+<script>document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>

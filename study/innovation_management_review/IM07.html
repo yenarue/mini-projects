@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IM07 · Diffusion & Disruptive | ITM501 Innovation Management</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="chapter-label">Chapter 07</div>
+    <h1>Diffusion &<br>Disruptive Innovation<br><span style="font-size:14px;color:var(--muted);font-weight:normal;">확산·캐즘·파괴적 혁신</span></h1>
+    <nav>
+      <div class="nav-section">목차</div>
+      <ul>
+        <li><a href="#sec-overview">학습 개요</a></li>
+        <li><a href="#sec-rogers">1. Rogers 확산 5계층</a></li>
+        <li><a href="#sec-chasm">2. Chasm (캐즘)</a></li>
+        <li><a href="#sec-bass">3. Bass 모델과 9가정</a></li>
+        <li><a href="#sec-disruptive">4. Christensen 파괴적 혁신</a></li>
+        <li><a href="#sec-rpv">5. RPV 프레임워크</a></li>
+        <li><a href="#sec-reconsider">6. Disruptive 재고찰</a></li>
+        <li><a href="#sec-exam">예상 문제 매칭</a></li>
+      </ul>
+      <div class="chapter-nav">
+        <a href="IM06.html">← 이전</a>
+        <a href="IM09.html">다음 →</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="breadcrumb"><a href="index.html">목록</a> › Chapter 07 · Diffusion & Disruptive</div>
+    <div class="title-block">
+      <div class="chapter-num">CHAPTER 07</div>
+      <h1>Diffusion & Disruptive Innovation · 확산과 파괴적 혁신</h1>
+    </div>
+
+    <p class="lead">
+      앞 챕터들이 <strong>공급 관점(Supply perspective)</strong>이었다면 — "기업이 무엇을 하는가" —
+      이번 챕터는 <strong>수요 관점(Demand perspective)</strong>이다. 혁신이 시장과 사회에 어떻게 퍼지고, 누가 받아들이며, 왜 받아들이지 않는가.
+      <strong>Rogers의 확산 5계층</strong>, <strong>Moore의 캐즘</strong>, <strong>Bass 모델</strong>까지가 확산 이론이고,
+      후반부는 혁신 관리에서 가장 중요한 이론 중 하나인 <strong>Christensen의 파괴적 혁신(Disruptive Innovation)</strong>을 다룬다.
+    </p>
+
+    <section id="sec-overview">
+      <h2>학습 개요</h2>
+      <ul>
+        <li><span class="term">Rogers 확산이론</span>: Innovators(2.5%) / Early Adopters(13.5%) / Early Majority(34%) / Late Majority(34%) / Laggards(16%)</li>
+        <li><span class="term">Chasm(캐즘)</span>: Early Adopters와 Early Majority 사이의 단절</li>
+        <li><span class="term">Bass curve</span>와 9가지 모델 가정</li>
+        <li><span class="term">Christensen 파괴적 혁신 vs 존속적 혁신</span>의 차이와 메커니즘</li>
+        <li><span class="term">RPV (Resource · Process · Value)</span>: 기존 기업이 파괴적 혁신에 대응하지 못하는 이유</li>
+        <li><span class="term">Low-end 거점 vs New-market 거점</span> 파괴적 혁신의 두 시작점</li>
+      </ul>
+    </section>
+
+    <section id="sec-rogers">
+      <h2>1. Rogers의 혁신 확산 이론 (1962) <span class="exam-tag">EXAM</span></h2>
+
+      <p>
+        Everett Rogers가 <em>Diffusion of Innovations</em>(1962)에서 정립한 이론.
+        <strong>"어떤 기술혁신이 사회 시스템 내의 구성원 간에 시간에 따라 특정 채널들을 통하여 전파되는 과정"</strong>으로 확산을 정의했다.
+      </p>
+
+      <figure>
+        <img src="images/im07/rogers_diffusion.jpeg" alt="Rogers 확산 5계층">
+        <figcaption>IM07 슬라이드 — Rogers의 확산 5계층과 누적 시장점유율 곡선</figcaption>
+      </figure>
+
+      <h3>5가지 채택자 계층 (Adopter Categories)</h3>
+
+      <table>
+        <thead>
+          <tr><th>계층</th><th>비율</th><th>특징</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Innovators (혁신자)</strong></td>
+            <td>2.5%</td>
+            <td>새로운 기술이 나오면 <strong>무조건 받아들이는 계층</strong>. 문제·불편이 있어도 불평하지 않음</td>
+          </tr>
+          <tr>
+            <td><strong>Early Adopters (선구자)</strong></td>
+            <td>13.5%</td>
+            <td>신기술의 진가를 알아차리고 <strong>경제적 이익·전략적 가치를 높이 사는 계층</strong>. 분석할 줄 아는 계층</td>
+          </tr>
+          <tr>
+            <td><strong>Early Majority (전기 다수)</strong></td>
+            <td>34%</td>
+            <td>실용적 구매 계층. 기본적으로 첨단 기술에 관심은 있으나 <strong>모험을 하고자 하지 않으며</strong>, 신기술이 성숙될 때까지 기다림</td>
+          </tr>
+          <tr>
+            <td><strong>Late Majority (후기 다수)</strong></td>
+            <td>34%</td>
+            <td>첨단 기술에 부정적인 시각. <strong>신기술이 업계의 표준으로 인정받지 못하면 이를 도입하지 않음</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Laggards (지각자)</strong></td>
+            <td>16%</td>
+            <td>신기술을 활용하지만 기술의 존재나 이용 방법 등을 알지 못하는 계층</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="takeaway">
+        <h4>외워두면 좋은 비율</h4>
+        <p style="margin:0;"><strong>2.5 · 13.5 · 34 · 34 · 16</strong> — 정규분포의 누적 비율을 떠올리면 됨. 합이 100%.
+          시험에서 "각 계층의 비율과 특징을 쓰시오" 형태로 자주 출제된다.</p>
+      </div>
+    </section>
+
+    <section id="sec-chasm">
+      <h2>2. Chasm (캐즘) — Geoffrey Moore</h2>
+
+      <p>
+        Geoffrey Moore가 <em>Crossing the Chasm</em>(1991)에서 제시한 개념. Rogers의 곡선에는 보이지 않는 <strong>치명적 단절</strong>이 존재한다는 발견이다.
+        <strong>Early Adopters와 Early Majority 사이</strong>에 깊은 골(chasm)이 있어, 많은 신기술이 여기에서 좌초한다.
+      </p>
+
+      <figure>
+        <img src="images/im07/chasm.jpeg" alt="Chasm 캐즘">
+        <figcaption>IM07 슬라이드 — Moore의 Chasm: 초기시장과 주류시장 사이의 단절</figcaption>
+      </figure>
+
+      <h3>각 단계의 단절과 그 원인</h3>
+      <table>
+        <thead>
+          <tr><th>단절 위치</th><th>발생 원인</th><th>극복 방법</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>혁신자 ↔ 초기수용자</td>
+            <td>신기술의 잠재적 가치와 용도가 실질적으로 나타나지 않을 때</td>
+            <td>신기술의 확실한 활용성을 제시</td>
+          </tr>
+          <tr>
+            <td><strong>초기수용자 ↔ 전기다수 (Chasm)</strong></td>
+            <td><strong>두 계층 간 가치관 차이</strong> — 선구자는 비전과 가능성을 보고, 실용주의자는 검증된 솔루션과 레퍼런스를 본다</td>
+            <td><strong>쉽지 않음</strong>. 완전제품(whole product), 레퍼런스, 표준화, 보완재 등으로 극복</td>
+          </tr>
+          <tr>
+            <td>전기다수 ↔ 후기다수</td>
+            <td>기능 보강이나 가격 인하가 실현되지 못할 때</td>
+            <td>가격·납기 단축, 다양한 기능 개선</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Chasm을 건너기 위한 핵심 원칙</h3>
+      <ul>
+        <li><strong>완전제품(Whole Product)</strong>이 성공의 결정적 요소</li>
+        <li>하이테크 기업은 주류 시장에 자리잡기 전까지는 자신을 증명한 것이 아니다 — 초기 시장의 성공만으로는 부족</li>
+        <li>특정 niche를 깊이 공략하여 거점을 마련한 후 인접 시장으로 확장</li>
+      </ul>
+    </section>
+
+    <section id="sec-bass">
+      <h2>3. Bass Curve와 9가지 모델 가정 <span class="exam-tag">EXAM</span></h2>
+
+      <p>
+        Frank Bass(1969)의 모델. 확산 과정을 <strong>혁신자(Innovator)와 모방자(Imitator)의 두 흐름</strong>으로 단순화하여 수학적으로 표현한 모델이다.
+      </p>
+
+      <figure>
+        <img src="images/im07/bass_curve.jpeg" alt="Bass Curve와 9가정">
+        <figcaption>IM07 슬라이드 — Bass curve와 9가지 모델 가정</figcaption>
+      </figure>
+
+      <h3>Bass 모델의 핵심 — 두 가지 채택 경로</h3>
+      <ul>
+        <li><strong>외부 영향(Innovation Effect)</strong>: 매스미디어·광고 등 외부에서의 영향으로 채택. Innovator층이 여기에 해당</li>
+        <li><strong>내부 영향(Imitation Effect)</strong>: 이미 채택한 사람들과의 상호작용(word-of-mouth)으로 채택. Imitator층이 여기에 해당</li>
+      </ul>
+
+      <h3>Bass 모델의 9가지 가정</h3>
+      <ol>
+        <li>새로운 제품의 <strong>시장규모는 시간의 경과에 관계없이 고정</strong>되어 있다</li>
+        <li>신제품의 확산은 <strong>다른 신제품과 독립적</strong>이다</li>
+        <li>신제품의 성격은 시간이 경과해도 변하지 않는다</li>
+        <li>사회 시스템의 지리적 경계는 확산 과정에서 변하지 않는다</li>
+        <li>확산 과정은 두 단계 과정이다 (Innovation effect + Imitation effect)</li>
+        <li>신제품의 확산은 기업의 마케팅 전략에 의해 영향을 받지 않는다</li>
+        <li>제품과 시장의 특성은 확산 패턴에 영향을 미치지 않는다</li>
+        <li>제품에 대한 공급 측면의 제한은 없다</li>
+        <li>제품 채택자는 한 번의 구매만을 행한다</li>
+      </ol>
+
+      <div class="takeaway">
+        <h4>Bass 모델 가정의 의의와 한계</h4>
+        <p style="margin:0;">9가지 가정 모두가 <strong>강한 단순화</strong>다. 그래서 실제 적용 시 한계가 분명하다.
+          (예: 마케팅 영향이 없다는 가정은 비현실적). 시험에서는 "Bass 모델의 가정을 비판적으로 평가하시오" 같은 변형 출제도 가능.</p>
+      </div>
+    </section>
+
+    <section id="sec-disruptive">
+      <h2>4. Christensen의 파괴적 혁신 (Disruptive Innovation) <span class="exam-tag">EXAM</span></h2>
+
+      <p>
+        Clayton Christensen이 <em>The Innovator's Dilemma</em>(1997)에서 정립한 이론.
+        지난 30년간 혁신 경영에 가장 큰 영향을 준 이론 중 하나로, "<strong>왜 잘 나가던 기업이 무너지는가</strong>"라는 질문에 답한다.
+      </p>
+
+      <h3>4.1 파괴적 혁신의 정의</h3>
+
+      <figure>
+        <img src="images/im07/christensen_definition.jpeg" alt="Christensen 정의">
+        <figcaption>IM07 슬라이드 — Christensen의 파괴적 혁신 정의</figcaption>
+      </figure>
+
+      <div class="definition">
+        <div class="label">DEFINITION · Disruptive Innovation</div>
+        <p>"<strong>A process by which a product or service takes root initially in simple applications at the bottom of a market and then relentlessly moves up market</strong>, eventually displacing established competitors."</p>
+        <p style="margin-top:6px;">즉, <strong>시장의 하단(또는 비소비자 영역)에서 단순한 응용으로 시작</strong>하여, 점차 상위 시장으로 거침없이 이동해 결국 기존 경쟁자를 대체하는 과정.</p>
+      </div>
+
+      <h3>4.2 존속적 혁신 vs 파괴적 혁신</h3>
+
+      <figure>
+        <img src="images/im07/disruptive_innovation.jpeg" alt="Disruptive Innovation 그래프">
+        <figcaption>IM07 슬라이드 — Christensen의 파괴적 혁신 다이어그램</figcaption>
+      </figure>
+
+      <table>
+        <thead>
+          <tr><th></th><th>Sustaining Innovation (존속적)</th><th>Disruptive Innovation (파괴적)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>대상 고객</strong></td><td>기존 주류 고객 (incumbent's existing customers)</td><td>Low-end 고객 또는 비소비자(non-consumer)</td></tr>
+          <tr><td><strong>제품 평가</strong></td><td>기존 성능 축에서 <strong>더 좋은 제품</strong></td><td>기존 성능 축에서는 처음에 <strong>저급(inferior)</strong>으로 간주됨</td></tr>
+          <tr><td><strong>주된 성능</strong></td><td>점진적·급진적 성능 개선</td><td>다른 차원의 성능 (예: 저가, 사용 편의성, 휴대성)</td></tr>
+          <tr><td><strong>가격</strong></td><td>주류 또는 프리미엄</td><td>저가</td></tr>
+          <tr><td><strong>주요 추진 주체</strong></td><td>기존 기업</td><td>신생 기업 (disrupter)</td></tr>
+          <tr><td><strong>예시</strong></td><td>고성능 데스크톱, 4K TV, 최신 카메라</td><td>Wii(저성능·저가·쉬운 게임), 트랜지스터 라디오, 미니컴퓨터, Netflix</td></tr>
+        </tbody>
+      </table>
+
+      <h3>4.3 파괴적 혁신의 메커니즘 — 두 가지 시작점</h3>
+
+      <figure>
+        <img src="images/im07/disruptive_mechanism.jpeg" alt="Disruptive Innovation 메커니즘">
+        <figcaption>IM07 슬라이드 — Disruptive Innovation의 두 가지 시작점</figcaption>
+      </figure>
+
+      <ol>
+        <li><strong>Low-end 거점</strong>: 기존 기업들은 수익 창출이 작은 low-end 시장을 간과(over-served customers).
+          Disrupter들은 처음에는 이 시장에서 적정한 제품을 공급</li>
+        <li><strong>New-market 거점</strong>: Disrupter들은 아무 기업도 존재하지 않는 시장을 만듦.
+          즉, <strong>비소비자(non-consumer)들을 소비자로 만드는 방법</strong>을 찾음</li>
+      </ol>
+
+      <h3>4.4 파괴적 혁신의 3가지 특성</h3>
+      <ol>
+        <li><strong>수요에 기반한 기술 변화</strong> — 새 기술이 새 수요를 만나면 일어남</li>
+        <li><strong>점진적 혁신의 중요성</strong> — 파괴적 혁신도 처음에는 단순하지만 점진적으로 성능을 끌어올림</li>
+        <li><strong>신시장 와해 — 가치 네트워크(Value network) 기반 혁신</strong> — Non-consumer, 성능 축 변화 (Dimension을 달리하는 네트워크 구조)</li>
+      </ol>
+    </section>
+
+    <section id="sec-rpv">
+      <h2>5. RPV — 왜 기존 기업은 파괴적 혁신에 대응하지 못하는가 <span class="exam-tag">EXAM</span></h2>
+
+      <p>
+        Christensen이 제시한 핵심 분석 도구. <strong>Resources, Processes, Values</strong>의 약자다.
+        조직이 무엇을 할 수 있고 무엇을 할 수 없는지를 결정하는 3요소.
+      </p>
+
+      <figure>
+        <img src="images/im07/rpv_framework.jpeg" alt="RPV 프레임워크">
+        <figcaption>IM07 슬라이드 — RPV가 파괴적 혁신 극복을 어렵게 하는 이유</figcaption>
+      </figure>
+
+      <h3>RPV의 3요소</h3>
+      <table>
+        <thead>
+          <tr><th>요소</th><th>의미</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>R · Resources (자원)</strong></td><td>사람, 자본, 기술, 브랜드, 제품, 정보, 공급망 등 — 자원은 비교적 유연하게 이동 가능</td></tr>
+          <tr><td><strong>P · Processes (프로세스)</strong></td><td>자원을 가치로 변환하는 패턴 — 의사결정, 개발, 제조, 채용 등의 반복적 활동</td></tr>
+          <tr><td><strong>V · Values (가치 기준)</strong></td><td>조직의 우선순위 — 어떤 고객·매출·이익을 중요하게 여길지 결정하는 기준</td></tr>
+        </tbody>
+      </table>
+
+      <h3>기존 기업이 파괴적 혁신에 대응하지 못하는 이유</h3>
+      <ul>
+        <li>조직은 RPV의 <strong>반복적인 활동</strong>을 통해 조직 목표를 달성</li>
+        <li>RPV 안에는 <strong>존속적 혁신 메커니즘이 내재</strong>되어 있음</li>
+        <li>파괴적 혁신은 시장 규모·이윤·고객 등의 면에서 존속적 혁신 메커니즘이 <strong>아님</strong></li>
+        <li>따라서 기존 조직의 RPV에서 <strong>실행 불가능</strong></li>
+      </ul>
+
+      <div class="exam-section" style="margin-top:16px;">
+        <h4>📌 "끼워넣기"의 실패</h4>
+        <p style="margin:0;">기존 조직이 "그래도 한 번 어떻게라도 해보자" 하면 발생하는 패턴 — 새로운 파괴적 기술을 새로운 경로 개척에 쓰지 않고
+          "기존 고객을 공략하자"는 기존 당연한 용도로밖에 활용 못 함. <strong>결국 신생 기술의 비용구조와 가치 네트워크는 기존 조직과 맞지 않아 실패</strong>.</p>
+      </div>
+
+      <h3>해결책 — 별도 조직 운영</h3>
+      <p>Christensen의 처방: 파괴적 혁신을 추진하려면 <strong>독립된 조직(separate organization)</strong>에서 추진해야 한다.
+        그 조직은 그 시장에 맞는 RPV를 새로 형성하기 때문이다 (예: IBM의 PC 사업부, GM의 새턴).</p>
+    </section>
+
+    <section id="sec-reconsider">
+      <h2>6. Disruptive Innovation 재고찰 (Christensen, 2015)</h2>
+
+      <p>
+        Christensen, Raynor, McDonald(2015) <em>HBR</em> 논문에서 자기 이론을 재고찰. 핵심은 "<strong>Disruptive Innovation 개념이 너무 남용되고 있다</strong>"는 것.
+      </p>
+
+      <h3>Uber는 disruptive innovation인가?</h3>
+      <ul>
+        <li>Uber의 모바일 앱은 자동차를 타고자 하는 소비자를 운전자와 연결</li>
+        <li>그러나 disruptive innovation은 <strong>low-end 또는 new market(non-consumer 공략)을 거점</strong>으로 발생</li>
+        <li>Uber는 처음부터 기존 택시의 주류 고객을 공략 → <strong>sustaining innovation에 가까움</strong></li>
+        <li>다만, 리무진·black car 사업 입장에서는 disruptive 성격을 가짐</li>
+      </ul>
+
+      <div class="takeaway">
+        <h4>핵심 메시지</h4>
+        <p style="margin:0;"><strong>"기존 기업이 무너지고 망하는 경우를 모두 disruptive innovation으로 설명하려고 해서는 안 됨"</strong>.
+          Disruption은 자원을 더 적게 가진 작은 기업이 이미 자리잡은 기존 기업에 성공적으로 대적하는 <strong>시간을 갖는 과정(Not 제품, 서비스)</strong>이다.</p>
+      </div>
+    </section>
+
+    <section id="sec-exam">
+      <h2>예상 문제 매칭</h2>
+
+      <div class="exam-section">
+        <h4>📌 Rogers 확산 5계층</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"Rogers의 혁신 확산 이론 5계층을 비율과 특징을 포함하여 설명하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>: Innovators(2.5%) → Early Adopters(13.5%) → Early Majority(34%) → Late Majority(34%) → Laggards(16%). 각 계층의 가치관·구매 동기·표준 의존성.</p>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 Chasm</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"Moore의 Chasm 이론을 설명하고, 캐즘 발생 원인과 극복 방안을 서술하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>: Early Adopters ↔ Early Majority 사이의 가치관 차이 → 비전 추구 vs 검증된 솔루션 추구. 극복: 완전제품, niche 집중, 레퍼런스 확보.</p>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 Bass 모델</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"Bass 확산 모델의 핵심 구조와 9가지 가정을 설명하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>: Innovator(외부영향) + Imitator(내부영향) 두 흐름. 9가지 가정: 시장규모 고정, 독립성, 성격 불변, 지리 불변, 두 단계, 마케팅 영향 없음, 제품·시장 특성 영향 없음, 공급 제한 없음, 한 번 구매.</p>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 파괴적 혁신 vs 존속적 혁신 (핵심 빈출)</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"Christensen의 파괴적 혁신과 존속적 혁신을 비교 설명하고, 파괴적 혁신의 두 가지 시작점(low-end vs new-market)을 사례와 함께 서술하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>:</p>
+        <ul>
+          <li>존속: 주류 고객 + 기존 성능 축 + 더 좋은 제품 / 파괴: low-end 또는 비소비자 + 다른 성능 축 + 초기엔 저급</li>
+          <li>두 시작점: <strong>Low-end 거점</strong>(과잉 성능 시장의 간과된 영역) + <strong>New-market 거점</strong>(비소비자를 소비자로)</li>
+          <li>3가지 특성: 수요 기반 기술변화 / 점진적 혁신의 중요성 / 가치 네트워크 기반</li>
+          <li>사례: Wii, 트랜지스터 라디오, 미니컴퓨터, Netflix</li>
+        </ul>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 RPV — 끼워넣기의 실패 (핵심 빈출)</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"RPV (Resources, Processes, Values) 프레임워크를 설명하고, 기존 기업이 파괴적 혁신에 대응하기 어려운 이유를 서술하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>: RPV 정의 → 조직은 RPV 반복 활동으로 목표 달성 → RPV에 존속적 혁신 메커니즘 내재 → 파괴적 혁신은 시장규모·이윤·고객이 다름 → 기존 RPV로 실행 불가 → "끼워넣기"의 실패 → 별도 조직 운영이 해결책.</p>
+      </div>
+
+      <div class="exam-section">
+        <h4>📌 Disruptive Innovation 재고찰 (심화)</h4>
+        <div class="exam-q">
+          <div class="q-label">예상 출제 형태</div>
+          <p style="margin:0;">"Uber가 disruptive innovation인지 Christensen 이론에 기반하여 분석하시오."</p>
+        </div>
+        <p><strong>답안 핵심</strong>: Disruption은 low-end 또는 non-consumer 거점에서 시작 → Uber는 기존 택시 주류 고객을 공략 → sustaining에 가까움. 다만 리무진·black car에는 disruptive 성격. <strong>"기존 기업의 실패를 모두 disruption으로 부르지 말 것"</strong>.</p>
+      </div>
+    </section>
+
+    <p style="margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid var(--border);padding-top:20px;">
+      ※ 이 페이지의 모든 그림은 강의자료 <code>IM07_Diffusion_Disruptive.pdf</code>에서 발췌한 것이며, 학습 목적으로만 사용된다.
+    </p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+  </div>
+</footer>
+<script>document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>
