@@ -15,11 +15,11 @@
       <div class="nav-section">목차</div>
       <ul>
         <li><a href="#sec-overview">학습 개요</a></li>
-        <li><a href="#sec-rogers">1. Rogers 확산 이론</a></li>
+        <li><a href="#sec-rogers">1. Rogers 혁신 확산 이론</a></li>
         <li><a href="#sec-tam">2. TAM 기술수용모델</a></li>
         <li><a href="#sec-resistance">3. 혁신 저항</a></li>
         <li><a href="#sec-chasm">4. Chasm (캐즘)</a></li>
-        <li><a href="#sec-bass">5. Bass 모델과 9가정</a></li>
+        <li><a href="#sec-bass">5. Bass Curve 모델과 9가정</a></li>
         <li><a href="#sec-disruptive">6. Christensen 파괴적 혁신</a></li>
         <li><a href="#sec-rpv">7. RPV 프레임워크</a></li>
         <li><a href="#sec-reconsider">8. Disruptive 재고찰</a></li>
@@ -49,7 +49,7 @@
     <section id="sec-overview">
       <h2>학습 개요</h2>
       <ul>
-        <li><span class="term">Rogers 확산이론</span>: 혁신 의사결정 과정(지식 → 설득 → 결정 → 수행 → 확정) + 채택자 5계층</li>
+        <li><span class="term">Rogers 혁신 확산 이론</span>: 혁신 의사결정 과정(지식 → 설득 → 결정 → 수행 → 확정) + 채택자 5계층</li>
         <li><span class="term">TAM</span>: 인지된 유용성과 인지된 용이성이 태도·이용의도에 영향을 주는 기술수용모델</li>
         <li><span class="term">혁신 저항</span>: 수용의 단순한 반대가 아니라 소비자가 수용·기각·수정행동으로 반응하는 과정</li>
         <li><span class="term">Chasm(캐즘)</span>: Early Adopters와 Early Majority 사이의 단절</li>
@@ -319,19 +319,50 @@
       <h2>5. Bass Curve와 9가지 모델 가정 <span class="exam-tag">EXAM</span></h2>
 
       <p>
-        Frank Bass(1969)의 모델. 확산 과정을 <strong>혁신자(Innovator)와 모방자(Imitator)의 두 흐름</strong>으로 단순화하여 수학적으로 표현한 모델이다.
+        Frank Bass(1969)의 모델. 혁신의 확산 과정을 <strong>혁신자(Innovator)와 모방자(Imitator)의 두 흐름</strong>으로 단순화하여 수학적으로 표현한 모델이다.
+      </p>
+
+      <p>
+        즉 Bass 확산모델은 <strong>신제품이나 신기술이 시간에 따라 어떻게 시장에 퍼지는가</strong>를 계량적으로 설명하는 모델이다.
+        Rogers의 혁신확산이론이 "누가 먼저 받아들이고, 어떻게 확산되는가"를 정성적으로 설명했다면,
+        Bass 모델은 그 과정을 <strong>수식과 곡선</strong>으로 표현한 대표적 확산모델이라고 볼 수 있다.
       </p>
 
       <figure>
         <img src="images/im07/bass_curve.jpeg" alt="Bass Curve와 9가정">
-        <figcaption>IM07 슬라이드 — Bass curve와 9가지 모델 가정</figcaption>
+        <img src="images/im07/bass_curve_p_q.png" alt="Bass Curve의 혁신자, 모방자">
+        <figcaption>IM07 슬라이드 — Bass curve, p(혁신가 효과)와 q(모방 효과), 그리고 9가지 모델 가정</figcaption>
       </figure>
 
       <h3>Bass 모델의 핵심 — 두 가지 채택 경로</h3>
+      <p>
+        Bass 모델은 소비자의 채택이 <strong>두 가지 영향</strong>에 의해 발생한다고 가정한다.
+        하나는 광고·언론·정부정책 같은 <strong>외부 자극</strong>에 의한 채택이고, 다른 하나는 이미 사용 중인 사람들의
+        <strong>입소문과 모방</strong>에 의한 채택이다.
+      </p>
+
       <ul>
-        <li><strong>외부 영향(Innovation Effect)</strong>: 매스미디어·광고 등 외부에서의 영향으로 채택. Innovator층이 여기에 해당</li>
-        <li><strong>내부 영향(Imitation Effect)</strong>: 이미 채택한 사람들과의 상호작용(word-of-mouth)으로 채택. Imitator층이 여기에 해당</li>
+        <li><strong>외부 영향 = 혁신가 효과 (Innovation Effect, p)</strong>: 광고, 언론, 정부 정책 등 외부 자극 때문에 제품을 처음 도입하는 경우. 초기 채택을 여는 힘이다.</li>
+        <li><strong>내부 영향 = 모방 효과 (Imitation Effect, q)</strong>: 이미 채택한 사람들과의 상호작용, 입소문, 네트워크 효과 때문에 뒤따라 도입하는 경우. 대중 확산을 키우는 힘이다.</li>
       </ul>
+
+      <div class="definition">
+        <div class="label">KEY IDEA · p 와 q</div>
+        <p><strong>p</strong>는 "처음 사게 만드는 외부 자극의 힘", <strong>q</strong>는 "남들이 쓰는 것을 보고 따라 사게 만드는 내부 확산의 힘"이다.
+          Bass 모델의 핵심은 신기술 확산이 <strong>초기의 혁신가 도입 + 이후의 모방 확산</strong>이 결합된 과정이라는 점을 수학적으로 설명했다는 데 있다.</p>
+      </div>
+
+      <h3>왜 S자 곡선이 나타나는가</h3>
+      <p>
+        초기에는 아직 사용자가 적기 때문에 <strong>혁신가 효과 p</strong>가 상대적으로 중요하고, 확산 속도도 비교적 느리게 시작된다.
+        그러나 시간이 지나 채택자가 늘어나면 입소문과 사회적 상호작용이 강해지면서 <strong>모방 효과 q</strong>가 커지고,
+        이 시점부터 확산 속도가 급격히 증가한다.
+      </p>
+
+      <p>
+        이후 시장이 점차 포화되면 새롭게 유입될 소비자가 줄어들기 때문에 확산 속도는 다시 감소한다.
+        그래서 누적 채택량은 <strong>S자 형태</strong>를, 기간별 채택량은 보통 <strong>종 모양 곡선</strong>을 보이게 된다.
+      </p>
 
       <h3>Bass 모델의 9가지 가정</h3>
       <ol>
