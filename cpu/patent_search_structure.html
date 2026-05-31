@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 보안 기술 통합 특허검색식 기본구조</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --navy: #0f1e3c;
+    --navy-mid: #1a2f52;
+    --navy-light: #223566;
+    --accent-blue: #2563eb;
+    --accent-cyan: #0ea5e9;
+    --accent-gold: #f59e0b;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --border: #cbd5e1;
+    --border-light: #e2e8f0;
+    --bg-header: #0f1e3c;
+    --bg-sub: #1e3a5f;
+    --bg-row-even: #f8fafc;
+    --bg-row-odd: #ffffff;
+    --tag-1: #dbeafe;
+    --tag-1-text: #1e40af;
+    --tag-2: #dcfce7;
+    --tag-2-text: #166534;
+    --tag-3: #fef9c3;
+    --tag-3-text: #854d0e;
+    --tag-shared: #f3e8ff;
+    --tag-shared-text: #6b21a8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f1f5f9;
+    padding: 40px 32px;
+    color: var(--text-primary);
+    min-height: 100vh;
+  }
+
+  .wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .page-header {
+    background: var(--navy);
+    border-radius: 12px 12px 0 0;
+    padding: 24px 32px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .header-check {
+    width: 30px;
+    height: 30px;
+    background: var(--accent-blue);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .header-check svg { width: 18px; height: 18px; }
+
+  .header-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+  }
+
+  .header-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: #94a3b8;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  /* Legend bar */
+  .legend-bar {
+    background: var(--navy-mid);
+    padding: 10px 32px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .legend-label {
+    font-size: 11px;
+    color: #94a3b8;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.5px;
+    margin-right: 4px;
+  }
+  .legend-items { display: flex; gap: 12px; flex-wrap: wrap; }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+  }
+  .ldot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .ldot-1 { background: #60a5fa; }
+  .ldot-2 { background: #34d399; }
+  .ldot-3 { background: #fbbf24; }
+  .ldot-s { background: #c084fc; }
+  .legend-item span { color: #cbd5e1; }
+
+  /* Table container */
+  .table-wrap {
+    background: white;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(15,30,60,0.10);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Column widths */
+  col.col-elem { width: 19%; }
+  col.col-content { width: 81%; }
+
+  /* Section header rows */
+  .row-section-head th {
+    background: var(--navy);
+    color: #e2e8f0;
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-bottom: 1px solid var(--navy-light);
+  }
+
+  /* Column header */
+  .row-col-head th {
+    background: var(--navy-light);
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 13px 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .row-col-head th:first-child { text-align: center; }
+
+  /* Data rows */
+  tr.row-even td { background: var(--bg-row-even); }
+  tr.row-odd td { background: var(--bg-row-odd); }
+
+  td {
+    padding: 14px 20px;
+    vertical-align: top;
+    border: 1px solid var(--border-light);
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  td.cell-elem {
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--navy);
+    vertical-align: middle;
+    border-right: 2px solid var(--border);
+    background: #f8fafc;
+    line-height: 1.5;
+  }
+
+  td.cell-content {
+    color: var(--text-secondary);
+  }
+
+  /* Formula block */
+  .formula-box {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: #e2e8f0;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  .f-op { color: #f472b6; font-weight: 600; }
+  .f-field { color: #38bdf8; }
+  .f-val { color: #86efac; }
+  .f-comment { color: #64748b; font-style: italic; }
+  .f-paren { color: #fbbf24; }
+
+  /* Tags */
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .tag {
+    font-size: 11.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .t1 { background: var(--tag-1); color: var(--tag-1-text); }
+  .t2 { background: var(--tag-2); color: var(--tag-2-text); }
+  .t3 { background: var(--tag-3); color: var(--tag-3-text); }
+  .ts { background: var(--tag-shared); color: var(--tag-shared-text); }
+
+  /* Sub-label inside cell */
+  .sub-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .sub-label:first-child { margin-top: 0; }
+
+  /* Three-col sub layout */
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .three-col-item {
+    border-radius: 7px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+  }
+  .col-item-1 { background: #eff6ff; border-color: #bfdbfe; }
+  .col-item-2 { background: #f0fdf4; border-color: #bbf7d0; }
+  .col-item-3 { background: #fffbeb; border-color: #fde68a; }
+  .col-item-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .col-item-1 .col-item-title { color: #1e40af; }
+  .col-item-2 .col-item-title { color: #166534; }
+  .col-item-3 .col-item-title { color: #92400e; }
+  .col-item-body {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Separator within row */
+  .sep { border-top: 1px dashed var(--border-light); margin: 10px 0; }
+
+  /* NOT row special */
+  .not-box {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 7px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #9f1239;
+    line-height: 1.7;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .not-label { font-weight: 700; color: #be123c; margin-right: 6px; }
+
+  /* Period row */
+  .period-box {
+    display: inline-block;
+    background: var(--navy);
+    color: #7dd3fc;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Scope note */
+  .scope-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+
+  /* Bottom note */
+  .bottom-note {
+    margin-top: 18px;
+    padding: 14px 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-blue);
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .bottom-note strong { color: var(--navy); }
+
+  /* Highlight keyword */
+  .kw { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 12.5px; }
+  .kw-or { color: #b45309; }
+  .kw-and { color: #1d4ed8; }
+  .kw-not { color: #be123c; }
+
+  /* Section divider inside table */
+  .divider-row td {
+    background: #f1f5f9;
+    padding: 0;
+    height: 4px;
+    border: none;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="page-header">
+    <div class="header-check">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 10.5L8 14.5L16 6.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="header-title">AI 보안 3대 기술 — 통합 특허검색식 기본구조</div>
+    <div class="header-sub">Unified Patent Search Framework · 3 Domains</div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend-bar">
+    <span class="legend-label">기술 도메인 범례</span>
+    <div class="legend-items">
+      <div class="legend-item"><div class="ldot ldot-1"></div><span>① 이상 쿼리 탐지</span></div>
+      <div class="legend-item"><div class="ldot ldot-2"></div><span>② 응답 교란</span></div>
+      <div class="legend-item"><div class="ldot ldot-3"></div><span>③ 내장형 워터마킹</span></div>
+      <div class="legend-item"><div class="ldot ldot-s"></div><span>공통 적용</span></div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col class="col-elem">
+        <col class="col-content">
+      </colgroup>
+
+      <!-- Section A: 기본 구조 -->
+      <tr class="row-section-head">
+        <th colspan="2">A. 통합 검색식 기본 구조 (Master Formula)</th>
+      </tr>
+      <tr class="row-col-head">
+        <th>검색식 구성요소</th>
+        <th>내용</th>
+      </tr>
+      <tr class="row-even">
+        <td class="cell-elem">기본 구조<br><span style="font-size:11px;font-weight:400;color:#64748b;">(통합 공식)</span></td>
+        <td class="cell-content">
+          <div class="formula-box">
+<span class="f-paren">(</span><span class="f-field">TI/AB</span> <span class="f-op">=</span> <span class="f-val">AI보안 도메인 키워드</span><span class="f-paren">)</span>
+<span class="f-op">AND</span>
+<span class="f-paren">((</span><span class="f-field">TI/AB</span> <span class="f-op">=</span> <span class="f-val">보안 위협·공격 대상 키워드</span><span class="f-paren">)</span>
+<span class="f-op">OR</span>
+<span class="f-paren">(</span><span class="f-field">TI/AB</span> <span class="f-op">=</span> <span class="f-val">보호·방어 메커니즘 키워드</span><span class="f-paren">))</span>
+<span class="f-op">AND</span>
+<span class="f-paren">(</span><span class="f-field">TI/AB</span> <span class="f-op">=</span> <span class="f-val">기술 방법론·행위 키워드</span><span class="f-paren">)</span>
+<span class="f-op">AND</span>
+<span class="f-paren">(</span><span class="f-field">TI/AB</span> <span class="f-op">=</span> <span class="f-val">중·소분류 특화 키워드</span><span class="f-paren">)</span>
+<span class="f-op">NOT</span>
+<span class="f-paren">(</span><span class="f-field">TI/AB</span> <span class="f-op">=</span> <span class="f-val">노이즈 키워드</span><span class="f-paren">)</span>
+<span class="f-op">AND</span> <span class="f-field">AD</span><span class="f-op">=</span><span class="f-paren">(</span><span class="f-val">20100101:20241231</span><span class="f-paren">)</span>
+          </div>
+          <div class="scope-note">
+            ※ 세 기술 도메인 공통: <span class="kw kw-and">AND</span>는 개념 간 필수 결합, <span class="kw kw-or">OR</span>는 동일 개념 유사어 확장, <span class="kw kw-not">NOT</span>은 비관련 노이즈 제거에 적용
+          </div>
+        </td>
+      </tr>
+
+      <!-- Section B: 구성요소별 상세 -->
+      <tr class="divider-row"><td colspan="2"></td></tr>
+      <tr class="row-section-head">
+        <th colspan="2">B. 구성요소별 세부 내용 (Component Details)</th>
+      </tr>
+      <tr class="row-col-head">
+        <th>검색식 구성요소</th>
+        <th>내용</th>
+      </tr>
+
+      <!-- Row 1: AI 보안 도메인 -->
+      <tr class="row-odd">
+        <td class="cell-elem">① AI 보안<br>도메인 키워드<br><span style="font-size:11px;font-weight:400;color:#64748b;">("AND"로 연결)</span></td>
+        <td class="cell-content">
+          <div class="sub-label">공통 적용 범위</div>
+          <div class="tags">
+            <span class="tag ts">AI security</span>
+            <span class="tag ts">machine learning security</span>
+            <span class="tag ts">deep learning</span>
+            <span class="tag ts">neural network</span>
+            <span class="tag ts">LLM</span>
+            <span class="tag ts">generative model</span>
+          </div>
+          <div class="sep"></div>
+          <div class="three-col">
+            <div class="three-col-item col-item-1">
+              <div class="col-item-title">① 이상 쿼리 탐지</div>
+              <div class="col-item-body">database*, query*, SQL*, data access*, DBMS*</div>
+            </div>
+            <div class="three-col-item col-item-2">
+              <div class="col-item-title">② 응답 교란</div>
+              <div class="col-item-body">adversarial*, model output*, inference*, prediction*, generation*</div>
+            </div>
+            <div class="three-col-item col-item-3">
+              <div class="col-item-title">③ 내장형 워터마킹</div>
+              <div class="col-item-body">digital media*, image*, audio*, video*, text*, AI-generated*</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row 2: 보안 위협·공격 대상 -->
+      <tr class="row-even">
+        <td class="cell-elem">② 보안 위협·<br>공격 대상<br>키워드<br><span style="font-size:11px;font-weight:400;color:#64748b;">("OR"로 연결)</span></td>
+        <td class="cell-content">
+          <div class="sub-label">공통 상위 개념</div>
+          <div class="tags">
+            <span class="tag ts">attack*</span>
+            <span class="tag ts">threat*</span>
+            <span class="tag ts">intrusion*</span>
+            <span class="tag ts">malicious*</span>
+            <span class="tag ts">anomal*</span>
+            <span class="tag ts">abnormal*</span>
+            <span class="tag ts">unauthorized*</span>
+          </div>
+          <div class="sep"></div>
+          <div class="three-col">
+            <div class="three-col-item col-item-1">
+              <div class="col-item-title">① 이상 쿼리 탐지</div>
+              <div class="col-item-body">"anomalous query", "malicious query", "SQL injection", "query injection", "suspicious query", "irregular query"</div>
+            </div>
+            <div class="three-col-item col-item-2">
+              <div class="col-item-title">② 응답 교란</div>
+              <div class="col-item-body">"adversarial attack", "data poisoning", "backdoor attack", "prompt injection", jailbreak*, "model inversion", "membership inference"</div>
+            </div>
+            <div class="three-col-item col-item-3">
+              <div class="col-item-title">③ 내장형 워터마킹</div>
+              <div class="col-item-body">"copyright infringement", "content forgery", "media tampering", "provenance violation", "ownership dispute"</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row 3: 보호·방어 메커니즘 -->
+      <tr class="row-odd">
+        <td class="cell-elem">③ 보호·방어<br>메커니즘<br>키워드<br><span style="font-size:11px;font-weight:400;color:#64748b;">("OR"로 연결)</span></td>
+        <td class="cell-content">
+          <div class="sub-label">공통 방어 개념</div>
+          <div class="tags">
+            <span class="tag ts">protect*</span>
+            <span class="tag ts">secur*</span>
+            <span class="tag ts">authenticat*</span>
+            <span class="tag ts">verif*</span>
+            <span class="tag ts">robust*</span>
+            <span class="tag ts">privacy*</span>
+          </div>
+          <div class="sep"></div>
+          <div class="three-col">
+            <div class="three-col-item col-item-1">
+              <div class="col-item-title">① 이상 쿼리 탐지</div>
+              <div class="col-item-body">"query behavior", "query pattern", "access control", "database monitoring", "anomaly detection"</div>
+            </div>
+            <div class="three-col-item col-item-2">
+              <div class="col-item-title">② 응답 교란</div>
+              <div class="col-item-body">"adversarial training", "differential privacy", "randomized smoothing", "output filtering", "response filtering", watermark*</div>
+            </div>
+            <div class="three-col-item col-item-3">
+              <div class="col-item-title">③ 내장형 워터마킹</div>
+              <div class="col-item-body">"digital watermark", "embedded watermark", steganograph*, "data hiding", "information hiding", fingerprint*</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row 4: 기술 방법론·행위 키워드 -->
+      <tr class="row-even">
+        <td class="cell-elem">④ 기술 방법론·<br>행위 키워드<br><span style="font-size:11px;font-weight:400;color:#64748b;">("AND"로 연결)</span></td>
+        <td class="cell-content">
+          <div class="sub-label">3개 기술 공통 행위 동사 (Truncation 연산 적용)</div>
+          <div class="tags">
+            <span class="tag ts">detect*</span>
+            <span class="tag ts">identif*</span>
+            <span class="tag ts">classif*</span>
+            <span class="tag ts">recogni*</span>
+            <span class="tag ts">monitor*</span>
+            <span class="tag ts">analyz*</span>
+            <span class="tag ts">prevent*</span>
+            <span class="tag ts">embed*</span>
+            <span class="tag ts">extract*</span>
+            <span class="tag ts">verif*</span>
+            <span class="tag ts">encod*</span>
+            <span class="tag ts">decod*</span>
+          </div>
+          <div class="sep"></div>
+          <div class="three-col">
+            <div class="three-col-item col-item-1">
+              <div class="col-item-title">① 이상 쿼리 탐지</div>
+              <div class="col-item-body">detect*, identif*, classif*, monitor*, analyz*, prevent*, recogni*</div>
+            </div>
+            <div class="three-col-item col-item-2">
+              <div class="col-item-title">② 응답 교란</div>
+              <div class="col-item-body">perturb*, poison*, filter*, smooth*, train*, generat*, infer*</div>
+            </div>
+            <div class="three-col-item col-item-3">
+              <div class="col-item-title">③ 내장형 워터마킹</div>
+              <div class="col-item-body">embed*, insert*, inject*, encod*, extract*, decod*, verif*, localiz*</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row 5: 중·소분류 특화 키워드 -->
+      <tr class="row-odd">
+        <td class="cell-elem">⑤ 중·소분류<br>특화 키워드<br><span style="font-size:11px;font-weight:400;color:#64748b;">("AND"로 연결)</span></td>
+        <td class="cell-content">
+          <div class="sub-label">각 기술별 분류 심화 키워드 (분류체계 2장 참조)</div>
+          <div class="three-col">
+            <div class="three-col-item col-item-1">
+              <div class="col-item-title">① 이상 쿼리 탐지</div>
+              <div class="col-item-body">
+                <b>쿼리 이상 탐지:</b> "query outlier", "query-level anomaly"<br>
+                <b>SQL 공격:</b> "SQL anomaly", "query intrusion"<br>
+                <b>행동 분석:</b> "user behavior analytics", UEBA*<br>
+                <b>ML 탐지:</b> "machine learning detection", "deep learning IDS"
+              </div>
+            </div>
+            <div class="three-col-item col-item-2">
+              <div class="col-item-title">② 응답 교란</div>
+              <div class="col-item-body">
+                <b>적대적 공격:</b> "adversarial example", "adversarial perturbation"<br>
+                <b>LLM 공격:</b> "prompt injection", jailbreak*<br>
+                <b>모델 역공학:</b> "model extraction", "model inversion"<br>
+                <b>방어 기술:</b> "certified defense", "randomized smoothing"
+              </div>
+            </div>
+            <div class="three-col-item col-item-3">
+              <div class="col-item-title">③ 내장형 워터마킹</div>
+              <div class="col-item-body">
+                <b>삽입 기법:</b> "LSB watermark", "DCT watermark", "DWT watermark"<br>
+                <b>강인성:</b> "robust watermark", "fragile watermark"<br>
+                <b>딥러닝:</b> "neural watermark", "LLM watermark", "GAN watermark"<br>
+                <b>출처 인증:</b> fingerprint*, "content authentication"
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row 6: NOT 노이즈 제거 -->
+      <tr class="row-even">
+        <td class="cell-elem">⑥ 노이즈 제거<br>키워드<br><span style="font-size:11px;font-weight:400;color:#64748b;">("NOT"으로 연결)</span></td>
+        <td class="cell-content">
+          <div class="sub-label">공통 제거 대상 (비관련 기술 도메인)</div>
+          <div class="not-box">
+            <span class="not-label">NOT</span>
+            (hardware* OR semiconductor* OR mechan* OR biolog* OR "supply chain" OR blockchain* OR network-routing* OR sensor-hardware*)
+          </div>
+          <div class="sep"></div>
+          <div class="three-col">
+            <div class="three-col-item col-item-1">
+              <div class="col-item-title">① 이상 쿼리 탐지 전용 제거</div>
+              <div class="col-item-body">medical-query*, "genomic database", "clinical SQL", EHR-query*</div>
+            </div>
+            <div class="three-col-item col-item-2">
+              <div class="col-item-title">② 응답 교란 전용 제거</div>
+              <div class="col-item-body">"physical adversarial", "autonomous driving attack", "robotic perturbation"</div>
+            </div>
+            <div class="three-col-item col-item-3">
+              <div class="col-item-title">③ 내장형 워터마킹 전용 제거</div>
+              <div class="col-item-body">"visible watermark", "overt marking", "printed watermark", "paper watermark"</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row 7: 검색 기간 -->
+      <tr class="row-odd">
+        <td class="cell-elem">⑦ 검색 기간<br><span style="font-size:11px;font-weight:400;color:#64748b;">("AND"로 연결)</span></td>
+        <td class="cell-content">
+          <div class="period-box">AD = (20100101 : 20241231)</div>
+          <div class="scope-note" style="margin-top:10px;">
+            ※ AI 기반 보안 기술의 본격 성장기(2010~) 기준 적용. 심층 분석 시 기간을 <b>2016~2024</b>(딥러닝 본격화 이후)로 축소 가능.
+          </div>
+        </td>
+      </tr>
+
+      <!-- Section C: 검색 필드 적용 기준 -->
+      <tr class="divider-row"><td colspan="2"></td></tr>
+      <tr class="row-section-head">
+        <th colspan="2">C. 검색 필드 적용 기준 (Field Application Guide)</th>
+      </tr>
+      <tr class="row-col-head">
+        <th>검색식 구성요소</th>
+        <th>내용</th>
+      </tr>
+      <tr class="row-even">
+        <td class="cell-elem">검색 필드<br>선택 기준</td>
+        <td class="cell-content">
+          <div class="three-col">
+            <div class="three-col-item col-item-1">
+              <div class="col-item-title">TI (Title) 우선 적용</div>
+              <div class="col-item-body">핵심어(Core) 위주 검색. 정밀도(Precision) 극대화 목적. ①②③ 구성요소 중 ①②에 주로 적용.</div>
+            </div>
+            <div class="three-col-item col-item-2">
+              <div class="col-item-title">AB (Abstract) 병행 적용</div>
+              <div class="col-item-body">직접 유사어·확장어 포함. 재현율(Recall) 확보. 구성요소 ③④⑤에 TI/AB 동시 적용 권장.</div>
+            </div>
+            <div class="three-col-item col-item-3">
+              <div class="col-item-title">CPC 코드 병용</div>
+              <div class="col-item-body">G06F 21 (DB 보안), G06N 20 (ML), H04N 1/32 (워터마킹)으로 키워드 노이즈 보완.</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Bottom note -->
+  <div class="bottom-note">
+    <strong>운용 원칙 요약</strong> — 구성요소 ①~③은 기술 식별을 위해 <span class="kw kw-and">AND</span>로 연결하고, 동일 개념 내 유사어는 <span class="kw kw-or">OR</span>로 확장한다.
+    구성요소 ⑤(중·소분류 특화 키워드)는 기술별로 교체하여 각 도메인 독립 검색식으로 전환 가능하며,
+    구성요소 ①②③④⑥⑦은 세 기술 모두에 공통 적용되는 <strong>불변 뼈대</strong>로 유지한다.
+  </div>
+
+</div>
+</body>
+</html>
