@@ -1,0 +1,15 @@
+{
+  "name": "ie-build",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "혁신생태계론 개념정리 → 정적 사이트 빌드",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "marked": "^15.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}

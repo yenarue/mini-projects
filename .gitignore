@@ -1,3 +1,6 @@
 .DS_Store
 
 travel/working
+.superpowers/
+
+_tools/ie-build/node_modules/
