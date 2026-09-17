@@ -28,7 +28,18 @@ async function main() {
     return;
   }
 
-  console.log('빌드 파이프라인은 이후 Task에서 연결됩니다.');
+  const warnings = new Warnings();
+  const { collectConcepts } = await import('./lib/parse.mjs');
+  const concepts = collectConcepts(cfg.conceptDir, warnings);
+
+  if (args.has('--dump-json')) {
+    console.log(JSON.stringify(concepts, null, 2));
+    warnings.print();
+    return;
+  }
+
+  console.log(`개념 ${concepts.length}개를 읽었습니다.`);
+  warnings.print();
 }
 
 // CLI로 직접 실행할 때만 빌드한다.
