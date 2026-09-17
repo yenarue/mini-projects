@@ -46,6 +46,7 @@ function isEmptyMyNotes(md) {
   const rest = md
     .replace(/\(직접 작성\)/g, '')
     .replace(/^[-*]\s*$/gm, '')
+    .replace(/[*_`~]/g, '')
     .replace(/\s+/g, '');
   return rest.length === 0;
 }
@@ -71,6 +72,12 @@ export function parseConceptFile(absPath, warnings) {
     meta = yaml.load(fm[1]) ?? {};
   } catch (err) {
     warnings.add('parse', `${rel}: frontmatter 파싱 실패 — ${err.message}`);
+    return null;
+  }
+
+  const no = Number(meta.no);
+  if (!Number.isInteger(no) || no < 1) {
+    warnings.add('parse', `${rel}: no 값이 올바르지 않습니다 — "${meta.no}"`);
     return null;
   }
 
@@ -100,6 +107,10 @@ export function parseConceptFile(absPath, warnings) {
   }
   if (current) sections.push(current);
 
+  if (inFence) {
+    warnings.add('parse', `${rel}: 코드 펜스가 닫히지 않았습니다`);
+  }
+
   const known = new Set(sections.map((s) => s.key));
   for (const { key, match } of SECTION_KEYS) {
     if (!known.has(key)) {
@@ -118,7 +129,6 @@ export function parseConceptFile(absPath, warnings) {
     if (!knownKeys.has(k)) extraMeta[k] = v;
   }
 
-  const no = Number(meta.no);
   const mynotes = sections.find((s) => s.key === 'mynotes');
 
   return {

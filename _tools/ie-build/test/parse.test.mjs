@@ -83,3 +83,120 @@ test('collectConcepts는 주차·번호 순으로 모은다', () => {
   assert.equal(list[0].week, 'W01');
   assert.equal(list[1].week, 'W02-2');
 });
+
+test('no가 정수가 아니면 경고하고 null을 반환한다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-parse-'));
+  fs.mkdirSync(path.join(dir, 'W09'));
+  const file = path.join(dir, 'W09', '01-잘못된-번호.md');
+  fs.writeFileSync(file, [
+    '---', 'week: W09', 'no: abc', 'title: X', 'en: X', 'tags: []',
+    'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
+    'status: draft', '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
+  ].join('\n'));
+
+  const w = new Warnings();
+  const c = parseConceptFile(file, w);
+  assert.equal(c, null);
+  assert.equal(w.count, 1);
+  assert.ok(/abc/.test(w.items[0].message));
+});
+
+test('isEmptyMyNotes는 마크다운 강조 문자를 벗겨내고 판단한다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-parse-'));
+  fs.mkdirSync(path.join(dir, 'W09'));
+
+  const makeFile = (name, mynotesBody) => {
+    const file = path.join(dir, 'W09', name);
+    fs.writeFileSync(file, [
+      '---', 'week: W09', 'no: 1', 'title: X', 'en: X', 'tags: []',
+      'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
+      'status: draft', '---', '',
+      '## 한 줄 정의', '', 'ㅇㅇ', '',
+      '## 나의 이해', '', mynotesBody, '',
+    ].join('\n'));
+    return file;
+  };
+
+  const italic = parseConceptFile(makeFile('01-이탤릭.md', '*(직접 작성)*'), new Warnings());
+  assert.equal(italic.hasMyNotes, false);
+
+  const bold = parseConceptFile(makeFile('02-볼드.md', '**중요한 메모**'), new Warnings());
+  assert.equal(bold.hasMyNotes, true);
+
+  const bare = parseConceptFile(makeFile('03-순수.md', '(직접 작성)'), new Warnings());
+  assert.equal(bare.hasMyNotes, false);
+});
+
+test('코드 펜스 안의 "## "는 섹션 제목으로 취급되지 않는다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-parse-'));
+  fs.mkdirSync(path.join(dir, 'W09'));
+  const file = path.join(dir, 'W09', '01-펜스.md');
+  fs.writeFileSync(file, [
+    '---', 'week: W09', 'no: 1', 'title: X', 'en: X', 'tags: []',
+    'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
+    'status: draft', '---', '',
+    '## 핵심 내용', '',
+    '```', '## 이건 코드다', '```', '',
+  ].join('\n'));
+
+  const w = new Warnings();
+  const c = parseConceptFile(file, w);
+  const other = c.sections.find((s) => s.key === 'other');
+  assert.equal(other, undefined);
+  const core = c.sections.find((s) => s.key === 'core');
+  assert.ok(core.md.includes('## 이건 코드다'));
+});
+
+test('닫히지 않은 코드 펜스는 경고한다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-parse-'));
+  fs.mkdirSync(path.join(dir, 'W09'));
+  const file = path.join(dir, 'W09', '01-미닫힘-펜스.md');
+  fs.writeFileSync(file, [
+    '---', 'week: W09', 'no: 1', 'title: X', 'en: X', 'tags: []',
+    'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
+    'status: draft', '---', '',
+    '## 핵심 내용', '',
+    '```', '닫히지 않은 코드', '',
+  ].join('\n'));
+
+  const w = new Warnings();
+  parseConceptFile(file, w);
+  assert.ok(w.items.some((i) => /닫히지 않/.test(i.message)));
+});
+
+test('collectConcepts는 같은 주차 내에서 no 순으로 정렬한다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-parse-'));
+  fs.mkdirSync(path.join(dir, 'W09'));
+
+  const makeFile = (filename, no) => {
+    fs.writeFileSync(path.join(dir, 'W09', filename), [
+      '---', 'week: W09', `no: ${no}`, 'title: X', 'en: X', 'tags: []',
+      'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
+      'status: draft', '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
+    ].join('\n'));
+  };
+
+  // 파일명 순서(01, 02, 03)와 no 순서(3, 1, 2)를 어긋나게 만든다.
+  makeFile('01-세번째.md', 3);
+  makeFile('02-첫번째.md', 1);
+  makeFile('03-두번째.md', 2);
+
+  const list = collectConcepts(dir, new Warnings());
+  assert.deepEqual(list.map((c) => c.no), [1, 2, 3]);
+});
+
+test('폴더명과 frontmatter week가 다르면 폴더명을 따르고 경고한다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-parse-'));
+  fs.mkdirSync(path.join(dir, 'W03'));
+  fs.writeFileSync(path.join(dir, 'W03', '01-불일치.md'), [
+    '---', 'week: W01', 'no: 1', 'title: X', 'en: X', 'tags: []',
+    'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
+    'status: draft', '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
+  ].join('\n'));
+
+  const w = new Warnings();
+  const list = collectConcepts(dir, w);
+  assert.equal(list.length, 1);
+  assert.equal(list[0].week, 'W03');
+  assert.ok(w.items.some((i) => /W01/.test(i.message) && /폴더명/.test(i.message)));
+});
