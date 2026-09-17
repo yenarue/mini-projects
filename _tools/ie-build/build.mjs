@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { loadConfig } from './lib/config.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -31,7 +31,12 @@ async function main() {
   console.log('빌드 파이프라인은 이후 Task에서 연결됩니다.');
 }
 
-main().catch((err) => {
-  console.error(`\n빌드 실패: ${err.message}`);
-  process.exit(1);
-});
+// CLI로 직접 실행할 때만 빌드한다.
+// 이후 Task들의 테스트가 `import { Warnings } from '../build.mjs'`를 하므로,
+// 가드가 없으면 클래스 하나 가져오려다 loadConfig와 실제 파일 I/O가 돌아간다.
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((err) => {
+    console.error(`\n빌드 실패: ${err.message}`);
+    process.exit(1);
+  });
+}
