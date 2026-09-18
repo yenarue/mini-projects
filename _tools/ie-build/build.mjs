@@ -111,6 +111,17 @@ async function main() {
   }
   console.log(`주차 페이지 ${pages}개 생성`);
 
+  const { renderIndexPage } = await import('./templates/index.mjs');
+  const quizSchedule = JSON.parse(fsp.readFileSync(path.join(HERE, 'quiz-schedule.json'), 'utf8'));
+  const builtAt = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', hour12: false });
+
+  fsp.writeFileSync(
+    path.join(cfg.outDir, 'index.html'),
+    renderIndexPage({ weeks: orderedWeeks, quizSchedule, builtAt }),
+    'utf8'
+  );
+  console.log('index.html 생성');
+
   warnings.print();
 }
 
