@@ -41,13 +41,16 @@ async function main() {
   const { renderConcept } = await import('./lib/render.mjs');
   for (const c of concepts) renderConcept(c, warnings, existingKeys);
 
-  const { processImages, formatBytes } = await import('./lib/images.mjs');
+  const { processImages, formatBytes, applyImageDimensions } = await import('./lib/images.mjs');
   const imgStats = processImages(concepts, cfg, warnings);
   console.log(
     `이미지 ${imgStats.copied}개 ` +
     `(${formatBytes(imgStats.totalSrcBytes)} → ${formatBytes(imgStats.totalOutBytes)}), ` +
     `고아 이미지 ${imgStats.orphansRemoved}개 삭제`
   );
+
+  // 레이아웃 시프트 방지: 렌더링이 끝난 <img>에 실제 픽셀 치수를 width/height로 채운다.
+  applyImageDimensions(concepts, imgStats.dimensions);
 
   if (args.has('--dump-json')) {
     console.log(JSON.stringify(concepts, null, 2));

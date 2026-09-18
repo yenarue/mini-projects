@@ -72,6 +72,23 @@
     saveFolds(folds);
   });
 
+  /* ---------- 인쇄: 접힌 섹션을 인쇄 직전에만 펼치기 ----------
+     <details>가 닫혀 있으면 브라우저가 내용을 그리지 않는다(그 내용을 감싸는
+     자식에 display:block !important를 줘도 안 그려진다 — Chromium이 open
+     속성 자체로 렌더 여부를 결정하기 때문에 CSS만으로는 못 뚫는다). 그래서
+     @media print의 CSS 트릭 대신 beforeprint/afterprint에서 open 속성을
+     실제로 바꾼다. 사용자가 보던 접힘 상태는 인쇄가 끝나면 원래대로 되돌린다. */
+  var printRestoreOpen = null;
+  window.addEventListener('beforeprint', function () {
+    printRestoreOpen = details.map(function (d) { return d.open; });
+    details.forEach(function (d) { d.open = true; });
+  });
+  window.addEventListener('afterprint', function () {
+    if (!printRestoreOpen) return;
+    details.forEach(function (d, i) { d.open = printRestoreOpen[i]; });
+    printRestoreOpen = null;
+  });
+
   /* ---------- 사이드바 스크롤 추적 ----------
      예전 구현은 IntersectionObserver rootMargin으로 "화면 상단 70px~30% 지점"
      밴드에 걸리는 concept 중 DOM 순서상 첫 번째를 활성으로 골랐다. R2에서 개념

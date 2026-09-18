@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { resolveSourceImage, processImages } from '../lib/images.mjs';
+import { resolveSourceImage, processImages, getImageDimensions, applyImageDimensions } from '../lib/images.mjs';
 import { Warnings } from '../build.mjs';
 
 /** sips로 1x1 테스트 PNG를 만든다 (외부 픽스처 없이 결정적으로) */
@@ -183,6 +183,62 @@ test('conceptDir/assets와 assetDir이 같은 디렉터리를 가리키면 dual-
 });
 
 // --- Finding 4: 고아 이미지 삭제 ---
+
+// --- Task 10: 레이아웃 시프트 방지 — <img>에 width/height 채우기 ---
+
+test('getImageDimensions는 sips로 픽셀 크기를 읽는다', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-dim-'));
+  const file = path.join(root, 'p.png');
+  makePng(file); // 1x1 PNG
+  const dims = getImageDimensions(file);
+  assert.deepEqual(dims, { width: 1, height: 1 });
+});
+
+test('getImageDimensions는 읽을 수 없는 파일에 대해 null을 돌려준다', () => {
+  const dims = getImageDimensions('/no/such/file.png');
+  assert.equal(dims, null);
+});
+
+test('processImages는 변환된 이미지의 실제 픽셀 치수를 href별로 돌려준다', () => {
+  const cfg = fixture();
+  const concepts = [
+    { week: 'W01', file: 'a.md', images: [{ href: 'images/W01/p10.jpg', week: 'W01', name: 'p10' }] },
+  ];
+  const stats = processImages(concepts, cfg, new Warnings());
+  assert.deepEqual(stats.dimensions.get('images/W01/p10.jpg'), { width: 1, height: 1 });
+});
+
+test('applyImageDimensions는 concept.sections의 <img>에 width/height를 채운다', () => {
+  const concepts = [
+    {
+      week: 'W01',
+      images: [{ href: 'images/W01/p10.jpg' }],
+      sections: [
+        { key: 'core', html: '<figure class="slide"><img src="images/W01/p10.jpg" alt="x" loading="lazy" decoding="async"></figure>' },
+      ],
+    },
+  ];
+  const dimensions = new Map([['images/W01/p10.jpg', { width: 1400, height: 788 }]]);
+  applyImageDimensions(concepts, dimensions);
+  assert.match(concepts[0].sections[0].html, /<img src="images\/W01\/p10\.jpg"[^>]*width="1400" height="788"/);
+});
+
+test('applyImageDimensions는 치수를 모르는 이미지는 건드리지 않는다', () => {
+  const concepts = [
+    {
+      week: 'W01',
+      images: [{ href: 'images/W01/모름.jpg' }],
+      sections: [
+        { key: 'core', html: '<figure class="slide"><img src="images/W01/모름.jpg" alt="x" loading="lazy" decoding="async"></figure>' },
+      ],
+    },
+  ];
+  applyImageDimensions(concepts, new Map());
+  assert.equal(
+    concepts[0].sections[0].html,
+    '<figure class="slide"><img src="images/W01/모름.jpg" alt="x" loading="lazy" decoding="async"></figure>'
+  );
+});
 
 test('outDir/images/ 아래 참조되지 않는 output 파일은 이번 실행에서 삭제되고 개수가 집계된다', () => {
   const cfg = fixture();

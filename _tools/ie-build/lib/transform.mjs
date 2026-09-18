@@ -128,7 +128,11 @@ export function paragraphRenderer(token) {
       const bodyTokens = [{ ...first, text: stripped }, ...tokens.slice(1)];
       const body = this.parser.parseInline(bodyTokens);
       counts[kind === 'slide' ? 't4' : 't5'] += 1;
-      return `<p class="callout callout-${kind}">${calloutBadgeHtml(kind)}${body}</p>\n`;
+      // body를 span으로 감싸는 이유: .callout이 flex 컨테이너라 배지(아이콘) 뒤에
+      // 이어지는 텍스트가 이름 없는(anonymous) flex item이 되는데, flex item은
+      // 기본값 min-width:auto라 내용 폭 밑으로 줄어들지 못해 좁은 화면(375px)에서
+      // 컨테이너 밖으로 넘친다. 감싸는 span에 min-width:0을 주면 정상적으로 줄바꿈된다.
+      return `<p class="callout callout-${kind}">${calloutBadgeHtml(kind)}<span class="callout-text">${body}</span></p>\n`;
     }
   }
   return `<p>${this.parser.parseInline(tokens)}</p>\n`;

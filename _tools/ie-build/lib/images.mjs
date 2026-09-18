@@ -50,6 +50,23 @@ export function resolveSourceImage(cfg, week, name, warnings) {
   return matches[0];
 }
 
+/** sips로 이미지의 픽셀 크기를 읽는다. 실패하면 null(호출부가 조용히 건너뛴다 —
+ *  치수를 못 읽어도 빌드를 막을 이유는 없다, <img>에 width/height가 안 붙을 뿐). */
+export function getImageDimensions(filePath) {
+  try {
+    const out = execFileSync(
+      'sips', ['-g', 'pixelWidth', '-g', 'pixelHeight', filePath],
+      { stdio: 'pipe', timeout: SIPS_TIMEOUT_MS }
+    ).toString();
+    const w = /pixelWidth:\s*(\d+)/.exec(out);
+    const h = /pixelHeight:\s*(\d+)/.exec(out);
+    if (w && h) return { width: Number(w[1]), height: Number(h[1]) };
+  } catch {
+    // sips 실패 — 호출부가 undefined로 처리
+  }
+  return null;
+}
+
 /** 파일이 존재하고 크기가 0보다 큰지 확인한다 (sips가 조용히 실패해도 잡아낸다). */
 function isNonEmptyFile(p) {
   try {
@@ -134,6 +151,7 @@ export function processImages(concepts, cfg, warnings) {
   let totalSrcBytes = 0;
   let totalOutBytes = 0;
   const writtenPaths = new Set();
+  const dimensions = new Map(); // href -> { width, height }
 
   for (const [href, { week, name, refs }] of wanted) {
     const src = resolveSourceImage(cfg, week, name, warnings);
@@ -184,12 +202,48 @@ export function processImages(concepts, cfg, warnings) {
     copied += 1;
     totalSrcBytes += fs.statSync(src).size;
     totalOutBytes += fs.statSync(dest).size;
+
+    // 실제로 서빙되는 파일(dest) 기준으로 치수를 읽는다 — sips 포맷 변환은
+    // 픽셀 크기를 바꾸지 않으므로 dest에서 읽어도 원본과 동일하다.
+    const dims = getImageDimensions(dest);
+    if (dims) dimensions.set(href, dims);
   }
 
   const imagesDir = path.join(cfg.outDir, 'images');
   const orphansRemoved = removeOrphans(imagesDir, writtenPaths);
 
-  return { copied, totalSrcBytes, totalOutBytes, orphansRemoved };
+  return { copied, totalSrcBytes, totalOutBytes, orphansRemoved, dimensions };
+}
+
+/**
+ * 렌더링이 끝난 concept.sections[].html 안의 <img src="..."> 태그에
+ * width/height를 채워 넣는다(레이아웃 시프트 방지 — 브라우저가 이미지가
+ * 도착하기 전에 올바른 박스를 예약할 수 있게). CSS(max-width:100%; height:auto)가
+ * 반응형 크기 조정을 그대로 담당하고, width/height 속성은 종횡비만 알려준다.
+ * dimensions에 없는 href(치수를 못 읽은 이미지)는 건드리지 않고 조용히 넘어간다.
+ * @param {object[]} concepts renderConcept()으로 sections[].html이 채워진 개념들
+ * @param {Map<string, {width:number,height:number}>} dimensions processImages()의 반환값
+ */
+export function applyImageDimensions(concepts, dimensions) {
+  if (!dimensions || dimensions.size === 0) return;
+
+  for (const c of concepts) {
+    const hrefs = new Set((c.images ?? []).map((img) => img.href));
+    if (hrefs.size === 0) continue;
+
+    for (const section of c.sections ?? []) {
+      if (!section.html || !section.html.includes('<img ')) continue;
+      let html = section.html;
+      for (const href of hrefs) {
+        const dims = dimensions.get(href);
+        if (!dims) continue;
+        const escapedHref = href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const re = new RegExp(`(<img src="${escapedHref}"(?![^>]*\\swidth=)[^>]*?)(\\s*/?>)`, 'g');
+        html = html.replace(re, (_m, pre, close) => `${pre} width="${dims.width}" height="${dims.height}"${close}`);
+      }
+      section.html = html;
+    }
+  }
 }
 
 export function formatBytes(n) {

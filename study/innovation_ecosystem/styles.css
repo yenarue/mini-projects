@@ -129,6 +129,7 @@ a:hover { color: var(--brand-dark); }
 .topbar-nav a {
   font-size: 14px; font-weight: 500; color: var(--muted);
   padding: 7px 10px; border-radius: var(--radius-sm);
+  white-space: nowrap;
 }
 .topbar-nav a:hover { color: var(--ink); background: var(--surface-2); }
 .topbar-nav a.active { color: var(--brand); background: var(--brand-soft); }
@@ -382,6 +383,11 @@ a.chip-tag:hover { color: var(--brand); border-color: var(--brand); }
   width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px;
   border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden;
 }
+/* table-scroll로 감싸인 표(T6 — 3열 이상의 본문 표)만 최소 폭을 강제한다.
+   좁은 화면에서 width:100%가 셀을 극단적으로 좁혀 글자가 한 글자씩 줄바꿈되던
+   문제를 막는다 — 표 자체가 아니라 .table-scroll 래퍼가 가로로 스크롤된다.
+   deflist(한 줄 정의, T1) 표는 래퍼가 없는 2열 짧은 표라 이 규칙에서 제외한다. */
+.table-scroll table { min-width: 480px; }
 .concept th, .concept td { padding: 9px 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
 .concept th { background: var(--surface-2); font-weight: 600; }
 .concept code {
@@ -475,6 +481,7 @@ figure.concept-diagram figcaption.diagram-caption {
 .concept p.callout-slide { background: var(--slide-soft); border-left: 3px solid var(--slide); }
 .concept p.callout-note { background: var(--note-soft); border: 1px dashed var(--note); }
 .callout-badge { flex: none; line-height: 1.5; }
+.callout-text { min-width: 0; flex: 1 1 auto; }
 
 /* T4 / T5 — 📄 · 💡 콜아웃 (목록 항목) */
 .concept li.li-callout {
@@ -800,6 +807,16 @@ body.focus-lock { overflow: hidden; }
   .search-trigger kbd { display: none; }
   .fontsize-control { display: none; }
   .week-title { font-size: 24px; }
+}
+
+@media (max-width: 400px) {
+  .topbar { gap: 6px; padding: 0 10px; }
+  .topbar-brand { font-size: 13px; gap: 6px; }
+  .topbar-nav { gap: 0; }
+  .topbar-nav a { padding: 6px 6px; font-size: 12px; }
+}
+
+@media (max-width: 768px) {
   .concept { padding: 22px 18px 26px; border-radius: var(--radius-sm); }
   .concept-title-row h2 { font-size: 19px; }
   .side-nav { grid-template-columns: 1fr; }
