@@ -68,3 +68,15 @@ test('알 수 없는 이미지 경로는 ok:false', () => {
   assert.equal(rewriteImagePath('https://example.com/a.png').ok, false);
   assert.equal(rewriteImagePath('random.png').ok, false);
 });
+
+test('외부 https URL에 assets/W##/name.png 꼬리가 있어도 ok:false', () => {
+  assert.equal(rewriteImagePath('https://cdn.example.com/수업노트/assets/W01/p1.png').ok, false);
+});
+
+test('프로토콜 상대 URL에 assets/W##/name.png 꼬리가 있어도 ok:false', () => {
+  assert.equal(rewriteImagePath('//cdn.example.com/수업노트/assets/W01/p1.png').ok, false);
+});
+
+test('외부 URL에 ../assets/W##/name.png 형태가 있어도 ok:false', () => {
+  assert.equal(rewriteImagePath('http://example.com/a/../assets/W01/p1.png').ok, false);
+});
