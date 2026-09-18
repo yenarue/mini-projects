@@ -27,11 +27,24 @@ export function resolveSourceImage(cfg, week, name, warnings) {
   if (matches.length === 0) return null;
 
   if (matches.length > 1 && warnings) {
-    warnings.add(
-      'images',
-      `같은 이름의 이미지가 두 경로에 모두 있습니다: ${week}/${name} — ` +
-      `${matches[0]} 을(를) 사용하고 ${matches[1]} 은(는) 무시합니다.`
-    );
+    // 두 파일이 실제로 다른 물리적 위치인지 확인 (같은 디렉터리로 링크된 경우 제외)
+    let areGenuinelyDifferent = false;
+    try {
+      const real0 = fs.realpathSync(matches[0]);
+      const real1 = fs.realpathSync(matches[1]);
+      areGenuinelyDifferent = real0 !== real1;
+    } catch {
+      // 경로 해석 실패 시 보수적으로 다르다고 간주하지 않음
+      areGenuinelyDifferent = false;
+    }
+
+    if (areGenuinelyDifferent) {
+      warnings.add(
+        'images',
+        `같은 이름의 이미지가 두 경로에 모두 있습니다: ${week}/${name} — ` +
+        `${matches[0]} 을(를) 사용하고 ${matches[1]} 은(는) 무시합니다.`
+      );
+    }
   }
 
   return matches[0];
@@ -152,6 +165,17 @@ export function processImages(concepts, cfg, warnings) {
         fs.copyFileSync(src, dest);
       } catch (copyErr) {
         warnings.add('images', `원본 복사도 실패해 건너뜁니다: ${week}/${name} — ${copyErr.message}`);
+        continue;
+      }
+
+      // 복사 후에도 출력 파일이 0바이트이거나 없으면 이미지를 사용할 수 없음
+      if (!isNonEmptyFile(dest)) {
+        try {
+          fs.unlinkSync(dest);
+        } catch {
+          // 파일이 없거나 삭제 실패해도 계속 진행
+        }
+        warnings.add('images', `이미지를 생성할 수 없습니다(원본이 유효하지 않음): ${week}/${name} — ${src}`);
         continue;
       }
     }

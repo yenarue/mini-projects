@@ -93,7 +93,7 @@ test('같은 이미지를 두 개념이 참조해도 한 번만 변환한다', (
 
 // --- Finding 1/2: sips가 exit 0인데 출력 파일을 만들지 않는 경우 ---
 
-test('sips가 exit 0으로 조용히 실패해도(0바이트 원본) 던지지 않고 경고 후 원본 복사로 대체한다', () => {
+test('sips가 exit 0으로 조용히 실패하고 원본도 0바이트면 출력 파일을 삭제하고 경고한다', () => {
   const cfg = fixture();
   makeZeroBytePng(path.join(cfg.assetDir, 'W01', 'broken.png'));
   const concepts = [
@@ -105,15 +105,17 @@ test('sips가 exit 0으로 조용히 실패해도(0바이트 원본) 던지지 �
   ];
   const w = new Warnings();
 
-  const stats = processImages(concepts, cfg, w); // 던지면 이 테스트 자체가 실패한다
+  const stats = processImages(concepts, cfg, w);
 
-  assert.equal(w.count, 1);
-  assert.match(w.items[0].message, /broken/);
-  assert.equal(stats.copied, 1); // 원본 복사로 대체되어 1개로 집계된다
-  assert.ok(fs.existsSync(path.join(cfg.outDir, 'images', 'W01', 'broken.jpg')));
+  // sips 실패 경고 + 이미지 생성 실패 경고 = 2개
+  assert.equal(w.count, 2);
+  assert.match(w.items[0].message, /sips 변환 실패/);
+  assert.match(w.items[1].message, /이미지를 생성할 수 없습니다/);
+  assert.equal(stats.copied, 0); // 0바이트 원본은 복사되지 않음
+  assert.ok(!fs.existsSync(path.join(cfg.outDir, 'images', 'W01', 'broken.jpg')), '0바이트 출력은 삭제되어야 한다');
 });
 
-test('한 이미지의 변환이 실패해도 같은 호출의 다른 정상 이미지는 계속 변환·카운트된다', () => {
+test('0바이트 원본이 실패해도 같은 호출의 다른 정상 이미지는 계속 변환·카운트된다', () => {
   const cfg = fixture();
   makeZeroBytePng(path.join(cfg.assetDir, 'W01', 'broken.png'));
   const concepts = [
@@ -129,18 +131,20 @@ test('한 이미지의 변환이 실패해도 같은 호출의 다른 정상 이
   const w = new Warnings();
   const stats = processImages(concepts, cfg, w);
 
-  assert.equal(stats.copied, 2); // broken(복사 대체) + p10(정상 변환)
+  assert.equal(stats.copied, 1); // p10만(정상 변환), broken은 제외
   const out = path.join(cfg.outDir, 'images', 'W01', 'p10.jpg');
   assert.ok(fs.existsSync(out));
   const type = execFileSync('sips', ['-g', 'format', out]).toString();
   assert.match(type, /jpeg/); // p10은 진짜로 jpeg 변환됐다
-  assert.equal(w.count, 1);
-  assert.match(w.items[0].message, /broken/);
+  assert.ok(!fs.existsSync(path.join(cfg.outDir, 'images', 'W01', 'broken.jpg')), 'broken은 존재하지 않아야 한다');
+  assert.equal(w.count, 2); // sips 실패 + 생성 실패
+  assert.match(w.items[0].message, /sips 변환 실패/);
+  assert.match(w.items[1].message, /이미지를 생성할 수 없습니다/);
 });
 
 // --- Finding 3: 같은 week/name이 두 root에 모두 있을 때 ---
 
-test('같은 week/name이 두 root에 모두 있으면 경고하고 assetDir 쪽을 쓴다', () => {
+test('같은 week/name이 서로 다른 두 root에 있으면 경고하고 assetDir 쪽을 쓴다', () => {
   const cfg = fixture();
   // fixture()가 assetDir/W01/p10.png 를 이미 만든다. conceptDir/assets/W01에도 같은 이름을 심는다.
   makePng(path.join(cfg.conceptDir, 'assets', 'W01', 'p10.png'));
@@ -160,6 +164,22 @@ test('같은 week/name이 두 root에 모두 있으면 경고하고 assetDir 쪽
   const stats = processImages(concepts, cfg, w2);
   assert.equal(stats.copied, 1);
   assert.ok(w2.items.some((i) => /두 경로에 모두 있습니다/.test(i.message)));
+});
+
+test('conceptDir/assets와 assetDir이 같은 디렉터리를 가리키면 dual-root 경고를 발생시키지 않는다', () => {
+  const cfg = fixture();
+  // conceptDir/assets가 assetDir과 같은 물리적 위치를 가리키도록 설정
+  // conceptDir을 assetDir의 부모로, assets를 assetDir의 이름으로 만든다
+  const parentDir = path.dirname(cfg.assetDir);
+  cfg.conceptDir = parentDir;
+  // 이제 conceptDir/assets = parentDir/assets = cfg.assetDir
+
+  makePng(path.join(cfg.assetDir, 'W01', 'p10.png'));
+
+  const w = new Warnings();
+  const src = resolveSourceImage(cfg, 'W01', 'p10', w);
+  assert.ok(src.endsWith('p10.png'));
+  assert.equal(w.count, 0, '같은 물리적 위치는 dual-root 경고를 발생시키지 않아야 한다');
 });
 
 // --- Finding 4: 고아 이미지 삭제 ---
