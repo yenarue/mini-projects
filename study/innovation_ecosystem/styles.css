@@ -46,6 +46,19 @@
   --content-max: 760px;
 
   --img-filter: none;
+
+  /* 개념 지도(map.html) week 팔레트. 새 hex를 만들지 않고 기존 의미색 토큰만
+     섞는다(color-mix) — 그래서 다크모드에서 --brand 등이 재정의되면 이 8색도
+     자동으로 같이 바뀐다. --term은 여기서 빼 둔다 — 주차 간 연결선 강조색으로
+     따로 예약한다(주차 색과 헷갈리면 "이게 왜 강조됐는지"가 안 보인다). */
+  --map-c0: var(--brand);
+  --map-c1: var(--prof);
+  --map-c2: var(--slide);
+  --map-c3: var(--note);
+  --map-c4: var(--brand-dark);
+  --map-c5: color-mix(in srgb, var(--brand) 55%, var(--prof) 45%);
+  --map-c6: color-mix(in srgb, var(--slide) 55%, var(--note) 45%);
+  --map-c7: color-mix(in srgb, var(--prof) 55%, var(--note) 45%);
 }
 
 :root[data-theme="dark"] {
@@ -1064,12 +1077,103 @@ a.badge-core:hover { border-color: var(--term); }
 }
 
 /* ============================================================
+   개념 지도 · 비교표 (Task 12, map.html)
+   그래프는 D3 등 없이 손으로 짠 force 시뮬레이션(assets/js/map.js) 결과를
+   <circle>/<line>/<text>로만 그린다. 색은 위 --map-c0..7과 --term(주차 간
+   연결)만 쓴다 — 인라인 hex 없음, 라이트/다크 모두 토큰이 알아서 바뀐다.
+   ============================================================ */
+.page-map-main { max-width: 1040px; margin: 0 auto; padding: 36px 24px 64px; }
+.page-map-main .lede { margin: 0 0 4px; font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); }
+.page-map-main .lede strong { color: var(--term); }
+.page-map-main code {
+  font-size: .92em; padding: 1px 5px; border-radius: 5px;
+  background: var(--surface-2); color: var(--ink-soft);
+}
+
+.map-controls {
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+  padding: 14px 18px; margin: 22px 0 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+.map-wrap { position: relative; }
+#map-svg {
+  display: block; width: 100%; height: auto; aspect-ratio: 960 / 680;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+#map-svg text { pointer-events: none; user-select: none; }
+.map-node { cursor: pointer; }
+.map-dot { stroke: var(--surface); stroke-width: 2px; opacity: .92; transition: opacity .15s; }
+.map-node:hover .map-dot, .map-node:focus .map-dot { opacity: 1; stroke: var(--ink); }
+.map-label { font-size: 10.5px; fill: var(--ink-soft); font-weight: 500; }
+.map-node:hover .map-label, .map-node:focus .map-label { fill: var(--ink); font-weight: 700; }
+.map-edge { stroke: var(--line); stroke-width: 1.1; opacity: .55; }
+.map-edge-cross { stroke: var(--term); stroke-width: 2.4; opacity: .8; }
+
+.map-empty {
+  position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 14px;
+}
+/* author 규칙이 명시적 display를 주면 [hidden]의 UA 기본 display:none보다
+   우선하므로, hidden이 없을 때만 flex로 켠다 — 그렇지 않으면 노드가 있어도
+   "조건에 맞는 개념이 없다" 문구가 그래프 위에 항상 겹쳐 보인다. */
+.map-empty:not([hidden]) { display: flex; }
+.map-tip {
+  position: absolute; z-index: 5; max-width: 260px;
+  padding: 9px 13px; font-size: 12.5px; line-height: 1.6; pointer-events: none;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+}
+.map-tip strong { color: var(--ink); }
+.map-tip-en { color: var(--term); font-style: italic; }
+.map-tip-week, .map-tip-one { color: var(--muted); }
+
+.map-legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 12px 0 0; font-size: 12.5px; color: var(--muted); }
+.map-legend-item { display: flex; align-items: center; gap: 6px; }
+.map-legend-item i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.map-legend-item i.cross { width: 18px; height: 3px; border-radius: 2px; background: var(--term); }
+
+/* 주차 간 비교표 */
+.cmp { margin: 30px 0; }
+.cmp h3 { font-size: 17px; margin: 0 0 4px; color: var(--brand-dark); font-weight: 700; }
+.cmp-note { margin: 0 0 12px; font-size: 13.5px; line-height: 1.65; color: var(--muted); }
+.cmp-scroll { overflow-x: auto; border-radius: var(--radius-sm); }
+.cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--surface); }
+.cmp-table th, .cmp-table td {
+  padding: 10px 14px; border: 1px solid var(--line);
+  text-align: left; vertical-align: top; line-height: 1.6;
+}
+.cmp-table thead th { background: var(--brand-soft); color: var(--brand-dark); font-weight: 700; }
+.cmp-table tbody th { background: var(--surface-2); color: var(--ink); white-space: nowrap; font-weight: 600; }
+.cmp-table tbody tr:nth-child(even) td { background: var(--line-soft); }
+.cmp-table a { color: var(--brand-dark); font-weight: 600; }
+
+@media (max-width: 1024px) {
+  .page-map-main { max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .page-map-main { padding: 24px 16px 44px; }
+  .map-controls { gap: 10px; padding: 12px; }
+  .cmp-table { min-width: 560px; }
+  .map-tip { max-width: 220px; font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .map-legend { font-size: 11.5px; gap: 10px; }
+}
+
+/* ============================================================
    인쇄
    ============================================================ */
 @media print {
   .topbar, aside.sidebar, .side-tools, .side-prevnext, .concept-top,
   .search-overlay, .sec-quiz-link, .focus-btn, .focus-overlay,
-  .quiz-controls, .quiz-weeks, .quiz-nav, .quiz-actions, .quiz-grade { display: none !important; }
+  .quiz-controls, .quiz-weeks, .quiz-nav, .quiz-actions, .quiz-grade,
+  .map-controls, .map-wrap, .map-legend { display: none !important; }
   .layout { display: block; max-width: none; }
   main { padding: 0; }
   .concept { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }

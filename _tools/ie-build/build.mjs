@@ -20,6 +20,7 @@ export class Warnings {
 }
 
 async function main() {
+  const startedAt = Date.now();
   const args = new Set(process.argv.slice(2));
   const cfg = loadConfig(HERE);
 
@@ -179,6 +180,58 @@ async function main() {
     warnings.add('quiz', `quiz.html이 ${quizKb.toFixed(0)}KB입니다. 답안을 별도 JSON으로 분리하는 것을 검토하세요`);
   }
 
+  const yaml = (await import('js-yaml')).default;
+  const { buildGraph, renderMapPage } = await import('./templates/map.mjs');
+
+  let comparisons = [];
+  const cmpFile = path.join(HERE, 'comparisons.yml');
+  if (fsp.existsSync(cmpFile)) {
+    try {
+      comparisons = yaml.load(fsp.readFileSync(cmpFile, 'utf8')) ?? [];
+    } catch (err) {
+      warnings.add('map', `comparisons.yml 파싱 실패: ${err.message}`);
+    }
+  }
+
+  const graph = buildGraph(concepts);
+  fsp.writeFileSync(
+    path.join(cfg.outDir, 'map.html'),
+    renderMapPage({ graph, weeks: orderedWeeks, comparisons }),
+    'utf8'
+  );
+  const crossEdges = graph.edges.filter((e) => e.crossWeek).length;
+  console.log(
+    `map.html 생성 (노드 ${graph.nodes.length} · 엣지 ${graph.edges.length} · ` +
+      `주차 간 ${crossEdges} · 비교표 ${comparisons.length})`
+  );
+
+  if (args.has('--check')) {
+    const { checkLinks } = await import('./lib/check.mjs');
+    const result = checkLinks(cfg.outDir);
+    console.log(`\n내부 링크 ${result.checked}건 검사`);
+    if (result.broken.length) {
+      console.log(`깨진 링크 ${result.broken.length}건:`);
+      for (const b of result.broken) {
+        console.log(`  ${b.from} → ${b.href}  (${b.reason})`);
+      }
+    } else {
+      console.log('깨진 링크 없음');
+    }
+  }
+
+  const coreItemCount = coreSets.reduce((n, s) => n + s.items.length, 0);
+  const searchKb = (estimateSize(searchIndex) / 1024).toFixed(0);
+  const elapsed = ((Date.now() - startedAt) / 1000).toFixed(1);
+
+  console.log(
+    `\n요약: 개념 ${concepts.length}개 · 주차 ${pages}개 · ` +
+    `이미지 ${imgStats.copied}개 (${formatBytes(imgStats.totalSrcBytes)} → ${formatBytes(imgStats.totalOutBytes)}) · ` +
+    `고아 이미지 ${imgStats.orphansRemoved}개 삭제 · ` +
+    `퀴즈 ${quizItems.length}문항 (답안 ${answeredItems}개) · ` +
+    `지도 노드 ${graph.nodes.length}·엣지 ${graph.edges.length} · ` +
+    `핵심개념 ${coreItemCount}개 · 검색 인덱스 ${searchKb}KB · ` +
+    `경고 ${warnings.count}건 · ${elapsed}초`
+  );
   warnings.print();
 }
 
