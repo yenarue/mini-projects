@@ -265,6 +265,10 @@ export function renderMarkdown(md, ctx) {
 }
 
 const COMPARISON_RE = /비교|차이|대비|\bvs\.?\b|↔/i;
+// "응용:"으로 시작하는 문항은 정해진 답이 없는 사고 실험형 프롬프트다(Task 14).
+// 서술형/비교형과 다른 차원의 구분이라 별도 플래그로 둔다 — 모범답안이 없는 이유가
+// "아직 안 씀"이 아니라 "원래 답이 없음"임을 퀴즈 페이지가 구분해서 보여줄 수 있게 한다.
+const APPLIED_RE = /^\s*응용\s*[:：]/;
 
 // ==================================================================
 // R4 — 개념 다이어그램 삽입 (REDESIGN.md §6)
@@ -344,11 +348,15 @@ export function renderConcept(concept, warnings, existingKeys) {
 
   const quizSection = concept.sections.find((s) => s.key === 'quiz');
   concept.quizPoints = quizSection
-    ? extractListItems(quizSection.html).map((html) => ({
-        html,
-        text: toPlainText(html),
-        isComparison: COMPARISON_RE.test(toPlainText(html)),
-      }))
+    ? extractListItems(quizSection.html).map((html) => {
+        const text = toPlainText(html);
+        return {
+          html,
+          text,
+          isComparison: COMPARISON_RE.test(text),
+          isApplied: APPLIED_RE.test(text),
+        };
+      })
     : [];
 
   concept.images = allImages;

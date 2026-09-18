@@ -8,6 +8,7 @@ const IMG_RE = /<img[^>]+src="([^"]+)"/g;
 const SCRIPT_LINK_RE = /<(?:script[^>]+src|link[^>]+href)="([^"]+)"/g;
 const ID_RE = /\sid="([^"]+)"/g;
 const JSON_SCRIPT_RE = /<script[^>]*type="application\/json"[^>]*id="([^"]*)"[^>]*>([\s\S]*?)<\/script>/g;
+const MODULE_SCRIPT_RE = /<script\b[^>]*\btype="module"[^>]*>/g;
 
 function idsOf(html) {
   return new Set([...html.matchAll(ID_RE)].map((m) => m[1]));
@@ -169,4 +170,39 @@ export function checkLinks(outDir) {
   }
 
   return { checked, broken };
+}
+
+/**
+ * 생성된 HTML 어디에도 `<script type="module">`이 남아있지 않은지 확인하고,
+ * 있으면 즉시 던진다.
+ *
+ * 배경(Task 14 회귀): quiz.js가 quiz-logic.mjs를 import하려고 module 스크립트로
+ * 바뀌었는데, file://로 연 페이지는 origin이 "null"이라 크롬이 ES 모듈 import를
+ * CORS로 거부한다 — 스크립트가 전혀 실행되지 않아 quiz.html이 0/0으로 완전히
+ * 비어 보였다. 이 사이트는 소유자가 디스크에서 직접 여는 게 정상적인 사용
+ * 방식이라, module 스크립트가 출력물에 나타나는 순간 그건 "경고"가 아니라
+ * 페이지 하나를 통째로 죽이는 회귀다. checkLinks()의 broken 목록에 조용히
+ * 얹지 않고 별도로 던지는 이유도 그것이다 — 링크 검사기는 `--check`를 줄 때만
+ * 돌지만, 이 검사는 매 빌드에서 돌아야 한다(build.mjs 참고).
+ */
+export function assertNoModuleScripts(outDir) {
+  const pages = fs.readdirSync(outDir).filter((f) => f.endsWith('.html'));
+  const offenders = [];
+  for (const page of pages) {
+    const html = fs.readFileSync(path.join(outDir, page), 'utf8');
+    const matches = html.match(MODULE_SCRIPT_RE);
+    if (matches) offenders.push({ page, matches });
+  }
+  if (offenders.length) {
+    const detail = offenders
+      .map((o) => `  ${o.page}: ${o.matches.join(', ')}`)
+      .join('\n');
+    throw new Error(
+      '생성된 HTML에 <script type="module">이 남아있다. file://로 연 페이지는 ' +
+      'origin이 "null"이라 브라우저가 ES 모듈 import를 CORS로 막아 스크립트가 ' +
+      '전혀 실행되지 않는다(quiz.html이 0/0으로 완전히 비어 보인 Task 14 회귀와 ' +
+      '같은 원인). 브라우저·테스트가 공유하는 소스는 그대로 두고, 빌드 시점에 ' +
+      '하나의 classic script로 합쳐서 내보내라(lib/quizscript.mjs 참고).\n' + detail
+    );
+  }
 }

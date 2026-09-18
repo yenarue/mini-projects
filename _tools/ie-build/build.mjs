@@ -110,6 +110,17 @@ async function main() {
   // 정적 에셋 복사
   fsp.cpSync(path.join(HERE, 'assets'), cfg.outDir, { recursive: true });
 
+  // assets/js/quiz.js(소스)는 assets/js/quiz-logic.mjs를 import하는 ES 모듈이다
+  // — Node 테스트가 두 파일을 그대로 import해서 정렬·필터 로직을 검증하기
+  // 위해서다. 하지만 file://로 여는 배포 페이지는 origin이 null이라 브라우저가
+  // ES 모듈 import를 CORS로 막아 스크립트가 전혀 안 돈다(Task 14 회귀). 그래서
+  // 위에서 그대로 복사된 js/quiz.js를, 두 소스를 합친 classic script로
+  // 덮어쓴다. js/quiz-logic.mjs는 이제 배포본에서 쓰이지 않으므로 지운다 —
+  // 남겨두면 아무도 안 부르는 죽은 파일이 사이트에 딸려 나간다.
+  const { buildQuizScript } = await import('./lib/quizscript.mjs');
+  fsp.writeFileSync(path.join(cfg.outDir, 'js', 'quiz.js'), buildQuizScript(HERE), 'utf8');
+  fsp.rmSync(path.join(cfg.outDir, 'js', 'quiz-logic.mjs'), { force: true });
+
   let pages = 0;
   for (const week of orderedWeeks) {
     if (!week.concepts.length) continue;
@@ -204,6 +215,12 @@ async function main() {
     `map.html 생성 (노드 ${graph.nodes.length} · 엣지 ${graph.edges.length} · ` +
       `주차 간 ${crossEdges} · 비교표 ${comparisons.length})`
   );
+
+  // file://에서 완전히 죽어버리는 <script type="module"> 회귀를 매 빌드에서
+  // 잡는다(--check와 무관하게) — 소유자는 항상 디스크에서 사이트를 여니까,
+  // 이 실수는 링크 검사 대상이 아니라 빌드 자체를 실패시켜야 하는 종류다.
+  const { assertNoModuleScripts } = await import('./lib/check.mjs');
+  assertNoModuleScripts(cfg.outDir);
 
   if (args.has('--check')) {
     const { checkLinks } = await import('./lib/check.mjs');

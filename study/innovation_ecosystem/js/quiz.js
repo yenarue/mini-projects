@@ -1,3 +1,63 @@
+// 이 파일은 빌드 산출물이다 — assets/js/quiz-logic.mjs + assets/js/quiz.js를
+// _tools/ie-build/lib/quizscript.mjs가 합쳐 classic script로 만든 것이다.
+// 소스를 고치려면 위 두 파일을 고치고 node build.mjs를 다시 돌려라.
+/**
+ * 퀴즈 문항 정렬·필터 순수 함수 (Task 14).
+ *
+ * 브라우저(quiz.js)와 Node 테스트(test/quiz-logic.test.mjs)가 같은 파일을
+ * 그대로 import한다 — 로직을 두 곳에 따로 적어두면 테스트가 실제로 뭘
+ * 검증하는지 알 수 없게 되기 때문이다. 브라우저 네이티브 ES 모듈이라
+ * 번들러도 새 런타임 의존성도 필요 없다.
+ */
+
+/**
+ * 중요도(별점) 내림차순으로 정렬한다. 동점이면 비교형(isComparison) 문항을
+ * 앞에 둔다 — 서술형 2~3문제라는 시험 형식에서 비교형이 답안 분량을 만들기
+ * 쉽기 때문이다(PLAN.md Task 14 규칙). 그 밖의 동점은 원래 순서를 유지한다
+ * (Array#sort는 ES2019+부터 표준상 안정 정렬이다).
+ */
+function sortByImportance(items) {
+  return items.slice().sort((a, b) => {
+    const starDiff = (Number(b.stars) || 0) - (Number(a.stars) || 0);
+    if (starDiff !== 0) return starDiff;
+    const aRank = a.isComparison ? 0 : 1;
+    const bRank = b.isComparison ? 0 : 1;
+    return aRank - bRank;
+  });
+}
+
+/**
+ * 범위·필터를 모두 AND로 결합해 문항 목록을 좁힌다. opts에 없는(undefined/false)
+ * 조건은 적용하지 않는다.
+ *
+ * @param {Array} items
+ * @param {object} opts
+ * @param {string[]} [opts.weeks] 선택된 주차 id 목록 — 주어지면 이 목록에 있는
+ *   주차만 남긴다.
+ * @param {string} [opts.onlyConceptId] 특정 개념(week/slug)의 문항만 남긴다.
+ * @param {boolean} [opts.compareOnly] 비교형만.
+ * @param {boolean} [opts.coreOnly] 쪽지시험 핵심 개념(core)만.
+ * @param {boolean} [opts.starsOnly] 중요도 4점 이상만.
+ * @param {boolean} [opts.againOnly] "다시" 표시된 문항만 (state 맵 기준).
+ * @param {Object<string,string>} [opts.state] 문항 id → 'known' | 'again'.
+ */
+function applyFilters(items, opts = {}) {
+  const {
+    weeks, onlyConceptId, compareOnly, coreOnly, starsOnly, againOnly,
+    state = {},
+  } = opts;
+
+  return items.filter((it) => {
+    if (weeks && weeks.indexOf(it.week) < 0) return false;
+    if (onlyConceptId && it.conceptId !== onlyConceptId) return false;
+    if (compareOnly && !it.isComparison) return false;
+    if (coreOnly && !it.core) return false;
+    if (starsOnly && !((Number(it.stars) || 0) >= 4)) return false;
+    if (againOnly && state[it.id] !== 'again') return false;
+    return true;
+  });
+}
+
 (function () {
   'use strict';
 
@@ -10,6 +70,9 @@
 
   var STATE_KEY = 'ie-quiz-state';
   var PREF_KEY = 'ie-quiz-always-reveal';
+  var SORT_KEY = 'ie-quiz-sort';
+  var CORE_KEY = 'ie-quiz-core-only';
+  var STARS_KEY = 'ie-quiz-stars-only';
 
   var state = {};
   try { state = JSON.parse(localStorage.getItem(STATE_KEY) || '{}'); } catch (e) { state = {}; }
@@ -21,14 +84,26 @@
   var counter = document.getElementById('quiz-counter');
   var tally = document.getElementById('quiz-tally');
   var rangeSel = document.getElementById('quiz-range');
+  var sortSel = document.getElementById('quiz-sort');
   var alwaysReveal = document.getElementById('quiz-always-reveal');
   var compareOnly = document.getElementById('quiz-compare-only');
+  var coreOnly = document.getElementById('quiz-core-only');
+  var starsOnly = document.getElementById('quiz-stars-only');
   var againOnly = document.getElementById('quiz-again-only');
   var shuffleBox = document.getElementById('quiz-shuffle');
   var resetBtn = document.getElementById('quiz-reset');
   var prevBtn = document.getElementById('quiz-prev');
   var nextBtn = document.getElementById('quiz-next');
   var weekBoxes = Array.prototype.slice.call(document.querySelectorAll('.chip input[data-week]'));
+
+  // 정렬·핵심 개념만·★4 이상만은 답 항상 펼치기와 같은 방식으로 localStorage에
+  // 저장한다 — 저장된 값이 없으면 기본값(문서 순서, 필터 꺼짐)을 쓴다.
+  try {
+    var storedSort = localStorage.getItem(SORT_KEY);
+    sortSel.value = storedSort === 'importance' ? 'importance' : 'doc';
+  } catch (e) { sortSel.value = 'doc'; }
+  try { coreOnly.checked = localStorage.getItem(CORE_KEY) === '1'; } catch (e) { coreOnly.checked = false; }
+  try { starsOnly.checked = localStorage.getItem(STARS_KEY) === '1'; } catch (e) { starsOnly.checked = false; }
 
   var queue = [];
   var pos = 0;
@@ -60,16 +135,27 @@
     return chosen.filter(function (w) { return q.weeks.indexOf(w) >= 0; });
   }
 
+  // 셔플과 정렬은 배타적으로 동작한다 — 셔플이 켜지면 정렬 선택은 의미가
+  // 없으므로 비활성화해 둔다(값은 그대로 남아 있다가 셔플을 끄면 다시 적용된다).
+  function syncSortShuffleExclusivity() {
+    sortSel.disabled = shuffleBox.checked;
+  }
+
   function rebuild() {
-    var weeks = selectedWeeks();
-    queue = ALL.filter(function (it) {
-      if (weeks.indexOf(it.week) < 0) return false;
-      if (onlyConceptId && it.conceptId !== onlyConceptId) return false;
-      if (compareOnly.checked && !it.isComparison) return false;
-      if (againOnly.checked && state[it.id] !== 'again') return false;
-      return true;
+    queue = applyFilters(ALL, {
+      weeks: selectedWeeks(),
+      onlyConceptId: onlyConceptId,
+      compareOnly: compareOnly.checked,
+      coreOnly: coreOnly.checked,
+      starsOnly: starsOnly.checked,
+      againOnly: againOnly.checked,
+      state: state,
     });
-    if (shuffleBox.checked) shuffle(queue);
+    if (shuffleBox.checked) {
+      shuffle(queue);
+    } else if (sortSel.value === 'importance') {
+      queue = sortByImportance(queue);
+    }
     pos = 0;
     render();
   }
@@ -78,6 +164,29 @@
     return String(s).replace(/[&<>"]/g, function (ch) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch];
     });
+  }
+
+  // templates/components.mjs의 stars()와 같은 마크업·클래스를 낸다(assets/styles.css
+  // .stars/.stars-on/.stars-off를 그대로 입는다). 서버 쪽 stars()는 개념의 `why`까지
+  // title에 넣지만, 퀴즈 데이터에는 별점만 실어 보낸다(PLAN.md Task 14 Step 1) —
+  // 문항 카드에서는 "몇 점인지"만 한눈에 보이면 되고, 근거는 개념 페이지에 있다.
+  function starsHtml(n) {
+    n = Math.min(5, Math.max(0, Number(n) || 0));
+    if (!n) return '';
+    var label = '시험 중요도 ' + n + '/5';
+    return '<span class="stars" title="' + esc(label) + '" aria-label="' + esc(label) + '" role="img" data-stars="' + n + '">' +
+      '<span class="stars-on" aria-hidden="true">' + Array(n + 1).join('★') + '</span>' +
+      '<span class="stars-off" aria-hidden="true">' + Array(5 - n + 1).join('★') + '</span>' +
+    '</span>';
+  }
+
+  // 기존 .badge/.badge-core 스타일(assets/styles.css)을 그대로 쓴다 — 새 색은
+  // 만들지 않는다. 쪽지시험 핵심개념 페이지의 특정 항목 링크(coreBadge())와
+  // 달리, 퀴즈 문항에는 개념 단위의 coreRefs 목록을 통째로 보내지 않으므로
+  // (Task 14 Step 1은 core만 boolean으로 carry) 링크가 아니라 라벨로만 표시한다.
+  function coreBadgeHtml(isCore) {
+    if (!isCore) return '';
+    return '<span class="badge badge-core" title="쪽지시험 핵심 개념(core.html)으로 뽑힌 개념">핵심</span>';
   }
 
   function render() {
@@ -110,21 +219,32 @@
     // 답안이 있으면 이 답이 교수님 모범답안이 아니라 AI가 쓴 학습 보조 자료임을
     // 못 박는 라벨을 답안 위에 붙인다(💡 보충 카테고리, --note 톤 재사용 —
     // assets/styles.css .quiz-answer-label). 답이 없으면 "아직 답안 없음"을 보여주되
-    // 개념 전체 보기 링크는 항상 남긴다.
-    var answerBody = answerHtml
-      ? (
-          '<div class="quiz-answer-label" role="note">' +
-            '<span class="callout-badge" aria-hidden="true">💡</span>' +
-            '<span>AI가 작성한 학습 보조 답안 — 교수님의 모범답안이 아닙니다</span>' +
-          '</div>' +
-          '<div class="concept quiz-answer-body">' + answerHtml + '</div>'
-        )
-      : '<p class="quiz-no-answer">아직 답안 없음 — 아래 링크에서 개념 전체 자료로 직접 익혀 보라.</p>';
+    // 개념 전체 보기 링크는 항상 남긴다. "응용:" 문항은 애초에 정해진 답이 없는
+    // 사고 실험형 프롬프트라 "아직 안 씀"과 다른 문구를 쓴다 — 그래야 읽는
+    // 사람이 "답이 없어서 안 보이는 것"과 "원래 답이 없는 것"을 구분할 수 있다.
+    var answerBody;
+    if (answerHtml) {
+      answerBody =
+        '<div class="quiz-answer-label" role="note">' +
+          '<span class="callout-badge" aria-hidden="true">💡</span>' +
+          '<span>AI가 작성한 학습 보조 답안 — 교수님의 모범답안이 아닙니다</span>' +
+        '</div>' +
+        '<div class="concept quiz-answer-body">' + answerHtml + '</div>';
+    } else if (it.isApplied) {
+      answerBody = '<p class="quiz-no-answer quiz-no-answer-applied">이 문항은 <strong>응용 사고 문제</strong>라 정해진 모범답안이 없다. 스스로 답을 써 보고, 아래 링크에서 관련 개념을 확인하라.</p>';
+    } else {
+      answerBody = '<p class="quiz-no-answer">아직 답안 없음 — 아래 링크에서 개념 전체 자료로 직접 익혀 보라.</p>';
+    }
+
+    var kindLabel = it.isApplied ? '응용' : (it.isComparison ? '비교형' : '서술형');
+    var kindClass = 'quiz-kind' + (it.isApplied ? ' quiz-kind-applied' : '');
 
     stage.innerHTML =
       '<article class="quiz-card' + (mark ? ' is-' + mark : '') + '">' +
         '<div class="quiz-card-head">' +
-          '<span class="quiz-kind">' + (it.isComparison ? '비교형' : '서술형') + '</span>' +
+          '<span class="' + kindClass + '">' + kindLabel + '</span>' +
+          starsHtml(it.stars) +
+          coreBadgeHtml(it.core) +
           (mark ? '<span class="quiz-mark">' + (mark === 'known' ? '알았음' : '다시') + '</span>' : '') +
         '</div>' +
         '<div class="quiz-q">' + it.html + '</div>' +
@@ -194,7 +314,23 @@
     try { localStorage.setItem(PREF_KEY, alwaysReveal.checked ? '1' : '0'); } catch (e) {}
     render();
   });
-  [rangeSel, compareOnly, againOnly, shuffleBox].forEach(function (el) {
+  sortSel.addEventListener('change', function () {
+    try { localStorage.setItem(SORT_KEY, sortSel.value); } catch (e) {}
+    rebuild();
+  });
+  coreOnly.addEventListener('change', function () {
+    try { localStorage.setItem(CORE_KEY, coreOnly.checked ? '1' : '0'); } catch (e) {}
+    rebuild();
+  });
+  starsOnly.addEventListener('change', function () {
+    try { localStorage.setItem(STARS_KEY, starsOnly.checked ? '1' : '0'); } catch (e) {}
+    rebuild();
+  });
+  shuffleBox.addEventListener('change', function () {
+    syncSortShuffleExclusivity();
+    rebuild();
+  });
+  [rangeSel, compareOnly, againOnly].forEach(function (el) {
     el.addEventListener('change', rebuild);
   });
   weekBoxes.forEach(function (b) { b.addEventListener('change', rebuild); });
@@ -214,5 +350,6 @@
   if (params.get('week') && params.get('c')) {
     onlyConceptId = params.get('week') + '/' + params.get('c');
   }
+  syncSortShuffleExclusivity();
   rebuild();
 })();

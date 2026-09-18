@@ -825,6 +825,11 @@ body.focus-lock { overflow: hidden; }
   color: var(--ink); background: var(--surface-2);
   border: 1px solid var(--line); border-radius: var(--radius-sm);
 }
+.ctrl select:disabled { opacity: .45; cursor: not-allowed; }
+/* 범위/정렬(select) — 표시(토글) — 필터(체크박스) — 셔플/초기화를 시각적으로
+   묶어 컨트롤이 늘어나도 한 줄로 뭉쳐 보이지 않게 한다(Task 14). 새 색 없이
+   기존 --line 토큰만 쓴다. */
+.ctrl-divider { width: 1px; height: 18px; background: var(--line); flex: none; }
 
 .quiz-weeks { margin: 0 0 16px; font-size: 13px; }
 .quiz-weeks > summary {
@@ -849,11 +854,14 @@ body.focus-lock { overflow: hidden; }
 }
 .quiz-card.is-known { border-left-color: var(--prof); }
 .quiz-card.is-again { border-left-color: var(--note); }
-.quiz-card-head { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; }
+.quiz-card-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 16px; }
 .quiz-kind {
   font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: var(--radius-pill);
   color: var(--term); background: var(--term-soft);
 }
+/* 응용(응용:) 문항 — 모범답안이 없는 사고 실험형 프롬프트임을 서술형/비교형과
+   다른 색으로 구분한다. badge-draft와 같은 톤(--muted/--surface-2)만 재사용한다. */
+.quiz-kind-applied { color: var(--muted); background: var(--surface-2); }
 .quiz-mark { font-size: 11.5px; font-weight: 600; color: var(--muted); margin-left: auto; }
 .quiz-q { font-size: 17px; line-height: 1.75; color: var(--ink); }
 .quiz-q p { margin: 0; }
@@ -889,6 +897,8 @@ body.focus-lock { overflow: hidden; }
   margin: 0; padding: 14px 16px; font-size: 14px; color: var(--muted);
   background: var(--surface-2); border-radius: var(--radius-sm);
 }
+.quiz-no-answer-applied { color: var(--ink-soft); }
+.quiz-no-answer-applied strong { color: var(--ink); }
 .quiz-jump { margin: 18px 0 0; font-size: 13.5px; }
 
 .quiz-empty { padding: 48px 0; text-align: center; color: var(--muted); }
