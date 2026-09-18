@@ -1,0 +1,17 @@
+[
+  { "id": "W01",   "date": "2026-09-05", "topic": "Introduction: Innovation Ecosystem", "subtitle": "혁신생태계론 출발점", "source": "W01_혁신생태계론 Intro 260905_compressed.pdf", "quiz": null, "lectured": true },
+  { "id": "W02-1", "date": "2026-09-12", "topic": "혁신의 미시적 기초", "subtitle": "Micro-foundation of Innovation", "source": "W02_혁신생태계론 미시적 기초 260912.pdf", "quiz": null, "lectured": true },
+  { "id": "W02-2", "date": "2026-09-19", "topic": "지식의 공공성 논쟁", "subtitle": "과학기술지식은 공공재인가 사유재인가", "source": "W02_지식의_공공성 논쟁 260912.pdf", "quiz": null, "lectured": false },
+  { "id": "W03",   "date": "2026-09-19", "topic": "혁신에의 거시적 접근 I", "subtitle": "Macro approach I", "source": "", "quiz": 1, "lectured": false },
+  { "id": "W04",   "date": "2026-10-03", "topic": "혁신에의 거시적 접근 II", "subtitle": "Macro approach II · Zoom 비대면", "source": "", "quiz": null, "lectured": false },
+  { "id": "W05",   "date": "2026-10-10", "topic": "부문혁신시스템 (SIS)", "subtitle": "Sectoral Innovation System", "source": "", "quiz": null, "lectured": false },
+  { "id": "W06",   "date": "2026-10-17", "topic": "기술혁신시스템 (TIS) + 글로벌혁신시스템 (GIS)", "subtitle": "", "source": "", "quiz": 2, "lectured": false },
+  { "id": "W07",   "date": "2026-10-24", "topic": "혁신과 생산의 사회시스템 (SSIP) + 비즈니스 시스템 (BS)", "subtitle": "Zoom 비대면", "source": "", "quiz": null, "lectured": false },
+  { "id": "W08",   "date": "2026-10-31", "topic": "사회기술시스템 (StS)", "subtitle": "Socio-technical System", "source": "", "quiz": 3, "lectured": false },
+  { "id": "W09",   "date": "2026-11-07", "topic": "시스템 전환론 I: 전환적 사회혁신", "subtitle": "Transformative Social Innovation", "source": "", "quiz": null, "lectured": false },
+  { "id": "W10",   "date": "2026-11-14", "topic": "시스템 전환론 II: 비즈니스 모델 혁신", "subtitle": "BMI", "source": "", "quiz": 4, "lectured": false },
+  { "id": "W11",   "date": "2026-11-21", "topic": "시스템 전환론 III: 일상생활방식 접근", "subtitle": "Social Practice Approach", "source": "", "quiz": null, "lectured": false },
+  { "id": "W12",   "date": "2026-11-28", "topic": "시스템 전환론 IV: 임무지향형 혁신정책", "subtitle": "MOIP", "source": "", "quiz": 5, "lectured": false },
+  { "id": "W13",   "date": "2026-12-05", "topic": "시스템 전환과 국가의 역할: 개발국가", "subtitle": "Developmental State", "source": "", "quiz": null, "lectured": false },
+  { "id": "W14",   "date": "2026-12-12", "topic": "시스템 전환과 시민의 역할: 신시민성", "subtitle": "Citizen as Innovation Actor", "source": "", "quiz": 6, "lectured": false }
+]

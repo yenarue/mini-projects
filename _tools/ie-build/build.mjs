@@ -50,6 +50,55 @@ async function main() {
   }
 
   console.log(`개념 ${concepts.length}개를 읽었습니다.`);
+
+  const fsp = await import('node:fs');
+  const { parseRelatedRef, conceptHref } = await import('./lib/links.mjs');
+  const { renderWeekPage } = await import('./templates/week.mjs');
+
+  const weeks = JSON.parse(fsp.readFileSync(path.join(HERE, 'weeks.json'), 'utf8'));
+  const byId = new Map(weeks.map((w) => [w.id, { ...w, concepts: [] }]));
+  const conceptIndex = new Map(concepts.map((c) => [`${c.week}/${c.no}`, c]));
+
+  for (const c of concepts) {
+    // related를 해석 가능한 링크로 바꾼다
+    c.related = (c.relatedRaw ?? []).map((raw) => {
+      const ref = parseRelatedRef(raw);
+      if (!ref) {
+        warnings.add('related', `${c.week}/${c.file}: related "${raw}" 해석 실패`);
+        return null;
+      }
+      const target = conceptIndex.get(`${ref.week}/${ref.no}`);
+      if (!target) {
+        warnings.add('related', `${c.week}/${c.file}: related "${raw}" 대상 개념이 아직 없습니다`);
+      }
+      return { week: ref.week, no: ref.no, href: conceptHref(ref.week, ref.no), title: target?.title ?? '' };
+    }).filter(Boolean);
+
+    const w = byId.get(c.week);
+    if (!w) {
+      warnings.add('weeks', `${c.week}가 weeks.json에 없습니다 — 페이지가 생성되지 않습니다`);
+      continue;
+    }
+    w.concepts.push(c);
+  }
+
+  const orderedWeeks = weeks.map((w) => byId.get(w.id));
+
+  // 정적 에셋 복사
+  fsp.cpSync(path.join(HERE, 'assets'), cfg.outDir, { recursive: true });
+
+  let pages = 0;
+  for (const week of orderedWeeks) {
+    if (!week.concepts.length) continue;
+    fsp.writeFileSync(
+      path.join(cfg.outDir, `${week.id}.html`),
+      renderWeekPage({ week, weeks: orderedWeeks }),
+      'utf8'
+    );
+    pages += 1;
+  }
+  console.log(`주차 페이지 ${pages}개 생성`);
+
   warnings.print();
 }
 
