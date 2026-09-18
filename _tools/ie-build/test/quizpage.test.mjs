@@ -220,6 +220,37 @@ test('JSON 스크립트 안에 </script>·따옴표가 섞여도 태그를 깨�
   assert.match(parsed.answers['W02-1/c01'].title, /형식지/);
 });
 
+test('Task 14: 문항이 개념의 별점(importance.stars)과 핵심 개념 여부(core)를 상속한다', () => {
+  const concepts = makeConcepts();
+  concepts[0].importance = { stars: 4, why: '테스트용' };
+  concepts[0].coreRefs = [{ quiz: 1, n: 1, title: '핵심1', href: 'core.html#x-k1' }];
+  const { items, answers } = buildQuizData(concepts, { answersDir: EMPTY_DIR });
+  assert.equal(items.length, 2);
+  assert.ok(items.every((it) => it.stars === 4), '모든 문항이 개념 별점을 그대로 상속해야 한다');
+  assert.ok(items.every((it) => it.core === true), '핵심 개념으로 뽑힌 개념의 문항은 core가 true여야 한다');
+  assert.equal(answers['W01/c05'].stars, 4, '답안 헤더 메타에도 별점이 실려야 한다');
+});
+
+test('Task 14: coreRefs가 없으면 core는 false, importance가 없으면 stars는 null이다', () => {
+  const concepts = makeConcepts(); // importance/coreRefs를 붙이지 않은 기본 fixture
+  const { items, answers } = buildQuizData(concepts, { answersDir: EMPTY_DIR });
+  assert.ok(items.every((it) => it.core === false));
+  assert.ok(items.every((it) => it.stars === null));
+  assert.equal(answers['W01/c05'].stars, null);
+});
+
+test('Task 14: "응용:"으로 시작하는 문항은 isApplied가 true, 그 외는 false다', () => {
+  const concepts = makeConcepts();
+  concepts[0].quizPoints[0].isApplied = false;
+  concepts[0].quizPoints[1] = {
+    html: '응용: 자신의 조직에 적용해 보라.', text: '응용: 자신의 조직에 적용해 보라.',
+    isComparison: false, isApplied: true,
+  };
+  const { items } = buildQuizData(concepts, { answersDir: EMPTY_DIR });
+  assert.equal(items[0].isApplied, false);
+  assert.equal(items[1].isApplied, true);
+});
+
 test('클라이언트 스크립트는 답안 없는 문항을 위한 안내 문구와 라벨 클래스를 갖고 있다', () => {
   const js = fs.readFileSync(
     path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'assets', 'js', 'quiz.js'),
@@ -228,4 +259,29 @@ test('클라이언트 스크립트는 답안 없는 문항을 위한 안내 문�
   assert.match(js, /아직 답안 없음/);
   assert.match(js, /quiz-answer-label/);
   assert.match(js, /교수님의 모범답안이 아닙니다/);
+});
+
+test('클라이언트 스크립트는 "응용:" 문항을 위한 별도 안내 문구를 갖고 있다(Task 14)', () => {
+  const js = fs.readFileSync(
+    path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'assets', 'js', 'quiz.js'),
+    'utf8'
+  );
+  assert.match(js, /응용 사고 문제/);
+  assert.match(js, /quiz-no-answer-applied/);
+  assert.match(js, /import \{ sortByImportance, applyFilters \} from '\.\/quiz-logic\.mjs';/);
+});
+
+test('회차 필터 다음에 정렬 선택과 핵심 개념/★4 이상 필터를 렌더한다(Task 14)', () => {
+  const { items, answers } = buildQuizData(makeConcepts(), { answersDir: EMPTY_DIR });
+  const html = renderQuizPage({ items, answers, weeks, quizSchedule });
+  assert.match(html, /id="quiz-sort"/);
+  assert.match(html, /value="importance">중요도 높은 순/);
+  assert.match(html, /id="quiz-core-only"/);
+  assert.match(html, /id="quiz-stars-only"/);
+});
+
+test('quiz.js는 type="module"로 로드된다(Task 14: quiz-logic.mjs를 import하므로)', () => {
+  const { items, answers } = buildQuizData(makeConcepts(), { answersDir: EMPTY_DIR });
+  const html = renderQuizPage({ items, answers, weeks, quizSchedule });
+  assert.match(html, /<script type="module" src="js\/quiz\.js"><\/script>/);
 });

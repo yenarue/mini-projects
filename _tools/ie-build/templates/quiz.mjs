@@ -28,11 +28,20 @@ export function buildQuizData(concepts, opts = {}) {
     const conceptId = `${c.week}/${c.slug}`;
     const byIndex = answersByConceptIndex.get(conceptId);
 
+    // 문항 중요도 = 그 문항이 속한 개념의 별점을 그대로 상속한다(Task 14).
+    // 문항 자체에 따로 점수를 매기지 않는 이유는 PLAN.md Task 14 참고 — 문항은
+    // 계속 늘어나는데 개념은 관리 가능한 범위라, 점수 관리 지점을 한 곳
+    // (importance.json)으로 유지하는 것이 낫다. core는 쪽지시험 핵심 개념(10개
+    // 세트)에 이 개념이 뽑혔는지 여부다.
+    const stars = c.importance?.stars ?? null;
+    const core = (c.coreRefs?.length ?? 0) > 0;
+
     answers[conceptId] = {
       title: c.title,
       en: c.en,
       week: c.week,
       href: conceptHref(c.week, c.no),
+      stars,
       byIndex: byIndex ? Object.fromEntries(byIndex) : {},
     };
 
@@ -47,6 +56,9 @@ export function buildQuizData(concepts, opts = {}) {
         html: q.html,
         text: q.text,
         isComparison: q.isComparison,
+        isApplied: q.isApplied,
+        stars,
+        core,
       });
     });
   }
@@ -96,6 +108,14 @@ ${topbar({ active: 'quiz' })}
       <span>범위</span>
       <select id="quiz-range">${rangeOptions}</select>
     </label>
+    <label class="ctrl" id="quiz-sort-ctrl">
+      <span>정렬</span>
+      <select id="quiz-sort" title="셔플이 켜지면 정렬은 쓸 수 없다">
+        <option value="doc">문서 순서</option>
+        <option value="importance">중요도 높은 순</option>
+      </select>
+    </label>
+    <span class="ctrl-divider" aria-hidden="true"></span>
     <label class="ctrl ctrl-inline">
       <input type="checkbox" id="quiz-always-reveal">
       <span>답 항상 펼치기</span>
@@ -103,6 +123,14 @@ ${topbar({ active: 'quiz' })}
     <label class="ctrl ctrl-inline">
       <input type="checkbox" id="quiz-compare-only">
       <span>비교형만</span>
+    </label>
+    <label class="ctrl ctrl-inline">
+      <input type="checkbox" id="quiz-core-only">
+      <span>핵심 개념만</span>
+    </label>
+    <label class="ctrl ctrl-inline">
+      <input type="checkbox" id="quiz-stars-only">
+      <span>★4 이상만</span>
     </label>
     <label class="ctrl ctrl-inline">
       <input type="checkbox" id="quiz-again-only">
@@ -141,6 +169,9 @@ ${topbar({ active: 'quiz' })}
     description: '예상 퀴즈 포인트 — 문제와 짧은 예시 답안, 전체 자료는 개념 페이지 링크로',
     bodyClass: 'page-quiz',
     body,
-    scripts: ['js/main.js', 'js/quiz.js'],
+    // quiz.js는 정렬·필터 순수 함수를 assets/js/quiz-logic.mjs에서 import한다
+    // (Node 테스트가 같은 코드를 그대로 검증할 수 있게 하기 위해서다). 브라우저
+    // 네이티브 ES 모듈이라 번들러도 새 의존성도 필요 없다.
+    scripts: ['js/main.js', { src: 'js/quiz.js', type: 'module' }],
   });
 }

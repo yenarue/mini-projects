@@ -1,7 +1,16 @@
 import { esc } from './components.mjs';
 
 export function layout({ title, description = '', bodyClass = '', head = '', body, scripts = [] }) {
-  const scriptTags = scripts.map((s) => `<script src="${s}" defer></script>`).join('\n  ');
+  // scripts의 각 항목은 보통 클래식 defer 스크립트를 가리키는 경로 문자열이지만,
+  // { src, type: 'module' } 형태를 주면 ES 모듈로 로드한다(모듈은 스펙상 이미
+  // defer 동작이라 defer 속성을 따로 붙이지 않는다). quiz.js가 이 방식으로
+  // quiz-logic.mjs를 import한다.
+  const scriptTags = scripts.map((s) => {
+    if (typeof s === 'object' && s !== null) {
+      return `<script type="${esc(s.type)}" src="${esc(s.src)}"></script>`;
+    }
+    return `<script src="${s}" defer></script>`;
+  }).join('\n  ');
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>
