@@ -15,19 +15,39 @@ export function toPlainText(html) {
     .replace(/<figcaption>[\s\S]*?<\/figcaption>/g, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
+    .replace(/&(amp|lt|gt|quot|#39);/g, (_m, ent) =>
+      ({ amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'" })[ent]
+    )
     .replace(/\s+/g, ' ')
     .trim();
 }
 
+/**
+ * 최상위(top-level) <li> 내용만 깊이를 세어 뽑는다.
+ * 중첩 리스트(<ul><li>…</li></ul>)가 안에 있어도 바깥 <li>가 중간에서 잘리지 않는다.
+ */
 export function extractListItems(html) {
-  return [...String(html).matchAll(/<li>([\s\S]*?)<\/li>/g)]
-    .map((m) => m[1].trim())
-    .filter(Boolean);
+  const s = String(html);
+  const tagRe = /<li[^>]*>|<\/li>/g;
+  const items = [];
+  let depth = 0;
+  let start = -1;
+  let m;
+  while ((m = tagRe.exec(s))) {
+    if (m[0].startsWith('</')) {
+      if (depth > 0) {
+        depth--;
+        if (depth === 0 && start !== -1) {
+          items.push(s.slice(start, m.index).trim());
+          start = -1;
+        }
+      }
+    } else {
+      if (depth === 0) start = tagRe.lastIndex;
+      depth++;
+    }
+  }
+  return items.filter(Boolean);
 }
 
 function escapeHtml(s) {
@@ -40,6 +60,10 @@ function escapeHtml(s) {
  * 섹션 마크다운을 HTML로 렌더한다.
  * walkTokens로 href를 먼저 고치고(코드블록은 토큰 타입이 달라 자동으로 제외됨),
  * 렌더 후 h3/h4에 id를 붙인다.
+ *
+ * 주의: ctx.images는 덮어쓰지 않고 누적한다(없으면 새로 만든다). 같은 ctx로
+ * 여러 번 호출하면 이전 호출에서 모인 이미지가 그대로 남아 있다. 섹션별로
+ * 이미지를 따로 모으고 싶으면 호출마다 새 ctx를 쓸 것 (renderConcept가 그렇게 한다).
  */
 export function renderMarkdown(md, ctx) {
   const { week, slug, warnings, label } = ctx;
@@ -71,33 +95,45 @@ export function renderMarkdown(md, ctx) {
         }
       }
     },
+    renderer: {
+      // marked의 기본 <img> 출력을 후처리하는 대신 직접 figure를 만든다.
+      // alt/title에 따옴표·<·& 등이 섞여도 escapeHtml로 안전하게 처리한다
+      // (marked 15는 alt 속성을 이스케이프하지 않는다).
+      image(token) {
+        const alt = escapeHtml(token.text ?? '');
+        const src = token.href ?? '';
+        return (
+          `<figure class="slide">` +
+          `<img src="${src}" alt="${alt}" loading="lazy" decoding="async">` +
+          (alt ? `<figcaption>${alt}</figcaption>` : '') +
+          `</figure>`
+        );
+      },
+    },
   });
 
   let html = marked.parse(md);
 
-  // 이미지를 figure로 감싼다
-  html = html.replace(
-    /<img src="([^"]+)" alt="([^"]*)"[^>]*>/g,
-    (_m, src, alt) =>
-      `<figure class="slide">` +
-      `<img src="${src}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async">` +
-      (alt ? `<figcaption>${escapeHtml(alt)}</figcaption>` : '') +
-      `</figure>`
-  );
-  // marked가 figure를 <p> 안에 넣는 경우 정리
+  // marked가 figure를 <p> 안에 넣는 경우 정리 (한 문단에 이미지 여러 개면
+  // 형제 figure로 남고 <p> 래핑만 벗겨진다)
   html = html.replace(/<p>(\s*<figure class="slide">[\s\S]*?<\/figure>\s*)<\/p>/g, '$1');
 
-  // h3/h4 앵커
+  // h3/h4 앵커 — 이 호출 안에서 슬러그가 겹치면 -2, -3 …으로 구분한다.
+  const seenIds = new Map();
   html = html.replace(/<h([34])>([\s\S]*?)<\/h\1>/g, (_m, lvl, inner) => {
-    const id = `${slug}-h-${slugifyHeading(inner)}`;
+    const base = `${slug}-h-${slugifyHeading(inner)}`;
+    const n = seenIds.get(base) ?? 0;
+    seenIds.set(base, n + 1);
+    const id = n === 0 ? base : `${base}-${n + 1}`;
     return `<h${lvl} id="${id}">${inner}</h${lvl}>`;
   });
 
-  ctx.images = images;
+  if (!ctx.images) ctx.images = [];
+  ctx.images.push(...images);
   return html;
 }
 
-const COMPARISON_RE = /비교형|\bvs\.?\b|↔/i;
+const COMPARISON_RE = /비교|차이|대비|\bvs\.?\b|↔/i;
 
 /** 개념 객체에 html·quizPoints·images를 채워 넣는다. */
 export function renderConcept(concept, warnings) {
