@@ -102,9 +102,24 @@
     }
 
     var it = queue[pos];
-    var ans = ANSWERS[it.conceptId] || { title: '', en: '', html: '', href: it.href };
+    var ans = ANSWERS[it.conceptId] || { title: '', en: '', href: it.href, byIndex: {} };
+    var answerHtml = (ans.byIndex || {})[it.index];
     var mark = state[it.id] || '';
     var open = alwaysReveal.checked;
+
+    // 답안이 있으면 이 답이 교수님 모범답안이 아니라 AI가 쓴 학습 보조 자료임을
+    // 못 박는 라벨을 답안 위에 붙인다(💡 보충 카테고리, --note 톤 재사용 —
+    // assets/styles.css .quiz-answer-label). 답이 없으면 "아직 답안 없음"을 보여주되
+    // 개념 전체 보기 링크는 항상 남긴다.
+    var answerBody = answerHtml
+      ? (
+          '<div class="quiz-answer-label" role="note">' +
+            '<span class="callout-badge" aria-hidden="true">💡</span>' +
+            '<span>AI가 작성한 학습 보조 답안 — 교수님의 모범답안이 아닙니다</span>' +
+          '</div>' +
+          '<div class="concept quiz-answer-body">' + answerHtml + '</div>'
+        )
+      : '<p class="quiz-no-answer">아직 답안 없음 — 아래 링크에서 개념 전체 자료로 직접 익혀 보라.</p>';
 
     stage.innerHTML =
       '<article class="quiz-card' + (mark ? ' is-' + mark : '') + '">' +
@@ -122,8 +137,8 @@
           ' <span class="quiz-week">(' + esc(it.week) + ')</span>' +
         '</div>' +
         '<div class="quiz-answer"' + (open ? '' : ' hidden') + '>' +
-          ans.html +
-          '<p class="quiz-jump"><a href="' + ans.href + '">개념 전체 보기 (논점 · 보충 사례까지) →</a></p>' +
+          answerBody +
+          '<p class="quiz-jump"><a href="' + ans.href + '">개념 전체 보기 (표·인용·슬라이드·다이어그램까지) →</a></p>' +
         '</div>' +
         '<div class="quiz-grade">' +
           '<button type="button" class="side-btn" data-act="known">알았음</button>' +

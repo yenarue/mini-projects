@@ -788,10 +788,12 @@ body.focus-lock { overflow: hidden; }
 }
 
 /* ============================================================
-   퀴즈 (Task 11, quiz.html)
-   .quiz-card 안의 답안 본문(.quiz-answer-body)은 새 스타일을 만들지 않고
-   주차 페이지의 .concept / .sec / .sec-definition 등 §R2 선택자를 그대로
-   입는다 — 아래는 퀴즈 페이지 전용 레이아웃(컨트롤·카드 틀·진행 표시)만 얹는다.
+   퀴즈 (Task 11 → 11b, quiz.html)
+   .quiz-card 안의 답안 본문(.quiz-answer-body)은 새 타이포 스타일을 만들지 않고
+   주차 페이지의 .concept §R2 선택자(p/strong/table/blockquote 등)를 그대로
+   입는다 — 아래는 퀴즈 페이지 전용 레이아웃(컨트롤·카드 틀·진행 표시·답안 라벨)만
+   얹는다. Task 11b: 답은 더 이상 개념 본문 전체(정의·비유·핵심 내용 섹션)의
+   사본이 아니라 answers/*.md에 사람이 직접 쓴 짧은 예시 답안이다.
    ============================================================ */
 .page-quiz-main { max-width: var(--content-max); margin: 0 auto; padding: 36px 24px 64px; }
 .quiz-lede { margin: 0 0 4px; font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); }
@@ -850,14 +852,30 @@ body.focus-lock { overflow: hidden; }
 }
 .quiz-week { color: var(--muted); font-size: 12.5px; }
 
+/* 답안 라벨 — 💡 보충(note) 톤을 그대로 재사용해 "이 답은 교수님 모범답안이
+   아니라 AI가 쓴 학습 보조 자료"임을 답안 바로 위에서 못 박는다. 새 색은
+   쓰지 않고 --note/--note-soft 토큰만 쓴다(.concept p.callout-note와 같은 톤). */
+.quiz-answer-label {
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 0 14px; padding: 10px 14px; border-radius: var(--radius-sm);
+  background: var(--note-soft); border: 1px dashed var(--note);
+  font-size: 12.5px; font-weight: 600; color: var(--note);
+}
+.quiz-answer-label .callout-badge { flex: none; line-height: 1.4; }
+
 /* 답안 본문 — .concept를 그대로 입되 퀴즈 카드 안에 다시 중첩되는 박스이므로
-   바깥 카드 장식(패딩·테두리·그림자)만 지우고 표·인용·슬라이드·다이어그램 타이포는
-   .concept/.sec 규칙에 맡긴다. */
+   바깥 카드 장식(패딩·테두리·그림자)만 지우고 문단·표·인용 타이포는 .concept
+   규칙에 맡긴다. */
 .quiz-answer { margin-top: 18px; }
 .quiz-answer-body.concept {
   max-width: none; margin: 0; padding: 0; border: none; box-shadow: none; background: transparent;
 }
-.quiz-answer-body .sec:first-child { margin-top: 0; }
+.quiz-answer-body > *:first-child { margin-top: 0; }
+.quiz-answer-body > *:last-child { margin-bottom: 0; }
+.quiz-no-answer {
+  margin: 0; padding: 14px 16px; font-size: 14px; color: var(--muted);
+  background: var(--surface-2); border-radius: var(--radius-sm);
+}
 .quiz-jump { margin: 18px 0 0; font-size: 13.5px; }
 
 .quiz-empty { padding: 48px 0; text-align: center; color: var(--muted); }
