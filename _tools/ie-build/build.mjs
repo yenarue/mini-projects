@@ -39,7 +39,8 @@ async function main() {
   const imgStats = processImages(concepts, cfg, warnings);
   console.log(
     `이미지 ${imgStats.copied}개 ` +
-    `(${formatBytes(imgStats.totalSrcBytes)} → ${formatBytes(imgStats.totalOutBytes)})`
+    `(${formatBytes(imgStats.totalSrcBytes)} → ${formatBytes(imgStats.totalOutBytes)}), ` +
+    `고아 이미지 ${imgStats.orphansRemoved}개 삭제`
   );
 
   if (args.has('--dump-json')) {
