@@ -122,6 +122,20 @@ async function main() {
   );
   console.log('index.html 생성');
 
+  const { buildSearchIndex, estimateSize, trimIfLarge } = await import('./lib/searchindex.mjs');
+  let searchIndex = buildSearchIndex(concepts, orderedWeeks);
+  const trimResult = trimIfLarge(searchIndex);
+  searchIndex = trimResult.index;
+  if (trimResult.trimmed) {
+    warnings.add('search', '인덱스가 1.5MB를 넘어 본문을 3000자로 잘랐습니다');
+  }
+  fsp.writeFileSync(
+    path.join(cfg.outDir, 'search-index.json'),
+    JSON.stringify(searchIndex),
+    'utf8'
+  );
+  console.log(`검색 인덱스 ${searchIndex.docs.length}건 (${(estimateSize(searchIndex) / 1024).toFixed(0)}KB)`);
+
   warnings.print();
 }
 

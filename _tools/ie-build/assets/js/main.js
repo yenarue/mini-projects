@@ -148,6 +148,265 @@
     document.body.appendChild(box);
   });
 
+  /* ---------- 검색 ----------
+     DOM 셸(#search-overlay, #search-input, #search-results, #search-open)은
+     이미 templates/components.mjs의 topbar()가 모든 페이지에 찍어 둔다(이전
+     작업에서 만든 것). 여기서는 그 위에 fetch → 매칭 → 렌더 → 키보드만 얹는다.
+
+     변수명 주의: 아래쪽 "집중 모드" 블록이 이미 `overlay`라는 이름을 이 IIFE
+     스코프에서 쓰고 있다(var는 함수 스코프라 같은 이름을 쓰면 서로 덮어쓴다).
+     충돌을 피하려고 검색 쪽 변수는 전부 search 접두어를 붙인다. */
+  var searchOverlay = document.getElementById('search-overlay');
+  var searchInput = document.getElementById('search-input');
+  var searchResults = document.getElementById('search-results');
+  var searchOpenBtn = document.getElementById('search-open');
+  var searchDocs = null; // 인덱스를 아직 못 불러왔으면 null
+  var searchActiveIdx = -1;
+
+  // file://로 이 사이트를 직접 열면(owner가 자주 그렇게 연다) fetch('search-index.json')가
+  // 항상 실패한다 — file:// 문서에서의 fetch는 대부분 브라우저에서 로컬 파일 접근이
+  // 막혀 있다(크롬은 net::ERR_FAILED). 매번 실패하는 걸 알면서 fetch를 시도해 콘솔에
+  // 에러를 남기는 대신, 아예 fetch를 걸지 않고 검색창을 열자마자 이유와 해결책을
+  // 보여준다("클릭했는데 아무 일도 안 일어남"이 제일 나쁜 결과).
+  var isFileProtocol = location.protocol === 'file:';
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (ch) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
+    });
+  }
+
+  function showNotice(html) {
+    searchResults.innerHTML = '';
+    var li = document.createElement('li');
+    li.className = 'search-notice';
+    li.innerHTML = html;
+    searchResults.appendChild(li);
+  }
+
+  function loadIndex() {
+    if (searchDocs) return Promise.resolve(searchDocs);
+    return fetch('search-index.json')
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        searchDocs = data.docs || [];
+        return searchDocs;
+      });
+  }
+
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.hidden = false;
+
+    if (isFileProtocol) {
+      searchInput.disabled = true;
+      searchInput.placeholder = '검색은 서버로 열었을 때만 동작합니다';
+      showNotice(
+        '이 페이지를 파일로 직접 열면(<code>file://…</code>) 검색 데이터를 불러올 수 없습니다.<br>' +
+        '터미널에서 이 폴더를 <code>python3 -m http.server</code> 같은 로컬 서버로 열고 ' +
+        '<code>http://localhost:…</code> 주소로 다시 접속해 주세요.'
+      );
+      return;
+    }
+
+    searchInput.focus();
+    searchInput.select();
+    if (searchDocs) return;
+    showNotice('검색 데이터를 불러오는 중…');
+    loadIndex()
+      .then(function () {
+        if (searchInput.value.trim()) runSearch();
+        else searchResults.innerHTML = '';
+      })
+      .catch(function () {
+        showNotice('검색 데이터를 불러오지 못했습니다. 새로고침 후 다시 시도해 주세요.');
+      });
+  }
+
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.hidden = true;
+    searchActiveIdx = -1;
+  }
+
+  // 가중치. 한국어는 형태소 분석을 하지 않으므로(약속: 조사·활용형이 원문과
+  // 다르면 매칭되지 않는다) 부분 문자열 매칭만 쓰고, 어느 필드에 맞았는지로
+  // 순위를 매긴다. refs는 readings(frontmatter의 서지 정보, 예: "Callon (1994)
+  // Is Science a Public Good? ★Core Reading")를 모은 필드다 — Callon·Jensen·
+  // Polanyi처럼 저자명이 본문에는 안 나오고 읽기자료 인용에만 나오는 경우가
+  // 실제 데이터에 있어서, title/en/tags/oneLine/body 다섯 필드만으로는 저자명
+  // 검색이 아예 히트하지 않는다(자세한 근거는 task-9-report.md).
+  var W_TITLE = 100;
+  var W_EN = 60;
+  var W_REFS = 55;
+  var W_TAGS = 45;
+  var W_ONELINE = 25;
+  var W_BODY_BASE = 6;
+  var W_BODY_PER_HIT = 2;
+  var W_BODY_HIT_CAP = 5;
+
+  function countHits(hay, needle) {
+    if (!needle) return 0;
+    var n = 0, i = 0;
+    while (true) {
+      i = hay.indexOf(needle, i);
+      if (i === -1) break;
+      n += 1;
+      i += needle.length;
+    }
+    return n;
+  }
+
+  function scoreDoc(doc, tokens) {
+    var total = 0;
+    var title = (doc.title || '').toLowerCase();
+    var en = (doc.en || '').toLowerCase();
+    var refs = (doc.refs || '').toLowerCase();
+    var tags = (doc.tags || []).join(' ').toLowerCase();
+    var oneLine = (doc.oneLine || '').toLowerCase();
+    var body = (doc.body || '').toLowerCase();
+
+    for (var i = 0; i < tokens.length; i++) {
+      var q = tokens[i];
+      var inTitle = title.indexOf(q) >= 0;
+      var inEn = en.indexOf(q) >= 0;
+      var inRefs = refs.indexOf(q) >= 0;
+      var inTags = tags.indexOf(q) >= 0;
+      var inOneLine = oneLine.indexOf(q) >= 0;
+      var bodyHits = countHits(body, q);
+      // AND: 토큰 하나라도 아무 필드에도 없으면 이 문서는 탈락.
+      if (!(inTitle || inEn || inRefs || inTags || inOneLine || bodyHits > 0)) return 0;
+
+      var t = 0;
+      if (inTitle) t += W_TITLE;
+      if (inEn) t += W_EN;
+      if (inRefs) t += W_REFS;
+      if (inTags) t += W_TAGS;
+      if (inOneLine) t += W_ONELINE;
+      if (bodyHits > 0) t += W_BODY_BASE + W_BODY_PER_HIT * Math.min(bodyHits, W_BODY_HIT_CAP);
+      total += t;
+    }
+    return total;
+  }
+
+  // 스니펫: 여러 토큰 중 (한 줄 정의 + 본문)에서 가장 먼저 등장하는 것을 기준으로
+  // 앞뒤를 잘라내고, 등장한 토큰을 전부 <mark>로 감싼다. 순서가 중요하다 — 원문에는
+  // <, &, 따옴표가 그대로 들어있으므로 먼저 이스케이프한 뒤에, 이스케이프된
+  // 문자열 위에서 하이라이트 정규식을 돌린다(반대로 하면 <mark> 태그 자체가
+  // 다시 이스케이프되어 화면에 글자로 보인다).
+  function escapeRegExp(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function findFirstHit(hay, tokens) {
+    var lower = hay.toLowerCase();
+    var best = -1;
+    for (var i = 0; i < tokens.length; i++) {
+      var at = lower.indexOf(tokens[i]);
+      if (at !== -1 && (best === -1 || at < best)) best = at;
+    }
+    return best;
+  }
+
+  function highlight(safeText, tokens) {
+    var parts = [];
+    for (var i = 0; i < tokens.length; i++) {
+      if (tokens[i]) parts.push(escapeRegExp(tokens[i]));
+    }
+    if (!parts.length) return safeText;
+    var re = new RegExp('(' + parts.join('|') + ')', 'ig');
+    return safeText.replace(re, '<mark>$1</mark>');
+  }
+
+  function snippet(doc, tokens) {
+    var hay = (doc.oneLine ? doc.oneLine + ' ' : '') + (doc.body || '');
+    var at = findFirstHit(hay, tokens);
+    if (at === -1) {
+      var fallback = doc.oneLine || doc.body || '';
+      return escapeHtml(fallback.slice(0, 90));
+    }
+    var from = Math.max(0, at - 35);
+    var raw = hay.slice(from, from + 120);
+    var safe = escapeHtml(raw); // 먼저 이스케이프
+    return (from > 0 ? '…' : '') + highlight(safe, tokens) + '…'; // 그다음 하이라이트
+  }
+
+  function runSearch() {
+    if (!searchDocs) return;
+    var q = searchInput.value.trim().toLowerCase();
+    searchResults.innerHTML = '';
+    searchActiveIdx = -1;
+    if (q.length < 1) return;
+
+    var tokens = q.split(/\s+/).filter(Boolean);
+    var hits = searchDocs
+      .map(function (d) { return { doc: d, s: scoreDoc(d, tokens) }; })
+      .filter(function (h) { return h.s > 0; })
+      .sort(function (a, b) { return b.s - a.s; })
+      .slice(0, 20);
+
+    if (!hits.length) {
+      showNotice('일치하는 개념이 없습니다.');
+      return;
+    }
+
+    hits.forEach(function (h) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = h.doc.href;
+      a.innerHTML =
+        '<span class="search-r-title">' + escapeHtml(h.doc.title) + '</span> ' +
+        '<span class="search-r-meta">' + escapeHtml(h.doc.week) + ' · ' + escapeHtml(h.doc.en) + '</span>' +
+        '<span class="search-r-snippet">' + snippet(h.doc, tokens) + '</span>';
+      li.appendChild(a);
+      searchResults.appendChild(li);
+    });
+  }
+
+  function moveSearchActive(delta) {
+    var items = searchResults.querySelectorAll('li:not(.search-notice)');
+    if (!items.length) return;
+    if (searchActiveIdx >= 0 && items[searchActiveIdx]) items[searchActiveIdx].classList.remove('active');
+    searchActiveIdx = (searchActiveIdx + delta + items.length) % items.length;
+    items[searchActiveIdx].classList.add('active');
+    items[searchActiveIdx].scrollIntoView({ block: 'nearest' });
+  }
+
+  if (searchOpenBtn) searchOpenBtn.addEventListener('click', openSearch);
+  if (searchInput) searchInput.addEventListener('input', runSearch);
+  if (searchOverlay) searchOverlay.addEventListener('click', function (e) {
+    if (e.target === searchOverlay) closeSearch();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    var active = document.activeElement;
+    var typing = active && /^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName);
+
+    if (searchOverlay && ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'))) {
+      e.preventDefault();
+      openSearch();
+      return;
+    }
+    if (!searchOverlay || searchOverlay.hidden) return;
+
+    if (e.key === 'Escape') { closeSearch(); return; }
+    if (e.key === 'ArrowDown') { e.preventDefault(); moveSearchActive(1); return; }
+    if (e.key === 'ArrowUp') { e.preventDefault(); moveSearchActive(-1); return; }
+    if (e.key === 'Enter') {
+      var items = searchResults.querySelectorAll('li:not(.search-notice)');
+      var pick = searchActiveIdx >= 0 ? items[searchActiveIdx] : items[0];
+      if (pick) {
+        e.preventDefault();
+        var link = pick.querySelector('a');
+        if (link) link.click();
+        closeSearch();
+      }
+    }
+  });
+
   /* ---------- 해시로 들어오면 접힌 섹션 펼치기 ---------- */
   function revealHash() {
     if (!location.hash) return;
