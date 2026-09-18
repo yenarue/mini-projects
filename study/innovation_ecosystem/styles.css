@@ -408,6 +408,105 @@ figure.slide figcaption { margin-top: 8px; font-size: 12px; color: var(--muted);
 .concept-top a:hover { color: var(--brand); }
 
 /* ============================================================
+   R2 — 내용 자동 변환 (T1~T8, REDESIGN.md §5)
+   ============================================================ */
+
+/* T1 — 정의 목록 → 2열 표 */
+.concept table.deflist { width: 100%; }
+.concept table.deflist th.deflist-term {
+  width: 32%; color: var(--term); font-weight: 600;
+  background: var(--surface-2); vertical-align: top;
+}
+.concept table.deflist td.deflist-desc { color: var(--ink-soft); }
+
+/* T2 — 번호 단계 카드 */
+.step-group { display: flex; flex-direction: column; gap: 12px; margin: 18px 0; }
+.step-card {
+  display: flex; gap: 14px; padding: 16px 18px;
+  background: var(--surface-2); border-radius: var(--radius-sm);
+  scroll-margin-top: calc(var(--topbar-h) + 14px);
+}
+.step-no {
+  flex: none; width: 26px; height: 26px; margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--brand); color: var(--surface);
+  font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.step-body { flex: 1; min-width: 0; }
+.step-title { margin: 0 0 8px; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.step-body > *:last-child { margin-bottom: 0; }
+
+/* T3 — 🗣 교수 발언 blockquote */
+.concept blockquote.quote-prof {
+  position: relative;
+  margin: 16px 0; padding: 14px 18px 14px 46px; border-radius: var(--radius-sm);
+  background: var(--prof-soft); border-left: 3px solid var(--prof);
+  color: var(--ink); font-size: 14.5px;
+}
+.quote-icon { position: absolute; left: 15px; top: 15px; font-size: 15px; line-height: 1; }
+.quote-text { margin: 0 0 2px; font-style: italic; }
+.quote-time {
+  display: block; text-align: right; margin: 0 0 10px;
+  font-size: 11px; font-style: normal; color: var(--prof); font-variant-numeric: tabular-nums;
+}
+.quote-text:last-of-type { margin-bottom: 0; }
+.quote-time:last-child { margin-bottom: 0; }
+
+/* T4 / T5 — 📄 슬라이드 근거 · 💡 보충 콜아웃 (문단) */
+.concept p.callout {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin: 14px 0; padding: 12px 16px; border-radius: var(--radius-sm); font-size: 14.5px;
+}
+.concept p.callout-slide { background: var(--slide-soft); border-left: 3px solid var(--slide); }
+.concept p.callout-note { background: var(--note-soft); border: 1px dashed var(--note); }
+.callout-badge { flex: none; line-height: 1.5; }
+
+/* T4 / T5 — 📄 · 💡 콜아웃 (목록 항목) */
+.concept li.li-callout {
+  list-style: none; margin: 6px 0 !important; padding: 8px 12px; border-radius: var(--radius-sm);
+}
+.concept li.li-callout-slide { background: var(--slide-soft); }
+.concept li.li-callout-note { background: var(--note-soft); border: 1px dashed var(--note); }
+
+/* T6 — 표: 가로 스크롤 래퍼 + 홀짝 배경 + 첫 열 강조 (구조는 그대로) */
+.table-scroll { overflow-x: auto; margin: 16px 0; border-radius: var(--radius-sm); }
+.table-scroll table { margin: 0; }
+.table-scroll::-webkit-scrollbar { height: 6px; }
+.table-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+.concept tbody tr:nth-child(even) > * { background: var(--surface-2); }
+.concept table:not(.deflist) td:first-child,
+.concept table:not(.deflist) th:first-child { font-weight: 600; color: var(--ink); }
+
+/* T7 — 접힌 "출처" 패널 */
+.source-panel h5 {
+  margin: 10px 0 4px; font-size: 11px; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.source-panel h5:first-child { margin-top: 0; }
+.source-list { margin: 0 0 10px; padding-left: 18px; font-size: 13px; color: var(--ink-soft); }
+.source-list:last-child { margin-bottom: 0; }
+.source-list li { margin: 3px 0; }
+
+/* T8 — 예상 퀴즈 포인트 번호 카드 */
+.sec-quiz .quiz-cards { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.sec-quiz .quiz-card { display: flex; gap: 12px; align-items: flex-start; margin: 0 !important; }
+.quiz-no {
+  flex: none; width: 24px; height: 24px; margin-top: 1px;
+  display: flex; align-items: center; justify-content: center; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--term); color: var(--term);
+  font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.quiz-card-body { flex: 1; min-width: 0; }
+.quiz-badge {
+  display: inline-block; margin-bottom: 5px; padding: 2px 9px;
+  font-size: 10.5px; font-weight: 600; border-radius: var(--radius-pill);
+}
+.quiz-badge-compare { color: var(--slide); background: var(--slide-soft); }
+.quiz-badge-desc { color: var(--muted); background: var(--surface-2); }
+.quiz-text { font-size: 14.5px; color: var(--ink-soft); }
+.quiz-text > *:last-child { margin-bottom: 0; }
+
+/* ============================================================
    라이트박스
    ============================================================ */
 .lightbox {
@@ -497,8 +596,9 @@ figure.slide figcaption { margin-top: 8px; font-size: 12px; color: var(--muted);
   .week-title { font-size: 24px; }
   .concept { padding: 22px 18px 26px; border-radius: var(--radius-sm); }
   .concept-title-row h2 { font-size: 19px; }
-  .concept table { display: block; overflow-x: auto; white-space: nowrap; }
   .side-nav { grid-template-columns: 1fr; }
+  .step-card { flex-direction: column; gap: 8px; }
+  .concept blockquote.quote-prof { padding: 14px 16px 14px 40px; }
 }
 
 /* ============================================================

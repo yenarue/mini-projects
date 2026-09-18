@@ -1,5 +1,12 @@
 import { Marked } from 'marked';
 import { rewriteMdLink, rewriteImagePath } from './links.mjs';
+import {
+  listRenderer,
+  paragraphRenderer,
+  blockquoteRenderer,
+  tableRenderer,
+  groupNumberedSteps,
+} from './transform.mjs';
 
 /** conceptHref()가 만드는 형식("W01.html#c05")에서 week/no를 뽑아 existingKeys에 있는지 본다. */
 const CONCEPT_HREF_RE = /^(W\d{2}(?:-\d)?)\.html#c(\d{1,2})$/;
@@ -181,6 +188,12 @@ export function renderMarkdown(md, ctx) {
           `</figure>`
         );
       },
+      // R2 내용 자동 변환(REDESIGN.md §5) — lib/transform.mjs가 실제 로직을 갖고,
+      // 여기서는 marked 렌더러에 끼워 넣기만 한다.
+      list: listRenderer,       // T1(정의 목록→표) + T4/T5(목록 항목 콜아웃)
+      paragraph: paragraphRenderer, // T4/T5(문단 콜아웃)
+      blockquote: blockquoteRenderer, // T3(🗣 교수 발언)
+      table: tableRenderer,     // T6(표 가로 스크롤 래퍼)
     },
   });
 
@@ -202,6 +215,10 @@ export function renderMarkdown(md, ctx) {
     const id = n === 0 ? base : `${base}-${n + 1}`;
     return `<h${lvl} id="${id}">${inner}</h${lvl}>`;
   });
+
+  // T2(번호 단계 카드) — h3/h4 id가 이미 붙은 뒤에 돌려야 카드 wrapper에
+  // 그 id를 그대로 옮겨서 기존 해시 링크(#c05-h-...)가 계속 동작한다.
+  html = groupNumberedSteps(html);
 
   if (!ctx.images) ctx.images = [];
   ctx.images.push(...images);

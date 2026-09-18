@@ -1,5 +1,6 @@
 import { esc, topbar, sidebar, legend, statusBadge, footer } from './components.mjs';
 import { layout } from './layout.mjs';
+import { sourcePanel, quizCards } from '../lib/transform.mjs';
 
 /** 기본 펼침 섹션(§4.3: 한 줄 정의·쉽게 말하면·핵심 내용·예상 퀴즈). 나머지 4개는 <details>로 접는다. */
 const OPEN_SECTIONS = new Set(['definition', 'analogy', 'core', 'quiz']);
@@ -28,9 +29,12 @@ function sectionBlock(concept, section) {
     return `<div class="sec sec-mynotes"><h4>${esc(label)}</h4>${section.html}</div>`;
   }
   if (section.key === 'quiz') {
+    // T8(REDESIGN.md §5): 예상 퀴즈 포인트 목록을 번호 카드 + 비교형/서술형 배지로.
+    // isComparison은 renderConcept이 이미 계산해 둔 값을 그대로 쓴다(재계산 금지).
+    const cards = quizCards(concept.quizPoints);
     return `<div class="sec sec-quiz">
   <h4>${esc(label)}</h4>
-  ${section.html}
+  ${cards || section.html}
   <p class="sec-quiz-link"><a href="quiz.html?week=${encodeURIComponent(concept.week)}&amp;c=${concept.slug}">퀴즈 모드로 풀기 →</a></p>
 </div>`;
   }
@@ -80,6 +84,7 @@ function conceptBlock(concept) {
     <p class="concept-en">${esc(concept.en)}${concept.subtitle ? ` — ${esc(concept.subtitle)}` : ''}</p>
   </div>
   ${chips ? `<p class="concept-meta">${chips}</p>` : ''}
+  ${sourcePanel(concept)}
   ${concept.sections.map((s) => sectionBlock(concept, s)).join('\n')}
   ${related ? `<p class="concept-related">관련: ${related}</p>` : ''}
   <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
