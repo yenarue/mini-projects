@@ -179,6 +179,31 @@ async function main() {
     warnings.add('quiz', `quiz.html이 ${quizKb.toFixed(0)}KB입니다. 답안을 별도 JSON으로 분리하는 것을 검토하세요`);
   }
 
+  const yaml = (await import('js-yaml')).default;
+  const { buildGraph, renderMapPage } = await import('./templates/map.mjs');
+
+  let comparisons = [];
+  const cmpFile = path.join(HERE, 'comparisons.yml');
+  if (fsp.existsSync(cmpFile)) {
+    try {
+      comparisons = yaml.load(fsp.readFileSync(cmpFile, 'utf8')) ?? [];
+    } catch (err) {
+      warnings.add('map', `comparisons.yml 파싱 실패: ${err.message}`);
+    }
+  }
+
+  const graph = buildGraph(concepts);
+  fsp.writeFileSync(
+    path.join(cfg.outDir, 'map.html'),
+    renderMapPage({ graph, weeks: orderedWeeks, comparisons }),
+    'utf8'
+  );
+  const crossEdges = graph.edges.filter((e) => e.crossWeek).length;
+  console.log(
+    `map.html 생성 (노드 ${graph.nodes.length} · 엣지 ${graph.edges.length} · ` +
+      `주차 간 ${crossEdges} · 비교표 ${comparisons.length})`
+  );
+
   warnings.print();
 }
 
