@@ -63,7 +63,13 @@ function escapeHtml(s) {
  *
  * 주의: ctx.images는 덮어쓰지 않고 누적한다(없으면 새로 만든다). 같은 ctx로
  * 여러 번 호출하면 이전 호출에서 모인 이미지가 그대로 남아 있다. 섹션별로
- * 이미지를 따로 모으고 싶으면 호출마다 새 ctx를 쓸 것 (renderConcept가 그렇게 한다).
+ * 이미지를 따로 모으고 싶으면 호출마다 새 ctx를 쓸 것.
+ *
+ * h3/h4 앵커의 슬러그 충돌 방지 범위는 ctx.headingIds의 생명주기에 따른다:
+ * - renderConcept가 ctx를 만들 때 ctx.headingIds를 전달하면, 그 개념의
+ *   모든 섹션 렌더링이 같은 dedup map을 공유해 앵커 충돌이 방지된다.
+ * - standalone 호출(테스트 등)에서 ctx.headingIds가 없으면, 이 호출 안에서만
+ *   de-duplication이 이루어진다.
  */
 export function renderMarkdown(md, ctx) {
   const { week, slug, warnings, label } = ctx;
@@ -118,8 +124,11 @@ export function renderMarkdown(md, ctx) {
   // 형제 figure로 남고 <p> 래핑만 벗겨진다)
   html = html.replace(/<p>(\s*<figure class="slide">[\s\S]*?<\/figure>\s*)<\/p>/g, '$1');
 
-  // h3/h4 앵커 — 이 호출 안에서 슬러그가 겹치면 -2, -3 …으로 구분한다.
-  const seenIds = new Map();
+  // h3/h4 앵커 — 슬러그가 겹치면 -2, -3 …으로 구분한다.
+  // ctx.headingIds가 있으면 그것을 쓰고(renderConcept이 전달), 없으면 새로 만든다(standalone).
+  if (!ctx.headingIds) ctx.headingIds = new Map();
+  const seenIds = ctx.headingIds;
+
   html = html.replace(/<h([34])>([\s\S]*?)<\/h\1>/g, (_m, lvl, inner) => {
     const base = `${slug}-h-${slugifyHeading(inner)}`;
     const n = seenIds.get(base) ?? 0;
@@ -138,6 +147,7 @@ const COMPARISON_RE = /비교|차이|대비|\bvs\.?\b|↔/i;
 /** 개념 객체에 html·quizPoints·images를 채워 넣는다. */
 export function renderConcept(concept, warnings) {
   const allImages = [];
+  const headingIds = new Map(); // 모든 섹션이 공유할 heading ID dedup 맵
 
   for (const section of concept.sections) {
     const ctx = {
@@ -145,6 +155,7 @@ export function renderConcept(concept, warnings) {
       slug: concept.slug,
       warnings,
       label: `${concept.week}/${concept.file}`,
+      headingIds, // 모든 섹션이 같은 headingIds를 씀
     };
     section.html = renderMarkdown(section.md, ctx);
     section.plain = toPlainText(section.html);

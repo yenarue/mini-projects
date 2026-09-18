@@ -223,3 +223,54 @@ test('renderMarkdown을 같은 ctx로 두 번 호출하면 이미지가 누적�
   const names = c.images.map((i) => i.name).sort();
   assert.deepEqual(names, ['p10', 'p11']);
 });
+
+// --- Finding 8: renderConcept 개념 단위 앵커 중복 제거 ---
+
+test('renderConcept은 같은 개념의 서로 다른 섹션이 같은 제목을 가져도 다른 id를 생성한다', () => {
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W01',
+    no: 5,
+    slug: 'c05',
+    file: 'x.md',
+    title: 'T',
+    en: 'E',
+    tags: [],
+    sections: [
+      { key: 'core', heading: '핵심 내용', md: '### 결론\n\n가' },
+      { key: 'position', heading: '수업 프레임에서의 위치', md: '### 결론\n\n나' },
+    ],
+  };
+  renderConcept(concept, warnings);
+  const ids1 = [...concept.sections[0].html.matchAll(/<h3 id="([^"]+)"/g)].map((m) => m[1]);
+  const ids2 = [...concept.sections[1].html.matchAll(/<h3 id="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(ids1.length, 1, '첫 섹션은 h3을 1개 가져야 함');
+  assert.equal(ids2.length, 1, '두 번째 섹션은 h3을 1개 가져야 함');
+  assert.equal(ids1[0], 'c05-h-결론', '첫 섹션의 id는 c05-h-결론이어야 함');
+  assert.equal(ids2[0], 'c05-h-결론-2', '두 번째 섹션의 같은 제목은 c05-h-결론-2여야 함');
+  assert.notEqual(ids1[0], ids2[0], '두 섹션의 id는 달라야 함');
+});
+
+test('renderConcept은 세 개의 섹션이 같은 제목을 가지면 각각 다른 id를 생성한다', () => {
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W02',
+    no: 10,
+    slug: 'c10',
+    file: 'y.md',
+    title: 'T2',
+    en: 'E2',
+    tags: [],
+    sections: [
+      { key: 'analogy', heading: '쉽게 말하면', md: '### 핵심\n\n첫 번째' },
+      { key: 'core', heading: '핵심 내용', md: '### 핵심\n\n두 번째' },
+      { key: 'depth', heading: '깊이 있게', md: '### 핵심\n\n세 번째' },
+    ],
+  };
+  renderConcept(concept, warnings);
+  const ids = concept.sections.map((s) => {
+    const matches = [...s.html.matchAll(/<h3 id="([^"]+)"/g)];
+    return matches.length > 0 ? matches[0][1] : null;
+  });
+  assert.deepEqual(ids, ['c10-h-핵심', 'c10-h-핵심-2', 'c10-h-핵심-3']);
+});
