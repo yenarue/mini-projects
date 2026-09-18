@@ -6,14 +6,24 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="혁신의 미시적 기초 개념 정리 12개">
   <title>W02-1 · 혁신의 미시적 기초 — 혁신생태계론</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <link rel="stylesheet" href="styles.css">
   <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
     (function () {
       try {
-        var saved = localStorage.getItem('ie-theme');
-        var dark = saved ? saved === 'dark'
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
           : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
       } catch (e) {}
     })();
   </script>
@@ -23,15 +33,20 @@
 
 
 <header class="topbar">
-  <a class="topbar-home" href="index.html">혁신생태계론</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
   <nav class="topbar-nav">
     <a href="index.html">학기 지도</a>
     <a href="quiz.html">퀴즈</a>
     <a href="map.html">개념 지도</a>
   </nav>
   <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
     <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
-      <span>검색</span><kbd>/</kbd>
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
     </button>
     <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
       <span class="theme-icon" aria-hidden="true"></span>
@@ -47,7 +62,7 @@
 </div>
 <div class="layout" id="top">
   
-<aside>
+<aside class="sidebar">
   <div class="chapter-label">W02-1 · 09/12</div>
   <h1>혁신의 미시적 기초</h1>
   <p class="side-subtitle">Micro-foundation of Innovation</p>
@@ -149,15 +164,18 @@
     
 <section class="concept" id="c01">
   <header class="concept-head">
-    <div class="concept-no">01</div>
-    <div class="concept-title">
-      <h2>지식의 속성 — 암묵지와 형식지</h2>
-      <p class="concept-en">Tacit and Explicit (Codified) Knowledge</p>
-      <p class="concept-subtitle">Tacit and Explicit Knowledge</p>
+    <span class="concept-eyebrow">W02-1 · 개념 01</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c01" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p10</span> <span class="meta-slide">📄 W02 p11</span> <a class="tag" href="map.html?tag=tacit-knowledge">#tacit-knowledge</a> <a class="tag" href="map.html?tag=explicit-knowledge">#explicit-knowledge</a> <a class="tag" href="map.html?tag=polanyi">#polanyi</a> <a class="tag" href="map.html?tag=codification">#codification</a> <a class="tag" href="map.html?tag=know-how">#know-how</a> <a class="tag" href="map.html?tag=know-why">#know-why</a></p>
+  <div class="concept-title-row">
+    <h2>지식의 속성 — 암묵지와 형식지</h2>
+    <p class="concept-en">Tacit and Explicit (Codified) Knowledge — Tacit and Explicit Knowledge</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p10</span> <span class="chip chip-slide">📄 W02 p11</span> <a class="chip chip-tag" href="map.html?tag=tacit-knowledge">#tacit-knowledge</a> <a class="chip chip-tag" href="map.html?tag=explicit-knowledge">#explicit-knowledge</a> <a class="chip chip-tag" href="map.html?tag=polanyi">#polanyi</a> <a class="chip chip-tag" href="map.html?tag=codification">#codification</a> <a class="chip chip-tag" href="map.html?tag=know-how">#know-how</a> <a class="chip chip-tag" href="map.html?tag=know-why">#know-why</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>우리가 아는 것 전부를 말로 옮길 수는 없다. <strong>형식지(explicit)</strong>는 책·매뉴얼·논문처럼 <strong>밖으로 꺼내 남에게 넘길 수 있는 지식</strong>이고, <strong>암묵지(tacit)</strong>는 몸과 경험에 붙어 있어 <strong>말로 다 설명되지 않는 지식</strong>이다. Michael Polanyi의 한 문장으로 요약된다. <strong>&quot;We know more than we can tell.&quot;</strong></p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>📄 슬라이드가 쓴 비유가 그대로 정답이다. <strong>자전거 부품 설명도</strong>(형식지)를 다 외워도 자전거를 탈 수는 없다. <strong>뒤에서 잡아 주며 타 보는 것</strong>(암묵지)이 있어야 탄다. 반대로 자전거를 아무리 잘 타도, 그 감각을 글로 써서 남에게 넘기기는 어렵다.</p>
@@ -275,15 +293,18 @@
 
 <section class="concept" id="c02">
   <header class="concept-head">
-    <div class="concept-no">02</div>
-    <div class="concept-title">
-      <h2>학습 — 지식생산의 미시적 기초</h2>
-      <p class="concept-en">Learning as the Micro-foundation of Knowledge Production</p>
-      <p class="concept-subtitle">Learning as micro-foundation</p>
+    <span class="concept-eyebrow">W02-1 · 개념 02</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c02" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p9</span> <span class="meta-slide">📄 W02 p12</span> <a class="tag" href="map.html?tag=learning">#learning</a> <a class="tag" href="map.html?tag=interaction">#interaction</a> <a class="tag" href="map.html?tag=accumulation">#accumulation</a> <a class="tag" href="map.html?tag=unlearning">#unlearning</a> <a class="tag" href="map.html?tag=lock-in">#lock-in</a> <a class="tag" href="map.html?tag=learning-economy">#learning-economy</a> <a class="tag" href="map.html?tag=learnfare">#learnfare</a> <a class="tag" href="map.html?tag=lundvall">#lundvall</a></p>
+  <div class="concept-title-row">
+    <h2>학습 — 지식생산의 미시적 기초</h2>
+    <p class="concept-en">Learning as the Micro-foundation of Knowledge Production — Learning as micro-foundation</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p9</span> <span class="chip chip-slide">📄 W02 p12</span> <a class="chip chip-tag" href="map.html?tag=learning">#learning</a> <a class="chip chip-tag" href="map.html?tag=interaction">#interaction</a> <a class="chip chip-tag" href="map.html?tag=accumulation">#accumulation</a> <a class="chip chip-tag" href="map.html?tag=unlearning">#unlearning</a> <a class="chip chip-tag" href="map.html?tag=lock-in">#lock-in</a> <a class="chip chip-tag" href="map.html?tag=learning-economy">#learning-economy</a> <a class="chip chip-tag" href="map.html?tag=learnfare">#learnfare</a> <a class="chip chip-tag" href="map.html?tag=lundvall">#lundvall</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>혁신이 &quot;값어치 있는 지식을 만드는 일&quot;이라면, 그 지식은 어디서 오는가? <strong>학습</strong>에서 온다. 그리고 학습의 기본 메커니즘은 혼자 머리를 쥐어짜는 것이 아니라 <strong>주고받는 상호작용(interaction)</strong>이다. 게다가 학습은 <strong>쌓이는 것(축적)</strong>이라 시간이 걸리고 돈으로 살 수 없다. 그 대가로, 한 번 쌓인 것은 <strong>버리기도 어렵다(unlearning의 어려움 = 고착)</strong>.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>🗣 교수가 쓴 비유가 최고다. 강의를 들으면 &quot;새롭네&quot; 할 수는 있다. 그런데 그게 <strong>진짜 내 것이 되는 순간은 뒤풀이</strong>에서다. 친구가 &quot;야 그건 아닌 것 같은데&quot; 하고, 내가 &quot;아니야 그거야&quot; 하고 받아치면서 지식이 내 것이 된다.</p>
@@ -390,15 +411,18 @@
 
 <section class="concept" id="c03">
   <header class="concept-head">
-    <div class="concept-no">03</div>
-    <div class="concept-title">
-      <h2>STI mode vs DUI mode</h2>
-      <p class="concept-en">Science-Technology-Innovation mode vs Doing-Using-Interacting mode (Jensen et al. 2007)</p>
-      <p class="concept-subtitle">학습의 두 방식 — Jensen et al. (2007)</p>
+    <span class="concept-eyebrow">W02-1 · 개념 03</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c03" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p13</span> <span class="meta-slide">📄 W02 p14</span> <a class="tag" href="map.html?tag=sti">#sti</a> <a class="tag" href="map.html?tag=dui">#dui</a> <a class="tag" href="map.html?tag=learning-modes">#learning-modes</a> <a class="tag" href="map.html?tag=jensen">#jensen</a> <a class="tag" href="map.html?tag=tacit">#tacit</a> <a class="tag" href="map.html?tag=explicit">#explicit</a> <a class="tag" href="map.html?tag=radical-incremental">#radical-incremental</a></p>
+  <div class="concept-title-row">
+    <h2>STI mode vs DUI mode</h2>
+    <p class="concept-en">Science-Technology-Innovation mode vs Doing-Using-Interacting mode (Jensen et al. 2007) — 학습의 두 방식 — Jensen et al. (2007)</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p13</span> <span class="chip chip-slide">📄 W02 p14</span> <a class="chip chip-tag" href="map.html?tag=sti">#sti</a> <a class="chip chip-tag" href="map.html?tag=dui">#dui</a> <a class="chip chip-tag" href="map.html?tag=learning-modes">#learning-modes</a> <a class="chip chip-tag" href="map.html?tag=jensen">#jensen</a> <a class="chip chip-tag" href="map.html?tag=tacit">#tacit</a> <a class="chip chip-tag" href="map.html?tag=explicit">#explicit</a> <a class="chip chip-tag" href="map.html?tag=radical-incremental">#radical-incremental</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>배우는 방식은 크게 둘이다. <strong>STI 모드</strong>는 <strong>과학의 원리로 배우는 것</strong>(강의·논문·R&amp;D, 형식지, 과학자 중심)이고, <strong>DUI 모드</strong>는 <strong>해 보면서 배우는 것</strong>(현장·토론·고객과의 협업, 암묵지, 장인·엔지니어 중심)이다. 둘 중 하나가 옳은 게 아니라, <strong>둘을 결합한 기업이 압도적으로 혁신을 잘한다</strong>는 것이 이 이론의 결론이다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>요리를 배우는 두 가지 길이다.</p>
@@ -568,15 +592,18 @@
 
 <section class="concept" id="c04">
   <header class="concept-head">
-    <div class="concept-no">04</div>
-    <div class="concept-title">
-      <h2>Jensen et al. (2007) 실증 연구 — DISKO 데이터와 4개 클러스터</h2>
-      <p class="concept-en">Empirical Evidence — DISKO data, Latent Class Analysis, Logistic Regression</p>
-      <p class="concept-subtitle">DISKO 데이터 · 4개 클러스터 · 결합 모드의 압도적 시너지</p>
+    <span class="concept-eyebrow">W02-1 · 개념 04</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c04" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p15</span> <span class="meta-slide">📄 W02 p16</span> <span class="meta-slide">📄 W02 p17</span> <span class="meta-slide">📄 W02 p18</span> <a class="tag" href="map.html?tag=jensen">#jensen</a> <a class="tag" href="map.html?tag=disko">#disko</a> <a class="tag" href="map.html?tag=lca">#lca</a> <a class="tag" href="map.html?tag=cluster">#cluster</a> <a class="tag" href="map.html?tag=odds-ratio">#odds-ratio</a> <a class="tag" href="map.html?tag=indicators">#indicators</a> <a class="tag" href="map.html?tag=measurement">#measurement</a> <a class="tag" href="map.html?tag=denmark">#denmark</a></p>
+  <div class="concept-title-row">
+    <h2>Jensen et al. (2007) 실증 연구 — DISKO 데이터와 4개 클러스터</h2>
+    <p class="concept-en">Empirical Evidence — DISKO data, Latent Class Analysis, Logistic Regression — DISKO 데이터 · 4개 클러스터 · 결합 모드의 압도적 시너지</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p15</span> <span class="chip chip-slide">📄 W02 p16</span> <span class="chip chip-slide">📄 W02 p17</span> <span class="chip chip-slide">📄 W02 p18</span> <a class="chip chip-tag" href="map.html?tag=jensen">#jensen</a> <a class="chip chip-tag" href="map.html?tag=disko">#disko</a> <a class="chip chip-tag" href="map.html?tag=lca">#lca</a> <a class="chip chip-tag" href="map.html?tag=cluster">#cluster</a> <a class="chip chip-tag" href="map.html?tag=odds-ratio">#odds-ratio</a> <a class="chip chip-tag" href="map.html?tag=indicators">#indicators</a> <a class="chip chip-tag" href="map.html?tag=measurement">#measurement</a> <a class="chip chip-tag" href="map.html?tag=denmark">#denmark</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>STI와 DUI가 말만 그럴듯한 게 아니라는 것을 <strong>덴마크 기업 692개 데이터로 증명한 연구</strong>다. 각 모드를 <strong>지표로 세어</strong>(DUI 7개, STI 3개) 기업을 네 유형으로 나눴더니, <strong>두 모드를 함께 쓰는 기업이 신제품 출시에 성공할 확률이 압도적으로 높았다.</strong></p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>&quot;책도 보고 주방에도 서는 요리사가 제일 낫다&quot;는 말을 <strong>숫자로 증명한 것</strong>이다.</p>
@@ -748,15 +775,18 @@
 
 <section class="concept" id="c05">
   <header class="concept-head">
-    <div class="concept-no">05</div>
-    <div class="concept-title">
-      <h2>Mokyr의 지식 프레임 — Ω와 λ</h2>
-      <p class="concept-en">Propositional (Ω) and Prescriptive (λ) Knowledge; Access Costs (Mokyr)</p>
-      <p class="concept-subtitle">왜 산업혁명은 영국에서 일어났는가</p>
+    <span class="concept-eyebrow">W02-1 · 개념 05</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c05" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p19</span> <span class="meta-slide">📄 W02 p20</span> <a class="tag" href="map.html?tag=mokyr">#mokyr</a> <a class="tag" href="map.html?tag=propositional-knowledge">#propositional-knowledge</a> <a class="tag" href="map.html?tag=prescriptive-knowledge">#prescriptive-knowledge</a> <a class="tag" href="map.html?tag=codification">#codification</a> <a class="tag" href="map.html?tag=access-cost">#access-cost</a> <a class="tag" href="map.html?tag=industrial-revolution">#industrial-revolution</a> <a class="tag" href="map.html?tag=patent">#patent</a></p>
+  <div class="concept-title-row">
+    <h2>Mokyr의 지식 프레임 — Ω와 λ</h2>
+    <p class="concept-en">Propositional (Ω) and Prescriptive (λ) Knowledge; Access Costs (Mokyr) — 왜 산업혁명은 영국에서 일어났는가</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p19</span> <span class="chip chip-slide">📄 W02 p20</span> <a class="chip chip-tag" href="map.html?tag=mokyr">#mokyr</a> <a class="chip chip-tag" href="map.html?tag=propositional-knowledge">#propositional-knowledge</a> <a class="chip chip-tag" href="map.html?tag=prescriptive-knowledge">#prescriptive-knowledge</a> <a class="chip chip-tag" href="map.html?tag=codification">#codification</a> <a class="chip chip-tag" href="map.html?tag=access-cost">#access-cost</a> <a class="chip chip-tag" href="map.html?tag=industrial-revolution">#industrial-revolution</a> <a class="chip chip-tag" href="map.html?tag=patent">#patent</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>경제사학자 Joel Mokyr는 지식을 둘로 나눈다. <strong>λ(람다) = 처방적 지식</strong>, 장인의 노하우(&quot;이렇게 하면 된다&quot;, know-how). <strong>Ω(오메가) = 명제적 지식</strong>, 과학자의 원리 지식(&quot;왜 그렇게 되는가&quot;, know-why). 산업혁명이 영국에서 일어난 이유는 <strong>과학자들이 장인의 노하우를 코드화(codify)해서, 그 지식을 배우는 비용(access cost)이 급격히 싸졌기</strong> 때문이다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>옛날에 김치 담그는 법을 배우려면 <strong>할머니 옆에 몇 년을 붙어 있어야</strong> 했다. 게다가 안 가르쳐 주신다. 이것이 <strong>λ, 그리고 높은 접근 비용</strong>이다.</p>
@@ -891,15 +921,18 @@
 
 <section class="concept" id="c06">
   <header class="concept-head">
-    <div class="concept-no">06</div>
-    <div class="concept-title">
-      <h2>불만족스러운 혁신 — Lundvall의 경고</h2>
-      <p class="concept-en">Unsatisfactory Innovation (Lundvall)</p>
-      <p class="concept-subtitle">Unsatisfactory Innovation</p>
+    <span class="concept-eyebrow">W02-1 · 개념 06</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c06" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p19</span> <span class="meta-slide">📄 W02 p21</span> <a class="tag" href="map.html?tag=lundvall">#lundvall</a> <a class="tag" href="map.html?tag=unsatisfactory-innovation">#unsatisfactory-innovation</a> <a class="tag" href="map.html?tag=producer-dominance">#producer-dominance</a> <a class="tag" href="map.html?tag=information-asymmetry">#information-asymmetry</a> <a class="tag" href="map.html?tag=technology-push">#technology-push</a> <a class="tag" href="map.html?tag=user-competence">#user-competence</a> <a class="tag" href="map.html?tag=lifestyle">#lifestyle</a></p>
+  <div class="concept-title-row">
+    <h2>불만족스러운 혁신 — Lundvall의 경고</h2>
+    <p class="concept-en">Unsatisfactory Innovation (Lundvall) — Unsatisfactory Innovation</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p19</span> <span class="chip chip-slide">📄 W02 p21</span> <a class="chip chip-tag" href="map.html?tag=lundvall">#lundvall</a> <a class="chip chip-tag" href="map.html?tag=unsatisfactory-innovation">#unsatisfactory-innovation</a> <a class="chip chip-tag" href="map.html?tag=producer-dominance">#producer-dominance</a> <a class="chip chip-tag" href="map.html?tag=information-asymmetry">#information-asymmetry</a> <a class="chip chip-tag" href="map.html?tag=technology-push">#technology-push</a> <a class="chip chip-tag" href="map.html?tag=user-competence">#user-competence</a> <a class="chip chip-tag" href="map.html?tag=lifestyle">#lifestyle</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>과학에 투자하면 혁신이 나온다는 생각은 틀렸다. <strong>현장 사용자의 맥락과 역량을 무시한 채 R&amp;D만 밀어붙이면</strong>, 아무도 쓰지 않는 혁신이 빠르게 만들어진다. 이것이 <strong>불만족스러운 혁신</strong>이다. 🗣 교수의 한마디로는 <strong>&quot;산업이 과학을 끌고 가야지, 무조건 과학기술을 푸시한다고 산업이 되는 게 아니다.&quot;</strong></p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>동네 국밥집에 정부가 <strong>최신 자동조리 로봇</strong>을 지원해 줬다고 하자. 기술적으로는 완벽하다. 그런데 사장님은 혼자 일하고, 손님은 &quot;손맛&quot;을 보러 오고, 전기요금은 감당이 안 된다. 로봇은 구석에서 먼지가 쌓인다.</p>
@@ -1027,15 +1060,18 @@
 
 <section class="concept" id="c07">
   <header class="concept-head">
-    <div class="concept-no">07</div>
-    <div class="concept-title">
-      <h2>사용자–생산자 상호작용과 조직화된 시장</h2>
-      <p class="concept-en">User-Producer Interaction and the Organized Market (Lundvall)</p>
-      <p class="concept-subtitle">Learning by Interacting; Organized Market</p>
+    <span class="concept-eyebrow">W02-1 · 개념 07</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c07" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p22</span> <span class="meta-slide">📄 W02 p23</span> <a class="tag" href="map.html?tag=lundvall">#lundvall</a> <a class="tag" href="map.html?tag=user-producer-interaction">#user-producer-interaction</a> <a class="tag" href="map.html?tag=organized-market">#organized-market</a> <a class="tag" href="map.html?tag=learning-by-interacting">#learning-by-interacting</a> <a class="tag" href="map.html?tag=trust">#trust</a> <a class="tag" href="map.html?tag=nis">#nis</a> <a class="tag" href="map.html?tag=price-signal">#price-signal</a></p>
+  <div class="concept-title-row">
+    <h2>사용자–생산자 상호작용과 조직화된 시장</h2>
+    <p class="concept-en">User-Producer Interaction and the Organized Market (Lundvall) — Learning by Interacting; Organized Market</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p22</span> <span class="chip chip-slide">📄 W02 p23</span> <a class="chip chip-tag" href="map.html?tag=lundvall">#lundvall</a> <a class="chip chip-tag" href="map.html?tag=user-producer-interaction">#user-producer-interaction</a> <a class="chip chip-tag" href="map.html?tag=organized-market">#organized-market</a> <a class="chip chip-tag" href="map.html?tag=learning-by-interacting">#learning-by-interacting</a> <a class="chip chip-tag" href="map.html?tag=trust">#trust</a> <a class="chip chip-tag" href="map.html?tag=nis">#nis</a> <a class="chip chip-tag" href="map.html?tag=price-signal">#price-signal</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>경제학 교과서의 시장은 <strong>가격이라는 숫자 하나만</strong> 오가는 곳이다. 그런데 현실의 시장에서는 &quot;이거 써 보니 여기가 불편하더라&quot;, &quot;그건 이렇게 쓰셔야 해요&quot; 같은 <strong>말이 오간다.</strong> 이렇게 <strong>신뢰·관행·비공식 소통이 얹힌 시장</strong>을 <strong>조직화된 시장</strong>이라 하고, 여기서 일어나는 배움이 <strong>상호작용을 통한 학습(learning by interacting)</strong> — DUI의 &#39;I&#39;다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>두 가지 단골집을 생각해 보자.</p>
@@ -1162,15 +1198,18 @@
 
 <section class="concept" id="c08">
   <header class="concept-head">
-    <div class="concept-no">08</div>
-    <div class="concept-title">
-      <h2>생산 능력 vs 기술 역량</h2>
-      <p class="concept-en">Production Capacity vs Technological Capabilities (Bell &amp; Pavitt 1993)</p>
-      <p class="concept-subtitle">Production Capacity vs Technological Capabilities — Bell &amp; Pavitt (1993)</p>
+    <span class="concept-eyebrow">W02-1 · 개념 08</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c08" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p25</span> <span class="meta-slide">📄 W02 p26</span> <a class="tag" href="map.html?tag=bell-pavitt">#bell-pavitt</a> <a class="tag" href="map.html?tag=production-capacity">#production-capacity</a> <a class="tag" href="map.html?tag=technological-capability">#technological-capability</a> <a class="tag" href="map.html?tag=capability-building">#capability-building</a> <a class="tag" href="map.html?tag=deliberate-learning">#deliberate-learning</a> <a class="tag" href="map.html?tag=latecomer">#latecomer</a> <a class="tag" href="map.html?tag=regional">#regional</a></p>
+  <div class="concept-title-row">
+    <h2>생산 능력 vs 기술 역량</h2>
+    <p class="concept-en">Production Capacity vs Technological Capabilities (Bell &amp; Pavitt 1993) — Production Capacity vs Technological Capabilities — Bell &amp; Pavitt (1993)</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p25</span> <span class="chip chip-slide">📄 W02 p26</span> <a class="chip chip-tag" href="map.html?tag=bell-pavitt">#bell-pavitt</a> <a class="chip chip-tag" href="map.html?tag=production-capacity">#production-capacity</a> <a class="chip chip-tag" href="map.html?tag=technological-capability">#technological-capability</a> <a class="chip chip-tag" href="map.html?tag=capability-building">#capability-building</a> <a class="chip chip-tag" href="map.html?tag=deliberate-learning">#deliberate-learning</a> <a class="chip chip-tag" href="map.html?tag=latecomer">#latecomer</a> <a class="chip chip-tag" href="map.html?tag=regional">#regional</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>공장을 돌려 물건을 만드는 힘(<strong>생산 능력</strong>)과, 기술을 스스로 바꾸고 새로 만드는 힘(<strong>기술 역량</strong>)은 <strong>전혀 다른 것</strong>이다. 생산 능력은 돈으로 사 올 수 있지만, 기술 역량은 <strong>의도적인 학습 투자</strong>로만 쌓인다. 개도국이 공장을 아무리 많이 지어도 자동으로 혁신국가가 되지 않는 이유가 여기 있다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>📄 슬라이드가 <strong>빙산</strong>으로 그렸다.</p>
@@ -1311,15 +1350,18 @@
 
 <section class="concept" id="c09">
   <header class="concept-head">
-    <div class="concept-no">09</div>
-    <div class="concept-title">
-      <h2>후발국의 역방향 기술 궤적</h2>
-      <p class="concept-en">Reverse Technological Trajectory of Latecomers</p>
-      <p class="concept-subtitle">Reverse technological trajectory</p>
+    <span class="concept-eyebrow">W02-1 · 개념 09</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c09" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p27</span> <a class="tag" href="map.html?tag=latecomer">#latecomer</a> <a class="tag" href="map.html?tag=catch-up">#catch-up</a> <a class="tag" href="map.html?tag=reverse-engineering">#reverse-engineering</a> <a class="tag" href="map.html?tag=oem-odm">#oem-odm</a> <a class="tag" href="map.html?tag=assimilation">#assimilation</a> <a class="tag" href="map.html?tag=nies">#nies</a> <a class="tag" href="map.html?tag=korea">#korea</a> <a class="tag" href="map.html?tag=process-product-patent">#process-product-patent</a></p>
+  <div class="concept-title-row">
+    <h2>후발국의 역방향 기술 궤적</h2>
+    <p class="concept-en">Reverse Technological Trajectory of Latecomers — Reverse technological trajectory</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p27</span> <a class="chip chip-tag" href="map.html?tag=latecomer">#latecomer</a> <a class="chip chip-tag" href="map.html?tag=catch-up">#catch-up</a> <a class="chip chip-tag" href="map.html?tag=reverse-engineering">#reverse-engineering</a> <a class="chip chip-tag" href="map.html?tag=oem-odm">#oem-odm</a> <a class="chip chip-tag" href="map.html?tag=assimilation">#assimilation</a> <a class="chip chip-tag" href="map.html?tag=nies">#nies</a> <a class="chip chip-tag" href="map.html?tag=korea">#korea</a> <a class="chip chip-tag" href="map.html?tag=process-product-patent">#process-product-patent</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>선진국은 <strong>기초과학에서 시작해 산업으로 내려온다</strong>(Ω → λ, 정방향). 후발국은 <strong>반대로 간다</strong> — 이미 성숙한 남의 기술을 뜯어 보며 만들어 보고(DUI), 그것을 다듬어 자기 것으로 만든 다음, 마지막에야 자체 R&amp;D를 붙인다(λ → Ω, 역방향). 한국이 바로 이 길로 갔다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>요리를 배우는 두 가지 순서다.</p>
@@ -1450,15 +1492,18 @@
 
 <section class="concept" id="c10">
   <header class="concept-head">
-    <div class="concept-no">10</div>
-    <div class="concept-title">
-      <h2>수요–공급–연계 기술정책 프레임</h2>
-      <p class="concept-en">Demand / Supply / Linkage Policy Framework (Kim &amp; Dahlman 1992)</p>
-      <p class="concept-subtitle">Kim &amp; Dahlman (1992)</p>
+    <span class="concept-eyebrow">W02-1 · 개념 10</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c10" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p28</span> <a class="tag" href="map.html?tag=kim-dahlman">#kim-dahlman</a> <a class="tag" href="map.html?tag=demand-side">#demand-side</a> <a class="tag" href="map.html?tag=supply-side">#supply-side</a> <a class="tag" href="map.html?tag=linkage">#linkage</a> <a class="tag" href="map.html?tag=industrial-policy">#industrial-policy</a> <a class="tag" href="map.html?tag=developmental-state">#developmental-state</a> <a class="tag" href="map.html?tag=embedded-autonomy">#embedded-autonomy</a> <a class="tag" href="map.html?tag=export-promotion">#export-promotion</a></p>
+  <div class="concept-title-row">
+    <h2>수요–공급–연계 기술정책 프레임</h2>
+    <p class="concept-en">Demand / Supply / Linkage Policy Framework (Kim &amp; Dahlman 1992) — Kim &amp; Dahlman (1992)</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p28</span> <a class="chip chip-tag" href="map.html?tag=kim-dahlman">#kim-dahlman</a> <a class="chip chip-tag" href="map.html?tag=demand-side">#demand-side</a> <a class="chip chip-tag" href="map.html?tag=supply-side">#supply-side</a> <a class="chip chip-tag" href="map.html?tag=linkage">#linkage</a> <a class="chip chip-tag" href="map.html?tag=industrial-policy">#industrial-policy</a> <a class="chip chip-tag" href="map.html?tag=developmental-state">#developmental-state</a> <a class="chip chip-tag" href="map.html?tag=embedded-autonomy">#embedded-autonomy</a> <a class="chip chip-tag" href="map.html?tag=export-promotion">#export-promotion</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>정부의 기술정책을 세 가지로 나누는 틀이다. <strong>공급 정책</strong>은 역량·인력·연구소를 직접 만들어 주고, <strong>수요 정책</strong>은 &quot;이걸 만들면 팔린다&quot;는 시장 니즈를 만들어 주며, <strong>연계 정책</strong>은 둘이 만나도록 세제·금융으로 촉매 역할을 한다. 한국의 성공은 이 세 가지를 <strong>발전 단계에 따라 바꿔 가며</strong> 썼기 때문이다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>농사에 비유하면,</p>
@@ -1575,15 +1620,18 @@
 
 <section class="concept" id="c11">
   <header class="concept-head">
-    <div class="concept-no">11</div>
-    <div class="concept-title">
-      <h2>민간 R&amp;D 수요 창출 4대 동인</h2>
-      <p class="concept-en">Four Determinants of Private R&amp;D Demand in Korea</p>
-      <p class="concept-subtitle">왜 한국 기업은 R&amp;D를 시작했나</p>
+    <span class="concept-eyebrow">W02-1 · 개념 11</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c11" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p29</span> <a class="tag" href="map.html?tag=rd-demand">#rd-demand</a> <a class="tag" href="map.html?tag=market-competition">#market-competition</a> <a class="tag" href="map.html?tag=ipr">#ipr</a> <a class="tag" href="map.html?tag=public-procurement">#public-procurement</a> <a class="tag" href="map.html?tag=localization">#localization</a> <a class="tag" href="map.html?tag=demand-pull">#demand-pull</a> <a class="tag" href="map.html?tag=tax-incentive">#tax-incentive</a></p>
+  <div class="concept-title-row">
+    <h2>민간 R&amp;D 수요 창출 4대 동인</h2>
+    <p class="concept-en">Four Determinants of Private R&amp;D Demand in Korea — 왜 한국 기업은 R&amp;D를 시작했나</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p29</span> <a class="chip chip-tag" href="map.html?tag=rd-demand">#rd-demand</a> <a class="chip chip-tag" href="map.html?tag=market-competition">#market-competition</a> <a class="chip chip-tag" href="map.html?tag=ipr">#ipr</a> <a class="chip chip-tag" href="map.html?tag=public-procurement">#public-procurement</a> <a class="chip chip-tag" href="map.html?tag=localization">#localization</a> <a class="chip chip-tag" href="map.html?tag=demand-pull">#demand-pull</a> <a class="chip chip-tag" href="map.html?tag=tax-incentive">#tax-incentive</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>정부가 R&amp;D 보조금과 세금 혜택을 준다고 기업이 연구를 시작하지는 않는다. <strong>&quot;혁신하지 않으면 죽는다&quot;는 시장 압력</strong>이 먼저 생겨야 한다. 한국에서 민간 R&amp;D가 폭발한 이유는 ① 경쟁 압력, ② 역공학 차단, ③ 정부의 구매 약속, ④ 세제·금융의 촉매 — 이 순서였다. 📄 <strong>&quot;공급이나 세제 지원 이전에 &#39;혁신하지 않고는 생존할 수 없는&#39; 시장 경쟁 압력이 핵심.&quot;</strong></p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>헬스장 회원권을 공짜로 준다고 운동하지 않는다. 그런데 <strong>건강검진에서 위험 신호가 나오면</strong>(①), <strong>좋아하던 배달음식이 끊기면</strong>(②), <strong>회사가 체력검정을 예고하면</strong>(③) 운동을 시작한다. 이때 회원권 할인(④)이 마지막 한 방을 더한다.</p>
@@ -1704,15 +1752,18 @@
 
 <section class="concept" id="c12">
   <header class="concept-head">
-    <div class="concept-no">12</div>
-    <div class="concept-title">
-      <h2>종합 — 지식 모드의 결합과 수요 중심 정책</h2>
-      <p class="concept-en">Synthesis — Complementary Combination of STI/DUI and Demand-oriented Policy</p>
-      <p class="concept-subtitle">이 주차의 결론과 Discussion</p>
+    <span class="concept-eyebrow">W02-1 · 개념 12</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c12" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02 p30</span> <span class="meta-slide">📄 W02 p31</span> <a class="tag" href="map.html?tag=synthesis">#synthesis</a> <a class="tag" href="map.html?tag=sti-dui-combination">#sti-dui-combination</a> <a class="tag" href="map.html?tag=kibs">#kibs</a> <a class="tag" href="map.html?tag=demand-policy">#demand-policy</a> <a class="tag" href="map.html?tag=dynamic-shift">#dynamic-shift</a> <a class="tag" href="map.html?tag=discussion">#discussion</a> <a class="tag" href="map.html?tag=catch-up">#catch-up</a></p>
+  <div class="concept-title-row">
+    <h2>종합 — 지식 모드의 결합과 수요 중심 정책</h2>
+    <p class="concept-en">Synthesis — Complementary Combination of STI/DUI and Demand-oriented Policy — 이 주차의 결론과 Discussion</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02 p30</span> <span class="chip chip-slide">📄 W02 p31</span> <a class="chip chip-tag" href="map.html?tag=synthesis">#synthesis</a> <a class="chip chip-tag" href="map.html?tag=sti-dui-combination">#sti-dui-combination</a> <a class="chip chip-tag" href="map.html?tag=kibs">#kibs</a> <a class="chip chip-tag" href="map.html?tag=demand-policy">#demand-policy</a> <a class="chip chip-tag" href="map.html?tag=dynamic-shift">#dynamic-shift</a> <a class="chip chip-tag" href="map.html?tag=discussion">#discussion</a> <a class="chip chip-tag" href="map.html?tag=catch-up">#catch-up</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>이 주차의 결론은 두 문장이다. ① <strong>지식 모드는 결합해야 한다</strong> — 하이테크는 R&amp;D(STI)에 현장 학습(DUI)을 붙이고, 전통 제조업은 현장 노하우(DUI)에 과학 지식(STI)을 붙여야 한다. ② <strong>정책은 수요·공급·연계가 균형을 이뤄야 하고, 발전 단계에 따라 동적으로 바뀌어야 한다.</strong></p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>이 주차 전체를 한 문장으로 줄이면 🗣 교수의 말이 된다. <strong>&quot;해 봐야 안다.&quot;</strong> 그런데 여기에 단서가 붙는다. <strong>해 보기만 해서는 그 자리에 갇힌다.</strong> 해 본 것을 말과 글로 옮겨야 남에게 전해지고, 그때 <strong>로직(과학)이 들어온다.</strong></p>

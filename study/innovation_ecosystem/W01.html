@@ -6,14 +6,24 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="Introduction: Innovation Ecosystem 개념 정리 11개">
   <title>W01 · Introduction: Innovation Ecosystem — 혁신생태계론</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <link rel="stylesheet" href="styles.css">
   <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
     (function () {
       try {
-        var saved = localStorage.getItem('ie-theme');
-        var dark = saved ? saved === 'dark'
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
           : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
       } catch (e) {}
     })();
   </script>
@@ -23,15 +33,20 @@
 
 
 <header class="topbar">
-  <a class="topbar-home" href="index.html">혁신생태계론</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
   <nav class="topbar-nav">
     <a href="index.html">학기 지도</a>
     <a href="quiz.html">퀴즈</a>
     <a href="map.html">개념 지도</a>
   </nav>
   <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
     <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
-      <span>검색</span><kbd>/</kbd>
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
     </button>
     <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
       <span class="theme-icon" aria-hidden="true"></span>
@@ -47,7 +62,7 @@
 </div>
 <div class="layout" id="top">
   
-<aside>
+<aside class="sidebar">
   <div class="chapter-label">W01 · 09/05</div>
   <h1>Introduction: Innovation Ecosystem</h1>
   <p class="side-subtitle">혁신생태계론 출발점</p>
@@ -143,15 +158,18 @@
     
 <section class="concept" id="c01">
   <header class="concept-head">
-    <div class="concept-no">01</div>
-    <div class="concept-title">
-      <h2>사회 속의 시스템 — 정치·경제·혁신 활동</h2>
-      <p class="concept-en">System in a Society — Political / Economic / Innovation Activity</p>
-      <p class="concept-subtitle">System in a Society</p>
+    <span class="concept-eyebrow">W01 · 개념 01</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c01" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p6</span> <span class="meta-slide">📄 W02 p5 (동일 슬라이드 재설명)</span> <a class="tag" href="map.html?tag=system">#system</a> <a class="tag" href="map.html?tag=collective-action">#collective-action</a> <a class="tag" href="map.html?tag=value-allocation">#value-allocation</a> <a class="tag" href="map.html?tag=easton">#easton</a> <a class="tag" href="map.html?tag=framing">#framing</a></p>
+  <div class="concept-title-row">
+    <h2>사회 속의 시스템 — 정치·경제·혁신 활동</h2>
+    <p class="concept-en">System in a Society — Political / Economic / Innovation Activity — System in a Society</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p6</span> <span class="chip chip-slide">📄 W02 p5 (동일 슬라이드 재설명)</span> <a class="chip chip-tag" href="map.html?tag=system">#system</a> <a class="chip chip-tag" href="map.html?tag=collective-action">#collective-action</a> <a class="chip chip-tag" href="map.html?tag=value-allocation">#value-allocation</a> <a class="chip chip-tag" href="map.html?tag=easton">#easton</a> <a class="chip chip-tag" href="map.html?tag=framing">#framing</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>사람은 혼자 살 수 없고, 여럿이 살면 &quot;누가 무엇을 가질지&quot;를 함께 정해야 하는 문제(collective action problem)가 생긴다. 이 문제를 푸는 방식이 세 가지다. <strong>정치는 권위로 나누고, 경제는 가격으로 나누며, 혁신은 값어치 있는 새 지식을 만든다.</strong> 혁신은 천재 한 명의 일(solo act)처럼 보이지만, 자세히 보면 여럿이 얽힌 집단적 활동이다. 그래서 이 수업은 혁신을 <strong>시스템</strong>으로 본다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>한 마을에 파이가 있다고 하자.</p>
@@ -273,15 +291,18 @@
 
 <section class="concept" id="c02">
   <header class="concept-head">
-    <div class="concept-no">02</div>
-    <div class="concept-title">
-      <h2>인간–제도–과학기술의 상호구성</h2>
-      <p class="concept-en">Co-constitution of Actors, Institutions and Socio-technical Systems (Geels 2004)</p>
-      <p class="concept-subtitle">문제의식 1 — Geels (2004)</p>
+    <span class="concept-eyebrow">W01 · 개념 02</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c02" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p7</span> <span class="meta-slide">📄 W02 p6 (동일 슬라이드 재설명)</span> <a class="tag" href="map.html?tag=geels">#geels</a> <a class="tag" href="map.html?tag=socio-technical-system">#socio-technical-system</a> <a class="tag" href="map.html?tag=sts">#sts</a> <a class="tag" href="map.html?tag=rules">#rules</a> <a class="tag" href="map.html?tag=artifacts">#artifacts</a> <a class="tag" href="map.html?tag=reverse-adaptation">#reverse-adaptation</a></p>
+  <div class="concept-title-row">
+    <h2>인간–제도–과학기술의 상호구성</h2>
+    <p class="concept-en">Co-constitution of Actors, Institutions and Socio-technical Systems (Geels 2004) — 문제의식 1 — Geels (2004)</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p7</span> <span class="chip chip-slide">📄 W02 p6 (동일 슬라이드 재설명)</span> <a class="chip chip-tag" href="map.html?tag=geels">#geels</a> <a class="chip chip-tag" href="map.html?tag=socio-technical-system">#socio-technical-system</a> <a class="chip chip-tag" href="map.html?tag=sts">#sts</a> <a class="chip chip-tag" href="map.html?tag=rules">#rules</a> <a class="chip chip-tag" href="map.html?tag=artifacts">#artifacts</a> <a class="chip chip-tag" href="map.html?tag=reverse-adaptation">#reverse-adaptation</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>사회를 설명할 때 보통은 <strong>사람·조직</strong>과 <strong>규칙·제도</strong> 두 축만 본다. 이 수업은 여기에 <strong>물질세계(과학기술, 인공물, 자연)</strong>를 세 번째 축으로 넣고, 세 축이 <strong>서로를 만들어 간다(상호구성)</strong>고 본다. 기술은 사람이 만들지만, 일단 깔리면 사람의 행동 범위와 제도까지 바꾼다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>세 명이 한 집에 사는데, 한 명은 <strong>사람</strong>(습관, 성공 공식), 한 명은 <strong>규칙</strong>(집안 규칙, 법), 한 명은 <strong>집 자체</strong>(구조, 배선, 엘리베이터 유무)다. 규칙은 사람이 만들고 사람은 규칙을 따른다 — 여기까지는 보통 사회과학. 그런데 <strong>집이 5층인데 엘리베이터가 없으면</strong> 노인은 못 살고, &quot;무거운 짐은 1층에&quot; 같은 규칙이 생긴다. 집(기술)이 사람과 규칙을 바꾸는 것이다. 거꾸로 규칙이 &quot;엘리베이터 의무화&quot;를 정하면 집이 바뀐다. 셋은 서로를 끊임없이 고쳐 쓴다.</p>
@@ -443,15 +464,18 @@
 
 <section class="concept" id="c03">
   <header class="concept-head">
-    <div class="concept-no">03</div>
-    <div class="concept-title">
-      <h2>인간에 대한 4가지 기본 이해</h2>
-      <p class="concept-en">Four Views of the Human — Rational / Social / Tool-using / Learning</p>
-      <p class="concept-subtitle">Four views of the human</p>
+    <span class="concept-eyebrow">W01 · 개념 03</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c03" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p8</span> <a class="tag" href="map.html?tag=human-nature">#human-nature</a> <a class="tag" href="map.html?tag=rational-actor">#rational-actor</a> <a class="tag" href="map.html?tag=citizenship">#citizenship</a> <a class="tag" href="map.html?tag=technologization">#technologization</a> <a class="tag" href="map.html?tag=learning">#learning</a> <a class="tag" href="map.html?tag=civic-epistemology">#civic-epistemology</a></p>
+  <div class="concept-title-row">
+    <h2>인간에 대한 4가지 기본 이해</h2>
+    <p class="concept-en">Four Views of the Human — Rational / Social / Tool-using / Learning — Four views of the human</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p8</span> <a class="chip chip-tag" href="map.html?tag=human-nature">#human-nature</a> <a class="chip chip-tag" href="map.html?tag=rational-actor">#rational-actor</a> <a class="chip chip-tag" href="map.html?tag=citizenship">#citizenship</a> <a class="chip chip-tag" href="map.html?tag=technologization">#technologization</a> <a class="chip chip-tag" href="map.html?tag=learning">#learning</a> <a class="chip chip-tag" href="map.html?tag=civic-epistemology">#civic-epistemology</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>혁신을 시스템으로 보려면 &quot;사람이란 어떤 존재인가&quot;부터 정해야 한다. 경제학은 사람을 <strong>이익을 계산하는 합리적 개인</strong>으로만 보지만, 이 수업은 네 겹으로 본다: ① 합리적으로 선택하는 인간, ② 사회적 관계 속의 인간, ③ 도구를 쓰는 인간, ④ <strong>배우는 인간</strong>. 혁신학이 가장 강조하는 것은 ④다 — 혁신 역량은 곧 학습 역량이다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>한 사람을 네 개의 렌즈로 본다고 하자.</p>
@@ -571,15 +595,18 @@
 
 <section class="concept" id="c04">
   <header class="concept-head">
-    <div class="concept-no">04</div>
-    <div class="concept-title">
-      <h2>혁신 → 혁신시스템 → 시스템 혁신의 층위</h2>
-      <p class="concept-en">Innovation / Innovation System / System Innovation (Transition)</p>
-      <p class="concept-subtitle">문제의식 2 — System Innovation</p>
+    <span class="concept-eyebrow">W01 · 개념 04</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c04" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p9</span> <span class="meta-slide">📄 W02 p7 (동일 슬라이드 재설명)</span> <a class="tag" href="map.html?tag=system-innovation">#system-innovation</a> <a class="tag" href="map.html?tag=transition">#transition</a> <a class="tag" href="map.html?tag=innovation-system">#innovation-system</a> <a class="tag" href="map.html?tag=korea-paradox">#korea-paradox</a> <a class="tag" href="map.html?tag=carbon-lock-in">#carbon-lock-in</a> <a class="tag" href="map.html?tag=post-developmental-state">#post-developmental-state</a> <a class="tag" href="map.html?tag=prosumer">#prosumer</a></p>
+  <div class="concept-title-row">
+    <h2>혁신 → 혁신시스템 → 시스템 혁신의 층위</h2>
+    <p class="concept-en">Innovation / Innovation System / System Innovation (Transition) — 문제의식 2 — System Innovation</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p9</span> <span class="chip chip-slide">📄 W02 p7 (동일 슬라이드 재설명)</span> <a class="chip chip-tag" href="map.html?tag=system-innovation">#system-innovation</a> <a class="chip chip-tag" href="map.html?tag=transition">#transition</a> <a class="chip chip-tag" href="map.html?tag=innovation-system">#innovation-system</a> <a class="chip chip-tag" href="map.html?tag=korea-paradox">#korea-paradox</a> <a class="chip chip-tag" href="map.html?tag=carbon-lock-in">#carbon-lock-in</a> <a class="chip chip-tag" href="map.html?tag=post-developmental-state">#post-developmental-state</a> <a class="chip chip-tag" href="map.html?tag=prosumer">#prosumer</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>&quot;혁신&quot;은 세 층위로 커진다. <strong>혁신</strong>(새 제품·서비스·행동) → <strong>혁신시스템</strong>(그것을 만들어 내는 행위자들의 체제) → <strong>시스템 혁신/전환</strong>(생산과 소비를 아우르는 시스템 전체가 바뀌는 것). 이 수업은 세 번째, 즉 <strong>제품 하나가 아니라 시스템 전체가 어떻게 바뀌는가</strong>에 관심이 있다. 기후변화, 수도권 집중, Korea Paradox가 모두 &quot;시스템이 안 바뀌는&quot; 문제다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><ul>
@@ -716,15 +743,18 @@
 
 <section class="concept" id="c05">
   <header class="concept-head">
-    <div class="concept-no">05</div>
-    <div class="concept-title">
-      <h2>세 가지 고착 — 조직·기술·사용자 lock-in</h2>
-      <p class="concept-en">Lock-in — Organisational / Technological / User</p>
-      <p class="concept-subtitle">새로운 질서 구성의 구조적 어려움</p>
+    <span class="concept-eyebrow">W01 · 개념 05</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c05" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p10</span> <a class="tag" href="map.html?tag=lock-in">#lock-in</a> <a class="tag" href="map.html?tag=path-dependency">#path-dependency</a> <a class="tag" href="map.html?tag=dominant-design">#dominant-design</a> <a class="tag" href="map.html?tag=increasing-returns">#increasing-returns</a> <a class="tag" href="map.html?tag=network-effect">#network-effect</a> <a class="tag" href="map.html?tag=rebound-effect">#rebound-effect</a> <a class="tag" href="map.html?tag=social-practice">#social-practice</a> <a class="tag" href="map.html?tag=variety">#variety</a></p>
+  <div class="concept-title-row">
+    <h2>세 가지 고착 — 조직·기술·사용자 lock-in</h2>
+    <p class="concept-en">Lock-in — Organisational / Technological / User — 새로운 질서 구성의 구조적 어려움</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p10</span> <a class="chip chip-tag" href="map.html?tag=lock-in">#lock-in</a> <a class="chip chip-tag" href="map.html?tag=path-dependency">#path-dependency</a> <a class="chip chip-tag" href="map.html?tag=dominant-design">#dominant-design</a> <a class="chip chip-tag" href="map.html?tag=increasing-returns">#increasing-returns</a> <a class="chip chip-tag" href="map.html?tag=network-effect">#network-effect</a> <a class="chip chip-tag" href="map.html?tag=rebound-effect">#rebound-effect</a> <a class="chip chip-tag" href="map.html?tag=social-practice">#social-practice</a> <a class="chip chip-tag" href="map.html?tag=variety">#variety</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>시스템이 잘 안 바뀌는 이유는 기존 시스템이 세 군데서 <strong>고착(lock-in)</strong>되어 있기 때문이다. <strong>조직</strong>은 성공 공식에 갇히고, <strong>기술</strong>은 최고가 아니어도 한 번 깔리면 못 바꾸며(QWERTY), <strong>사용자</strong>는 네트워크와 습관 때문에 못 떠난다. 셋이 겹쳐 있어서, 이를 깨려면 새로운 <strong>변이(variety)</strong>를 만들어야 한다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>오래된 동네에 새 길을 내려 한다고 하자.</p>
@@ -865,15 +895,18 @@
 
 <section class="concept" id="c06">
   <header class="concept-head">
-    <div class="concept-no">06</div>
-    <div class="concept-title">
-      <h2>시장 실패·시스템 실패·전환 실패</h2>
-      <p class="concept-en">Market Failure / System Failure / Transformational Failure</p>
-      <p class="concept-subtitle">Market / System / Transformational failure</p>
+    <span class="concept-eyebrow">W01 · 개념 06</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c06" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p10 (하단 한 줄)</span> <a class="tag" href="map.html?tag=market-failure">#market-failure</a> <a class="tag" href="map.html?tag=system-failure">#system-failure</a> <a class="tag" href="map.html?tag=transformational-failure">#transformational-failure</a> <a class="tag" href="map.html?tag=policy-rationale">#policy-rationale</a> <a class="tag" href="map.html?tag=transition">#transition</a> <a class="tag" href="map.html?tag=variety">#variety</a></p>
+  <div class="concept-title-row">
+    <h2>시장 실패·시스템 실패·전환 실패</h2>
+    <p class="concept-en">Market Failure / System Failure / Transformational Failure — Market / System / Transformational failure</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p10 (하단 한 줄)</span> <a class="chip chip-tag" href="map.html?tag=market-failure">#market-failure</a> <a class="chip chip-tag" href="map.html?tag=system-failure">#system-failure</a> <a class="chip chip-tag" href="map.html?tag=transformational-failure">#transformational-failure</a> <a class="chip chip-tag" href="map.html?tag=policy-rationale">#policy-rationale</a> <a class="chip chip-tag" href="map.html?tag=transition">#transition</a> <a class="chip chip-tag" href="map.html?tag=variety">#variety</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>정부가 혁신에 개입하는 이유(정책 근거)는 세 단계로 진화했다. <strong>시장 실패</strong>(시장에 맡기면 R&amp;D가 부족하다) → <strong>시스템 실패</strong>(행위자들 사이의 연결·제도·역량이 부족하다) → <strong>전환 실패</strong>(시스템이 어느 방향으로 가야 하는지, 수요는 누가 말하는지, 정책은 조율되는지가 빠져 있다). 시스템 전환은 세 번째 실패를 다루므로, <strong>기술 프로젝트가 아니라 경제·사회·정치·문화 프로젝트</strong>다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>마을에 다리를 놓는 문제로 비유하면:</p>
@@ -978,15 +1011,18 @@
 
 <section class="concept" id="c07">
   <header class="concept-head">
-    <div class="concept-no">07</div>
-    <div class="concept-title">
-      <h2>공공가치와 Civic Actor</h2>
-      <p class="concept-en">Public Value and the Civic Actor (Craig 2012)</p>
-      <p class="concept-subtitle">문제의식 3</p>
+    <span class="concept-eyebrow">W01 · 개념 07</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c07" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p11</span> <span class="meta-slide">📄 W02 p8 (동일 슬라이드 재설명)</span> <a class="tag" href="map.html?tag=public-value">#public-value</a> <a class="tag" href="map.html?tag=fairness">#fairness</a> <a class="tag" href="map.html?tag=meritocracy">#meritocracy</a> <a class="tag" href="map.html?tag=structural-box">#structural-box</a> <a class="tag" href="map.html?tag=social-capital">#social-capital</a> <a class="tag" href="map.html?tag=civic-actor">#civic-actor</a> <a class="tag" href="map.html?tag=entrepreneur">#entrepreneur</a> <a class="tag" href="map.html?tag=regional-disparity">#regional-disparity</a></p>
+  <div class="concept-title-row">
+    <h2>공공가치와 Civic Actor</h2>
+    <p class="concept-en">Public Value and the Civic Actor (Craig 2012) — 문제의식 3</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p11</span> <span class="chip chip-slide">📄 W02 p8 (동일 슬라이드 재설명)</span> <a class="chip chip-tag" href="map.html?tag=public-value">#public-value</a> <a class="chip chip-tag" href="map.html?tag=fairness">#fairness</a> <a class="chip chip-tag" href="map.html?tag=meritocracy">#meritocracy</a> <a class="chip chip-tag" href="map.html?tag=structural-box">#structural-box</a> <a class="chip chip-tag" href="map.html?tag=social-capital">#social-capital</a> <a class="chip chip-tag" href="map.html?tag=civic-actor">#civic-actor</a> <a class="chip chip-tag" href="map.html?tag=entrepreneur">#entrepreneur</a> <a class="chip chip-tag" href="map.html?tag=regional-disparity">#regional-disparity</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>혁신은 가치를 만들지만, <strong>그 가치가 누구에게 어떻게 돌아가느냐</strong>는 별개의 문제다. 자유시장 자본주의는 &quot;기회는 평등, 결과는 능력대로&quot;라고 하지만, 실제로는 부모의 재력·사는 동네 같은 <strong>구조적인 박스</strong>가 기회 자체를 가른다. 게다가 사회적 연대·신뢰(social capital)가 줄어들어 &quot;같이 움직이기&quot;가 점점 어려워진다. 그래서 사람을 <strong>기업가(entrepreneur)로만 보지 말고 시민(civic actor)으로도 봐야</strong> 한다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>📄 슬라이드 그림 그대로가 최고의 비유다. 야구장 담장 너머를 보려는 키 다른 세 사람에게 <strong>똑같은 상자 하나씩</strong> 주는 것이 보수가 말하는 평등(기회의 평등)이고, <strong>키에 맞춰 상자를 다르게</strong> 주는 것이 진보가 말하는 평등(결과의 평등)이다. 그런데 이 수업의 질문은 한 걸음 더 간다: <strong>애초에 상자를 살 돈이 부모에게서 오고, 야구장이 서울에만 있다면?</strong> 그것이 &quot;구조적인 박스&quot;다.</p>
@@ -1092,15 +1128,18 @@
 
 <section class="concept" id="c08">
   <header class="concept-head">
-    <div class="concept-no">08</div>
-    <div class="concept-title">
-      <h2>시민성 — 사회계약과 네 가지 유형</h2>
-      <p class="concept-en">Citizenship as a Social Contract — Communitarian / Scientific / Digital / Ecological</p>
-      <p class="concept-subtitle">Citizenship: A Social Contract</p>
+    <span class="concept-eyebrow">W01 · 개념 08</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c08" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p12</span> <a class="tag" href="map.html?tag=citizenship">#citizenship</a> <a class="tag" href="map.html?tag=social-contract">#social-contract</a> <a class="tag" href="map.html?tag=communitarian">#communitarian</a> <a class="tag" href="map.html?tag=scientific-citizenship">#scientific-citizenship</a> <a class="tag" href="map.html?tag=digital-citizenship">#digital-citizenship</a> <a class="tag" href="map.html?tag=ecological-citizenship">#ecological-citizenship</a> <a class="tag" href="map.html?tag=citizen-variety">#citizen-variety</a></p>
+  <div class="concept-title-row">
+    <h2>시민성 — 사회계약과 네 가지 유형</h2>
+    <p class="concept-en">Citizenship as a Social Contract — Communitarian / Scientific / Digital / Ecological — Citizenship: A Social Contract</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p12</span> <a class="chip chip-tag" href="map.html?tag=citizenship">#citizenship</a> <a class="chip chip-tag" href="map.html?tag=social-contract">#social-contract</a> <a class="chip chip-tag" href="map.html?tag=communitarian">#communitarian</a> <a class="chip chip-tag" href="map.html?tag=scientific-citizenship">#scientific-citizenship</a> <a class="chip chip-tag" href="map.html?tag=digital-citizenship">#digital-citizenship</a> <a class="chip chip-tag" href="map.html?tag=ecological-citizenship">#ecological-citizenship</a> <a class="chip chip-tag" href="map.html?tag=citizen-variety">#citizen-variety</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>시민성(citizenship)은 &quot;국민이면 이 정도는 한다&quot;는 <strong>사회계약</strong>이다. 한국은 국가 위기 때 알아서 희생하는 <strong>공동체적 시민성</strong>으로 추격에 성공했지만, 이제 시민은 다른 얼굴로 나타난다. 전문가 판정을 못 믿어 직접 검증하는 <strong>과학적 시민</strong>, 디지털 접근을 요구하는 <strong>디지털 시민</strong>, 기술의 방향(온도 상승 한계)을 말하는 <strong>생태적 시민</strong>. 이들이 새 기술이 갈 방향을 말하는 <strong>citizen variety</strong>다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>축구팀 비유(🗣 교수)가 곧 이것이다. 옛날 한국 축구는 &quot;가끔 신이 천재(박지성)를 내려주는&quot; 팀이었고, 국민도 &quot;나라가 부르면 뛴다&quot;는 팀이었다. 그런데 팀워크는 해 봐야 안다. 이제 시민은 감독(정부·전문가)이 &quot;안전하다&quot;고 해도 직접 공을 만져 보고(과학적 시민), 경기장에 못 들어가는 사람이 없게 하라고 하고(디지털 시민), 애초에 어떤 경기를 할지 정하자고 한다(생태적 시민). <strong>팀의 룰을 선수도 같이 정하는 것</strong>이 새로운 시민성이다.</p>
@@ -1214,15 +1253,18 @@
 
 <section class="concept" id="c09">
   <header class="concept-head">
-    <div class="concept-no">09</div>
-    <div class="concept-title">
-      <h2>혁신시스템 접근법의 계보</h2>
-      <p class="concept-en">Innovation System Approaches by Disciplinary Context</p>
-      <p class="concept-subtitle">Innovation System Approaches — 어느 학문에서 나왔나</p>
+    <span class="concept-eyebrow">W01 · 개념 09</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c09" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p13</span> <a class="tag" href="map.html?tag=innovation-studies">#innovation-studies</a> <a class="tag" href="map.html?tag=political-economy">#political-economy</a> <a class="tag" href="map.html?tag=business-studies">#business-studies</a> <a class="tag" href="map.html?tag=nis">#nis</a> <a class="tag" href="map.html?tag=sis">#sis</a> <a class="tag" href="map.html?tag=tis">#tis</a> <a class="tag" href="map.html?tag=sts">#sts</a> <a class="tag" href="map.html?tag=ssip">#ssip</a> <a class="tag" href="map.html?tag=bmi">#bmi</a> <a class="tag" href="map.html?tag=map">#map</a></p>
+  <div class="concept-title-row">
+    <h2>혁신시스템 접근법의 계보</h2>
+    <p class="concept-en">Innovation System Approaches by Disciplinary Context — Innovation System Approaches — 어느 학문에서 나왔나</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p13</span> <a class="chip chip-tag" href="map.html?tag=innovation-studies">#innovation-studies</a> <a class="chip chip-tag" href="map.html?tag=political-economy">#political-economy</a> <a class="chip chip-tag" href="map.html?tag=business-studies">#business-studies</a> <a class="chip chip-tag" href="map.html?tag=nis">#nis</a> <a class="chip chip-tag" href="map.html?tag=sis">#sis</a> <a class="chip chip-tag" href="map.html?tag=tis">#tis</a> <a class="chip chip-tag" href="map.html?tag=sts">#sts</a> <a class="chip chip-tag" href="map.html?tag=ssip">#ssip</a> <a class="chip chip-tag" href="map.html?tag=bmi">#bmi</a> <a class="chip chip-tag" href="map.html?tag=map">#map</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>한 학기 동안 배울 이론들은 <strong>세 개의 다른 학문 동네</strong>에서 나왔다. <strong>혁신학(Innovation Studies)</strong>은 &quot;혁신은 집단 활동&quot;이라는 문제의식에서 NIS·SIS·TIS·StS를 만들었고, <strong>정치경제학</strong>은 노동·제도의 눈으로 SSIP를 만들었으며, <strong>경영학</strong>은 기업의 눈으로 비즈니스 시스템·비즈니스모델 혁신·혁신생태계론을 만들었다. 같은 &quot;시스템&quot;이라는 말을 쓰지만 출신이 다르므로, 각 이론이 <strong>무엇을 설명하려고 태어났는지</strong>를 알고 읽어야 한다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>같은 도시를 세 사람이 그린 지도라고 보면 된다.</p>
@@ -1370,15 +1412,18 @@
 
 <section class="concept" id="c10">
   <header class="concept-head">
-    <div class="concept-no">10</div>
-    <div class="concept-title">
-      <h2>혁신시스템 유형 3분류 — 강의 지도</h2>
-      <p class="concept-en">Innovation System Types — Difference / Change / Mechanism of Change</p>
-      <p class="concept-subtitle">구조의 차이 / 구조의 변화 / 구조 변화의 기작</p>
+    <span class="concept-eyebrow">W01 · 개념 10</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c10" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p14</span> <a class="tag" href="map.html?tag=map">#map</a> <a class="tag" href="map.html?tag=structure">#structure</a> <a class="tag" href="map.html?tag=change">#change</a> <a class="tag" href="map.html?tag=mechanism">#mechanism</a> <a class="tag" href="map.html?tag=nis">#nis</a> <a class="tag" href="map.html?tag=sis">#sis</a> <a class="tag" href="map.html?tag=ssip">#ssip</a> <a class="tag" href="map.html?tag=bizs">#bizs</a> <a class="tag" href="map.html?tag=ts">#ts</a> <a class="tag" href="map.html?tag=tis">#tis</a> <a class="tag" href="map.html?tag=sts">#sts</a> <a class="tag" href="map.html?tag=bmi">#bmi</a> <a class="tag" href="map.html?tag=spt">#spt</a> <a class="tag" href="map.html?tag=moip">#moip</a> <a class="tag" href="map.html?tag=ecosystem">#ecosystem</a></p>
+  <div class="concept-title-row">
+    <h2>혁신시스템 유형 3분류 — 강의 지도</h2>
+    <p class="concept-en">Innovation System Types — Difference / Change / Mechanism of Change — 구조의 차이 / 구조의 변화 / 구조 변화의 기작</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p14</span> <a class="chip chip-tag" href="map.html?tag=map">#map</a> <a class="chip chip-tag" href="map.html?tag=structure">#structure</a> <a class="chip chip-tag" href="map.html?tag=change">#change</a> <a class="chip chip-tag" href="map.html?tag=mechanism">#mechanism</a> <a class="chip chip-tag" href="map.html?tag=nis">#nis</a> <a class="chip chip-tag" href="map.html?tag=sis">#sis</a> <a class="chip chip-tag" href="map.html?tag=ssip">#ssip</a> <a class="chip chip-tag" href="map.html?tag=bizs">#bizs</a> <a class="chip chip-tag" href="map.html?tag=ts">#ts</a> <a class="chip chip-tag" href="map.html?tag=tis">#tis</a> <a class="chip chip-tag" href="map.html?tag=sts">#sts</a> <a class="chip chip-tag" href="map.html?tag=bmi">#bmi</a> <a class="chip chip-tag" href="map.html?tag=spt">#spt</a> <a class="chip chip-tag" href="map.html?tag=moip">#moip</a> <a class="chip chip-tag" href="map.html?tag=ecosystem">#ecosystem</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>한 학기의 이론들을 <strong>무엇을 설명하려는가</strong>로 세 묶음으로 나눈 지도. ① <strong>구조의 차이</strong> — 나라·산업마다 혁신 방식이 왜 다른가(NIS, SIS, SSIP, BizS). ② <strong>구조의 변화</strong> — 그 구조가 어떻게 바뀌는가(TS, TIS, StS + Transition). ③ <strong>구조 변화의 기작</strong> — 바뀔 때 구체적으로 무슨 메커니즘이 작동하는가(BMI, SPT, MOIP, Ecosystem). 뒤로 갈수록 <strong>더 미시적이고 더 실천적</strong>이다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>강을 연구하는 세 가지 방법에 가깝다.</p>
@@ -1510,15 +1555,18 @@
 
 <section class="concept" id="c11">
   <header class="concept-head">
-    <div class="concept-no">11</div>
-    <div class="concept-title">
-      <h2>Innovation Ecosystem — 병목·오케스트레이터·거버넌스</h2>
-      <p class="concept-en">Innovation Ecosystem (Adner; Adner &amp; Kapoor; Jacobides et al.; Granstrand &amp; Holgersson)</p>
-      <p class="concept-subtitle">학기의 종착점을 W01에서 미리 보기</p>
+    <span class="concept-eyebrow">W01 · 개념 11</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c11" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W01 p15</span> <span class="meta-slide">📄 W01 p16 (Discussion)</span> <a class="tag" href="map.html?tag=ecosystem">#ecosystem</a> <a class="tag" href="map.html?tag=orchestrator">#orchestrator</a> <a class="tag" href="map.html?tag=bottleneck">#bottleneck</a> <a class="tag" href="map.html?tag=complementor">#complementor</a> <a class="tag" href="map.html?tag=component">#component</a> <a class="tag" href="map.html?tag=interdependence-risk">#interdependence-risk</a> <a class="tag" href="map.html?tag=integration-risk">#integration-risk</a> <a class="tag" href="map.html?tag=governance">#governance</a> <a class="tag" href="map.html?tag=modularity">#modularity</a> <a class="tag" href="map.html?tag=social-capital">#social-capital</a> <a class="tag" href="map.html?tag=alignment">#alignment</a></p>
+  <div class="concept-title-row">
+    <h2>Innovation Ecosystem — 병목·오케스트레이터·거버넌스</h2>
+    <p class="concept-en">Innovation Ecosystem (Adner; Adner &amp; Kapoor; Jacobides et al.; Granstrand &amp; Holgersson) — 학기의 종착점을 W01에서 미리 보기</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W01 p15</span> <span class="chip chip-slide">📄 W01 p16 (Discussion)</span> <a class="chip chip-tag" href="map.html?tag=ecosystem">#ecosystem</a> <a class="chip chip-tag" href="map.html?tag=orchestrator">#orchestrator</a> <a class="chip chip-tag" href="map.html?tag=bottleneck">#bottleneck</a> <a class="chip chip-tag" href="map.html?tag=complementor">#complementor</a> <a class="chip chip-tag" href="map.html?tag=component">#component</a> <a class="chip chip-tag" href="map.html?tag=interdependence-risk">#interdependence-risk</a> <a class="chip chip-tag" href="map.html?tag=integration-risk">#integration-risk</a> <a class="chip chip-tag" href="map.html?tag=governance">#governance</a> <a class="chip chip-tag" href="map.html?tag=modularity">#modularity</a> <a class="chip chip-tag" href="map.html?tag=social-capital">#social-capital</a> <a class="chip chip-tag" href="map.html?tag=alignment">#alignment</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>내 제품이 아무리 좋아도, <strong>남들이 제 몫을 해 주지 않으면 가치가 만들어지지 않는다.</strong> 혁신생태계론은 이 상호의존을 정면으로 다루는 이론이다. 핵심 질문 세 개: ① <strong>병목(bottleneck)</strong>이 어디 있는가, ② 누가 <strong>오케스트레이터</strong>로서 판을 짜는가, ③ 명령할 권한이 없는 파트너들을 어떻게 <strong>정렬(alignment)</strong>시키는가.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>오케스트라를 떠올리면 된다. 지휘자(오케스트레이터)는 단원을 해고할 권한이 없다 — 다들 독립 연주자다. 그래도 곡이 되려면 모두가 같은 박자로 가야 한다. 이때 지휘자가 할 일은 두 가지다. <strong>어느 파트가 곡 전체를 망칠 수 있는지(병목)</strong> 알아 두는 것, 그리고 <strong>&quot;이 곡이 되면 다 같이 좋다&quot;는 그림(가치 제안)으로 자발적으로 맞추게</strong> 하는 것.</p>

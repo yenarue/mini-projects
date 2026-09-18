@@ -6,14 +6,39 @@
     el.textContent = new Date().getFullYear();
   });
 
-  /* ---------- 다크모드 ---------- */
+  /* ---------- 다크모드 ----------
+     layout.mjs의 no-flash 스크립트가 이미 <html data-theme="light|dark">를
+     찍어 두므로, 여기서는 그 값을 뒤집기만 하면 된다. */
+  var root = document.documentElement;
   var toggle = document.getElementById('theme-toggle');
   if (toggle) {
     toggle.addEventListener('click', function () {
-      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (dark) document.documentElement.removeAttribute('data-theme');
-      else document.documentElement.setAttribute('data-theme', 'dark');
-      try { localStorage.setItem('ie-theme', dark ? 'light' : 'dark'); } catch (e) {}
+      var dark = root.getAttribute('data-theme') === 'dark';
+      var next = dark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('ie-theme', next); } catch (e) {}
+    });
+  }
+
+  /* ---------- 글자 크기 3단 (90/100/115%, localStorage로 유지) ---------- */
+  var FONTSIZE_KEY = 'ie-fontsize';
+  var fontsizeControl = document.getElementById('fontsize-control');
+  if (fontsizeControl) {
+    var sizeButtons = Array.prototype.slice.call(fontsizeControl.querySelectorAll('button[data-fontsize]'));
+    function syncActiveButton() {
+      var current = root.getAttribute('data-fontsize') || 'md';
+      sizeButtons.forEach(function (b) {
+        b.classList.toggle('active', b.dataset.fontsize === current);
+      });
+    }
+    syncActiveButton();
+    sizeButtons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var size = b.dataset.fontsize;
+        root.setAttribute('data-fontsize', size);
+        try { localStorage.setItem(FONTSIZE_KEY, size); } catch (e) {}
+        syncActiveButton();
+      });
     });
   }
 
@@ -108,4 +133,10 @@
   }
   window.addEventListener('hashchange', revealHash);
   revealHash();
+
+  /* ---------- 집중 모드 (R3) ----------
+     헤더의 ⤢ 버튼(.focus-btn[data-focus-target])은 지금은 아무 동작도
+     하지 않는다. R3가 여기에 오버레이 열기/개념 이동/키보드(←/→/Esc/F)를
+     붙인다. CSS 쪽 셸은 .focus-overlay(styles.css)에 이미 예약돼 있다.
+     구현 시 주의: 열 때 현재 스크롤 위치를 저장해 닫을 때 복원할 것. */
 })();

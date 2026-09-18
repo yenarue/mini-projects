@@ -4,20 +4,26 @@ export function esc(s) {
   );
 }
 
+/** §4.1 topbar: 브랜드 → 페이지 네비 → 글자크기 3단 → 검색 → 다크모드 */
 export function topbar({ active = '' } = {}) {
   const link = (href, label, key) =>
     `<a href="${href}"${active === key ? ' class="active"' : ''}>${label}</a>`;
   return `
 <header class="topbar">
-  <a class="topbar-home" href="index.html">혁신생태계론</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
   <nav class="topbar-nav">
     ${link('index.html', '학기 지도', 'index')}
     ${link('quiz.html', '퀴즈', 'quiz')}
     ${link('map.html', '개념 지도', 'map')}
   </nav>
   <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
     <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
-      <span>검색</span><kbd>/</kbd>
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
     </button>
     <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
       <span class="theme-icon" aria-hidden="true"></span>
@@ -31,6 +37,45 @@ export function topbar({ active = '' } = {}) {
     <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
   </div>
 </div>`;
+}
+
+/**
+ * §4.2 사이드바 셸. 주차 페이지가 개념 목록·이전/다음 주차 데이터를 채워 넣는다.
+ * navItems: [{ href, no, title, slug, active }]
+ */
+export function sidebar({
+  chapterLabel,
+  title,
+  subtitle = '',
+  progressText = '',
+  navItems = [],
+  prev = null, // { href, label }
+  next = null, // { href, label }
+} = {}) {
+  const items = navItems.map((item) => `
+    <li>
+      <a href="${item.href}"${item.slug ? ` data-concept="${item.slug}"` : ''}${item.active ? ' class="active"' : ''}>
+        <span class="side-no">${esc(item.no)}</span>
+        <span class="side-title">${esc(item.title)}</span>
+      </a>
+    </li>`).join('');
+
+  return `
+<aside class="sidebar">
+  ${chapterLabel ? `<div class="chapter-label">${esc(chapterLabel)}</div>` : ''}
+  <h1>${esc(title)}</h1>
+  ${subtitle ? `<p class="side-subtitle">${esc(subtitle)}</p>` : ''}
+  ${progressText ? `<div class="side-progress">${esc(progressText)}</div>` : ''}
+  <nav><ul class="side-nav">${items}</ul></nav>
+  <div class="side-tools">
+    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
+    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
+  </div>
+  <div class="side-prevnext">
+    ${prev ? `<a href="${prev.href}">← ${esc(prev.label)}</a>` : '<span></span>'}
+    ${next ? `<a href="${next.href}">${esc(next.label)} →</a>` : '<span></span>'}
+  </div>
+</aside>`;
 }
 
 export function legend() {
@@ -48,6 +93,7 @@ export function statusBadge(status) {
     : '<span class="badge badge-draft">초안</span>';
 }
 
+// 서명 푸터 — 마크업은 기존 그대로 유지한다(스타일만 CSS에서 새로 입힌다).
 export function footer() {
   return `
 <footer class="site-footer">

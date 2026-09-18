@@ -1,7 +1,7 @@
-import { esc, topbar, legend, statusBadge, footer } from './components.mjs';
+import { esc, topbar, sidebar, legend, statusBadge, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 
-/** 기본 펼침 섹션. 나머지는 <details>로 접는다. */
+/** 기본 펼침 섹션(§4.3: 한 줄 정의·쉽게 말하면·핵심 내용·예상 퀴즈). 나머지 4개는 <details>로 접는다. */
 const OPEN_SECTIONS = new Set(['definition', 'analogy', 'core', 'quiz']);
 
 const SECTION_LABEL = {
@@ -17,6 +17,8 @@ const SECTION_LABEL = {
   other: '기타',
 };
 
+// 내용 변환(T1~T8, §5)은 R2의 몫이다. 여기서는 lib/render.mjs가 만든
+// section.html을 그대로 새 카드 프레임 안에 넣기만 한다.
 function sectionBlock(concept, section) {
   const label = SECTION_LABEL[section.key] ?? section.heading;
   const id = `${concept.slug}-${section.key}`;
@@ -44,11 +46,14 @@ function sectionBlock(concept, section) {
 </details>`;
 }
 
+// §4.3 개념 카드 프레임: eyebrow(주차·번호) → 상태·집중모드 → 제목 → 영문/부제 →
+// 메타 칩(슬라이드·태그) → 섹션들(펼침 4 + 접힘 4) → 관련 개념 → 맨 위로.
 function conceptBlock(concept) {
-  const tags = (concept.tags ?? [])
-    .map((t) => `<a class="tag" href="map.html?tag=${encodeURIComponent(t)}">#${esc(t)}</a>`)
-    .join(' ');
-  const slides = (concept.slides ?? []).map((s) => `<span class="meta-slide">📄 ${esc(s)}</span>`).join(' ');
+  const chips = [
+    ...(concept.slides ?? []).map((s) => `<span class="chip chip-slide">📄 ${esc(s)}</span>`),
+    ...(concept.tags ?? []).map((t) => `<a class="chip chip-tag" href="map.html?tag=${encodeURIComponent(t)}">#${esc(t)}</a>`),
+  ].join(' ');
+
   const related = (concept.related ?? [])
     .map((r) => {
       const label = esc(r.title || `${r.week}/${String(r.no).padStart(2, '0')}`);
@@ -63,57 +68,52 @@ function conceptBlock(concept) {
   return `
 <section class="concept" id="${concept.slug}">
   <header class="concept-head">
-    <div class="concept-no">${String(concept.no).padStart(2, '0')}</div>
-    <div class="concept-title">
-      <h2>${esc(concept.title)}</h2>
-      <p class="concept-en">${esc(concept.en)}</p>
-      ${concept.subtitle ? `<p class="concept-subtitle">${esc(concept.subtitle)}</p>` : ''}
+    <span class="concept-eyebrow">${esc(concept.week)} · 개념 ${String(concept.no).padStart(2, '0')}</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      ${statusBadge(concept.status)}
+      <button type="button" class="focus-btn" data-focus-target="${concept.slug}" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    ${statusBadge(concept.status)}
   </header>
-  <p class="concept-meta">${slides} ${tags}</p>
+  <div class="concept-title-row">
+    <h2>${esc(concept.title)}</h2>
+    <p class="concept-en">${esc(concept.en)}${concept.subtitle ? ` — ${esc(concept.subtitle)}` : ''}</p>
+  </div>
+  ${chips ? `<p class="concept-meta">${chips}</p>` : ''}
   ${concept.sections.map((s) => sectionBlock(concept, s)).join('\n')}
   ${related ? `<p class="concept-related">관련: ${related}</p>` : ''}
   <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
 </section>`;
 }
 
-function sidebar(week, weeks) {
+function weekSidebar(week, weeks) {
   const idx = weeks.findIndex((w) => w.id === week.id);
-  const prev = weeks.slice(0, idx).reverse().find((w) => w.concepts?.length);
-  const next = weeks.slice(idx + 1).find((w) => w.concepts?.length);
+  const prevWeek = weeks.slice(0, idx).reverse().find((w) => w.concepts?.length);
+  const nextWeek = weeks.slice(idx + 1).find((w) => w.concepts?.length);
 
-  const items = week.concepts.map((c) => `
-    <li>
-      <a href="#${c.slug}" data-concept="${c.slug}">
-        <span class="side-no">${String(c.no).padStart(2, '0')}</span>
-        <span class="side-title">${esc(c.title)}</span>
-      </a>
-    </li>`).join('');
+  const navItems = week.concepts.map((c) => ({
+    href: `#${c.slug}`,
+    slug: c.slug,
+    no: String(c.no).padStart(2, '0'),
+    title: c.title,
+  }));
 
-  return `
-<aside>
-  <div class="chapter-label">${esc(week.id)} · ${esc(week.date.slice(5).replace('-', '/'))}</div>
-  <h1>${esc(week.topic)}</h1>
-  ${week.subtitle ? `<p class="side-subtitle">${esc(week.subtitle)}</p>` : ''}
-  <div class="side-progress">개념 ${week.concepts.length}개 · 완료 ${week.concepts.filter((c) => c.status === 'done').length}개</div>
-  <nav><ul class="side-nav">${items}</ul></nav>
-  <div class="side-tools">
-    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
-    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
-  </div>
-  <div class="side-prevnext">
-    ${prev ? `<a href="${prev.id}.html">← ${esc(prev.id)}</a>` : '<span></span>'}
-    ${next ? `<a href="${next.id}.html">${esc(next.id)} →</a>` : '<span></span>'}
-  </div>
-</aside>`;
+  return sidebar({
+    chapterLabel: `${week.id} · ${week.date.slice(5).replace('-', '/')}`,
+    title: week.topic,
+    subtitle: week.subtitle,
+    progressText: `개념 ${week.concepts.length}개 · 완료 ${week.concepts.filter((c) => c.status === 'done').length}개`,
+    navItems,
+    prev: prevWeek ? { href: `${prevWeek.id}.html`, label: prevWeek.id } : null,
+    next: nextWeek ? { href: `${nextWeek.id}.html`, label: nextWeek.id } : null,
+  });
 }
 
 export function renderWeekPage({ week, weeks }) {
   const body = `
 ${topbar({})}
 <div class="layout" id="top">
-  ${sidebar(week, weeks)}
+  ${weekSidebar(week, weeks)}
   <main>
     <p class="breadcrumb"><a href="index.html">학기 지도</a> › ${esc(week.id)} · ${esc(week.topic)}</p>
     <div class="week-intro">

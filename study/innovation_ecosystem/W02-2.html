@@ -6,14 +6,24 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="지식의 공공성 논쟁 개념 정리 2개">
   <title>W02-2 · 지식의 공공성 논쟁 — 혁신생태계론</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <link rel="stylesheet" href="styles.css">
   <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
     (function () {
       try {
-        var saved = localStorage.getItem('ie-theme');
-        var dark = saved ? saved === 'dark'
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
           : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
       } catch (e) {}
     })();
   </script>
@@ -23,15 +33,20 @@
 
 
 <header class="topbar">
-  <a class="topbar-home" href="index.html">혁신생태계론</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
   <nav class="topbar-nav">
     <a href="index.html">학기 지도</a>
     <a href="quiz.html">퀴즈</a>
     <a href="map.html">개념 지도</a>
   </nav>
   <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
     <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
-      <span>검색</span><kbd>/</kbd>
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
     </button>
     <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
       <span class="theme-icon" aria-hidden="true"></span>
@@ -47,7 +62,7 @@
 </div>
 <div class="layout" id="top">
   
-<aside>
+<aside class="sidebar">
   <div class="chapter-label">W02-2 · 09/19</div>
   <h1>지식의 공공성 논쟁</h1>
   <p class="side-subtitle">과학기술지식은 공공재인가 사유재인가</p>
@@ -89,15 +104,18 @@
     
 <section class="concept" id="c01">
   <header class="concept-head">
-    <div class="concept-no">01</div>
-    <div class="concept-title">
-      <h2>고전적 공공재 논리와 그 한계</h2>
-      <p class="concept-en">The Classical Public Good Argument and Its Limits</p>
-      <p class="concept-subtitle">지식은 공공재인가 사유재인가 — 논쟁의 출발점</p>
+    <span class="concept-eyebrow">W02-2 · 개념 01</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c01" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02-2 p5</span> <a class="tag" href="map.html?tag=public-good">#public-good</a> <a class="tag" href="map.html?tag=non-excludability">#non-excludability</a> <a class="tag" href="map.html?tag=non-rivalry">#non-rivalry</a> <a class="tag" href="map.html?tag=underinvestment">#underinvestment</a> <a class="tag" href="map.html?tag=market-failure">#market-failure</a> <a class="tag" href="map.html?tag=arrow-nelson">#arrow-nelson</a></p>
+  <div class="concept-title-row">
+    <h2>고전적 공공재 논리와 그 한계</h2>
+    <p class="concept-en">The Classical Public Good Argument and Its Limits — 지식은 공공재인가 사유재인가 — 논쟁의 출발점</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02-2 p5</span> <a class="chip chip-tag" href="map.html?tag=public-good">#public-good</a> <a class="chip chip-tag" href="map.html?tag=non-excludability">#non-excludability</a> <a class="chip chip-tag" href="map.html?tag=non-rivalry">#non-rivalry</a> <a class="chip chip-tag" href="map.html?tag=underinvestment">#underinvestment</a> <a class="chip chip-tag" href="map.html?tag=market-failure">#market-failure</a> <a class="chip chip-tag" href="map.html?tag=arrow-nelson">#arrow-nelson</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>경제학은 지식을 <strong>공공재</strong>로 본다. 남이 쓰는 것을 막기 어렵고(<strong>비배제성</strong>), 남이 써도 내 몫이 줄지 않기(<strong>비경합성</strong>) 때문이다. 그래서 &quot;민간은 지식에 과소투자하므로 정부가 대야 한다&quot;는 결론이 나온다. 이 논리는 <strong>정부 R&amp;D 예산의 근거</strong>이지만, 📄 <strong>&quot;지식이 실제로 쓰이기 위한 조건을 생략&quot;</strong>한다는 치명적 빈틈이 있다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>동네 가로등을 생각해 보자. 내가 돈을 들여 세우면 지나가는 사람 모두가 공짜로 쓰고(비배제성), 남이 그 빛을 쬔다고 내 빛이 줄지 않는다(비경합성). 그러니 <strong>아무도 자기 돈으로 세우지 않는다.</strong> 그래서 구청이 세운다.</p>
@@ -209,15 +227,18 @@
 
 <section class="concept" id="c02">
   <header class="concept-head">
-    <div class="concept-no">02</div>
-    <div class="concept-title">
-      <h2>Kealey의 도전 — 선형모형 뒤집기</h2>
-      <p class="concept-en">Kealey's Challenge to the Linear Model</p>
-      <p class="concept-subtitle">정부지원 학문과학은 경제성장을 만드는 생산재인가</p>
+    <span class="concept-eyebrow">W02-2 · 개념 02</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      <span class="badge badge-draft">초안</span>
+      <button type="button" class="focus-btn" data-focus-target="c02" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
-    <span class="badge badge-draft">초안</span>
   </header>
-  <p class="concept-meta"><span class="meta-slide">📄 W02-2 p6</span> <a class="tag" href="map.html?tag=kealey">#kealey</a> <a class="tag" href="map.html?tag=linear-model">#linear-model</a> <a class="tag" href="map.html?tag=causality">#causality</a> <a class="tag" href="map.html?tag=private-good">#private-good</a> <a class="tag" href="map.html?tag=science-funding">#science-funding</a> <a class="tag" href="map.html?tag=economic-growth">#economic-growth</a></p>
+  <div class="concept-title-row">
+    <h2>Kealey의 도전 — 선형모형 뒤집기</h2>
+    <p class="concept-en">Kealey's Challenge to the Linear Model — 정부지원 학문과학은 경제성장을 만드는 생산재인가</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W02-2 p6</span> <a class="chip chip-tag" href="map.html?tag=kealey">#kealey</a> <a class="chip chip-tag" href="map.html?tag=linear-model">#linear-model</a> <a class="chip chip-tag" href="map.html?tag=causality">#causality</a> <a class="chip chip-tag" href="map.html?tag=private-good">#private-good</a> <a class="chip chip-tag" href="map.html?tag=science-funding">#science-funding</a> <a class="chip chip-tag" href="map.html?tag=economic-growth">#economic-growth</a></p>
   <div class="sec sec-definition"><h4>한 줄 정의</h4><p>&quot;정부가 과학에 투자하면 기술이 발전하고 경제가 성장한다&quot;는 <strong>선형모형</strong>에 대한 정면 반박이다. Kealey는 <strong>인과가 반대</strong>라고 본다. <strong>성장했기 때문에 과학 활동이 늘어난 것</strong>이지, 과학에 투자해서 성장한 것이 아니라는 것이다. 더 나아가 🗣 <strong>과학 지식은 사유재</strong>이며, 사람들은 돈이 될 줄 알고 투자하는 것이지 남과 나눌 생각이 없다고 주장한다.</p>
 </div>
 <div class="sec sec-analogy"><h4>쉽게 말하면</h4><p>&quot;헬스장이 많은 동네 사람들이 건강하다&quot;는 관찰이 있다고 하자.</p>
