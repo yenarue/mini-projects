@@ -161,8 +161,238 @@
   revealHash();
 
   /* ---------- 집중 모드 (R3) ----------
-     헤더의 ⤢ 버튼(.focus-btn[data-focus-target])은 지금은 아무 동작도
-     하지 않는다. R3가 여기에 오버레이 열기/개념 이동/키보드(←/→/Esc/F)를
-     붙인다. CSS 쪽 셸은 .focus-overlay(styles.css)에 이미 예약돼 있다.
-     구현 시 주의: 열 때 현재 스크롤 위치를 저장해 닫을 때 복원할 것. */
+     §4.4. 헤더의 ⤢ 버튼(.focus-btn[data-focus-target]) 또는 F 키로 연다.
+     오버레이 안의 개념 콘텐츠는 그 페이지에 이미 렌더된 section.concept를
+     그대로 복제(cloneNode)해서 채운다 — 별도 렌더링도, 재요청(fetch)도 없다.
+     함정: 복제하면 문서 안에 같은 id(개념 슬러그, 헤딩 앵커, step-card id 등)가
+     두 벌 생긴다. getElementById/앵커가 깨지므로 복제본의 id는 전부 제거한다. */
+  var concepts = Array.prototype.slice.call(document.querySelectorAll('section.concept'));
+  if (concepts.length) {
+    try { history.scrollRestoration = 'manual'; } catch (e) {}
+
+    var overlay = null;
+    var overlayBody = null;
+    var positionEl = null;
+    var dotsEl = null;
+    var prevBtn = null;
+    var nextBtn = null;
+    var closeBtn = null;
+    var currentIndex = -1;
+    var savedScrollY = 0;
+    var openerEl = null;
+
+    function hashFor(index) { return '#focus-' + concepts[index].id; }
+
+    function buildOverlay() {
+      overlay = document.createElement('div');
+      overlay.className = 'focus-overlay';
+      overlay.id = 'focus-overlay';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-label', '집중 모드');
+      overlay.hidden = true;
+
+      var topbarEl = document.createElement('div');
+      topbarEl.className = 'focus-topbar';
+
+      positionEl = document.createElement('span');
+      positionEl.className = 'focus-position';
+      topbarEl.appendChild(positionEl);
+
+      closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'focus-close';
+      closeBtn.setAttribute('aria-label', '집중 모드 닫기 (Esc)');
+      closeBtn.textContent = '✕';
+      closeBtn.addEventListener('click', closeFocus);
+      topbarEl.appendChild(closeBtn);
+      overlay.appendChild(topbarEl);
+
+      overlayBody = document.createElement('div');
+      overlayBody.className = 'focus-body';
+      overlay.appendChild(overlayBody);
+
+      var bar = document.createElement('div');
+      bar.className = 'focus-bar';
+
+      prevBtn = document.createElement('button');
+      prevBtn.type = 'button';
+      prevBtn.className = 'focus-nav focus-prev';
+      prevBtn.textContent = '‹ 이전 개념';
+      prevBtn.addEventListener('click', function () { goTo(currentIndex - 1, true); });
+      bar.appendChild(prevBtn);
+
+      dotsEl = document.createElement('div');
+      dotsEl.className = 'focus-dots';
+      dotsEl.setAttribute('role', 'tablist');
+      dotsEl.setAttribute('aria-label', '개념 위치');
+      concepts.forEach(function (c, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'focus-dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', (i + 1) + '번째 개념 · ' + c.id);
+        dot.addEventListener('click', function () { goTo(i, true); });
+        dotsEl.appendChild(dot);
+      });
+      bar.appendChild(dotsEl);
+
+      nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.className = 'focus-nav focus-next';
+      nextBtn.textContent = '다음 개념 ›';
+      nextBtn.addEventListener('click', function () { goTo(currentIndex + 1, true); });
+      bar.appendChild(nextBtn);
+
+      overlay.appendChild(bar);
+      document.body.appendChild(overlay);
+
+      // 키보드는 오버레이가 열려있는 동안만 반응하고, 여기서 밖으로 새지 않는다
+      // (stopPropagation은 안 쓴다 — 대신 열림 여부를 매번 검사).
+      overlay.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { e.preventDefault(); closeFocus(); return; }
+        if (e.key === 'ArrowRight') { e.preventDefault(); goTo(currentIndex + 1, true); return; }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(currentIndex - 1, true); return; }
+        if (e.key === 'Tab') { trapTab(e); }
+      });
+    }
+
+    function trapTab(e) {
+      var focusables = Array.prototype.slice.call(
+        overlay.querySelectorAll('button, a[href], input, [tabindex]:not([tabindex="-1"])')
+      ).filter(function (el) { return el.offsetParent !== null || el === document.activeElement; });
+      if (!focusables.length) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
+
+    // 복제본에서 id를 전부 지운다 — 페이지 본문에 같은 id를 가진 원본이
+    // 여전히 존재하는 동안 getElementById/#anchor가 둘 중 하나만 가리켜야 하므로.
+    function stripIds(root) {
+      if (root.hasAttribute && root.hasAttribute('id')) root.removeAttribute('id');
+      var withIds = root.querySelectorAll ? root.querySelectorAll('[id]') : [];
+      Array.prototype.forEach.call(withIds, function (el) { el.removeAttribute('id'); });
+    }
+
+    function renderConcept(index) {
+      var clone = concepts[index].cloneNode(true);
+      stripIds(clone);
+      // 접힌 섹션(수업 논점·보충 사례·프레임에서의 위치·관련 개념·출처)은
+      // 집중 모드에서는 전부 펼쳐서 보여준다 — 다시 클릭하게 하지 않는다.
+      Array.prototype.forEach.call(clone.querySelectorAll('details'), function (d) { d.open = true; });
+
+      overlayBody.innerHTML = '';
+      overlayBody.appendChild(clone);
+      overlayBody.scrollTop = 0;
+
+      var dots = dotsEl.querySelectorAll('.focus-dot');
+      Array.prototype.forEach.call(dots, function (d, i) {
+        var active = i === index;
+        d.classList.toggle('active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      positionEl.textContent = '개념 ' + (index + 1) + ' / ' + concepts.length;
+      prevBtn.disabled = index <= 0;
+      nextBtn.disabled = index >= concepts.length - 1;
+      currentIndex = index;
+    }
+
+    function goTo(index, updateUrl) {
+      if (index < 0 || index >= concepts.length || index === currentIndex) return;
+      renderConcept(index);
+      if (updateUrl) {
+        try { history.replaceState({ ieFocus: concepts[index].id }, '', hashFor(index)); } catch (e) {}
+      }
+    }
+
+    // 사이드바 스크롤 추적(위쪽 THRESHOLD 로직)과 같은 기준으로, 지금 화면에
+    // 보이는 개념을 찾는다 — F 키를 눌렀을 때 "지금 보고 있는 개념"을 연다.
+    function conceptIndexInView() {
+      var THRESHOLD = 96;
+      var current = 0;
+      for (var i = 0; i < concepts.length; i++) {
+        if (concepts[i].getBoundingClientRect().top - THRESHOLD <= 0) current = i;
+        else break;
+      }
+      return current;
+    }
+
+    function openFocus(index, pushUrl) {
+      if (!overlay) buildOverlay();
+      if (overlay.hidden) {
+        savedScrollY = window.scrollY;
+        openerEl = document.activeElement;
+        document.body.classList.add('focus-lock');
+        overlay.hidden = false;
+        document.addEventListener('focus', keepFocusInside, true);
+      }
+      renderConcept(index);
+      closeBtn.focus();
+      if (pushUrl) {
+        try { history.pushState({ ieFocus: concepts[index].id }, '', hashFor(index)); } catch (e) {}
+      }
+    }
+
+    function closeFocus(skipUrl) {
+      if (!overlay || overlay.hidden) return;
+      overlay.hidden = true;
+      document.body.classList.remove('focus-lock');
+      document.removeEventListener('focus', keepFocusInside, true);
+      window.scrollTo(0, savedScrollY);
+      if (!skipUrl && location.hash.indexOf('#focus-') === 0) {
+        try { history.pushState({}, '', location.pathname + location.search); } catch (e) {}
+      }
+      if (openerEl && typeof openerEl.focus === 'function') openerEl.focus();
+      openerEl = null;
+    }
+
+    // 포커스 트랩 보강: 어떤 경로로든(마우스 클릭 등) 오버레이 밖 요소가
+    // 포커스를 받으면 즉시 되돌린다. Tab 키 트랩(trapTab)과 이중 방어.
+    function keepFocusInside(e) {
+      if (overlay && !overlay.hidden && !overlay.contains(e.target)) {
+        closeBtn.focus();
+      }
+    }
+
+    document.querySelectorAll('.focus-btn[data-focus-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var slug = btn.dataset.focusTarget;
+        var idx = concepts.findIndex(function (c) { return c.id === slug; });
+        openFocus(idx === -1 ? 0 : idx, true);
+      });
+    });
+
+    // F 키: 입력창에 포커스가 있을 땐 무시. 오버레이가 이미 열려 있으면
+    // (자체 keydown 핸들러가 Esc/←/→만 처리하므로) 여기서 그냥 무시해도 된다.
+    window.addEventListener('keydown', function (e) {
+      if (overlay && !overlay.hidden) return;
+      if (e.key !== 'f' && e.key !== 'F') return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var active = document.activeElement;
+      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
+      openFocus(conceptIndexInView(), true);
+    });
+
+    // URL 해시로 열고 닫힘을 반영한다: 직접 링크로 들어오거나 뒤로/앞으로
+    // 가기 버튼을 눌러도 같은 상태가 재현된다.
+    function syncFromHash() {
+      var m = /^#focus-(.+)$/.exec(location.hash);
+      if (m) {
+        var idx = concepts.findIndex(function (c) { return c.id === m[1]; });
+        if (idx !== -1) {
+          if (!overlay || overlay.hidden) openFocus(idx, false);
+          else renderConcept(idx);
+          return;
+        }
+      }
+      if (overlay && !overlay.hidden) closeFocus(true);
+    }
+    window.addEventListener('popstate', syncFromHash);
+    syncFromHash();
+  }
 })();

@@ -510,7 +510,9 @@ figure.slide figcaption { margin-top: 8px; font-size: 12px; color: var(--muted);
    라이트박스
    ============================================================ */
 .lightbox {
-  position: fixed; inset: 0; z-index: 60;
+  /* z-index는 .focus-overlay(70)보다 높아야 한다 — 집중 모드 안에서 슬라이드
+     이미지를 클릭해도 라이트박스가 오버레이 배경에 가려지지 않게. */
+  position: fixed; inset: 0; z-index: 80;
   display: flex; align-items: center; justify-content: center;
   padding: 24px; background: rgba(10, 11, 14, .86); cursor: zoom-out;
 }
@@ -546,13 +548,96 @@ figure.slide figcaption { margin-top: 8px; font-size: 12px; color: var(--muted);
 .search-hint { margin: 0; padding: 9px 20px; font-size: 11.5px; color: var(--muted); }
 
 /* ============================================================
-   집중 모드 — R3에서 채움. 여기서는 셸만 예약해서 R1이 레이아웃을
-   흔들지 않게 한다. .focus-overlay는 기본 display:none이고, R3가
-   .open을 토글하면서 실제 오버레이 스타일을 이 블록 아래에 추가한다.
+   집중 모드 (R3, REDESIGN.md §4.4)
+   구조: .focus-overlay > .focus-topbar(위치 + 닫기) / .focus-body(복제된
+   개념) / .focus-bar(이전·점·다음). 오버레이 안의 개념 콘텐츠는 페이지의
+   section.concept를 clone한 것이므로 .concept 등 기존 클래스를 그대로
+   물려받는다 — 여기서는 집중 모드 전용 오버라이드만 얹는다.
    ============================================================ */
 .focus-overlay { display: none; }
-.focus-overlay.open {
-  display: block; position: fixed; inset: 0; z-index: 70; background: var(--bg); overflow-y: auto;
+.focus-overlay:not([hidden]) {
+  display: flex; flex-direction: column;
+  position: fixed; inset: 0; z-index: 70;
+  background: var(--bg);
+}
+body.focus-lock { overflow: hidden; }
+
+.focus-topbar {
+  flex: none; display: flex; align-items: center; justify-content: space-between;
+  height: var(--topbar-h); padding: 0 20px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+.focus-position {
+  font-size: 12.5px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.focus-close {
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  font-size: 15px; cursor: pointer; color: var(--ink-soft);
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-pill);
+}
+.focus-close:hover { color: var(--ink); border-color: var(--muted); }
+
+/* 본문 — REDESIGN.md §4.4: 18px 고정(주차 페이지 A-/A/A+ 설정과 무관하게).
+   본문 측정폭은 --content-max(760px)보다 넓은 --focus-max(820px)를 쓴다 —
+   18px·1.8 행간에서 760px는 한 줄이 다소 짧게 끊겨 760px 그대로 쓰지 않았다. */
+.focus-body {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto;
+  padding: 40px 24px 48px;
+}
+.focus-body .concept {
+  max-width: var(--focus-max, 820px);
+  margin: 0 auto;
+  padding: 0; border: none; box-shadow: none;
+  font-size: 18px;
+  scroll-margin-top: 0;
+}
+.focus-body .concept-title-row h2 { font-size: 28px; }
+.focus-body .concept-en { font-size: 16px; }
+/* 집중 모드에서는 의미 없는 컨트롤 — 오버레이 자체에 닫기·이동이 이미 있다 */
+.focus-body .focus-btn,
+.focus-body .concept-top { display: none; }
+/* 인용·콜아웃·표는 원래도 본문보다 작게 설계된 보조 텍스트라 위계는 유지하되,
+   18px 본문 옆에서 너무 작아 보이지 않게 살짝만 키운다. */
+.focus-body .concept blockquote,
+.focus-body .concept p.callout,
+.focus-body .sec-quiz .quiz-text,
+.focus-body .source-list { font-size: 16px; }
+
+.focus-bar {
+  flex: none; display: flex; align-items: center; gap: 16px;
+  padding: 14px 24px; border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  backdrop-filter: blur(10px);
+}
+.focus-nav {
+  flex: none; padding: 9px 16px; font-size: 13.5px; font-weight: 600;
+  color: var(--ink-soft); background: var(--surface-2); font-family: inherit;
+  border: 1px solid var(--line); border-radius: var(--radius-pill); cursor: pointer;
+  white-space: nowrap;
+}
+.focus-nav:hover:not(:disabled) { color: var(--brand); border-color: var(--brand); }
+.focus-nav:disabled { opacity: .4; cursor: default; }
+
+.focus-dots {
+  flex: 1 1 auto; display: flex; justify-content: center; align-items: center;
+  gap: 6px; overflow-x: auto; padding: 2px;
+}
+.focus-dot {
+  flex: none; width: 8px; height: 8px; padding: 0;
+  border: none; border-radius: 50%; background: var(--line); cursor: pointer;
+}
+.focus-dot:hover { background: var(--muted); }
+.focus-dot.active { width: 20px; border-radius: var(--radius-pill); background: var(--brand); }
+
+@media (max-width: 480px) {
+  .focus-topbar { padding: 0 14px; }
+  .focus-body { padding: 26px 16px 32px; }
+  .focus-body .concept { font-size: 17px; }
+  .focus-body .concept-title-row h2 { font-size: 22px; }
+  .focus-bar { padding: 10px 12px; gap: 8px; }
+  .focus-nav { padding: 8px 10px; font-size: 12px; }
 }
 
 /* ============================================================
@@ -606,7 +691,7 @@ figure.slide figcaption { margin-top: 8px; font-size: 12px; color: var(--muted);
    ============================================================ */
 @media print {
   .topbar, aside.sidebar, .side-tools, .side-prevnext, .concept-top,
-  .search-overlay, .sec-quiz-link, .focus-btn { display: none !important; }
+  .search-overlay, .sec-quiz-link, .focus-btn, .focus-overlay { display: none !important; }
   .layout { display: block; max-width: none; }
   main { padding: 0; }
   .concept { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
