@@ -401,6 +401,21 @@ figure.slide img {
 figure.slide img:hover { box-shadow: var(--shadow-lg); }
 figure.slide figcaption { margin-top: 8px; font-size: 12px; color: var(--muted); }
 
+/* R4 — 개념 다이어그램 (직접 그린 SVG, 💡 보충 자료) */
+figure.concept-diagram {
+  margin: 20px 0; padding: 18px 18px 14px;
+  background: var(--surface-2); border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+figure.concept-diagram svg {
+  display: block; width: 100%; height: auto; max-width: 640px; margin: 0 auto;
+  color: var(--ink); /* currentColor 기준선 — 다이어그램 내부 stroke/fill이 상속받는다 */
+}
+figure.concept-diagram figcaption.diagram-caption {
+  margin: 12px auto 0; max-width: 640px;
+  font-size: 12.5px; color: var(--note); text-align: left;
+}
+
 .concept-related { font-size: 13px; color: var(--muted); }
 .related-pending { color: var(--muted); font-style: italic; cursor: help; }
 .concept-top { margin: 18px 0 0; font-size: 12px; }
@@ -670,6 +685,7 @@ body.focus-lock { overflow: hidden; }
 @media (max-width: 768px) {
   body { font-size: 15.5px; }
   main { padding: 20px 16px 48px; }
+  figure.concept-diagram { padding: 10px 8px 10px; }
   .topbar { padding: 0 14px; gap: 12px; }
   .topbar-nav { gap: 2px; }
   .topbar-nav a { padding: 6px 8px; font-size: 13px; }

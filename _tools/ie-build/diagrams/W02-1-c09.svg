@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 260" role="img" aria-labelledby="w0201c09-title">
+  <title id="w0201c09-title">선진국은 기초과학에서 산업으로 내려가는 정방향 화살표, 후발국은 성숙 기술 도입에서 자체 R&amp;D로 거슬러 올라가는 역방향 화살표로 나아감을 대비하는 그림</title>
+  <defs>
+    <marker id="w0201c09-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--brand)"></path>
+    </marker>
+    <marker id="w0201c09-arrow-term" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--term)"></path>
+    </marker>
+  </defs>
+
+  <!-- 선진국: 정방향 (왼→오, Ω → λ) -->
+  <text x="20" y="30" font-size="12.5" font-weight="700" fill="var(--brand)">선진국 — 정방향</text>
+  <line x1="22" y1="68" x2="358" y2="68" stroke="var(--brand)" stroke-width="2.2" marker-end="url(#w0201c09-arrow)"></line>
+  <g font-size="9.5" fill="var(--ink-soft)" text-anchor="middle">
+    <text x="55" y="52">Ω 기초과학</text>
+    <text x="155" y="52">응용개발</text>
+    <text x="255" y="52">신산업 창출</text>
+    <text x="335" y="52">기술 성숙화</text>
+  </g>
+
+  <text x="190" y="112" text-anchor="middle" font-size="11" fill="var(--muted)">↕ 같은 시간, 반대 출발점</text>
+
+  <!-- 후발국: 역방향 (오→왼, λ → Ω) -->
+  <text x="360" y="140" text-anchor="end" font-size="12.5" font-weight="700" fill="var(--term)">후발국 — 역방향</text>
+  <line x1="358" y1="178" x2="22" y2="178" stroke="var(--term)" stroke-width="2.2" marker-end="url(#w0201c09-arrow-term)"></line>
+  <g font-size="9.5" fill="var(--ink-soft)" text-anchor="middle">
+    <text x="335" y="198">λ 성숙기술 도입</text>
+    <text x="335" y="212">(역공학)</text>
+    <text x="190" y="198">기술 공고화</text>
+    <text x="190" y="212">(OEM→ODM)</text>
+    <text x="55" y="198">자체 R&amp;D</text>
+    <text x="55" y="212">(Ω 결합)</text>
+  </g>
+
+  <text x="190" y="244" text-anchor="middle" font-size="10.5" fill="var(--muted)">한국 — 삼성 특허: 공정(process) 특허 → 제품(product) 특허</text>
+</svg>

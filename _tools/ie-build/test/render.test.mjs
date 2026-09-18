@@ -1,6 +1,16 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { renderMarkdown, toPlainText, extractListItems, slugifyHeading, renderConcept } from '../lib/render.mjs';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {
+  renderMarkdown,
+  toPlainText,
+  extractListItems,
+  slugifyHeading,
+  renderConcept,
+  insertDiagram,
+} from '../lib/render.mjs';
 import { Warnings } from '../build.mjs';
 
 const ctx = () => ({ week: 'W01', slug: 'c05', warnings: new Warnings(), label: 'W01/c05' });
@@ -348,4 +358,68 @@ test('renderConcept은 세 개의 섹션이 같은 제목을 가지면 각각 �
     return matches.length > 0 ? matches[0][1] : null;
   });
   assert.deepEqual(ids, ['c10-h-핵심', 'c10-h-핵심-2', 'c10-h-핵심-3']);
+});
+
+// --- R4 Fix A: 물결표 1개는 취소선이 아니라 리터럴 텍스트로 남아야 한다 ---
+// (marked GFM 기본 del 규칙 `~~?`는 물결표 1개짜리 쌍도 취소선으로 렌더해 버려서,
+// "구석기~디지털혁명~바이오혁명(?)"처럼 "~"를 범위(from...to) 표시로 쓴 원문이
+// <del>로 렌더되며 뜻이 정반대로 뒤집히는 버그가 있었다.)
+
+test('R4 Fix A: 물결표 1개(범위 표시)는 <del>로 렌더되지 않고 그대로 남는다', () => {
+  const html = renderMarkdown('구석기~디지털혁명~바이오혁명(?)', ctx());
+  assert.ok(!html.includes('<del>'), '<del>이 생기면 안 된다');
+  assert.match(html, /구석기~디지털혁명~바이오혁명\(\?\)/);
+});
+
+test('R4 Fix A: 물결표 2개(~~취소선~~)는 여전히 <del>로 렌더된다', () => {
+  const html = renderMarkdown('~~취소선~~ 텍스트', ctx());
+  assert.match(html, /<del>취소선<\/del>/);
+});
+
+// --- R4: 다이어그램 삽입 (파일 존재 여부로 판단, 하드코딩 목록 없음) ---
+
+function makeConceptWithCore(coreMd = '### 슬라이드\n\n![alt](../../수업노트/assets/W01/p07.png)\n\n본문') {
+  return {
+    week: 'W01',
+    no: 99,
+    slug: 'c99',
+    file: 'fixture.md',
+    title: 'T',
+    en: 'E',
+    tags: [],
+    sections: [{ key: 'core', heading: '핵심 내용', md: coreMd }],
+  };
+}
+
+test('R4: 대응하는 SVG 파일이 있으면 core 섹션의 첫 슬라이드 이미지 앞에 삽입된다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-diagram-'));
+  try {
+    fs.writeFileSync(path.join(dir, 'W01-c99.svg'), '<svg role="img"><title>테스트 다이어그램</title></svg>');
+    const concept = makeConceptWithCore();
+    renderConcept(concept, new Warnings());
+    insertDiagram(concept, dir);
+    const html = concept.sections[0].html;
+    const diagramIdx = html.indexOf('concept-diagram');
+    const slideIdx = html.indexOf('<figure class="slide">');
+    assert.ok(diagramIdx !== -1, '다이어그램 figure가 있어야 한다');
+    assert.ok(slideIdx !== -1, '슬라이드 이미지가 있어야 한다');
+    assert.ok(diagramIdx < slideIdx, '다이어그램은 첫 슬라이드 이미지보다 앞에 와야 한다');
+    assert.match(html, /💡/, '캡션에 💡 표시가 있어야 한다');
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('R4: 대응하는 SVG 파일이 없으면 아무것도 삽입되지 않는다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-diagram-'));
+  try {
+    const concept = makeConceptWithCore();
+    renderConcept(concept, new Warnings());
+    const before = concept.sections[0].html;
+    insertDiagram(concept, dir);
+    assert.equal(concept.sections[0].html, before);
+    assert.ok(!concept.sections[0].html.includes('concept-diagram'));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
 });

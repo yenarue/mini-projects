@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 350" role="img" aria-labelledby="w01c04-title">
+  <title id="w01c04-title">연구시스템이 국가·산업 혁신시스템에 포함되고, 그것이 다시 사회기술시스템에 포함되는 3층 중첩 구조도</title>
+
+  <rect x="8" y="8" width="364" height="268" rx="16" fill="var(--note-soft)" stroke="var(--note)" stroke-width="1.4"></rect>
+  <text x="26" y="32" font-size="13.5" font-weight="700" fill="var(--note)">③ 사회기술시스템</text>
+  <text x="26" y="48" font-size="10.5" fill="var(--muted)">생산 + 소비(사용자)까지 포함</text>
+
+  <rect x="34" y="58" width="312" height="204" rx="14" fill="var(--brand-soft)" stroke="var(--brand)" stroke-width="1.4"></rect>
+  <text x="52" y="82" font-size="13.5" font-weight="700" fill="var(--brand)">② 국가·산업 혁신시스템</text>
+  <text x="52" y="98" font-size="10.5" fill="var(--muted)">기업 + 산업·지식 생태계 (NIS)</text>
+
+  <rect x="64" y="110" width="252" height="104" rx="12" fill="var(--term-soft)" stroke="var(--term)" stroke-width="1.4"></rect>
+  <text x="82" y="136" font-size="13.5" font-weight="700" fill="var(--term)">① 연구시스템</text>
+  <text x="82" y="153" font-size="10.5" fill="var(--muted)">연구자 – 중개기관 – 정부(sponsor)</text>
+  <text x="82" y="170" font-size="10.5" fill="var(--muted)">가장 좁은 시스템</text>
+
+  <g font-size="11" fill="var(--ink-soft)">
+    <text x="26" y="300">혁신 → 혁신시스템 → 시스템 혁신 —</text>
+    <text x="26" y="316">제품 하나가 아니라 시스템 전체가</text>
+    <text x="26" y="332">바뀌는가?</text>
+  </g>
+</svg>

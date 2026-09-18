@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 330" role="img" aria-labelledby="w01c10-title">
+  <title id="w01c10-title">혁신시스템 이론을 구조의 차이·구조의 변화·구조 변화의 기작 세 열로 나누고, 거시에서 미시로 갈수록 더 실천적이 됨을 보여주는 지도</title>
+  <defs>
+    <marker id="w01c10-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--muted)"></path>
+    </marker>
+  </defs>
+
+  <!-- 1열: 구조의 차이 -->
+  <rect x="8" y="10" width="116" height="252" rx="10" fill="var(--brand-soft)" stroke="var(--brand)" stroke-width="1.3"></rect>
+  <text x="66" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--brand)">구조의 차이</text>
+  <text x="66" y="58" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">NIS · SIS</text>
+  <text x="66" y="74" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">SSIP · BizS</text>
+  <line x1="20" y1="90" x2="112" y2="90" stroke="var(--brand)" stroke-opacity="0.4"></line>
+  <text x="66" y="112" text-anchor="middle" font-size="10.5" fill="var(--muted)">나라·산업마다</text>
+  <text x="66" y="128" text-anchor="middle" font-size="10.5" fill="var(--muted)">왜 다른가?</text>
+  <text x="66" y="152" text-anchor="middle" font-size="10" fill="var(--muted)">(거시 · 비교)</text>
+
+  <!-- 2열: 구조의 변화 -->
+  <rect x="132" y="10" width="116" height="252" rx="10" fill="var(--term-soft)" stroke="var(--term)" stroke-width="1.3"></rect>
+  <text x="190" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--term)">구조의 변화</text>
+  <text x="190" y="58" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">TS · TIS</text>
+  <text x="190" y="74" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">StS + Transition</text>
+  <line x1="144" y1="90" x2="236" y2="90" stroke="var(--term)" stroke-opacity="0.4"></line>
+  <text x="190" y="112" text-anchor="middle" font-size="10.5" fill="var(--muted)">기술·시스템이</text>
+  <text x="190" y="128" text-anchor="middle" font-size="10.5" fill="var(--muted)">어떻게 바뀌나?</text>
+  <text x="190" y="152" text-anchor="middle" font-size="10" fill="var(--muted)">(중간 · 시간축)</text>
+
+  <!-- 3열: 구조 변화의 기작 -->
+  <rect x="256" y="10" width="116" height="252" rx="10" fill="var(--note-soft)" stroke="var(--note)" stroke-width="1.3"></rect>
+  <text x="314" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--note)">구조 변화의 기작</text>
+  <text x="314" y="58" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">BMI · SPT</text>
+  <text x="314" y="74" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">MOIP · Ecosystem</text>
+  <line x1="268" y1="90" x2="360" y2="90" stroke="var(--note)" stroke-opacity="0.4"></line>
+  <text x="314" y="112" text-anchor="middle" font-size="10.5" fill="var(--muted)">누가 어떤 수단으로</text>
+  <text x="314" y="128" text-anchor="middle" font-size="10.5" fill="var(--muted)">바꾸나?</text>
+  <text x="314" y="152" text-anchor="middle" font-size="10" fill="var(--muted)">(미시 · 개입)</text>
+
+  <path d="M20,300 L360,300" stroke="var(--muted)" stroke-width="1.6" marker-end="url(#w01c10-arrow)"></path>
+  <text x="190" y="320" text-anchor="middle" font-size="10.5" fill="var(--muted)">뒤로 갈수록 더 미시적이고 더 실천적</text>
+</svg>

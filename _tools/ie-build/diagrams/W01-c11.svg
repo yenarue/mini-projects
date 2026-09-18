@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 280" role="img" aria-labelledby="w01c11-title">
+  <title id="w01c11-title">상류 컴포넌트에서 초점 기업(오케스트레이터)을 거쳐 하류 컴플리먼트로 가치가 흐르며, 두 연결부에 병목이 있을 수 있음을 보여주는 그림</title>
+  <defs>
+    <marker id="w01c11-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--ink-soft)"></path>
+    </marker>
+  </defs>
+
+  <rect x="8" y="96" width="100" height="70" rx="10" fill="var(--surface-2)" stroke="var(--line)" stroke-width="1.4"></rect>
+  <text x="58" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">상류</text>
+  <text x="58" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">컴포넌트</text>
+  <text x="58" y="154" text-anchor="middle" font-size="9.5" fill="var(--muted)">부품·소재</text>
+
+  <rect x="140" y="82" width="100" height="98" rx="10" fill="var(--brand-soft)" stroke="var(--brand)" stroke-width="1.6"></rect>
+  <text x="190" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="var(--brand)">초점 기업</text>
+  <text x="190" y="128" text-anchor="middle" font-size="10" fill="var(--brand)">오케스트레이터</text>
+  <text x="190" y="146" text-anchor="middle" font-size="9.5" fill="var(--muted)">병목 매핑 ·</text>
+  <text x="190" y="160" text-anchor="middle" font-size="9.5" fill="var(--muted)">자발적 정렬</text>
+
+  <rect x="272" y="96" width="100" height="70" rx="10" fill="var(--surface-2)" stroke="var(--line)" stroke-width="1.4"></rect>
+  <text x="322" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">하류</text>
+  <text x="322" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">컴플리먼트</text>
+  <text x="322" y="154" text-anchor="middle" font-size="9.5" fill="var(--muted)">보완재·서비스</text>
+
+  <line x1="108" y1="131" x2="140" y2="131" stroke="var(--ink-soft)" stroke-width="1.8" marker-end="url(#w01c11-arrow)"></line>
+  <line x1="240" y1="131" x2="272" y2="131" stroke="var(--ink-soft)" stroke-width="1.8" marker-end="url(#w01c11-arrow)"></line>
+
+  <!-- 병목 표시(모래시계 형태) -->
+  <path d="M112,116 L124,131 L112,146 M136,116 L124,131 L136,146" stroke="var(--note)" stroke-width="1.6" fill="none"></path>
+  <path d="M244,116 L256,131 L244,146 M268,116 L256,131 L268,146" stroke="var(--note)" stroke-width="1.6" fill="none"></path>
+  <text x="124" y="102" text-anchor="middle" font-size="10" fill="var(--note)">병목?</text>
+  <text x="256" y="102" text-anchor="middle" font-size="10" fill="var(--note)">병목?</text>
+
+  <g font-size="10" fill="var(--ink-soft)">
+    <text x="12" y="210">상류(컴포넌트) 병목 → 선도자에게 유리</text>
+    <text x="12" y="226">경쟁자도 같이 겪는 진입장벽</text>
+    <text x="12" y="250">하류(컴플리먼트) 병목 → 선도자에게 불리</text>
+    <text x="12" y="266">가치 실현이 늦어져 시장을 잃음</text>
+  </g>
+</svg>

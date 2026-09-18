@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 420" role="img" aria-labelledby="w01c05-title">
+  <title id="w01c05-title">조직 고착·기술 고착·사용자 고착 세 원이 겹쳐 시스템을 가두고, 변이(variety) 화살표가 그 교집합을 뚫고 나가는 그림</title>
+  <defs>
+    <marker id="w01c05-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--ink)"></path>
+    </marker>
+  </defs>
+
+  <circle cx="190" cy="118" r="95" fill="var(--brand)" fill-opacity="0.16" stroke="var(--brand)" stroke-width="1.6"></circle>
+  <circle cx="138" cy="212" r="95" fill="var(--term)" fill-opacity="0.16" stroke="var(--term)" stroke-width="1.6"></circle>
+  <circle cx="242" cy="212" r="95" fill="var(--note)" fill-opacity="0.16" stroke="var(--note)" stroke-width="1.6"></circle>
+
+  <text x="190" y="70" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--brand)">조직 고착</text>
+  <text x="190" y="86" text-anchor="middle" font-size="10" fill="var(--muted)">성공 공식에 갇힘</text>
+
+  <text x="88" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--term)">기술 고착</text>
+  <text x="88" y="256" text-anchor="middle" font-size="10" fill="var(--muted)">QWERTY, 매몰비용</text>
+
+  <text x="292" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="var(--note)">사용자 고착</text>
+  <text x="292" y="256" text-anchor="middle" font-size="10" fill="var(--muted)">네트워크·습관</text>
+
+  <text x="190" y="186" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">고착된</text>
+  <text x="190" y="201" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">시스템</text>
+
+  <path d="M355,30 L45,378" stroke="var(--ink)" stroke-width="2.2" stroke-dasharray="1,7" stroke-linecap="round" marker-end="url(#w01c05-arrow)"></path>
+  <text x="352" y="24" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">변이(variety)</text>
+  <text x="48" y="400" text-anchor="start" font-size="10.5" fill="var(--muted)">Technology · User · Citizen variety</text>
+</svg>

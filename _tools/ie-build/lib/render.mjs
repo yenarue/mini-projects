@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Marked } from 'marked';
 import { rewriteMdLink, rewriteImagePath } from './links.mjs';
 import {
@@ -95,6 +98,34 @@ function escapeHtml(s) {
  */
 const STRONG_KO_RULE = /^\*\*(?!\*)(?!\s)([\s\S]+?)\*\*(?!\*)/;
 
+/**
+ * R4 Fix A — marked GFM 기본 del(취소선) 토크나이저는 `~~?`(물결표 1개 또는 2개)를
+ * 모두 취소선으로 인식한다(marked 15 소스: `/^(~~?)(?=[^\s~])((?:\\.|[^\\])*?
+ * (?:\\.|[^\s~\\]))\1(?=[^~]|$)/`). 이 저자는 "A~B" 형태(구석기~디지털혁명~바이오혁명)를
+ * "A부터 B까지"라는 뜻의 범위 표시로 습관적으로 쓰는데, marked 기본값이 이 물결표
+ * 하나짜리 쌍을 <del>로 렌더해 버려 의미가 정반대(취소선)로 뒤집힌다.
+ *
+ * 이 토크나이저는 물결표 정확히 2개(`~~...~~`)일 때만 매치하도록 좁힌다. 물결표
+ * 1개는 이 함수가 매치하지 않고(undefined 반환) 아무 토큰도 만들지 않으므로, 렉서가
+ * 다음 인라인 규칙(결국 text)으로 넘어가 물결표가 그대로 리터럴 텍스트에 남는다.
+ * marked.use()의 tokenizer 병합 로직(node_modules/marked/lib/marked.cjs)은 커스텀
+ * 함수가 정확히 `false`를 반환할 때만 원래 del 토크나이저로 폴백한다 — undefined는
+ * 폴백을 일으키지 않으므로, 여기서 절대 `false`를 반환하지 않는다(폴백되면 원래의
+ * 느슨한 물결표 1개 매치가 되살아나 이 수정 자체가 무력화된다).
+ */
+const STRICT_DEL_RE = /^~~(?=[^\s~])((?:\\.|[^\\])*?(?:\\.|[^\s~\\]))~~(?=[^~]|$)/;
+
+function strictDelTokenizer(src) {
+  const cap = STRICT_DEL_RE.exec(src);
+  if (!cap) return undefined;
+  return {
+    type: 'del',
+    raw: cap[0],
+    text: cap[1],
+    tokens: this.lexer.inlineTokens(cap[1]),
+  };
+}
+
 const strongKoExtension = {
   name: 'strongKo',
   level: 'inline',
@@ -140,6 +171,7 @@ export function renderMarkdown(md, ctx) {
 
   marked.use({
     extensions: [strongKoExtension],
+    tokenizer: { del: strictDelTokenizer }, // R4 Fix A — 물결표 2개일 때만 취소선
     walkTokens(token) {
       if (token.type === 'link') {
         const r = rewriteMdLink(token.href, week);
@@ -227,6 +259,53 @@ export function renderMarkdown(md, ctx) {
 
 const COMPARISON_RE = /비교|차이|대비|\bvs\.?\b|↔/i;
 
+// ==================================================================
+// R4 — 개념 다이어그램 삽입 (REDESIGN.md §6)
+//
+// _tools/ie-build/diagrams/<week>-<slug>.svg (예: W01-c05.svg) 파일이 있으면
+// 그 개념의 '핵심 내용' 섹션의 첫 슬라이드 이미지(<figure class="slide">) 바로
+// 앞에 끼워 넣는다. 파일이 없으면 아무 것도 하지 않는다 — "10개 개념" 목록을
+// 템플릿이나 이 모듈에 하드코딩하지 않고, 파일의 존재 여부만으로 판단한다
+// (작업 지시: "Make the insertion data-driven (presence of the file), not a
+// hardcoded list in the template").
+// ==================================================================
+
+const DIAGRAM_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'diagrams');
+
+// 작업 지시("Attribution, and this is not optional"): 다이어그램은 교수의 강의
+// 슬라이드가 아니라 이 사이트 제작자가 이해를 돕기 위해 그린 보충 자료이므로,
+// 다른 💡 보충 콘텐츠와 같은 표시 규칙(💡 접두사)을 캡션에 붙인다.
+const DIAGRAM_CAPTION =
+  '💡 이 그림은 강의 슬라이드가 아니라, 이해를 돕기 위해 직접 정리한 보충 다이어그램입니다.';
+
+function diagramFilePath(concept, diagramDir) {
+  return path.join(diagramDir, `${concept.week}-${concept.slug}.svg`);
+}
+
+/**
+ * concept.sections 중 'core'(핵심 내용) 섹션의 html에 다이어그램 figure를 끼워 넣는다.
+ * 대응하는 SVG 파일이 없으면 아무 일도 하지 않는다. renderConcept이 section.html을
+ * 다 채운 뒤 호출해야 한다.
+ * @param {object} concept
+ * @param {string} [diagramDir] 테스트에서 fixture 디렉터리를 넘길 수 있게 기본값을 둔다.
+ */
+export function insertDiagram(concept, diagramDir = DIAGRAM_DIR) {
+  const core = concept.sections.find((s) => s.key === 'core');
+  if (!core) return;
+
+  const file = diagramFilePath(concept, diagramDir);
+  if (!fs.existsSync(file)) return;
+
+  const svg = fs.readFileSync(file, 'utf8').trim();
+  const figure =
+    `<figure class="concept-diagram">\n${svg}\n` +
+    `<figcaption class="diagram-caption">${DIAGRAM_CAPTION}</figcaption>\n</figure>\n`;
+
+  const marker = '<figure class="slide">';
+  const idx = core.html.indexOf(marker);
+  core.html = idx === -1 ? figure + core.html : core.html.slice(0, idx) + figure + core.html.slice(idx);
+}
+
 /**
  * 개념 객체에 html·quizPoints·images를 채워 넣는다.
  * @param {Set<string>} [existingKeys] "W01/5" 형태의 존재하는 개념 키 집합.
@@ -252,6 +331,8 @@ export function renderConcept(concept, warnings, existingKeys) {
     section.plain = toPlainText(section.html);
     for (const img of ctx.images ?? []) allImages.push(img);
   }
+
+  insertDiagram(concept);
 
   const quizSection = concept.sections.find((s) => s.key === 'quiz');
   concept.quizPoints = quizSection

@@ -212,6 +212,41 @@
       overlayBody.className = 'focus-body';
       overlay.appendChild(overlayBody);
 
+      // R4 Fix B — 오버레이 안(관련 개념 · 퀴즈 링크 등)에서 링크를 클릭하면
+      // 오버레이가 안 닫힌 채 남는 버그(R3 report에서 지적됨)를 막는다.
+      // conceptHref()가 만드는 href는 항상 "W01.html#c05"처럼 파일명을 포함하므로,
+      // 그 파일명이 현재 페이지와 같으면 "같은 페이지의 다른 개념" 링크다 —
+      // 이 경우는 오버레이를 닫는 대신 집중 모드 자체를 그 개념으로 옮긴다(이미
+      // 몰입 읽기 중이던 흐름을 유지하는 것이 페이지로 내보냈다가 다시 열게 하는
+      // 것보다 자연스럽다고 판단). 그 외 링크(퀴즈 페이지, 다른 주차 페이지,
+      // 개념 지도, 또는 "맨 위로"처럼 이 페이지의 개념이 아닌 앵커)는 오버레이를
+      // 먼저 닫아 원래 페이지로 돌아간 것처럼 보이게 한 뒤 기본 네비게이션이
+      // 이어지게 둔다 — 오버레이가 독자가 이동한 콘텐츠를 계속 덮는 일이 없도록.
+      overlayBody.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (!href) return;
+        var hashIdx = href.indexOf('#');
+        if (hashIdx !== -1) {
+          var pagePart = href.slice(0, hashIdx);
+          var currentFile = location.pathname.split('/').pop();
+          var samePage = pagePart === '' || pagePart === currentFile;
+          if (samePage) {
+            var slug = href.slice(hashIdx + 1);
+            var idx = concepts.findIndex(function (c) { return c.id === slug; });
+            if (idx !== -1) {
+              e.preventDefault();
+              goTo(idx, true);
+              return;
+            }
+          }
+        }
+        // 다른 페이지로 가는 링크이거나, 이 페이지 안이지만 개념이 아닌 앵커
+        // (예: #top) — 오버레이만 닫고 링크의 기본 동작은 그대로 진행시킨다.
+        closeFocus(true);
+      });
+
       var bar = document.createElement('div');
       bar.className = 'focus-bar';
 

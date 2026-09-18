@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 460" role="img" aria-labelledby="w01c02-title">
+  <title id="w01c02-title">인간·조직, 규칙·제도, 사회기술시스템 세 축이 여섯 개의 화살표로 서로를 만들어 가는 상호구성 삼각 순환도</title>
+  <defs>
+    <marker id="w01c02-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="var(--brand)"></path>
+    </marker>
+  </defs>
+
+  <!-- 세 꼭짓점 사이 여섯 화살표(각 변마다 왕복 2개, 살짝 벌려서 겹치지 않게) -->
+  <g fill="none" stroke="var(--brand)" stroke-width="1.6" marker-end="url(#w01c02-arrow)">
+    <!-- 상단(인간·조직, 190,58) - 좌하(규칙·제도, 66,264) : ①②-->
+    <path d="M175,78 C130,140 110,190 88,238"></path>
+    <path d="M100,240 C118,192 138,140 178,84"></path>
+    <!-- 상단 - 우하(사회기술시스템, 314,264) : ③④ -->
+    <path d="M205,78 C250,140 270,190 292,238"></path>
+    <path d="M280,240 C262,192 242,140 202,84"></path>
+    <!-- 좌하 - 우하 : ⑤⑥ -->
+    <path d="M108,272 C170,296 210,296 272,272"></path>
+    <path d="M272,254 C210,230 170,230 108,254"></path>
+  </g>
+
+  <!-- 화살표 번호 배지 -->
+  <g font-size="11" font-weight="700" fill="var(--surface)" text-anchor="middle">
+    <circle cx="118" cy="152" r="10" fill="var(--brand)"></circle>
+    <text x="118" y="156">①</text>
+    <circle cx="160" cy="152" r="10" fill="var(--brand)"></circle>
+    <text x="160" y="156">②</text>
+    <circle cx="262" cy="152" r="10" fill="var(--brand)"></circle>
+    <text x="262" y="156">③</text>
+    <circle cx="222" cy="152" r="10" fill="var(--brand)"></circle>
+    <text x="222" y="156">④</text>
+    <circle cx="190" cy="298" r="10" fill="var(--brand)"></circle>
+    <text x="190" y="302">⑤</text>
+    <circle cx="190" cy="218" r="10" fill="var(--brand)"></circle>
+    <text x="190" y="222">⑥</text>
+  </g>
+
+  <!-- 세 꼭짓점 노드 -->
+  <g>
+    <rect x="130" y="30" width="120" height="48" rx="10" fill="var(--brand-soft)" stroke="var(--brand)" stroke-width="1.4"></rect>
+    <text x="190" y="49" text-anchor="middle" font-size="13" font-weight="700" fill="var(--brand)">인간·조직</text>
+    <text x="190" y="65" text-anchor="middle" font-size="10.5" fill="var(--muted)">행위자·습관·routine</text>
+
+    <rect x="6" y="238" width="122" height="48" rx="10" fill="var(--term-soft)" stroke="var(--term)" stroke-width="1.4"></rect>
+    <text x="67" y="257" text-anchor="middle" font-size="13" font-weight="700" fill="var(--term)">규칙·제도</text>
+    <text x="67" y="273" text-anchor="middle" font-size="10.5" fill="var(--muted)">도덕·정책·법</text>
+
+    <rect x="252" y="238" width="122" height="48" rx="10" fill="var(--note-soft)" stroke="var(--note)" stroke-width="1.4"></rect>
+    <text x="313" y="257" text-anchor="middle" font-size="13" font-weight="700" fill="var(--note)">사회기술시스템</text>
+    <text x="313" y="273" text-anchor="middle" font-size="10.5" fill="var(--muted)">Material · S&amp;T</text>
+  </g>
+
+  <!-- 범례: 여섯 화살표의 뜻 -->
+  <g font-size="11.5" fill="var(--ink-soft)">
+    <text x="6" y="320" font-size="11.5" font-weight="700" fill="var(--ink)">여섯 관계</text>
+    <text x="6" y="338">① 인간·조직→규칙 — 규칙을 담지·재생산</text>
+    <text x="6" y="356">② 규칙→인간·조직 — 행동·인식을 가이드</text>
+    <text x="6" y="374">③ 인간·조직→시스템 — 인간을 통해서만 작동</text>
+    <text x="6" y="392">④ 시스템→인간·조직 — 행동의 맥락(가능성·한계) 구성</text>
+    <text x="6" y="410">⑤ 규칙→시스템 — 규칙이 인공물에 새겨짐(inscribe)</text>
+    <text x="6" y="428">⑥ 시스템→규칙 — 물질조건이 규칙·표준을 규제</text>
+  </g>
+</svg>
