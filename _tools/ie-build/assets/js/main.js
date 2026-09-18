@@ -99,39 +99,93 @@
      지금은 카드 패딩과 무관하게 "리더가 실제로 보고 있는" 개념을 직접 계산한다:
      topbar 바로 아래(§ THRESHOLD)를 지나는 기준선을 정해 놓고, 그 선보다 위쪽에서
      시작한 concept 중 가장 아래(=가장 최근에 그 선을 지난) 것을 활성으로 고른다.
-     각 concept의 실제 top 좌표만 보므로 패딩·마진이 얼마든 흔들리지 않는다. */
-  var links = {};
-  document.querySelectorAll('.side-nav a[data-concept]').forEach(function (a) {
-    links[a.dataset.concept] = a;
+     각 concept의 실제 top 좌표만 보므로 패딩·마진이 얼마든 흔들리지 않는다.
+
+     그런데 그 "기준선을 지난 마지막 항목" 규칙에도 한 칸씩 밀리는 버그가 있었다:
+     목차에서 개념을 클릭하면 본문은 그 개념으로 가는데 목차 강조는 바로 위 개념에
+     남았다. 원인은 앵커 착지 후의 레이아웃 시프트다 — lazy 이미지가 뒤늦게 자리를
+     차지하면서 대상 개념이 기준선 아래(측정값 148px)로 밀려나고, 스크롤 위치 자체는
+     그대로여서 scroll 이벤트가 더는 발생하지 않아 계산이 다시 돌지도 않았다.
+
+     그래서 규칙을 "기준선 통과"가 아니라 "화면을 가장 많이 차지한 개념"으로 바꿨다.
+     위 상황에서 이전 개념은 148px만 남고 대상 개념이 나머지를 채우므로 눈에 보이는
+     것과 강조가 항상 일치한다. 더해서 이미지 로드·details 펼침처럼 스크롤 없이
+     높이가 바뀌는 순간에도 다시 계산한다.
+
+     활성 개념의 소제목 목차(.side-sub)는 이때 같이 펼쳐지고, 그 안에서는 "기준선을
+     지난 마지막 앵커"를 쓴다(소제목은 개념과 달리 높이가 작아 면적 비교가 무의미). */
+  var navLinks = {};   // slug -> 목차 <a>
+  var navRows = {};    // slug -> 목차 <li>
+  var navSubs = {};    // slug -> [{ a, id }]
+  var navTargets = []; // [{ slug, el }] — 문서 순서
+
+  document.querySelectorAll('.side-nav > li').forEach(function (li) {
+    var a = li.querySelector('a[data-concept]');
+    if (!a) return;
+    var slug = a.dataset.concept;
+    var el = document.getElementById(slug);
+    if (!el) return;
+    navLinks[slug] = a;
+    navRows[slug] = li;
+    navSubs[slug] = Array.prototype.slice
+      .call(li.querySelectorAll('.side-sub a[data-anchor]'))
+      .map(function (s) { return { a: s, id: s.dataset.anchor }; });
+    navTargets.push({ slug: slug, el: el });
   });
-  var concepts = Array.prototype.slice.call(document.querySelectorAll('section.concept'));
-  if (concepts.length) {
-    var THRESHOLD = 96; // topbar-h(60) + 여유 — 카드 padding과 무관한 고정 기준선
+
+  if (navTargets.length) {
+    var TOP = 68;       // topbar-h(60) 바로 아래 — 여기부터가 읽고 있는 영역
+    var SUB_LINE = 120; // 소제목이 "지나갔다"고 볼 기준선
+
+    // 사이드바가 실제로 스크롤될 때만, aside의 scrollTop만 직접 움직인다.
+    // element.scrollIntoView()를 쓰면 안 된다 — 그 API는 필요하면 조상 스크롤
+    // 컨테이너(= 문서 자체)까지 같이 움직이기 때문에, 목차 클릭으로 시작된 본문의
+    // smooth scroll을 매 프레임 되돌려 페이지가 맨 위에 붙잡히는 일이 생긴다.
+    var keepInView = function (el) {
+      var side = el.closest('aside');
+      if (!side || side.scrollHeight <= side.clientHeight) return;
+      var r = el.getBoundingClientRect();
+      var s = side.getBoundingClientRect();
+      if (r.top < s.top) side.scrollTop -= (s.top - r.top) + 8;
+      else if (r.bottom > s.bottom) side.scrollTop += (r.bottom - s.bottom) + 8;
+    };
+
+    var visibleHeight = function (el) {
+      var r = el.getBoundingClientRect();
+      return Math.max(0, Math.min(r.bottom, window.innerHeight) - Math.max(r.top, TOP));
+    };
 
     var updateActive = function () {
-      var current = concepts[0];
-      for (var i = 0; i < concepts.length; i++) {
-        if (concepts[i].getBoundingClientRect().top - THRESHOLD <= 0) {
-          current = concepts[i];
-        } else {
-          break; // concepts는 DOM(=스크롤) 순서이므로 여기서부터는 전부 아직 안 옴
-        }
+      var current = navTargets[0];
+      var best = -1;
+      for (var i = 0; i < navTargets.length; i++) {
+        var v = visibleHeight(navTargets[i].el);
+        if (v > best) { best = v; current = navTargets[i]; } // 동점이면 앞선 것 유지
       }
-      Object.keys(links).forEach(function (k) { links[k].classList.remove('active'); });
-      var link = links[current.id];
+
+      Object.keys(navLinks).forEach(function (k) {
+        navLinks[k].classList.remove('active');
+        navRows[k].classList.remove('is-open');
+        // 접혀서 안 보이는 목차에 강조가 남아 있으면, 나중에 그 개념으로 돌아왔을 때
+        // 엉뚱한 소제목이 켜진 채로 나타난다.
+        (navSubs[k] || []).forEach(function (s) { s.a.classList.remove('active'); });
+      });
+      var link = navLinks[current.slug];
       if (!link) return;
       link.classList.add('active');
-      // aside가 실제로 스크롤이 필요한 경우에만 scrollIntoView를 호출한다.
-      // 그렇지 않으면(사이드바에 모든 항목이 이미 다 보이는 경우) 매 스크롤
-      // 이벤트마다 불필요하게 호출되어, 메인 창에서 진행 중인 smooth scroll
-      // (예: 개념 링크 클릭 → 해당 섹션으로 스크롤)을 중간에 끊어버린다.
-      var side = link.closest('aside');
-      if (side && side.scrollHeight > side.clientHeight) {
-        var linkRect = link.getBoundingClientRect();
-        var sideRect = side.getBoundingClientRect();
-        var outOfView = linkRect.top < sideRect.top || linkRect.bottom > sideRect.bottom;
-        if (outOfView) link.scrollIntoView({ block: 'nearest' });
+      navRows[current.slug].classList.add('is-open');
+
+      var subs = navSubs[current.slug] || [];
+      var activeSub = null;
+      for (var j = 0; j < subs.length; j++) {
+        var target = document.getElementById(subs[j].id);
+        subs[j].a.classList.remove('active');
+        if (target && target.getBoundingClientRect().top - SUB_LINE <= 0) activeSub = subs[j];
       }
+      if (!activeSub && subs.length) activeSub = subs[0];
+      if (activeSub) activeSub.a.classList.add('active');
+
+      keepInView(activeSub ? activeSub.a : link);
     };
 
     var ticking = false;
@@ -145,6 +199,20 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
+    window.addEventListener('hashchange', onScroll);
+    window.addEventListener('load', onScroll);
+    // 레이아웃이 뒤늦게 바뀌는 경우들: lazy 이미지 로드(capture로 잡아야 <img>의
+    // load가 올라온다)와 접힌 섹션 펼침.
+    document.addEventListener('load', onScroll, true);
+    document.addEventListener('toggle', onScroll, true);
+    // 목차 클릭은 smooth scroll이라 끝나는 시점을 알 수 없다. 스크롤 이벤트로도
+    // 따라가지만, 착지 후 이미지가 들어와 한 번 더 밀리는 경우까지 덮으려고
+    // 몇 번 더 확인한다.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('.side-nav a[href^="#"]') : null;
+      if (!a) return;
+      [60, 250, 600, 1200].forEach(function (ms) { setTimeout(updateActive, ms); });
+    });
     updateActive();
   }
 
@@ -621,14 +689,16 @@
       }
     }
 
-    // 사이드바 스크롤 추적(위쪽 THRESHOLD 로직)과 같은 기준으로, 지금 화면에
-    // 보이는 개념을 찾는다 — F 키를 눌렀을 때 "지금 보고 있는 개념"을 연다.
+    // 사이드바 스크롤 추적과 같은 기준(화면을 가장 많이 차지한 개념)으로 지금
+    // 보고 있는 개념을 찾는다 — F 키를 눌렀을 때 그 개념이 열려야 한다.
     function conceptIndexInView() {
-      var THRESHOLD = 96;
+      var TOP = 68;
       var current = 0;
+      var best = -1;
       for (var i = 0; i < concepts.length; i++) {
-        if (concepts[i].getBoundingClientRect().top - THRESHOLD <= 0) current = i;
-        else break;
+        var r = concepts[i].getBoundingClientRect();
+        var v = Math.max(0, Math.min(r.bottom, window.innerHeight) - Math.max(r.top, TOP));
+        if (v > best) { best = v; current = i; }
       }
       return current;
     }

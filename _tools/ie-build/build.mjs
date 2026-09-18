@@ -41,6 +41,13 @@ async function main() {
   const { renderConcept } = await import('./lib/render.mjs');
   for (const c of concepts) renderConcept(c, warnings, existingKeys);
 
+  // 시험 중요도(별점)와 쪽지시험 핵심 개념 세트. 개념 객체에 importance·coreRefs를
+  // 직접 붙이므로, 뒤따르는 템플릿은 모두 그 값을 그대로 읽어 쓴다.
+  const { buildFocus } = await import('./lib/focus.mjs');
+  const { coreSets } = buildFocus({
+    toolDir: HERE, conceptDir: cfg.conceptDir, concepts, warnings,
+  });
+
   const { processImages, formatBytes, applyImageDimensions } = await import('./lib/images.mjs');
   const imgStats = processImages(concepts, cfg, warnings);
   console.log(
@@ -120,10 +127,20 @@ async function main() {
 
   fsp.writeFileSync(
     path.join(cfg.outDir, 'index.html'),
-    renderIndexPage({ weeks: orderedWeeks, quizSchedule, builtAt }),
+    renderIndexPage({ weeks: orderedWeeks, quizSchedule, coreSets, builtAt }),
     'utf8'
   );
   console.log('index.html 생성');
+
+  const { renderCorePage } = await import('./templates/core.mjs');
+  fsp.writeFileSync(
+    path.join(cfg.outDir, 'core.html'),
+    renderCorePage({ coreSets, quizSchedule }),
+    'utf8'
+  );
+  console.log(
+    `core.html 생성 (세트 ${coreSets.length}개 · 항목 ${coreSets.reduce((n, s) => n + s.items.length, 0)}개)`
+  );
 
   const { buildSearchIndex, estimateSize, trimIfLarge } = await import('./lib/searchindex.mjs');
   let searchIndex = buildSearchIndex(concepts, orderedWeeks);

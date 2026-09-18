@@ -13,6 +13,7 @@ export function topbar({ active = '' } = {}) {
   <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
   <nav class="topbar-nav">
     ${link('index.html', '학기 지도', 'index')}
+    ${link('core.html', '핵심 개념', 'core')}
     ${link('quiz.html', '퀴즈', 'quiz')}
     ${link('map.html', '개념 지도', 'map')}
   </nav>
@@ -41,7 +42,11 @@ export function topbar({ active = '' } = {}) {
 
 /**
  * §4.2 사이드바 셸. 주차 페이지가 개념 목록·이전/다음 주차 데이터를 채워 넣는다.
- * navItems: [{ href, no, title, slug, active }]
+ * navItems: [{ href, no, title, slug, active, core, subItems }]
+ *   core:     핵심개념 배지를 붙일지 (truthy면 붙인다)
+ *   subItems: [{ href, label, kind }] — 그 개념 안의 소제목·섹션 목차.
+ *             기본은 접혀 있고(CSS), 활성 개념에서만 펼쳐진다(js/main.js가 li에
+ *             .is-open을 붙인다). kind는 'sec'(섹션 이름) 또는 'h'(본문 소제목).
  */
 export function sidebar({
   chapterLabel,
@@ -52,13 +57,19 @@ export function sidebar({
   prev = null, // { href, label }
   next = null, // { href, label }
 } = {}) {
-  const items = navItems.map((item) => `
-    <li>
+  const items = navItems.map((item) => {
+    const subs = (item.subItems ?? []).map((s) => `
+        <li><a href="${s.href}" class="side-sub-${s.kind ?? 'h'}" data-anchor="${esc(String(s.href).replace(/^#/, ''))}">${esc(s.label)}</a></li>`).join('');
+    return `
+    <li${item.slug ? ` data-item="${item.slug}"` : ''}${item.active ? ' class="is-open"' : ''}>
       <a href="${item.href}"${item.slug ? ` data-concept="${item.slug}"` : ''}${item.active ? ' class="active"' : ''}>
         <span class="side-no">${esc(item.no)}</span>
         <span class="side-title">${esc(item.title)}</span>
+        ${item.core ? '<span class="side-core" title="쪽지시험 핵심 개념">핵심</span>' : ''}
       </a>
-    </li>`).join('');
+      ${subs ? `<ul class="side-sub">${subs}\n      </ul>` : ''}
+    </li>`;
+  }).join('');
 
   return `
 <aside class="sidebar">
@@ -85,6 +96,32 @@ export function legend() {
   <span class="legend-item">📄 슬라이드</span>
   <span class="legend-item">💡 보충(외부 지식)</span>
 </p>`;
+}
+
+/**
+ * 시험 중요도 별점(5점 만점). 값의 출처는 `_tools/ie-build/importance.json`이고
+ * 핵심개념 10에 뽑힌 개념은 lib/focus.mjs가 5점으로 올려 둔다.
+ * why가 있으면 title에 넣어 "왜 이 점수인지"를 마우스로 확인할 수 있게 한다.
+ */
+export function stars(importance, max = 5) {
+  if (!importance) return '';
+  const n = Math.min(max, Math.max(0, Number(importance.stars) || 0));
+  if (!n) return '';
+  const label = `시험 중요도 ${n}/${max}`;
+  const title = importance.why ? `${label} — ${importance.why}` : label;
+  return `<span class="stars" title="${esc(title)}" aria-label="${esc(label)}" role="img" data-stars="${n}">` +
+    `<span class="stars-on" aria-hidden="true">${'★'.repeat(n)}</span>` +
+    `<span class="stars-off" aria-hidden="true">${'★'.repeat(max - n)}</span>` +
+    `</span>`;
+}
+
+/** 쪽지시험 핵심 개념으로 뽑힌 개념에 붙는 배지. 핵심개념 페이지의 해당 항목으로 간다. */
+export function coreBadge(coreRefs = []) {
+  if (!coreRefs.length) return '';
+  const first = coreRefs[0];
+  const extra = coreRefs.length > 1 ? ` 외 ${coreRefs.length - 1}건` : '';
+  const title = `Quiz ${first.quiz} 핵심 개념 ${first.n}번 — ${first.title}${extra}`;
+  return `<a class="badge badge-core" href="${first.href}" title="${esc(title)}">핵심</a>`;
 }
 
 export function statusBadge(status) {

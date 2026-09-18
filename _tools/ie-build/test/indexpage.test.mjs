@@ -73,3 +73,17 @@ test('개념이 없는 주차로는 어떤 href도 생성하지 않는다', () =
   const hrefs = [...html.matchAll(/href="([^"]+\.html)"/g)].map((m) => m[1]);
   assert.ok(!hrefs.includes('W03.html'));
 });
+
+test('퀴즈 행은 핵심 개념·퀴즈 풀기 두 버튼을 오른쪽에 둔다', () => {
+  const coreSets = [{ quiz: 1, items: new Array(10).fill({}) }];
+  const html = renderIndexPage({ weeks, quizSchedule, coreSets, builtAt: '' });
+  assert.match(html, /<div class="quiz-row-actions">/);
+  assert.match(html, /<a class="btn btn-quiet" href="core\.html#quiz1">핵심 개념 10가지<\/a>/);
+  assert.match(html, /<a class="btn btn-primary" href="quiz\.html\?quiz=1">퀴즈 풀기 →<\/a>/);
+});
+
+test('핵심 개념을 아직 추리지 않은 회차는 비활성 표시로 자리를 지킨다', () => {
+  const html = renderIndexPage({ weeks, quizSchedule, coreSets: [], builtAt: '' });
+  assert.match(html, /<span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중<\/span>/);
+  assert.match(html, /href="quiz\.html\?quiz=1"/);
+});

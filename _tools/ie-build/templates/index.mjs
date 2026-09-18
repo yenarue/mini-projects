@@ -88,10 +88,18 @@ function weekCard(group) {
 </article>`;
 }
 
-function quizRow(q, weeksById) {
+function quizRow(q, weeksById, coreSet) {
   const total = q.weeks.length;
   const ready = q.weeks.filter((id) => weeksById.get(id)?.concepts.length).length;
   const scope = q.weeks.map(esc).join(' · ');
+
+  // 왼쪽 버튼은 그 회차의 핵심 개념 목록(core.html), 오른쪽은 퀴즈 풀기.
+  // 아직 핵심 개념을 추려 두지 않은 회차는 자리만 지키는 비활성 표시로 둔다 —
+  // 회차마다 버튼 줄의 폭이 들쭉날쭉해지지 않게 하려는 것.
+  const coreBtn = coreSet
+    ? `<a class="btn btn-quiet" href="core.html#quiz${q.n}">핵심 개념 ${coreSet.items.length}가지</a>`
+    : '<span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중</span>';
+
   return `
     <li class="quiz-row">
       <div class="quiz-row-top">
@@ -99,8 +107,13 @@ function quizRow(q, weeksById) {
         <time class="quiz-date" datetime="${esc(q.date)}">${esc(q.date)}</time>
         <span class="quiz-ready">정리 완료 ${ready}/${total}주차</span>
       </div>
-      <p class="quiz-scope">누적 범위 · ${scope}</p>
-      <a class="quiz-link" href="quiz.html?quiz=${q.n}">퀴즈 페이지에서 풀기 →</a>
+      <div class="quiz-row-main">
+        <p class="quiz-scope">누적 범위 · ${scope}</p>
+        <div class="quiz-row-actions">
+          ${coreBtn}
+          <a class="btn btn-primary" href="quiz.html?quiz=${q.n}">퀴즈 풀기 →</a>
+        </div>
+      </div>
     </li>`;
 }
 
@@ -115,7 +128,7 @@ function progressRow(w) {
       </tr>`;
 }
 
-export function renderIndexPage({ weeks, quizSchedule, builtAt }) {
+export function renderIndexPage({ weeks, quizSchedule, coreSets = [], builtAt }) {
   const withConcepts = weeks.filter((w) => w.concepts.length);
   const totalConcepts = withConcepts.reduce((n, w) => n + w.concepts.length, 0);
   const doneConcepts = withConcepts.reduce(
@@ -123,6 +136,7 @@ export function renderIndexPage({ weeks, quizSchedule, builtAt }) {
     0
   );
   const weeksById = new Map(weeks.map((w) => [w.id, w]));
+  const coreByQuiz = new Map(coreSets.map((s) => [s.quiz, s]));
   const groups = groupByDate(weeks);
 
   const body = `
@@ -144,7 +158,8 @@ ${topbar({ active: 'index' })}
       <li>주차 카드를 누르면 그 주차의 개념 전체가 한 페이지에 나온다. 좌측 목차로 개념 사이를 이동한다.</li>
       <li>상단 <kbd>/</kbd> 로 개념명·태그·본문을 검색한다.</li>
       <li><strong>수업에서 나온 논점 · 보충 사례 · 프레임에서의 위치 · 관련 개념</strong>은 기본으로 접혀 있다. 제목을 눌러 펼친다. 개념 헤더의 <strong>⤢</strong> 버튼(또는 <kbd>F</kbd>)으로 한 개념씩 집중해서 읽을 수 있다.</li>
-      <li>퀴즈는 매회 서술형 2~3문제, 범위는 그 직전 주까지 누적이다. 아래 퀴즈 일정에서 회차별 범위를 먼저 확인한다.</li>
+      <li>개념마다 <strong>★ 시험 중요도(5점)</strong>가 붙어 있고, 쪽지시험 핵심 개념으로 추린 것에는 <strong>핵심</strong> 배지가 붙는다. 별에 마우스를 올리면 그 점수의 근거가 나온다.</li>
+      <li>퀴즈는 매회 서술형 2~3문제, 범위는 그 직전 주까지 누적이다. 아래 퀴즈 일정에서 회차별 범위와 <strong>핵심 개념</strong> 목록을 먼저 확인한다.</li>
     </ul>
     ${legend()}
   </div>
@@ -167,7 +182,7 @@ ${topbar({ active: 'index' })}
   </div>
 
   <h2 class="section-title">퀴즈 일정</h2>
-  <ol class="quiz-timeline">${quizSchedule.map((q) => quizRow(q, weeksById)).join('')}</ol>
+  <ol class="quiz-timeline">${quizSchedule.map((q) => quizRow(q, weeksById, coreByQuiz.get(q.n))).join('')}</ol>
 
   <h2 class="section-title">진행 현황</h2>
   <p class="progress-summary">전체 개념 ${totalConcepts}개 · 완료 ${doneConcepts}개</p>

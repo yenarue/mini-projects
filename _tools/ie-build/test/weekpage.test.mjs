@@ -75,10 +75,10 @@ test('개념 섹션에 슬러그 기반 앵커 id가 붙는다', () => {
 
 test('정의·비유·핵심·퀴즈는 펼쳐진 div로, 나머지 4개는 접힌 details로 렌더된다', () => {
   const html = renderFixture();
-  assert.match(html, /<div class="sec sec-definition">/);
-  assert.match(html, /<div class="sec sec-analogy">/);
-  assert.match(html, /<div class="sec sec-core">/);
-  assert.match(html, /<div class="sec sec-quiz">/);
+  assert.match(html, /<div class="sec sec-definition" id="c05-definition">/);
+  assert.match(html, /<div class="sec sec-analogy" id="c05-analogy">/);
+  assert.match(html, /<div class="sec sec-core" id="c05-core">/);
+  assert.match(html, /<div class="sec sec-quiz" id="c05-quiz">/);
 
   const foldCount = (html.match(/<details class="sec sec-fold"/g) || []).length;
   assert.equal(foldCount, 4, '수업 논점·보충 사례·프레임에서의 위치·관련 개념 4개가 접혀야 한다');
@@ -101,7 +101,7 @@ test('나의 이해에 내용이 있으면 mynotes 섹션이 렌더된다', () =
     ),
   });
   const html = renderFixture({ concepts: [withNotes] });
-  assert.match(html, /<div class="sec sec-mynotes">/);
+  assert.match(html, /<div class="sec sec-mynotes" id="c05-mynotes">/);
   assert.match(html, /내가 궁금한 점/);
 });
 
@@ -145,4 +145,53 @@ test('사이드바에 개념 번호와 제목, 진행률이 렌더된다', () =>
   assert.match(html, /<span class="side-no">05<\/span>/);
   assert.match(html, /<span class="side-title">세 가지 고착<\/span>/);
   assert.match(html, /개념 1개 · 완료 0개/);
+});
+
+/* ---------- 사이드바 하위 목차 · 중요도 · 핵심 배지 ---------- */
+
+test('사이드바에 개념 내부 목차가 붙고, 본문 셋은 한 항목으로 묶인다', () => {
+  const concept = makeConcept({
+    sections: makeConcept().sections.map((s) => (
+      s.key === 'core'
+        ? { ...s, md: '### 1) 첫 소제목\n\n내용\n\n### 2) 둘째 소제목\n\n내용' }
+        : s
+    )),
+  });
+  const html = renderFixture({ concepts: [concept] });
+
+  assert.match(html, /<ul class="side-sub">/);
+  assert.match(html, /href="#c05-definition" class="side-sub-sec"[^>]*>정의 · 비유 · 핵심 내용</);
+  assert.match(html, /href="#c05-h-1-첫-소제목" class="side-sub-h"[^>]*>1\) 첫 소제목</);
+  assert.match(html, /href="#c05-h-2-둘째-소제목"/);
+  // 접힌 섹션도 목차 항목이 된다(클릭하면 revealHash가 펼친다)
+  assert.match(html, /href="#c05-discussion" class="side-sub-sec"/);
+  // 묶인 셋은 각각의 항목으로 중복해 나오지 않는다
+  assert.doesNotMatch(html, /href="#c05-analogy" class="side-sub-sec"/);
+});
+
+test('내용이 없는 나의 이해는 목차에도 본문에도 나오지 않는다', () => {
+  const html = renderFixture(); // hasMyNotes: false
+  assert.doesNotMatch(html, /href="#c05-mynotes"/);
+});
+
+test('중요도 별점과 근거가 개념 헤더에 붙는다', () => {
+  const concept = makeConcept({ importance: { stars: 4, why: '비교형 단골' } });
+  const html = renderFixture({ concepts: [concept] });
+  assert.match(html, /<span class="stars" title="시험 중요도 4\/5 — 비교형 단골"/);
+  assert.match(html, /<span class="stars-on" aria-hidden="true">★★★★<\/span>/);
+  assert.match(html, /<span class="stars-off" aria-hidden="true">★<\/span>/);
+});
+
+test('중요도가 없으면 별점을 그리지 않는다', () => {
+  const html = renderFixture();
+  assert.doesNotMatch(html, /class="stars"/);
+});
+
+test('핵심개념으로 뽑힌 개념은 목차와 본문 양쪽에 핵심 배지가 붙는다', () => {
+  const concept = makeConcept({
+    coreRefs: [{ quiz: 1, n: 5, title: '고착과 경로의존성', href: 'core.html#q1-k5' }],
+  });
+  const html = renderFixture({ concepts: [concept] });
+  assert.match(html, /<span class="side-core" title="쪽지시험 핵심 개념">핵심<\/span>/);
+  assert.match(html, /<a class="badge badge-core" href="core\.html#q1-k5"[^>]*>핵심<\/a>/);
 });

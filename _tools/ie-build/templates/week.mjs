@@ -1,4 +1,4 @@
-import { esc, topbar, sidebar, legend, statusBadge, footer } from './components.mjs';
+import { esc, topbar, sidebar, legend, statusBadge, stars, coreBadge, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 import { sourcePanel, quizCards } from '../lib/transform.mjs';
 
@@ -26,25 +26,25 @@ function sectionBlock(concept, section) {
 
   if (section.key === 'mynotes') {
     if (!concept.hasMyNotes) return '';
-    return `<div class="sec sec-mynotes"><h4>${esc(label)}</h4>${section.html}</div>`;
+    return `<div class="sec sec-mynotes" id="${id}"><h4>${esc(label)}</h4>${section.html}</div>`;
   }
   if (section.key === 'quiz') {
     // T8(REDESIGN.md §5): 예상 퀴즈 포인트 목록을 번호 카드 + 비교형/서술형 배지로.
     // isComparison은 renderConcept이 이미 계산해 둔 값을 그대로 쓴다(재계산 금지).
     const cards = quizCards(concept.quizPoints);
-    return `<div class="sec sec-quiz">
+    return `<div class="sec sec-quiz" id="${id}">
   <h4>${esc(label)}</h4>
   ${cards || section.html}
   <p class="sec-quiz-link"><a href="quiz.html?week=${encodeURIComponent(concept.week)}&amp;c=${concept.slug}">퀴즈 모드로 풀기 →</a></p>
 </div>`;
   }
   if (section.key === 'definition' || section.key === 'analogy') {
-    return `<div class="sec sec-${section.key}"><h4>${esc(label)}</h4>${section.html}</div>`;
+    return `<div class="sec sec-${section.key}" id="${id}"><h4>${esc(label)}</h4>${section.html}</div>`;
   }
   if (OPEN_SECTIONS.has(section.key)) {
-    return `<div class="sec sec-${section.key}"><h4>${esc(label)}</h4>${section.html}</div>`;
+    return `<div class="sec sec-${section.key}" id="${id}"><h4>${esc(label)}</h4>${section.html}</div>`;
   }
-  return `<details class="sec sec-fold" data-sec="${id}">
+  return `<details class="sec sec-fold" id="${id}" data-sec="${id}">
   <summary>${esc(label)}</summary>
   <div class="sec-body">${section.html}</div>
 </details>`;
@@ -75,6 +75,8 @@ function conceptBlock(concept) {
     <span class="concept-eyebrow">${esc(concept.week)} · 개념 ${String(concept.no).padStart(2, '0')}</span>
     <span class="concept-head-spacer"></span>
     <div class="concept-actions">
+      ${coreBadge(concept.coreRefs)}
+      ${stars(concept.importance)}
       ${statusBadge(concept.status)}
       <button type="button" class="focus-btn" data-focus-target="${concept.slug}" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
@@ -91,16 +93,56 @@ function conceptBlock(concept) {
 </section>`;
 }
 
+/**
+ * 사이드바에 붙일 개념 내부 목차.
+ *
+ * 한 줄 정의·쉽게 말하면·핵심 내용 셋은 화면에서도 작은 라벨로만 구분되는
+ * "개념의 본문"이므로 목차에서도 항목 셋으로 쪼개지 않고 하나로 묶는다.
+ * 그 아래에 본문 소제목(h3)이 문서 순서대로 오고, 접혀 있는 나머지 섹션들은
+ * 섹션 이름 자체가 목차 항목이 된다(클릭하면 js/main.js의 revealHash가 펼친다).
+ */
+function conceptSubItems(concept) {
+  const INTRO = ['definition', 'analogy', 'core'];
+  const out = [];
+  const headingsOf = (s) => (s.headings ?? [])
+    .filter((h) => h.level === 3 && h.text)
+    .map((h) => ({ href: `#${h.id}`, label: h.text, kind: 'h' }));
+
+  const intro = concept.sections.filter((s) => INTRO.includes(s.key) && s.html?.trim());
+  if (intro.length) {
+    out.push({ href: `#${concept.slug}-${intro[0].key}`, label: '정의 · 비유 · 핵심 내용', kind: 'sec' });
+    for (const s of intro) out.push(...headingsOf(s));
+  }
+
+  for (const s of concept.sections) {
+    if (INTRO.includes(s.key)) continue;
+    if (s.key === 'mynotes' && !concept.hasMyNotes) continue;
+    if (!s.html?.trim()) continue;
+    out.push({
+      href: `#${concept.slug}-${s.key}`,
+      label: SECTION_LABEL[s.key] ?? s.heading,
+      kind: 'sec',
+    });
+    out.push(...headingsOf(s));
+  }
+  return out;
+}
+
 function weekSidebar(week, weeks) {
   const idx = weeks.findIndex((w) => w.id === week.id);
   const prevWeek = weeks.slice(0, idx).reverse().find((w) => w.concepts?.length);
   const nextWeek = weeks.slice(idx + 1).find((w) => w.concepts?.length);
 
-  const navItems = week.concepts.map((c) => ({
+  const navItems = week.concepts.map((c, i) => ({
     href: `#${c.slug}`,
     slug: c.slug,
     no: String(c.no).padStart(2, '0'),
     title: c.title,
+    core: (c.coreRefs ?? []).length > 0,
+    // 첫 개념은 페이지를 열자마자 활성이다. 스크롤 추적(js/main.js)이 곧바로
+    // 다시 계산하지만, JS가 뜨기 전에도 목차가 펼쳐져 있게 서버에서 표시해 둔다.
+    active: i === 0,
+    subItems: conceptSubItems(c),
   }));
 
   return sidebar({
