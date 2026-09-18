@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { checkLinks } from '../lib/check.mjs';
+import { checkLinks, assertNoModuleScripts } from '../lib/check.mjs';
 
 function site(files) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-check-'));
@@ -139,4 +139,30 @@ test('깨진 JSON은 조용히 건너뛴다', () => {
   });
   const r = checkLinks(dir);
   assert.equal(r.broken.length, 0);
+});
+
+/**
+ * file:// CORS 회귀 가드: 출력물에 <script type="module">이 남아있으면
+ * (Task 14가 quiz.html을 통째로 죽였던 원인) 빌드가 조용히 지나가지 않고
+ * 던져야 한다.
+ */
+test('assertNoModuleScripts: type="module" 스크립트가 있으면 던진다', () => {
+  const dir = site({
+    'quiz.html': '<script type="module" src="js/quiz.js"></script>',
+  });
+  assert.throws(() => assertNoModuleScripts(dir), /type="module"/);
+});
+
+test('assertNoModuleScripts: classic script만 있으면 던지지 않는다', () => {
+  const dir = site({
+    'quiz.html': '<script src="js/quiz.js" defer></script><script src="js/main.js" defer></script>',
+  });
+  assert.doesNotThrow(() => assertNoModuleScripts(dir));
+});
+
+test('assertNoModuleScripts: 속성 순서가 달라도(src가 type보다 앞서도) 잡아낸다', () => {
+  const dir = site({
+    'quiz.html': '<script src="js/quiz.js" type="module"></script>',
+  });
+  assert.throws(() => assertNoModuleScripts(dir), /type="module"/);
 });

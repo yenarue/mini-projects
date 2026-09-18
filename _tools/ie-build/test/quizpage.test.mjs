@@ -280,8 +280,12 @@ test('회차 필터 다음에 정렬 선택과 핵심 개념/★4 이상 필터�
   assert.match(html, /id="quiz-stars-only"/);
 });
 
-test('quiz.js는 type="module"로 로드된다(Task 14: quiz-logic.mjs를 import하므로)', () => {
+test('quiz.js는 classic script로 로드된다(file:// CORS 회귀 수정 — 소스는 모듈이지만 배포본은 build.mjs가 합친다)', () => {
   const { items, answers } = buildQuizData(makeConcepts(), { answersDir: EMPTY_DIR });
   const html = renderQuizPage({ items, answers, weeks, quizSchedule });
-  assert.match(html, /<script type="module" src="js\/quiz\.js"><\/script>/);
+  assert.match(html, /<script src="js\/quiz\.js" defer><\/script>/);
+  assert.ok(
+    !/<script[^>]*\btype="module"/.test(html),
+    'quiz.html에 type="module" 스크립트가 남아있으면 file://에서 CORS로 죽는다'
+  );
 });

@@ -169,9 +169,13 @@ ${topbar({ active: 'quiz' })}
     description: '예상 퀴즈 포인트 — 문제와 짧은 예시 답안, 전체 자료는 개념 페이지 링크로',
     bodyClass: 'page-quiz',
     body,
-    // quiz.js는 정렬·필터 순수 함수를 assets/js/quiz-logic.mjs에서 import한다
-    // (Node 테스트가 같은 코드를 그대로 검증할 수 있게 하기 위해서다). 브라우저
-    // 네이티브 ES 모듈이라 번들러도 새 의존성도 필요 없다.
-    scripts: ['js/main.js', { src: 'js/quiz.js', type: 'module' }],
+    // 소스 상의 assets/js/quiz.js는 정렬·필터 순수 함수를 assets/js/quiz-logic.mjs
+    // 에서 import하는 ES 모듈이다(Node 테스트가 같은 코드를 그대로 검증할 수
+    // 있게 하기 위해서다). 하지만 배포되는 js/quiz.js는 그 원본이 아니라
+    // build.mjs가 lib/quizscript.mjs로 quiz-logic.mjs와 합쳐 만든 classic
+    // script다 — file://로 열린 페이지는 origin이 null이라 브라우저가 ES 모듈
+    // import를 CORS로 막기 때문에, 배포본은 반드시 평범한 <script>여야 한다
+    // (Task 14 회귀 수정). 그래서 여기서는 type을 지정하지 않는다.
+    scripts: ['js/main.js', 'js/quiz.js'],
   });
 }
