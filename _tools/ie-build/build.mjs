@@ -139,6 +139,22 @@ async function main() {
   );
   console.log(`검색 인덱스 ${searchIndex.docs.length}건 (${(estimateSize(searchIndex) / 1024).toFixed(0)}KB)`);
 
+  const { buildQuizData, renderQuizPage } = await import('./templates/quiz.mjs');
+  const { items: quizItems, answers: quizAnswers } = buildQuizData(concepts);
+  fsp.writeFileSync(
+    path.join(cfg.outDir, 'quiz.html'),
+    renderQuizPage({ items: quizItems, answers: quizAnswers, weeks: orderedWeeks, quizSchedule }),
+    'utf8'
+  );
+  const quizBytes = fsp.statSync(path.join(cfg.outDir, 'quiz.html')).size;
+  const quizKb = quizBytes / 1024;
+  console.log(
+    `quiz.html 생성 (문항 ${quizItems.length}개 · 답안 ${Object.keys(quizAnswers).length}개 · ${quizKb.toFixed(0)}KB)`
+  );
+  if (quizKb > 1500) {
+    warnings.add('quiz', `quiz.html이 ${quizKb.toFixed(0)}KB입니다. 답안을 별도 JSON으로 분리하는 것을 검토하세요`);
+  }
+
   warnings.print();
 }
 
