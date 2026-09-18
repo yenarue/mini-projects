@@ -35,6 +35,13 @@ async function main() {
   const { renderConcept } = await import('./lib/render.mjs');
   for (const c of concepts) renderConcept(c, warnings);
 
+  const { processImages, formatBytes } = await import('./lib/images.mjs');
+  const imgStats = processImages(concepts, cfg, warnings);
+  console.log(
+    `이미지 ${imgStats.copied}개 ` +
+    `(${formatBytes(imgStats.totalSrcBytes)} → ${formatBytes(imgStats.totalOutBytes)})`
+  );
+
   if (args.has('--dump-json')) {
     console.log(JSON.stringify(concepts, null, 2));
     warnings.print();
