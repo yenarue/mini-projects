@@ -9,6 +9,9 @@ import { layout } from './layout.mjs';
  * 퀴즈 회차가 늘면 core-concepts.json에 세트를 추가하는 것만으로 이 페이지에 쌓인다.
  */
 
+// 메타(주차·슬라이드·강의기록)는 제목 바로 아래가 아니라 본문 아래, 개념 상세
+// 링크 바로 위에 둔다. 읽기 전에 훑는 정보가 아니라 "이 내용이 어디서 왔는지"를
+// 확인하는 정보라, 본문과 이동 링크 사이의 출처 줄 자리가 맞다.
 function itemBlock(item) {
   const meta = item.meta
     .map((m) => `<span class="chip chip-meta"><b>${esc(m.label)}</b> ${esc(m.value)}</span>`)
@@ -31,8 +34,8 @@ function itemBlock(item) {
     <h3>${esc(item.title)}</h3>
     ${stars(importance)}
   </header>
-  ${meta ? `<p class="core-meta">${meta}</p>` : ''}
   <div class="core-body">${item.bodyHtml}</div>
+  ${meta ? `<p class="core-meta">${meta}</p>` : ''}
   ${links
     ? `<p class="core-links"><span class="core-links-label">개념 상세</span>${links}</p>`
     : '<p class="core-links core-links-empty">연결된 개념 정리가 아직 없다.</p>'}
@@ -89,7 +92,7 @@ ${topbar({ active: 'core' })}
       <h1 class="week-title">쪽지시험 핵심 개념</h1>
       <p class="week-meta">
         퀴즈 범위에서 먼저 볼 개념을 추린 목록이다. 실제 출제 목록이 아니라 공부 우선순위이고,
-        각 항목에서 그 개념의 전체 정리로 바로 넘어갈 수 있다.
+        <strong>번호가 앞설수록 먼저 볼 개념</strong>이다. 각 항목에서 그 개념의 전체 정리로 바로 넘어갈 수 있다.
       </p>
     </div>
     ${coreSets.length
