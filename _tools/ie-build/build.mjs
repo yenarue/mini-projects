@@ -32,6 +32,9 @@ async function main() {
   const { collectConcepts } = await import('./lib/parse.mjs');
   const concepts = collectConcepts(cfg.conceptDir, warnings);
 
+  const { renderConcept } = await import('./lib/render.mjs');
+  for (const c of concepts) renderConcept(c, warnings);
+
   if (args.has('--dump-json')) {
     console.log(JSON.stringify(concepts, null, 2));
     warnings.print();
