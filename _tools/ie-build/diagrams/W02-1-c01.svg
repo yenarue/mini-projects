@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 320" role="img" aria-labelledby="w0201c01-title">
+  <title id="w0201c01-title">전달 가능성과 체화 정도 두 축 위에서 암묵지는 체화 높고 전달 어려운 쪽에, 형식지는 전달 쉽고 체화 낮은 쪽에 놓이는 그림</title>
+  <defs>
+    <marker id="w0201c01-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--muted)"></path>
+    </marker>
+  </defs>
+
+  <!-- 축 -->
+  <line x1="58" y1="270" x2="358" y2="270" stroke="var(--line)" stroke-width="1.6" marker-end="url(#w0201c01-arrow)"></line>
+  <line x1="58" y1="270" x2="58" y2="24" stroke="var(--line)" stroke-width="1.6" marker-end="url(#w0201c01-arrow)"></line>
+  <text x="358" y="288" text-anchor="end" font-size="11" fill="var(--muted)">전달 가능성(codifiability) →</text>
+  <text x="18" y="150" text-anchor="middle" font-size="11" fill="var(--muted)" transform="rotate(-90 18 150)">체화 정도(embodiment) ↑</text>
+
+  <!-- 암묵지: 체화 높음·전달 어려움 -->
+  <circle cx="132" cy="98" r="62" fill="var(--term-soft)" stroke="var(--term)" stroke-width="1.6"></circle>
+  <text x="132" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="var(--term)">암묵지</text>
+  <text x="132" y="100" text-anchor="middle" font-size="10" fill="var(--term)">Tacit</text>
+  <text x="132" y="118" text-anchor="middle" font-size="9.5" fill="var(--muted)">몸에 체화 · 말로 안 됨</text>
+
+  <!-- 형식지: 체화 낮음·전달 쉬움 -->
+  <circle cx="274" cy="216" r="62" fill="var(--brand-soft)" stroke="var(--brand)" stroke-width="1.6"></circle>
+  <text x="274" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="var(--brand)">형식지</text>
+  <text x="274" y="218" text-anchor="middle" font-size="10" fill="var(--brand)">Explicit</text>
+  <text x="274" y="236" text-anchor="middle" font-size="9.5" fill="var(--muted)">책·매뉴얼로 전달</text>
+
+  <path d="M182,132 C210,150 232,168 244,184" stroke="var(--ink-soft)" stroke-width="1.6" fill="none" stroke-dasharray="1,6" stroke-linecap="round" marker-end="url(#w0201c01-arrow)"></path>
+  <text x="228" y="150" text-anchor="middle" font-size="10" fill="var(--ink-soft)">명시화(codify)</text>
+
+  <text x="60" y="308" font-size="10.5" fill="var(--muted)">"We know more than we can tell." — Polanyi</text>
+</svg>

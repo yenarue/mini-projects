@@ -1,0 +1,425 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {
+  renderMarkdown,
+  toPlainText,
+  extractListItems,
+  slugifyHeading,
+  renderConcept,
+  insertDiagram,
+} from '../lib/render.mjs';
+import { Warnings } from '../build.mjs';
+
+const ctx = () => ({ week: 'W01', slug: 'c05', warnings: new Warnings(), label: 'W01/c05' });
+
+test('md 링크를 주차 앵커로 바꾼다', () => {
+  const html = renderMarkdown('[다른 개념](02-어떤-개념.md)을 보라', ctx());
+  assert.match(html, /href="W01\.html#c02"/);
+});
+
+test('수업노트 링크는 평문으로 남기고 경고한다', () => {
+  const c = ctx();
+  const html = renderMarkdown('[기록](../../수업노트/W01_강의기록_260905.md)', c);
+  assert.ok(!html.includes('<a '), '링크 태그가 남으면 안 된다');
+  assert.match(html, /기록/);
+  assert.equal(c.warnings.count, 1);
+});
+
+test('이미지를 figure로 감싸고 경로를 바꾼다', () => {
+  const html = renderMarkdown('![W01 p10 세 가지 고착](../../수업노트/assets/W01/p10.png)', ctx());
+  assert.match(html, /<figure class="slide">/);
+  assert.match(html, /src="images\/W01\/p10\.jpg"/);
+  assert.match(html, /loading="lazy"/);
+  assert.match(html, /<figcaption>W01 p10 세 가지 고착<\/figcaption>/);
+});
+
+test('h3/h4에 개념 슬러그 기반 id를 붙인다', () => {
+  const html = renderMarkdown('### 1) 조직 고착 (Johnson 2010)', ctx());
+  assert.match(html, /<h3 id="c05-h-[^"]+"/);
+});
+
+test('slugifyHeading은 한글을 보존하고 공백을 하이픈으로', () => {
+  assert.equal(slugifyHeading('1) 조직 고착 (Johnson 2010)'), '1-조직-고착-johnson-2010');
+  assert.equal(slugifyHeading('STI mode vs DUI mode'), 'sti-mode-vs-dui-mode');
+});
+
+test('toPlainText는 태그를 벗기고 공백을 정리한다', () => {
+  assert.equal(toPlainText('<p>가나 <strong>다라</strong></p>\n<p>마바</p>'), '가나 다라 마바');
+});
+
+test('extractListItems는 ol 항목을 뽑는다', () => {
+  const html = renderMarkdown('1. 첫 문제\n2. 비교형: 둘 문제', ctx());
+  const items = extractListItems(html);
+  assert.equal(items.length, 2);
+  assert.match(items[0], /첫 문제/);
+  assert.match(items[1], /비교형/);
+});
+
+test('코드블록 안의 링크는 건드리지 않는다', () => {
+  const html = renderMarkdown('```\n[x](02-a.md)\n```', ctx());
+  assert.ok(!html.includes('W01.html'));
+});
+
+// --- Issue 2: 아직 작성되지 않은 개념으로 가는 본문 링크는 평문으로 남긴다 ---
+
+test('existingKeys가 주어지면 존재하는 개념 링크는 그대로 <a>로 남는다', () => {
+  const c = ctx();
+  c.existingKeys = new Set(['W01/2']);
+  const html = renderMarkdown('[다른 개념](02-어떤-개념.md)을 보라', c);
+  assert.match(html, /href="W01\.html#c02"/);
+  assert.equal(c.warnings.count, 0, '존재하는 링크는 경고 없이 지나가야 한다');
+});
+
+test('existingKeys가 주어지고 대상 개념이 없으면 링크를 평문으로 내리고 경고는 추가하지 않는다', () => {
+  const c = ctx();
+  c.existingKeys = new Set(['W01/1']); // 02는 없음
+  const html = renderMarkdown('[다른 개념](02-어떤-개념.md)을 보라', c);
+  assert.ok(!html.includes('<a '), '아직 없는 개념으로 가는 링크 태그가 남으면 안 된다');
+  assert.match(html, /다른 개념/);
+  assert.equal(
+    c.warnings.count,
+    0,
+    'related 필드 경고 10건과 중복되므로 여기서 새 경고를 추가하지 않는다'
+  );
+});
+
+test('existingKeys가 없으면(예: standalone 호출) 기존처럼 존재 여부를 확인하지 않는다', () => {
+  const html = renderMarkdown('[다른 개념](02-어떤-개념.md)을 보라', ctx());
+  assert.match(html, /href="W01\.html#c02"/);
+});
+
+// --- Finding 1: extractListItems는 depth-aware해야 한다 ---
+
+test('extractListItems는 중첩 리스트가 있어도 바깥 li를 온전히 뽑는다', () => {
+  const html =
+    '<ul><li>outer <ul><li>inner1</li><li>inner2</li></ul> tail</li></ul>';
+  const items = extractListItems(html);
+  assert.equal(items.length, 1);
+  assert.match(items[0], /outer/);
+  assert.match(items[0], /tail/);
+});
+
+test('extractListItems는 평평한 두 항목짜리 리스트에서 항목 두 개를 뽑는다', () => {
+  const html = '<ul><li>a</li><li>b</li></ul>';
+  const items = extractListItems(html);
+  assert.equal(items.length, 2);
+  assert.equal(items[0], 'a');
+  assert.equal(items[1], 'b');
+});
+
+// --- Finding 2: renderConcept 커버리지 ---
+
+test('renderConcept은 섹션마다 html/plain을 채우고 이미지를 모두 모은다(섹션 간 누적)', () => {
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W01',
+    no: 5,
+    slug: 'c05',
+    file: '05-샘플-개념.md',
+    title: '샘플 개념',
+    en: 'Sample Concept',
+    tags: [],
+    sections: [
+      { key: 'definition', heading: '한 줄 정의', md: '이것은 정의다.' },
+      {
+        key: 'core',
+        heading: '핵심 내용',
+        md:
+          '첫 번째 슬라이드다.\n\n' +
+          '![W01 p10 슬라이드](../../수업노트/assets/W01/p10.png)\n\n' +
+          '두 번째 슬라이드다.\n\n' +
+          '![W01 p11 슬라이드](../../수업노트/assets/W01/p11.png)',
+      },
+      {
+        key: 'quiz',
+        heading: '예상 퀴즈 포인트',
+        md: '1. 첫 문제\n2. 순수 시장과 조직화된 시장의 차이를 설명하라.',
+      },
+    ],
+  };
+
+  renderConcept(concept, warnings);
+
+  for (const section of concept.sections) {
+    assert.ok(section.html && section.html.length > 0, `${section.key} html 없음`);
+    assert.ok(section.plain && section.plain.length > 0, `${section.key} plain 없음`);
+  }
+
+  // core 섹션의 이미지 두 개가 모두 concept.images에 들어있어야 한다
+  // (이미지 누적이 조용히 깨졌던 지점)
+  const names = concept.images.map((i) => i.name).sort();
+  assert.deepEqual(names, ['p10', 'p11']);
+
+  assert.equal(concept.quizPoints.length, 2);
+  for (const qp of concept.quizPoints) {
+    assert.ok('html' in qp && 'text' in qp && 'isComparison' in qp);
+  }
+  assert.equal(concept.quizPoints[0].isComparison, false);
+  assert.equal(concept.quizPoints[1].isComparison, true);
+});
+
+test('renderConcept은 서로 다른 섹션의 이미지를 덮어쓰지 않고 누적한다', () => {
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W01',
+    no: 6,
+    slug: 'c06',
+    file: '06-샘플-개념2.md',
+    title: '샘플 개념2',
+    en: '',
+    tags: [],
+    sections: [
+      { key: 'analogy', heading: '쉽게 말하면', md: '![비유 이미지](../../수업노트/assets/W01/p10.png)' },
+      { key: 'core', heading: '핵심 내용', md: '![핵심 이미지](../../수업노트/assets/W01/p11.png)' },
+    ],
+  };
+  renderConcept(concept, warnings);
+  const names = concept.images.map((i) => i.name).sort();
+  assert.deepEqual(names, ['p10', 'p11']);
+});
+
+// --- Finding 3: COMPARISON_RE 확장 ---
+
+test('비교형 분류가 "차이"/"비교하라" 문구도 잡고 일반 정의 문제는 잡지 않는다', () => {
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W01',
+    no: 9,
+    slug: 'c09',
+    file: '09-비교-테스트.md',
+    title: '비교 테스트',
+    en: '',
+    tags: [],
+    sections: [
+      {
+        key: 'quiz',
+        heading: '예상 퀴즈 포인트',
+        md: [
+          '1. 순수 시장과 조직화된 시장의 차이를 설명하라.',
+          '2. NIS, SIS, TIS, StS의 분석 단위가 각각 무엇인지 비교하라.',
+          '3. 기술 고착의 정의를 설명하라.',
+        ].join('\n'),
+      },
+    ],
+  };
+  renderConcept(concept, warnings);
+  const [diffQ, compareQ, plainQ] = concept.quizPoints;
+  assert.equal(diffQ.isComparison, true, '차이 문구는 비교형이어야 한다');
+  assert.equal(compareQ.isComparison, true, '비교하라 문구는 비교형이어야 한다');
+  assert.equal(plainQ.isComparison, false, '일반 정의 문제는 비교형이 아니어야 한다');
+});
+
+// --- Finding 4: alt 텍스트 이스케이프 ---
+
+test('alt 텍스트의 큰따옴표가 잘리지 않고 이스케이프된다', () => {
+  const html = renderMarkdown('![alt "with" quotes](../../수업노트/assets/W01/p10.png)', ctx());
+  assert.match(html, /alt="alt &quot;with&quot; quotes"/);
+  assert.match(html, /<figcaption>alt &quot;with&quot; quotes<\/figcaption>/);
+});
+
+test('alt 텍스트의 <, &도 이스케이프된다', () => {
+  const html = renderMarkdown('![a <b> & c](../../수업노트/assets/W01/p10.png)', ctx());
+  assert.match(html, /alt="a &lt;b&gt; &amp; c"/);
+  assert.match(html, /<figcaption>a &lt;b&gt; &amp; c<\/figcaption>/);
+});
+
+test('한 문단에 이미지 두 개는 <p> 래핑 없이 형제 figure로 남는다', () => {
+  const html = renderMarkdown(
+    '![하나](../../수업노트/assets/W01/p10.png) ![둘](../../수업노트/assets/W01/p11.png)',
+    ctx()
+  );
+  assert.ok(!html.includes('<p>'), '<p>가 남으면 안 된다');
+  const count = (html.match(/<figure class="slide">/g) || []).length;
+  assert.equal(count, 2);
+});
+
+// --- Finding 5: toPlainText 이중 디코딩 방지 ---
+
+test('toPlainText는 이스케이프된 엔티티를 이중 디코딩하지 않는다', () => {
+  assert.equal(toPlainText('<p>&amp;lt;br&amp;gt;</p>'), '&lt;br&gt;');
+});
+
+// --- Finding 6: slugifyHeading 충돌 방지 ---
+
+test('같은 슬러그로 좁혀지는 헤딩 두 개는 -2로 구분된 id를 받는다', () => {
+  const html = renderMarkdown('### 개념!\n\n내용\n\n### 개념?\n\n내용2', ctx());
+  const ids = [...html.matchAll(/<h3 id="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(ids.length, 2);
+  assert.equal(ids[0], 'c05-h-개념');
+  assert.equal(ids[1], 'c05-h-개념-2');
+});
+
+// --- Finding 7: ctx.images 누적 ---
+
+test('renderMarkdown을 같은 ctx로 두 번 호출하면 이미지가 누적된다', () => {
+  const c = ctx();
+  renderMarkdown('![첫째](../../수업노트/assets/W01/p10.png)', c);
+  renderMarkdown('![둘째](../../수업노트/assets/W01/p11.png)', c);
+  const names = c.images.map((i) => i.name).sort();
+  assert.deepEqual(names, ['p10', 'p11']);
+});
+
+// --- Finding 8: renderConcept 개념 단위 앵커 중복 제거 ---
+
+test('renderConcept은 같은 개념의 서로 다른 섹션이 같은 제목을 가져도 다른 id를 생성한다', () => {
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W01',
+    no: 5,
+    slug: 'c05',
+    file: 'x.md',
+    title: 'T',
+    en: 'E',
+    tags: [],
+    sections: [
+      { key: 'core', heading: '핵심 내용', md: '### 결론\n\n가' },
+      { key: 'position', heading: '수업 프레임에서의 위치', md: '### 결론\n\n나' },
+    ],
+  };
+  renderConcept(concept, warnings);
+  const ids1 = [...concept.sections[0].html.matchAll(/<h3 id="([^"]+)"/g)].map((m) => m[1]);
+  const ids2 = [...concept.sections[1].html.matchAll(/<h3 id="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(ids1.length, 1, '첫 섹션은 h3을 1개 가져야 함');
+  assert.equal(ids2.length, 1, '두 번째 섹션은 h3을 1개 가져야 함');
+  assert.equal(ids1[0], 'c05-h-결론', '첫 섹션의 id는 c05-h-결론이어야 함');
+  assert.equal(ids2[0], 'c05-h-결론-2', '두 번째 섹션의 같은 제목은 c05-h-결론-2여야 함');
+  assert.notEqual(ids1[0], ids2[0], '두 섹션의 id는 달라야 함');
+});
+
+// --- Issue 1: **개념(English)**조사 패턴이 <strong>으로 렌더되어야 한다 ---
+
+const STRONG_KO_EXAMPLES = [
+  '**고착(lock-in)**되어',
+  '**변이(variety)**를',
+  '**물질적 단절성과 지연(delay)**이',
+  '**의도적 학습 투자(technological accumulation)**로만',
+  '**사용·소비까지 포함한 사회기술시스템(StS)**으로',
+  '**고립된 천재의 발명품이 아닌, 고도의 상호작용적 과정(Interactive Process)**이다',
+];
+
+for (const src of STRONG_KO_EXAMPLES) {
+  test(`닫는 **가 구두점 뒤에 바로 붙는 경우도 <strong>으로 렌더된다: ${src}`, () => {
+    const html = renderMarkdown(src, ctx());
+    assert.ok(!html.includes('**'), `별표가 그대로 남으면 안 된다: ${html}`);
+    assert.match(html, /<strong>[^<]+<\/strong>/);
+  });
+}
+
+test('펜스 코드블록 안의 **는 절대 <strong>으로 바뀌지 않는다', () => {
+  const html = renderMarkdown('```\n**고착(lock-in)**되어\n```', ctx());
+  assert.ok(!html.includes('<strong>'), '코드블록 안에서 strong이 생기면 안 된다');
+  assert.match(html, /<pre><code>\*\*고착\(lock-in\)\*\*되어\n<\/code><\/pre>/);
+});
+
+test('인라인 코드(백틱) 안의 **도 <strong>으로 바뀌지 않는다', () => {
+  const html = renderMarkdown('인라인 `**고착(lock-in)**되어` 코드', ctx());
+  assert.ok(!html.includes('<strong>'), '인라인 코드 안에서 strong이 생기면 안 된다');
+  assert.match(html, /<code>\*\*고착\(lock-in\)\*\*되어<\/code>/);
+});
+
+test('구두점이 앞에 없는 일반 굵게 표시는 그대로 동작한다', () => {
+  const html1 = renderMarkdown('**고착**되어', ctx());
+  assert.match(html1, /<strong>고착<\/strong>되어/);
+  assert.ok(!html1.includes('**'));
+
+  const html2 = renderMarkdown('**foo** bar', ctx());
+  assert.match(html2, /<strong>foo<\/strong> bar/);
+  assert.ok(!html2.includes('**'));
+});
+
+test('짝이 없는 lone ** 는 그대로 남고 망가지지 않는다', () => {
+  const html = renderMarkdown('lone ** star only', ctx());
+  assert.ok(!html.includes('<strong>'), 'strong으로 잘못 열리면 안 된다');
+  assert.match(html, /lone \*\* star only/);
+});
+
+test('renderConcept은 세 개의 섹션이 같은 제목을 가지면 각각 다른 id를 생성한다', () => {
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W02',
+    no: 10,
+    slug: 'c10',
+    file: 'y.md',
+    title: 'T2',
+    en: 'E2',
+    tags: [],
+    sections: [
+      { key: 'analogy', heading: '쉽게 말하면', md: '### 핵심\n\n첫 번째' },
+      { key: 'core', heading: '핵심 내용', md: '### 핵심\n\n두 번째' },
+      { key: 'depth', heading: '깊이 있게', md: '### 핵심\n\n세 번째' },
+    ],
+  };
+  renderConcept(concept, warnings);
+  const ids = concept.sections.map((s) => {
+    const matches = [...s.html.matchAll(/<h3 id="([^"]+)"/g)];
+    return matches.length > 0 ? matches[0][1] : null;
+  });
+  assert.deepEqual(ids, ['c10-h-핵심', 'c10-h-핵심-2', 'c10-h-핵심-3']);
+});
+
+// --- R4 Fix A: 물결표 1개는 취소선이 아니라 리터럴 텍스트로 남아야 한다 ---
+// (marked GFM 기본 del 규칙 `~~?`는 물결표 1개짜리 쌍도 취소선으로 렌더해 버려서,
+// "구석기~디지털혁명~바이오혁명(?)"처럼 "~"를 범위(from...to) 표시로 쓴 원문이
+// <del>로 렌더되며 뜻이 정반대로 뒤집히는 버그가 있었다.)
+
+test('R4 Fix A: 물결표 1개(범위 표시)는 <del>로 렌더되지 않고 그대로 남는다', () => {
+  const html = renderMarkdown('구석기~디지털혁명~바이오혁명(?)', ctx());
+  assert.ok(!html.includes('<del>'), '<del>이 생기면 안 된다');
+  assert.match(html, /구석기~디지털혁명~바이오혁명\(\?\)/);
+});
+
+test('R4 Fix A: 물결표 2개(~~취소선~~)는 여전히 <del>로 렌더된다', () => {
+  const html = renderMarkdown('~~취소선~~ 텍스트', ctx());
+  assert.match(html, /<del>취소선<\/del>/);
+});
+
+// --- R4: 다이어그램 삽입 (파일 존재 여부로 판단, 하드코딩 목록 없음) ---
+
+function makeConceptWithCore(coreMd = '### 슬라이드\n\n![alt](../../수업노트/assets/W01/p07.png)\n\n본문') {
+  return {
+    week: 'W01',
+    no: 99,
+    slug: 'c99',
+    file: 'fixture.md',
+    title: 'T',
+    en: 'E',
+    tags: [],
+    sections: [{ key: 'core', heading: '핵심 내용', md: coreMd }],
+  };
+}
+
+test('R4: 대응하는 SVG 파일이 있으면 core 섹션의 첫 슬라이드 이미지 앞에 삽입된다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-diagram-'));
+  try {
+    fs.writeFileSync(path.join(dir, 'W01-c99.svg'), '<svg role="img"><title>테스트 다이어그램</title></svg>');
+    const concept = makeConceptWithCore();
+    renderConcept(concept, new Warnings());
+    insertDiagram(concept, dir);
+    const html = concept.sections[0].html;
+    const diagramIdx = html.indexOf('concept-diagram');
+    const slideIdx = html.indexOf('<figure class="slide">');
+    assert.ok(diagramIdx !== -1, '다이어그램 figure가 있어야 한다');
+    assert.ok(slideIdx !== -1, '슬라이드 이미지가 있어야 한다');
+    assert.ok(diagramIdx < slideIdx, '다이어그램은 첫 슬라이드 이미지보다 앞에 와야 한다');
+    assert.match(html, /💡/, '캡션에 💡 표시가 있어야 한다');
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('R4: 대응하는 SVG 파일이 없으면 아무것도 삽입되지 않는다', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ie-diagram-'));
+  try {
+    const concept = makeConceptWithCore();
+    renderConcept(concept, new Warnings());
+    const before = concept.sections[0].html;
+    insertDiagram(concept, dir);
+    assert.equal(concept.sections[0].html, before);
+    assert.ok(!concept.sections[0].html.includes('concept-diagram'));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

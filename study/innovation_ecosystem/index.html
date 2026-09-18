@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="ITM60034 혁신생태계론 주차별 개념 정리와 퀴즈 셀프테스트">
+  <title>혁신생태계론 개념 정리 · 시험 대비</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
+      } catch (e) {}
+    })();
+  </script>
+  
+</head>
+<body class="page-index">
+
+
+<header class="topbar">
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
+  <nav class="topbar-nav">
+    <a href="index.html" class="active">학기 지도</a>
+    <a href="core.html">핵심 개념</a>
+    <a href="quiz.html">퀴즈</a>
+    <a href="map.html">개념 지도</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
+    <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
+    </button>
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="개념 검색">
+    <input type="search" id="search-input" placeholder="개념명 · 영어 · 태그 · 본문 검색" autocomplete="off">
+    <ul class="search-results" id="search-results"></ul>
+    <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
+  </div>
+</div>
+<main class="index-main" id="top">
+  <header class="index-hero">
+    <p class="eyebrow">ITM60034 · 혁신생태계론 (임홍탁)</p>
+    <h1>학기 지도</h1>
+    <p class="index-lede">
+      강의자료와 수업노트에서 뽑은 개념을 주차별로 정리했다.
+      주차 카드를 눌러 그 주의 개념을 읽고, 퀴즈 일정에서 다음 퀴즈의 누적 범위를 확인하고,
+      개념 지도에서 주차를 넘나드는 연결을 살펴본다.
+    </p>
+  </header>
+
+  <div class="usage-box">
+    <h2>사용법</h2>
+    <ul>
+      <li>주차 카드를 누르면 그 주차의 개념 전체가 한 페이지에 나온다. 좌측 목차로 개념 사이를 이동한다.</li>
+      <li>상단 <kbd>/</kbd> 로 개념명·태그·본문을 검색한다.</li>
+      <li><strong>수업에서 나온 논점 · 보충 사례 · 프레임에서의 위치 · 관련 개념</strong>은 기본으로 접혀 있다. 제목을 눌러 펼친다. 개념 헤더의 <strong>⤢</strong> 버튼(또는 <kbd>F</kbd>)으로 한 개념씩 집중해서 읽을 수 있다.</li>
+      <li>개념마다 <strong>★ 시험 중요도(5점)</strong>가 붙어 있고, 쪽지시험 핵심 개념으로 추린 것에는 <strong>핵심</strong> 배지가 붙는다. 별에 마우스를 올리면 그 점수의 근거가 나온다.</li>
+      <li>퀴즈는 매회 서술형 2~3문제, 범위는 그 직전 주까지 누적이다. 아래 퀴즈 일정에서 회차별 범위와 <strong>핵심 개념</strong> 목록을 먼저 확인한다.</li>
+    </ul>
+    
+<p class="legend">
+  <span class="legend-item">🗣 교수 발언</span>
+  <span class="legend-item">📄 슬라이드</span>
+  <span class="legend-item">💡 보충(외부 지식)</span>
+</p>
+  </div>
+
+  <h2 class="section-title">강의 전체 프레임</h2>
+  <div class="frame-grid">
+    
+    <div class="frame-card">
+      <h3>구조의 차이</h3>
+      <p class="frame-note">시스템이 나라·부문마다 왜 다르게 생겼는가</p>
+      <ul><li>NIS 국가혁신시스템</li><li>SIS 부문혁신시스템</li><li>SSIP 혁신·생산의 사회시스템</li><li>BizS 비즈니스 시스템</li></ul>
+    </div>
+    <div class="frame-card">
+      <h3>구조의 변화</h3>
+      <p class="frame-note">시스템이 어떻게 바뀌는가</p>
+      <ul><li>TS 기술시스템</li><li>TIS 기술혁신시스템</li><li>StS 사회기술시스템 + Transition</li></ul>
+    </div>
+    <div class="frame-card">
+      <h3>구조 변화의 기작</h3>
+      <p class="frame-note">무엇이 변화를 일으키는가</p>
+      <ul><li>BMI 비즈니스 모델 혁신</li><li>SPT 일상생활방식 접근</li><li>MOIP 임무지향형 혁신정책</li><li>Innovation Ecosystem</li></ul>
+    </div>
+  </div>
+
+  <h2 class="section-title">주차별 개념</h2>
+  <div class="week-grid">
+    
+<article class="week-card">
+  <header class="wc-head">
+    <time datetime="2026-09-05">09/05</time>
+    
+    <span class="wc-count">개념 11개</span>
+  </header>
+  
+      <a class="wc-link" href="W01.html">
+        <span class="wc-id">W01</span>
+        <span class="wc-topic">Introduction: Innovation Ecosystem</span>
+        <span class="wc-preview">사회 속의 시스템 — 정치·경제·혁신 활동 · 인간–제도–과학기술의 상호구성 · 인간에 대한 4가지 기본 이해 · 혁신 → 혁신시스템 → 시스템 혁신의 층위</span>
+      </a>
+  
+</article>
+<article class="week-card">
+  <header class="wc-head">
+    <time datetime="2026-09-12">09/12</time>
+    
+    <span class="wc-count">개념 12개</span>
+  </header>
+  
+      <a class="wc-link" href="W02-1.html">
+        <span class="wc-id">W02-1</span>
+        <span class="wc-topic">혁신의 미시적 기초</span>
+        <span class="wc-preview">지식의 속성 — 암묵지와 형식지 · 학습 — 지식생산의 미시적 기초 · STI mode vs DUI mode · Jensen et al. (2007) 실증 연구 — DISKO 데이터와 4개 클러스터</span>
+      </a>
+  
+</article>
+<article class="week-card">
+  <header class="wc-head">
+    <time datetime="2026-09-19">09/19</time>
+    <span class="wc-quiz" title="그날 수업 시작 전 실시 · 전주까지 누적 범위">★ Quiz 1</span>
+    <span class="wc-count">개념 2개</span>
+  </header>
+  
+      <a class="wc-link" href="W02-2.html">
+        <span class="wc-id">W02-2</span>
+        <span class="wc-topic">지식의 공공성 논쟁</span>
+        <span class="wc-preview">고전적 공공재 논리와 그 한계 · Kealey의 도전 — 선형모형 뒤집기</span>
+      </a>
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W03</span>
+        <span class="wc-topic">혁신에의 거시적 접근 I</span>
+        <span class="wc-pending-tag">예정</span>
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-10-03">10/03</time>
+    
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W04</span>
+        <span class="wc-topic">혁신에의 거시적 접근 II</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-10-10">10/10</time>
+    
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W05</span>
+        <span class="wc-topic">부문혁신시스템 (SIS)</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-10-17">10/17</time>
+    <span class="wc-quiz" title="그날 수업 시작 전 실시 · 전주까지 누적 범위">★ Quiz 2</span>
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W06</span>
+        <span class="wc-topic">기술혁신시스템 (TIS) + 글로벌혁신시스템 (GIS)</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-10-24">10/24</time>
+    
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W07</span>
+        <span class="wc-topic">혁신과 생산의 사회시스템 (SSIP) + 비즈니스 시스템 (BS)</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-10-31">10/31</time>
+    <span class="wc-quiz" title="그날 수업 시작 전 실시 · 전주까지 누적 범위">★ Quiz 3</span>
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W08</span>
+        <span class="wc-topic">사회기술시스템 (StS)</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-11-07">11/07</time>
+    
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W09</span>
+        <span class="wc-topic">시스템 전환론 I: 전환적 사회혁신</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-11-14">11/14</time>
+    <span class="wc-quiz" title="그날 수업 시작 전 실시 · 전주까지 누적 범위">★ Quiz 4</span>
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W10</span>
+        <span class="wc-topic">시스템 전환론 II: 비즈니스 모델 혁신</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-11-21">11/21</time>
+    
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W11</span>
+        <span class="wc-topic">시스템 전환론 III: 일상생활방식 접근</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-11-28">11/28</time>
+    <span class="wc-quiz" title="그날 수업 시작 전 실시 · 전주까지 누적 범위">★ Quiz 5</span>
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W12</span>
+        <span class="wc-topic">시스템 전환론 IV: 임무지향형 혁신정책</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-12-05">12/05</time>
+    
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W13</span>
+        <span class="wc-topic">시스템 전환과 국가의 역할: 개발국가</span>
+        
+      </div></div>
+</article>
+<article class="week-card is-pending">
+  <header class="wc-head">
+    <time datetime="2026-12-12">12/12</time>
+    <span class="wc-quiz" title="그날 수업 시작 전 실시 · 전주까지 누적 범위">★ Quiz 6</span>
+    <span class="wc-count">예정</span>
+  </header>
+  
+  <div class="wc-pending">
+      <div class="wc-pending-item">
+        <span class="wc-id">W14</span>
+        <span class="wc-topic">시스템 전환과 시민의 역할: 신시민성</span>
+        
+      </div></div>
+</article>
+  </div>
+
+  <h2 class="section-title">퀴즈 일정</h2>
+  <ol class="quiz-timeline">
+    <li class="quiz-row">
+      <div class="quiz-row-top">
+        <span class="quiz-n">Quiz 1</span>
+        <time class="quiz-date" datetime="2026-09-19">2026-09-19</time>
+        <span class="quiz-ready">정리 완료 2/2주차</span>
+      </div>
+      <div class="quiz-row-main">
+        <p class="quiz-scope">누적 범위 · W01 · W02-1</p>
+        <div class="quiz-row-actions">
+          <a class="btn btn-quiet" href="core.html#quiz1">핵심 개념 10가지</a>
+          <a class="btn btn-primary" href="quiz.html?quiz=1">퀴즈 풀기 →</a>
+        </div>
+      </div>
+    </li>
+    <li class="quiz-row">
+      <div class="quiz-row-top">
+        <span class="quiz-n">Quiz 2</span>
+        <time class="quiz-date" datetime="2026-10-17">2026-10-17</time>
+        <span class="quiz-ready">정리 완료 3/6주차</span>
+      </div>
+      <div class="quiz-row-main">
+        <p class="quiz-scope">누적 범위 · W01 · W02-1 · W02-2 · W03 · W04 · W05</p>
+        <div class="quiz-row-actions">
+          <span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중</span>
+          <a class="btn btn-primary" href="quiz.html?quiz=2">퀴즈 풀기 →</a>
+        </div>
+      </div>
+    </li>
+    <li class="quiz-row">
+      <div class="quiz-row-top">
+        <span class="quiz-n">Quiz 3</span>
+        <time class="quiz-date" datetime="2026-10-31">2026-10-31</time>
+        <span class="quiz-ready">정리 완료 3/8주차</span>
+      </div>
+      <div class="quiz-row-main">
+        <p class="quiz-scope">누적 범위 · W01 · W02-1 · W02-2 · W03 · W04 · W05 · W06 · W07</p>
+        <div class="quiz-row-actions">
+          <span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중</span>
+          <a class="btn btn-primary" href="quiz.html?quiz=3">퀴즈 풀기 →</a>
+        </div>
+      </div>
+    </li>
+    <li class="quiz-row">
+      <div class="quiz-row-top">
+        <span class="quiz-n">Quiz 4</span>
+        <time class="quiz-date" datetime="2026-11-14">2026-11-14</time>
+        <span class="quiz-ready">정리 완료 3/10주차</span>
+      </div>
+      <div class="quiz-row-main">
+        <p class="quiz-scope">누적 범위 · W01 · W02-1 · W02-2 · W03 · W04 · W05 · W06 · W07 · W08 · W09</p>
+        <div class="quiz-row-actions">
+          <span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중</span>
+          <a class="btn btn-primary" href="quiz.html?quiz=4">퀴즈 풀기 →</a>
+        </div>
+      </div>
+    </li>
+    <li class="quiz-row">
+      <div class="quiz-row-top">
+        <span class="quiz-n">Quiz 5</span>
+        <time class="quiz-date" datetime="2026-11-28">2026-11-28</time>
+        <span class="quiz-ready">정리 완료 3/12주차</span>
+      </div>
+      <div class="quiz-row-main">
+        <p class="quiz-scope">누적 범위 · W01 · W02-1 · W02-2 · W03 · W04 · W05 · W06 · W07 · W08 · W09 · W10 · W11</p>
+        <div class="quiz-row-actions">
+          <span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중</span>
+          <a class="btn btn-primary" href="quiz.html?quiz=5">퀴즈 풀기 →</a>
+        </div>
+      </div>
+    </li>
+    <li class="quiz-row">
+      <div class="quiz-row-top">
+        <span class="quiz-n">Quiz 6</span>
+        <time class="quiz-date" datetime="2026-12-12">2026-12-12</time>
+        <span class="quiz-ready">정리 완료 3/14주차</span>
+      </div>
+      <div class="quiz-row-main">
+        <p class="quiz-scope">누적 범위 · W01 · W02-1 · W02-2 · W03 · W04 · W05 · W06 · W07 · W08 · W09 · W10 · W11 · W12 · W13</p>
+        <div class="quiz-row-actions">
+          <span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중</span>
+          <a class="btn btn-primary" href="quiz.html?quiz=6">퀴즈 풀기 →</a>
+        </div>
+      </div>
+    </li></ol>
+
+  <h2 class="section-title">진행 현황</h2>
+  <p class="progress-summary">전체 개념 25개 · 완료 0개</p>
+  <div class="table-scroll">
+    <table class="progress-table">
+      <thead><tr><th>주차</th><th>주제</th><th>개념</th><th>완료</th></tr></thead>
+      <tbody>
+      <tr>
+        <td><a href="W01.html">W01</a></td>
+        <td>Introduction: Innovation Ecosystem</td>
+        <td>11</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><a href="W02-1.html">W02-1</a></td>
+        <td>혁신의 미시적 기초</td>
+        <td>12</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><a href="W02-2.html">W02-2</a></td>
+        <td>지식의 공공성 논쟁</td>
+        <td>2</td>
+        <td>0</td>
+      </tr></tbody>
+    </table>
+  </div>
+
+  <p class="built-at">마지막 빌드: 2026. 9. 18. 20시 41분 53초</p>
+  
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+</main>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
