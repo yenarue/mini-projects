@@ -32,8 +32,14 @@ async function main() {
   const { collectConcepts } = await import('./lib/parse.mjs');
   const concepts = collectConcepts(cfg.conceptDir, warnings);
 
+  // 존재하는 개념 키 집합("W01/5" 형태) — 본문 마크다운 링크가 아직 쓰이지 않은
+  // 개념을 가리키면 renderConcept이 <a>가 아니라 평문으로 남기도록 전달한다.
+  // (아래 related 필드 해석과 별개로, 본문에 직접 쓴 [텍스트](../W02-2/05-*.md)
+  // 링크도 같은 문제를 일으킨다 — 존재하지 않는 앵커로 링크가 걸리면 안 된다.)
+  const existingKeys = new Set(concepts.map((c) => `${c.week}/${c.no}`));
+
   const { renderConcept } = await import('./lib/render.mjs');
-  for (const c of concepts) renderConcept(c, warnings);
+  for (const c of concepts) renderConcept(c, warnings, existingKeys);
 
   const { processImages, formatBytes } = await import('./lib/images.mjs');
   const imgStats = processImages(concepts, cfg, warnings);
@@ -71,7 +77,13 @@ async function main() {
       if (!target) {
         warnings.add('related', `${c.week}/${c.file}: related "${raw}" 대상 개념이 아직 없습니다`);
       }
-      return { week: ref.week, no: ref.no, href: conceptHref(ref.week, ref.no), title: target?.title ?? '' };
+      return {
+        week: ref.week,
+        no: ref.no,
+        href: conceptHref(ref.week, ref.no),
+        title: target?.title ?? '',
+        resolved: !!target,
+      };
     }).filter(Boolean);
 
     const w = byId.get(c.week);

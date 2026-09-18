@@ -50,7 +50,14 @@ function conceptBlock(concept) {
     .join(' ');
   const slides = (concept.slides ?? []).map((s) => `<span class="meta-slide">📄 ${esc(s)}</span>`).join(' ');
   const related = (concept.related ?? [])
-    .map((r) => `<a href="${r.href}">${esc(r.title || `${r.week}/${String(r.no).padStart(2, '0')}`)}</a>`)
+    .map((r) => {
+      const label = esc(r.title || `${r.week}/${String(r.no).padStart(2, '0')}`);
+      // 아직 쓰이지 않은 개념은 링크를 걸지 않는다 — 존재하지 않는 앵커로
+      // 보내는 대신, 연결은 있지만 아직 작성되지 않았다는 것만 텍스트로 보여준다.
+      return r.resolved
+        ? `<a href="${r.href}">${label}</a>`
+        : `<span class="related-pending" title="아직 작성되지 않은 개념">${label}</span>`;
+    })
     .join(' · ');
 
   return `

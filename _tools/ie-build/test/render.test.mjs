@@ -53,6 +53,34 @@ test('코드블록 안의 링크는 건드리지 않는다', () => {
   assert.ok(!html.includes('W01.html'));
 });
 
+// --- Issue 2: 아직 작성되지 않은 개념으로 가는 본문 링크는 평문으로 남긴다 ---
+
+test('existingKeys가 주어지면 존재하는 개념 링크는 그대로 <a>로 남는다', () => {
+  const c = ctx();
+  c.existingKeys = new Set(['W01/2']);
+  const html = renderMarkdown('[다른 개념](02-어떤-개념.md)을 보라', c);
+  assert.match(html, /href="W01\.html#c02"/);
+  assert.equal(c.warnings.count, 0, '존재하는 링크는 경고 없이 지나가야 한다');
+});
+
+test('existingKeys가 주어지고 대상 개념이 없으면 링크를 평문으로 내리고 경고는 추가하지 않는다', () => {
+  const c = ctx();
+  c.existingKeys = new Set(['W01/1']); // 02는 없음
+  const html = renderMarkdown('[다른 개념](02-어떤-개념.md)을 보라', c);
+  assert.ok(!html.includes('<a '), '아직 없는 개념으로 가는 링크 태그가 남으면 안 된다');
+  assert.match(html, /다른 개념/);
+  assert.equal(
+    c.warnings.count,
+    0,
+    'related 필드 경고 10건과 중복되므로 여기서 새 경고를 추가하지 않는다'
+  );
+});
+
+test('existingKeys가 없으면(예: standalone 호출) 기존처럼 존재 여부를 확인하지 않는다', () => {
+  const html = renderMarkdown('[다른 개념](02-어떤-개념.md)을 보라', ctx());
+  assert.match(html, /href="W01\.html#c02"/);
+});
+
 // --- Finding 1: extractListItems는 depth-aware해야 한다 ---
 
 test('extractListItems는 중첩 리스트가 있어도 바깥 li를 온전히 뽑는다', () => {
@@ -249,6 +277,53 @@ test('renderConcept은 같은 개념의 서로 다른 섹션이 같은 제목을
   assert.equal(ids1[0], 'c05-h-결론', '첫 섹션의 id는 c05-h-결론이어야 함');
   assert.equal(ids2[0], 'c05-h-결론-2', '두 번째 섹션의 같은 제목은 c05-h-결론-2여야 함');
   assert.notEqual(ids1[0], ids2[0], '두 섹션의 id는 달라야 함');
+});
+
+// --- Issue 1: **개념(English)**조사 패턴이 <strong>으로 렌더되어야 한다 ---
+
+const STRONG_KO_EXAMPLES = [
+  '**고착(lock-in)**되어',
+  '**변이(variety)**를',
+  '**물질적 단절성과 지연(delay)**이',
+  '**의도적 학습 투자(technological accumulation)**로만',
+  '**사용·소비까지 포함한 사회기술시스템(StS)**으로',
+  '**고립된 천재의 발명품이 아닌, 고도의 상호작용적 과정(Interactive Process)**이다',
+];
+
+for (const src of STRONG_KO_EXAMPLES) {
+  test(`닫는 **가 구두점 뒤에 바로 붙는 경우도 <strong>으로 렌더된다: ${src}`, () => {
+    const html = renderMarkdown(src, ctx());
+    assert.ok(!html.includes('**'), `별표가 그대로 남으면 안 된다: ${html}`);
+    assert.match(html, /<strong>[^<]+<\/strong>/);
+  });
+}
+
+test('펜스 코드블록 안의 **는 절대 <strong>으로 바뀌지 않는다', () => {
+  const html = renderMarkdown('```\n**고착(lock-in)**되어\n```', ctx());
+  assert.ok(!html.includes('<strong>'), '코드블록 안에서 strong이 생기면 안 된다');
+  assert.match(html, /<pre><code>\*\*고착\(lock-in\)\*\*되어\n<\/code><\/pre>/);
+});
+
+test('인라인 코드(백틱) 안의 **도 <strong>으로 바뀌지 않는다', () => {
+  const html = renderMarkdown('인라인 `**고착(lock-in)**되어` 코드', ctx());
+  assert.ok(!html.includes('<strong>'), '인라인 코드 안에서 strong이 생기면 안 된다');
+  assert.match(html, /<code>\*\*고착\(lock-in\)\*\*되어<\/code>/);
+});
+
+test('구두점이 앞에 없는 일반 굵게 표시는 그대로 동작한다', () => {
+  const html1 = renderMarkdown('**고착**되어', ctx());
+  assert.match(html1, /<strong>고착<\/strong>되어/);
+  assert.ok(!html1.includes('**'));
+
+  const html2 = renderMarkdown('**foo** bar', ctx());
+  assert.match(html2, /<strong>foo<\/strong> bar/);
+  assert.ok(!html2.includes('**'));
+});
+
+test('짝이 없는 lone ** 는 그대로 남고 망가지지 않는다', () => {
+  const html = renderMarkdown('lone ** star only', ctx());
+  assert.ok(!html.includes('<strong>'), 'strong으로 잘못 열리면 안 된다');
+  assert.match(html, /lone \*\* star only/);
 });
 
 test('renderConcept은 세 개의 섹션이 같은 제목을 가지면 각각 다른 id를 생성한다', () => {
