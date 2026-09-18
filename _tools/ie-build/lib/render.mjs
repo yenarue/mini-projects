@@ -240,11 +240,18 @@ export function renderMarkdown(md, ctx) {
   if (!ctx.headingIds) ctx.headingIds = new Map();
   const seenIds = ctx.headingIds;
 
+  // 사이드바의 소제목 목차가 쓸 목록을 이 자리에서 같이 모은다. 렌더가 끝난 HTML을
+  // 나중에 다시 훑지 않는 이유는 바로 아래 groupNumberedSteps가 h3를 카드 wrapper로
+  // 옮기면서 `<h3 id=...>` 모양을 없애기 때문이다(id 자체는 wrapper로 옮겨가 살아 있다).
+  // 제목 텍스트와 앵커가 동시에 확실한 지점은 여기뿐이다.
+  if (!ctx.headings) ctx.headings = [];
+
   html = html.replace(/<h([34])>([\s\S]*?)<\/h\1>/g, (_m, lvl, inner) => {
     const base = `${slug}-h-${slugifyHeading(inner)}`;
     const n = seenIds.get(base) ?? 0;
     seenIds.set(base, n + 1);
     const id = n === 0 ? base : `${base}-${n + 1}`;
+    ctx.headings.push({ id, level: Number(lvl), text: toPlainText(inner) });
     return `<h${lvl} id="${id}">${inner}</h${lvl}>`;
   });
 
@@ -329,6 +336,7 @@ export function renderConcept(concept, warnings, existingKeys) {
     };
     section.html = renderMarkdown(section.md, ctx);
     section.plain = toPlainText(section.html);
+    section.headings = ctx.headings ?? [];
     for (const img of ctx.images ?? []) allImages.push(img);
   }
 
