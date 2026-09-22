@@ -267,18 +267,23 @@
       || filename.replace(/\.html$/, '').replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   }
 
+  // index.html이 있는 폴더는 'dir/' 형태로 들어와 폴더 카드 하나로 표시된다
   function makeFileCard(path) {
-    const filename = path.split('/').pop();
+    const isDir = path.endsWith('/');
+    const dirPath = path.slice(0, -1);
+    const filename = isDir ? dirPath.split('/').pop() : path.split('/').pop();
+    const emoji = isDir ? (DIR_META[dirPath]?.emoji ?? '📁') : (FILE_META[filename]?.emoji ?? '📄');
+    const name = isDir ? (DIR_META[dirPath]?.label ?? nameOf(filename)) : nameOf(filename);
     const a = document.createElement('a');
-    a.href = `${PAGES_BASE}/${path}`;
+    a.href = `${PAGES_BASE}/${path}${isDir ? 'index.html' : ''}`;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
     a.className = 'card';
     a.innerHTML = `
       <div class="card-left">
-        <div class="card-icon">${FILE_META[filename]?.emoji ?? '📄'}</div>
+        <div class="card-icon">${emoji}</div>
         <div>
-          <div class="card-name">${nameOf(filename)}</div>
+          <div class="card-name">${name}</div>
           <div class="card-path">${path}</div>
         </div>
       </div>
@@ -337,11 +342,26 @@
       const { tree } = await res.json();
 
       const html = tree.filter(f => f.path.endsWith('.html'));
+
+      // index.html이 있는 폴더는 하위 페이지를 숨기고 폴더 하나로 묶는다 (가장 얕은 폴더 우선)
+      const indexDirs = new Set(
+        html.map(f => f.path).filter(p => p.endsWith('/index.html')).map(p => p.slice(0, -'/index.html'.length))
+      );
+      const collapse = path => {
+        const parts = path.split('/');
+        for (let i = 1; i < parts.length; i++) {
+          const dir = parts.slice(0, i).join('/');
+          if (indexDirs.has(dir)) return `${dir}/`;
+        }
+        return path;
+      };
+      const entries = [...new Set(html.map(f => collapse(f.path)))];
+
       const root = [], dirs = {};
-      for (const f of html) {
-        const parts = f.path.split('/');
-        if (parts.length === 1) root.push(f.path);
-        else { if (!dirs[parts[0]]) dirs[parts[0]] = []; dirs[parts[0]].push(f.path); }
+      for (const path of entries) {
+        const parts = path.split('/');
+        if (parts.length === 1) root.push(path);
+        else { if (!dirs[parts[0]]) dirs[parts[0]] = []; dirs[parts[0]].push(path); }
       }
 
       el.innerHTML = '';
@@ -364,7 +384,8 @@
         sec.innerHTML = `<div class="section-label">${meta.label}</div>`;
         const list = document.createElement('div');
         list.className = 'card-list';
-        list.appendChild(makeFolderBlock(dir, paths));
+        const isIndexDir = paths.length === 1 && paths[0] === `${dir}/`;
+        list.appendChild(isIndexDir ? makeFileCard(paths[0]) : makeFolderBlock(dir, paths));
         sec.appendChild(list);
         el.appendChild(sec);
       }
