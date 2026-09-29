@@ -103,7 +103,7 @@ window.ITM = {
     { date: '2026-09-12', course: 'ITM60062', type: 'class', title: '모듈형 vs 통합형 아키텍처 · Ulrich' },
     { date: '2026-09-18', course: 'ITM60062', type: 'assignment', title: '과제1 Henderson 논문 요약' },
     { date: '2026-09-19', course: 'ITM60062', type: 'class', title: 'DSM (Design Structure Matrix) 실습' },
-    { date: '2026-09-26', course: 'ITM60062', type: 'assignment', title: 'Process DSM 과제', note: '요일 표기 재확인 필요' },
+    { date: '2026-09-26', course: 'ITM60062', type: 'assignment', title: 'Process DSM 과제' },
     { date: '2026-09-26', course: 'ITM60062', type: 'holiday', title: '추석 휴강' },
     { date: '2026-10-03', course: 'ITM60062', type: 'holiday', title: '개천절 휴강' },
     { date: '2026-10-09', course: 'ITM60062', type: 'assignment', title: '과제2 Ulrich(1995) 요약' },
