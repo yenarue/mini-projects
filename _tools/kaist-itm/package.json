@@ -1,0 +1,7 @@
+{
+  "name": "kaist-itm-check",
+  "private": true,
+  "version": "1.0.0",
+  "description": "study/kaist_itm 대시보드 로직·데이터 검증",
+  "scripts": { "test": "node --test" }
+}
