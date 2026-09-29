@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="김예나(Yenarue)의 KAIST ITM 학업 대시보드 — 과목, 학기 일정, 개념정리, 결과물">
+  <title>예나르의 KAIST ITM</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('itm-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="#top"><span class="dot" aria-hidden="true"></span>예나르의 KAIST ITM</a>
+  <nav class="topbar-nav" aria-label="섹션">
+    <a href="#now">지금</a>
+    <a href="#courses">과목</a>
+    <a href="#timeline">타임라인</a>
+    <a href="#projects">결과물</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="topbar-right">
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main class="dash-main" id="top">
+  <header class="hero dash-section">
+    <p class="eyebrow">KAIST 기술경영전문대학원 · ITM 32기</p>
+    <h1>예나르의 KAIST ITM 학습 공간</h1>
+    <p>과목·일정·개념정리·결과물을 한곳에서. 수업마다 AI와 토론하며 정리한 것을 웹으로 쌓아 둡니다.</p>
+  </header>
+
+  <section class="dash-section" id="now" aria-labelledby="now-h">
+    <h2 id="now-h">지금 <small id="now-week"></small></h2>
+    <div class="now-list" id="now-list"></div>
+  </section>
+
+  <section class="dash-section" id="courses" aria-labelledby="courses-h">
+    <h2 id="courses-h">과목</h2>
+    <div id="courses-body"></div>
+  </section>
+
+  <section class="dash-section" id="timeline" aria-labelledby="timeline-h">
+    <h2 id="timeline-h">학기 타임라인 <small>2026 가을학기 · 16주</small></h2>
+    <div class="filters" id="timeline-filters" role="group" aria-label="과목 필터"></div>
+    <div class="tl" id="timeline-body"></div>
+  </section>
+
+  <section class="dash-section" id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h">결과물</h2>
+    <div class="grid" id="projects-grid"></div>
+  </section>
+
+  <section class="dash-section" id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About <small>KAIST ITM에서 이렇게 공부합니다</small></h2>
+    <div id="about-body"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="js/lib.js"></script>
+<script src="js/render.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

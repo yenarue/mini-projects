@@ -75,3 +75,16 @@ test('결과물: 상태 유효, wip는 url 없어도 됨', () => {
     if (p.status === 'live') assert.ok(p.url, p.title);
   });
 });
+
+test('index.html: 로컬 src/href 모두 존재, noindex, 섹션 컨테이너', () => {
+  const html = fs.readFileSync(path.join(SITE, 'index.html'), 'utf8');
+  assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
+  ['now-list', 'courses-body', 'timeline-filters', 'timeline-body', 'projects-grid', 'about-body']
+    .forEach(id => assert.ok(html.includes('id="' + id + '"'), id));
+  const refs = [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m => m[1])
+    .filter(u => !/^(https?:|mailto:)/.test(u));
+  refs.forEach(u => {
+    const t = path.join(SITE, u.endsWith('/') ? u + 'index.html' : u);
+    assert.ok(fs.existsSync(t), '없음: ' + u);
+  });
+});
