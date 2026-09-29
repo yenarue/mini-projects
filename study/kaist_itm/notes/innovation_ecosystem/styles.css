@@ -129,6 +129,12 @@ a:hover { color: var(--brand-dark); }
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
+.topbar-home {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  padding: 5px 9px; border: 1px solid var(--line); border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+.topbar-home:hover { color: var(--brand); border-color: var(--brand); }
 .topbar-brand {
   display: flex; align-items: center; gap: 8px;
   font-weight: 700; font-size: 15px; color: var(--ink);

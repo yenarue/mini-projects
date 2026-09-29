@@ -10,6 +10,7 @@ export function topbar({ active = '' } = {}) {
     `<a href="${href}"${active === key ? ' class="active"' : ''}>${label}</a>`;
   return `
 <header class="topbar">
+  <a class="topbar-home" href="../../index.html" title="KAIST ITM 대시보드로">← ITM</a>
   <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
   <nav class="topbar-nav">
     ${link('index.html', '학기 지도', 'index')}
