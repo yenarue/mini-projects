@@ -1,6 +1,6 @@
 # ie-build — 혁신생태계론 개념정리 사이트 빌드
 
-Google Drive의 `개념정리/W##/*.md`를 읽어 `study/innovation_ecosystem/`에 정적
+Google Drive의 `개념정리/W##/*.md`를 읽어 `study/kaist_itm/notes/innovation_ecosystem/`에 정적
 사이트(index / W##.html / quiz.html / map.html / core.html)를 생성하는 Node
 빌드 도구다. 이 문서는 학기 내내(주 1회 이상) 이 도구를 돌릴 소유자를 위한
 운영 매뉴얼이다 — 세부는 잊어도 이 파일만 보면 다시 돌릴 수 있게 쓴다.
@@ -12,7 +12,7 @@ cd ~/Developers/mini-projects/_tools/ie-build
 node build.mjs --check
 ```
 
-깨진 링크 없이 끝나면 `study/innovation_ecosystem`을 커밋·푸시한다. 그게 전부다.
+깨진 링크 없이 끝나면 `study/kaist_itm/notes/innovation_ecosystem`을 커밋·푸시한다. 그게 전부다.
 아래는 "무엇을 언제 고쳐야 하는지"에 대한 상세다.
 
 ## 매주 하는 일 (기본 흐름)
@@ -34,9 +34,9 @@ node build.mjs --check
 5. 커밋·푸시한다.
    ```bash
    cd ~/Developers/mini-projects
-   git add study/innovation_ecosystem && git commit -m "content: W## 개념 추가" && git push
+   git add study/kaist_itm/notes/innovation_ecosystem && git commit -m "content: W## 개념 추가" && git push
    ```
-   1~2분 뒤 `https://yenarue.github.io/mini-projects/study/innovation_ecosystem/`에
+   1~2분 뒤 `https://yenarue.github.io/mini-projects/study/kaist_itm/notes/innovation_ecosystem/`에
    반영된다.
 
 ## 새 주차가 열릴 때 (강의를 들은 뒤)
