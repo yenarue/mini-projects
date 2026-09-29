@@ -211,7 +211,7 @@ a:hover { color: var(--brand-dark); }
 .course-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex: none; }
 
 /* 지금 */
-.now-list { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.now-list { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 .now-item { display: flex; gap: 14px; align-items: center; }
 .dday {
   flex: none; min-width: 64px; text-align: center; font-weight: 800; font-size: 15px;
