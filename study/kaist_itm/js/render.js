@@ -35,8 +35,16 @@
   /* ---------- 과목 ---------- */
   function notesControl(c) {
     var n = L.resolveNotes(c.notes);
-    if (n.state === 'live') return '<a class="btn btn-live" href="' + esc(n.url) + '">' + esc(n.label) + '</a>';
-    if (n.state === 'private') return '<span class="badge-private"><span aria-hidden="true">🔒</span>' + esc(n.label) + '</span>';
+    if (n.state === 'live') {
+      return '<a class="btn btn-live" href="' + esc(n.url) + '">' + esc(n.label) + '</a>' +
+        ((c.notes && c.notes.extraLinks) || []).map(function (l) {
+          return '<a class="btn btn-ghost" href="' + esc(l.url) + '">' + esc(l.label) + '</a>';
+        }).join('');
+    }
+    if (n.state === 'private') {
+      return '<span class="badge-private"><span aria-hidden="true">🔒</span>' + esc(n.label) + '</span>' +
+        (n.url ? '<a class="btn btn-ghost" href="' + esc(n.url) + '">' + esc(n.urlLabel) + ' →</a>' : '');
+    }
     return '<span class="btn btn-planned" role="link" aria-disabled="true" title="곧 추가됩니다">' + esc(n.label) + '</span>';
   }
   function courseCard(c) {

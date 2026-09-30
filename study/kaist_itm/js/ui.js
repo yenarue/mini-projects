@@ -39,7 +39,7 @@
 
   function statusControl(p) {
     if (p.status === 'live') {
-      return '<a class="btn btn-live" href="' + esc(p.url) + '">열어 보기 →</a>' +
+      return '<a class="btn btn-live" href="' + esc(p.url) + '">' + esc(p.linkLabel || '열어 보기') + ' →</a>' +
         (p.extraLinks || []).map(function (l) {
           return '<a class="btn btn-ghost" href="' + esc(l.url) + '">' + esc(l.label) + '</a>';
         }).join('') +

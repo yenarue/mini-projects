@@ -387,6 +387,7 @@ a:hover { color: var(--brand-dark); }
 .cred-grid .card h3 { margin: 0 0 8px; font-size: 15px; }
 .cred-grid ul { margin: 0; padding: 0; list-style: none; font-size: 13.5px; color: var(--ink-soft); display: flex; flex-direction: column; gap: 8px; }
 .cred-grid li { display: grid; grid-template-columns: 40px 1fr; gap: 8px; line-height: 1.55; }
+.cred-grid ul.no-year li { grid-template-columns: 1fr; }
 .cred-year { font-size: 12px; font-weight: 700; color: var(--brand); padding-top: 1px; }
 .cred-venue { display: block; font-size: 12px; color: var(--muted); }
 .section-lede { margin: -6px 0 14px; color: var(--ink-soft); font-size: 15px; }

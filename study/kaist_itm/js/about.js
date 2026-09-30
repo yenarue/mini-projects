@@ -61,9 +61,11 @@
   var CRED = [['patents', '특허'], ['awards', '수상'], ['certifications', '자격'], ['publications', '논문']];
   function renderCredentials() {
     $('cred-grid').innerHTML = CRED.filter(function (c) { return P.credentials[c[0]].length; }).map(function (c) {
-      return '<div class="card"><h3>' + c[1] + '</h3><ul>' +
-        P.credentials[c[0]].map(function (x) {
-          return '<li><span class="cred-year">' + esc(x.year) + '</span><span>' + esc(x.title) +
+      var items = L.sortByYearDesc(P.credentials[c[0]]);
+      var hasYear = items.some(function (x) { return x.year; }); // 한 카드의 연도가 모두 비면 연도 칸을 숨긴다
+      return '<div class="card"><h3>' + c[1] + '</h3><ul' + (hasYear ? '' : ' class="no-year"') + '>' +
+        items.map(function (x) {
+          return '<li>' + (hasYear ? '<span class="cred-year">' + esc(x.year) + '</span>' : '') + '<span>' + esc(x.title) +
             (x.venue ? '<span class="cred-venue">' + esc(x.venue) + '</span>' : '') + '</span></li>';
         }).join('') + '</ul></div>';
     }).join('');

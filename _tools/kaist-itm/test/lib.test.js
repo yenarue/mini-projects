@@ -113,3 +113,18 @@ test('groupByCategory: 정의 순서, 빈 종류 제외', () => {
   assert.deepEqual(g.map(x => x.category.id), ['analysis', 'study']);
   assert.equal(g[0].items[0].title, 'B');
 });
+
+test('sortByYearDesc: 최신 연도 먼저, 빈 연도는 뒤, 같은 연도는 원래 순서', () => {
+  const items = [
+    { title: 'a', year: '2013' }, { title: 'b', year: '' }, { title: 'c', year: '2020' },
+    { title: 'd', year: '2013' }, { title: 'e', year: '2016.05' }
+  ];
+  assert.deepEqual(L.sortByYearDesc(items).map(i => i.title), ['c', 'e', 'a', 'd', 'b']);
+  assert.equal(items[0].title, 'a', '원본은 바꾸지 않는다');
+});
+
+test('resolveNotes: private에 url이 있으면 공개 개요 링크', () => {
+  assert.deepEqual(L.resolveNotes({ status: 'private', label: '해외 저널 리뷰 중', url: 'projects/x/', urlLabel: '공개 개요 보기' }),
+    { state: 'private', url: 'projects/x/', label: '해외 저널 리뷰 중', urlLabel: '공개 개요 보기' });
+  assert.equal(L.resolveNotes({ status: 'private', label: 'p' }).url, null);
+});

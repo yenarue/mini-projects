@@ -50,7 +50,9 @@
   function resolveNotes(notes) {
     notes = notes || {};
     if (notes.status === 'private') {
-      return { state: 'private', url: null, label: notes.label || '비공개' };
+      var priv = { state: 'private', url: null, label: notes.label || '비공개' };
+      if (notes.url) { priv.url = notes.url; priv.urlLabel = notes.urlLabel || '공개 개요 보기'; }
+      return priv;
     }
     if (notes.status === 'live' && notes.url) {
       return { state: 'live', url: notes.url, label: '개념정리 →' };
@@ -80,6 +82,20 @@
     });
     return Object.keys(map).map(Number).sort(function (a, b) { return a - b; })
       .map(function (w) { return { week: w, events: map[w] }; });
+  }
+
+  // 'YYYY' 또는 'YYYY.MM' 기준 최신순. 빈 연도는 뒤로, 같은 연도는 원래 순서 유지(원본 불변)
+  function sortByYearDesc(items) {
+    return items
+      .map(function (it, i) { return { it: it, i: i }; })
+      .sort(function (a, b) {
+        var ya = a.it.year || '', yb = b.it.year || '';
+        if (ya === yb) return a.i - b.i;
+        if (!ya) return 1;
+        if (!yb) return -1;
+        return ya < yb ? 1 : -1;
+      })
+      .map(function (x) { return x.it; });
   }
 
   var EXTRA_KEY = '_extra';
@@ -120,6 +136,6 @@
     parseDate: parseDate, daysBetween: daysBetween, weekOf: weekOf, ddayLabel: ddayLabel,
     upcomingDeadlines: upcomingDeadlines, resolveNotes: resolveNotes,
     termProgress: termProgress, groupByWeek: groupByWeek,
-    EXTRA_KEY: EXTRA_KEY, filterProjects: filterProjects, usedCourseCodes: usedCourseCodes, groupByCategory: groupByCategory
+    sortByYearDesc: sortByYearDesc, EXTRA_KEY: EXTRA_KEY, filterProjects: filterProjects, usedCourseCodes: usedCourseCodes, groupByCategory: groupByCategory
   };
 });

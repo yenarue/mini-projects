@@ -31,6 +31,16 @@ test('과목: 코드 유일, notes 상태 유효, color 토큰', () => {
   });
 });
 
+test('과목 개념정리: extraLinks·private url 로컬 경로 존재', () => {
+  allCourses.forEach(c => {
+    (c.notes.extraLinks || []).forEach(l => assert.ok(fs.existsSync(path.join(SITE, l.url)), c.code + ' → ' + l.url));
+    if (c.notes.status === 'private' && c.notes.url)
+      assert.ok(fs.existsSync(path.join(SITE, c.notes.url, 'index.html')), c.code + ' → ' + c.notes.url);
+  });
+  assert.equal(allCourses.find(c => c.code === 'ITM60034').notes.extraLinks.length, 2);
+  assert.equal(allCourses.find(c => c.code === 'ITM89912').notes.url, 'projects/genai-paper/');
+});
+
 test('PRD 결정 반영: 생성형AI 논문 private, 나머지 비공개 없음', () => {
   const priv = allCourses.filter(c => c.notes.status === 'private').map(c => c.code);
   assert.deepEqual([...priv], ['ITM89912']); // vm 컨텍스트 배열이라 host 배열로 복사
@@ -137,7 +147,7 @@ for (const [page, ids] of Object.entries(PAGES)) {
     const html = fs.readFileSync(file, 'utf8');
     assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
     ids.forEach(id => assert.ok(html.includes('id="' + id + '"'), page + ' #' + id));
-    [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m => m[1])
+    [...html.matchAll(/(?:src|href)="([^"#?]+)/g)].map(m => m[1])
       .filter(u => !/^(https?:|mailto:)/.test(u))
       .forEach(u => {
         const t = path.join(SITE, u.endsWith('/') ? u + 'index.html' : u);
