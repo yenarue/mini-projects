@@ -8,17 +8,58 @@ window.ITM = {
     handle: 'Yenarue',
     cohort: 'KAIST 기술경영전문대학원 ITM 32기',
     headline: 'Generalist Software Engineer',
+    // ✏️ 한 줄 소개 — 본인이 직접 수정 (현재는 v1 About의 한 줄 소개)
+    tagline: 'Generalist Software Engineer',
+    // ✏️ 프로필 사진 — 파일을 study/kaist_itm/assets/ 에 넣고 'assets/profile.jpg' 처럼 지정. 비우면 이니셜 아바타
+    photo: '',
     // [초안] 최종 문장은 본인이 다듬는다 (Honor Code)
     summary: [
       '코드로 제품을 만들던 엔지니어가, 창업과 대기업을 오가며 부딪힌 "기술을 어떻게 사업으로 만드나"라는 질문을 KAIST ITM에서 체계적으로 공부하고 있습니다.',
       '수업마다 AI와 토론하며 개념을 정리하고, 그 결과를 이렇게 웹으로 쌓아 둡니다.'
     ],
-    career: [
-      { period: '2021.08 –', role: 'Staff Software Engineer', org: '삼성전자 Wallet개발그룹', desc: 'Samsung Wallet 디지털 키(차량 CCC · 도어락 Aliro) 클라이언트 개발 · 2025 그룹 Change Agent' },
-      { period: '2020.12 – 2021.07', role: 'Consultant', org: 'Freelance', desc: '스타트업 프로덕트 기획·디지털 전환 자문' },
-      { period: '2018.07 – 2021.02', role: 'Co-Founder & CTO', org: '포메이커스 (삼성전자 C-Lab 스핀오프)', desc: '비대면 게임 테스트 플랫폼, 전략·개발·팀 빌딩' },
-      { period: '2014.03 – 2018.06', role: 'Software Engineer', org: '삼성전자 무선사업부 · C-Lab', desc: '삼성페이 선행개발(공통 모듈), C-Lab AppBee 풀스택' }
+    facts: [
+      { label: '현재', value: '삼성전자 Wallet개발그룹 Staff Software Engineer' },
+      { label: '학위', value: 'KAIST 기술경영전문대학원 I&TM 석사과정 (2026.03~)' },
+      { label: '전공', value: '충남대학교 컴퓨터공학 학사' },
+      { label: '관심', value: '기술경영 · AI 규제 · 플랫폼 생태계' },
+      { label: '연락', value: 'yenarue@gmail.com', url: 'mailto:yenarue@gmail.com' }
     ],
+    // ✏️ 관심 연구 주제 — 아래 4개는 느낌을 보기 위한 [샘플]. 본인이 직접 고쳐 쓴다.
+    // 형식: { title: '주제', desc: '한두 문장 설명' }
+    // 배열을 비우면 About 페이지에 "준비 중" 안내가 나온다.
+    interests: [
+      { title: 'AI 규제와 책임 있는 제품 설계', desc: '[샘플] EU AI Act·인공지능 기본법 같은 규제가 제품 기획과 개발 프로세스를 어떻게 바꾸는가.' },
+      { title: '디지털 신원·지갑 플랫폼 생태계', desc: '[샘플] 디지털 키 표준(CCC, Aliro)을 둘러싼 제조사·플랫폼·파트너의 협력과 경쟁 구조.' },
+      { title: '소프트웨어 아키텍처와 조직', desc: '[샘플] 모듈화·플랫폼 전략이 제품 구조와 개발 조직을 함께 결정하는 방식.' },
+      { title: 'AI 시대의 지식재산 전략', desc: '[샘플] AI 발명을 특허로 보호할지, 영업비밀로 둘지에 대한 전략적 선택.' }
+    ],
+    timeline: [
+      { period: '2026.03 –', kind: 'education', role: 'I&TM 석사과정 (32기)', org: 'KAIST 기술경영전문대학원',
+        highlights: ['혁신생태계론, 아키텍처 혁신, AI 특허전략, AI 경영과 법 수강 중'] },
+      { period: '2021.08 –', kind: 'career', role: 'Staff Software Engineer', org: '삼성전자 Wallet개발그룹',
+        highlights: ['Samsung Wallet 디지털 키 클라이언트 개발 (차량 CCC · 도어락 Aliro 표준)',
+                     '2025 그룹 Change Agent: 구미·수원 약 160명 대상 조직문화 활동 리딩 ("칭찬의 신"·"번개의 신" 기획)'] },
+      { period: '2020.12 – 2021.07', kind: 'career', role: 'Consultant', org: 'Freelance',
+        highlights: ['스타트업 비즈니스 전략·프로덕트 기획·MVP 개발 자문 (디지털 전환)'] },
+      { period: '2018.07 – 2021.02', kind: 'career', role: 'Co-Founder & CTO', org: '포메이커스 (삼성전자 C-Lab 스핀오프)',
+        highlights: ['비대면 게임 테스트 플랫폼 "포메스 & 포메이커스" 기획·개발·로드맵',
+                     '정성 피드백 자연어 처리·데이터 분석, 개발팀 채용·온보딩·문화 구축'] },
+      { period: '2017.07 – 2018.06', kind: 'career', role: 'Full Stack Software Engineer', org: '삼성전자 C-Lab Looky팀',
+        highlights: ['모바일 앱 사용 데이터 기반 사용자 인터뷰 플랫폼 AppBee MVP', 'TDD·페어 프로그래밍 기반 스몰팀 개발 → 스핀오프 창업'] },
+      { period: '2014.03 – 2018.06', kind: 'career', role: 'Software Engineer', org: '삼성전자 무선사업부',
+        highlights: ['삼성페이 선행개발 Common/KR 파트 (v1.2~3.9): 결제 흐름·네트워크·공통 DB 모듈', '무선사업부 전 프로젝트 소프트웨어 형상관리'] },
+      { period: '2012.01 – 2014.01', kind: 'education', role: 'Software Member (22-1기)', org: '삼성소프트웨어멤버십',
+        highlights: ['프로젝트 5건, SIG 4개 참여(보안 SIG 리더)'] },
+      { period: '2010.03 – 2014.02', kind: 'education', role: '컴퓨터공학 학사', org: '충남대학교', highlights: [] }
+    ],
+    credentials: {
+      patents: ['결제를 수행하는 전자 장치 및 방법', '테스트 서비스 제공 방법'],
+      awards: ['한국지능로봇경진대회 특허청장상', '창의작품경진대회 대상', '제9회 국제해킹방어대회(HDCon) 은상',
+               '2012 상반기 삼성소프트웨어멤버십 소프트웨어 프로젝트 1위', '제1회 예술데이터가 바꾸는 세상 우수상'],
+      certifications: ['Software Certification – Associate Architect (Best Practice)', 'Agile Coach Squared (AC2) Level 1·2',
+                       '정보처리기사', '리눅스마스터 2급', '데이터분석 준전문가 (ADsP)'],
+      publications: ['Kinect와 Unity3D를 이용한 체감형 3D 가상현실 재활치료 시스템']
+    },
     links: [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yena-kim-yenarue/' },
       { label: 'Blog', url: 'https://yenarue.github.io' },
@@ -137,11 +178,24 @@ window.ITM = {
     { date: '2026-12-12', course: 'ITM50023', type: 'assignment', title: '최종 자료 제출' }
   ],
 
+  // 프로젝트 종류 — 프로젝트가 늘면 여기서 추가·수정한다
+  projectCategories: [
+    { id: 'research', label: '연구', desc: '논문·특허처럼 새로운 지식을 만드는 작업' },
+    { id: 'analysis', label: '분석', desc: '데이터를 모으고 패턴을 찾는 작업' },
+    { id: 'study', label: '학습', desc: '수업 내용을 정리하고 복습하는 도구' }
+  ],
+
   projects: [
-    { title: 'KAIST ITM 학업 대시보드', desc: '과목·일정·개념정리·결과물을 링크 하나로. 지금 보고 있는 이 페이지', course: 'ITM69000', url: '#top', status: 'live' },
-    { title: '웹 스크래핑 데이터 분석', desc: '공개 데이터를 수집하고 EDA로 패턴을 찾은 분석 페이지 (W03 과제2)', course: 'ITM69000', url: '', status: 'wip' },
-    { title: '혁신생태계론 개념 지도', desc: '주차를 넘나드는 개념 연결을 그래프로', course: 'ITM60034', url: 'notes/innovation_ecosystem/map.html', status: 'live' },
-    { title: '혁신생태계론 퀴즈 셀프테스트', desc: '누적 범위 서술형 퀴즈 대비, 중요도 정렬', course: 'ITM60034', url: 'notes/innovation_ecosystem/quiz.html', status: 'live' }
+    { title: '생성형 AI 연구 논문', desc: '생성형AI 논문 과목에서 작성한 연구 논문', category: 'research', courses: ['ITM89912'], status: 'private', label: '해외 저널 리뷰 중' },
+    { title: 'AI 특허 발명', desc: '아이디어 발상부터 발명신고까지 실제 특허 1건을 진행', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
+    { title: '웹 스크래핑 데이터 분석', desc: '공개 데이터를 수집하고 EDA로 패턴을 찾은 분석 페이지 (W03 과제2)', category: 'analysis', courses: ['ITM69000'], url: '', status: 'wip' },
+    // ✏️ 과목 외 활동 — 제목·설명은 본인이 수정, 공개하면 status: 'live' + url
+    { title: '캠퍼스 특허 유니버시아드 분석', desc: '캠퍼스 특허 유니버시아드에서 분석한 주제', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드', url: '', status: 'wip' },
+    { title: 'KAIST ITM 학업 대시보드', desc: '과목·일정·개념정리·프로젝트를 링크 하나로 (W03 과제1)', category: 'study', courses: ['ITM69000'], url: 'index.html', status: 'live' },
+    { title: '혁신생태계론 개념정리 사이트', desc: '주차별 개념·논점·사례 정리와 검색', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/', status: 'live' },
+    { title: '혁신생태계론 개념 지도', desc: '주차를 넘나드는 개념 연결을 그래프로', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/map.html', status: 'live' },
+    { title: '혁신생태계론 퀴즈 셀프테스트', desc: '누적 범위 서술형 퀴즈 대비, 중요도 정렬', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/quiz.html', status: 'live' },
+    { title: '이노베이션 경영 개념 정리', desc: '기말시험 대비 핵심 개념 요약', category: 'study', courses: ['ITM50001'], url: 'notes/innovation_management_review/', status: 'live' }
   ],
 
   workflow: [

@@ -69,11 +69,32 @@ test('로컬 링크: live 개념정리·live 결과물 경로가 실제로 존�
   });
 });
 
-test('결과물: 상태 유효, wip는 url 없어도 됨', () => {
+test('프로젝트: 종류·과목·상태 유효', () => {
+  const cats = ITM.projectCategories.map(c => c.id);
+  assert.deepEqual([...cats], ['research', 'analysis', 'study']);
+  const codes = new Set(allCourses.map(c => c.code));
   ITM.projects.forEach(p => {
-    assert.ok(['live', 'wip'].includes(p.status), p.title);
+    assert.ok(cats.includes(p.category), p.title);
+    assert.ok(Array.isArray(p.courses), p.title);
+    if (p.courses.length === 0) assert.ok(p.activity, p.title + ': 과목이 없으면 activity 필요');
+    p.courses.forEach(c => assert.ok(codes.has(c), p.title + ' → ' + c));
+    assert.ok(['live', 'wip', 'private'].includes(p.status), p.title);
     if (p.status === 'live') assert.ok(p.url, p.title);
+    if (p.status === 'private') assert.ok(p.label, p.title);
   });
+});
+
+test('프로필: About 페이지 데이터', () => {
+  const P = ITM.profile;
+  assert.ok(P.tagline, 'tagline');
+  assert.ok(P.facts.length >= 3, 'facts');
+  assert.ok(Array.isArray(P.interests), 'interests (비어 있어도 됨)');
+  P.interests.forEach(i => assert.ok(i.title && i.desc, 'interest title/desc'));
+  assert.ok(P.timeline.length >= 3, 'timeline');
+  P.timeline.forEach(t => assert.ok(['career', 'education'].includes(t.kind), t.org));
+  ['patents', 'awards', 'certifications', 'publications']
+    .forEach(k => assert.ok(Array.isArray(P.credentials[k]), k));
+  if (P.photo) assert.ok(fs.existsSync(path.join(SITE, P.photo)), '사진 없음: ' + P.photo);
 });
 
 test('index.html: 로컬 src/href 모두 존재, noindex, 섹션 컨테이너', () => {
