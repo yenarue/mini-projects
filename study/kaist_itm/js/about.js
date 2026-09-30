@@ -74,7 +74,7 @@
       return '<div class="proj-group"><h3>' + esc(g.category.label) + '<small>' + esc(g.category.desc) + '</small></h3>' +
         '<ul class="proj-rows">' + g.items.map(function (p) {
           return '<li><div><strong>' + esc(p.title) + '</strong>' +
-            '<span class="project-courses">' + U.projectCourses(p) + '</span></div>' + U.statusControl(p) + '</li>';
+            '<span class="project-courses">' + U.projectCourses(p) + '</span></div><div class="proj-actions">' + U.statusControl(p) + '</div></li>';
         }).join('') + '</ul></div>';
     }).join('');
   }

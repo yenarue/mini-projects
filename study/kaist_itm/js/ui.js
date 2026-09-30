@@ -38,7 +38,13 @@
   }
 
   function statusControl(p) {
-    if (p.status === 'live') return '<a class="btn btn-live" href="' + esc(p.url) + '">열어 보기 →</a>';
+    if (p.status === 'live') {
+      return '<a class="btn btn-live" href="' + esc(p.url) + '">열어 보기 →</a>' +
+        (p.extraLinks || []).map(function (l) {
+          return '<a class="btn btn-ghost" href="' + esc(l.url) + '">' + esc(l.label) + '</a>';
+        }).join('') +
+        (p.badge ? '<span class="badge-review">' + esc(p.badge) + '</span>' : '');
+    }
     if (p.status === 'private') return '<span class="badge-private"><span aria-hidden="true">🔒</span>' + esc(p.label) + '</span>';
     return '<span class="badge-wip">준비 중</span>';
   }

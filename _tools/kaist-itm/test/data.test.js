@@ -81,7 +81,24 @@ test('프로젝트: 종류·과목·상태 유효', () => {
     assert.ok(['live', 'wip', 'private'].includes(p.status), p.title);
     if (p.status === 'live') assert.ok(p.url, p.title);
     if (p.status === 'private') assert.ok(p.label, p.title);
+    if (p.badge !== undefined) assert.ok(typeof p.badge === 'string' && p.badge, p.title + ' badge');
+    (p.extraLinks || []).forEach(l => {
+      assert.ok(l.label && l.url, p.title + ' extraLinks');
+      assert.ok(fs.existsSync(path.join(SITE, l.url)), p.title + ' → 없음: ' + l.url);
+    });
   });
+});
+
+test('프로젝트 v3: 혁신생태계론 지도·퀴즈는 개념정리 카드의 보조 버튼, 상세 페이지 연결', () => {
+  const titles = ITM.projects.map(p => p.title);
+  assert.ok(!titles.some(t => /개념 지도|퀴즈 셀프테스트/.test(t)), '지도·퀴즈 별도 카드 없음');
+  const ie = ITM.projects.find(p => p.url === 'notes/innovation_ecosystem/');
+  assert.deepEqual([...ie.extraLinks.map(l => l.url)], ['notes/innovation_ecosystem/map.html', 'notes/innovation_ecosystem/quiz.html']);
+  const cpu = ITM.projects.find(p => p.activity && /2026/.test(p.activity));
+  assert.ok(cpu && cpu.status === 'live' && cpu.url === 'projects/cpu-2026-ai-distillation/', 'CPU 상세');
+  const paper = ITM.projects.find(p => p.courses.includes('ITM89912'));
+  assert.equal(paper.url, 'projects/genai-paper/');
+  assert.match(paper.badge, /Under Review/);
 });
 
 test('프로필: About 페이지 데이터', () => {

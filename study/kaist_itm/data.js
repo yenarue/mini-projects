@@ -70,7 +70,7 @@ window.ITM = {
         { title: '창의작품경진대회 대상', year: '2013' },
         { title: '제9회 국제해킹방어대회(HDCon) 은상', year: '2013' },
         { title: '삼성소프트웨어멤버십 소프트웨어 프로젝트 1위', year: '2012' },
-        { title: '제1회 예술데이터가 바꾸는 세상 우수상', year: '' }
+        { title: '제1회 예술데이터가 바꾸는 세상 우수상', year: '2020' }
       ],
       certifications: [
         { title: 'Software Certification – Associate Architect (Best Practice)', year: '' },
@@ -210,15 +210,15 @@ window.ITM = {
   ],
 
   projects: [
-    { title: '생성형 AI 연구 논문', desc: '생성형 인공지능 활용 기술경영 연구 과목에서 작성한 연구 논문', category: 'research', courses: ['ITM89912'], status: 'private', label: '해외 저널 리뷰 중' },
+    // 심사 중 논문 — 상세 페이지는 공개 가능한 범위의 개요만 담는다
+    { title: 'AI를 많이 쓰면 성과가 날까?', desc: '기업의 AI 활용이 성과로 이어지는 조직적 조건 연구 · Information & Management 투고', category: 'research', courses: ['ITM89912'], url: 'projects/genai-paper/', status: 'live', badge: 'Under Review' },
     { title: 'AI 특허 발명', desc: '아이디어 발상부터 발명신고까지 실제 특허 1건을 진행', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
     { title: '웹 스크래핑 데이터 분석', desc: '공개 데이터를 수집하고 EDA로 패턴을 찾은 분석 페이지 (W03 과제2)', category: 'analysis', courses: ['ITM69000'], url: '', status: 'wip' },
-    // ✏️ 과목 외 활동 — 제목·설명은 본인이 수정, 공개하면 status: 'live' + url
-    { title: '캠퍼스 특허 유니버시아드 분석', desc: '캠퍼스 특허 유니버시아드에서 분석한 주제', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드', url: '', status: 'wip' },
+    // 과목 외 활동 — 제목은 분석 주제, 대회명은 설명·활동 태그로
+    { title: 'AI 모델 증류 방지·추적 특허 분석', desc: '2026 캠퍼스 특허 유니버시아드 · 특허 5,575건으로 찾은 기술 공백과 IP 전략', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드 2026', url: 'projects/cpu-2026-ai-distillation/', status: 'live' },
     { title: 'KAIST ITM 학업 대시보드', desc: '과목·일정·개념정리·프로젝트를 링크 하나로 (W03 과제1)', category: 'study', courses: ['ITM69000'], url: 'index.html', status: 'live' },
-    { title: '혁신생태계론 개념정리 사이트', desc: '주차별 개념·논점·사례 정리와 검색', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/', status: 'live' },
-    { title: '혁신생태계론 개념 지도', desc: '주차를 넘나드는 개념 연결을 그래프로', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/map.html', status: 'live' },
-    { title: '혁신생태계론 퀴즈 셀프테스트', desc: '누적 범위 서술형 퀴즈 대비, 중요도 정렬', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/quiz.html', status: 'live' },
+    { title: '혁신생태계론 개념정리 사이트', desc: '주차별 개념 정리와 검색, 주차를 넘나드는 개념 지도, 누적 범위 퀴즈 셀프테스트', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/', status: 'live',
+      extraLinks: [{ label: '개념 지도', url: 'notes/innovation_ecosystem/map.html' }, { label: '퀴즈', url: 'notes/innovation_ecosystem/quiz.html' }] },
     { title: '이노베이션 경영 개념 정리', desc: '기말시험 대비 핵심 개념 요약', category: 'study', courses: ['ITM50001'], url: 'notes/innovation_management_review/', status: 'live' }
   ],
 

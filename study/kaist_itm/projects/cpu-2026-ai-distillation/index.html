@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="2026 캠퍼스 특허 유니버시아드 제출물 요약 — AI 모델 증류 방지·추적 기술의 특허 분석과 IP 전략">
+  <title>AI 모델 증류 방지 특허 분석 · 예나르의 KAIST ITM</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../../styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('itm-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    .page-main { max-width: 960px; }
+    .hero .lede { font-size: 17px; margin-top: 4px; }
+    .hero .meta { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      display: inline-block; font-size: 12.5px; font-weight: 600; line-height: 1.4;
+      padding: 4px 10px; border-radius: var(--radius-pill);
+      background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line);
+    }
+    .chip.brand { background: var(--brand-soft); color: var(--brand); border-color: transparent; }
+
+    /* 한눈에 보기 타일 */
+    .stats { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .stat .num { font-size: 30px; font-weight: 800; letter-spacing: -.01em; color: var(--ink); line-height: 1.15; }
+    .stat .num small { font-size: 15px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+    .stat .lbl { font-size: 14px; font-weight: 600; color: var(--ink-soft); margin-top: 4px; }
+    .stat .sub { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+    .stat.accent { border-color: var(--brand); }
+    .stat.accent .num { color: var(--brand); }
+    .keyline {
+      margin-top: 14px; padding: 14px 18px; border-radius: var(--radius);
+      background: var(--brand-soft); color: var(--ink); font-weight: 600; line-height: 1.6;
+    }
+
+    /* 본문 */
+    .prose p, .prose li { color: var(--ink-soft); line-height: 1.75; }
+    .prose p { margin: 0 0 10px; }
+    .prose ul { margin: 0 0 10px; padding-left: 20px; }
+    .prose strong { color: var(--ink); }
+    .card h3 { font-size: 16px; margin: 0 0 10px; line-height: 1.45; }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .two { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .stack > * + * { margin-top: 14px; }
+    .src { font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .tag { font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill); white-space: nowrap; }
+    .tag.front { background: var(--note-soft); color: var(--note); }
+    .tag.post { background: var(--brand-soft); color: var(--brand); }
+
+    /* 타임라인 (배경) */
+    .events { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .events li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: baseline; }
+    .events time { font-size: 13px; font-weight: 700; color: var(--brand); }
+    .events span { color: var(--ink-soft); line-height: 1.6; }
+
+    /* 막대 그래프 */
+    .chart { margin: 4px 0 0; }
+    .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+    .sw-a { background: var(--muted); opacity: .55; }
+    .sw-b { background: var(--brand); }
+    .bar-row { display: grid; grid-template-columns: 120px 1fr; gap: 10px; align-items: center; margin: 0 0 10px; }
+    .bar-row .name { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+    .bar-row .name small { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+    .bars { display: grid; gap: 4px; min-width: 0; }
+    .bar { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .bar .fill { height: 12px; border-radius: 4px; min-width: 3px; background: var(--brand); flex: none; }
+    .bar .fill.a { background: var(--muted); opacity: .55; }
+    .bar .fill.hl { background: var(--term); }
+    .bar .val { font-size: 12.5px; color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .track { flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 84px; gap: 8px; align-items: center; }
+    .track > .val:only-child { grid-column: 1 / -1; }
+
+    /* 노이즈 제거 흐름 */
+    .funnel { display: grid; gap: 8px; }
+    .fstep { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;
+      padding: 10px 14px; border-radius: var(--radius-sm); background: var(--surface-2); }
+    .fstep b { font-size: 14px; color: var(--ink); }
+    .fstep span { font-size: 12.5px; color: var(--muted); display: block; margin-top: 2px; }
+    .fstep .n { font-size: 18px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .fstep.minus .n { color: var(--muted); }
+    .fstep.final { background: var(--brand-soft); }
+    .fstep.final .n { color: var(--brand); }
+
+    /* 표 */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table.t { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 520px; }
+    table.t th, table.t td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    table.t th { font-size: 12.5px; color: var(--muted); font-weight: 600; background: var(--surface-2); }
+    table.t td { color: var(--ink-soft); }
+    table.t td.num, table.t th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    table.t tr.hl td { background: var(--brand-soft); color: var(--ink); font-weight: 600; }
+
+    /* 공백·로드맵 */
+    .gaps { display: grid; gap: 10px; }
+    .gap { display: grid; grid-template-columns: 54px 1fr; gap: 12px; align-items: start; }
+    .gap .g { font-weight: 800; font-size: 15px; color: var(--brand); background: var(--brand-soft);
+      border-radius: var(--radius-sm); text-align: center; padding: 6px 0; }
+    .gap .g.sub { color: var(--muted); background: var(--surface-2); }
+    .gap b { color: var(--ink); font-size: 14.5px; }
+    .gap p { margin: 2px 0 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
+    .phases { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .phase .when { font-size: 12.5px; font-weight: 700; color: var(--prof); }
+    .phase h3 { margin-top: 4px; }
+    .phase ul { padding-left: 18px; margin: 0; }
+    .phase li { font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; }
+    ol.tasks { margin: 0; padding-left: 22px; }
+    ol.tasks li { color: var(--ink-soft); line-height: 1.7; margin-bottom: 6px; }
+    ol.tasks li b { color: var(--ink); }
+
+    .note-box { border-left: 3px solid var(--note); background: var(--note-soft); color: var(--ink);
+      padding: 12px 16px; border-radius: var(--radius-sm); font-size: 14px; line-height: 1.65; }
+
+    @media (max-width: 760px) {
+      .stat .num { font-size: 26px; }
+      .bar-row { grid-template-columns: 1fr; gap: 4px; }
+      .events li { grid-template-columns: 1fr; gap: 2px; }
+      .gap { grid-template-columns: 44px 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="../../index.html"><span class="dot" aria-hidden="true"></span>예나르의 KAIST ITM</a>
+  <nav class="topbar-nav" aria-label="섹션">
+    <a href="../../index.html#projects">← 프로젝트</a>
+    <a href="#summary">한눈에</a>
+    <a href="#background">배경</a>
+    <a href="#data">데이터</a>
+    <a href="#findings">분석</a>
+    <a href="#strategy">전략</a>
+    <a href="#source">원자료</a>
+  </nav>
+  <div class="topbar-right">
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main class="dash-main page-main" id="top">
+  <header class="hero dash-section">
+    <p class="eyebrow">2026 캠퍼스 특허 유니버시아드 · 분석</p>
+    <h1>AI 모델 증류 방지 및 추적기술의 특허분석 및 IP 전략 수립</h1>
+    <p class="lede">막는 경쟁은 끝났다. 입증하는 경쟁이 시작된다 — 특허 5,575건으로 본 증류 방어 기술의 빈 자리와 한국의 선점 전략.</p>
+    <div class="meta">
+      <span class="chip brand">특허전략수립 부문 · 문항 A12</span>
+      <span class="chip">특허 정량 · 정성 · 권리 분석</span>
+      <span class="chip">작성 참여: Yena Kim</span>
+    </div>
+  </header>
+
+  <!-- 1. 한눈에 보기 -->
+  <section class="dash-section" id="summary" aria-labelledby="summary-h">
+    <h2 id="summary-h">한눈에 보기</h2>
+    <div class="stats">
+      <div class="card stat">
+        <div class="num">5,575<small>건</small></div>
+        <div class="lbl">분석 대상 확정 특허</div>
+        <div class="sub">검색 모집단 14,432건에서 노이즈 8,857건(61.4%) 제거. 중국 제외 시 563건.</div>
+      </div>
+      <div class="card stat">
+        <div class="num">2015–2026</div>
+        <div class="lbl">검색 기간 · IP5 + PCT</div>
+        <div class="sub">한국·미국·유럽·중국·일본 + PCT. 지식증류 개념이 정립된 2015년 1월부터.</div>
+      </div>
+      <div class="card stat accent">
+        <div class="num">45<small>건 · 0.8%</small></div>
+        <div class="lbl">검증(Verification) 영역 특허</div>
+        <div class="sub">5개 영역 중 최소. 그러나 등록률 62%·청구항 11.0개로 질은 최상위. 한국 출원 0건.</div>
+      </div>
+      <div class="card stat">
+        <div class="num">5<small>건</small></div>
+        <div class="lbl">핵심특허 (전원 등록·유효)</div>
+        <div class="sub">IBM·Apple·KAIST·Micron·Thales. 반면 전방 방어층 대표 특허는 소멸·포기.</div>
+      </div>
+    </div>
+    <p class="keyline">핵심 발견: 특허 경쟁의 무게중심이 '막는 기술'에서 '입증하는 기술'로 옮겨 가고 있다. 최적 진입점은 규모는 가장 작지만 질은 가장 높은 검증(Verification) 영역이다.</p>
+  </section>
+
+  <!-- 2. 배경 · 문제 -->
+  <section class="dash-section" id="background" aria-labelledby="bg-h">
+    <h2 id="bg-h">배경 · 문제</h2>
+    <div class="two">
+      <div class="card prose">
+        <h3>증류가 공격이 되는 순간</h3>
+        <p>지식증류(knowledge distillation)는 큰 교사 모델(teacher model)의 지식을 작은 학생 모델(student model)로 옮기는 정당한 기술이다.</p>
+        <p>그런데 상용 LLM이 API로 열리면서, 정상 쿼리처럼 보이는 호출만으로 출력을 대량 수집해 유사 모델을 싸게 복제할 수 있게 됐다. 이것이 <strong>증류 공격</strong>이다.</p>
+        <p>분쟁의 무게중심이 입력(학습 데이터)에서 <strong>출력(추론 결과)</strong>으로 이동했다.</p>
+      </div>
+      <div class="card">
+        <h3>보고서가 짚은 사건들</h3>
+        <ul class="events">
+          <li><time>2024.12</time><span>딥시크 V3 공개. 학습비 약 80억 원 — GPT-4급 추정치(최대 1,450억 원)의 1/10 미만.</span></li>
+          <li><time>2025.01</time><span>R1 공개. AIME 2024 79.8%로 OpenAI o1(79.2%)을 앞섬. 이후 약 1조 달러 규모 기술주 시가총액 증발.</span></li>
+          <li><time>2026.02</time><span>Google, 10만 건 이상 프롬프트로 Gemini를 복제하려는 증류 시도 보고. 같은 달 DeepSeek·Moonshot·MiniMax 사례 적발.</span></li>
+          <li><time>2026.06</time><span>Anthropic, 알리바바의 부정 계정 약 25,000개·대화 2,880만 건 추출 정황을 법원이 아닌 상원에 고발.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two" style="margin-top:14px">
+      <div class="card prose">
+        <h3>법적 공백</h3>
+        <ul>
+          <li><strong>저작권</strong> — AI 간 문답은 인간의 사상·감정 표현이 아니어서 창작물성이 부정되기 쉽다.</li>
+          <li><strong>데이터베이스권</strong> — 매 질의마다 새로 생성되는 출력이라 요건 충족이 까다롭다.</li>
+          <li><strong>부정경쟁방지법</strong> — 성과도용 가능성은 높지만 사후 구제이고, '베꼈다'를 입증할 표준 방법이 없다.</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <h3>기술적 공백</h3>
+        <ul>
+          <li><strong>워터마킹</strong> — 재학습·패러프레이징만으로 제거 가능함이 이론적으로 증명됨(Zhang et al., 2025).</li>
+          <li><strong>이상 탐지</strong> — 에이전트 경유 간접증류의 공격 성공률 84.3%(Agent Security Bench).</li>
+          <li><strong>상충 관계(trade-off)</strong> — 방어를 강화할수록 API 응답속도·품질이 떨어진다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:14px">
+      <strong>팀이 던진 질문:</strong> 법으로도 기술로도 완전 차단이 안 된다면, 불완전한 차단 환경에서도 <em>침해를 입증</em>하는 기술은 어디가 비어 있고, 한국은 그 자리를 어떻게 선점할 수 있는가?
+    </div>
+    <p class="src">출처: 보고서 1-1~1-3 (pp.6–10), 발표자료 pp.4–5</p>
+  </section>
+
+  <!-- 3. 데이터 -->
+  <section class="dash-section" id="data" aria-labelledby="data-h">
+    <h2 id="data-h">데이터 <small>특허 검색 범위와 유효특허 선별</small></h2>
+    <div class="two">
+      <div class="card prose">
+        <h3>검색 설계</h3>
+        <ul>
+          <li><strong>DB</strong> — Wintelips, 공개·등록 특허</li>
+          <li><strong>국가</strong> — KR · US · EP · CN · JP + PCT (IP5+PCT)</li>
+          <li><strong>기간</strong> — 출원일 2015.01 ~ 2026 (약 11년)</li>
+          <li><strong>필드</strong> — 제목·요약·청구항(TL·AB·CL)</li>
+          <li><strong>공통 검색식</strong> — (AI 모델 그룹: model, neural network, LLM 등) AND (증류·보호·입증 맥락 그룹: knowledge distillation, model stealing, model watermark, model provenance, attestation 등)</li>
+          <li><strong>영역별 기본식</strong> — 공통식에 5개 영역 키워드를 조합. 상위 영역이 잡은 문헌은 하위 영역에서 빼는 순차 배분으로 <strong>영역 간 중복 0건</strong>.</li>
+        </ul>
+        <p>중국 대량 출원의 왜곡을 통제하려고 모든 지표를 <strong>중국 포함 / 중국 제외</strong>로 병기했다(이중 렌즈).</p>
+      </div>
+      <div class="card">
+        <h3>노이즈 제거: 14,432 → 5,575건</h3>
+        <div class="funnel">
+          <div class="fstep"><div><b>공통 검색식 모집단</b><span>다의어 탓에 노이즈 혼입 ('모델'=지구물리 속도모델, '증류'=화학 공정 등)</span></div><div class="n">14,432</div></div>
+          <div class="fstep minus"><div><b>1차 제거 · 이종 산업영역</b><span>핵심 IPC(G06F·G06N·G06V·G06T·H04L) 밖 문헌 (17.7%)</span></div><div class="n">−2,549</div></div>
+          <div class="fstep minus"><div><b>2차 제거 · 목적 불일치</b><span>핵심 IPC 안이지만 순수 성능 최적화·압축 등 (43.7%)</span></div><div class="n">−6,308</div></div>
+          <div class="fstep final"><div><b>유효 모집단 확정</b><span>모집단의 38.6% · 중국 제외 시 563건</span></div><div class="n">5,575</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card prose" style="margin-top:14px">
+      <h3>비특허 교차 데이터</h3>
+      <p>특허만으로는 표본 부족과 공개 시차가 생긴다. 그래서 <strong>논문 35편 중 핵심 24편</strong>(보안 Big4 학회 등 게재처·Artifact Evaluation 배지·피인용 기준)과 영역별 <strong>오픈소스 활성화 점수</strong>를 함께 봤다. 논문-특허 매칭은 14쌍이며, 특허 선행 7쌍 · 논문 선행 5쌍이다.</p>
+    </div>
+    <p class="src">출처: 보고서 2-2 (p.13), 3-3 가 (pp.19–21), 3-4 (pp.29–35) · 발표자료 pp.10, 37–40</p>
+  </section>
+
+  <!-- 4. 주요 분석과 발견 -->
+  <section class="dash-section" id="findings" aria-labelledby="find-h">
+    <h2 id="find-h">주요 분석과 발견</h2>
+
+    <div class="stack">
+      <div class="card prose">
+        <h3>기술 분류 체계(Tech Tree): 공격 흐름에 맞춘 5개 영역, 2개 층</h3>
+        <div class="table-wrap">
+          <table class="t">
+            <thead><tr><th>층</th><th>영역</th><th>하는 일</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag front">전방 방어</span></td><td>예방(Prevention)</td><td>접근 단계에서 대량 질의를 원천 차단</td></tr>
+              <tr><td><span class="tag front">전방 방어</span></td><td>탐지(Detection)</td><td>수상한 대량 수집 행위를 실시간 식별</td></tr>
+              <tr><td><span class="tag front">전방 방어</span></td><td>무력화(Mitigation)</td><td>유출된 출력의 학습 효용을 떨어뜨림</td></tr>
+              <tr><td><span class="tag post">사후 입증</span></td><td>추적(Tracing)</td><td>워터마킹·핑거프린팅으로 출처 신호를 남김</td></tr>
+              <tr><td><span class="tag post">사후 입증</span></td><td>검증(Verification)</td><td>'베꼈다'는 사실을 통계·암호학적으로 판정</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:10px">전방 방어층은 '완전한 차단'이 전제돼야 성립한다. 사후 입증층은 불완전한 차단 환경에서도 작동한다.</p>
+      </div>
+
+      <div class="card">
+        <h3>이중 렌즈: 중국을 빼면 순위가 뒤집힌다</h3>
+        <div class="legend"><span><i class="sw-a"></i>중국 포함 (5,575건)</span><span><i class="sw-b"></i>중국 제외 (563건)</span></div>
+        <div class="chart" role="img" aria-label="기술 영역별 특허 비중, 중국 포함 대 제외">
+          <div class="bar-row"><div class="name">탐지<small>Detection</small></div><div class="bars">
+            <div class="bar"><div class="track"><div class="fill a" style="width:99.8%"></div><span class="val">59.9%</span></div></div>
+            <div class="bar"><div class="track"><div class="fill" style="width:50.3%"></div><span class="val">30.2%</span></div></div></div></div>
+          <div class="bar-row"><div class="name">추적<small>Tracing</small></div><div class="bars">
+            <div class="bar"><div class="track"><div class="fill a" style="width:50%"></div><span class="val">30.0%</span></div></div>
+            <div class="bar"><div class="track"><div class="fill" style="width:88.5%"></div><span class="val">53.1%</span></div></div></div></div>
+          <div class="bar-row"><div class="name">무력화<small>Mitigation</small></div><div class="bars">
+            <div class="bar"><div class="track"><div class="fill a" style="width:10.3%"></div><span class="val">6.2%</span></div></div>
+            <div class="bar"><div class="track"><div class="fill" style="width:19.2%"></div><span class="val">11.5%</span></div></div></div></div>
+          <div class="bar-row"><div class="name">예방<small>Prevention</small></div><div class="bars">
+            <div class="bar"><div class="track"><div class="fill a" style="width:5.2%"></div><span class="val">3.1%</span></div></div>
+            <div class="bar"><div class="track"><div class="fill" style="width:3.8%"></div><span class="val">2.3%</span></div></div></div></div>
+          <div class="bar-row"><div class="name">검증<small>Verification</small></div><div class="bars">
+            <div class="bar"><div class="track"><div class="fill a" style="width:1.3%"></div><span class="val">0.8% (45건)</span></div></div>
+            <div class="bar"><div class="track"><div class="fill hl" style="width:4.7%"></div><span class="val">2.8% (16건)</span></div></div></div></div>
+        </div>
+        <ul class="prose" style="margin:6px 0 0; padding-left:20px">
+          <li>층 단위로 보면 전방 방어층 69.2% → 중국 제외 시 <strong>사후 입증층 55.9%</strong>로 역전.</li>
+          <li>'탐지가 가장 활발하다'는 인상은 중국 물량이 만든 착시. 실질 경쟁권의 중심은 추적이다.</li>
+          <li>어느 렌즈로 봐도 변하지 않는 것: 검증 영역이 최소라는 점, 그리고 한국의 검증 출원 0건.</li>
+        </ul>
+        <p class="src">출처: 보고서 표 3-3f (p.22), 그림 3-3a·b (p.23), 표 3-3k (p.28)</p>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>국가별 점유율 (중국 제외)</h3>
+          <p style="margin:0 0 12px; font-size:13.5px; color:var(--ink-soft)">중국 포함 시 중국이 89.9%를 차지한다. 중국을 빼면 미국과 한국이 질적 경쟁을 이끈다.</p>
+          <div class="chart" role="img" aria-label="중국 제외 국가별 점유율">
+            <div class="bar-row"><div class="name">미국</div><div class="bar"><div class="track"><div class="fill" style="width:96%"></div><span class="val">38.4%</span></div></div></div>
+            <div class="bar-row"><div class="name">한국</div><div class="bar"><div class="track"><div class="fill hl" style="width:57.8%"></div><span class="val">23.1%</span></div></div></div>
+            <div class="bar-row"><div class="name">PCT</div><div class="bar"><div class="track"><div class="fill" style="width:48.5%"></div><span class="val">19.4%</span></div></div></div>
+            <div class="bar-row"><div class="name">일본</div><div class="bar"><div class="track"><div class="fill" style="width:24.8%"></div><span class="val">9.9%</span></div></div></div>
+            <div class="bar-row"><div class="name">유럽</div><div class="bar"><div class="track"><div class="fill" style="width:23%"></div><span class="val">9.2%</span></div></div></div>
+          </div>
+          <p class="src">출처: 보고서 그림 3-3d (p.25)</p>
+        </div>
+        <div class="card">
+          <h3>한국 출원인의 영역별 건수</h3>
+          <p style="margin:0 0 12px; font-size:13.5px; color:var(--ink-soft)">중국 제외 시 추적 31.8%·탐지 18.2%로 미국 다음 2위. 하지만 판정 계층은 비어 있다.</p>
+          <div class="chart" role="img" aria-label="한국 출원인 기술 영역별 건수">
+            <div class="bar-row"><div class="name">추적</div><div class="bar"><div class="track"><div class="fill" style="width:100%"></div><span class="val">95건</span></div></div></div>
+            <div class="bar-row"><div class="name">탐지</div><div class="bar"><div class="track"><div class="fill" style="width:32.6%"></div><span class="val">31건</span></div></div></div>
+            <div class="bar-row"><div class="name">무력화</div><div class="bar"><div class="track"><div class="fill" style="width:4.2%"></div><span class="val">4건</span></div></div></div>
+            <div class="bar-row"><div class="name">예방</div><div class="bar"><div class="track"><span class="val">0건</span></div></div></div>
+            <div class="bar-row"><div class="name">검증</div><div class="bar"><div class="track"><span class="val" style="color:var(--term); font-weight:700">0건 — 구조적 공백</span></div></div></div>
+          </div>
+          <p class="src">출처: 보고서 표 3-7 (pp.47–48), 그림 3-3f (p.27)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>검증 영역의 역설: 규모는 최소, 질은 최상</h3>
+        <div class="table-wrap">
+          <table class="t">
+            <thead><tr><th>영역</th><th class="num">건수</th><th class="num">등록률</th><th class="num">평균 청구항</th><th class="num">국제패밀리</th><th class="num">과학의존(NPL)</th><th class="num">평균 피인용</th></tr></thead>
+            <tbody>
+              <tr><td>예방</td><td class="num">173</td><td class="num">54%</td><td class="num">8.9</td><td class="num">1.25</td><td class="num">2%</td><td class="num">2.18</td></tr>
+              <tr><td>탐지</td><td class="num">3,341</td><td class="num">52%</td><td class="num">8.4</td><td class="num">1.13</td><td class="num">1%</td><td class="num">1.37</td></tr>
+              <tr><td>무력화</td><td class="num">345</td><td class="num">57%</td><td class="num">9.2</td><td class="num">3.17</td><td class="num">6%</td><td class="num">3.42</td></tr>
+              <tr><td>추적</td><td class="num">1,671</td><td class="num">54%</td><td class="num">9.2</td><td class="num">1.66</td><td class="num">3%</td><td class="num">1.60</td></tr>
+              <tr class="hl"><td>검증</td><td class="num">45</td><td class="num">62%</td><td class="num">11.0</td><td class="num">2.64</td><td class="num">11%</td><td class="num">3.05</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:10px 0 0; font-size:14px; color:var(--ink-soft); line-height:1.7">검증은 등록률·청구항·NPL 1위, 국제패밀리 2위다. 비어 있는 이유는 가치가 없어서가 아니라 <strong style="color:var(--ink)">아직 아무도 본격 진입하지 않아서</strong>다. 소수가 고품질 권리를 먼저 확보한 프론티어다. (지표는 중국 포함 기준)</p>
+        <p class="src">출처: 보고서 표 3-3j (p.26), 그림 3-3e (p.27)</p>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>최근 3년 출원 비중 (단기 모멘텀)</h3>
+          <div class="chart" role="img" aria-label="영역별 최근 3년 출원 비중">
+            <div class="bar-row"><div class="name">예방</div><div class="bar"><div class="track"><div class="fill" style="width:63.6%"></div><span class="val">63.6%</span></div></div></div>
+            <div class="bar-row"><div class="name">추적</div><div class="bar"><div class="track"><div class="fill" style="width:49.5%"></div><span class="val">49.5%</span></div></div></div>
+            <div class="bar-row"><div class="name">검증</div><div class="bar"><div class="track"><div class="fill hl" style="width:48.9%"></div><span class="val">48.9%</span></div></div></div>
+            <div class="bar-row"><div class="name">무력화</div><div class="bar"><div class="track"><div class="fill" style="width:38.6%"></div><span class="val">38.6%</span></div></div></div>
+          </div>
+          <p style="margin:6px 0 0; font-size:13.5px; color:var(--ink-soft); line-height:1.65">검증의 장기 CAGR 8.6%는 45건이라는 극소 표본 탓에 눌려 보인다. 실제로는 출원 절반이 최근 3년에 몰렸다. 대학 비중은 22%로 5개 영역 중 최저 — 기업 주도 상용화 단계로 읽힌다. (탐지는 표에서 수치 없이 '최고'로만 표기)</p>
+          <p class="src">출처: 보고서 표 3-3h (p.24), p.26</p>
+        </div>
+        <div class="card">
+          <h3>연도별 출원 급증 (중국 포함)</h3>
+          <div class="chart" role="img" aria-label="탐지와 추적의 연도별 출원 건수">
+            <div class="bar-row"><div class="name">탐지<small>2020</small></div><div class="bar"><div class="track"><div class="fill a" style="width:16.3%"></div><span class="val">155건</span></div></div></div>
+            <div class="bar-row"><div class="name">탐지<small>2023</small></div><div class="bar"><div class="track"><div class="fill a" style="width:55%"></div><span class="val">524건</span></div></div></div>
+            <div class="bar-row"><div class="name">탐지<small>2025</small></div><div class="bar"><div class="track"><div class="fill a" style="width:100%"></div><span class="val">952건</span></div></div></div>
+            <div class="bar-row"><div class="name">추적<small>2020</small></div><div class="bar"><div class="track"><div class="fill" style="width:9.6%"></div><span class="val">91건</span></div></div></div>
+            <div class="bar-row"><div class="name">추적<small>2025</small></div><div class="bar"><div class="track"><div class="fill" style="width:44.4%"></div><span class="val">423건</span></div></div></div>
+          </div>
+          <p style="margin:6px 0 0; font-size:13.5px; color:var(--ink-soft); line-height:1.65">검증은 2018년 9건 이후 연 1~6건에 머물다 2025년 16건으로 뛰는 'J 커브'. 공개검증 계열 논문이 나온 시기와 겹친다.</p>
+          <p class="src">출처: 보고서 3-4 c (pp.34–35)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>특허 × 비특허 교차: 영역별 전략 위치</h3>
+        <div class="table-wrap">
+          <table class="t">
+            <thead><tr><th>영역</th><th>위치</th><th>근거</th></tr></thead>
+            <tbody>
+              <tr class="hl"><td>검증</td><td>유망 선점</td><td>특허 45건 · 오픈소스 점수 4.09. 연구는 활발한데 권리화는 아직 — 유일한 '특허 소수 × 비특허 다수'</td></tr>
+              <tr><td>추적</td><td>경쟁 집중</td><td>특허 1,671건 · 오픈소스 5.78(최고). SynthID-Text 등 빅테크 실배포</td></tr>
+              <tr><td>무력화</td><td>미성숙 공백</td><td>특허 345건 · 핵심 논문 8편(최다)이나 대응 특허는 3편</td></tr>
+              <tr><td>탐지 · 예방</td><td>성숙 레드오션</td><td>중국 물량 집중. 예방 8.24점은 범용 게이트웨이 덕분이며 증류 전용 오픈소스는 0개</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="src">출처: 보고서 표 3-5a (p.43), 표 3-4m (p.41) · 발표자료 pp.14–15</p>
+      </div>
+
+      <div class="card">
+        <h3>핵심특허 5건 — 모두 등록·유효</h3>
+        <div class="table-wrap">
+          <table class="t">
+            <thead><tr><th>영역</th><th>출원인 · 번호</th><th>발명</th><th class="num">피인용/패밀리</th><th>대응 방침</th></tr></thead>
+            <tbody>
+              <tr><td>추적</td><td>IBM · US11163860B2</td><td>딥러닝 모델 워터마킹(블랙박스 검증)</td><td class="num">66 / 1</td><td>회피 · 개량</td></tr>
+              <tr><td>추적</td><td>Apple · US11042611B2</td><td>ML 모델 디지털 워터마킹</td><td class="num">22 / 8</td><td>회피 · 라이선싱</td></tr>
+              <tr><td>추적(국내)</td><td>KAIST · KR10-1980864B1</td><td>워터마크 삽입·검출 장치(3D 메쉬)</td><td class="num">3 / 3</td><td>결합 · 국내 선점</td></tr>
+              <tr class="hl"><td>검증</td><td>Micron · US11914373B2</td><td>인공신경망 무결성 검증(해시 대조)</td><td class="num">0 / 6</td><td>선점 · 개량</td></tr>
+              <tr><td>검증</td><td>Thales · US11574245B2 / EP3673490B1</td><td>ML 의사결정 보안(어테스테이션)</td><td class="num">37 / 5</td><td>참조 · 우회</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="prose" style="margin:10px 0 0; padding-left:20px">
+          <li>선정: 여섯 기준(권리 범위·인용 영향력·국제 확산·출원인 중요도·Trade-off 해결·전략 정합)을 단계별 관문으로 적용 → 대표 8건 → 핵심 5건.</li>
+          <li>대조군: 전방 방어층 대표 특허는 최상위 피인용인데도 IBM 예방 특허는 <strong>소멸</strong>(연차료 불납), NEC 탐지 특허는 <strong>포기</strong>. 권리 유지 인센티브가 이미 이동했다는 신호다.</li>
+          <li>5건은 상충을 '해결'하지 않았다. 검증 연산을 실시간 추론 경로 밖으로 <strong>옮겼을</strong> 뿐이다. 남은 비용이 각자 다르다: 주입 흔적(IBM·Apple) · 화이트박스 전제(Micron) · 인프라 부담(Thales) · 도메인 한정(KAIST).</li>
+        </ul>
+        <p class="src">출처: 보고서 표 4-1b·4-1c (pp.56–58), 표 4-3 (p.72) · 발표자료 pp.19–21</p>
+      </div>
+
+      <div class="card prose">
+        <h3>법적 분석: 검증 결과의 증거력이 곧 집행력</h3>
+        <ul>
+          <li><strong>계약</strong> — OpenAI·Google·Anthropic 약관은 경쟁 모델 개발 목적의 출력 이용·추출을 금지한다. 네이버 CLOVA X 약관은 자동화 접근을 제한한다.</li>
+          <li><strong>국내 구제</strong> — 저작권·DB권은 불확실하다. 부정경쟁방지법상 <strong>성과도용행위</strong>가 가장 현실적인 경로로 분석됐다.</li>
+          <li><strong>무효 리스크</strong> — 미국 §101(추상적 아이디어)·§112(실시가능성). 통계량·임계값을 구체적으로 한정해 대응한다.</li>
+          <li><strong>결론</strong> — 어느 구제 경로든 <strong>기술적 입증이 선결 요건</strong>이다.</li>
+        </ul>
+        <p class="src">출처: 보고서 4-4 (pp.72–74) · 발표자료 p.23. 인용 판례·조문은 보고서 원문 각주 참조.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. IP 전략 · 결론 -->
+  <section class="dash-section" id="strategy" aria-labelledby="st-h">
+    <h2 id="st-h">IP 전략 · 결론</h2>
+    <div class="stack">
+      <div class="card prose">
+        <h3>핵심 기술군: 검증이 주도하고, 추적이 결합한다</h3>
+        <p>두 영역은 대등한 병렬이 아니라 <strong>위계</strong>다. 검증(Verification)이 "무엇을 어떤 기준으로 입증할지"를 정한다. 추적(Tracing)은 그 기준에 맞는 증거 신호(앵커)를 공급한다. 신호를 만드는 자리는 이미 붐비고, <strong>신호를 판정으로 바꾸는 자리</strong>는 비어 있다.</p>
+        <p><strong>선점 청구항 방향</strong>: 워터마크·트리거를 심지 않는 무-주입(Injection-Free) + 블랙박스 조건에서 출력 확률분포를 통계적으로 판정(p-value). 원본 파라미터는 영지식증명(ZKP) 커밋먼트로 노출 없이 대조한다. 핵심특허 5건의 독립항 필수 구성요소를 어느 것도 실시하지 않는 조합이다.</p>
+        <p class="src">출처: 보고서 3-8 (pp.50–51), 4-5 (pp.74–75)</p>
+      </div>
+
+      <div class="card">
+        <h3>R&amp;D 공백 체계 G1~G4 — Verification-led Evidence Chain</h3>
+        <div class="gaps">
+          <div class="gap"><div class="g">G1</div><div><b>검증 판정 코어 · 1순위</b><p>블랙박스 행동지문·유사도 판정, 통계적 유의성·임계값·오탐 보정, 대체 가설 배제, 판정 결과의 증거 패키지화.</p></div></div>
+          <div class="gap"><div class="g">G2</div><div><b>앵커 · 인터페이스 · 2순위</b><p>모델·버전·사용자·세션 귀속형 동적 앵커와 앵커→판정 전달 형식. 경쟁자가 자체 엔진을 만들어도 접합부에서 권리가 작동.</p></div></div>
+          <div class="gap"><div class="g">G3</div><div><b>증거 보전 · 3순위</b><p>로그·해시·타임스탬프 연결(Chain of Custody), 제3자 재현 절차. 출원과 표준 기고를 병행.</p></div></div>
+          <div class="gap"><div class="g sub">G4</div><div><b>보완 공백 · 병행</b><p>위험도 기반 출력정책 전환, 소프트 레이블 난독화. 단기 병행 출원이지만 전략의 중심은 아님.</p></div></div>
+        </div>
+        <p style="margin:12px 0 0; font-size:13.5px; color:var(--ink-soft); line-height:1.65">플랫폼은 판정(Verification Engine) · 증거 입력(Evidence Anchor Layer) · 신뢰(Evidence Provenance Layer)의 3계층이다. 5개 제안 특허군이 이를 다층 권리망으로 둘러싼다. 정상 세션은 고속 경로를 유지하고, 의심 세션에만 검증 강도를 높여 품질 상충을 줄인다.</p>
+        <p class="src">출처: 보고서 5-2·5-3 (pp.78–88) · 발표자료 pp.26–29</p>
+      </div>
+
+      <div class="phases">
+        <div class="card phase">
+          <div class="when">Phase 1 · 1~2년차 (2026~2027)</div>
+          <h3>원천 확보</h3>
+          <ul>
+            <li>코어 4군집 KR 우선출원 4~8건, 전건 12개월 내 PCT</li>
+            <li>관할 KR · US + EP</li>
+            <li>블랙박스 검증·통계 판정 PoC</li>
+            <li>ISO/IEC JTC 1/SC 42 미러위원회 참여</li>
+          </ul>
+        </div>
+        <div class="card phase">
+          <div class="when">Phase 2 · 3~5년차 (2028~2030)</div>
+          <h3>통합 실증 · 표준 착수</h3>
+          <ul>
+            <li>PCT 국내단계(US·EP) 진입, 인터페이스·주변특허 울타리</li>
+            <li>산업 AI 로그 기반 통합 실증</li>
+            <li>ISO/IEC 22144(출처 기록) 위에 '증류 검증 계층' 기고</li>
+          </ul>
+        </div>
+        <div class="card phase">
+          <div class="when">Phase 3 · 5~10년차 (2031~2035)</div>
+          <h3>통제점 자산화</h3>
+          <ul>
+            <li>표준 채택 후 필수성 분석, SEP 후보 선언</li>
+            <li>조건 충족 시 특허 풀 편입·라이선싱</li>
+            <li>대학→기업 브리지형 기술이전, 검증 서비스 상용화</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin:0; font-size:13.5px; color:var(--muted)">일정은 특허(PCT 12·30개월), 표준(NP→IS 3~5년), 규제(EU AI Act GPAI 집행 2026.8 · 기존 모델 기한 2027.8)라는 세 제도의 시계에 맞췄다. 게이트 조건 미달 시 중단이 아니라 재설계 후 재도전한다.</p>
+
+      <div class="card">
+        <h3>국가 IP 전략: 5대 실행 과제</h3>
+        <ol class="tasks">
+          <li><b>검증 핵심 청구항 즉시 선점 출원</b> — 무-주입 + 출력 확률분포 통계 판정 (단기 1~2년)</li>
+          <li><b>검증 주도형 추적 통합 입증 플랫폼 PoC</b> — G1~G3 특허군의 실증 기반 (중기 2~3년)</li>
+          <li><b>국제표준 기고와 SEP 풀 구축</b> — ISO/IEC SC 42·WIPO, 22144 위에 상위 계층 접속 (중장기)</li>
+          <li><b>에이전트 경유 간접증류 대응 표준화</b> — 성공률 84.3% 공격에 대한 사후 프로토콜 선도 (장기 4~5년)</li>
+          <li><b>정책·안보 채널 이원화</b> — 증거 패키지를 사법절차뿐 아니라 위협정보 공유·수출통제·안보심사에도 활용 (전 단계 병행)</li>
+        </ol>
+        <p class="keyline" style="margin-bottom:0">한국이 선점할 것은 또 하나의 방어 기술이 아니라 그 증거를 판정하는 기준이다. 표준화 대상은 워터마크 방식이 아니라 증거의 형식과 검증의 절차다.</p>
+        <p class="src">출처: 보고서 6-1~6-3 (pp.96–99) · 발표자료 pp.32–34</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 원자료 -->
+  <section class="dash-section" id="source" aria-labelledby="src-h">
+    <h2 id="src-h">원자료</h2>
+    <div class="card prose">
+      <p>이 페이지는 <strong>2026 캠퍼스 특허 유니버시아드</strong> 특허전략수립 부문(문항 A12)에 제출한 최종 보고서(99쪽)와 발표자료를 요약한 것이다. 원문 보고서와 발표자료는 공개하지 않는다.</p>
+      <p>모든 수치는 제출본 기준이다. 중국 제외 CAGR처럼 보고서와 발표자료의 표기가 서로 다른 지표는 이 요약에서 제외했다.</p>
+      <p style="margin-top:14px"><a class="btn btn-ghost" href="../../index.html#projects">← 프로젝트 목록으로</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../../js/theme.js"></script>
+</body>
+</html>
