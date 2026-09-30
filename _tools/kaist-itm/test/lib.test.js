@@ -79,3 +79,37 @@ test('groupByWeek: 주차 오름차순, 주 내 날짜순', () => {
   const w5 = g.find(w => w.week === 5);
   assert.equal(w5.events.length, 2);
 });
+
+const PJ = [
+  { title: 'A', category: 'study', courses: ['ITM60034'] },
+  { title: 'B', category: 'analysis', courses: ['ITM69000'] },
+  { title: 'C', category: 'research', courses: ['ITM89912', 'ITM69000'] },
+  { title: 'D', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드' }
+];
+const CATS = [
+  { id: 'research', label: '연구' }, { id: 'analysis', label: '분석' }, { id: 'study', label: '학습' }
+];
+
+test('filterProjects: 종류 AND 과목(하나라도)', () => {
+  const all = {
+    categories: { research: true, analysis: true, study: true },
+    courses: { ITM60034: true, ITM69000: true, ITM89912: true, _extra: true }
+  };
+  assert.deepEqual(L.filterProjects(PJ, all).map(p => p.title), ['A', 'B', 'C', 'D']);
+  assert.deepEqual(L.filterProjects(PJ, { categories: { research: true }, courses: all.courses }).map(p => p.title), ['C']);
+  assert.deepEqual(L.filterProjects(PJ, { categories: all.categories, courses: { ITM69000: true } }).map(p => p.title), ['B', 'C']);
+  assert.deepEqual(L.filterProjects(PJ, { categories: all.categories, courses: { _extra: true } }).map(p => p.title), ['D']);
+  assert.deepEqual(L.filterProjects(PJ, { categories: all.categories, courses: {} }), []);
+});
+
+test('usedCourseCodes: 등장 순서, 중복 제거, 과목 외는 마지막 _extra', () => {
+  assert.equal(L.EXTRA_KEY, '_extra');
+  assert.deepEqual(L.usedCourseCodes(PJ), ['ITM60034', 'ITM69000', 'ITM89912', '_extra']);
+  assert.deepEqual(L.usedCourseCodes(PJ.slice(0, 3)), ['ITM60034', 'ITM69000', 'ITM89912']);
+});
+
+test('groupByCategory: 정의 순서, 빈 종류 제외', () => {
+  const g = L.groupByCategory(PJ.slice(0, 2), CATS);
+  assert.deepEqual(g.map(x => x.category.id), ['analysis', 'study']);
+  assert.equal(g[0].items[0].title, 'B');
+});

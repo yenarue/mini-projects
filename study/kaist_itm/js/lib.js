@@ -82,10 +82,44 @@
       .map(function (w) { return { week: w, events: map[w] }; });
   }
 
+  var EXTRA_KEY = '_extra';
+
+  function projectKeys(p) {
+    return p.courses && p.courses.length ? p.courses : [EXTRA_KEY];
+  }
+
+  function filterProjects(projects, active) {
+    return projects.filter(function (p) {
+      return !!active.categories[p.category] &&
+        projectKeys(p).some(function (c) { return !!active.courses[c]; });
+    });
+  }
+
+  function usedCourseCodes(projects) {
+    var seen = {}, out = [], extra = false;
+    projects.forEach(function (p) {
+      if (!p.courses || !p.courses.length) { extra = true; return; }
+      p.courses.forEach(function (c) {
+        if (!seen[c]) { seen[c] = true; out.push(c); }
+      });
+    });
+    if (extra) out.push(EXTRA_KEY);
+    return out;
+  }
+
+  function groupByCategory(projects, categories) {
+    return categories
+      .map(function (c) {
+        return { category: c, items: projects.filter(function (p) { return p.category === c.id; }) };
+      })
+      .filter(function (g) { return g.items.length > 0; });
+  }
+
   return {
     DEADLINE_TYPES: DEADLINE_TYPES,
     parseDate: parseDate, daysBetween: daysBetween, weekOf: weekOf, ddayLabel: ddayLabel,
     upcomingDeadlines: upcomingDeadlines, resolveNotes: resolveNotes,
-    termProgress: termProgress, groupByWeek: groupByWeek
+    termProgress: termProgress, groupByWeek: groupByWeek,
+    EXTRA_KEY: EXTRA_KEY, filterProjects: filterProjects, usedCourseCodes: usedCourseCodes, groupByCategory: groupByCategory
   };
 });
