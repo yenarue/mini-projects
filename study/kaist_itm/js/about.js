@@ -40,23 +40,32 @@
   }
 
   var KIND = { career: '경력', education: '학력' };
+  function renderJourney() {
+    $('journey').innerHTML = P.journey.map(function (j, i) {
+      return '<li class="journey-step"><span class="journey-no">' + (i + 1) + '</span>' +
+        '<h3>' + esc(j.title) + '</h3><p>' + esc(j.desc) + '</p></li>';
+    }).join('');
+  }
   function renderCareer() {
     $('career-list').innerHTML = P.timeline.map(function (t) {
       return '<li class="ct-item ct-' + t.kind + '">' +
         '<span class="ct-period">' + esc(t.period) + '</span>' +
         '<div class="ct-body"><span class="ct-kind">' + KIND[t.kind] + '</span>' +
-          '<h3>' + esc(t.role) + '</h3><p class="ct-org">' + esc(t.org) + '</p>' +
+          '<h3>' + esc(t.role) + '</h3>' + (t.org ? '<p class="ct-org">' + esc(t.org) + '</p>' : '') +
           (t.highlights && t.highlights.length
             ? '<ul>' + t.highlights.map(function (h) { return '<li>' + esc(h) + '</li>'; }).join('') + '</ul>' : '') +
         '</div></li>';
     }).join('');
   }
 
-  var CRED = [['patents', '특허'], ['awards', '수상'], ['certifications', '자격'], ['publications', '논문 · 발표']];
+  var CRED = [['patents', '특허'], ['awards', '수상'], ['certifications', '자격'], ['publications', '논문']];
   function renderCredentials() {
     $('cred-grid').innerHTML = CRED.filter(function (c) { return P.credentials[c[0]].length; }).map(function (c) {
       return '<div class="card"><h3>' + c[1] + '</h3><ul>' +
-        P.credentials[c[0]].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>';
+        P.credentials[c[0]].map(function (x) {
+          return '<li><span class="cred-year">' + esc(x.year) + '</span><span>' + esc(x.title) +
+            (x.venue ? '<span class="cred-venue">' + esc(x.venue) + '</span>' : '') + '</span></li>';
+        }).join('') + '</ul></div>';
     }).join('');
   }
 
@@ -71,6 +80,7 @@
   }
 
   function renderWorkflow() {
+    $('workflow-intro').textContent = D.workflowIntro || '';
     $('workflow').innerHTML = D.workflow.map(function (w, i) {
       return (i ? '<span class="flow-arrow" aria-hidden="true">→</span>' : '') +
         '<div class="flow-step"><b>' + esc(w.step) + '</b>' + esc(w.desc) +
@@ -85,6 +95,7 @@
 
   renderHero();
   renderInterests();
+  renderJourney();
   renderCareer();
   renderCredentials();
   renderProjects();

@@ -92,15 +92,26 @@ test('프로필: About 페이지 데이터', () => {
   P.interests.forEach(i => assert.ok(i.title && i.desc, 'interest title/desc'));
   assert.ok(P.timeline.length >= 3, 'timeline');
   P.timeline.forEach(t => assert.ok(['career', 'education'].includes(t.kind), t.org));
-  ['patents', 'awards', 'certifications', 'publications']
-    .forEach(k => assert.ok(Array.isArray(P.credentials[k]), k));
+  ['patents', 'awards', 'certifications', 'publications'].forEach(k => {
+    assert.ok(Array.isArray(P.credentials[k]), k);
+    P.credentials[k].forEach(c => {
+      assert.ok(c.title, k + ' title');
+      assert.match(c.year, /^(\d{4}(\.\d{2})?)?$/, k + ' year: ' + c.title);
+    });
+  });
+  assert.ok(P.credentials.publications.every(c => c.venue), '논문은 학회(venue) 필요');
+  assert.ok(P.journey.length >= 4, 'journey 오버뷰');
+  P.journey.forEach(j => assert.ok(j.title && j.desc, 'journey title/desc'));
+  assert.ok(typeof ITM.workflowIntro === 'string' && ITM.workflowIntro.length > 0, 'workflowIntro');
+  assert.ok(!P.summary.some(s => s.includes('AI와 토론')), '워크플로 문장은 workflowIntro로 이동');
+  assert.ok(!JSON.stringify(P).includes('충남대'), '학사 대학교 이름 제외');
   if (P.photo) assert.ok(fs.existsSync(path.join(SITE, P.photo)), '사진 없음: ' + P.photo);
 });
 
 const PAGES = {
   'index.html': ['now-list', 'courses-body', 'timeline-filters', 'timeline-body',
     'project-cat-filters', 'project-course-filters', 'projects-grid', 'projects-count', 'about-card'],
-  'about.html': ['about-hero', 'interests-grid', 'career-list', 'cred-grid', 'itm-projects', 'workflow', 'contact-links']
+  'about.html': ['about-hero', 'interests-grid', 'journey', 'career-list', 'workflow-intro', 'cred-grid', 'itm-projects', 'workflow', 'contact-links']
 };
 for (const [page, ids] of Object.entries(PAGES)) {
   test(page + ': 로컬 src/href 존재, noindex, 컨테이너', () => {

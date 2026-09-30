@@ -14,13 +14,12 @@ window.ITM = {
     photo: '',
     // [초안] 최종 문장은 본인이 다듬는다 (Honor Code)
     summary: [
-      '코드로 제품을 만들던 엔지니어가, 창업과 대기업을 오가며 부딪힌 "기술을 어떻게 사업으로 만드나"라는 질문을 KAIST ITM에서 체계적으로 공부하고 있습니다.',
-      '수업마다 AI와 토론하며 개념을 정리하고, 그 결과를 이렇게 웹으로 쌓아 둡니다.'
+      '코드로 제품을 만들던 엔지니어가, 창업과 대기업을 오가며 부딪힌 "기술을 어떻게 사업으로 만드나"라는 질문을 KAIST ITM에서 체계적으로 공부하고 있습니다.'
     ],
     facts: [
-      { label: '현재', value: '삼성전자 Wallet개발그룹 Staff Software Engineer' },
-      { label: '학위', value: 'KAIST 기술경영전문대학원 I&TM 석사과정 (2026.03~)' },
-      { label: '전공', value: '충남대학교 컴퓨터공학 학사' },
+      { label: '현재', value: 'DX부문 MX사업부 DigitalWallet팀 Wallet개발그룹 Staff Software Engineer' },
+      { label: '학위', value: 'KAIST 기술경영전문대학원 I&TM 석사과정 1년차 (2026.03~)' },
+      { label: '전공', value: '컴퓨터공학 학사' },
       { label: '관심', value: '기술경영 · AI 규제 · 플랫폼 생태계' },
       { label: '연락', value: 'yenarue@gmail.com', url: 'mailto:yenarue@gmail.com' }
     ],
@@ -32,6 +31,14 @@ window.ITM = {
       { title: '디지털 신원·지갑 플랫폼 생태계', desc: '[샘플] 디지털 키 표준(CCC, Aliro)을 둘러싼 제조사·플랫폼·파트너의 협력과 경쟁 구조.' },
       { title: '소프트웨어 아키텍처와 조직', desc: '[샘플] 모듈화·플랫폼 전략이 제품 구조와 개발 조직을 함께 결정하는 방식.' },
       { title: 'AI 시대의 지식재산 전략', desc: '[샘플] AI 발명을 특허로 보호할지, 영업비밀로 둘지에 대한 전략적 선택.' }
+    ],
+    // ✏️ 경력·학력 오버뷰 — 한 방향 흐름 카드. 제목·설명은 본인이 직접 수정
+    journey: [
+      { title: '컴퓨터공학 출신 기술쟁이', desc: '보안·임베디드·AI 동아리와 경진대회로 기술의 기본기를 다짐' },
+      { title: '삼성페이 초기 멤버', desc: '선행개발팀에 합류해 MVP부터 출시·안정화까지 함께함' },
+      { title: '창업 (CTO)', desc: 'C-Lab 스핀오프 포메이커스를 공동창업해 제품·팀·사업을 한꺼번에 경험' },
+      { title: '삼성월렛 디지털 키 · 조직문화', desc: '디지털 키 개발, 그룹 Change Agent로 160명 조직문화를 리딩' },
+      { title: 'KAIST I&TM', desc: '기술을 사업으로 만드는 방법을 체계적으로 공부하는 중' }
     ],
     timeline: [
       { period: '2026.03 –', kind: 'education', role: 'I&TM 석사과정 (32기)', org: 'KAIST 기술경영전문대학원',
@@ -50,15 +57,32 @@ window.ITM = {
         highlights: ['삼성페이 선행개발 Common/KR 파트 (v1.2~3.9): 결제 흐름·네트워크·공통 DB 모듈', '무선사업부 전 프로젝트 소프트웨어 형상관리'] },
       { period: '2012.01 – 2014.01', kind: 'education', role: 'Software Member (22-1기)', org: '삼성소프트웨어멤버십',
         highlights: ['프로젝트 5건, SIG 4개 참여(보안 SIG 리더)'] },
-      { period: '2010.03 – 2014.02', kind: 'education', role: '컴퓨터공학 학사', org: '충남대학교', highlights: [] }
+      { period: '2010.03 – 2014.02', kind: 'education', role: '컴퓨터공학 학사', org: '', highlights: [] }
     ],
+    // ✏️ year가 빈 항목은 연도 확인 후 채운다 (형식 'YYYY' 또는 'YYYY.MM')
     credentials: {
-      patents: ['결제를 수행하는 전자 장치 및 방법', '테스트 서비스 제공 방법'],
-      awards: ['한국지능로봇경진대회 특허청장상', '창의작품경진대회 대상', '제9회 국제해킹방어대회(HDCon) 은상',
-               '2012 상반기 삼성소프트웨어멤버십 소프트웨어 프로젝트 1위', '제1회 예술데이터가 바꾸는 세상 우수상'],
-      certifications: ['Software Certification – Associate Architect (Best Practice)', 'Agile Coach Squared (AC2) Level 1·2',
-                       '정보처리기사', '리눅스마스터 2급', '데이터분석 준전문가 (ADsP)'],
-      publications: ['Kinect와 Unity3D를 이용한 체감형 3D 가상현실 재활치료 시스템']
+      patents: [
+        { title: '결제를 수행하는 전자 장치 및 방법', year: '' },
+        { title: '테스트 서비스 제공 방법', year: '' }
+      ],
+      awards: [
+        { title: '한국지능로봇경진대회 특허청장상', year: '2013' },
+        { title: '창의작품경진대회 대상', year: '2013' },
+        { title: '제9회 국제해킹방어대회(HDCon) 은상', year: '2013' },
+        { title: '삼성소프트웨어멤버십 소프트웨어 프로젝트 1위', year: '2012' },
+        { title: '제1회 예술데이터가 바꾸는 세상 우수상', year: '' }
+      ],
+      certifications: [
+        { title: 'Software Certification – Associate Architect (Best Practice)', year: '' },
+        { title: 'Agile Coach Squared (AC2) Level 1·2', year: '' },
+        { title: '정보처리기사', year: '' },
+        { title: '리눅스마스터 2급', year: '' },
+        { title: '데이터분석 준전문가 (ADsP)', year: '' }
+      ],
+      publications: [
+        // ✏️ 학회명 확인 (블로그 기록 "전자공학회 논문 출품 2013" 기준)
+        { title: 'Kinect와 Unity3D를 이용한 체감형 3D 가상현실 재활치료 시스템', year: '2013', venue: '대한전자공학회' }
+      ]
     },
     links: [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yena-kim-yenarue/' },
@@ -96,7 +120,7 @@ window.ITM = {
           notes: { status: 'live', url: 'notes/innovation_management_review/' }, links: [] },
         { code: 'ITM50002', name: '기업가정신', professor: '노수홍', schedule: '', color: '--prof',
           notes: { status: 'planned' }, links: [] },
-        { code: 'ITM89912', name: '생성형AI 논문', professor: '김하나', schedule: '', color: '--slide',
+        { code: 'ITM89912', name: '생성형 인공지능 활용 기술경영 연구', professor: '김하나', schedule: '', color: '--slide',
           notes: { status: 'private', label: '해외 저널 리뷰 중' }, links: [] }
       ]
     }
@@ -186,7 +210,7 @@ window.ITM = {
   ],
 
   projects: [
-    { title: '생성형 AI 연구 논문', desc: '생성형AI 논문 과목에서 작성한 연구 논문', category: 'research', courses: ['ITM89912'], status: 'private', label: '해외 저널 리뷰 중' },
+    { title: '생성형 AI 연구 논문', desc: '생성형 인공지능 활용 기술경영 연구 과목에서 작성한 연구 논문', category: 'research', courses: ['ITM89912'], status: 'private', label: '해외 저널 리뷰 중' },
     { title: 'AI 특허 발명', desc: '아이디어 발상부터 발명신고까지 실제 특허 1건을 진행', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
     { title: '웹 스크래핑 데이터 분석', desc: '공개 데이터를 수집하고 EDA로 패턴을 찾은 분석 페이지 (W03 과제2)', category: 'analysis', courses: ['ITM69000'], url: '', status: 'wip' },
     // ✏️ 과목 외 활동 — 제목·설명은 본인이 수정, 공개하면 status: 'live' + url
@@ -197,6 +221,9 @@ window.ITM = {
     { title: '혁신생태계론 퀴즈 셀프테스트', desc: '누적 범위 서술형 퀴즈 대비, 중요도 정렬', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/quiz.html', status: 'live' },
     { title: '이노베이션 경영 개념 정리', desc: '기말시험 대비 핵심 개념 요약', category: 'study', courses: ['ITM50001'], url: 'notes/innovation_management_review/', status: 'live' }
   ],
+
+  // 'KAIST ITM에서 이렇게 공부합니다' 섹션 설명
+  workflowIntro: '수업마다 AI와 토론하며 개념을 정리하고, 그 결과를 이렇게 웹으로 쌓아 둡니다.',
 
   workflow: [
     { step: '강의자료', desc: '주차별 PDF와 수업 녹취를 과목 폴더에 모은다' },
