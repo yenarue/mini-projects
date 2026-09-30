@@ -196,6 +196,15 @@
       table.heat td.hc { min-width: 36px; padding: 7px 4px; }
     }
 
+
+    .conclusion-lead { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: var(--radius); padding: 22px 24px; margin-bottom: 16px; }
+    .conclusion-lead .lead-label { display: inline-block; font-size: 12px; font-weight: 800; color: var(--brand); letter-spacing: .04em; margin-bottom: 6px; }
+    .conclusion-lead p { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: var(--ink); word-break: keep-all; }
+    .concl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .concl-no { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; align-items: center; justify-content: center; background: var(--brand); color: var(--surface); font-size: 12px; font-weight: 800; }
+    .concl h3 { margin: 10px 0 6px; font-size: 15.5px; line-height: 1.45; }
+    .concl p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; }
+    @media (max-width: 760px) { .conclusion-lead p { font-size: 17px; } .concl-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -209,6 +218,7 @@
     <a href="#analysis">분석</a>
     <a href="#findings">발견</a>
     <a href="#strategy">전략</a>
+    <a href="#conclusion">결론</a>
     <a href="#source">원자료</a>
   </nav>
   <div class="topbar-right">
@@ -610,19 +620,27 @@
     </div>
   </section>
 
-  <!-- 6. IP 전략 · 결론 -->
+  <!-- 6. IP 전략 -->
   <section class="dash-section" id="strategy" aria-labelledby="st-h">
-    <h2 id="st-h">IP 전략 · 결론</h2>
+    <h2 id="st-h">IP 전략 <small>분석과 발견을 어떤 권리로 바꿀 것인가</small></h2>
     <div class="stack">
+
+    <h3 class="sub-h"><span class="no">S1</span>핵심 기술군 <small>검증이 주도하고, 추적이 결합한다</small></h3>
       <div class="card prose">
-        <h3>핵심 기술군: 검증이 주도하고, 추적이 결합한다</h3>
         <p>두 영역은 대등한 병렬이 아니라 <strong>위계</strong>다. 검증(Verification)이 "무엇을 어떤 기준으로 입증할지"를 정한다. 추적(Tracing)은 그 기준에 맞는 증거 신호(앵커)를 공급한다. 신호를 만드는 자리는 이미 붐비고, <strong>신호를 판정으로 바꾸는 자리</strong>는 비어 있다.</p>
-        <p><strong>선점 청구항 방향</strong>: 워터마크·트리거를 심지 않는 무-주입(Injection-Free) + 블랙박스 조건에서 출력 확률분포를 통계적으로 판정(p-value). 원본 파라미터는 영지식증명(ZKP) 커밋먼트로 노출 없이 대조한다. 핵심특허 5건의 독립항 필수 구성요소를 어느 것도 실시하지 않는 조합이다.</p>
-        <p class="src">출처: 보고서 3-8 (pp.50–51), 4-5 (pp.74–75)</p>
+        <p class="src">출처: 보고서 3-8 (pp.50–51)</p>
       </div>
 
+    <h3 class="sub-h"><span class="no">S2</span>선점 청구항 방향 <small>핵심특허 5건을 피해 가는 조합</small></h3>
+      <div class="card prose">
+        <p>워터마크·트리거를 심지 않는 <strong>무-주입(Injection-Free)</strong> + 블랙박스 조건에서 출력 확률분포를 <strong>통계적으로 판정(p-value)</strong>. 원본 파라미터는 <strong>영지식증명(ZKP)</strong> 커밋먼트로 노출 없이 대조한다. 핵심특허 5건의 독립항 필수 구성요소를 어느 것도 실시하지 않는 조합이다.</p>
+        <p class="src">출처: 보고서 4-5 (pp.74–75)</p>
+      </div>
+
+    <h3 class="sub-h"><span class="no">S3</span>Evidence Chain 계층 구조 <small>판정 엔진 · 앵커 · 출처 보전</small></h3>
       <figure class="fig wide"><div class="fig-frame"><a href="img/evidence-chain-p83.webp" target="_blank" rel="noopener"><img src="img/evidence-chain-p83.webp" alt="Verification-led Evidence Chain 3계층 구조도: Verification Engine, Evidence Anchor Layer, Evidence Provenance Layer와 보완 모듈" loading="lazy" decoding="async"></a></div><figcaption>그림 5-3b. Verification-led Evidence Chain 계층 구조도 — 보고서 p.83 · 이미지를 누르면 원본 크기로 열림</figcaption></figure>
 
+    <h3 class="sub-h"><span class="no">S4</span>다층 특허 권리망 <small>R&amp;D 공백 G1~G4를 방패형으로 겹쳐 쌓기</small></h3>
       <div class="fig-grid">
         <figure class="fig"><div class="fig-frame"><a href="img/ip-shield-p87.webp" target="_blank" rel="noopener"><img src="img/ip-shield-p87.webp" alt="방패 모양의 다층 특허 권리망: 바깥부터 표준·신뢰 계층(Evidence Provenance), 우회설계 차단 인터페이스 계층, 원천·판정 기준 코어 계층(Verification Core), 입력·방어형 앵커 계층(Evidence Anchor), 옆에 선택적 보완 모듈(Mitigation)" loading="lazy" decoding="async"></a></div><figcaption>그림 5-3c. Evidence Chain 다층 특허 권리망 — 보고서 p.87 · 이미지를 누르면 원본 크기로 열림</figcaption></figure>
         <div class="card">
@@ -638,6 +656,7 @@
         </div>
       </div>
 
+    <h3 class="sub-h"><span class="no">S5</span>단계별 로드맵 <small>2026–2035, 특허·표준·규제의 시계에 맞춰</small></h3>
       <div class="phases">
         <div class="card phase">
           <div class="when">Phase 1 · 1~2년차 (2026~2027)</div>
@@ -672,8 +691,8 @@
 
       <figure class="fig wide"><div class="fig-frame"><a href="img/roadmap-p92.webp" target="_blank" rel="noopener"><img src="img/roadmap-p92.webp" alt="2026–2035 AI 모델 증류·복제 대응 임무중심 IP전략 기술혁신 로드맵: Phase 1~3별 특허·실증·표준 활동, 5개 특허군 권리화 단계, 국내 주체별 역할" loading="lazy" decoding="async"></a></div><figcaption>그림 5-4. AI 모델 증류·복제 대응 임무중심 IP전략 기술혁신 로드맵 (2026–2035) — 보고서 p.92 · 이미지를 누르면 원본 크기로 열림</figcaption></figure>
 
+    <h3 class="sub-h"><span class="no">S6</span>국가 IP 전략 <small>5대 실행 과제</small></h3>
       <div class="card">
-        <h3>국가 IP 전략: 5대 실행 과제</h3>
         <ol class="tasks">
           <li><b>검증 핵심 청구항 즉시 선점 출원</b> — 무-주입 + 출력 확률분포 통계 판정 (단기 1~2년)</li>
           <li><b>검증 주도형 추적 통합 입증 플랫폼 PoC</b> — G1~G3 특허군의 실증 기반 (중기 2~3년)</li>
@@ -681,8 +700,38 @@
           <li><b>에이전트 경유 간접증류 대응 표준화</b> — 성공률 84.3% 공격에 대한 사후 프로토콜 선도 (장기 4~5년)</li>
           <li><b>정책·안보 채널 이원화</b> — 증거 패키지를 사법절차뿐 아니라 위협정보 공유·수출통제·안보심사에도 활용 (전 단계 병행)</li>
         </ol>
-        <p class="keyline" style="margin-bottom:0">한국이 선점할 것은 또 하나의 방어 기술이 아니라 그 증거를 판정하는 기준이다. 표준화 대상은 워터마크 방식이 아니라 증거의 형식과 검증의 절차다.</p>
         <p class="src">출처: 보고서 6-1~6-3 (pp.96–99) · 발표자료 pp.32–34</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 결론 -->
+  <section class="dash-section" id="conclusion" aria-labelledby="cc-h">
+    <h2 id="cc-h">결론</h2>
+    <div class="conclusion-lead">
+      <span class="lead-label">한 줄 요약</span>
+      <p>한국이 선점할 것은 또 하나의 방어 기술이 아니라, 그 증거를 <strong>판정하는 기준</strong>이다.</p>
+    </div>
+    <div class="concl-grid">
+      <div class="card concl">
+        <span class="concl-no">1</span>
+        <h3>경쟁의 무게중심이 '막기'에서 '입증'으로</h3>
+        <p>중국을 빼면 1위 영역이 탐지(30.2%)에서 추적(53.1%)으로, 층위로는 전방 방어에서 사후 입증으로 뒤집힌다. 핵심특허 5건은 모두 유효하고, 전방 방어 대표 특허는 소멸·포기됐다.</p>
+      </div>
+      <div class="card concl">
+        <span class="concl-no">2</span>
+        <h3>비어 있는 자리는 '판정'</h3>
+        <p>검증 영역은 45건(0.8%)으로 가장 작지만 등록률 62%·청구항 11.0으로 질은 최상위다. 한국의 검증 출원은 0건이다. 신호를 만드는 자리는 붐비고, 신호를 판정으로 바꾸는 자리는 비어 있다.</p>
+      </div>
+      <div class="card concl">
+        <span class="concl-no">3</span>
+        <h3>그래서, 검증 주도의 다층 권리망</h3>
+        <p>무-주입·통계 판정·ZKP 대조로 선점 청구항을 세우고(S2), G1~G4 공백을 방패형 권리망으로 겹쳐 쌓으며(S4), 특허·표준·규제의 시계에 맞춰 2035년까지 통제점을 자산화한다(S5).</p>
+      </div>
+      <div class="card concl">
+        <span class="concl-no">4</span>
+        <h3>표준화 대상은 방식이 아니라 형식과 절차</h3>
+        <p>표준화할 것은 워터마크 방식이 아니라 <strong>증거의 형식과 검증의 절차</strong>다. 증거 패키지는 사법절차뿐 아니라 위협정보 공유·수출통제·안보심사에도 쓰인다.</p>
       </div>
     </div>
   </section>
