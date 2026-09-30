@@ -1,25 +1,13 @@
-/* KAIST ITM 대시보드 — data.js + lib.js 로 각 섹션을 그린다. */
+/* KAIST ITM 대시보드 메인 — data.js + lib.js + ui.js 로 각 섹션을 그린다. */
 (function () {
   'use strict';
-  var D = window.ITM, L = window.ITMLib;
-  if (!D || !L) return;
+  var D = window.ITM, L = window.ITMLib, U = window.ITMUI;
+  if (!D || !L || !U) return;
+  var esc = U.esc, dot = U.dot, courseName = U.courseName;
 
   var today = new Date();
   var current = D.terms.filter(function (t) { return t.current; })[0];
-  var courseByCode = {};
-  D.terms.forEach(function (t) { t.courses.forEach(function (c) { courseByCode[c.code] = c; }); });
-
-  function esc(s) {
-    return String(s == null ? '' : s).replace(/[&<>"']/g, function (ch) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
-    });
-  }
   function $(id) { return document.getElementById(id); }
-  function dot(code) {
-    var c = courseByCode[code];
-    return '<span class="course-dot" style="background:var(' + (c ? c.color : '--muted') + ')" aria-hidden="true"></span>';
-  }
-  function courseName(code) { var c = courseByCode[code]; return c ? c.name : code; }
   function md(dateStr) { var d = L.parseDate(dateStr); return (d.getMonth() + 1) + '/' + d.getDate(); }
   var TYPE_LABEL = { presentation: '발표', assignment: '과제', exam: '시험', holiday: '휴강', class: '수업' };
   var DOW = ['일', '월', '화', '수', '목', '금', '토'];
@@ -72,29 +60,17 @@
   }
 
   /* ---------- 타임라인 ---------- */
-  var active = {};
-  current.courses.forEach(function (c) { active[c.code] = true; });
-
-  function renderFilters() {
-    $('timeline-filters').innerHTML = current.courses.map(function (c) {
-      return '<button type="button" class="chip" data-code="' + esc(c.code) + '" aria-pressed="true">' +
-        dot(c.code) + esc(c.name) + '</button>';
-    }).join('');
-    $('timeline-filters').addEventListener('click', function (ev) {
-      var b = ev.target.closest('.chip');
-      if (!b) return;
-      var code = b.getAttribute('data-code');
-      active[code] = !active[code];
-      b.setAttribute('aria-pressed', String(active[code]));
-      applyFilter();
-    });
-  }
-  function applyFilter() {
+  var tlActive = {};
+  current.courses.forEach(function (c) { tlActive[c.code] = true; });
+  function applyTimelineFilter() {
     document.querySelectorAll('#timeline-body .tl-ev').forEach(function (el) {
-      el.hidden = !active[el.getAttribute('data-code')];
+      el.hidden = !tlActive[el.getAttribute('data-code')];
     });
   }
   function renderTimeline() {
+    U.chipRow($('timeline-filters'), current.courses.map(function (c) {
+      return { key: c.code, label: c.name, code: c.code };
+    }), tlActive, applyTimelineFilter);
     var nowWeek = L.weekOf(current.start, today);
     var start = L.parseDate(current.start);
     $('timeline-body').innerHTML = L.groupByWeek(D.events, current.start).map(function (g) {
@@ -114,53 +90,47 @@
     }).join('');
   }
 
-  /* ---------- 결과물 ---------- */
-  function renderProjects() {
-    $('projects-grid').innerHTML = D.projects.map(function (p) {
-      var action = p.status === 'live'
-        ? '<a class="btn btn-live" href="' + esc(p.url) + '">열어 보기 →</a>'
-        : '<span class="badge-wip">준비 중</span>';
+  /* ---------- 프로젝트 ---------- */
+  var catActive = {}, pcActive = {}, CAT_LABEL = {};
+  D.projectCategories.forEach(function (c) { catActive[c.id] = true; CAT_LABEL[c.id] = c.label; });
+  var projCodes = L.usedCourseCodes(D.projects);
+  projCodes.forEach(function (c) { pcActive[c] = true; });
+
+  function renderProjectList() {
+    var list = L.filterProjects(D.projects, { categories: catActive, courses: pcActive });
+    $('projects-count').textContent = list.length + ' / ' + D.projects.length + '개';
+    $('projects-grid').innerHTML = list.length ? list.map(function (p) {
       return '<article class="card project-card">' +
-        '<span class="course-code">' + dot(p.course) + ' ' + esc(courseName(p.course)) + '</span>' +
+        '<span class="project-cat">' + esc(CAT_LABEL[p.category]) + '</span>' +
         '<h3>' + esc(p.title) + '</h3><p>' + esc(p.desc) + '</p>' +
-        '<div class="course-actions">' + action + '</div></article>';
-    }).join('');
+        '<span class="project-courses">' + U.projectCourses(p) + '</span>' +
+        '<div class="course-actions">' + U.statusControl(p) + '</div></article>';
+    }).join('') : '<p class="empty">선택한 조건에 맞는 프로젝트가 없습니다.</p>';
+  }
+  function renderProjects() {
+    U.chipRow($('project-cat-filters'), D.projectCategories.map(function (c) {
+      return { key: c.id, label: c.label };
+    }), catActive, renderProjectList);
+    U.chipRow($('project-course-filters'), projCodes.map(function (code) {
+      return code === L.EXTRA_KEY ? { key: code, label: U.EXTRA_LABEL } : { key: code, label: courseName(code), code: code };
+    }), pcActive, renderProjectList);
+    renderProjectList();
   }
 
-  /* ---------- About ---------- */
-  function renderAbout() {
+  /* ---------- About 요약 카드 ---------- */
+  function renderAboutCard() {
     var P = D.profile;
-    var career = P.career.map(function (c) {
-      return '<li><span class="period">' + esc(c.period) + '</span><span><strong>' + esc(c.role) + ' · ' +
-        esc(c.org) + '</strong>' + esc(c.desc) + '</span></li>';
-    }).join('');
-    var flow = D.workflow.map(function (w, i) {
-      return (i ? '<span class="flow-arrow" aria-hidden="true">→</span>' : '') +
-        '<div class="flow-step"><b>' + esc(w.step) + '</b>' + esc(w.desc) +
-        (w.evidence ? '<br><a href="' + esc(w.evidence.url) + '">' + esc(w.evidence.label) + ' →</a>' : '') + '</div>';
-    }).join('');
-    var links = P.links.map(function (l) {
-      return '<a class="btn btn-ghost" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' ↗</a>';
-    }).join('');
-    $('about-body').innerHTML =
-      '<div class="about-grid">' +
-        '<div class="card about-lede">' +
-          '<p class="eyebrow">' + esc(P.cohort) + '</p>' +
-          '<h3 style="margin:0 0 4px">' + esc(P.name) + ' <small style="color:var(--muted);font-weight:500">' + esc(P.nameEn) + ' · ' + esc(P.handle) + '</small></h3>' +
-          '<p style="color:var(--muted);font-size:14px">' + esc(P.headline) + '</p>' +
-          P.summary.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join('') +
-          '<div class="about-links">' + links + '</div>' +
-        '</div>' +
-        '<div class="card"><ul class="career">' + career + '</ul></div>' +
-      '</div>' +
-      '<div class="card" style="margin-top:14px"><h3 style="margin:0 0 4px;font-size:16px">공부하는 방법</h3>' +
-        '<div class="flow">' + flow + '</div></div>';
+    $('about-card').innerHTML = U.avatar(P, 88) +
+      '<div><p class="eyebrow">' + esc(P.cohort) + '</p>' +
+      '<h3>' + esc(P.name) + ' <small>' + esc(P.nameEn) + '</small></h3>' +
+      '<p class="about-card-tagline">' + esc(P.tagline) + '</p>' +
+      '<p>' + esc(P.summary[0]) + '</p>' +
+      '<a class="btn btn-live" href="about.html">About 더 보기 →</a></div>';
   }
 
   renderNow();
   renderCourses();
-  renderFilters();
   renderTimeline();
   renderProjects();
-  renderAbout();
+  renderAboutCard();
 })();

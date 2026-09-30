@@ -97,15 +97,23 @@ test('프로필: About 페이지 데이터', () => {
   if (P.photo) assert.ok(fs.existsSync(path.join(SITE, P.photo)), '사진 없음: ' + P.photo);
 });
 
-test('index.html: 로컬 src/href 모두 존재, noindex, 섹션 컨테이너', () => {
-  const html = fs.readFileSync(path.join(SITE, 'index.html'), 'utf8');
-  assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
-  ['now-list', 'courses-body', 'timeline-filters', 'timeline-body', 'projects-grid', 'about-body']
-    .forEach(id => assert.ok(html.includes('id="' + id + '"'), id));
-  const refs = [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m => m[1])
-    .filter(u => !/^(https?:|mailto:)/.test(u));
-  refs.forEach(u => {
-    const t = path.join(SITE, u.endsWith('/') ? u + 'index.html' : u);
-    assert.ok(fs.existsSync(t), '없음: ' + u);
+const PAGES = {
+  'index.html': ['now-list', 'courses-body', 'timeline-filters', 'timeline-body',
+    'project-cat-filters', 'project-course-filters', 'projects-grid', 'projects-count', 'about-card'],
+  'about.html': ['about-hero', 'interests-grid', 'career-list', 'cred-grid', 'itm-projects', 'workflow', 'contact-links']
+};
+for (const [page, ids] of Object.entries(PAGES)) {
+  test(page + ': 로컬 src/href 존재, noindex, 컨테이너', () => {
+    const file = path.join(SITE, page);
+    assert.ok(fs.existsSync(file), page + ' 없음');
+    const html = fs.readFileSync(file, 'utf8');
+    assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
+    ids.forEach(id => assert.ok(html.includes('id="' + id + '"'), page + ' #' + id));
+    [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m => m[1])
+      .filter(u => !/^(https?:|mailto:)/.test(u))
+      .forEach(u => {
+        const t = path.join(SITE, u.endsWith('/') ? u + 'index.html' : u);
+        assert.ok(fs.existsSync(t), page + ' → 없음: ' + u);
+      });
   });
-});
+}

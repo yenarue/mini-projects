@@ -299,12 +299,6 @@ a:hover { color: var(--brand-dark); }
 .badge-wip { font-size: 12px; font-weight: 600; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius-pill); padding: 3px 9px; align-self: flex-start; }
 
 /* About */
-.about-grid { display: grid; gap: 18px; grid-template-columns: 1.1fr 1fr; }
-.about-lede p { margin: 0 0 10px; }
-.career { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-.career li { display: grid; grid-template-columns: 130px 1fr; gap: 10px; font-size: 14px; }
-.career .period { color: var(--muted); font-size: 12.5px; }
-.career strong { display: block; }
 .flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; margin-top: 8px; }
 .flow-step { flex: 1 1 150px; background: var(--surface-2); border-radius: var(--radius-sm); padding: 12px; font-size: 13px; }
 .flow-step b { display: block; font-size: 14px; margin-bottom: 4px; color: var(--ink); }
@@ -325,8 +319,81 @@ a:hover { color: var(--brand-dark); }
   .topbar-nav a { padding: 6px 7px; font-size: 13px; }
   .dash-main { padding: 24px 16px 32px; }
   .hero h1 { font-size: 24px; }
-  .about-grid { grid-template-columns: 1fr; }
   .tl-week { grid-template-columns: 1fr; gap: 4px; }
-  .career li { grid-template-columns: 1fr; gap: 2px; }
   .flow-arrow { display: none; }
+}
+
+/* ============================================================
+   v2 — 프로젝트 필터 · 아바타 · About 카드
+   ============================================================ */
+.filter-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.filter-row .filters { margin-bottom: 0; }
+.filter-label { font-size: 12.5px; font-weight: 700; color: var(--muted); min-width: 30px; }
+#projects .grid { margin-top: 14px; }
+.project-cat { font-size: 11.5px; font-weight: 800; color: var(--brand); letter-spacing: .03em; }
+.project-courses { font-size: 12.5px; color: var(--muted); }
+.activity-tag { font-size: 12px; font-weight: 600; color: var(--note); background: var(--note-soft); padding: 1px 8px; border-radius: var(--radius-pill); }
+.interest-empty { color: var(--muted); font-size: 14px; }
+.empty { color: var(--muted); font-size: 14px; }
+
+.avatar { border-radius: 50%; object-fit: cover; flex: none; border: 1px solid var(--line); }
+.avatar-fallback {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--brand-soft); color: var(--brand); font-weight: 800;
+}
+.about-card { display: flex; gap: 22px; align-items: center; }
+.about-card h3 { margin: 0; font-size: 19px; }
+.about-card h3 small { font-size: 13px; font-weight: 500; color: var(--muted); }
+.about-card p { margin: 2px 0 10px; font-size: 14px; color: var(--ink-soft); }
+.about-card .about-card-tagline { color: var(--brand); font-weight: 600; margin-bottom: 4px; }
+
+/* ============================================================
+   v2 — About 페이지
+   ============================================================ */
+.about-hero { display: flex; gap: 32px; align-items: flex-start; }
+.about-hero h1 { font-size: 30px; line-height: 1.3; margin: 0 0 6px; }
+.about-hero h1 small { font-size: 15px; font-weight: 500; color: var(--muted); }
+.tagline { font-size: 18px; font-weight: 700; color: var(--brand); margin: 0 0 12px; line-height: 1.5; }
+.about-hero-text p { margin: 0 0 8px; color: var(--ink-soft); }
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 24px; margin: 16px 0 0; }
+.fact { display: flex; gap: 12px; font-size: 14px; }
+.fact dt { flex: none; width: 36px; color: var(--muted); font-weight: 700; }
+.fact dd { margin: 0; }
+
+.interest-card { display: flex; flex-direction: column; gap: 6px; }
+.interest-no { font-size: 12px; font-weight: 800; color: var(--brand); }
+.interest-card h3 { margin: 0; font-size: 16px; line-height: 1.45; }
+.interest-card p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+
+.career-list { list-style: none; margin: 0; padding: 0 0 0 20px; border-left: 2px solid var(--line); display: flex; flex-direction: column; gap: 22px; }
+.ct-item { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 16px; }
+.ct-item::before {
+  content: ''; position: absolute; left: -28px; top: 7px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--surface); border: 2px solid var(--brand);
+}
+.ct-education::before { border-color: var(--prof); }
+.ct-period { font-size: 13px; color: var(--muted); padding-top: 2px; }
+.ct-kind { font-size: 11px; font-weight: 800; color: var(--muted); letter-spacing: .03em; }
+.ct-body h3 { margin: 0; font-size: 16px; line-height: 1.45; }
+.ct-org { margin: 0 0 6px; font-size: 14px; color: var(--ink-soft); }
+.ct-body ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-soft); }
+
+.cred-grid .card h3 { margin: 0 0 8px; font-size: 15px; }
+.cred-grid ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-soft); }
+
+.proj-group { margin-bottom: 20px; }
+.proj-group h3 { font-size: 16px; margin: 0 0 8px; }
+.proj-group h3 small { font-weight: 500; color: var(--muted); font-size: 12.5px; margin-left: 6px; }
+.proj-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.proj-rows li {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+}
+.proj-rows strong { display: block; font-size: 14.5px; }
+
+@media (max-width: 760px) {
+  .about-hero, .about-card { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .about-hero h1 { font-size: 24px; }
+  .ct-item { grid-template-columns: 1fr; gap: 2px; }
+  .proj-rows li { flex-direction: column; align-items: flex-start; }
 }
