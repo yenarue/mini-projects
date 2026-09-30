@@ -36,7 +36,7 @@ window.ITM = {
     journey: [
       { title: '컴퓨터공학 출신 기술쟁이', desc: '보안·임베디드·AI 동아리와 경진대회로 기술의 기본기를 다짐' },
       { title: '삼성페이 초기 멤버', desc: '선행개발팀에 합류해 MVP부터 출시·안정화까지 함께함' },
-      { title: '창업 (CTO)', desc: 'C-Lab 스핀오프 포메이커스를 공동창업해 제품·팀·사업을 한꺼번에 경험' },
+      { title: '창업(Co-Founder,CTO)', desc: 'C-Lab 스핀오프 포메이커스를 공동창업해 제품·팀·사업을 한꺼번에 경험' },
       { title: '삼성월렛 디지털 키 · 조직문화', desc: '디지털 키 개발, 그룹 Change Agent로 160명 조직문화를 리딩' },
       { title: 'KAIST I&TM', desc: '기술을 사업으로 만드는 방법을 체계적으로 공부하는 중' }
     ],
@@ -101,7 +101,7 @@ window.ITM = {
           links: [{ label: '강의 사이트', url: 'https://byoungpil-kim.github.io/ai-law-lectures/itm690-2026-fall/' }] },
         { code: 'ITM60034', name: '혁신생태계론', professor: '임홍탁', schedule: '토 13:00–16:00', color: '--prof',
           notes: { status: 'live', url: 'notes/innovation_ecosystem/',
-            extraLinks: [{ label: '개념 지도', url: 'notes/innovation_ecosystem/map.html' }, { label: '퀴즈', url: 'notes/innovation_ecosystem/quiz.html' }] }, links: [] },
+            extraLinks: [{ label: '🗺️ 개념 지도', url: 'notes/innovation_ecosystem/map.html' }, { label: '🏷️ 퀴즈', url: 'notes/innovation_ecosystem/quiz.html' }] }, links: [] },
         { code: 'ITM60062', name: '아키텍쳐 혁신과 모노즈쿠리', professor: '박정규', schedule: '토 16:00–19:00', color: '--slide',
           notes: { status: 'planned' }, links: [] },
         { code: 'ITM50023', name: '인공지능 특허전략', professor: '윤태성', schedule: '토', color: '--note',
