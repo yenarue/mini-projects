@@ -4,33 +4,36 @@
 window.ITM = {
   profile: {
     name: '김예나',
-    nameEn: 'Yena Kim',
-    handle: 'Yenarue',
+    nameEn: 'Yena Kim (Yenarue)',
+    handle: 'Generalist Software Engineer',
     cohort: 'KAIST 기술경영전문대학원 ITM 32기',
     headline: 'Generalist Software Engineer',
     // ✏️ 한 줄 소개 — 본인이 직접 수정 (현재는 v1 About의 한 줄 소개)
-    tagline: 'Generalist Software Engineer',
+    tagline: '기술을 만드는 사람에서, 기술이 가치를 만드는 방식을 탐구하는 사람으로',
     // ✏️ 프로필 사진 — 파일을 study/kaist_itm/assets/ 에 넣고 'assets/profile.jpg' 처럼 지정. 비우면 이니셜 아바타
-    photo: '',
+    photo: 'assets/profile_avatar.png',
     // [초안] 최종 문장은 본인이 다듬는다 (Honor Code)
     summary: [
-      '코드로 제품을 만들던 엔지니어가, 창업과 대기업을 오가며 부딪힌 "기술을 어떻게 사업으로 만드나"라는 질문을 KAIST ITM에서 체계적으로 공부하고 있습니다.'
+      '디지털 세상에서 제품을 만들던 S/W 엔지니어가, 현실 세상에서 창업과 스타트업 · 대기업을 오가며 다양한 현실의 문제들을 경험해왔습니다. 그 과정에서 생긴 "기술을 어떻게 사람들의 삶에 연결하고, 실제 비즈니스 가치로 만들 것인가"라는 질문을 KAIST ITM에서 체계적으로 탐구하고 있습니다.'
     ],
     facts: [
-      { label: '현재', value: 'DX부문 MX사업부 DigitalWallet팀 Wallet개발그룹 Staff Software Engineer' },
+      { label: '현재', value: '삼성전자 DX부문 MX사업부 DigitalWallet팀 Wallet개발그룹 · Staff Software Engineer' },
       { label: '학위', value: 'KAIST 기술경영전문대학원 I&TM 석사과정 1년차 (2026.03~)' },
-      { label: '전공', value: '컴퓨터공학 학사' },
-      { label: '관심', value: '기술경영 · AI 규제 · 플랫폼 생태계' },
+      { label: '학사 전공', value: '컴퓨터공학 학사' },
+      { label: '관심', value: 'Human-Centered Technology · AI & Organizational Transformation · Learning & Talent Development' },
       { label: '연락', value: 'yenarue@gmail.com', url: 'mailto:yenarue@gmail.com' }
     ],
     // ✏️ 관심 연구 주제 — 아래 4개는 느낌을 보기 위한 [샘플]. 본인이 직접 고쳐 쓴다.
     // 형식: { title: '주제', desc: '한두 문장 설명' }
-    // 배열을 비우면 About 페이지에 "준비 중" 안내가 나온다.
+    // 배열을 비우면 About 페이지에 "준비 중" 안내가 나온다
+    // ① 기술이 사람의 삶을 어떻게 더 좋게 만드는가 → 사람
+    // ② 기술이 조직의 일하는 방식을 어떻게 바꾸는가 → 조직
+    // ③ 사람과 조직이 어떻게 배우고 성장하는가 → 성장.
     interests: [
-      { title: 'AI 규제와 책임 있는 제품 설계', desc: '[샘플] EU AI Act·인공지능 기본법 같은 규제가 제품 기획과 개발 프로세스를 어떻게 바꾸는가.' },
-      { title: '디지털 신원·지갑 플랫폼 생태계', desc: '[샘플] 디지털 키 표준(CCC, Aliro)을 둘러싼 제조사·플랫폼·파트너의 협력과 경쟁 구조.' },
-      { title: '소프트웨어 아키텍처와 조직', desc: '[샘플] 모듈화·플랫폼 전략이 제품 구조와 개발 조직을 함께 결정하는 방식.' },
-      { title: 'AI 시대의 지식재산 전략', desc: '[샘플] AI 발명을 특허로 보호할지, 영업비밀로 둘지에 대한 전략적 선택.' }
+      { title: 'Digital Life & Human-Centered Technology', desc: '기술이 실제 사람들의 일상과 삶에 어떤 변화를 일으키고, 어떻게 실질적 가치를 만들어내는가' },
+      { title: 'AI & Digital Transformation (AX/DX)', desc: '기업이 디지털·AI 기술을 단순히 도입하는 것을 넘어 실제 업무와 조직에 정착시키는 Process Innovation · AI Adoptin & Value Realization' },
+      { title: 'Organizational Innovation & Change', desc: '새로운 기술과 변화가 조직에 어떤 변화를 일으키고, 어떻게 정착하는가. 기술뿐 아니라 조직문화와 일하는 방식의 변화를 함께 만드는 방법' },
+      { title: 'Learning, Coaching & Talent Development', desc: '사람과 조직이 어떻게 더 잘 배우고 성장할 수 있는가. 기술과 데이터, 코칭을 활용해 개인의 성장을 조직의 역량으로 연결하고 지속적인 성장을 촉진 및 설계하는 방법' }
     ],
     // ✏️ 경력·학력 오버뷰 — 한 방향 흐름 카드. 제목·설명은 본인이 직접 수정
     journey: [
@@ -45,12 +48,13 @@ window.ITM = {
         highlights: ['혁신생태계론, 아키텍처 혁신, AI 특허전략, AI 경영과 법 수강 중'] },
       { period: '2021.08 –', kind: 'career', role: 'Staff Software Engineer', org: '삼성전자 Wallet개발그룹',
         highlights: ['Samsung Wallet 디지털 키 클라이언트 개발 (차량 CCC · 도어락 Aliro 표준)',
-                     '2025 그룹 Change Agent: 구미·수원 약 160명 대상 조직문화 활동 리딩 ("칭찬의 신"·"번개의 신" 기획)'] },
+                     '2025 그룹 Change Agent: 구미·수원 약 160명 대상 조직문화 활동 리딩 ("칭찬의 신"·"번개의 신" 기획)',
+                     '2026 그룹 AX 프로젝트 진행중: LLM Wiki 기반의 팀/그룹/개인 지식 관리 및 업무 포털 서비스 - 기획 및 개발 리딩'] },
       { period: '2020.12 – 2021.07', kind: 'career', role: 'Consultant', org: 'Freelance',
         highlights: ['스타트업 비즈니스 전략·프로덕트 기획·MVP 개발 자문 (디지털 전환)'] },
       { period: '2018.07 – 2021.02', kind: 'career', role: 'Co-Founder & CTO', org: '포메이커스 (삼성전자 C-Lab 스핀오프)',
         highlights: ['비대면 게임 테스트 플랫폼 "포메스 & 포메이커스" 기획·개발·로드맵',
-                     '정성 피드백 자연어 처리·데이터 분석, 개발팀 채용·온보딩·문화 구축'] },
+                     '모바일 앱 사용 데이터 기반으로 게이머 취향 분석, 정성 피드백 자연어 처리·데이터 분석, 개발팀 채용·온보딩·문화 구축'] },
       { period: '2017.07 – 2018.06', kind: 'career', role: 'Full Stack Software Engineer', org: '삼성전자 C-Lab Looky팀',
         highlights: ['모바일 앱 사용 데이터 기반 사용자 인터뷰 플랫폼 AppBee MVP', 'TDD·페어 프로그래밍 기반 스몰팀 개발 → 스핀오프 창업'] },
       { period: '2014.03 – 2018.06', kind: 'career', role: 'Software Engineer', org: '삼성전자 무선사업부',
@@ -213,11 +217,11 @@ window.ITM = {
 
   projects: [
     // 심사 중 논문 — 상세 페이지는 공개 가능한 범위의 개요만 담는다
-    { title: 'AI를 많이 쓰면 성과가 날까?', desc: '기업의 AI 활용이 성과로 이어지는 조직적 조건 연구 · 해외 저널 Information & Management 투고', category: 'research', courses: ['ITM89912'], url: 'projects/genai-paper/', status: 'live', linkLabel: '공개 개요 보기', badge: 'Under Review' },
-    { title: 'AI 특허 발명', desc: '아이디어 발상부터 발명신고까지 실제 특허 1건을 진행', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
+    { title: 'AI를 많이 쓰면 성과가 날까?', desc: '기업의 AI 활용이 성과로 이어지는 조직적 조건에 대한 연구 · 해외 저널 Information & Management 투고', category: 'research', courses: ['ITM89912'], url: 'projects/genai-paper/', status: 'live', linkLabel: '공개 개요 보기', badge: 'Under Review' },
+    { title: 'AI와 인간의 의도 차이 식별 및 처리 방법', desc: '특허 아이디에이션 및 구체화 진행중 · 로봇 심리학/행동학 관련으로 Zoom In 피보팅 진행중', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
     { title: '웹 스크래핑 데이터 분석', desc: '공개 데이터를 수집하고 EDA로 패턴을 찾은 분석 페이지 (W03 과제2)', category: 'analysis', courses: ['ITM69000'], url: '', status: 'wip' },
     // 과목 외 활동 — 제목은 분석 주제, 대회명은 설명·활동 태그로
-    { title: 'AI 모델 증류 방지·추적 특허 분석', desc: '2026 캠퍼스 특허 유니버시아드 · 특허 5,575건으로 찾은 기술 공백과 IP 전략', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드 2026', url: 'projects/cpu-2026-ai-distillation/', status: 'live' },
+    { title: 'AI 모델 증류 방지 특허 분석', desc: '2026 캠퍼스 특허 유니버시아드 · 특허 5,575건으로 찾은 기술 공백과 IP 전략', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드 2026', url: 'projects/cpu-2026-ai-distillation/', status: 'live' },
     { title: 'KAIST ITM 학업 대시보드', desc: '과목·일정·개념정리·프로젝트를 링크 하나로 (W03 과제1)', category: 'study', courses: ['ITM69000'], url: 'index.html', status: 'live' },
     { title: '혁신생태계론 개념정리 사이트', desc: '주차별 개념 정리와 검색, 주차를 넘나드는 개념 지도, 누적 범위 퀴즈 셀프테스트', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/', status: 'live',
       extraLinks: [{ label: '🗺️ 개념 지도', url: 'notes/innovation_ecosystem/map.html' }, { label: '🏷️ 퀴즈', url: 'notes/innovation_ecosystem/quiz.html' }] },
