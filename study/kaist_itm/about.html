@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="김예나(Yenarue)의 KAIST ITM 학업 대시보드 — 과목, 학기 일정, 개념정리, 결과물">
-  <title>예나르의 KAIST ITM</title>
+  <meta name="description" content="김예나(Yenarue) — KAIST ITM 32기. 관심 연구 주제, 경력, 프로젝트">
+  <title>About · 예나르의 KAIST ITM</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <link rel="stylesheet" href="styles.css?v=20260930">
@@ -21,13 +21,14 @@
 </head>
 <body>
 <header class="topbar">
-  <a class="topbar-brand" href="#top"><span class="dot" aria-hidden="true"></span>예나르의 KAIST ITM</a>
-  <nav class="topbar-nav" aria-label="섹션">
-    <a href="#now">지금</a>
-    <a href="#courses">과목</a>
-    <a href="#timeline">타임라인</a>
-    <a href="#projects">ITM 프로젝트</a>
-    <a href="about.html">About</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>예나르의 KAIST ITM</a>
+  <nav class="topbar-nav" aria-label="About 섹션">
+    <a href="index.html">← 대시보드</a>
+    <a href="#interests">관심 주제</a>
+    <a href="#career">경력</a>
+    <a href="#credentials">자격·수상</a>
+    <a href="#itm-projects-sec">ITM 프로젝트</a>
+    <a href="#contact">연락</a>
   </nav>
   <div class="topbar-right">
     <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
@@ -37,40 +38,42 @@
 </header>
 
 <main class="dash-main" id="top">
-  <header class="hero dash-section">
-    <p class="eyebrow">KAIST 기술경영전문대학원 · ITM 32기</p>
-    <h1>예나르의 KAIST ITM 학습 공간</h1>
-    <p>과목·일정·개념정리·프로젝트를 한곳에서. 수업마다 AI와 토론하며 정리한 것을 웹으로 쌓아 둡니다.</p>
-  </header>
+  <header class="dash-section about-hero" id="about-hero"></header>
 
-  <section class="dash-section" id="now" aria-labelledby="now-h">
-    <h2 id="now-h">지금 <small id="now-week"></small></h2>
-    <div class="now-list" id="now-list"></div>
+  <section class="dash-section" id="interests" aria-labelledby="interests-h">
+    <h2 id="interests-h">관심 연구 주제</h2>
+    <div class="grid" id="interests-grid"></div>
   </section>
 
-  <section class="dash-section" id="courses" aria-labelledby="courses-h">
-    <h2 id="courses-h">과목</h2>
-    <div id="courses-body"></div>
+  <section class="dash-section" id="career" aria-labelledby="career-h">
+    <h2 id="career-h">경력 · 학력</h2>
+    <ol class="journey" id="journey"></ol>
+    <details class="career-details">
+      <summary>상세 경력 · 학력 펼치기</summary>
+      <ol class="career-list" id="career-list"></ol>
+    </details>
   </section>
 
-  <section class="dash-section" id="timeline" aria-labelledby="timeline-h">
-    <h2 id="timeline-h">학기 타임라인 <small>2026 가을학기 · 16주</small></h2>
-    <div class="filters" id="timeline-filters" role="group" aria-label="과목 필터"></div>
-    <div class="tl" id="timeline-body"></div>
+  <section class="dash-section" id="credentials" aria-labelledby="cred-h">
+    <h2 id="cred-h">자격 · 수상 · 특허 · 논문</h2>
+    <div class="grid cred-grid" id="cred-grid"></div>
   </section>
 
-  <section class="dash-section" id="projects" aria-labelledby="projects-h">
-    <h2 id="projects-h">ITM 프로젝트 <small id="projects-count"></small></h2>
-    <div class="filter-row"><span class="filter-label">종류</span>
-      <div class="filters" id="project-cat-filters" role="group" aria-label="프로젝트 종류 필터"></div></div>
-    <div class="filter-row"><span class="filter-label">과목</span>
-      <div class="filters" id="project-course-filters" role="group" aria-label="프로젝트 과목 필터"></div></div>
-    <div class="grid" id="projects-grid"></div>
+  <section class="dash-section" id="itm-projects-sec" aria-labelledby="itmp-h">
+    <h2 id="itmp-h">ITM 프로젝트 <small><a href="index.html#projects">대시보드에서 필터로 보기 →</a></small></h2>
+    <div id="itm-projects"></div>
   </section>
 
-  <section class="dash-section" id="about" aria-labelledby="about-h">
-    <h2 id="about-h">About</h2>
-    <div class="card about-card" id="about-card"></div>
+  <section class="dash-section" id="how" aria-labelledby="how-h">
+    <h2 id="how-h">KAIST ITM에서 이렇게 공부합니다</h2>
+    <p class="section-lede" id="workflow-intro"></p>
+    <div class="card"><div class="flow" id="workflow"></div></div>
+  </section>
+
+  <section class="dash-section" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">연락</h2>
+    <div class="card"><p style="margin:0 0 10px">협업·스터디·질문은 이메일로 편하게 연락 주세요.</p>
+      <div class="about-links" id="contact-links"></div></div>
   </section>
 </main>
 
@@ -95,7 +98,7 @@
 <script src="data.js?v=20260930"></script>
 <script src="js/lib.js?v=20260930"></script>
 <script src="js/ui.js?v=20260930"></script>
-<script src="js/render.js?v=20260930"></script>
+<script src="js/about.js?v=20260930"></script>
 <script src="js/theme.js?v=20260930"></script>
 </body>
 </html>

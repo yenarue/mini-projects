@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="생성형 인공지능 활용 기술경영 연구(ITM89912) 과목에서 작성해 Information &amp; Management에 투고한 연구의 공개 가능한 개요">
+  <title>AI 가치 실현 연구</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../../styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('itm-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    .paper-hero h1 { margin-bottom: 8px; word-break: keep-all; overflow-wrap: anywhere; }
+    .paper-hero .en-title { color: var(--muted); font-size: .95rem; margin: 0 0 16px; font-style: italic; overflow-wrap: anywhere; }
+    .authors { margin: 0 0 2px; font-size: 1rem; font-weight: 600; color: var(--ink); }
+    .authors sup, .author-note sup { font-size: .7em; color: var(--brand); }
+    .author-note { margin: 0 0 16px; font-size: .82rem; color: var(--muted); }
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: var(--radius-pill);
+      background: var(--note-soft); color: var(--note);
+      font-size: .85rem; font-weight: 600; border: 1px solid var(--line);
+      max-width: 100%;
+    }
+    .status-pill::before {
+      content: ""; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--note); flex: none;
+    }
+    .review-notice {
+      background: var(--note-soft); color: var(--ink);
+      border-left: 4px solid var(--note);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px; margin: 0 0 8px; line-height: 1.7;
+    }
+    .review-notice strong { color: var(--note); }
+    .rq {
+      background: var(--brand-soft); border-radius: var(--radius);
+      padding: 18px 20px; font-size: 1.08rem; font-weight: 600;
+      color: var(--ink); line-height: 1.6; margin: 0; word-break: keep-all;
+    }
+    .rq-sub { color: var(--ink-soft); margin: 12px 0 0; line-height: 1.7; }
+    .prose p { color: var(--ink-soft); line-height: 1.8; margin: 0 0 12px; word-break: keep-all; }
+    .design-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .design-list li {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius-sm); padding: 12px 16px;
+      color: var(--ink-soft); line-height: 1.6;
+    }
+    .design-list li b { color: var(--ink); display: block; font-size: .85rem; margin-bottom: 2px; }
+    .contrib-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .contrib-grid .card h3 { margin: 0 0 8px; font-size: 1rem; color: var(--brand); }
+    .contrib-grid .card ul { margin: 0; padding-left: 18px; color: var(--ink-soft); line-height: 1.7; }
+    .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+    .steps li {
+      position: relative; padding: 0 0 18px 28px; color: var(--ink-soft); line-height: 1.6;
+    }
+    .steps li::before {
+      content: ""; position: absolute; left: 4px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--surface); border: 2px solid var(--brand);
+    }
+    .steps li::after {
+      content: ""; position: absolute; left: 10px; top: 22px; bottom: 0;
+      width: 2px; background: var(--line);
+    }
+    .steps li:last-child::after { display: none; }
+    .steps li.is-now::before { background: var(--note); border-color: var(--note); }
+    .steps li b { color: var(--ink); }
+    .steps li.is-now b { color: var(--note); }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="../../index.html"><span class="dot" aria-hidden="true"></span>예나르의 KAIST ITM</a>
+  <nav class="topbar-nav" aria-label="섹션">
+    <a href="../../index.html#projects">← 프로젝트</a>
+    <a href="#question">연구 질문</a>
+    <a href="#design">연구 설계</a>
+    <a href="#contribution">기여</a>
+    <a href="#status">진행 상태</a>
+  </nav>
+  <div class="topbar-right">
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main class="dash-main" id="top">
+  <header class="hero paper-hero dash-section">
+    <p class="eyebrow">연구 · 생성형 인공지능 활용 기술경영 연구 (ITM89912)</p>
+    <h1>AI를 많이 쓰면 성과가 날까? 기업의 AI 가치 실현을 좌우하는 조직적 조건</h1>
+    <p class="en-title">Does Broader AI Use Pay Off? Organizational Conditions for AI Value Realization in Firms</p>
+    <p class="authors">김예나<sup>1</sup>, 김하나<sup>1,*</sup> · 한국과학기술원(KAIST) 기술경영전문대학원</p>
+    <p class="author-note"><sup>1</sup> KAIST 기술경영전문대학원 · <sup>*</sup> 교신저자 (Corresponding author)</p>
+    <span class="status-pill"><em>Information &amp; Management</em>&nbsp;· Under Review</span>
+  </header>
+
+  <section class="dash-section" aria-label="공개 범위 안내">
+    <p class="review-notice" role="note">
+      <strong>안내</strong> · 본 연구는 <em>Information &amp; Management</em>에 투고되어 심사 중(Under Review)입니다. 게재 전이라 구체적인 분석 결과는 공개하기 어려워, 공개 가능한 범위에서 연구 개요만 기재했습니다.
+    </p>
+  </section>
+
+  <section class="dash-section" id="question" aria-labelledby="question-h">
+    <h2 id="question-h">연구 질문</h2>
+    <p class="rq">기업이 AI를 더 넓게 활용할수록 업무 프로세스가 정말 나아지는가? 그렇다면 어떤 조직적 조건에서 그런가?</p>
+    <p class="rq-sub">특히 흔히 하나로 묶어 이야기되는 두 가지, 즉 <b>디지털 준비도</b>(기업이 쌓아 온 디지털 기술·성숙도)와 <b>AI 도입을 책임지고 운영할 조직 내 주체</b>가 서로 다른 역할을 하는지 살펴봅니다.</p>
+  </section>
+
+  <section class="dash-section prose" id="background" aria-labelledby="background-h">
+    <h2 id="background-h">왜 이 질문인가</h2>
+    <p>AI 도입은 경영과 정책의 최우선 과제가 되었지만, "도입했다"는 사실이 곧 "가치를 얻었다"는 뜻은 아닙니다. 도입 건수나 활용 분야의 수를 성과 지표처럼 읽는 관행이 과연 타당한지 의문이 남습니다.</p>
+    <p>AI는 기존 정보시스템과 성격이 다릅니다. 결과가 확률적이어서 누군가 검증하고 해석해야 하고, 사람과 기계 사이의 일의 경계를 다시 긋게 만듭니다. 그렇다면 기술 인프라뿐 아니라 <b>"AI를 누가 맡아 책임지는가"</b>가 성과를 가르는 요인일 수 있습니다.</p>
+    <p>정보기술의 가치는 보완적 조직 자원과 함께할 때 실현된다는 IT 비즈니스 가치·보완자산(complementary assets) 관점이 오래 논의되어 왔지만, 기존 연구는 여러 역량을 하나의 묶음으로 다루는 경우가 많았습니다. 이 연구는 그 묶음을 나누어 보려는 시도입니다.</p>
+  </section>
+
+  <section class="dash-section" id="design" aria-labelledby="design-h">
+    <h2 id="design-h">연구 설계 개요</h2>
+    <ul class="design-list">
+      <li><b>이론적 관점</b>IT 보완자산 이론, AI 역량(AI capability) 및 디지털 전환 연구</li>
+      <li><b>데이터 유형</b>한국지능정보사회진흥원(NIA)의 2024년 정보화통계조사(기업 부문), 국내 기업을 대표하는 대규모 전국 표본의 공공 2차 자료</li>
+      <li><b>분석 방법</b>표본 가중치를 반영한 회귀분석으로 조절효과(상호작용)를 검증하고, 여러 강건성 점검을 병행</li>
+      <li><b>해석 원칙</b>횡단면·자기보고 자료이므로 인과 효과가 아니라 조건부 연관성으로 해석</li>
+    </ul>
+  </section>
+
+  <section class="dash-section" id="contribution" aria-labelledby="contribution-h">
+    <h2 id="contribution-h">기대 기여</h2>
+    <div class="contrib-grid">
+      <div class="card">
+        <h3>학술적 기여</h3>
+        <ul>
+          <li>하나로 묶여 온 AI 보완역량을 '준비도'와 '책임 주체'로 분리해 검토</li>
+          <li>국내 기업 대표 표본으로 AI 가치 실현의 조직적 조건을 실증적으로 탐색</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>실무적 기여</h3>
+        <ul>
+          <li>AI 도입 성과를 해석할 때 함께 살펴야 할 조직적 조건 정리</li>
+          <li>AI 도입을 준비하는 기업에 조직 설계 관점의 점검 포인트 제공</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="dash-section" id="status" aria-labelledby="status-h">
+    <h2 id="status-h">진행 상태</h2>
+    <ol class="steps">
+      <li><b>2026 봄학기</b> · 생성형 인공지능 활용 기술경영 연구(ITM89912) 과목에서 연구 설계·분석·원고 작성</li>
+      <li><b>투고</b> · <em>Information &amp; Management</em>에 원고 제출</li>
+      <li class="is-now"><b>심사 중 (Under Review)</b> · 결과는 게재 확정 후 공개 예정</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../../js/theme.js"></script>
+</body>
+</html>

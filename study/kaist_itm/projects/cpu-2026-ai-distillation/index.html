@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="2026 캠퍼스 특허 유니버시아드 제출물 요약 — AI 모델 증류 방지·추적 기술의 특허 분석과 IP 전략">
+  <title>AI 모델 증류 방지 특허 분석 · 예나르의 KAIST ITM</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../../styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('itm-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    .page-main { max-width: 960px; }
+    .hero .lede { font-size: 17px; margin-top: 4px; }
+    .hero .meta { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      display: inline-block; font-size: 12.5px; font-weight: 600; line-height: 1.4;
+      padding: 4px 10px; border-radius: var(--radius-pill);
+      background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line);
+    }
+    .chip.brand { background: var(--brand-soft); color: var(--brand); border-color: transparent; }
+
+    /* 한눈에 보기 타일 */
+    .stats { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .stat .num { font-size: 30px; font-weight: 800; letter-spacing: -.01em; color: var(--ink); line-height: 1.15; }
+    .stat .num small { font-size: 15px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+    .stat .lbl { font-size: 14px; font-weight: 600; color: var(--ink-soft); margin-top: 4px; }
+    .stat .sub { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+    .stat.accent { border-color: var(--brand); }
+    .stat.accent .num { color: var(--brand); }
+    .keyline {
+      margin-top: 14px; padding: 14px 18px; border-radius: var(--radius);
+      background: var(--brand-soft); color: var(--ink); font-weight: 600; line-height: 1.6;
+    }
+
+    /* 본문 */
+    .prose p, .prose li { color: var(--ink-soft); line-height: 1.75; }
+    .prose p { margin: 0 0 10px; }
+    .prose ul { margin: 0 0 10px; padding-left: 20px; }
+    .prose strong { color: var(--ink); }
+    .card h3 { font-size: 16px; margin: 0 0 10px; line-height: 1.45; }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    .two { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .stack > * + * { margin-top: 14px; }
+    .src { font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .tag { font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill); white-space: nowrap; }
+    .tag.front { background: var(--note-soft); color: var(--note); }
+    .tag.post { background: var(--brand-soft); color: var(--brand); }
+
+    /* 타임라인 (배경) */
+    .events { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .events li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: baseline; }
+    .events time { font-size: 13px; font-weight: 700; color: var(--brand); }
+    .events span { color: var(--ink-soft); line-height: 1.6; }
+
+    /* 막대 그래프 */
+    .chart { margin: 4px 0 0; }
+    .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+    .sw-a { background: var(--muted); opacity: .55; }
+    .sw-b { background: var(--brand); }
+    .bar-row { display: grid; grid-template-columns: 120px 1fr; gap: 10px; align-items: center; margin: 0 0 10px; }
+    .bar-row .name { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+    .bar-row .name small { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+    .bars { display: grid; gap: 4px; min-width: 0; }
+    .bar { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .bar .fill { height: 12px; border-radius: 4px; min-width: 3px; background: var(--brand); flex: none; }
+    .bar .fill.a { background: var(--muted); opacity: .55; }
+    .bar .fill.hl { background: var(--term); }
+    .bar .val { font-size: 12.5px; color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .track { flex: 1 1 auto; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 84px; gap: 8px; align-items: center; }
+    .track > .val:only-child { grid-column: 1 / -1; }
+
+    /* 노이즈 제거 흐름 */
+    .funnel { display: grid; gap: 8px; }
+    .fstep { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;
+      padding: 10px 14px; border-radius: var(--radius-sm); background: var(--surface-2); }
+    .fstep b { font-size: 14px; color: var(--ink); }
+    .fstep span { font-size: 12.5px; color: var(--muted); display: block; margin-top: 2px; }
+    .fstep .n { font-size: 18px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .fstep.minus .n { color: var(--muted); }
+    .fstep.final { background: var(--brand-soft); }
+    .fstep.final .n { color: var(--brand); }
+
+    /* 표 */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table.t { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 520px; }
+    table.t th, table.t td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    table.t th { font-size: 12.5px; color: var(--muted); font-weight: 600; background: var(--surface-2); }
+    table.t td { color: var(--ink-soft); }
+    table.t td.num, table.t th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    table.t tr.hl td { background: var(--brand-soft); color: var(--ink); font-weight: 600; }
+
+    /* 공백·로드맵 */
+    .gaps { display: grid; gap: 10px; }
+    .gap { display: grid; grid-template-columns: 54px 1fr; gap: 12px; align-items: start; }
+    .gap .g { font-weight: 800; font-size: 15px; color: var(--brand); background: var(--brand-soft);
+      border-radius: var(--radius-sm); text-align: center; padding: 6px 0; }
+    .gap .g.sub { color: var(--muted); background: var(--surface-2); }
+    .gap b { color: var(--ink); font-size: 14.5px; }
+    .gap p { margin: 2px 0 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
+    .phases { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .phase .when { font-size: 12.5px; font-weight: 700; color: var(--prof); }
+    .phase h3 { margin-top: 4px; }
+    .phase ul { padding-left: 18px; margin: 0; }
+    .phase li { font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; }
+    ol.tasks { margin: 0; padding-left: 22px; }
+    ol.tasks li { color: var(--ink-soft); line-height: 1.7; margin-bottom: 6px; }
+    ol.tasks li b { color: var(--ink); }
+
+    .note-box { border-left: 3px solid var(--note); background: var(--note-soft); color: var(--ink);
+      padding: 12px 16px; border-radius: var(--radius-sm); font-size: 14px; line-height: 1.65; }
+
+
+
+    /* v2: 섹션 소제목 */
+    .sub-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; font-size: 17px; margin: 30px 0 12px; }
+    .sub-h .no { font-size: 12px; font-weight: 800; color: var(--brand); background: var(--brand-soft);
+      padding: 3px 9px; border-radius: var(--radius-pill); }
+    .sub-h small { font-size: 13px; font-weight: 500; color: var(--muted); }
+    .card .lead { margin: -2px 0 12px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; }
+    .mini { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin: 8px 0 0; }
+
+    /* 100% 스택 막대 */
+    .stack-row { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 10px; align-items: center; margin-bottom: 10px; }
+    .stack-label { font-size: 13.5px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .stack-label small { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+    .stackbar { display: flex; height: 34px; border-radius: 8px; overflow: hidden; background: var(--surface-2); min-width: 0; }
+    .stackbar .seg { display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;
+      color: var(--surface); white-space: nowrap; overflow: hidden; min-width: 2px; border-right: 1px solid var(--surface); }
+    .stackbar .seg:last-child { border-right: 0; }
+
+    /* 히트맵 */
+    table.heat { width: 100%; border-collapse: separate; border-spacing: 3px; font-size: 13px; }
+    table.heat th { font-size: 12px; font-weight: 600; color: var(--muted); text-align: left; padding: 6px 8px; white-space: nowrap; }
+    table.heat th.num { text-align: center; }
+    table.heat tbody th { color: var(--ink); font-size: 13px; font-weight: 600; }
+    table.heat td.hc { text-align: center; padding: 8px 6px; border-radius: 6px; color: var(--ink); font-variant-numeric: tabular-nums;
+      font-weight: 600; min-width: 44px; }
+    table.heat td.hc.hot { color: var(--surface); }
+    table.heat td.blank { color: var(--muted); background: transparent; font-weight: 400; }
+    table.heat td.plain { background: var(--surface-2); color: var(--ink-soft); }
+    table.heat tr.hlrow th { color: var(--term); }
+    table.heat.narrow { max-width: 520px; }
+    .heat-legend { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
+    .heat-legend .ramp { width: 120px; height: 10px; border-radius: 4px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 6%, var(--surface)), var(--brand)); }
+
+    /* SVG 차트 */
+    .svg-box { max-width: 680px; margin: 0 auto; }
+    .svgchart { width: 100%; height: auto; display: block; }
+    .svgchart .grid { stroke: var(--line); stroke-width: 1; }
+    .svgchart .tick { fill: var(--muted); font-size: 12px; }
+    .svgchart .axis { fill: var(--ink-soft); font-size: 12.5px; font-weight: 600; }
+    .svgchart .lbl { fill: var(--ink); font-size: 13px; font-weight: 700; }
+    .svgchart .dot { stroke: var(--surface); stroke-width: 2; opacity: .92; }
+
+    /* 발견 카드 */
+    .findings { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+    .finding { display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--brand); }
+    .finding .fno { font-size: 12px; font-weight: 800; color: var(--brand); letter-spacing: .04em; }
+    .finding h3 { margin: 0; }
+    .finding .big { font-size: 26px; font-weight: 800; color: var(--ink); line-height: 1.15; font-variant-numeric: tabular-nums; }
+    .finding .big small { font-size: 13px; font-weight: 600; color: var(--muted); }
+    .finding p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; }
+    .finding .ev { list-style: none; padding: 10px 12px; margin: 2px 0 0; background: var(--surface-2); border-radius: var(--radius-sm); }
+    .finding .ev li { font-size: 12.5px; color: var(--ink-soft); line-height: 1.6; }
+    .finding .ev li b { color: var(--ink); font-variant-numeric: tabular-nums; }
+    .finding .src { margin-top: auto; }
+
+    /* 그림 */
+    .fig { margin: 0; }
+    .fig-frame { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; }
+    .fig-frame img { display: block; width: 100%; height: auto; border-radius: 6px; }
+    .fig figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.55; }
+    .fig-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; }
+
+    @media (max-width: 760px) {
+      .stat .num { font-size: 26px; }
+      .bar-row { grid-template-columns: 1fr; gap: 4px; }
+      .events li { grid-template-columns: 1fr; gap: 2px; }
+      .gap { grid-template-columns: 44px 1fr; }
+      .fig-grid { grid-template-columns: 1fr; }
+      .stack-row { grid-template-columns: 1fr; gap: 4px; }
+      .fig-frame { padding: 6px; }
+      table.heat { font-size: 12px; }
+      table.heat td.hc { min-width: 36px; padding: 7px 4px; }
+    }
+
+
+    .conclusion-lead { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: var(--radius); padding: 22px 24px; margin-bottom: 16px; }
+    .conclusion-lead .lead-label { display: inline-block; font-size: 12px; font-weight: 800; color: var(--brand); letter-spacing: .04em; margin-bottom: 6px; }
+    .conclusion-lead p { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.5; color: var(--ink); word-break: keep-all; }
+    .concl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .concl-no { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; align-items: center; justify-content: center; background: var(--brand); color: var(--surface); font-size: 12px; font-weight: 800; }
+    .concl h3 { margin: 10px 0 6px; font-size: 15.5px; line-height: 1.45; }
+    .concl p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; }
+    @media (max-width: 760px) { .conclusion-lead p { font-size: 17px; } .concl-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="../../index.html"><span class="dot" aria-hidden="true"></span>예나르의 KAIST ITM</a>
+  <nav class="topbar-nav" aria-label="섹션">
+    <a href="../../index.html#projects">← 프로젝트</a>
+    <a href="#summary">한눈에</a>
+    <a href="#background">배경</a>
+    <a href="#data">데이터</a>
+    <a href="#analysis">분석</a>
+    <a href="#findings">발견</a>
+    <a href="#strategy">전략</a>
+    <a href="#conclusion">결론</a>
+    <a href="#source">원자료</a>
+  </nav>
+  <div class="topbar-right">
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main class="dash-main page-main" id="top">
+  <header class="hero dash-section">
+    <p class="eyebrow">2026 캠퍼스 특허 유니버시아드 · 분석</p>
+    <h1>AI 모델 증류 방지 및 추적기술의 특허분석 및 IP 전략 수립</h1>
+    <p class="lede">막는 경쟁은 끝났다. 입증하는 경쟁이 시작된다 — 특허 5,575건으로 본 증류 방어 기술의 빈 자리와 한국의 선점 전략.</p>
+    <div class="meta">
+      <span class="chip brand">특허전략수립 부문 · 문항 A12</span>
+      <span class="chip">팀 윤옌장 · 김예나 · 윤유선 · 장해시</span>
+      <span class="chip">특허 정량 · 정성 · 권리 분석</span>
+    </div>
+  </header>
+
+  <!-- 1. 한눈에 보기 -->
+  <section class="dash-section" id="summary" aria-labelledby="summary-h">
+    <h2 id="summary-h">한눈에 보기</h2>
+    <div class="stats">
+      <div class="card stat">
+        <div class="num">5,575<small>건</small></div>
+        <div class="lbl">분석 대상 확정 특허</div>
+        <div class="sub">검색 모집단 14,432건에서 노이즈 8,857건(61.4%) 제거. 중국 제외 시 563건.</div>
+      </div>
+      <div class="card stat">
+        <div class="num">2015–2026</div>
+        <div class="lbl">검색 기간 · IP5 + PCT</div>
+        <div class="sub">한국·미국·유럽·중국·일본 + PCT. 지식증류 개념이 정립된 2015년 1월부터.</div>
+      </div>
+      <div class="card stat accent">
+        <div class="num">45<small>건 · 0.8%</small></div>
+        <div class="lbl">검증(Verification) 영역 특허</div>
+        <div class="sub">5개 영역 중 최소. 그러나 등록률 62%·청구항 11.0개로 질은 최상위. 한국 출원 0건.</div>
+      </div>
+      <div class="card stat">
+        <div class="num">5<small>건</small></div>
+        <div class="lbl">핵심특허 (전원 등록·유효)</div>
+        <div class="sub">IBM·Apple·KAIST·Micron·Thales. 반면 전방 방어층 대표 특허는 소멸·포기.</div>
+      </div>
+    </div>
+    <p class="keyline">핵심 결론: 특허 경쟁의 무게중심이 '막는 기술'에서 '입증하는 기술'로 옮겨 가고 있다. 최적 진입점은 규모는 가장 작지만 질은 가장 높은 검증(Verification) 영역이다.</p>
+  </section>
+
+  <!-- 2. 배경 · 문제 -->
+  <section class="dash-section" id="background" aria-labelledby="bg-h">
+    <h2 id="bg-h">배경 · 문제</h2>
+    <div class="two">
+      <div class="card prose">
+        <h3>증류가 공격이 되는 순간</h3>
+        <p>지식증류(knowledge distillation)는 큰 교사 모델(teacher model)의 지식을 작은 학생 모델(student model)로 옮기는 정당한 기술이다.</p>
+        <p>그런데 상용 LLM이 API로 열리면서, 정상 쿼리처럼 보이는 호출만으로 출력을 대량 수집해 유사 모델을 싸게 복제할 수 있게 됐다. 이것이 <strong>증류 공격</strong>이다.</p>
+        <p>분쟁의 무게중심이 입력(학습 데이터)에서 <strong>출력(추론 결과)</strong>으로 이동했다.</p>
+      </div>
+      <div class="card">
+        <h3>보고서가 짚은 사건들</h3>
+        <ul class="events">
+          <li><time>2024.12</time><span>딥시크 V3 공개. 학습비 약 80억 원 — GPT-4급 추정치(최대 1,450억 원)의 1/10 미만.</span></li>
+          <li><time>2025.01</time><span>R1 공개. AIME 2024 79.8%로 OpenAI o1(79.2%)을 앞섬. 이후 약 1조 달러 규모 기술주 시가총액 증발.</span></li>
+          <li><time>2026.02</time><span>Google, 10만 건 이상 프롬프트로 Gemini를 복제하려는 증류 시도 보고. 같은 달 DeepSeek·Moonshot·MiniMax 사례 적발.</span></li>
+          <li><time>2026.06</time><span>Anthropic, 알리바바의 부정 계정 약 25,000개·대화 2,880만 건 추출 정황을 법원이 아닌 상원에 고발.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two" style="margin-top:14px">
+      <div class="card prose">
+        <h3>법적 공백</h3>
+        <ul>
+          <li><strong>저작권</strong> — AI 간 문답은 인간의 사상·감정 표현이 아니어서 창작물성이 부정되기 쉽다.</li>
+          <li><strong>데이터베이스권</strong> — 매 질의마다 새로 생성되는 출력이라 요건 충족이 까다롭다.</li>
+          <li><strong>부정경쟁방지법</strong> — 성과도용 가능성은 높지만 사후 구제이고, '베꼈다'를 입증할 표준 방법이 없다.</li>
+        </ul>
+      </div>
+      <div class="card prose">
+        <h3>기술적 공백</h3>
+        <ul>
+          <li><strong>워터마킹</strong> — 재학습·패러프레이징만으로 제거 가능함이 이론적으로 증명됨(Zhang et al., 2025).</li>
+          <li><strong>이상 탐지</strong> — 에이전트 경유 간접증류의 공격 성공률 84.3%(Agent Security Bench).</li>
+          <li><strong>상충 관계(trade-off)</strong> — 방어를 강화할수록 API 응답속도·품질이 떨어진다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note-box" style="margin-top:14px">
+      <strong>팀이 던진 질문:</strong> 법으로도 기술로도 완전 차단이 안 된다면, 불완전한 차단 환경에서도 <em>침해를 입증</em>하는 기술은 어디가 비어 있고, 한국은 그 자리를 어떻게 선점할 수 있는가?
+    </div>
+    <p class="src">출처: 보고서 1-1~1-3 (pp.6–10), 발표자료 pp.4–5</p>
+  </section>
+
+  <!-- 3. 데이터 -->
+  <section class="dash-section" id="data" aria-labelledby="data-h">
+    <h2 id="data-h">데이터 <small>특허 검색 범위와 유효특허 선별</small></h2>
+    <div class="two">
+      <div class="card prose">
+        <h3>검색 설계</h3>
+        <ul>
+          <li><strong>DB</strong> — Wintelips, 공개·등록 특허</li>
+          <li><strong>국가</strong> — KR · US · EP · CN · JP + PCT (IP5+PCT)</li>
+          <li><strong>기간</strong> — 출원일 2015.01 ~ 2026 (약 11년)</li>
+          <li><strong>필드</strong> — 제목·요약·청구항(TL·AB·CL)</li>
+          <li><strong>공통 검색식</strong> — (AI 모델 그룹: model, neural network, LLM 등) AND (증류·보호·입증 맥락 그룹: knowledge distillation, model stealing, model watermark, model provenance, attestation 등)</li>
+          <li><strong>영역별 기본식</strong> — 공통식에 5개 영역 키워드를 조합. 상위 영역이 잡은 문헌은 하위 영역에서 빼는 순차 배분으로 <strong>영역 간 중복 0건</strong>.</li>
+        </ul>
+        <p>중국 대량 출원의 왜곡을 통제하려고 모든 지표를 <strong>중국 포함 / 중국 제외</strong>로 병기했다(이중 렌즈).</p>
+      </div>
+      <div class="card">
+        <h3>노이즈 제거: 14,432 → 5,575건</h3>
+        <div class="funnel">
+          <div class="fstep"><div><b>공통 검색식 모집단</b><span>다의어 탓에 노이즈 혼입 ('모델'=지구물리 속도모델, '증류'=화학 공정 등)</span></div><div class="n">14,432</div></div>
+          <div class="fstep minus"><div><b>1차 제거 · 이종 산업영역</b><span>핵심 IPC(G06F·G06N·G06V·G06T·H04L) 밖 문헌 (17.7%)</span></div><div class="n">−2,549</div></div>
+          <div class="fstep minus"><div><b>2차 제거 · 목적 불일치</b><span>핵심 IPC 안이지만 순수 성능 최적화·압축 등 (43.7%)</span></div><div class="n">−6,308</div></div>
+          <div class="fstep final"><div><b>유효 모집단 확정</b><span>모집단의 38.6% · 중국 제외 시 563건</span></div><div class="n">5,575</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card prose" style="margin-top:14px">
+      <h3>비특허 교차 데이터</h3>
+      <p>특허만으로는 표본 부족과 공개 시차가 생긴다. 그래서 <strong>논문 35편 중 핵심 24편</strong>(보안 Big4 학회 등 게재처·Artifact Evaluation 배지·피인용 기준)과 영역별 <strong>오픈소스 활성화 점수</strong>를 함께 봤다.</p>
+    </div>
+    <p class="src">출처: 보고서 2-2 (p.13), 3-3 가 (pp.19–21), 3-4 (p.29) · 발표자료 pp.10, 37–40</p>
+  </section>
+
+  <!-- 4. 주요 분석 -->
+  <section class="dash-section" id="analysis" aria-labelledby="an-h">
+    <h2 id="an-h">주요 분석 <small>무엇을 어떻게 봤나</small></h2>
+
+    <h3 class="sub-h"><span class="no">A1</span>기술 분류 체계(Tech Tree) <small>공격 흐름에 맞춘 5개 영역, 2개 층</small></h3>
+    <div class="fig-grid">
+      <div class="card prose">
+        <div class="table-wrap">
+          <table class="t" style="min-width:0">
+            <thead><tr><th>층</th><th>영역</th><th>하는 일</th></tr></thead>
+            <tbody>
+              <tr><td><span class="tag front">전방</span></td><td>예방(Prevention)</td><td>접근 단계에서 대량 질의를 차단</td></tr>
+              <tr><td><span class="tag front">전방</span></td><td>탐지(Detection)</td><td>수상한 대량 수집을 실시간 식별</td></tr>
+              <tr><td><span class="tag front">전방</span></td><td>무력화(Mitigation)</td><td>유출된 출력의 학습 효용을 낮춤</td></tr>
+              <tr><td><span class="tag post">사후</span></td><td>추적(Tracing)</td><td>워터마킹·핑거프린팅으로 출처 신호</td></tr>
+              <tr><td><span class="tag post">사후</span></td><td>검증(Verification)</td><td>'베꼈다'를 통계·암호학적으로 판정</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:10px">전방 방어층은 '완전한 차단'이 전제돼야 성립한다. 사후 입증층은 불완전한 차단 환경에서도 작동한다.</p>
+      </div>
+      <figure class="fig"><div class="fig-frame"><a href="img/tech-tree-p17.webp" target="_blank" rel="noopener"><img src="img/tech-tree-p17.webp" alt="AI 모델 증류 입증 기술군 Tech Tree: 전방 방어층(예방·탐지·무력화)과 사후 입증층(추적·검증)의 세부 기술" loading="lazy" decoding="async"></a></div><figcaption>그림 3-2. 기술 분류 체계(Tech Tree) 도식화 — 보고서 p.17 · 이미지를 누르면 원본 크기로 열림</figcaption></figure>
+    </div>
+
+    <h3 class="sub-h"><span class="no">A2</span>규모와 구성 <small>중국 포함 / 제외 이중 렌즈</small></h3>
+    <div class="card">
+      <h3>기술 영역 구성 (100% 스택)</h3>
+      <p class="lead">같은 모집단을 중국 포함·제외로 나눠 영역 구성을 비교했다.</p>
+      <div class="legend"><span><i style="background:var(--note)"></i>탐지</span><span><i style="background:var(--brand)"></i>추적</span><span><i style="background:var(--slide)"></i>무력화</span><span><i style="background:var(--prof)"></i>예방</span><span><i style="background:var(--term)"></i>검증</span></div><div class="stack-row"><div class="stack-label">중국 포함<small>5,575건</small></div><div class="stackbar"><span class="seg" style="width:59.9%;background:var(--note)" title="탐지 59.9%">탐지 59.9%</span><span class="seg" style="width:30.0%;background:var(--brand)" title="추적 30.0%">추적 30.0%</span><span class="seg" style="width:6.2%;background:var(--slide)" title="무력화 6.2%"></span><span class="seg" style="width:3.1%;background:var(--prof)" title="예방 3.1%"></span><span class="seg" style="width:0.8%;background:var(--term)" title="검증 0.8%"></span></div></div><div class="stack-row"><div class="stack-label">중국 제외<small>563건</small></div><div class="stackbar"><span class="seg" style="width:53.1%;background:var(--brand)" title="추적 53.1%">추적 53.1%</span><span class="seg" style="width:30.2%;background:var(--note)" title="탐지 30.2%">탐지 30.2%</span><span class="seg" style="width:11.5%;background:var(--slide)" title="무력화 11.5%"></span><span class="seg" style="width:2.8%;background:var(--term)" title="검증 2.8%"></span><span class="seg" style="width:2.3%;background:var(--prof)" title="예방 2.3%"></span></div></div><p class="mini">작은 조각: 중국 포함 — 무력화 6.2% · 예방 3.1% · 검증 0.8% / 중국 제외 — 무력화 11.5% · 검증 2.8% · 예방 2.3%. 층 단위: 전방 방어층 69.2%(포함) → 사후 입증층 55.9%(제외).</p>
+      <p class="src">출처: 보고서 표 3-3f (p.22), 그림 3-3a·b (p.23)</p>
+    </div>
+
+    <h3 class="sub-h"><span class="no">A3</span>출원 동향 <small>장기 성장과 단기 모멘텀</small></h3>
+    <div class="two">
+      <div class="card">
+        <h3>연도별 출원 건수 (중국 포함)</h3>
+        <div class="chart" role="img" aria-label="영역별 연도별 출원 건수">
+          <div class="bar-row"><div class="name">탐지<small>2020</small></div><div class="bar"><div class="track"><div class="fill a" style="width:16.3%"></div><span class="val">155건</span></div></div></div>
+<div class="bar-row"><div class="name">탐지<small>2023</small></div><div class="bar"><div class="track"><div class="fill a" style="width:55.0%"></div><span class="val">524건</span></div></div></div>
+<div class="bar-row"><div class="name">탐지<small>2025</small></div><div class="bar"><div class="track"><div class="fill a" style="width:100.0%"></div><span class="val">952건</span></div></div></div>
+<div class="bar-row"><div class="name">추적<small>2020</small></div><div class="bar"><div class="track"><div class="fill " style="width:9.6%"></div><span class="val">91건</span></div></div></div>
+<div class="bar-row"><div class="name">추적<small>2025</small></div><div class="bar"><div class="track"><div class="fill " style="width:44.4%"></div><span class="val">423건</span></div></div></div>
+<div class="bar-row"><div class="name">검증<small>2018</small></div><div class="bar"><div class="track"><div class="fill hl" style="width:0.9%"></div><span class="val">9건</span></div></div></div>
+<div class="bar-row"><div class="name">검증<small>2025</small></div><div class="bar"><div class="track"><div class="fill hl" style="width:1.7%"></div><span class="val">16건</span></div></div></div>
+        </div>
+        <p class="mini">보고서 본문에 명시된 연도 수치만 표시. 영역 × 전체 연도 표는 보고서에 수치로 제시되지 않음(그래프만 존재).</p>
+        <p class="src">출처: 보고서 3-4 c (pp.34–35)</p>
+      </div>
+      <div class="card">
+        <h3>최근 3년 출원 비중</h3>
+        <div class="chart" role="img" aria-label="영역별 최근 3년 출원 비중">
+          <div class="bar-row"><div class="name">예방</div><div class="bar"><div class="track"><div class="fill " style="width:63.6%"></div><span class="val">63.6%</span></div></div></div>
+<div class="bar-row"><div class="name">추적</div><div class="bar"><div class="track"><div class="fill " style="width:49.5%"></div><span class="val">49.5%</span></div></div></div>
+<div class="bar-row"><div class="name">검증</div><div class="bar"><div class="track"><div class="fill hl" style="width:48.9%"></div><span class="val">48.9%</span></div></div></div>
+<div class="bar-row"><div class="name">무력화</div><div class="bar"><div class="track"><div class="fill " style="width:38.6%"></div><span class="val">38.6%</span></div></div></div>
+        </div>
+        <p class="mini">장기 CAGR(중국 포함): 탐지 39.9% · 추적 25.1% · 예방 21.5% · 검증 8.6% · 무력화 4.6%. 탐지의 최근 3년 비중은 표에 수치 없이 '최고'로만 표기.</p>
+        <p class="src">출처: 보고서 표 3-3h (p.24)</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h"><span class="no">A4</span>국가 · 출원인 <small>누가 어디에 출원하나</small></h3>
+    <div class="two">
+      <div class="card">
+        <h3>국가별 점유율 (중국 제외)</h3>
+        <p class="lead">중국 포함 시 중국이 89.9%. 중국을 빼면 미국·한국이 질적 경쟁을 이끈다.</p>
+        <div class="chart" role="img" aria-label="중국 제외 국가별 점유율">
+          <div class="bar-row"><div class="name">미국</div><div class="bar"><div class="track"><div class="fill " style="width:96.0%"></div><span class="val">38.4%</span></div></div></div>
+<div class="bar-row"><div class="name">한국</div><div class="bar"><div class="track"><div class="fill hl" style="width:57.8%"></div><span class="val">23.1%</span></div></div></div>
+<div class="bar-row"><div class="name">PCT</div><div class="bar"><div class="track"><div class="fill " style="width:48.5%"></div><span class="val">19.4%</span></div></div></div>
+<div class="bar-row"><div class="name">일본</div><div class="bar"><div class="track"><div class="fill " style="width:24.8%"></div><span class="val">9.9%</span></div></div></div>
+<div class="bar-row"><div class="name">유럽</div><div class="bar"><div class="track"><div class="fill " style="width:23.0%"></div><span class="val">9.2%</span></div></div></div>
+        </div>
+        <p class="src">출처: 보고서 그림 3-3d (p.25)</p>
+      </div>
+      <div class="card">
+        <h3>한국 출원인 히트맵: 영역 × 렌즈</h3>
+        <p class="lead">추적·탐지에는 실질 2위권 자산이 있지만, 판정 계층(검증)과 예방은 두 렌즈 모두 0이다.</p>
+        <div class="table-wrap"><table class="heat narrow"><thead><tr><th>영역</th><th class="num">국내 건수</th><th class="num">점유율<br>중국 포함</th><th class="num">점유율<br>중국 제외</th></tr></thead><tbody><tr><th scope="row">추적</th><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">95건</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 20%, var(--surface))">5.7%</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">31.8%</td></tr><tr><th scope="row">탐지</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 31%, var(--surface))">31건</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 8%, var(--surface))">0.9%</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 51%, var(--surface))">18.2%</td></tr><tr><th scope="row">무력화</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 9%, var(--surface))">4건</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 9%, var(--surface))">1.2%</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 21%, var(--surface))">6.2%</td></tr><tr><th scope="row">예방</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0건</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0%</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0%</td></tr><tr class="hlrow"><th scope="row">검증</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0건</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0%</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0%</td></tr></tbody></table></div>
+        <div class="heat-legend"><span>낮음</span><span class="ramp"></span><span>높음 (건수는 95건, 점유율은 31.8% 기준)</span></div>
+        <p class="src">출처: 보고서 표 3-3i (p.26), 표 3-7 (pp.47–48)</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>상위 출원인 × 기술 영역 히트맵 (중국 포함)</h3>
+      <p class="lead">문헌 수 상위 15개 출원인은 모두 중국 대학·연구기관이다. 물량은 탐지·추적에 몰려 있고, 검증은 15곳 합산 3건뿐이다.</p>
+      <div class="table-wrap"><table class="heat"><thead><tr><th>출원인 (문헌 수 Top 15)</th><th class="num">문헌</th><th class="num">탐지</th><th class="num">추적</th><th class="num">무력화</th><th class="num">예방</th><th class="num">검증</th></tr></thead><tbody><tr><th scope="row">Zhejiang Univ.</th><td class="hc plain">80</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">37</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">37</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 19%, var(--surface))">6</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Hangzhou Dianzi Univ.</th><td class="hc plain">47</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 48%, var(--surface))">20</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 40%, var(--surface))">16</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 25%, var(--surface))">9</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">UESTC</th><td class="hc plain">46</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 63%, var(--surface))">27</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 23%, var(--surface))">8</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 25%, var(--surface))">9</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Xidian Univ.</th><td class="hc plain">46</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 69%, var(--surface))">30</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 33%, var(--surface))">13</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 10%, var(--surface))">2</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Nanjing Univ. of Info. S&amp;T</th><td class="hc plain">39</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 25%, var(--surface))">9</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 54%, var(--surface))">23</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 21%, var(--surface))">7</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Wuhan Univ.</th><td class="hc plain">38</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 46%, var(--surface))">19</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 29%, var(--surface))">11</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 21%, var(--surface))">7</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Beihang Univ.</th><td class="hc plain">37</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 59%, var(--surface))">25</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 27%, var(--surface))">10</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 10%, var(--surface))">2</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Nanjing Univ. of Aeronautics</th><td class="hc plain">33</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 36%, var(--surface))">14</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 31%, var(--surface))">12</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 17%, var(--surface))">5</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Beijing Inst. of Tech.</th><td class="hc plain">33</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 50%, var(--surface))">21</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 29%, var(--surface))">11</td><td class="hc blank">·</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 8%, var(--surface))">1</td><td class="hc blank">·</td></tr><tr><th scope="row">BUPT</th><td class="hc plain">32</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 46%, var(--surface))">19</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 29%, var(--surface))">11</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 8%, var(--surface))">1</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Hunan Univ.</th><td class="hc plain">31</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 57%, var(--surface))">24</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 17%, var(--surface))">5</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 10%, var(--surface))">2</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">South China Univ. of Tech.</th><td class="hc plain">31</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 61%, var(--surface))">26</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 14%, var(--surface))">4</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 8%, var(--surface))">1</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Southeast Univ.</th><td class="hc plain">28</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 42%, var(--surface))">17</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 25%, var(--surface))">9</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 10%, var(--surface))">2</td><td class="hc blank">·</td><td class="hc blank">·</td></tr><tr><th scope="row">Guangdong Univ. of Tech.</th><td class="hc plain">27</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 54%, var(--surface))">23</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 10%, var(--surface))">2</td><td class="hc blank">·</td><td class="hc blank">·</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 10%, var(--surface))">2</td></tr><tr><th scope="row">Harbin Inst. of Tech.</th><td class="hc plain">27</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 46%, var(--surface))">19</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 17%, var(--surface))">5</td><td class="hc blank">·</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 10%, var(--surface))">2</td><td class="hc blank">·</td></tr></tbody></table></div>
+      <div class="heat-legend"><span>0</span><span class="ramp"></span><span>37건</span><span>· = 보고서 표에 미기재(출원인별 상위 3개 영역만 표기)</span></div>
+      <p class="mini">표 주석 합산: 탐지 330건 · 추적 177건 · 검증 3건. 질적 지배특허 후보는 반대로 미국 기업·보안기업(IBM·Apple·Micron·Thales 등)에 집중.</p>
+      <p class="src">출처: 보고서 표 3-6a (p.45), 그림 3-6·표 3-6b (p.46)</p>
+    </div>
+
+    <h3 class="sub-h"><span class="no">A5</span>품질 지표 <small>규모와 질을 따로 보기</small></h3>
+    <div class="card">
+      <h3>영역 × 품질지표 매트릭스</h3>
+      <p class="lead">열마다 최솟값→최댓값으로 색을 매겼다. 검증 행은 규모만 옅고 나머지는 대부분 가장 진하다.</p>
+      <div class="table-wrap"><table class="heat"><thead><tr><th>영역</th><th class="num">규모 비중</th><th class="num">등록률</th><th class="num">평균 청구항</th><th class="num">국제패밀리</th><th class="num">NPL</th><th class="num">평균 피인용</th></tr></thead><tbody><tr><th scope="row">예방</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 9%, var(--surface))">3.1</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 22%, var(--surface))">54</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 21%, var(--surface))">8.9</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 11%, var(--surface))">1.25</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 14%, var(--surface))">2</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 37%, var(--surface))">2.18</td></tr><tr><th scope="row">탐지</th><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">59.9</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">52</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">8.4</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">1.13</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">1</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">1.37</td></tr><tr><th scope="row">무력화</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 13%, var(--surface))">6.2</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 45%, var(--surface))">57</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 30%, var(--surface))">9.2</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">3.17</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 45%, var(--surface))">6</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">3.42</td></tr><tr><th scope="row">추적</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 45%, var(--surface))">30.0</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 22%, var(--surface))">54</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 30%, var(--surface))">9.2</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 26%, var(--surface))">1.66</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 22%, var(--surface))">3</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 15%, var(--surface))">1.6</td></tr><tr class="hlrow"><th scope="row">검증</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.8</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">62</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">11.0</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 64%, var(--surface))">2.64</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">11</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 70%, var(--surface))">3.05</td></tr></tbody></table></div>
+      <div class="heat-legend"><span>열 내 최저</span><span class="ramp"></span><span>열 내 최고</span></div>
+      <p class="mini">규모 비중·등록률·NPL 단위 %. 모두 중국 포함 기준.</p>
+      <p class="src">출처: 보고서 표 3-3j (p.26), 그림 3-8a (p.52)</p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>포지셔닝: 규모 vs 질</h3>
+      <p class="lead">가로는 특허 비중(로그 축), 세로는 평균 청구항 수, 원 크기는 등록률. 검증은 왼쪽 위 — 작지만 두꺼운 권리.</p>
+      <div class="svg-box"><svg viewBox="0 0 600 330" class="svgchart" role="img" aria-label="영역별 규모 대비 평균 청구항 수 포지셔닝"><line x1="70.0" y1="30" x2="70.0" y2="290" class="grid"/><text x="70.0" y="308" class="tick" text-anchor="middle">0.5%</text><line x1="136.7" y1="30" x2="136.7" y2="290" class="grid"/><text x="136.7" y="308" class="tick" text-anchor="middle">1%</text><line x1="242.5" y1="30" x2="242.5" y2="290" class="grid"/><text x="242.5" y="308" class="tick" text-anchor="middle">3%</text><line x1="358.4" y1="30" x2="358.4" y2="290" class="grid"/><text x="358.4" y="308" class="tick" text-anchor="middle">10%</text><line x1="464.1" y1="30" x2="464.1" y2="290" class="grid"/><text x="464.1" y="308" class="tick" text-anchor="middle">30%</text><line x1="580.0" y1="30" x2="580.0" y2="290" class="grid"/><text x="580.0" y="308" class="tick" text-anchor="middle">100%</text><line x1="70" y1="290.0" x2="580" y2="290.0" class="grid"/><text x="62" y="294.0" class="tick" text-anchor="end">8</text><line x1="70" y1="215.7" x2="580" y2="215.7" class="grid"/><text x="62" y="219.7" class="tick" text-anchor="end">9</text><line x1="70" y1="141.4" x2="580" y2="141.4" class="grid"/><text x="62" y="145.4" class="tick" text-anchor="end">10</text><line x1="70" y1="67.1" x2="580" y2="67.1" class="grid"/><text x="62" y="71.1" class="tick" text-anchor="end">11</text><text x="325.0" y="326" class="axis" text-anchor="middle">규모: 특허 비중 (중국 포함, 로그 축)</text><text x="16" y="160.0" class="axis" text-anchor="middle" transform="rotate(-90 16 160.0)">평균 청구항 수</text><circle cx="245.6" cy="223.1" r="9.6" style="fill:var(--prof)" class="dot"/><text x="261.2" y="227.1" class="lbl" text-anchor="start">예방 · 등록률 54%</text><circle cx="530.7" cy="260.3" r="7.8" style="fill:var(--note)" class="dot"/><text x="516.9" y="264.3" class="lbl" text-anchor="end">탐지 · 등록률 52%</text><circle cx="312.3" cy="200.9" r="12.3" style="fill:var(--slide)" class="dot"/><text x="294.0" y="188.9" class="lbl" text-anchor="end">무력화 · 등록률 57%</text><circle cx="464.1" cy="200.9" r="9.6" style="fill:var(--brand)" class="dot"/><text x="464.1" y="228.5" class="lbl" text-anchor="middle">추적 · 등록률 54%</text><circle cx="115.2" cy="67.1" r="16.8" style="fill:var(--term)" class="dot"/><text x="138.0" y="71.1" class="lbl" text-anchor="start">검증 · 등록률 62%</text></svg></div>
+      <p class="src">출처: 보고서 표 3-3f (p.22), 표 3-3j (p.26)</p>
+    </div>
+
+    <h3 class="sub-h"><span class="no">A6</span>비특허 교차 검증 <small>논문 · 오픈소스</small></h3>
+    <div class="two">
+      <div class="card">
+        <h3>영역별 핵심 논문 (핵심 / 전체)</h3>
+        <div class="chart" role="img" aria-label="영역별 핵심 논문 수">
+          <div class="bar-row"><div class="name">무력화</div><div class="bar"><div class="track"><div class="fill " style="width:100.0%"></div><span class="val">8편 / 8편</span></div></div></div>
+<div class="bar-row"><div class="name">추적</div><div class="bar"><div class="track"><div class="fill " style="width:87.5%"></div><span class="val">7편 / 8편</span></div></div></div>
+<div class="bar-row"><div class="name">탐지</div><div class="bar"><div class="track"><div class="fill " style="width:50.0%"></div><span class="val">4편 / 8편</span></div></div></div>
+<div class="bar-row"><div class="name">예방</div><div class="bar"><div class="track"><div class="fill " style="width:37.5%"></div><span class="val">3편 / 5편</span></div></div></div>
+<div class="bar-row"><div class="name">검증</div><div class="bar"><div class="track"><div class="fill hl" style="width:25.0%"></div><span class="val">2편 / 6편</span></div></div></div>
+        </div>
+        <p class="mini">논문-특허 매칭 14쌍: 특허 선행 7쌍(Micron·IBM 등 기업) · 논문 선행 5쌍(대학 후행 출원). 평균 시차 −1.21년. 무력화는 핵심 논문 8편 중 3편만 대응 특허 존재.</p>
+        <p class="src">출처: 보고서 3-4 가 (pp.29–35)</p>
+      </div>
+      <div class="card">
+        <h3>오픈소스 활성화 점수 (10점 만점)</h3>
+        <div class="chart" role="img" aria-label="영역별 오픈소스 활성화 점수">
+          <div class="bar-row"><div class="name">예방</div><div class="bar"><div class="track"><div class="fill " style="width:82.4%"></div><span class="val">8.24</span></div></div></div>
+<div class="bar-row"><div class="name">추적</div><div class="bar"><div class="track"><div class="fill " style="width:57.8%"></div><span class="val">5.78</span></div></div></div>
+<div class="bar-row"><div class="name">탐지</div><div class="bar"><div class="track"><div class="fill " style="width:47.4%"></div><span class="val">4.74</span></div></div></div>
+<div class="bar-row"><div class="name">검증</div><div class="bar"><div class="track"><div class="fill hl" style="width:40.9%"></div><span class="val">4.09</span></div></div></div>
+<div class="bar-row"><div class="name">무력화</div><div class="bar"><div class="track"><div class="fill " style="width:29.9%"></div><span class="val">2.99</span></div></div></div>
+        </div>
+        <p class="mini">예방의 높은 점수는 범용 API 게이트웨이(LiteLLM·Kong 등) 덕분이며 증류 전용 오픈소스는 0개. 검증은 MIA·유사도 연구 저장소 4개가 있으나 증류 입증용 실용 패키지는 부재.</p>
+        <p class="src">출처: 보고서 표 3-4g~3-4m (pp.38–42)</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>특허 × 비특허 교차 매트릭스</h3>
+      <div class="table-wrap">
+        <table class="t">
+          <thead><tr><th></th><th>특허 소수 (선점 여지)</th><th>특허 다수 (경쟁 집중)</th></tr></thead>
+          <tbody>
+            <tr><th style="background:transparent">비특허 많음</th><td class="hlcell"><strong style="color:var(--term)">검증 · 유망 선점</strong><br>45건 · 오픈소스 4.09 · 핵심 저장소 4개</td><td><strong>추적 · 경쟁 집중</strong><br>1,671건 · 오픈소스 5.78(최고)</td></tr>
+            <tr><th style="background:transparent">비특허 적음</th><td><strong>무력화 · 예방 · 미성숙 공백</strong><br>345건 / 173건 · 전용 오픈소스 1개 / 0개</td><td><strong>탐지 · 성숙 레드오션</strong><br>3,341건 · 중국 물량 집중</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">출처: 보고서 표 3-5a (p.43)</p>
+    </div>
+
+    <h3 class="sub-h"><span class="no">A7</span>핵심 기술군 선정 · 핵심특허 <small>정량 매트릭스와 청구항 분석</small></h3>
+    <div class="card">
+      <h3>핵심 기술군 선정 매트릭스 (0–100 정규화)</h3>
+      <p class="lead">가중치 성장성 0.35 · 공백성 0.25 · 한국기회 0.20 · 진입용이 0.20. 종합점수는 추적·탐지가 높지만, 공백성 단독 최고는 검증(98.7)이다.</p>
+      <div class="table-wrap"><table class="heat"><thead><tr><th>영역</th><th class="num">성장성</th><th class="num">공백성</th><th class="num">한국기회</th><th class="num">진입용이</th><th class="num">종합</th></tr></thead><tbody><tr><th scope="row">추적</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 51%, var(--surface))">58.1</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 45%, var(--surface))">49.9</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">100.0</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 74%, var(--surface))">87.7</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 61%, var(--surface))">70.4</td></tr><tr><th scope="row">탐지</th><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">100.0</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 18%, var(--surface))">15.8</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 84%, var(--surface))">100.0</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 51%, var(--surface))">58.2</td></tr><tr><th scope="row">예방</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 43%, var(--surface))">47.9</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 80%, var(--surface))">94.8</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 74%, var(--surface))">87.7</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 51%, var(--surface))">58.0</td></tr><tr><th scope="row">무력화</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 76%, var(--surface))">89.6</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 22%, var(--surface))">21.1</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 36%, var(--surface))">38.3</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 33%, var(--surface))">34.3</td></tr><tr class="hlrow"><th scope="row">검증</th><td class="hc" style="background:color-mix(in srgb, var(--brand) 15%, var(--surface))">11.3</td><td class="hc hot" style="background:color-mix(in srgb, var(--brand) 83%, var(--surface))">98.7</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 6%, var(--surface))">0.0</td><td class="hc" style="background:color-mix(in srgb, var(--brand) 28%, var(--surface))">28.6</td></tr></tbody></table></div>
+      <div class="heat-legend"><span>0</span><span class="ramp"></span><span>100</span></div>
+      <p class="mini">보고서는 이를 두 층으로 정리: 분석 집중 핵심군 = 추적·탐지, 전략적 공백 타깃 = 검증.</p>
+      <p class="src">출처: 보고서 표 3-8c·그림 3-8b (pp.52–53)</p>
+    </div>
+    <div class="two" style="margin-top:14px">
+      <div class="card">
+        <h3>핵심특허 5건 포지셔닝: 피인용 × 패밀리</h3>
+        <svg viewBox="0 0 600 320" class="svgchart" role="img" aria-label="핵심특허 5건 피인용 대비 패밀리 수"><line x1="60.0" y1="30" x2="60.0" y2="280" class="grid"/><text x="60.0" y="298" class="tick" text-anchor="middle">0</text><line x1="117.8" y1="30" x2="117.8" y2="280" class="grid"/><text x="117.8" y="298" class="tick" text-anchor="middle">1</text><line x1="175.6" y1="30" x2="175.6" y2="280" class="grid"/><text x="175.6" y="298" class="tick" text-anchor="middle">2</text><line x1="233.3" y1="30" x2="233.3" y2="280" class="grid"/><text x="233.3" y="298" class="tick" text-anchor="middle">3</text><line x1="291.1" y1="30" x2="291.1" y2="280" class="grid"/><text x="291.1" y="298" class="tick" text-anchor="middle">4</text><line x1="348.9" y1="30" x2="348.9" y2="280" class="grid"/><text x="348.9" y="298" class="tick" text-anchor="middle">5</text><line x1="406.7" y1="30" x2="406.7" y2="280" class="grid"/><text x="406.7" y="298" class="tick" text-anchor="middle">6</text><line x1="464.4" y1="30" x2="464.4" y2="280" class="grid"/><text x="464.4" y="298" class="tick" text-anchor="middle">7</text><line x1="522.2" y1="30" x2="522.2" y2="280" class="grid"/><text x="522.2" y="298" class="tick" text-anchor="middle">8</text><line x1="580.0" y1="30" x2="580.0" y2="280" class="grid"/><text x="580.0" y="298" class="tick" text-anchor="middle">9</text><line x1="60" y1="280.0" x2="580" y2="280.0" class="grid"/><text x="52" y="284.0" class="tick" text-anchor="end">0</text><line x1="60" y1="208.6" x2="580" y2="208.6" class="grid"/><text x="52" y="212.6" class="tick" text-anchor="end">20</text><line x1="60" y1="137.1" x2="580" y2="137.1" class="grid"/><text x="52" y="141.1" class="tick" text-anchor="end">40</text><line x1="60" y1="65.7" x2="580" y2="65.7" class="grid"/><text x="52" y="69.7" class="tick" text-anchor="end">60</text><text x="320.0" y="316" class="axis" text-anchor="middle">패밀리 수 (국제 확산)</text><text x="16" y="155.0" class="axis" text-anchor="middle" transform="rotate(-90 16 155.0)">피인용 수</text><circle cx="117.8" cy="44.3" r="8" style="fill:var(--brand)" class="dot"/><text x="129.8" y="36.3" class="lbl" text-anchor="start">IBM (66/1)</text><circle cx="522.2" cy="201.4" r="8" style="fill:var(--brand)" class="dot"/><text x="510.2" y="193.4" class="lbl" text-anchor="end">Apple (22/8)</text><circle cx="233.3" cy="269.3" r="8" style="fill:var(--brand)" class="dot"/><text x="245.3" y="261.3" class="lbl" text-anchor="start">KAIST (3/3)</text><circle cx="406.7" cy="280.0" r="8" style="fill:var(--term)" class="dot"/><text x="418.7" y="272.0" class="lbl" text-anchor="start">Micron (0/6)</text><circle cx="348.9" cy="147.9" r="8" style="fill:var(--term)" class="dot"/><text x="360.9" y="139.9" class="lbl" text-anchor="start">Thales (37/5)</text></svg><div class="legend" style="margin-top:6px"><span><i style="background:var(--brand)"></i>추적(Tracing)</span><span><i style="background:var(--term)"></i>검증(Verification)</span></div>
+        <p class="mini">Micron은 2024년 계속출원이라 피인용이 쌓일 시간이 없었다.</p>
+        <p class="src">출처: 보고서 그림 4-1b·각주 21 (p.58)</p>
+      </div>
+      <div class="card">
+        <h3>핵심특허 5건 — 모두 등록·유효</h3>
+        <div class="table-wrap">
+          <table class="t" style="min-width:0">
+            <thead><tr><th>출원인 · 번호</th><th>발명</th><th>대응</th></tr></thead>
+            <tbody>
+              <tr><td>IBM<br><small>US11163860B2</small></td><td>딥러닝 모델 워터마킹</td><td>회피·개량</td></tr>
+              <tr><td>Apple<br><small>US11042611B2</small></td><td>ML 모델 디지털 워터마킹</td><td>회피·라이선싱</td></tr>
+              <tr><td>KAIST<br><small>KR10-1980864B1</small></td><td>워터마크 삽입·검출(3D 메쉬)</td><td>결합·국내 선점</td></tr>
+              <tr><td>Micron<br><small>US11914373B2</small></td><td>신경망 무결성 검증(해시)</td><td>선점·개량</td></tr>
+              <tr><td>Thales<br><small>US11574245B2</small></td><td>ML 의사결정 보안(어테스테이션)</td><td>참조·우회</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mini">선정: 여섯 기준(권리 범위·인용 영향력·국제 확산·출원인 중요도·Trade-off 해결·전략 정합) → 대표 8건 → 핵심 5건.</p>
+        <p class="src">출처: 보고서 표 4-1b·4-1c (pp.56–58)</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h"><span class="no">A8</span>법적 정성 분석</h3>
+    <div class="card prose">
+      <ul>
+        <li><strong>계약</strong> — OpenAI·Google·Anthropic 약관은 경쟁 모델 개발 목적의 출력 이용·추출을 금지한다. 네이버 CLOVA X 약관은 자동화 접근을 제한한다.</li>
+        <li><strong>국내 구제</strong> — 저작권·DB권은 불확실하다. 부정경쟁방지법상 <strong>성과도용행위</strong>가 가장 현실적인 경로로 분석됐다.</li>
+        <li><strong>무효 리스크</strong> — 미국 §101(추상적 아이디어)·§112(실시가능성). 통계량·임계값을 구체적으로 한정해 대응한다.</li>
+      </ul>
+      <p class="src">출처: 보고서 4-4 (pp.72–74) · 발표자료 p.23. 인용 판례·조문은 보고서 원문 각주 참조.</p>
+    </div>
+  </section>
+
+  <!-- 5. 발견 -->
+  <section class="dash-section" id="findings" aria-labelledby="fd-h">
+    <h2 id="fd-h">발견 <small>그래서 무엇을 알게 됐나</small></h2>
+    <div class="findings">
+      <article class="card finding">
+        <div class="fno">발견 1 · 착시</div>
+        <h3>'탐지가 제일 활발하다'는 중국 물량이 만든 착시다</h3>
+        <div class="big">59.9% → 30.2%</div>
+        <p>중국을 빼면 1위가 탐지에서 추적으로 바뀌고, 층 단위로도 전방 방어에서 사후 입증으로 역전된다.</p>
+        <ul class="ev">
+          <li>추적 <b>30.0% → 53.1%</b> (중국 포함 → 제외)</li>
+          <li>전방 방어층 <b>69.2%</b> → 사후 입증층 <b>55.9%</b></li>
+          <li>국가 1위: 중국 <b>89.9%</b> → 미국 <b>38.4%</b></li>
+        </ul>
+        <p class="src">보고서 pp.22–23, 25, 28</p>
+      </article>
+      <article class="card finding">
+        <div class="fno">발견 2 · 역설</div>
+        <h3>검증은 규모 최소, 질 최상 — 비어 있는 프론티어</h3>
+        <div class="big">45건 <small>· 0.8%</small></div>
+        <p>작은 이유는 가치가 없어서가 아니라 아직 아무도 본격 진입하지 않아서다. 렌즈를 바꿔도 최소라는 사실은 불변.</p>
+        <ul class="ev">
+          <li>등록률 <b>62%</b> · 평균 청구항 <b>11.0</b> · NPL <b>11%</b> (모두 1위)</li>
+          <li>국제패밀리 <b>2.64</b> (2위)</li>
+          <li>중국 제외 시에도 <b>16건 · 2.8%</b>로 최소</li>
+        </ul>
+        <p class="src">보고서 pp.22, 26–28</p>
+      </article>
+      <article class="card finding">
+        <div class="fno">발견 3 · 타이밍</div>
+        <h3>검증은 이제 막 움직이기 시작했다</h3>
+        <div class="big">48.9%</div>
+        <p>출원의 절반이 최근 3년에 몰렸고 대학 비중은 가장 낮다. 기업 주도 상용화 단계의 초기 신호다.</p>
+        <ul class="ev">
+          <li>장기 CAGR <b>8.6%</b>는 극소 표본 탓에 눌려 보임</li>
+          <li>대학 비중 <b>22%</b> (5개 영역 중 최저)</li>
+          <li>2018년 <b>9건</b> → 2025년 <b>16건</b> 'J 커브'</li>
+        </ul>
+        <p class="src">보고서 pp.24–26, 35</p>
+      </article>
+      <article class="card finding">
+        <div class="fno">발견 4 · 한국</div>
+        <h3>한국은 가려진 2위, 그러나 판정 계층은 0건</h3>
+        <div class="big">23.1% <small>· 검증 0건</small></div>
+        <p>추적·탐지 자산은 이미 있다. 부족한 것은 기술이 아니라 연구를 권리로 바꾸고 유지하는 힘이다.</p>
+        <ul class="ev">
+          <li>중국 제외 추적 <b>31.8%</b> · 탐지 <b>18.2%</b> — 미국 다음 2위</li>
+          <li>국내 추적 <b>95건</b>, 검증·예방 <b>0건</b> (두 렌즈 모두)</li>
+          <li>KAIST 워터마킹 안전성 평가 특허(KR10-2301295B1)는 등록 후 등록료 불납으로 소멸</li>
+        </ul>
+        <p class="src">보고서 pp.25–27, 47–49</p>
+      </article>
+      <article class="card finding">
+        <div class="fno">발견 5 · 권리</div>
+        <h3>권리 유지의 인센티브가 '막기'에서 '입증'으로 이동했다</h3>
+        <div class="big">5 / 5 <small>유효</small></div>
+        <p>사후 입증층 핵심특허는 전원 살아 있고, 전방 방어층 대표 특허는 최상위 피인용에도 버려졌다.</p>
+        <ul class="ev">
+          <li>IBM 예방 특허(피인용 <b>53</b>) — 연차료 불납 <b>소멸</b></li>
+          <li>NEC 탐지 특허(피인용 <b>172</b>) — <b>포기</b></li>
+          <li>5건은 상충을 해결하지 않고 옮겼다: 주입 흔적·화이트박스·인프라·도메인 한정이라는 <b>잔여 비용 4종</b></li>
+        </ul>
+        <p class="src">보고서 pp.56–58, 72</p>
+      </article>
+      <article class="card finding">
+        <div class="fno">발견 6 · 공백 좌표</div>
+        <h3>연구는 무르익었고, 권리의 빈칸 좌표도 특정된다</h3>
+        <div class="big">30.9% <small>vs 8.2%</small></div>
+        <p>입증층의 논문→특허 전환강도(NPL)가 방어층의 약 4배. 잔여 비용을 뒤집으면 '무-주입·블랙박스·통계 판정'이 아무도 점유하지 않은 자리다.</p>
+        <ul class="ev">
+          <li>에이전트 경유 간접증류 공격 성공률 <b>84.3%</b> — 전방 방어 한계</li>
+          <li>검증 = 유일한 '특허 소수 × 비특허 다수' 영역</li>
+          <li>어느 구제 경로든 <b>기술적 입증이 선결 요건</b> → 증거력이 곧 집행력</li>
+        </ul>
+        <p class="src">보고서 pp.10, 43, 72–73</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. IP 전략 -->
+  <section class="dash-section" id="strategy" aria-labelledby="st-h">
+    <h2 id="st-h">IP 전략 <small>분석과 발견을 어떤 권리로 바꿀 것인가</small></h2>
+    <div class="stack">
+
+    <h3 class="sub-h"><span class="no">S1</span>핵심 기술군 <small>검증이 주도하고, 추적이 결합한다</small></h3>
+      <div class="card prose">
+        <p>두 영역은 대등한 병렬이 아니라 <strong>위계</strong>다. 검증(Verification)이 "무엇을 어떤 기준으로 입증할지"를 정한다. 추적(Tracing)은 그 기준에 맞는 증거 신호(앵커)를 공급한다. 신호를 만드는 자리는 이미 붐비고, <strong>신호를 판정으로 바꾸는 자리</strong>는 비어 있다.</p>
+        <p class="src">출처: 보고서 3-8 (pp.50–51)</p>
+      </div>
+
+    <h3 class="sub-h"><span class="no">S2</span>선점 청구항 방향 <small>핵심특허 5건을 피해 가는 조합</small></h3>
+      <div class="card prose">
+        <p>워터마크·트리거를 심지 않는 <strong>무-주입(Injection-Free)</strong> + 블랙박스 조건에서 출력 확률분포를 <strong>통계적으로 판정(p-value)</strong>. 원본 파라미터는 <strong>영지식증명(ZKP)</strong> 커밋먼트로 노출 없이 대조한다. 핵심특허 5건의 독립항 필수 구성요소를 어느 것도 실시하지 않는 조합이다.</p>
+        <p class="src">출처: 보고서 4-5 (pp.74–75)</p>
+      </div>
+
+    <h3 class="sub-h"><span class="no">S3</span>Evidence Chain 계층 구조 <small>판정 엔진 · 앵커 · 출처 보전</small></h3>
+      <figure class="fig wide"><div class="fig-frame"><a href="img/evidence-chain-p83.webp" target="_blank" rel="noopener"><img src="img/evidence-chain-p83.webp" alt="Verification-led Evidence Chain 3계층 구조도: Verification Engine, Evidence Anchor Layer, Evidence Provenance Layer와 보완 모듈" loading="lazy" decoding="async"></a></div><figcaption>그림 5-3b. Verification-led Evidence Chain 계층 구조도 — 보고서 p.83 · 이미지를 누르면 원본 크기로 열림</figcaption></figure>
+
+    <h3 class="sub-h"><span class="no">S4</span>다층 특허 권리망 <small>R&amp;D 공백 G1~G4를 방패형으로 겹쳐 쌓기</small></h3>
+      <div class="fig-grid">
+        <figure class="fig"><div class="fig-frame"><a href="img/ip-shield-p87.webp" target="_blank" rel="noopener"><img src="img/ip-shield-p87.webp" alt="방패 모양의 다층 특허 권리망: 바깥부터 표준·신뢰 계층(Evidence Provenance), 우회설계 차단 인터페이스 계층, 원천·판정 기준 코어 계층(Verification Core), 입력·방어형 앵커 계층(Evidence Anchor), 옆에 선택적 보완 모듈(Mitigation)" loading="lazy" decoding="async"></a></div><figcaption>그림 5-3c. Evidence Chain 다층 특허 권리망 — 보고서 p.87 · 이미지를 누르면 원본 크기로 열림</figcaption></figure>
+        <div class="card">
+          <h3>R&amp;D 공백 G1~G4와 다층 권리망</h3>
+          <div class="gaps">
+            <div class="gap"><div class="g">G1</div><div><b>검증 판정 코어 · 1순위 · 원천</b><p>블랙박스 행동지문·유사도 판정, 통계적 유의성·임계값·오탐 보정, 대체 가설 배제. → ① Verification 코어 특허군</p></div></div>
+            <div class="gap"><div class="g">G2</div><div><b>앵커 · 인터페이스 · 2순위 · 울타리</b><p>모델·버전·사용자·세션 귀속형 동적 앵커와 앵커→판정 전달 형식. 자체 엔진으로 우회해도 접합부에서 권리 작동. → ② Anchor · ③ 인터페이스 특허군</p></div></div>
+            <div class="gap"><div class="g">G3</div><div><b>증거 보전 · 3순위 · 신뢰 계층</b><p>로그·해시·타임스탬프 연결(Chain of Custody), 제3자 재현 절차. SEP 후보 관리. → ④ Provenance 특허군</p></div></div>
+            <div class="gap"><div class="g sub">G4</div><div><b>보완 공백 · 병행</b><p>위험도 기반 출력정책 전환, 소프트 레이블 난독화. → ⑤ 적응형 Mitigation 특허군</p></div></div>
+          </div>
+          <p class="mini">정상 세션은 고속 경로를 유지하고 의심 세션에만 검증 강도를 높여 품질 상충을 줄인다.</p>
+          <p class="src">출처: 보고서 5-2·5-3 (pp.78–88) · 발표자료 pp.26–29</p>
+        </div>
+      </div>
+
+    <h3 class="sub-h"><span class="no">S5</span>단계별 로드맵 <small>2026–2035, 특허·표준·규제의 시계에 맞춰</small></h3>
+      <div class="phases">
+        <div class="card phase">
+          <div class="when">Phase 1 · 1~2년차 (2026~2027)</div>
+          <h3>원천 확보</h3>
+          <ul>
+            <li>코어 4군집 KR 우선출원 4~8건, 전건 12개월 내 PCT</li>
+            <li>관할 KR · US + EP</li>
+            <li>블랙박스 검증·통계 판정 PoC</li>
+            <li>ISO/IEC JTC 1/SC 42 미러위원회 참여</li>
+          </ul>
+        </div>
+        <div class="card phase">
+          <div class="when">Phase 2 · 3~5년차 (2028~2030)</div>
+          <h3>통합 실증 · 표준 착수</h3>
+          <ul>
+            <li>PCT 국내단계(US·EP) 진입, 인터페이스·주변특허 울타리</li>
+            <li>산업 AI 로그 기반 통합 실증</li>
+            <li>ISO/IEC 22144(출처 기록) 위에 '증류 검증 계층' 기고</li>
+          </ul>
+        </div>
+        <div class="card phase">
+          <div class="when">Phase 3 · 5~10년차 (2031~2035)</div>
+          <h3>통제점 자산화</h3>
+          <ul>
+            <li>표준 채택 후 필수성 분석, SEP 후보 선언</li>
+            <li>조건 충족 시 특허 풀 편입·라이선싱</li>
+            <li>대학→기업 브리지형 기술이전, 검증 서비스 상용화</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin:0; font-size:13.5px; color:var(--muted)">일정은 특허(PCT 12·30개월), 표준(NP→IS 3~5년), 규제(EU AI Act GPAI 집행 2026.8 · 기존 모델 기한 2027.8)라는 세 제도의 시계에 맞췄다. 게이트 조건 미달 시 중단이 아니라 재설계 후 재도전한다.</p>
+
+      <figure class="fig wide"><div class="fig-frame"><a href="img/roadmap-p92.webp" target="_blank" rel="noopener"><img src="img/roadmap-p92.webp" alt="2026–2035 AI 모델 증류·복제 대응 임무중심 IP전략 기술혁신 로드맵: Phase 1~3별 특허·실증·표준 활동, 5개 특허군 권리화 단계, 국내 주체별 역할" loading="lazy" decoding="async"></a></div><figcaption>그림 5-4. AI 모델 증류·복제 대응 임무중심 IP전략 기술혁신 로드맵 (2026–2035) — 보고서 p.92 · 이미지를 누르면 원본 크기로 열림</figcaption></figure>
+
+    <h3 class="sub-h"><span class="no">S6</span>국가 IP 전략 <small>5대 실행 과제</small></h3>
+      <div class="card">
+        <ol class="tasks">
+          <li><b>검증 핵심 청구항 즉시 선점 출원</b> — 무-주입 + 출력 확률분포 통계 판정 (단기 1~2년)</li>
+          <li><b>검증 주도형 추적 통합 입증 플랫폼 PoC</b> — G1~G3 특허군의 실증 기반 (중기 2~3년)</li>
+          <li><b>국제표준 기고와 SEP 풀 구축</b> — ISO/IEC SC 42·WIPO, 22144 위에 상위 계층 접속 (중장기)</li>
+          <li><b>에이전트 경유 간접증류 대응 표준화</b> — 성공률 84.3% 공격에 대한 사후 프로토콜 선도 (장기 4~5년)</li>
+          <li><b>정책·안보 채널 이원화</b> — 증거 패키지를 사법절차뿐 아니라 위협정보 공유·수출통제·안보심사에도 활용 (전 단계 병행)</li>
+        </ol>
+        <p class="src">출처: 보고서 6-1~6-3 (pp.96–99) · 발표자료 pp.32–34</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 결론 -->
+  <section class="dash-section" id="conclusion" aria-labelledby="cc-h">
+    <h2 id="cc-h">결론</h2>
+    <div class="conclusion-lead">
+      <span class="lead-label">한 줄 요약</span>
+      <p>한국이 선점할 것은 또 하나의 방어 기술이 아니라, 그 증거를 <strong>판정하는 기준</strong>이다.</p>
+    </div>
+    <div class="concl-grid">
+      <div class="card concl">
+        <span class="concl-no">1</span>
+        <h3>경쟁의 무게중심이 '막기'에서 '입증'으로</h3>
+        <p>중국을 빼면 1위 영역이 탐지(30.2%)에서 추적(53.1%)으로, 층위로는 전방 방어에서 사후 입증으로 뒤집힌다. 핵심특허 5건은 모두 유효하고, 전방 방어 대표 특허는 소멸·포기됐다.</p>
+      </div>
+      <div class="card concl">
+        <span class="concl-no">2</span>
+        <h3>비어 있는 자리는 '판정'</h3>
+        <p>검증 영역은 45건(0.8%)으로 가장 작지만 등록률 62%·청구항 11.0으로 질은 최상위다. 한국의 검증 출원은 0건이다. 신호를 만드는 자리는 붐비고, 신호를 판정으로 바꾸는 자리는 비어 있다.</p>
+      </div>
+      <div class="card concl">
+        <span class="concl-no">3</span>
+        <h3>그래서, 검증 주도의 다층 권리망</h3>
+        <p>무-주입·통계 판정·ZKP 대조로 선점 청구항을 세우고(S2), G1~G4 공백을 방패형 권리망으로 겹쳐 쌓으며(S4), 특허·표준·규제의 시계에 맞춰 2035년까지 통제점을 자산화한다(S5).</p>
+      </div>
+      <div class="card concl">
+        <span class="concl-no">4</span>
+        <h3>표준화 대상은 방식이 아니라 형식과 절차</h3>
+        <p>표준화할 것은 워터마크 방식이 아니라 <strong>증거의 형식과 검증의 절차</strong>다. 증거 패키지는 사법절차뿐 아니라 위협정보 공유·수출통제·안보심사에도 쓰인다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 원자료 -->
+  <section class="dash-section" id="source" aria-labelledby="src-h">
+    <h2 id="src-h">원자료</h2>
+    <div class="card prose">
+      <p>이 페이지는 <strong>2026 캠퍼스 특허 유니버시아드</strong> 특허전략수립 부문(문항 A12)에 팀 윤옌장(김예나·윤유선·장해시)이 제출한 최종 보고서(99쪽)와 발표자료를 요약한 것이다. 원문 보고서와 발표자료는 공개하지 않는다. 페이지의 도식 4점은 보고서 그림을 그대로 옮겼다.</p>
+      <p>모든 수치는 제출본 기준이다. 중국 제외 CAGR처럼 보고서와 발표자료의 표기가 서로 다른 지표는 이 요약에서 제외했다.</p>
+      <p style="margin-top:14px"><a class="btn btn-ghost" href="../../index.html#projects">← 프로젝트 목록으로</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color=''">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="../../js/theme.js"></script>
+</body>
+</html>

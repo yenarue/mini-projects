@@ -31,6 +31,16 @@ test('과목: 코드 유일, notes 상태 유효, color 토큰', () => {
   });
 });
 
+test('과목 개념정리: extraLinks·private url 로컬 경로 존재', () => {
+  allCourses.forEach(c => {
+    (c.notes.extraLinks || []).forEach(l => assert.ok(fs.existsSync(path.join(SITE, l.url)), c.code + ' → ' + l.url));
+    if (c.notes.status === 'private' && c.notes.url)
+      assert.ok(fs.existsSync(path.join(SITE, c.notes.url, 'index.html')), c.code + ' → ' + c.notes.url);
+  });
+  assert.equal(allCourses.find(c => c.code === 'ITM60034').notes.extraLinks.length, 2);
+  assert.equal(allCourses.find(c => c.code === 'ITM89912').notes.url, 'projects/genai-paper/');
+});
+
 test('PRD 결정 반영: 생성형AI 논문 private, 나머지 비공개 없음', () => {
   const priv = allCourses.filter(c => c.notes.status === 'private').map(c => c.code);
   assert.deepEqual([...priv], ['ITM89912']); // vm 컨텍스트 배열이라 host 배열로 복사
@@ -69,22 +79,79 @@ test('로컬 링크: live 개념정리·live 결과물 경로가 실제로 존�
   });
 });
 
-test('결과물: 상태 유효, wip는 url 없어도 됨', () => {
+test('프로젝트: 종류·과목·상태 유효', () => {
+  const cats = ITM.projectCategories.map(c => c.id);
+  assert.deepEqual([...cats], ['research', 'analysis', 'study']);
+  const codes = new Set(allCourses.map(c => c.code));
   ITM.projects.forEach(p => {
-    assert.ok(['live', 'wip'].includes(p.status), p.title);
+    assert.ok(cats.includes(p.category), p.title);
+    assert.ok(Array.isArray(p.courses), p.title);
+    if (p.courses.length === 0) assert.ok(p.activity, p.title + ': 과목이 없으면 activity 필요');
+    p.courses.forEach(c => assert.ok(codes.has(c), p.title + ' → ' + c));
+    assert.ok(['live', 'wip', 'private'].includes(p.status), p.title);
     if (p.status === 'live') assert.ok(p.url, p.title);
+    if (p.status === 'private') assert.ok(p.label, p.title);
+    if (p.badge !== undefined) assert.ok(typeof p.badge === 'string' && p.badge, p.title + ' badge');
+    (p.extraLinks || []).forEach(l => {
+      assert.ok(l.label && l.url, p.title + ' extraLinks');
+      assert.ok(fs.existsSync(path.join(SITE, l.url)), p.title + ' → 없음: ' + l.url);
+    });
   });
 });
 
-test('index.html: 로컬 src/href 모두 존재, noindex, 섹션 컨테이너', () => {
-  const html = fs.readFileSync(path.join(SITE, 'index.html'), 'utf8');
-  assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
-  ['now-list', 'courses-body', 'timeline-filters', 'timeline-body', 'projects-grid', 'about-body']
-    .forEach(id => assert.ok(html.includes('id="' + id + '"'), id));
-  const refs = [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m => m[1])
-    .filter(u => !/^(https?:|mailto:)/.test(u));
-  refs.forEach(u => {
-    const t = path.join(SITE, u.endsWith('/') ? u + 'index.html' : u);
-    assert.ok(fs.existsSync(t), '없음: ' + u);
-  });
+test('프로젝트 v3: 혁신생태계론 지도·퀴즈는 개념정리 카드의 보조 버튼, 상세 페이지 연결', () => {
+  const titles = ITM.projects.map(p => p.title);
+  assert.ok(!titles.some(t => /개념 지도|퀴즈 셀프테스트/.test(t)), '지도·퀴즈 별도 카드 없음');
+  const ie = ITM.projects.find(p => p.url === 'notes/innovation_ecosystem/');
+  assert.deepEqual([...ie.extraLinks.map(l => l.url)], ['notes/innovation_ecosystem/map.html', 'notes/innovation_ecosystem/quiz.html']);
+  const cpu = ITM.projects.find(p => p.activity && /2026/.test(p.activity));
+  assert.ok(cpu && cpu.status === 'live' && cpu.url === 'projects/cpu-2026-ai-distillation/', 'CPU 상세');
+  const paper = ITM.projects.find(p => p.courses.includes('ITM89912'));
+  assert.equal(paper.url, 'projects/genai-paper/');
+  assert.match(paper.badge, /Under Review/);
 });
+
+test('프로필: About 페이지 데이터', () => {
+  const P = ITM.profile;
+  assert.ok(P.tagline, 'tagline');
+  assert.ok(P.facts.length >= 3, 'facts');
+  assert.ok(Array.isArray(P.interests), 'interests (비어 있어도 됨)');
+  P.interests.forEach(i => assert.ok(i.title && i.desc, 'interest title/desc'));
+  assert.ok(P.timeline.length >= 3, 'timeline');
+  P.timeline.forEach(t => assert.ok(['career', 'education'].includes(t.kind), t.org));
+  ['patents', 'awards', 'certifications', 'publications'].forEach(k => {
+    assert.ok(Array.isArray(P.credentials[k]), k);
+    P.credentials[k].forEach(c => {
+      assert.ok(c.title, k + ' title');
+      assert.match(c.year, /^(\d{4}(\.\d{2})?)?$/, k + ' year: ' + c.title);
+    });
+  });
+  assert.ok(P.credentials.publications.every(c => c.venue), '논문은 학회(venue) 필요');
+  assert.ok(P.journey.length >= 4, 'journey 오버뷰');
+  P.journey.forEach(j => assert.ok(j.title && j.desc, 'journey title/desc'));
+  assert.ok(typeof ITM.workflowIntro === 'string' && ITM.workflowIntro.length > 0, 'workflowIntro');
+  assert.ok(!P.summary.some(s => s.includes('AI와 토론')), '워크플로 문장은 workflowIntro로 이동');
+  assert.ok(!JSON.stringify(P).includes('충남대'), '학사 대학교 이름 제외');
+  if (P.photo) assert.ok(fs.existsSync(path.join(SITE, P.photo)), '사진 없음: ' + P.photo);
+});
+
+const PAGES = {
+  'index.html': ['now-list', 'courses-body', 'timeline-filters', 'timeline-body',
+    'project-cat-filters', 'project-course-filters', 'projects-grid', 'projects-count', 'about-card'],
+  'about.html': ['about-hero', 'interests-grid', 'journey', 'career-list', 'workflow-intro', 'cred-grid', 'itm-projects', 'workflow', 'contact-links']
+};
+for (const [page, ids] of Object.entries(PAGES)) {
+  test(page + ': 로컬 src/href 존재, noindex, 컨테이너', () => {
+    const file = path.join(SITE, page);
+    assert.ok(fs.existsSync(file), page + ' 없음');
+    const html = fs.readFileSync(file, 'utf8');
+    assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
+    ids.forEach(id => assert.ok(html.includes('id="' + id + '"'), page + ' #' + id));
+    [...html.matchAll(/(?:src|href)="([^"#?]+)/g)].map(m => m[1])
+      .filter(u => !/^(https?:|mailto:)/.test(u))
+      .forEach(u => {
+        const t = path.join(SITE, u.endsWith('/') ? u + 'index.html' : u);
+        assert.ok(fs.existsSync(t), page + ' → 없음: ' + u);
+      });
+  });
+}
