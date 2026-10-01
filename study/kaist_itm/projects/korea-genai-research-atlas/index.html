@@ -261,6 +261,9 @@
     .map-detail h3 { margin: 8px 0 9px; font-size: 17px; line-height: 1.5; word-break: keep-all; }
     .map-detail .detail-meta { color: var(--muted); font-size: 12px; line-height: 1.65; }
     .map-detail .detail-funding { margin: 12px 0; color: var(--ink); font-size: 20px; font-weight: 820; }
+    .map-detail .detail-actions { margin: -2px 0 14px; }
+    .map-detail .detail-actions a { display: inline-flex; align-items: center; min-height: 34px; padding: 6px 11px; border: 1px solid var(--line); border-radius: var(--radius-pill); font-size: 11.5px; font-weight: 730; }
+    .map-detail .detail-actions a:hover { border-color: var(--brand); background: var(--brand-soft); }
     .map-detail h4 { margin: 18px 0 8px; font-size: 12px; }
     .similarity-network { display: block; width: 100%; height: auto; margin-top: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); }
     .similarity-network .link { stroke: var(--brand); stroke-linecap: round; }
@@ -889,6 +892,7 @@
           <h3>${escapeHTML(project.title)}</h3>
           <div class="detail-meta">${escapeHTML(project.institution)}${project.site ? ` · ${escapeHTML(project.site)}` : ''} · 연구책임자 ${escapeHTML(project.pi)}<br>${escapeHTML(project.region_key)} · ${project.start_year}–${project.end_year}${project.end_year === 2026 ? ' (9.30 현재)' : ''}</div>
           <div class="detail-funding">${formatFunding(project.government_funding_krw)}</div>
+          <div class="detail-actions"><a href="${escapeHTML(project.ntis_url)}" target="_blank" rel="noopener noreferrer">NTIS에서 찾기 ↗</a></div>
           <div class="project-tags">${project.representative_keywords.map((term) => `<span class="tag tech">${escapeHTML(term)}</span>`).join('')}</div>
           <svg class="similarity-network" viewBox="0 0 260 180" role="img" aria-label="선택 연구와 유사 연구 5개의 코사인 유사도 관계"><circle class="center" cx="130" cy="90" r="15"><title>선택한 연구</title></circle>${networkNodes}<text x="130" y="94" style="fill:#fff;font-size:10px">선택</text></svg>
           <p class="similarity-caption">번호가 같은 연구를 아래 목록에서 확인할 수 있습니다. 중앙에 가까울수록 코사인 유사도가 높습니다.</p>
