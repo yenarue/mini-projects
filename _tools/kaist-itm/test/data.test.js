@@ -109,6 +109,8 @@ test('프로젝트 v3: 혁신생태계론 지도·퀴즈는 개념정리 카드�
   const paper = ITM.projects.find(p => p.courses.includes('ITM89912'));
   assert.equal(paper.url, 'projects/genai-paper/');
   assert.match(paper.badge, /Under Review/);
+  const atlas = ITM.projects.find(p => p.url === 'projects/korea-genai-research-atlas/');
+  assert.ok(atlas && atlas.status === 'live' && atlas.category === 'analysis', 'W03 과제2 연결');
 });
 
 test('프로필: About 페이지 데이터', () => {
