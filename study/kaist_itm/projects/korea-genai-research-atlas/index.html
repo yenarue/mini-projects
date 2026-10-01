@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="NTIS 국가 R&D 데이터로 보는 대한민국 생성형 AI 연구 지도. 2023년부터 2026년 9월 30일까지 대학·공공 연구기관의 721개 프로젝트를 지역, 기관, 주제별로 탐색합니다.">
+  <meta name="description" content="NTIS 국가 R&D 데이터로 보는 대한민국 생성형 AI 연구 지도. 2023년부터 2026년 9월 30일까지 대학·공공 연구기관의 1,151개 프로젝트를 지역, 기관, 주제별로 탐색합니다.">
   <title>대한민국 생성형 AI 연구 지도 · 예나르의 KAIST ITM</title>
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -505,19 +505,19 @@
         <article class="card finding">
           <span class="no">FINDING 01</span>
           <h3 data-pretext contenteditable="true" spellcheck="false">프로젝트의 절반 가까이가 서울에 모였다</h3>
-          <div class="big">47.3<small>% · 341개</small></div>
-          <p>서울·경기·대전 세 지역을 합치면 65.2%다. 대표 수행기관의 공식 소재지 기준이라 실제 공동연구 장소와는 다를 수 있다.</p>
+          <div class="big">48.0<small>% · 553개</small></div>
+          <p>서울·경기·대전 세 지역을 합치면 67.3%다. 대표 수행기관의 공식 소재지 기준이라 실제 공동연구 장소와는 다를 수 있다.</p>
         </article>
         <article class="card finding">
           <span class="no">FINDING 02</span>
           <h3 data-pretext contenteditable="true" spellcheck="false">지역 집중과 기관 집중은 같은 이야기가 아니다</h3>
-          <div class="big">27.0<small>% · 상위 5개 기관</small></div>
-          <p>서울 비중은 크지만 상위 5개 기관이 차지하는 비중은 27.0%다. 연구 활동은 수도권에 모였어도 여러 기관에 나뉘어 있다.</p>
+          <div class="big">28.0<small>% · 상위 5개 기관</small></div>
+          <p>서울 비중은 크지만 상위 5개 기관이 차지하는 비중은 28.0%다. 연구 활동은 수도권에 모였어도 여러 기관에 나뉘어 있다.</p>
         </article>
         <article class="card finding">
           <span class="no">FINDING 03</span>
           <h3 data-pretext contenteditable="true" spellcheck="false">생성형 AI 연구는 모델 개발보다 활용이 더 넓다</h3>
-          <div class="big">46.7<small>% · 일반 활용·기타</small></div>
+          <div class="big">47.0<small>% · 일반 활용·기타</small></div>
           <p>건강·바이오, 과학·연구, 제조·산업·로봇, 교육 등 적용 영역이 고르게 나타난다. 주제군은 탐색용 규칙 기반 대표 분류다.</p>
         </article>
       </div>
@@ -528,17 +528,17 @@
         <div>
           <p class="section-kicker">Data &amp; methodology</p>
           <h2 id="method-h">어떻게 만들었나</h2>
-          <p class="section-desc">NTIS 공식 다운로드 세 패스를 합치고, 관련성·기관 범위·다년도 연결·기관 소재지를 순서대로 검증했습니다.</p>
+          <p class="section-desc">NTIS 공식 다운로드 네 패스를 합치고, 관련성·기관 범위·다년도 연결·기관 소재지를 순서대로 검증했습니다.</p>
         </div>
       </div>
       <div class="method-grid">
         <article class="card panel">
           <div class="panel-head"><h3>수집에서 분석까지</h3><span class="panel-note">재현 가능한 단계별 건수</span></div>
           <div class="funnel">
-            <div class="funnel-row"><div><b>세 검색 패스 원본</b><span>과제명·한글 키워드·영문 키워드</span></div><strong>4,269</strong></div>
-            <div class="funnel-row"><div><b>과제 ID 통합</b><span>검색 패스 간 정확 중복 제거</span></div><strong>1,791</strong></div>
-            <div class="funnel-row"><div><b>최종 포함 연도 레코드</b><span>관련성·기관 범위 판정</span></div><strong>1,035</strong></div>
-            <div class="funnel-row final"><div><b>다년도 대표 프로젝트</b><span>이전과제고유번호 체인 연결</span></div><strong>721</strong></div>
+            <div class="funnel-row"><div><b>네 검색 패스 원본</b><span>과제명·한글 키워드·영문 키워드·기본 전체검색</span></div><strong>6,193</strong></div>
+            <div class="funnel-row"><div><b>과제 ID 통합</b><span>검색 패스 간 정확 중복 제거</span></div><strong>3,241</strong></div>
+            <div class="funnel-row"><div><b>최종 포함 연도 레코드</b><span>관련성·기관 범위 판정</span></div><strong>1,698</strong></div>
+            <div class="funnel-row final"><div><b>다년도 대표 프로젝트</b><span>이전과제고유번호 체인 연결</span></div><strong>1,151</strong></div>
           </div>
         </article>
         <aside class="card panel">
@@ -595,7 +595,7 @@
         const groups = new Set(projects.map((p) => `${p.pi}|${p.institution}`)).size;
         const governmentFunding = projects.reduce((sum, p) => sum + p.government_funding_krw, 0);
         const stats = [
-          [formatNumber(projects.length), '개', '대표 프로젝트', '1,035개 연도 레코드를 다년도 연결'],
+          [formatNumber(projects.length), '개', '대표 프로젝트', `${formatNumber(state.data.meta.annual_record_count)}개 연도 레코드를 다년도 연결`],
           [formatNumber(institutions), '개', '대표 수행기관', '산학협력단·과거 기관명 정규화'],
           [formatNumber(groups), '개', '연구그룹', '연구책임자 + 정규화 기관'],
           [formatFunding(governmentFunding), '', '정부 연구비', '포함 연도의 정부투자연구비 누적'],
