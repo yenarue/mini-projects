@@ -1812,8 +1812,12 @@
         "selected_k": 14,
         "selected_silhouette": 0.12409543081984141,
         "selected_stability_ari": 0.6108342934699634,
-        "map_note": "2차원 축 자체에는 의미가 없으며 점 사이의 상대적 근접성만 탐색적으로 해석한다.",
-        "cluster_note": "클러스터는 공식 학문 분류가 아니라 텍스트 유사도 기반 탐색용 묶음이다."
+        "map_neighbor_preservation_at_5": 0.22745438748913988,
+        "security_project_count": 198,
+        "security_cluster_count": 14,
+        "cluster_4_security_project_count": 24,
+        "map_note": "2차원 축 자체에는 의미가 없으며 점 사이의 상대적 근접성만 탐색적으로 해석한다. 유사 연구는 고차원 코사인 유사도 관계도로 별도 표시한다.",
+        "cluster_note": "클러스터는 공식 학문 분류가 아니라 텍스트 유사도 기반 탐색용 묶음이다. Security는 14개 군집에 걸친 교차주제로 표시한다."
       },
       "candidate_metrics": [
         {

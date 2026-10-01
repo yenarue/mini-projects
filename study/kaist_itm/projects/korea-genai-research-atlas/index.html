@@ -240,22 +240,35 @@
     .keyword-bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--brand), color-mix(in srgb, var(--brand) 58%, var(--slide))); }
     .keyword-value { text-align: right; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
     .keyword-value strong { display: block; color: var(--ink); font-size: 12px; }
+    .map-toolbar { flex-wrap: wrap; }
+    .map-explainer { margin: 0 0 14px; padding: 11px 13px; border-left: 3px solid var(--brand); border-radius: 0 8px 8px 0; background: var(--surface-2); }
+    .map-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
     .map-toolbar label { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
     .map-toolbar select { min-height: 38px; max-width: 300px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font-size: 12px; }
+    .map-color-toggle { margin: 0; }
+    .map-color-toggle button { min-height: 30px; padding: 5px 9px; font-size: 11px; }
     .semantic-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, .65fr); gap: 14px; }
     .map-card { min-width: 0; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface-2); }
     .semantic-map { display: block; width: 100%; height: auto; min-height: 430px; border-radius: 8px; background: var(--surface); }
-    .map-link { stroke: var(--muted); stroke-width: 1; stroke-opacity: .38; }
+    .map-link { stroke: var(--ink-soft); stroke-width: 1.5; stroke-opacity: .68; }
     .map-point { cursor: pointer; opacity: .68; transition: opacity .14s ease, stroke-width .14s ease; }
+    .map-point.context { opacity: .14; }
     .map-point:hover { opacity: 1; stroke: var(--ink); stroke-width: 1.5; }
     .map-point.selected { opacity: 1; stroke: var(--ink); stroke-width: 2.5; }
-    .map-point.neighbor { opacity: 1; stroke: var(--surface); stroke-width: 1.5; }
+    .map-point.neighbor { opacity: 1; stroke: var(--note); stroke-width: 2; }
     .map-detail { min-height: 100%; padding: 18px; }
     .map-detail .cluster-label { color: var(--brand); font-size: 11px; font-weight: 780; letter-spacing: .04em; }
     .map-detail h3 { margin: 8px 0 9px; font-size: 17px; line-height: 1.5; word-break: keep-all; }
     .map-detail .detail-meta { color: var(--muted); font-size: 12px; line-height: 1.65; }
     .map-detail .detail-funding { margin: 12px 0; color: var(--ink); font-size: 20px; font-weight: 820; }
     .map-detail h4 { margin: 18px 0 8px; font-size: 12px; }
+    .similarity-network { display: block; width: 100%; height: auto; margin-top: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); }
+    .similarity-network .link { stroke: var(--brand); stroke-linecap: round; }
+    .similarity-network .node { cursor: pointer; fill: var(--surface); stroke: var(--brand); stroke-width: 2; }
+    .similarity-network .node:hover { fill: var(--brand-soft); }
+    .similarity-network .center { fill: var(--brand); stroke: var(--surface); stroke-width: 3; }
+    .similarity-network text { fill: var(--ink-soft); font-size: 9px; font-weight: 750; pointer-events: none; text-anchor: middle; }
+    .similarity-caption { margin: 6px 0 0; color: var(--muted); font-size: 10.5px; line-height: 1.55; }
     .similar-list { display: grid; gap: 6px; }
     .similar-list button { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink-soft); cursor: pointer; text-align: left; font-size: 11px; line-height: 1.45; }
     .similar-list button:hover { border-color: var(--brand); color: var(--brand); }
@@ -267,6 +280,7 @@
     .cluster-card h3 { margin: 0; font-size: 14px; line-height: 1.45; }
     .cluster-card strong { color: var(--cluster-color, var(--brand)); font-size: 18px; }
     .cluster-card p { margin: 8px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .security-audit { margin-bottom: 12px; padding: 12px 14px; border-left: 3px solid var(--note); border-radius: 0 8px 8px 0; background: var(--surface-2); color: var(--ink-soft); font-size: 12px; line-height: 1.65; }
 
     .explorer-shell { overflow: hidden; }
     .filters { display: grid; grid-template-columns: minmax(210px, 1.7fr) repeat(3, minmax(150px, 1fr)) auto; gap: 8px; padding: 16px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
@@ -548,19 +562,28 @@
             <span class="panel-note" id="keyword-note">전체 프로젝트 상위 키워드</span>
           </div>
           <div class="keyword-list" id="keyword-list" aria-live="polite"></div>
+          <p class="relation-note">현재 키워드는 탐색용 TF-IDF 후보입니다. 일부 서술어·일반 표현이 남아 있어, 형태소 품사 필터와 연도별 최소 빈도 기준을 적용하는 정제안을 별도로 검토합니다.</p>
         </div>
         <div class="relation-panel" data-relation-panel="map" hidden>
+          <p class="relation-note map-explainer"><strong>연구 지도를 클릭하면</strong> 선택한 프로젝트와 텍스트가 가장 유사한 연구 5개를 진한 선으로 연결하고 오른쪽에 코사인 유사도를 표시합니다. 전체 위치는 t-SNE로 압축한 결과라 축·방향·절대거리에는 의미가 없으며, 선의 길이가 유사도 크기를 뜻하지는 않습니다.</p>
           <div class="map-toolbar">
-            <label>군집 보기 <select id="cluster-map-filter" aria-label="연구 지도 군집 필터"><option value="">전체 14개 군집</option></select></label>
+            <div class="map-controls">
+              <label>군집 보기 <select id="cluster-map-filter" aria-label="연구 지도 군집 필터"><option value="">전체 14개 군집</option></select></label>
+              <div class="segmented map-color-toggle" role="group" aria-label="연구 지도 색상 기준">
+                <button type="button" class="active" data-map-color="cluster" aria-pressed="true">의미 군집</button>
+                <button type="button" data-map-color="security" aria-pressed="false">Security 강조</button>
+              </div>
+              <span class="panel-note" id="map-color-note">색: 14개 탐색 군집</span>
+            </div>
             <button type="button" class="reset-btn" id="reset-map">지도 초기화</button>
           </div>
           <div class="semantic-layout">
             <div class="map-card" id="semantic-map" aria-live="polite"></div>
             <aside class="card map-detail" id="map-detail" aria-label="선택한 프로젝트 상세"></aside>
           </div>
-          <p class="relation-note">점 하나는 대표 프로젝트 하나입니다. 색은 탐색 군집, 크기는 정부 연구비를 완만하게 변환한 값입니다. 점을 선택하면 텍스트가 가장 유사한 연구 5개를 연결합니다. 좌표축 자체에는 의미가 없습니다.</p>
         </div>
         <div class="relation-panel" data-relation-panel="clusters" hidden>
+          <div class="security-audit" id="security-cluster-note"></div>
           <div class="cluster-grid" id="cluster-grid"></div>
           <p class="relation-note">군집 안정도 ARI는 0.61로 중간 수준입니다. 카드를 누르면 해당 군집만 연구 지도에서 볼 수 있습니다.</p>
         </div>
@@ -663,7 +686,9 @@
   <script>
     (function () {
       'use strict';
-      const state = { data: null, mapData: null, projectById: null, visible: 12, topicAxis: 'technical', regionView: 'tile', relationTab: 'keywords', keywordYear: 'overall', clusterFilter: '', selectedProjectId: null, filters: { query: '', region: '', technical: '', domain: '' } };
+      const ASSET_VERSION = '20261001-2';
+      const SECURITY_TOPIC = '안전·신뢰·거버넌스';
+      const state = { data: null, mapData: null, projectById: null, visible: 12, topicAxis: 'technical', regionView: 'tile', relationTab: 'keywords', keywordYear: 'overall', clusterFilter: '', mapColorMode: 'cluster', selectedProjectId: null, filters: { query: '', region: '', technical: '', domain: '' } };
       const topicColors = ['var(--brand)', 'var(--prof)', 'var(--slide)', 'var(--note)', 'var(--term)', 'var(--brand-dark)', 'var(--muted)', 'var(--ink-soft)'];
       const clusterColors = ['#3355d1','#2f6b52','#6b5bd2','#c2255c','#b8792e','#1f7a8c','#8b5e34','#5b6475','#3a7d44','#b24c63','#4a6fa5','#7a5195','#2a9d8f','#d97706'];
       const regionOrder = ['서울','경기','인천','강원','충북','충남','세종','대전','경북','대구','울산','부산','경남','전북','전남','광주','제주'];
@@ -846,9 +871,18 @@
           $('#map-detail').innerHTML = '<div class="empty">지도에서 프로젝트를 선택해 주세요.</div>';
           return;
         }
-        const similar = project.similar_projects.map((item) => {
+        const similar = project.similar_projects.map((item, index) => {
           const neighbor = state.projectById.get(item.series_id);
-          return `<button type="button" data-similar-id="${item.series_id}">${escapeHTML(neighbor?.title || item.series_id)}<small>${escapeHTML(neighbor?.institution || '')} · 유사도 ${(item.similarity * 100).toFixed(1)}%</small></button>`;
+          return `<button type="button" data-similar-id="${item.series_id}">${index + 1}. ${escapeHTML(neighbor?.title || item.series_id)}<small>${escapeHTML(neighbor?.institution || '')} · 코사인 유사도 ${(item.similarity * 100).toFixed(1)}%</small></button>`;
+        }).join('');
+        const networkNodes = project.similar_projects.map((item, index) => {
+          const angle = (-90 + index * 72) * Math.PI / 180;
+          const radius = 82 - Math.min(item.similarity, .7) * 55;
+          const x = 130 + Math.cos(angle) * radius;
+          const y = 90 + Math.sin(angle) * radius;
+          const opacity = Math.max(.34, Math.min(.9, item.similarity + .28));
+          const lineWidth = 1.2 + Math.min(item.similarity, .7) * 4;
+          return `<line class="link" x1="130" y1="90" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" style="stroke-opacity:${opacity.toFixed(2)};stroke-width:${lineWidth.toFixed(2)}"></line><circle class="node" data-similar-id="${item.series_id}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="12"><title>${escapeHTML(state.projectById.get(item.series_id)?.title || item.series_id)} · ${(item.similarity * 100).toFixed(1)}%</title></circle><text x="${x.toFixed(1)}" y="${(y + 3).toFixed(1)}">${index + 1}</text>`;
         }).join('');
         $('#map-detail').innerHTML = `
           <div class="cluster-label">군집 ${project.cluster_id + 1} · ${escapeHTML(project.cluster_label)}</div>
@@ -856,6 +890,8 @@
           <div class="detail-meta">${escapeHTML(project.institution)}${project.site ? ` · ${escapeHTML(project.site)}` : ''} · 연구책임자 ${escapeHTML(project.pi)}<br>${escapeHTML(project.region_key)} · ${project.start_year}–${project.end_year}${project.end_year === 2026 ? ' (9.30 현재)' : ''}</div>
           <div class="detail-funding">${formatFunding(project.government_funding_krw)}</div>
           <div class="project-tags">${project.representative_keywords.map((term) => `<span class="tag tech">${escapeHTML(term)}</span>`).join('')}</div>
+          <svg class="similarity-network" viewBox="0 0 260 180" role="img" aria-label="선택 연구와 유사 연구 5개의 코사인 유사도 관계"><circle class="center" cx="130" cy="90" r="15"><title>선택한 연구</title></circle>${networkNodes}<text x="130" y="94" style="fill:#fff;font-size:10px">선택</text></svg>
+          <p class="similarity-caption">번호가 같은 연구를 아래 목록에서 확인할 수 있습니다. 중앙에 가까울수록 코사인 유사도가 높습니다.</p>
           <h4>텍스트가 가장 유사한 연구</h4>
           <div class="similar-list">${similar}</div>`;
         $$('[data-similar-id]').forEach((button) => button.addEventListener('click', () => {
@@ -886,11 +922,16 @@
         const circles = projects.map((project) => {
           const [x, y] = point(project);
           const radius = Math.min(7.5, 2.3 + Math.log10(project.government_funding_krw / 1000000 + 1) * .8);
-          const classes = ['map-point', project.series_id === selected.series_id ? 'selected' : '', neighborIds.has(project.series_id) ? 'neighbor' : ''].filter(Boolean).join(' ');
-          return `<circle class="${classes}" data-map-project="${project.series_id}" aria-hidden="true" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${project.series_id === selected.series_id ? radius + 2 : radius.toFixed(2)}" fill="${clusterColors[project.cluster_id % clusterColors.length]}"><title>${escapeHTML(project.title)} · ${escapeHTML(project.institution)}</title></circle>`;
+          const isSecurity = project.technical_topic === SECURITY_TOPIC;
+          const context = state.mapColorMode === 'security' && !isSecurity ? 'context' : '';
+          const classes = ['map-point', context, project.series_id === selected.series_id ? 'selected' : '', neighborIds.has(project.series_id) ? 'neighbor' : ''].filter(Boolean).join(' ');
+          const fill = state.mapColorMode === 'security' ? (isSecurity ? '#c2255c' : '#a8adb8') : clusterColors[project.cluster_id % clusterColors.length];
+          return `<circle class="${classes}" data-map-project="${project.series_id}" aria-hidden="true" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${project.series_id === selected.series_id ? radius + 2 : radius.toFixed(2)}" fill="${fill}"><title>${escapeHTML(project.title)} · ${escapeHTML(project.institution)}${isSecurity ? ' · Security 교차주제' : ''}</title></circle>`;
         }).join('');
         const filterLabel = state.clusterFilter === '' ? '전체 프로젝트' : state.data.summaries.exploration.clusters.find((cluster) => String(cluster.cluster_id) === state.clusterFilter)?.label;
-        $('#semantic-map').innerHTML = `<svg class="semantic-map" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHTML(filterLabel)} 연구 관계 산점도. 점을 선택하면 유사 연구가 연결됩니다."><rect width="${width}" height="${height}" fill="transparent"></rect>${links}${circles}</svg>`;
+        const securityCount = projects.filter((project) => project.technical_topic === SECURITY_TOPIC).length;
+        $('#map-color-note').textContent = state.mapColorMode === 'security' ? `Security 교차주제 ${formatNumber(securityCount)}개 강조` : '색: 14개 탐색 군집';
+        $('#semantic-map').innerHTML = `<svg class="semantic-map" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHTML(filterLabel)} 연구 관계 산점도. 선택 연구의 유사 연구 5개는 같은 진하기의 선과 테두리로 강조됩니다."><rect width="${width}" height="${height}" fill="transparent"></rect>${links}${circles}</svg>`;
         $$('[data-map-project]').forEach((circle) => circle.addEventListener('click', () => {
           state.selectedProjectId = circle.dataset.mapProject;
           renderSemanticMap();
@@ -911,7 +952,15 @@
 
       function renderClusters() {
         const clusters = state.data.summaries.exploration.clusters;
-        $('#cluster-grid').innerHTML = clusters.map((cluster) => `<button type="button" class="cluster-card" data-cluster-card="${cluster.cluster_id}" aria-label="${escapeHTML(cluster.label)}, ${formatNumber(cluster.project_count)}개 프로젝트, 연구 지도에서 보기" style="--cluster-color:${clusterColors[cluster.cluster_id % clusterColors.length]}"><div class="cluster-card-head"><h3>${escapeHTML(cluster.label)}</h3><strong>${formatNumber(cluster.project_count)}</strong></div><p>${cluster.top_keywords.slice(0, 6).map(escapeHTML).join(' · ')}</p><p>${formatPercent(cluster.share)} · ${formatFunding(cluster.government_funding_krw)}</p></button>`).join('');
+        const securityProjects = state.data.projects.filter((project) => project.technical_topic === SECURITY_TOPIC);
+        const securityByCluster = new Map(clusters.map((cluster) => [cluster.cluster_id, securityProjects.filter((project) => project.cluster_id === cluster.cluster_id).length]));
+        const clusterFour = clusters.find((cluster) => cluster.cluster_id === 3);
+        const clusterFourSecurity = securityByCluster.get(3) || 0;
+        $('#security-cluster-note').innerHTML = `<strong>Security는 별도 군집보다 교차주제로 보는 편이 적절했습니다.</strong> ${formatNumber(securityProjects.length)}개(${formatPercent(securityProjects.length / state.data.projects.length)})가 14개 군집 모두에 분포했고, 군집 4에는 ${formatNumber(clusterFourSecurity)}개(${formatPercent(clusterFourSecurity / clusterFour.project_count)})가 포함됐습니다. 연구 지도에서 <b>Security 강조</b>로 분포를 확인할 수 있습니다.`;
+        $('#cluster-grid').innerHTML = clusters.map((cluster) => {
+          const securityCount = securityByCluster.get(cluster.cluster_id) || 0;
+          return `<button type="button" class="cluster-card" data-cluster-card="${cluster.cluster_id}" aria-label="${escapeHTML(cluster.label)}, ${formatNumber(cluster.project_count)}개 프로젝트, 연구 지도에서 보기" style="--cluster-color:${clusterColors[cluster.cluster_id % clusterColors.length]}"><div class="cluster-card-head"><h3>${escapeHTML(cluster.label)}</h3><strong>${formatNumber(cluster.project_count)}</strong></div><p>${cluster.top_keywords.slice(0, 6).map(escapeHTML).join(' · ')}</p><p>${formatPercent(cluster.share)} · ${formatFunding(cluster.government_funding_krw)} · Security ${formatNumber(securityCount)}개</p></button>`;
+        }).join('');
         $$('[data-cluster-card]').forEach((button) => button.addEventListener('click', () => {
           state.clusterFilter = button.dataset.clusterCard;
           $('#cluster-map-filter').value = state.clusterFilter;
@@ -984,10 +1033,25 @@
           state.selectedProjectId = null;
           renderSemanticMap();
         });
+        $$('[data-map-color]').forEach((button) => button.addEventListener('click', () => {
+          state.mapColorMode = button.dataset.mapColor;
+          $$('[data-map-color]').forEach((item) => {
+            const active = item === button;
+            item.classList.toggle('active', active);
+            item.setAttribute('aria-pressed', String(active));
+          });
+          renderSemanticMap();
+        }));
         $('#reset-map').addEventListener('click', () => {
           state.clusterFilter = '';
+          state.mapColorMode = 'cluster';
           state.selectedProjectId = null;
           $('#cluster-map-filter').value = '';
+          $$('[data-map-color]').forEach((item) => {
+            const active = item.dataset.mapColor === 'cluster';
+            item.classList.toggle('active', active);
+            item.setAttribute('aria-pressed', String(active));
+          });
           renderSemanticMap();
         });
         $$('[data-region-view]').forEach((button) => button.addEventListener('click', () => {
@@ -1032,8 +1096,8 @@
       async function init() {
         try {
           const [dataResponse, mapResponse] = await Promise.all([
-            fetch('data/atlas-data.json'),
-            fetch('data/skorea-provinces.geo.json').catch(() => null)
+            fetch(`data/atlas-data.json?v=${ASSET_VERSION}`, { cache: 'no-store' }),
+            fetch(`data/skorea-provinces.geo.json?v=${ASSET_VERSION}`, { cache: 'no-store' }).catch(() => null)
           ]);
           if (!dataResponse.ok) throw new Error(`HTTP ${dataResponse.status}`);
           state.data = await dataResponse.json();
@@ -1043,7 +1107,9 @@
           renderSummary(); renderAnnual(); renderRegions(); renderInstitutions(); renderTopics(); populateFilters(); renderExploration(); bindInteractions(); renderProjects();
         } catch (error) {
           const alert = $('#data-error');
-          alert.textContent = '데이터 파일을 불러오지 못했습니다. 이 페이지는 로컬 서버에서 열어야 합니다.';
+          alert.textContent = location.protocol === 'file:'
+            ? '데이터 파일을 불러오지 못했습니다. 이 페이지는 로컬 서버에서 열어야 합니다.'
+            : '데이터를 불러오지 못했습니다. 잠시 후 강력 새로고침(Cmd/Ctrl+Shift+R)해 주세요.';
           alert.classList.add('show');
           console.error(error);
         }
