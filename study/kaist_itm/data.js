@@ -11,7 +11,7 @@ window.ITM = {
     // ✏️ 한 줄 소개 — 본인이 직접 수정 (현재는 v1 About의 한 줄 소개)
     tagline: '기술을 만드는 사람에서, 기술이 가치를 만드는 방식을 탐구하는 사람으로',
     // ✏️ 프로필 사진 — 파일을 study/kaist_itm/assets/ 에 넣고 'assets/profile.jpg' 처럼 지정. 비우면 이니셜 아바타
-    photo: 'assets/profile_avatar.png',
+    photo: 'assets/profile_latest.jpg',
     // [초안] 최종 문장은 본인이 다듬는다 (Honor Code)
     summary: [
       '디지털 세상에서 제품을 만들던 S/W 엔지니어가, 현실 세상에서 창업과 스타트업 · 대기업을 오가며 다양한 현실의 문제들을 경험해왔습니다. 그 과정에서 생긴 "기술을 어떻게 사람들의 삶에 연결하고, 실제 비즈니스 가치로 만들 것인가"라는 질문을 KAIST ITM에서 체계적으로 탐구하고 있습니다.'
