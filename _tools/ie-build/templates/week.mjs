@@ -1,4 +1,4 @@
-import { esc, topbar, sidebar, legend, statusBadge, stars, coreBadge, footer } from './components.mjs';
+import { esc, topbar, weeknav, sidebar, legend, statusBadge, stars, coreBadge, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 import { sourcePanel, quizCards } from '../lib/transform.mjs';
 
@@ -128,11 +128,10 @@ function conceptSubItems(concept) {
   return out;
 }
 
-function weekSidebar(week, weeks) {
-  const idx = weeks.findIndex((w) => w.id === week.id);
-  const prevWeek = weeks.slice(0, idx).reverse().find((w) => w.concepts?.length);
-  const nextWeek = weeks.slice(idx + 1).find((w) => w.concepts?.length);
-
+// 이전/다음 주차 이동은 더 이상 사이드바 몫이 아니다 — weeknav(topbar 아래
+// 두 번째 줄)가 모든 페이지에서 "어느 주차든 한 클릭"을 이미 제공한다(Problem
+// 1·2). 그래서 sidebar()에는 prev/next를 넘기지 않는다.
+function weekSidebar(week) {
   const navItems = week.concepts.map((c, i) => ({
     href: `#${c.slug}`,
     slug: c.slug,
@@ -151,16 +150,15 @@ function weekSidebar(week, weeks) {
     subtitle: week.subtitle,
     progressText: `개념 ${week.concepts.length}개 · 완료 ${week.concepts.filter((c) => c.status === 'done').length}개`,
     navItems,
-    prev: prevWeek ? { href: `${prevWeek.id}.html`, label: prevWeek.id } : null,
-    next: nextWeek ? { href: `${nextWeek.id}.html`, label: nextWeek.id } : null,
   });
 }
 
 export function renderWeekPage({ week, weeks }) {
   const body = `
-${topbar({})}
+${topbar({ active: 'week', weeks })}
+${weeknav({ weeks, activeWeek: week.id })}
 <div class="layout" id="top">
-  ${weekSidebar(week, weeks)}
+  ${weekSidebar(week)}
   <main>
     <p class="breadcrumb"><a href="index.html">학기 지도</a> › ${esc(week.id)} · ${esc(week.topic)}</p>
     <div class="week-intro">
