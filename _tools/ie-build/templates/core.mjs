@@ -1,4 +1,4 @@
-import { esc, topbar, weeknav, sidebar, stars, footer } from './components.mjs';
+import { esc, topbar, sidebar, stars, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 
 /**
@@ -76,7 +76,6 @@ export function renderCorePage({ coreSets, quizSchedule = [], weeks = [] }) {
   const first = coreSets[0];
   const body = `
 ${topbar({ active: 'core', weeks })}
-${weeknav({ weeks })}
 <div class="layout" id="top">
   ${sidebar({
     chapterLabel: '쪽지시험 대비',
@@ -84,8 +83,6 @@ ${weeknav({ weeks })}
     subtitle: multi ? `${coreSets.length}개 회차` : (first ? `Quiz ${first.quiz}` : ''),
     progressText: `항목 ${navItems.length}개`,
     navItems,
-    prev: { href: 'index.html', label: '학기 지도' },
-    next: first ? { href: `quiz.html?quiz=${first.quiz}`, label: '퀴즈' } : null,
   })}
   <main>
     <p class="breadcrumb"><a href="index.html">학기 지도</a> › 핵심 개념</p>

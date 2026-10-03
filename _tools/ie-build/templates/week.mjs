@@ -176,5 +176,6 @@ ${weeknav({ weeks, activeWeek: week.id })}
     bodyClass: 'page-week',
     body,
     scripts: ['js/main.js'],
+    hasWeeknav: true,
   });
 }

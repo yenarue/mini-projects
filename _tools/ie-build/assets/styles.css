@@ -43,13 +43,16 @@
   /* 치수 */
   --sidebar-w:   280px;
   --topbar-h:    60px;
-  /* weeknav(주차 서브메뉴, topbar 아래 두 번째 줄)의 높이. --topbar-h와 더해
-     --header-h를 이룬다 — 이 아래 "헤더 높이를 가정하는 모든 곳" 주석이 달린
-     지점은 전부 --header-h로 맞춰야 한다. 하나라도 --topbar-h만 쓰면 그만큼
-     앵커 랜딩이 두 번째 줄 높이만큼 위로 밀려 가려진다(과거에 한 번 겪은
-     레이아웃 시프트 버그와 같은 종류). */
+  /* weeknav(주차 서브메뉴, topbar 아래 두 번째 줄)의 높이. 이 줄은 주차 페이지
+     (week.mjs)에만 있다 — index/core/quiz/map은 topbar 한 줄뿐이다. 그래서
+     --header-h는 페이지별로 달라야 한다: 기본값은 topbar 한 줄, weeknav가
+     있는 페이지는 아래 `:root[data-header="two"]`가 topbar+weeknav로 덮어쓴다
+     (layout.mjs가 그 페이지에서만 <html data-header="two">를 붙인다). 이 아래
+     "헤더 높이를 가정하는 모든 곳" 주석이 달린 지점은 전부 --header-h로
+     맞춰야 한다 — 하나라도 고정값이나 --topbar-h만 쓰면 그 페이지에서 앵커
+     랜딩이 틀어진다(과거에 한 번 겪은 레이아웃 시프트 버그와 같은 종류). */
   --weeknav-h:   44px;
-  --header-h:    calc(var(--topbar-h) + var(--weeknav-h));
+  --header-h:    var(--topbar-h);
   --content-max: 760px;
 
   --img-filter: none;
@@ -66,6 +69,12 @@
   --map-c5: color-mix(in srgb, var(--brand) 55%, var(--prof) 45%);
   --map-c6: color-mix(in srgb, var(--slide) 55%, var(--note) 45%);
   --map-c7: color-mix(in srgb, var(--prof) 55%, var(--note) 45%);
+}
+
+/* 헤더가 두 줄인 페이지(주차 페이지만 — layout.mjs가 그때만 data-header="two"를
+   <html>에 붙인다). --topbar-h만 쓰는 위 기본값을 덮어 두 줄 합계로 올린다. */
+:root[data-header="two"] {
+  --header-h: calc(var(--topbar-h) + var(--weeknav-h));
 }
 
 :root[data-theme="dark"] {
