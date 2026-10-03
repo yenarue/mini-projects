@@ -1,4 +1,4 @@
-import { esc, topbar, footer } from './components.mjs';
+import { esc, topbar, weeknav, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 import { conceptHref } from '../lib/links.mjs';
 
@@ -93,7 +93,8 @@ export function renderMapPage({ graph, weeks, comparisons }) {
   const data = JSON.stringify(graph).replace(/</g, '\\u003c');
 
   const body = `
-${topbar({ active: 'map' })}
+${topbar({ active: 'map', weeks })}
+${weeknav({ weeks })}
 <main class="page-map-main">
   <p class="eyebrow">개념 연결</p>
   <h1>개념 지도</h1>

@@ -1,4 +1,4 @@
-import { esc, topbar, footer } from './components.mjs';
+import { esc, topbar, weeknav, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 import { conceptHref } from '../lib/links.mjs';
 import { loadAnswers, ANSWERS_DIR } from '../lib/answers.mjs';
@@ -92,7 +92,8 @@ export function renderQuizPage({ items, answers, weeks, quizSchedule }) {
     .replace(/</g, '\\u003c');
 
   const body = `
-${topbar({ active: 'quiz' })}
+${topbar({ active: 'quiz', weeks })}
+${weeknav({ weeks })}
 <main class="page-quiz-main" id="top">
   <p class="eyebrow">퀴즈 대비</p>
   <h1>예상 퀴즈 포인트</h1>

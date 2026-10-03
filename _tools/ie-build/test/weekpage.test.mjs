@@ -111,7 +111,7 @@ test('resolved related는 링크로, 미작성 related는 평문으로 남는다
   assert.match(html, /<span class="related-pending"[^>]*>W02-2\/05<\/span>/);
 });
 
-test('이전/다음 주차 링크가 주차 순서를 따라 생성된다', () => {
+test('사이드바에는 더 이상 이전/다음 주차 버튼이 없다(weeknav로 옮김)', () => {
   const w01 = buildWeek([makeConcept()], 'W01');
   const w02 = buildWeek([makeConcept({ week: 'W02-1', slug: 'c01', no: 1 })], 'W02-1');
   const warnings = new Warnings();
@@ -119,11 +119,36 @@ test('이전/다음 주차 링크가 주차 순서를 따라 생성된다', () =
   for (const c of w02.concepts) renderConcept(c, warnings);
 
   const html = renderWeekPage({ week: w01, weeks: [w01, w02] });
-  assert.ok(!html.includes('← W'), '첫 주차는 이전 링크가 없어야 한다');
-  assert.match(html, /<a href="W02-1\.html">W02-1 →<\/a>/);
+  assert.ok(!html.includes('side-prevnext'), '주차 페이지 사이드바에는 side-prevnext가 남아있지 않아야 한다(죽은 영역 방지)');
+});
+
+test('weeknav가 topbar 바로 아래 줄에 모든 주차를 weeks.json 순서로 나열하고, 현재 주차를 active로 표시한다', () => {
+  const w01 = buildWeek([makeConcept()], 'W01');
+  const w02 = buildWeek([makeConcept({ week: 'W02-1', slug: 'c01', no: 1 })], 'W02-1');
+  const warnings = new Warnings();
+  for (const c of w01.concepts) renderConcept(c, warnings);
+  for (const c of w02.concepts) renderConcept(c, warnings);
+
+  const html = renderWeekPage({ week: w01, weeks: [w01, w02] });
+  assert.match(html, /<nav class="weeknav"[^>]*>\s*<a href="W01\.html" class="active"[^>]*>W01<\/a><a href="W02-1\.html">W02-1<\/a>/);
 
   const html2 = renderWeekPage({ week: w02, weeks: [w01, w02] });
-  assert.match(html2, /<a href="W01\.html">← W01<\/a>/);
+  assert.match(html2, /<a href="W01\.html">W01<\/a><a href="W02-1\.html" class="active"[^>]*>W02-1<\/a>/);
+});
+
+test('weeknav는 개념이 없는 주차를 링크하지 않는다', () => {
+  const w01 = buildWeek([makeConcept()], 'W01');
+  const w04Empty = { ...buildWeek([], 'W04'), concepts: [] };
+  const warnings = new Warnings();
+  for (const c of w01.concepts) renderConcept(c, warnings);
+
+  const html = renderWeekPage({ week: w01, weeks: [w01, w04Empty] });
+  assert.doesNotMatch(html, /href="W04\.html"/, '개념이 없는 주차로는 링크를 걸면 안 된다(빌드 링크 검사 대상)');
+});
+
+test('topbar에 "주차별 개념" 링크가 있고 주차 페이지에서는 active로 표시된다', () => {
+  const html = renderFixture();
+  assert.match(html, /<a href="W01\.html" class="active">주차별 개념<\/a>/);
 });
 
 test('상태 배지가 status에 따라 달라진다', () => {

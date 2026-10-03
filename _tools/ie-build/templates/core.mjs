@@ -1,4 +1,4 @@
-import { esc, topbar, sidebar, stars, footer } from './components.mjs';
+import { esc, topbar, weeknav, sidebar, stars, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 
 /**
@@ -59,7 +59,7 @@ function setBlock(set, quiz) {
 </section>`;
 }
 
-export function renderCorePage({ coreSets, quizSchedule = [] }) {
+export function renderCorePage({ coreSets, quizSchedule = [], weeks = [] }) {
   const quizById = new Map(quizSchedule.map((q) => [q.n, q]));
   const multi = coreSets.length > 1;
 
@@ -75,7 +75,8 @@ export function renderCorePage({ coreSets, quizSchedule = [] }) {
 
   const first = coreSets[0];
   const body = `
-${topbar({ active: 'core' })}
+${topbar({ active: 'core', weeks })}
+${weeknav({ weeks })}
 <div class="layout" id="top">
   ${sidebar({
     chapterLabel: '쪽지시험 대비',
