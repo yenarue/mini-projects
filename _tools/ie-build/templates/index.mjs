@@ -1,4 +1,4 @@
-import { esc, topbar, legend, footer } from './components.mjs';
+import { esc, topbar, weeknav, legend, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 
 // AGENTS.md §1 "강의 전체를 관통하는 프레임(W01)" 그대로. 내용은 REDESIGN.md가
@@ -140,7 +140,8 @@ export function renderIndexPage({ weeks, quizSchedule, coreSets = [], builtAt })
   const groups = groupByDate(weeks);
 
   const body = `
-${topbar({ active: 'index' })}
+${topbar({ active: 'index', weeks })}
+${weeknav({ weeks })}
 <main class="index-main" id="top">
   <header class="index-hero">
     <p class="eyebrow">ITM60034 · 혁신생태계론 (임홍탁)</p>

@@ -4,16 +4,26 @@ export function esc(s) {
   );
 }
 
-/** §4.1 topbar: 브랜드 → 페이지 네비 → 글자크기 3단 → 검색 → 다크모드 */
-export function topbar({ active = '' } = {}) {
+/**
+ * §4.1 topbar: 브랜드 → 페이지 네비 → 글자크기 3단 → 검색 → 다크모드.
+ *
+ * `weeks`는 "주차별 개념" 링크가 어디로 갈지 고르는 데만 쓴다(개념이 있는 첫
+ * 주차). 소유자 요청(Problem 1): "학기 지도에서 선택해서 들어가야 하는 게 별로"
+ * — 주차 페이지를 상단 네비에서 바로 한 번에 갈 수 있게 한다. 실제 "어느 주차로
+ * 가든 한 클릭" 요구는 weeknav()(아래, 모든 페이지의 topbar 바로 아래 줄)가 맡는다.
+ */
+export function topbar({ active = '', weeks = [] } = {}) {
   const link = (href, label, key) =>
     `<a href="${href}"${active === key ? ' class="active"' : ''}>${label}</a>`;
+  const firstWeek = weeks.find((w) => (w.concepts ?? []).length > 0);
+  const weekHref = firstWeek ? `${firstWeek.id}.html` : 'index.html';
   return `
 <header class="topbar">
   <a class="topbar-home" href="../../index.html" title="KAIST ITM 대시보드로">← ITM</a>
   <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
   <nav class="topbar-nav">
     ${link('index.html', '학기 지도', 'index')}
+    ${link(weekHref, '주차별 개념', 'week')}
     ${link('core.html', '핵심 개념', 'core')}
     ${link('quiz.html', '퀴즈', 'quiz')}
     ${link('map.html', '개념 지도', 'map')}
@@ -39,6 +49,33 @@ export function topbar({ active = '' } = {}) {
     <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
   </div>
 </div>`;
+}
+
+/**
+ * 주차 서브메뉴(두 번째 줄, Problem 1·2 해결).
+ *
+ * 소유자 결정: 주차 내비게이션은 사이드바에서 빼서 topbar 아래 두 번째 줄로
+ * 옮기고, 모든 페이지에 둔다(주차 페이지 전용이 아니라 최상위 내비게이션으로
+ * 쓰이도록 — 그래야 학기 지도를 거치지 않고 아무 데서나 원하는 주차로 간다).
+ * 항상 펼쳐진 한 줄로 보여준다(아코디언으로 접지 않음) — 주차가 4개뿐이라
+ * 접었다 펼치는 비용이 클릭 한 번 아끼는 이득보다 크고, "주차별 개념"이
+ * 눌러야 열리는 메뉴가 아니라 바로 보이는 내비게이션이라는 점을 분명히 한다.
+ *
+ * `weeks.json`의 순서를 그대로 따르고, 개념이 하나도 없는 주차(W04~)는 링크를
+ * 만들지 않는다 — 빌드가 모든 내부 링크를 검사하므로 빈 주차로 링크하면 바로
+ * 깨진 링크로 잡힌다.
+ */
+export function weeknav({ weeks = [], activeWeek = '' } = {}) {
+  const items = weeks
+    .filter((w) => (w.concepts ?? []).length > 0)
+    .map((w) => {
+      const isActive = w.id === activeWeek;
+      return `<a href="${esc(w.id)}.html"${isActive ? ' class="active" aria-current="page"' : ''}>${esc(w.id)}</a>`;
+    })
+    .join('');
+  if (!items) return '';
+  return `
+<nav class="weeknav" aria-label="주차별 개념 바로가기">${items}</nav>`;
 }
 
 /**
@@ -72,21 +109,35 @@ export function sidebar({
     </li>`;
   }).join('');
 
+  // 소유자 결정(Problem 2): 전부 펼치기/전부 접기는 개념 목록이 길어지면(W03
+  // 18개) 맨 아래로 밀려 스크롤해야만 닿을 수 있었다. 목차 위, 사이드바 맨
+  // 위쪽으로 옮긴다 — 헤더 정보(주차 라벨·제목·진행률) 바로 아래라 뷰포트
+  // 900px 기준으로는 스크롤 없이 항상 보인다.
+  const tools = `
+  <div class="side-tools">
+    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
+    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
+  </div>`;
+
+  // 주차 prev/next는 weeknav(topbar 아래 두 번째 줄)로 옮겼으니 week.mjs는
+  // 더 이상 prev/next를 넘기지 않는다. core.mjs처럼 다른 용도(학기 지도 ↔
+  // 퀴즈 같은 일반 페이지 이동)로 prev/next를 쓰는 호출자는 그대로 유지한다.
+  // 둘 다 없으면 빈 플레이스홀더 스팬만 남는 죽은 영역을 만들지 않도록 블록
+  // 자체를 렌더링하지 않는다.
+  const hasPrevNext = !!(prev || next);
+  const prevNext = hasPrevNext ? `
+  <div class="side-prevnext">
+    ${prev ? `<a href="${prev.href}">← ${esc(prev.label)}</a>` : '<span></span>'}
+    ${next ? `<a href="${next.href}">${esc(next.label)} →</a>` : '<span></span>'}
+  </div>` : '';
+
   return `
 <aside class="sidebar">
   ${chapterLabel ? `<div class="chapter-label">${esc(chapterLabel)}</div>` : ''}
   <h1>${esc(title)}</h1>
   ${subtitle ? `<p class="side-subtitle">${esc(subtitle)}</p>` : ''}
-  ${progressText ? `<div class="side-progress">${esc(progressText)}</div>` : ''}
-  <nav><ul class="side-nav">${items}</ul></nav>
-  <div class="side-tools">
-    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
-    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
-  </div>
-  <div class="side-prevnext">
-    ${prev ? `<a href="${prev.href}">← ${esc(prev.label)}</a>` : '<span></span>'}
-    ${next ? `<a href="${next.href}">${esc(next.label)} →</a>` : '<span></span>'}
-  </div>
+  ${progressText ? `<div class="side-progress">${esc(progressText)}</div>` : ''}${tools}
+  <nav><ul class="side-nav">${items}</ul></nav>${prevNext}
 </aside>`;
 }
 
