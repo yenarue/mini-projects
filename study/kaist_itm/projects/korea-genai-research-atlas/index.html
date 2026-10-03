@@ -164,6 +164,7 @@
     .funding-item p { margin: 2px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
 
     .region-layout { display: grid; grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr); gap: 14px; align-items: stretch; }
+    .region-layout[hidden] { display: none; }
     .tile-map { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-areas:
       '. . gangwon gangwon .'
       'incheon seoul gyeonggi chungbuk gyeongbuk'
@@ -203,6 +204,34 @@
     .geo-label { fill: var(--ink); font-size: 10px; font-weight: 780; text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
     .geo-label.on-dark { fill: #fff; stroke: rgba(22, 24, 29, .62); }
     .geo-map-status { display: grid; place-items: center; min-height: 390px; color: var(--muted); font-size: 13px; text-align: center; }
+    .seoul-drilldown { margin-top: 14px; }
+    .seoul-drilldown[hidden] { display: none; }
+    .seoul-back { min-height: 36px; padding: 7px 12px; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--surface); color: var(--ink-soft); cursor: pointer; font-size: 12px; font-weight: 720; }
+    .seoul-back:hover { border-color: var(--brand); color: var(--brand); }
+    .seoul-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr); gap: 16px; align-items: start; }
+    .seoul-map-shell { display: grid; place-items: center; min-height: 430px; padding: 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface-2); }
+    .seoul-map { display: block; width: 100%; height: 410px; }
+    .seoul-district { stroke: var(--surface); stroke-width: 1.35; vector-effect: non-scaling-stroke; cursor: pointer; transition: opacity .15s ease, stroke .15s ease, filter .15s ease; }
+    .seoul-district:hover, .seoul-district:focus-visible { opacity: .82; stroke: var(--ink); filter: drop-shadow(0 2px 3px rgba(22, 24, 29, .18)); outline: none; }
+    .seoul-district.active { stroke: var(--ink); stroke-width: 2.8; filter: drop-shadow(0 2px 4px rgba(22, 24, 29, .22)); }
+    .seoul-label { fill: var(--ink); font-size: 9px; font-weight: 780; text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--surface); stroke-width: 2.8px; stroke-linejoin: round; }
+    .seoul-label.on-dark { fill: #fff; stroke: rgba(22, 24, 29, .62); }
+    .seoul-side { display: grid; gap: 14px; }
+    .district-focus { padding: 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface-2); }
+    .district-focus .cluster-label { color: var(--brand); font-size: 11px; font-weight: 780; letter-spacing: .04em; }
+    .district-focus h4 { margin: 6px 0 13px; font-size: 19px; }
+    .district-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .district-stat { padding: 10px; border-radius: 9px; background: var(--surface); }
+    .district-stat span { display: block; color: var(--muted); font-size: 10.5px; }
+    .district-stat strong { display: block; margin-top: 3px; color: var(--ink); font-size: 15px; line-height: 1.35; }
+    .district-institution { margin: 12px 0 0; color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
+    .district-ranking { max-height: 310px; padding-right: 4px; overflow-y: auto; }
+    .district-rank-button { display: grid; grid-template-columns: 22px minmax(70px, 92px) minmax(0, 1fr) 42px; gap: 7px; align-items: center; width: 100%; padding: 6px 4px; border: 0; border-radius: 7px; background: transparent; color: var(--ink); cursor: pointer; text-align: left; }
+    .district-rank-button:hover, .district-rank-button.active { background: var(--brand-soft); }
+    .district-rank-number { color: var(--muted); font-size: 10px; text-align: right; }
+    .district-rank-name { overflow: hidden; font-size: 12px; font-weight: 680; text-overflow: ellipsis; white-space: nowrap; }
+    .district-rank-value { font-size: 11.5px; font-weight: 760; text-align: right; font-variant-numeric: tabular-nums; }
+    .seoul-method-note { margin: 14px 0 0; padding: 10px 12px; border-left: 3px solid var(--brand); border-radius: 0 8px 8px 0; background: var(--surface-2); color: var(--muted); font-size: 11.5px; line-height: 1.65; }
 
     .rank-list { display: grid; gap: 10px; }
     .rank-row { display: grid; grid-template-columns: minmax(100px, 145px) minmax(0, 1fr) 54px; gap: 10px; align-items: center; }
@@ -342,7 +371,7 @@
 
     @media (max-width: 1024px) {
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .analysis-grid, .region-layout, .method-grid, .semantic-layout { grid-template-columns: 1fr; }
+      .analysis-grid, .region-layout, .seoul-layout, .method-grid, .semantic-layout { grid-template-columns: 1fr; }
       .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .field.search-field { grid-column: 1 / -1; }
@@ -389,6 +418,9 @@
       .region-tile span { font-size: 14px; }
       .region-panel-head { align-items: flex-start; }
       .geo-map { height: 350px; }
+      .seoul-map-shell { min-height: 350px; padding: 5px; }
+      .seoul-map { height: 340px; }
+      .district-rank-button { grid-template-columns: 20px 76px minmax(0, 1fr) 36px; gap: 5px; }
       .rank-row { grid-template-columns: 94px minmax(0, 1fr) 46px; gap: 7px; }
       .relation-tabs { overflow-x: auto; }
       .relation-tabs button { min-width: 96px; }
@@ -482,10 +514,10 @@
         <div>
           <p class="section-kicker">Where</p>
           <h2 id="where-h">어디에서 연구하는가</h2>
-          <p class="section-desc">연구비 주집행지역이 아니라 정규화한 대표 수행기관의 공식 소재지를 사용했습니다. 지역을 누르면 해당 프로젝트로 이동합니다.</p>
+          <p class="section-desc">연구비 주집행지역이 아니라 정규화한 대표 수행기관의 공식 소재지를 사용했습니다. 서울을 누르면 25개 자치구 상세 통계를, 다른 지역을 누르면 해당 프로젝트를 확인할 수 있습니다.</p>
         </div>
       </div>
-      <div class="region-layout">
+      <div class="region-layout" id="national-region-view">
         <article class="card panel">
           <div class="panel-head region-panel-head">
             <div><h3>시도별 연구 분포</h3><span class="panel-note" id="region-view-note">타일 지도 · 진할수록 많음</span></div>
@@ -502,6 +534,23 @@
           <div class="rank-list" id="region-ranking"></div>
         </article>
       </div>
+      <article class="card panel seoul-drilldown" id="seoul-drilldown" hidden>
+        <div class="panel-head region-panel-head">
+          <div><h3>서울 자치구별 연구 분포</h3><span class="panel-note" id="seoul-summary-note">대표 수행기관 공식 소재지 기준</span></div>
+          <button type="button" class="seoul-back" id="seoul-back">← 전국 보기</button>
+        </div>
+        <div class="seoul-layout">
+          <div class="seoul-map-shell" id="seoul-map" aria-label="서울 자치구별 프로젝트 수 지도"></div>
+          <div class="seoul-side">
+            <section class="district-focus" id="seoul-district-detail" aria-live="polite"></section>
+            <section>
+              <div class="panel-head"><h4>25개 자치구 순위</h4><span class="panel-note">프로젝트 수 · 0건 포함</span></div>
+              <div class="district-ranking" id="seoul-ranking"></div>
+            </section>
+          </div>
+        </div>
+        <p class="seoul-method-note"><strong>해석 주의:</strong> 실제 연구실이나 공동연구 장소가 아니라 대표 수행기관의 공식 소재지 기준입니다. 따라서 대학·연구기관의 입지가 강하게 반영됩니다.</p>
+      </article>
     </section>
 
     <section class="section" id="who" aria-labelledby="who-h">
@@ -664,7 +713,7 @@
           <ul class="method-list">
             <li>검색식에 포착된 NTIS 과제만 포함하므로 전체 생성형 AI 연구를 뜻하지 않는다.</li>
             <li>2026년은 9월 30일까지 수집한 진행 중 자료다.</li>
-            <li>지도는 대표 수행기관 소재지이며 실제 연구 현장 전체를 나타내지 않는다. 행정경계는 통계청 2013년 시도 경계 자료를 사용했다.</li>
+            <li>지도는 대표 수행기관 소재지이며 실제 연구 현장 전체를 나타내지 않는다. 행정경계는 통계청 2013년 시도·서울 자치구 경계 자료를 사용했다.</li>
             <li>주제군은 과제명·키워드 규칙의 대표값이며 공식 학문 분류가 아니다.</li>
             <li>의미 기반 14개 군집은 텍스트 유사도를 이용한 탐색용 묶음이며, 안정도 ARI 0.61로 경계에 있는 연구는 다른 군집으로 달라질 수 있다.</li>
             <li>웹 공개본에서 연구 원문·사업자번호·연락처·내부 검토 로그를 제외했다.</li>
@@ -672,6 +721,7 @@
           <div class="method-links">
             <a href="https://www.ntis.go.kr" target="_blank" rel="noopener noreferrer">NTIS 원자료</a>
             <a href="https://github.com/southkorea/southkorea-maps" target="_blank" rel="noopener noreferrer">행정경계 지도 출처</a>
+            <a href="https://github.com/southkorea/seoul-maps" target="_blank" rel="noopener noreferrer">서울 자치구 지도 출처</a>
             <a href="data/web_data_dictionary.md">웹 데이터 사전</a>
             <a href="data/projects.csv" download>프로젝트 CSV</a>
             <a href="data/ntis_genai_exploration.xlsx" download>탐색 분석 워크북</a>
@@ -689,12 +739,13 @@
   <script>
     (function () {
       'use strict';
-      const ASSET_VERSION = '20261001-2';
+      const ASSET_VERSION = '20261003-1';
       const SECURITY_TOPIC = '안전·신뢰·거버넌스';
-      const state = { data: null, mapData: null, projectById: null, visible: 12, topicAxis: 'technical', regionView: 'tile', relationTab: 'keywords', keywordYear: 'overall', clusterFilter: '', mapColorMode: 'cluster', selectedProjectId: null, filters: { query: '', region: '', technical: '', domain: '' } };
+      const state = { data: null, mapData: null, districtMapData: null, projectById: null, visible: 12, topicAxis: 'technical', regionView: 'tile', regionScope: 'national', selectedDistrict: null, relationTab: 'keywords', keywordYear: 'overall', clusterFilter: '', mapColorMode: 'cluster', selectedProjectId: null, filters: { query: '', region: '', technical: '', domain: '' } };
       const topicColors = ['var(--brand)', 'var(--prof)', 'var(--slide)', 'var(--note)', 'var(--term)', 'var(--brand-dark)', 'var(--muted)', 'var(--ink-soft)'];
       const clusterColors = ['#3355d1','#2f6b52','#6b5bd2','#c2255c','#b8792e','#1f7a8c','#8b5e34','#5b6475','#3a7d44','#b24c63','#4a6fa5','#7a5195','#2a9d8f','#d97706'];
       const regionOrder = ['서울','경기','인천','강원','충북','충남','세종','대전','경북','대구','울산','부산','경남','전북','전남','광주','제주'];
+      const seoulDistrictOrder = ['강남구','강동구','강북구','강서구','관악구','광진구','구로구','금천구','노원구','도봉구','동대문구','동작구','마포구','서대문구','서초구','성동구','성북구','송파구','양천구','영등포구','용산구','은평구','종로구','중구','중랑구'];
       const regionNameMap = {
         '서울특별시':'서울', '부산광역시':'부산', '대구광역시':'대구', '인천광역시':'인천',
         '광주광역시':'광주', '대전광역시':'대전', '울산광역시':'울산', '세종특별자치시':'세종',
@@ -743,11 +794,120 @@
       }
 
       function selectRegion(name) {
+        if (name === '서울') {
+          state.regionScope = 'seoul';
+          $('#national-region-view').hidden = true;
+          $('#seoul-drilldown').hidden = false;
+          renderSeoulDistricts();
+          $('#where').scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
         state.filters.region = name;
         $('#region-filter').value = name;
         state.visible = 12;
         renderProjects();
         $('#explore').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function showNationalRegions() {
+        state.regionScope = 'national';
+        $('#seoul-drilldown').hidden = true;
+        $('#national-region-view').hidden = false;
+        $('#where').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function getSeoulDistrictStats() {
+        const byDistrict = new Map(seoulDistrictOrder.map((name) => [name, { name, project_count: 0, government_funding_krw: 0, institutions: new Map() }]));
+        const projects = state.data.projects.filter((project) => project.sido === '서울');
+        projects.forEach((project) => {
+          const item = byDistrict.get(project.sigungu);
+          if (!item) return;
+          item.project_count += 1;
+          item.government_funding_krw += project.government_funding_krw;
+          item.institutions.set(project.institution, (item.institutions.get(project.institution) || 0) + 1);
+        });
+        return [...byDistrict.values()].map((item) => {
+          const topInstitution = [...item.institutions.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ko'))[0] || ['', 0];
+          return { ...item, share: item.project_count / projects.length, top_institution: topInstitution[0], top_institution_count: topInstitution[1] };
+        }).sort((a, b) => b.project_count - a.project_count || a.name.localeCompare(b.name, 'ko'));
+      }
+
+      function renderSeoulDistrictDetail(item) {
+        const topShare = item.project_count ? item.top_institution_count / item.project_count : 0;
+        $('#seoul-district-detail').innerHTML = `
+          <div class="cluster-label">서울 자치구 상세</div>
+          <h4>${escapeHTML(item.name)}</h4>
+          <div class="district-stats">
+            <div class="district-stat"><span>프로젝트</span><strong>${formatNumber(item.project_count)}개</strong></div>
+            <div class="district-stat"><span>서울 내 비중</span><strong>${formatPercent(item.share)}</strong></div>
+            <div class="district-stat"><span>정부 연구비</span><strong>${formatFunding(item.government_funding_krw)}</strong></div>
+            <div class="district-stat"><span>대표 기관 비중</span><strong>${item.project_count ? formatPercent(topShare) : '—'}</strong></div>
+          </div>
+          <p class="district-institution"><strong>대표 수행기관</strong><br>${item.top_institution ? `${escapeHTML(item.top_institution)} · ${formatNumber(item.top_institution_count)}개` : '현재 분석 대상 프로젝트 없음'}</p>`;
+      }
+
+      function renderSeoulDistrictMap(statsByName, max) {
+        const shell = $('#seoul-map');
+        if (!state.districtMapData?.features?.length) {
+          shell.innerHTML = '<div class="geo-map-status">서울 자치구 경계 데이터를 불러오지 못했습니다.<br>오른쪽 순위에서 자치구 통계를 확인해 주세요.</div>';
+          return;
+        }
+        const width = 620, height = 430, padding = 18;
+        const points = state.districtMapData.features.flatMap((feature) => geometryRings(feature.geometry).flat());
+        const xs = points.map((point) => point[0]), ys = points.map((point) => point[1]);
+        const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+        const scale = Math.min((width - padding * 2) / (maxX - minX), (height - padding * 2) / (maxY - minY));
+        const offsetX = (width - (maxX - minX) * scale) / 2;
+        const offsetY = (height - (maxY - minY) * scale) / 2;
+        const project = ([x, y]) => [offsetX + (x - minX) * scale, height - offsetY - (y - minY) * scale];
+        const paths = [], labels = [];
+        state.districtMapData.features.forEach((feature) => {
+          const name = feature.properties.name;
+          const item = statsByName.get(name) || { project_count: 0, share: 0 };
+          const heat = item.project_count ? Math.max(10, Math.round(item.project_count / max * 82)) : 3;
+          const path = geometryRings(feature.geometry).map((ring) => ring.map((point, index) => {
+            const [x, y] = project(point);
+            return `${index ? 'L' : 'M'}${x.toFixed(2)},${y.toFixed(2)}`;
+          }).join('') + 'Z').join('');
+          const active = state.selectedDistrict === name ? ' active' : '';
+          paths.push(`<path class="seoul-district${active}" data-seoul-district="${name}" tabindex="0" role="button" aria-pressed="${state.selectedDistrict === name}" aria-label="${name} 프로젝트 ${item.project_count}개, 서울 내 ${formatPercent(item.share)}" d="${path}" style="fill:color-mix(in srgb,var(--brand) ${heat}%,var(--surface))"><title>${name} · ${formatNumber(item.project_count)}개 · 서울 내 ${formatPercent(item.share)}</title></path>`);
+          const largest = geometryRings(feature.geometry).filter((ring) => ring.length > 3).sort((a, b) => b.length - a.length)[0];
+          if (largest) {
+            const [cx, cy] = project(ringCentroid(largest));
+            labels.push(`<text class="seoul-label ${heat > 54 ? 'on-dark' : ''}" x="${cx.toFixed(1)}" y="${(cy + 3).toFixed(1)}">${name.replace('구', '')}</text>`);
+          }
+        });
+        shell.innerHTML = `<svg class="seoul-map" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="seoul-map-title seoul-map-desc"><title id="seoul-map-title">서울 자치구별 생성형 AI 연구 프로젝트 지도</title><desc id="seoul-map-desc">색이 진할수록 프로젝트 수가 많습니다. 자치구를 선택하면 상세 통계를 표시합니다.</desc>${paths.join('')}${labels.join('')}</svg>`;
+        $$('.seoul-district').forEach((district) => {
+          const select = () => { state.selectedDistrict = district.dataset.seoulDistrict; renderSeoulDistricts(); };
+          district.addEventListener('click', select);
+          district.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(); }
+          });
+        });
+      }
+
+      function renderSeoulDistricts() {
+        const stats = getSeoulDistrictStats();
+        const statsByName = new Map(stats.map((item) => [item.name, item]));
+        const total = stats.reduce((sum, item) => sum + item.project_count, 0);
+        const observed = stats.filter((item) => item.project_count > 0).length;
+        const topFive = stats.slice(0, 5).reduce((sum, item) => sum + item.project_count, 0);
+        if (!state.selectedDistrict || !statsByName.has(state.selectedDistrict)) state.selectedDistrict = stats[0].name;
+        $('#seoul-summary-note').textContent = `${formatNumber(total)}개 · ${observed}개 구 분포 · 상위 5개 구 ${formatPercent(topFive / total)}`;
+        const max = Math.max(...stats.map((item) => item.project_count), 1);
+        renderSeoulDistrictMap(statsByName, max);
+        renderSeoulDistrictDetail(statsByName.get(state.selectedDistrict));
+        $('#seoul-ranking').innerHTML = stats.map((item, index) => `
+          <button type="button" class="district-rank-button ${item.name === state.selectedDistrict ? 'active' : ''}" data-seoul-rank="${item.name}" aria-pressed="${item.name === state.selectedDistrict}">
+            <span class="district-rank-number">${index + 1}</span><span class="district-rank-name">${escapeHTML(item.name)}</span>
+            <span class="rank-track"><span class="rank-fill" style="display:block;width:${item.project_count / max * 100}%"></span></span>
+            <span class="district-rank-value">${formatNumber(item.project_count)}</span>
+          </button>`).join('');
+        $$('[data-seoul-rank]').forEach((button) => button.addEventListener('click', () => {
+          state.selectedDistrict = button.dataset.seoulRank;
+          renderSeoulDistricts();
+        }));
       }
 
       function geometryRings(geometry) {
@@ -1068,6 +1228,7 @@
           $$('[data-region-panel]').forEach((panel) => { panel.hidden = panel.dataset.regionPanel !== state.regionView; });
           $('#region-view-note').textContent = state.regionView === 'tile' ? '타일 지도 · 진할수록 많음' : '대한민국 지도 · 진할수록 많음';
         }));
+        $('#seoul-back').addEventListener('click', showNationalRegions);
         const syncFilter = (selector, key) => $(selector).addEventListener(key === 'query' ? 'input' : 'change', (event) => {
           state.filters[key] = event.target.value;
           state.visible = 12;
@@ -1099,14 +1260,16 @@
 
       async function init() {
         try {
-          const [dataResponse, mapResponse] = await Promise.all([
+          const [dataResponse, mapResponse, districtMapResponse] = await Promise.all([
             fetch(`data/atlas-data.json?v=${ASSET_VERSION}`, { cache: 'no-store' }),
-            fetch(`data/skorea-provinces.geo.json?v=${ASSET_VERSION}`, { cache: 'no-store' }).catch(() => null)
+            fetch(`data/skorea-provinces.geo.json?v=${ASSET_VERSION}`, { cache: 'no-store' }).catch(() => null),
+            fetch(`data/seoul-municipalities.geo.json?v=${ASSET_VERSION}`, { cache: 'no-store' }).catch(() => null)
           ]);
           if (!dataResponse.ok) throw new Error(`HTTP ${dataResponse.status}`);
           state.data = await dataResponse.json();
           state.projectById = new Map(state.data.projects.map((project) => [project.series_id, project]));
           if (mapResponse?.ok) state.mapData = await mapResponse.json();
+          if (districtMapResponse?.ok) state.districtMapData = await districtMapResponse.json();
           $('#updated-at').textContent = `분석 기준 2026-09-30 · 데이터 갱신 ${state.data.meta.updated_at} · ${formatNumber(state.data.meta.project_count)}개 프로젝트`;
           renderSummary(); renderAnnual(); renderRegions(); renderInstitutions(); renderTopics(); populateFilters(); renderExploration(); bindInteractions(); renderProjects();
         } catch (error) {
