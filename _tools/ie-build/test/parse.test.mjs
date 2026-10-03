@@ -27,7 +27,6 @@ test('frontmatter 10키를 파싱한다', () => {
   assert.deepEqual(c.slides, ['W01 p10']);
   assert.equal(c.lectureRefs.length, 1);
   assert.deepEqual(c.relatedRaw, ['W01/02', 'W02-2/03']);
-  assert.equal(c.status, 'draft');
   assert.equal(w.count, 0);
 });
 
@@ -65,7 +64,7 @@ test('알 수 없는 섹션 제목은 경고하고 other로 담는다', () => {
   fs.writeFileSync(file, [
     '---', 'week: W09', 'no: 1', 'title: X', 'en: X', 'tags: []',
     'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
-    'status: draft', '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
+    '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
     '## 완전히 새로운 섹션', '', '내용', '',
   ].join('\n'));
 
@@ -91,7 +90,7 @@ test('no가 정수가 아니면 경고하고 null을 반환한다', () => {
   fs.writeFileSync(file, [
     '---', 'week: W09', 'no: abc', 'title: X', 'en: X', 'tags: []',
     'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
-    'status: draft', '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
+    '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
   ].join('\n'));
 
   const w = new Warnings();
@@ -110,7 +109,7 @@ test('isEmptyMyNotes는 마크다운 강조 문자를 벗겨내고 판단한다'
     fs.writeFileSync(file, [
       '---', 'week: W09', 'no: 1', 'title: X', 'en: X', 'tags: []',
       'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
-      'status: draft', '---', '',
+      '---', '',
       '## 한 줄 정의', '', 'ㅇㅇ', '',
       '## 나의 이해', '', mynotesBody, '',
     ].join('\n'));
@@ -134,7 +133,7 @@ test('코드 펜스 안의 "## "는 섹션 제목으로 취급되지 않는다',
   fs.writeFileSync(file, [
     '---', 'week: W09', 'no: 1', 'title: X', 'en: X', 'tags: []',
     'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
-    'status: draft', '---', '',
+    '---', '',
     '## 핵심 내용', '',
     '```', '## 이건 코드다', '```', '',
   ].join('\n'));
@@ -154,7 +153,7 @@ test('닫히지 않은 코드 펜스는 경고한다', () => {
   fs.writeFileSync(file, [
     '---', 'week: W09', 'no: 1', 'title: X', 'en: X', 'tags: []',
     'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
-    'status: draft', '---', '',
+    '---', '',
     '## 핵심 내용', '',
     '```', '닫히지 않은 코드', '',
   ].join('\n'));
@@ -172,7 +171,7 @@ test('collectConcepts는 같은 주차 내에서 no 순으로 정렬한다', () 
     fs.writeFileSync(path.join(dir, 'W09', filename), [
       '---', 'week: W09', `no: ${no}`, 'title: X', 'en: X', 'tags: []',
       'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
-      'status: draft', '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
+      '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
     ].join('\n'));
   };
 
@@ -191,7 +190,7 @@ test('폴더명과 frontmatter week가 다르면 폴더명을 따르고 경고�
   fs.writeFileSync(path.join(dir, 'W03', '01-불일치.md'), [
     '---', 'week: W01', 'no: 1', 'title: X', 'en: X', 'tags: []',
     'slides: []', 'lecture_refs: []', 'readings: []', 'related: []',
-    'status: draft', '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
+    '---', '', '## 한 줄 정의', '', 'ㅇㅇ', '',
   ].join('\n'));
 
   const w = new Warnings();

@@ -1,4 +1,4 @@
-import { esc, topbar, weeknav, sidebar, legend, statusBadge, stars, coreBadge, footer } from './components.mjs';
+import { esc, topbar, weeknav, sidebar, legend, stars, coreBadge, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 import { sourcePanel, quizCards } from '../lib/transform.mjs';
 
@@ -77,7 +77,6 @@ function conceptBlock(concept) {
     <div class="concept-actions">
       ${coreBadge(concept.coreRefs)}
       ${stars(concept.importance)}
-      ${statusBadge(concept.status)}
       <button type="button" class="focus-btn" data-focus-target="${concept.slug}" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
     </div>
   </header>
@@ -148,7 +147,7 @@ function weekSidebar(week) {
     chapterLabel: `${week.id} · ${week.date.slice(5).replace('-', '/')}`,
     title: week.topic,
     subtitle: week.subtitle,
-    progressText: `개념 ${week.concepts.length}개 · 완료 ${week.concepts.filter((c) => c.status === 'done').length}개`,
+    progressText: `개념 ${week.concepts.length}개`,
     navItems,
   });
 }

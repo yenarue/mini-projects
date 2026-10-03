@@ -15,7 +15,6 @@ function makeConcept(overrides = {}) {
     subtitle: '',
     tags: ['lock-in', 'path-dependency'],
     slides: ['W01 p10'],
-    status: 'draft',
     hasMyNotes: false,
     related: [
       { week: 'W01', no: 2, href: 'W01.html#c02', title: '기존 개념', resolved: true },
@@ -151,14 +150,6 @@ test('topbar에 "주차별 개념" 링크가 있고 주차 페이지에서는 ac
   assert.match(html, /<a href="W01\.html" class="active">주차별 개념<\/a>/);
 });
 
-test('상태 배지가 status에 따라 달라진다', () => {
-  const done = renderFixture({ concepts: [makeConcept({ status: 'done' })] });
-  assert.match(done, /<span class="badge badge-done">완료<\/span>/);
-
-  const draft = renderFixture({ concepts: [makeConcept({ status: 'draft' })] });
-  assert.match(draft, /<span class="badge badge-draft">초안<\/span>/);
-});
-
 test('집중 모드 버튼은 마크업에 있지만 아직 아무 동작도 하지 않는다(R3 예약)', () => {
   const html = renderFixture();
   assert.match(html, /<button type="button" class="focus-btn" data-focus-target="c05"/);
@@ -169,7 +160,7 @@ test('사이드바에 개념 번호와 제목, 진행률이 렌더된다', () =>
   const html = renderFixture();
   assert.match(html, /<span class="side-no">05<\/span>/);
   assert.match(html, /<span class="side-title">세 가지 고착<\/span>/);
-  assert.match(html, /개념 1개 · 완료 0개/);
+  assert.match(html, /<div class="side-progress">개념 1개<\/div>/);
 });
 
 /* ---------- 사이드바 하위 목차 · 중요도 · 핵심 배지 ---------- */

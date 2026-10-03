@@ -118,23 +118,17 @@ function quizRow(q, weeksById, coreSet) {
 }
 
 function progressRow(w) {
-  const done = w.concepts.filter((c) => c.status === 'done').length;
   return `
       <tr>
         <td><a href="${esc(w.id)}.html">${esc(w.id)}</a></td>
         <td>${esc(w.topic)}</td>
         <td>${w.concepts.length}</td>
-        <td>${done}</td>
       </tr>`;
 }
 
 export function renderIndexPage({ weeks, quizSchedule, coreSets = [], builtAt }) {
   const withConcepts = weeks.filter((w) => w.concepts.length);
   const totalConcepts = withConcepts.reduce((n, w) => n + w.concepts.length, 0);
-  const doneConcepts = withConcepts.reduce(
-    (n, w) => n + w.concepts.filter((c) => c.status === 'done').length,
-    0
-  );
   const weeksById = new Map(weeks.map((w) => [w.id, w]));
   const coreByQuiz = new Map(coreSets.map((s) => [s.quiz, s]));
   const groups = groupByDate(weeks);
@@ -186,10 +180,10 @@ ${weeknav({ weeks })}
   <ol class="quiz-timeline">${quizSchedule.map((q) => quizRow(q, weeksById, coreByQuiz.get(q.n))).join('')}</ol>
 
   <h2 class="section-title">진행 현황</h2>
-  <p class="progress-summary">전체 개념 ${totalConcepts}개 · 완료 ${doneConcepts}개</p>
+  <p class="progress-summary">전체 개념 ${totalConcepts}개</p>
   <div class="table-scroll">
     <table class="progress-table">
-      <thead><tr><th>주차</th><th>주제</th><th>개념</th><th>완료</th></tr></thead>
+      <thead><tr><th>주차</th><th>주제</th><th>개념</th></tr></thead>
       <tbody>${withConcepts.map(progressRow).join('')}</tbody>
     </table>
   </div>

@@ -368,8 +368,6 @@ main { padding: 32px 40px 72px; min-width: 0; }
 a.chip-tag:hover { color: var(--brand); border-color: var(--brand); }
 
 .badge { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: var(--radius-pill); white-space: nowrap; }
-.badge-draft { color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); }
-.badge-done { color: var(--prof); background: var(--prof-soft); border: 1px solid transparent; }
 
 /* 섹션 공통 */
 .sec { margin: 18px 0; }
@@ -833,7 +831,7 @@ body.focus-lock { overflow: hidden; }
 .progress-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .progress-table th, .progress-table td { padding: 10px 14px; border: 1px solid var(--line); text-align: left; }
 .progress-table th { background: var(--surface-2); font-weight: 600; color: var(--ink); font-size: 12.5px; }
-.progress-table td:nth-child(3), .progress-table td:nth-child(4) {
+.progress-table td:nth-child(3) {
   font-variant-numeric: tabular-nums; text-align: center; width: 80px;
 }
 .progress-table tbody tr:nth-child(even) { background: var(--surface-2); }
@@ -908,7 +906,7 @@ body.focus-lock { overflow: hidden; }
   color: var(--term); background: var(--term-soft);
 }
 /* 응용(응용:) 문항 — 모범답안이 없는 사고 실험형 프롬프트임을 서술형/비교형과
-   다른 색으로 구분한다. badge-draft와 같은 톤(--muted/--surface-2)만 재사용한다. */
+   다른 색으로 구분한다. 기존 회색 톤(--muted/--surface-2)만 재사용한다. */
 .quiz-kind-applied { color: var(--muted); background: var(--surface-2); }
 .quiz-mark { font-size: 11.5px; font-weight: 600; color: var(--muted); margin-left: auto; }
 .quiz-q { font-size: 17px; line-height: 1.75; color: var(--ink); }

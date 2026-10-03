@@ -176,12 +176,6 @@ export function coreBadge(coreRefs = []) {
   return `<a class="badge badge-core" href="${first.href}" title="${esc(title)}">핵심</a>`;
 }
 
-export function statusBadge(status) {
-  return status === 'done'
-    ? '<span class="badge badge-done">완료</span>'
-    : '<span class="badge badge-draft">초안</span>';
-}
-
 // 서명 푸터 — 마크업은 기존 그대로 유지한다(스타일만 CSS에서 새로 입힌다).
 export function footer() {
   return `

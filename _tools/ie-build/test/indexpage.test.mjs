@@ -6,13 +6,13 @@ const weeks = [
   {
     id: 'W01', date: '2026-09-05', topic: 'Intro', subtitle: '', source: 'a.pdf', quiz: null, lectured: true,
     concepts: [
-      { slug: 'c01', no: 1, title: '사회 속의 시스템', status: 'done' },
-      { slug: 'c02', no: 2, title: '상호구성', status: 'draft' },
+      { slug: 'c01', no: 1, title: '사회 속의 시스템' },
+      { slug: 'c02', no: 2, title: '상호구성' },
     ],
   },
   {
     id: 'W02-1', date: '2026-09-12', topic: '미시적 기초', subtitle: '', source: '', quiz: null, lectured: true,
-    concepts: [{ slug: 'c01', no: 1, title: '암묵지', status: 'draft' }],
+    concepts: [{ slug: 'c01', no: 1, title: '암묵지' }],
   },
   {
     id: 'W03', date: '2026-09-19', topic: '거시 I', subtitle: '', source: '', quiz: 1, lectured: false, concepts: [],
@@ -53,7 +53,7 @@ test('퀴즈 배지와 일정 타임라인을 렌더한다', () => {
 test('진행 현황 합계가 맞다', () => {
   const html = renderIndexPage({ weeks, quizSchedule, builtAt: '' });
   assert.match(html, /개념 3개/);
-  assert.match(html, /완료 1개/);
+  assert.doesNotMatch(html, /완료 \d+개/);
 });
 
 test('강의 프레임 3분류를 렌더한다', () => {
