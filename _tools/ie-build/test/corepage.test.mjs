@@ -64,3 +64,31 @@ test('세트가 없어도 페이지는 깨지지 않는다', () => {
   const html = renderCorePage({ coreSets: [], quizSchedule });
   assert.match(html, /아직 정리된 핵심 개념 세트가 없다/);
 });
+
+const fullSchedule = [
+  { n: 1, date: '2026-09-19', weeks: ['W01', 'W02-1'] },
+  { n: 2, date: '2026-10-17', weeks: ['W01', 'W02-1', 'W02-2', 'W03'] },
+  { n: 3, date: '2026-10-31', weeks: ['W01'] },
+];
+
+test('퀴즈 서브메뉴(quiznav)가 topbar 바로 아래에 있고, 세트가 있는 회차는 앵커 링크, 없는 회차는 비활성 span이다', () => {
+  const html = renderCorePage({ coreSets, quizSchedule: fullSchedule });
+  assert.match(html, /<nav class="quiznav"[^>]*>/);
+  assert.match(html, /<a href="#quiz1"[^>]*>Quiz 1<\/a>/);
+  assert.match(html, /<span class="quiznav-disabled" aria-disabled="true"[^>]*>Quiz 2<\/span>/);
+  assert.match(html, /<span class="quiznav-disabled" aria-disabled="true"[^>]*>Quiz 3<\/span>/);
+  // 세트가 없는 회차는 절대 <a href>가 아니어야 한다 — 빌드 링크 검사 대상이 되면 안 된다.
+  assert.doesNotMatch(html, /<a[^>]+>Quiz 2<\/a>/);
+  assert.doesNotMatch(html, /<a[^>]+>Quiz 3<\/a>/);
+});
+
+test('coreSets에 들어있는 가장 최근 회차가 quiznav에서 active로 표시된다', () => {
+  const html = renderCorePage({ coreSets, quizSchedule: fullSchedule });
+  assert.match(html, /<a href="#quiz1" class="active" aria-current="true">Quiz 1<\/a>/);
+});
+
+test('세트가 없으면 quiznav 자체가 렌더되지 않고 헤더도 한 줄로 남는다', () => {
+  const html = renderCorePage({ coreSets: [], quizSchedule: [] });
+  assert.ok(!html.includes('class="quiznav"'));
+  assert.doesNotMatch(html, /data-header="two"/);
+});

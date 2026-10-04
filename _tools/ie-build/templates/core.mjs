@@ -1,4 +1,4 @@
-import { esc, topbar, sidebar, stars, footer } from './components.mjs';
+import { esc, topbar, quiznav, sidebar, stars, footer } from './components.mjs';
 import { layout } from './layout.mjs';
 
 /**
@@ -74,8 +74,16 @@ export function renderCorePage({ coreSets, quizSchedule = [], weeks = [] }) {
   );
 
   const first = coreSets[0];
+
+  // 활성 퀴즈 = coreSets에 실제로 들어 있는 것 중 회차가 가장 큰 것(= 가장 최근에
+  // 채워진 세트). core-concepts.json·quiz-schedule.json에서만 끌어내므로, Quiz 2가
+  // 추가되면 코드를 고치지 않아도 자동으로 "현재" 세트가 Quiz 2로 넘어간다.
+  const activeQuiz = coreSets.length ? Math.max(...coreSets.map((s) => s.quiz)) : null;
+  const quiznavHtml = quiznav({ quizSchedule, coreSets, activeQuiz });
+
   const body = `
 ${topbar({ active: 'core', weeks })}
+${quiznavHtml}
 <div class="layout" id="top">
   ${sidebar({
     chapterLabel: '쪽지시험 대비',
@@ -107,5 +115,6 @@ ${topbar({ active: 'core', weeks })}
     bodyClass: 'page-core',
     body,
     scripts: ['js/main.js'],
+    hasSecondRow: !!quiznavHtml,
   });
 }

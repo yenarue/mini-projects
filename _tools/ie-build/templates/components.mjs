@@ -79,6 +79,41 @@ export function weeknav({ weeks = [], activeWeek = '' } = {}) {
 }
 
 /**
+ * 퀴즈 서브메뉴(두 번째 줄) — weeknav를 핵심 개념 페이지(core.html)에 그대로
+ * 거울상으로 옮긴 것. 소유자 요청("주차별 개념처럼")에 따라 weeknav와 동일한
+ * 동작을 따른다: topbar 바로 아래 한 줄, 항상 펼쳐짐(아코디언 없음), 390px에서도
+ * 줄바꿈 대신 가로 스크롤.
+ *
+ * 다만 weeknav와 다른 점 하나: 주차는 "개념이 없으면 링크를 안 만든다"였지만,
+ * 퀴즈는 학기 전체(quizSchedule, 6회)가 항상 정해져 있고 핵심개념 세트
+ * (core-concepts.json)는 그중 일부만 채워진다. 세트가 없는 회차는 "아직
+ * 없음"이 당연하고 예정돼 있으므로, 링크를 만들지 않는 대신(빌드 링크 검사
+ * 대상이 되면 안 된다) 비활성 `<span>`으로 자리를 지켜 "앞으로 채워질 자리"를
+ * 보여준다 — 학기 지도의 "핵심 개념 준비 중"(index.mjs quizRow)과 같은 문구·
+ * 같은 처리다.
+ *
+ * `activeQuiz`는 호출자(core.mjs)가 coreSets에서 계산해 넘긴다 — 이 함수는
+ * quizSchedule·coreSets 순서 그대로를 읽기만 하고 아무것도 하드코딩하지 않는다.
+ */
+export function quiznav({ quizSchedule = [], coreSets = [], activeQuiz = null } = {}) {
+  const byQuiz = new Map(coreSets.map((s) => [s.quiz, s]));
+  const items = quizSchedule
+    .map((q) => {
+      const label = `Quiz ${q.n}`;
+      const set = byQuiz.get(q.n);
+      if (!set) {
+        return `<span class="quiznav-disabled" aria-disabled="true" title="핵심 개념 준비 중">${esc(label)}</span>`;
+      }
+      const isActive = q.n === activeQuiz;
+      return `<a href="#quiz${q.n}"${isActive ? ' class="active" aria-current="true"' : ''}>${esc(label)}</a>`;
+    })
+    .join('');
+  if (!items) return '';
+  return `
+<nav class="quiznav" aria-label="퀴즈 회차별 핵심 개념 바로가기">${items}</nav>`;
+}
+
+/**
  * §4.2 사이드바 셸. 주차 페이지가 개념 목록·이전/다음 주차 데이터를 채워 넣는다.
  * navItems: [{ href, no, title, slug, active, core, subItems }]
  *   core:     핵심개념 배지를 붙일지 (truthy면 붙인다)

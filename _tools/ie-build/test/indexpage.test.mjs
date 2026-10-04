@@ -115,3 +115,30 @@ test('주차 서브메뉴(weeknav)는 주차 페이지에서만 보이고, 학�
   const weekHtml = renderWeekPage({ week, weeks: [week] });
   assert.match(weekHtml, /<nav class="weeknav"/);
 });
+
+test('퀴즈 서브메뉴(quiznav)는 핵심 개념 페이지에서만 보이고, 학기 지도·주차 페이지·퀴즈·개념 지도에는 없다', () => {
+  const indexHtml = renderIndexPage({ weeks, quizSchedule, builtAt: '' });
+  const quizHtml = renderQuizPage({ items: [], answers: {}, weeks: [], quizSchedule: [] });
+  const mapHtml = renderMapPage({ graph: buildGraph([]), weeks: [], comparisons: [] });
+
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W01', no: 1, slug: 'c01', file: '01-x.md', title: 'x', en: 'x', subtitle: '',
+    tags: [], slides: [], hasMyNotes: false, related: [],
+    sections: [{ key: 'definition', heading: '한 줄 정의', md: '정의.' }],
+  };
+  renderConcept(concept, warnings);
+  const week = { id: 'W01', date: '2026-09-05', topic: 'Intro', subtitle: '', source: '', concepts: [concept] };
+  const weekHtml = renderWeekPage({ week, weeks: [week] });
+
+  for (const html of [indexHtml, quizHtml, mapHtml, weekHtml]) {
+    assert.ok(!html.includes('class="quiznav"'));
+  }
+
+  const coreSets = [{
+    quiz: 1, id: 'q1', label: '샘플', title: '샘플 세트', introHtml: '',
+    items: [{ n: 1, anchor: 'q1-k1', title: '개념', meta: [], bodyHtml: '<p>본문</p>', concepts: [] }],
+  }];
+  const coreHtml = renderCorePage({ coreSets, quizSchedule });
+  assert.match(coreHtml, /<nav class="quiznav"/);
+});
