@@ -361,10 +361,11 @@
     .load-more:hover { background: var(--brand-soft); }
     .empty { padding: 48px 20px; text-align: center; color: var(--muted); }
 
-    .findings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .findings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .finding { padding: 20px; border-top: 3px solid var(--brand); }
     .finding:nth-child(2) { border-top-color: var(--prof); }
     .finding:nth-child(3) { border-top-color: var(--note); }
+    .finding:nth-child(4) { border-top-color: var(--slide); }
     .finding .no { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
     .finding h3 { margin: 8px 0 10px; font-size: 18px; line-height: 1.45; }
     .finding .big { color: var(--ink); font-size: 32px; font-weight: 850; line-height: 1.05; letter-spacing: -.03em; }
@@ -702,26 +703,36 @@
 
     <section class="section" id="findings" aria-labelledby="findings-h">
       <div class="section-head">
-        <div><p class="section-kicker">Key findings</p><h2 id="findings-h">데이터가 말하는 세 가지</h2></div>
+        <div>
+          <p class="section-kicker">Key findings</p>
+          <h2 id="findings-h">지금까지의 분석이 말하는 네 가지</h2>
+          <p class="section-desc">기관 유형, 지역 상세, 주제 분류와 연구 관계를 함께 보면 규모만으로는 보이지 않던 집중과 연결이 드러납니다.</p>
+        </div>
       </div>
       <div class="findings">
         <article class="card finding">
-          <span class="no">FINDING 01</span>
-          <h3 data-pretext contenteditable="true" spellcheck="false">프로젝트의 절반 가까이가 서울에 모였다</h3>
-          <div class="big">48.0<small>% · 553개</small></div>
-          <p>서울·경기·대전 세 지역을 합치면 67.3%다. 대표 수행기관의 공식 소재지 기준이라 실제 공동연구 장소와는 다를 수 있다.</p>
-        </article>
-        <article class="card finding">
-          <span class="no">FINDING 02</span>
+          <span class="no">FINDING 01 · WHO</span>
           <h3 data-pretext contenteditable="true" spellcheck="false">프로젝트 수와 연구비의 기관 구성은 다르다</h3>
-          <div class="big">40.1<small>% · 비대학 기관 연구비</small></div>
-          <p>대학·과학기술원이 프로젝트의 90.4%를 수행하지만, 정부출연·공공·의료기관의 110개 프로젝트가 전체 정부 연구비의 40.1%를 차지한다.</p>
+          <div class="big">90.4<small>% 프로젝트 · 59.9% 연구비</small></div>
+          <p>대학·과학기술원이 1,041개 프로젝트를 수행하지만 정부 연구비 비중은 59.9%다. 나머지 세 기관 유형은 110개 프로젝트만으로 연구비의 40.1%, 약 1,470.8억 원을 차지한다.</p>
         </article>
         <article class="card finding">
-          <span class="no">FINDING 03</span>
-          <h3 data-pretext contenteditable="true" spellcheck="false">생성형 AI 연구는 모델 개발보다 활용이 더 넓다</h3>
+          <span class="no">FINDING 02 · WHERE</span>
+          <h3 data-pretext contenteditable="true" spellcheck="false">지역 집중은 기관 유형을 고르면 더 선명해진다</h3>
+          <div class="big">78.0<small>% → 97.6% · 성남 연구비</small></div>
+          <p>전체 프로젝트의 48.0%는 서울에 있고, 경기도 정부 연구비의 78.0%는 성남에 모인다. 기타 공공·전문 연구기관만 보면 성남 비중은 97.6%로 높아져 한국전자기술연구원의 영향이 드러난다.</p>
+        </article>
+        <article class="card finding">
+          <span class="no">FINDING 03 · WHAT</span>
+          <h3 data-pretext contenteditable="true" spellcheck="false">생성형 AI 연구의 중심은 단일 기술보다 활용의 확장이다</h3>
           <div class="big">47.0<small>% · 일반 활용·기타</small></div>
-          <p>건강·바이오, 과학·연구, 제조·산업·로봇, 교육 등 적용 영역이 고르게 나타난다. 주제군은 탐색용 규칙 기반 대표 분류다.</p>
+          <p>적용 영역은 과학·연구 241개, 건강·바이오 231개, 제조·산업·로봇 177개, 교육 150개로 넓게 퍼진다. 14개 탐색 군집에서는 RAG, AI 에이전트, 디지털 트윈처럼 더 구체적인 흐름도 확인된다.</p>
+        </article>
+        <article class="card finding">
+          <span class="no">FINDING 04 · RELATIONSHIP</span>
+          <h3 data-pretext contenteditable="true" spellcheck="false">Security는 독립 분야보다 연구 전반을 가로지르는 주제다</h3>
+          <div class="big">14<small>개 군집 전체 · 198개 프로젝트</small></div>
+          <p>안전·신뢰·거버넌스 연구는 이미지 탐지, LLM 안전, 의료와 공공서비스 등 모든 탐색 군집에 분포한다. 따라서 별도 군집으로 강제하지 않고 연구 지도에서 교차주제로 강조했다.</p>
         </article>
       </div>
     </section>
@@ -776,7 +787,7 @@
   <script>
     (function () {
       'use strict';
-      const ASSET_VERSION = '20261004-1';
+      const ASSET_VERSION = '20261004-2';
       const SECURITY_TOPIC = '안전·신뢰·거버넌스';
       const state = { data: null, mapData: null, detailMapData: {}, projectById: null, visible: 12, topicAxis: 'technical', institutionCategory: 'all', mapInstitutionCategory: 'all', regionView: 'tile', regionScope: 'national', selectedSubregion: null, relationTab: 'keywords', keywordYear: 'overall', clusterFilter: '', mapColorMode: 'cluster', selectedProjectId: null, filters: { query: '', region: '', institution: '', technical: '', domain: '' } };
       const topicColors = ['var(--brand)', 'var(--prof)', 'var(--slide)', 'var(--note)', 'var(--term)', 'var(--brand-dark)', 'var(--muted)', 'var(--ink-soft)'];
