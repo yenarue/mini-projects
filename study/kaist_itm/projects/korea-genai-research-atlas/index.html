@@ -265,8 +265,10 @@
     .topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
     .topic-card { padding: 15px 16px; border: 1px solid var(--line); border-top: 3px solid var(--topic-color, var(--brand)); border-radius: var(--radius-sm); background: var(--surface); }
     .topic-card h3 { margin: 0; font-size: 14px; line-height: 1.45; }
+    .topic-card .topic-eyebrow { display: block; margin-bottom: 5px; color: var(--topic-color, var(--brand)); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .topic-card .topic-count { margin-top: 8px; color: var(--ink); font-size: 24px; font-weight: 820; line-height: 1; }
     .topic-card .topic-share { margin-left: 4px; color: var(--muted); font-size: 12px; font-weight: 600; }
+    .topic-card .topic-keywords { min-height: 34px; margin: 9px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
     .topic-meter { height: 6px; margin-top: 12px; border-radius: var(--radius-pill); background: var(--surface-2); overflow: hidden; }
     .topic-meter span { display: block; height: 100%; border-radius: inherit; background: var(--topic-color, var(--brand)); }
 
@@ -610,7 +612,7 @@
         <div>
           <p class="section-kicker">What</p>
           <h2 id="what-h">무엇을 연구하는가</h2>
-          <p class="section-desc">공식 연구분야의 미분류를 보완하기 위해 과제명과 키워드로 기술 접근과 적용 영역을 따로 분류했습니다.</p>
+          <p class="section-desc">과제명과 키워드로 기술 접근·적용 영역을 분류하고, 연구목표와 연구내용까지 함께 분석한 14개 탐색 군집으로 세부 연구 흐름을 살펴봅니다.</p>
         </div>
       </div>
       <article class="card panel">
@@ -618,6 +620,7 @@
           <div class="segmented" role="group" aria-label="주제 분류 축">
             <button type="button" class="active" data-topic-axis="technical">기술 접근</button>
             <button type="button" data-topic-axis="application">적용 영역</button>
+            <button type="button" data-topic-axis="cluster">탐색 군집</button>
           </div>
           <span class="panel-note" id="topic-note">6개 기술 접근 대표 주제군</span>
         </div>
@@ -1153,12 +1156,22 @@
       }
 
       function renderTopics() {
-        const technical = state.topicAxis === 'technical';
-        const items = technical ? state.data.summaries.technical_topics : state.data.summaries.application_domains;
-        const labelKey = technical ? 'topic' : 'domain';
+        const configs = {
+          technical: { items: state.data.summaries.technical_topics, labelKey: 'topic', note: '6개 기술 접근 대표 주제군' },
+          application: { items: state.data.summaries.application_domains, labelKey: 'domain', note: '8개 적용 영역 대표 주제군' },
+          cluster: { items: state.data.summaries.exploration.clusters, labelKey: 'label', note: '14개 텍스트 기반 탐색 군집 · 안정도 ARI 0.61' }
+        };
+        const config = configs[state.topicAxis] || configs.technical;
+        const items = config.items;
         const max = Math.max(...items.map((d) => d.project_count));
-        $('#topic-note').textContent = technical ? '6개 기술 접근 대표 주제군' : '8개 적용 영역 대표 주제군';
-        $('#topic-grid').innerHTML = items.map((item, index) => `<article class="topic-card" style="--topic-color:${topicColors[index % topicColors.length]}"><h3>${escapeHTML(item[labelKey])}</h3><div><span class="topic-count">${formatNumber(item.project_count)}</span><span class="topic-share">${formatPercent(item.share)}</span></div><div class="topic-meter"><span style="width:${item.project_count / max * 100}%"></span></div></article>`).join('');
+        $('#topic-note').textContent = config.note;
+        $('#topic-grid').innerHTML = items.map((item, index) => {
+          const isCluster = state.topicAxis === 'cluster';
+          const color = isCluster ? clusterColors[item.cluster_id % clusterColors.length] : topicColors[index % topicColors.length];
+          const eyebrow = isCluster ? `<span class="topic-eyebrow">군집 ${item.cluster_id + 1}</span>` : '';
+          const keywords = isCluster ? `<p class="topic-keywords">${item.top_keywords.slice(0, 5).map(escapeHTML).join(' · ')}</p>` : '';
+          return `<article class="topic-card${isCluster ? ' cluster-topic' : ''}" style="--topic-color:${color}">${eyebrow}<h3>${escapeHTML(item[config.labelKey])}</h3><div><span class="topic-count">${formatNumber(item.project_count)}</span><span class="topic-share">${formatPercent(item.share)}</span></div>${keywords}<div class="topic-meter"><span style="width:${item.project_count / max * 100}%"></span></div></article>`;
+        }).join('');
       }
 
       function renderKeywords() {
