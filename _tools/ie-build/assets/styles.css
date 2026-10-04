@@ -43,14 +43,15 @@
   /* 치수 */
   --sidebar-w:   280px;
   --topbar-h:    60px;
-  /* weeknav(주차 서브메뉴, topbar 아래 두 번째 줄)의 높이. 이 줄은 주차 페이지
-     (week.mjs)에만 있다 — index/core/quiz/map은 topbar 한 줄뿐이다. 그래서
-     --header-h는 페이지별로 달라야 한다: 기본값은 topbar 한 줄, weeknav가
-     있는 페이지는 아래 `:root[data-header="two"]`가 topbar+weeknav로 덮어쓴다
-     (layout.mjs가 그 페이지에서만 <html data-header="two">를 붙인다). 이 아래
-     "헤더 높이를 가정하는 모든 곳" 주석이 달린 지점은 전부 --header-h로
-     맞춰야 한다 — 하나라도 고정값이나 --topbar-h만 쓰면 그 페이지에서 앵커
-     랜딩이 틀어진다(과거에 한 번 겪은 레이아웃 시프트 버그와 같은 종류). */
+  /* 두 번째 줄(topbar 바로 아래)의 높이 — weeknav(주차 페이지, week.mjs)와
+     quiznav(핵심 개념 페이지, core.mjs)가 같은 토큰을 공유한다. 둘 다 없는
+     페이지(index/quiz/map)는 topbar 한 줄뿐이다. 그래서 --header-h는
+     페이지별로 달라야 한다: 기본값은 topbar 한 줄, 두 번째 줄이 있는 페이지는
+     아래 `:root[data-header="two"]`가 topbar+두번째줄로 덮어쓴다(layout.mjs가
+     그 페이지에서만 <html data-header="two">를 붙인다). 이 아래 "헤더 높이를
+     가정하는 모든 곳" 주석이 달린 지점은 전부 --header-h로 맞춰야 한다 —
+     하나라도 고정값이나 --topbar-h만 쓰면 그 페이지에서 앵커 랜딩이
+     틀어진다(과거에 한 번 겪은 레이아웃 시프트 버그와 같은 종류). */
   --weeknav-h:   44px;
   --header-h:    var(--topbar-h);
   --content-max: 760px;
@@ -225,8 +226,13 @@ a:hover { color: var(--brand-dark); }
    .topbar 바로 밑(top: var(--topbar-h))에 자리를 잡는다 — 그래서 두 줄이 겹치지
    않고 쌓인다. 390px에서도 줄바꿈 대신 가로 스크롤 한 줄로 버티도록
    flex-wrap을 주지 않고 overflow-x: auto만 쓴다.
+
+   quiznav(핵심 개념 페이지 전용 퀴즈 서브메뉴, core.mjs)는 "주차별 개념처럼"
+   만들라는 요청에 따라 이 규칙을 그대로 공유한다 — weeknav와 완전히 같은
+   자리·같은 동작이고, 두 셀렉터를 합쳐 둔다. 다른 점은 .quiznav-disabled
+   (세트가 아직 없는 회차)뿐, 그 스타일은 아래 별도 블록에 있다.
    ============================================================ */
-.weeknav {
+.weeknav, .quiznav {
   position: sticky; top: var(--topbar-h); z-index: 29;
   display: flex; align-items: center; gap: 4px;
   height: var(--weeknav-h);
@@ -236,14 +242,25 @@ a:hover { color: var(--brand-dark); }
   overflow-x: auto; overflow-y: hidden;
   scrollbar-width: none;
 }
-.weeknav::-webkit-scrollbar { display: none; }
-.weeknav a {
+.weeknav::-webkit-scrollbar, .quiznav::-webkit-scrollbar { display: none; }
+.weeknav a, .quiznav a {
   flex: none; white-space: nowrap;
   padding: 6px 13px; font-size: 13px; font-weight: 500;
   color: var(--muted); border-radius: var(--radius-pill);
 }
-.weeknav a:hover { color: var(--ink); background: var(--surface-2); }
-.weeknav a.active { color: var(--brand); background: var(--brand-soft); font-weight: 600; }
+.weeknav a:hover, .quiznav a:hover { color: var(--ink); background: var(--surface-2); }
+.weeknav a.active, .quiznav a.active { color: var(--brand); background: var(--brand-soft); font-weight: 600; }
+
+/* 핵심개념 세트가 아직 없는 회차(quiznav 전용) — 링크를 만들지 않고(빌드 링크
+   검사 대상에서 빠진다) 점선 테두리의 비활성 항목으로 "채워질 자리"만
+   보여준다. 학기 지도의 "핵심 개념 준비 중"(.btn-disabled)과 같은 처리:
+   흐린 글자·점선·cursor: default — 깨진 링크가 아니라 예정된 자리로 읽힌다. */
+.quiznav-disabled {
+  flex: none; white-space: nowrap;
+  padding: 5px 12px; font-size: 13px; font-weight: 500;
+  color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius-pill);
+  cursor: default; opacity: .7;
+}
 
 /* ============================================================
    레이아웃 (셸)
@@ -989,7 +1006,7 @@ body.focus-lock { overflow: hidden; }
   .search-trigger kbd { display: none; }
   .fontsize-control { display: none; }
   .week-title { font-size: 24px; }
-  .weeknav { padding: 0 14px; }
+  .weeknav, .quiznav { padding: 0 14px; }
 }
 
 @media (max-width: 400px) {
@@ -997,8 +1014,8 @@ body.focus-lock { overflow: hidden; }
   .topbar-brand { font-size: 13px; gap: 6px; }
   .topbar-nav { gap: 0; }
   .topbar-nav a { padding: 6px 6px; font-size: 12px; }
-  .weeknav { padding: 0 10px; gap: 2px; }
-  .weeknav a { padding: 6px 10px; font-size: 12.5px; }
+  .weeknav, .quiznav { padding: 0 10px; gap: 2px; }
+  .weeknav a, .quiznav a, .quiznav-disabled { padding: 6px 10px; font-size: 12.5px; }
 }
 
 @media (max-width: 768px) {
@@ -1095,7 +1112,10 @@ a.badge-core:hover { border-color: var(--term); }
 .quiz-row-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
 
 /* 핵심 개념 페이지(core.html) */
-.core-set { max-width: var(--content-max); margin: 0 0 52px; }
+/* scroll-margin-top: quiznav 링크(#quiz1 등)가 가리키는 대상이 바로 이
+   .core-set 자체다(id가 section에 있다) — .core-set-head 같은 자식이 아니라
+   이 셀렉터에 둬야 앵커 점프 시 고정 헤더(--header-h) 밑으로 정확히 들어간다. */
+.core-set { max-width: var(--content-max); margin: 0 0 52px; scroll-margin-top: calc(var(--header-h) + 14px); }
 .core-set-head {
   scroll-margin-top: calc(var(--header-h) + 14px);
   margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--line);
@@ -1238,7 +1258,7 @@ a.badge-core:hover { border-color: var(--term); }
    인쇄
    ============================================================ */
 @media print {
-  .topbar, .weeknav, aside.sidebar, .side-tools, .side-prevnext, .concept-top,
+  .topbar, .weeknav, .quiznav, aside.sidebar, .side-tools, .side-prevnext, .concept-top,
   .search-overlay, .sec-quiz-link, .focus-btn, .focus-overlay,
   .quiz-controls, .quiz-weeks, .quiz-nav, .quiz-actions, .quiz-grade,
   .map-controls, .map-wrap, .map-legend { display: none !important; }
