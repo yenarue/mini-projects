@@ -147,7 +147,7 @@ async function main() {
   const { renderCorePage } = await import('./templates/core.mjs');
   fsp.writeFileSync(
     path.join(cfg.outDir, 'core.html'),
-    renderCorePage({ coreSets, quizSchedule }),
+    renderCorePage({ coreSets, quizSchedule, weeks: orderedWeeks }),
     'utf8'
   );
   console.log(

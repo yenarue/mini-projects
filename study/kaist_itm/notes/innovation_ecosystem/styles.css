@@ -43,6 +43,16 @@
   /* 치수 */
   --sidebar-w:   280px;
   --topbar-h:    60px;
+  /* weeknav(주차 서브메뉴, topbar 아래 두 번째 줄)의 높이. 이 줄은 주차 페이지
+     (week.mjs)에만 있다 — index/core/quiz/map은 topbar 한 줄뿐이다. 그래서
+     --header-h는 페이지별로 달라야 한다: 기본값은 topbar 한 줄, weeknav가
+     있는 페이지는 아래 `:root[data-header="two"]`가 topbar+weeknav로 덮어쓴다
+     (layout.mjs가 그 페이지에서만 <html data-header="two">를 붙인다). 이 아래
+     "헤더 높이를 가정하는 모든 곳" 주석이 달린 지점은 전부 --header-h로
+     맞춰야 한다 — 하나라도 고정값이나 --topbar-h만 쓰면 그 페이지에서 앵커
+     랜딩이 틀어진다(과거에 한 번 겪은 레이아웃 시프트 버그와 같은 종류). */
+  --weeknav-h:   44px;
+  --header-h:    var(--topbar-h);
   --content-max: 760px;
 
   --img-filter: none;
@@ -59,6 +69,12 @@
   --map-c5: color-mix(in srgb, var(--brand) 55%, var(--prof) 45%);
   --map-c6: color-mix(in srgb, var(--slide) 55%, var(--note) 45%);
   --map-c7: color-mix(in srgb, var(--prof) 55%, var(--note) 45%);
+}
+
+/* 헤더가 두 줄인 페이지(주차 페이지만 — layout.mjs가 그때만 data-header="two"를
+   <html>에 붙인다). --topbar-h만 쓰는 위 기본값을 덮어 두 줄 합계로 올린다. */
+:root[data-header="two"] {
+  --header-h: calc(var(--topbar-h) + var(--weeknav-h));
 }
 
 :root[data-theme="dark"] {
@@ -95,7 +111,7 @@
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--topbar-h) + 14px);
+  scroll-padding-top: calc(var(--header-h) + 14px);
 }
 
 body {
@@ -144,7 +160,14 @@ a:hover { color: var(--brand-dark); }
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--brand); flex: none;
 }
-.topbar-nav { display: flex; gap: 4px; }
+/* min-width:0 + overflow-x:auto: 5개 항목(학기 지도·주차별 개념·핵심 개념·퀴즈·
+   개념 지도)이 좁은 화면에서 topbar 자체를 넓혀 페이지 가로 스크롤을 만들지
+   않고, 자기 안에서만 가로로 스크롤되게 한다(스크롤바는 숨긴다). */
+.topbar-nav {
+  display: flex; gap: 4px; min-width: 0;
+  overflow-x: auto; scrollbar-width: none;
+}
+.topbar-nav::-webkit-scrollbar { display: none; }
 .topbar-nav a {
   font-size: 14px; font-weight: 500; color: var(--muted);
   padding: 7px 10px; border-radius: var(--radius-sm);
@@ -195,6 +218,34 @@ a:hover { color: var(--brand-dark); }
 :root[data-theme="dark"] .theme-icon::before { content: '\2600\FE0F'; } /* ☀️ */
 
 /* ============================================================
+   주차 서브메뉴 (weeknav — topbar 바로 아래 두 번째 줄)
+   Problem 1·2: "학기 지도에서 선택해서 들어가야만 주차로 간다"는 불편과,
+   사이드바 맨 아래라 스크롤해야 닿던 이전/다음 주차 버튼을 함께 없앤다.
+   모든 페이지에 붙는 최상위 내비게이션이라 topbar와 똑같이 position: sticky고,
+   .topbar 바로 밑(top: var(--topbar-h))에 자리를 잡는다 — 그래서 두 줄이 겹치지
+   않고 쌓인다. 390px에서도 줄바꿈 대신 가로 스크롤 한 줄로 버티도록
+   flex-wrap을 주지 않고 overflow-x: auto만 쓴다.
+   ============================================================ */
+.weeknav {
+  position: sticky; top: var(--topbar-h); z-index: 29;
+  display: flex; align-items: center; gap: 4px;
+  height: var(--weeknav-h);
+  padding: 0 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto; overflow-y: hidden;
+  scrollbar-width: none;
+}
+.weeknav::-webkit-scrollbar { display: none; }
+.weeknav a {
+  flex: none; white-space: nowrap;
+  padding: 6px 13px; font-size: 13px; font-weight: 500;
+  color: var(--muted); border-radius: var(--radius-pill);
+}
+.weeknav a:hover { color: var(--ink); background: var(--surface-2); }
+.weeknav a.active { color: var(--brand); background: var(--brand-soft); font-weight: 600; }
+
+/* ============================================================
    레이아웃 (셸)
    ============================================================ */
 .layout {
@@ -206,8 +257,8 @@ a:hover { color: var(--brand-dark); }
 }
 
 aside.sidebar {
-  position: sticky; top: var(--topbar-h);
-  max-height: calc(100vh - var(--topbar-h));
+  position: sticky; top: var(--header-h);
+  max-height: calc(100vh - var(--header-h));
   overflow-y: auto;
   padding: 26px 18px 40px;
   border-right: 1px solid var(--line);
@@ -290,7 +341,7 @@ main { padding: 32px 40px 72px; min-width: 0; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  scroll-margin-top: calc(var(--topbar-h) + 14px);
+  scroll-margin-top: calc(var(--header-h) + 14px);
 }
 
 .concept-head {
@@ -326,8 +377,6 @@ main { padding: 32px 40px 72px; min-width: 0; }
 a.chip-tag:hover { color: var(--brand); border-color: var(--brand); }
 
 .badge { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: var(--radius-pill); white-space: nowrap; }
-.badge-draft { color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); }
-.badge-done { color: var(--prof); background: var(--prof-soft); border: 1px solid transparent; }
 
 /* 섹션 공통 */
 .sec { margin: 18px 0; }
@@ -392,7 +441,7 @@ a.chip-tag:hover { color: var(--brand); border-color: var(--brand); }
 }
 .concept h3 {
   font-size: 17px; font-weight: 600; line-height: 1.45; margin: 26px 0 10px; color: var(--ink);
-  scroll-margin-top: calc(var(--topbar-h) + 14px);
+  scroll-margin-top: calc(var(--header-h) + 14px);
 }
 .concept h4:not(.sec h4) { font-size: 15px; font-weight: 600; margin: 18px 0 8px; color: var(--ink); }
 .concept p { margin: 0 0 14px; }
@@ -464,7 +513,7 @@ figure.concept-diagram figcaption.diagram-caption {
 .step-card {
   display: flex; gap: 14px; padding: 16px 18px;
   background: var(--surface-2); border-radius: var(--radius-sm);
-  scroll-margin-top: calc(var(--topbar-h) + 14px);
+  scroll-margin-top: calc(var(--header-h) + 14px);
 }
 .step-no {
   flex: none; width: 26px; height: 26px; margin-top: 2px;
@@ -791,7 +840,7 @@ body.focus-lock { overflow: hidden; }
 .progress-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .progress-table th, .progress-table td { padding: 10px 14px; border: 1px solid var(--line); text-align: left; }
 .progress-table th { background: var(--surface-2); font-weight: 600; color: var(--ink); font-size: 12.5px; }
-.progress-table td:nth-child(3), .progress-table td:nth-child(4) {
+.progress-table td:nth-child(3) {
   font-variant-numeric: tabular-nums; text-align: center; width: 80px;
 }
 .progress-table tbody tr:nth-child(even) { background: var(--surface-2); }
@@ -866,7 +915,7 @@ body.focus-lock { overflow: hidden; }
   color: var(--term); background: var(--term-soft);
 }
 /* 응용(응용:) 문항 — 모범답안이 없는 사고 실험형 프롬프트임을 서술형/비교형과
-   다른 색으로 구분한다. badge-draft와 같은 톤(--muted/--surface-2)만 재사용한다. */
+   다른 색으로 구분한다. 기존 회색 톤(--muted/--surface-2)만 재사용한다. */
 .quiz-kind-applied { color: var(--muted); background: var(--surface-2); }
 .quiz-mark { font-size: 11.5px; font-weight: 600; color: var(--muted); margin-left: auto; }
 .quiz-q { font-size: 17px; line-height: 1.75; color: var(--ink); }
@@ -940,6 +989,7 @@ body.focus-lock { overflow: hidden; }
   .search-trigger kbd { display: none; }
   .fontsize-control { display: none; }
   .week-title { font-size: 24px; }
+  .weeknav { padding: 0 14px; }
 }
 
 @media (max-width: 400px) {
@@ -947,6 +997,8 @@ body.focus-lock { overflow: hidden; }
   .topbar-brand { font-size: 13px; gap: 6px; }
   .topbar-nav { gap: 0; }
   .topbar-nav a { padding: 6px 6px; font-size: 12px; }
+  .weeknav { padding: 0 10px; gap: 2px; }
+  .weeknav a { padding: 6px 10px; font-size: 12.5px; }
 }
 
 @media (max-width: 768px) {
@@ -1045,7 +1097,7 @@ a.badge-core:hover { border-color: var(--term); }
 /* 핵심 개념 페이지(core.html) */
 .core-set { max-width: var(--content-max); margin: 0 0 52px; }
 .core-set-head {
-  scroll-margin-top: calc(var(--topbar-h) + 14px);
+  scroll-margin-top: calc(var(--header-h) + 14px);
   margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--line);
 }
 .core-set-head h2 { margin: 4px 0 10px; font-size: 24px; font-weight: 700; line-height: 1.35; color: var(--ink); }
@@ -1054,7 +1106,7 @@ a.badge-core:hover { border-color: var(--term); }
 .core-set-actions { margin: 16px 0 0; }
 
 .core-item {
-  scroll-margin-top: calc(var(--topbar-h) + 14px);
+  scroll-margin-top: calc(var(--header-h) + 14px);
   margin: 0 0 18px; padding: 24px 28px 26px;
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); box-shadow: var(--shadow);
@@ -1186,7 +1238,7 @@ a.badge-core:hover { border-color: var(--term); }
    인쇄
    ============================================================ */
 @media print {
-  .topbar, aside.sidebar, .side-tools, .side-prevnext, .concept-top,
+  .topbar, .weeknav, aside.sidebar, .side-tools, .side-prevnext, .concept-top,
   .search-overlay, .sec-quiz-link, .focus-btn, .focus-overlay,
   .quiz-controls, .quiz-weeks, .quiz-nav, .quiz-actions, .quiz-grade,
   .map-controls, .map-wrap, .map-legend { display: none !important; }

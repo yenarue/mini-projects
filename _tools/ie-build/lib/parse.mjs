@@ -122,7 +122,7 @@ export function parseConceptFile(absPath, warnings) {
 
   const knownKeys = new Set([
     'week', 'no', 'title', 'en', 'tags', 'slides',
-    'lecture_refs', 'readings', 'related', 'status',
+    'lecture_refs', 'readings', 'related',
   ]);
   const extraMeta = {};
   for (const [k, v] of Object.entries(meta)) {
@@ -144,7 +144,6 @@ export function parseConceptFile(absPath, warnings) {
     lectureRefs: meta.lecture_refs ?? [],
     readings: meta.readings ?? [],
     relatedRaw: meta.related ?? [],
-    status: meta.status === 'done' ? 'done' : 'draft',
     extraMeta,
     sections: sections.map((s) => ({
       key: s.key,

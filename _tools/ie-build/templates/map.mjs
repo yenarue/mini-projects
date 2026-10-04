@@ -93,7 +93,7 @@ export function renderMapPage({ graph, weeks, comparisons }) {
   const data = JSON.stringify(graph).replace(/</g, '\\u003c');
 
   const body = `
-${topbar({ active: 'map' })}
+${topbar({ active: 'map', weeks })}
 <main class="page-map-main">
   <p class="eyebrow">개념 연결</p>
   <h1>개념 지도</h1>

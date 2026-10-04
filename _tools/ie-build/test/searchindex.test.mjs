@@ -4,7 +4,7 @@ import { buildSearchIndex, estimateSize, trimIfLarge } from '../lib/searchindex.
 
 const concepts = [{
   week: 'W01', no: 5, slug: 'c05', title: '세 가지 고착', en: 'Lock-in',
-  tags: ['lock-in', 'path-dependency'], status: 'draft',
+  tags: ['lock-in', 'path-dependency'],
   readings: ['Callon (1994) Is Science a Public Good? ★Core Reading'],
   sections: [
     { key: 'definition', plain: '시스템이 잘 안 바뀌는 이유는 고착 때문이다.' },

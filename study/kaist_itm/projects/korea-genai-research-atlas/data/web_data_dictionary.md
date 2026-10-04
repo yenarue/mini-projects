@@ -1,7 +1,8 @@
 # 웹 공개용 데이터 사전
 
-- 대상 파일: `atlas-data.json`, `projects.csv`
-- 생성일: 2026-10-01 KST
+- 대상 파일: `atlas-data.json`, `projects.csv`, `skorea-provinces.geo.json`, `seoul-municipalities.geo.json`, `gyeonggi-municipalities.geo.json`
+- 원자료 생성일: 2026-10-01 KST
+- 기관 유형 정규화 갱신일: 2026-10-04 KST
 - 분석 단위: 다년도 연차를 연결한 대표 프로젝트 1,151개
 - 기간: 2023년~2026년 9월 30일, 2026년은 YTD
 
@@ -26,7 +27,8 @@ HTML에는 지도·차트·프로젝트 탐색에 필요한 최소 필드와 텍
 | `series_id` | string | 다년도 연결 체인의 대표 NTIS 과제 ID |
 | `title` | string | 대표 과제명 |
 | `pi` | string | 대표 연구책임자명 |
-| `institution`, `site`, `institution_type` | string | 정규화 수행기관, 캠퍼스·분원, 기관 유형 |
+| `institution`, `site`, `institution_type` | string | 정규화 수행기관, 캠퍼스·분원, NTIS 원기관 유형 |
+| `institution_category` | string | 기관 단위로 일관되게 정규화한 네 가지 분석용 기관 분류 코드 |
 | `sido`, `sigungu`, `region_key` | string | 대표 수행기관 소재 행정구역 |
 | `start_year`, `end_year` | integer | 분석 범위 안 첫·마지막 포함 연도 |
 | `included_years` | integer[] | 포함된 연도 목록 |
@@ -51,11 +53,16 @@ CSV는 배열 필드를 ` | `로 연결하고 유사 프로젝트 ID와 유사�
 - `annual`: 연도별 활성·신규 프로젝트, 연구비, YTD 여부
 - `regions`, `districts`: 시도·시군구별 프로젝트 수·비중·연구비
 - `institutions`: 정규화 기관별 프로젝트 수·비중·연구비
+- `institution_categories`: 네 기관 유형별 프로젝트 수·비중·기관 수·연구비
 - `technical_topics`, `application_domains`: 규칙 기반 주제군 집계
 - `exploration.meta`: 텍스트 특징 수, SVD, 선택 k, 실루엣, 안정도, 지도 이웃 보존율, Security 교차주제 점검 결과, 해석 주의
 - `exploration.candidate_metrics`: k=6~14 후보별 실루엣·안정도·군집 크기
 - `exploration.keywords`: 전체 상위 키워드와 연도별 특징 키워드
 - `exploration.clusters`: 14개 군집의 규모·연구비·대표 키워드·기관·주제 구성·대표 과제 ID
+
+기관 유형은 `university_science_institute`(대학·과학기술원), `government_funded_research_institute`(정부출연 연구기관), `public_professional_research_institute`(기타 공공·전문 연구기관), `medical_institution`(의료기관)의 네 코드다. 기존 `institution_type`을 기본값으로 사용하되 한국과학기술원·광주과학기술원·울산과학기술원·대구경북과학기술원은 대학·과학기술원, 고등과학원은 정부출연 연구기관으로 기관 단위에서 일관되게 덮어썼다.
+
+지역 상세 통계는 `projects`의 `sido`, `sigungu`, `government_funding_krw`, `institution`, `institution_category` 필드를 브라우저에서 집계한다. 서울은 25개 자치구, 경기는 31개 시·군을 모두 표시하며 프로젝트가 없는 지역도 0건으로 남긴다. 기관 유형을 선택하면 지역별 프로젝트 수·연구비·대표 기관과 집중도 문장을 해당 유형만으로 다시 계산한다. 전체 기준 경기도 정부 연구비 중 성남시 비중은 78.0%다.
 
 ## 5. 탐색 분석 방법과 한계
 
@@ -77,6 +84,9 @@ CSV는 배열 필드를 ` | `로 연결하고 유사 프로젝트 ID와 유사�
 - 군집·좌표 누락 0건
 - 프로젝트별 유사 연구 5개, 존재하지 않는 ID 0건, 자기 자신 연결 0건
 - CSV 데이터 행 1,151개
+- 기관 유형 누락 0건, 네 분류 합계 1,151개: 대학·과학기술원 1,041개, 정부출연 연구기관 52개, 기타 공공·전문 연구기관 30개, 의료기관 28개
+- 서울 프로젝트 553개 모두 `sigungu` 보유, 25개 자치구 경계와 이름 매칭 가능
+- 경기 프로젝트 114개 모두 `sigungu` 보유, 관측된 14개 시·군과 31개 시·군 경계의 이름 매칭 가능
 - 정부 연구비 합계 367,039,636,666원
 - 총연구비 합계 400,348,959,166원
 - 연구목표·연구내용·기대효과 원문과 사업자등록번호·연락처 필드 없음

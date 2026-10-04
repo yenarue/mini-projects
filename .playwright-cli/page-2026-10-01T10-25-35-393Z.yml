@@ -1,0 +1,1904 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - link "예나르의 KAIST ITM" [ref=e3] [cursor=pointer]:
+      - /url: ../../index.html
+    - navigation "페이지 섹션" [ref=e6]:
+      - link "← 프로젝트" [ref=e7] [cursor=pointer]:
+        - /url: ../../index.html#projects
+      - link "한눈에" [ref=e8] [cursor=pointer]:
+        - /url: "#summary"
+      - link "지역" [ref=e9] [cursor=pointer]:
+        - /url: "#where"
+      - link "기관" [ref=e10] [cursor=pointer]:
+        - /url: "#who"
+      - link "주제" [ref=e11] [cursor=pointer]:
+        - /url: "#what"
+      - link "관계" [ref=e12] [cursor=pointer]:
+        - /url: "#relations"
+      - link "과제 탐색" [ref=e13] [cursor=pointer]:
+        - /url: "#explore"
+      - link "방법론" [ref=e14] [cursor=pointer]:
+        - /url: "#method"
+    - button "라이트·다크 테마 전환" [ref=e16] [cursor=pointer]: ◐
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: KAIST ITM.690 · 인공지능 경영과 법 · 과제 2
+        - heading "대한민국 생성형 AI 연구 지도" [level=1] [ref=e22]
+        - paragraph [ref=e23]: 국가 R&D 과제로 보는 누가, 어디서, 무엇을 연구하고 있는가. 2023년부터 2026년 9월 30일까지 대학·공공 연구기관의 생성형 AI 프로젝트를 연결해 살펴봅니다.
+        - generic [ref=e24]:
+          - generic [ref=e25]: NTIS 국가 R&D
+          - generic [ref=e26]: 2023–2026.09.30
+          - generic [ref=e27]: 대학·공공 연구기관
+          - generic [ref=e28]: 다년도 프로젝트 기준
+      - complementary "데이터 범위" [ref=e29]:
+        - strong [ref=e30]: 이 지도에서 세는 것
+        - paragraph [ref=e31]: 연도별 과제 레코드를 그대로 더하지 않고, NTIS 이전과제 연결을 따라 하나의 연구 프로젝트로 묶었습니다.
+        - generic [ref=e32]: 분석 기준 2026-09-30 · 데이터 갱신 2026-10-01 · 1,151개 프로젝트
+    - region [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Overview
+          - heading "한눈에 보기" [level=2] [ref=e37]
+        - generic [ref=e38]: 대표 프로젝트 기준 · 2026.09.30 현재
+      - generic [ref=e39]:
+        - article [ref=e40]:
+          - generic [ref=e41]: 1,151개
+          - generic [ref=e42]: 대표 프로젝트
+          - generic [ref=e43]: 1,698개 연도 레코드를 다년도 연결
+        - article [ref=e44]:
+          - generic [ref=e45]: 172개
+          - generic [ref=e46]: 대표 수행기관
+          - generic [ref=e47]: 산학협력단·과거 기관명 정규화
+        - article [ref=e48]:
+          - generic [ref=e49]: 1,110개
+          - generic [ref=e50]: 연구그룹
+          - generic [ref=e51]: 연구책임자 + 정규화 기관
+        - article [ref=e52]:
+          - generic [ref=e53]: 3,670.4억원
+          - generic [ref=e54]: 정부 연구비
+          - generic [ref=e55]: 포함 연도의 정부투자연구비 누적
+      - generic [ref=e56]:
+        - strong [ref=e57]: "읽는 법:"
+        - text: 프로젝트 수는 다년도 연차를 연결한 대표 프로젝트, 연구비는 분석 범위에 포함된 연도별 정부투자연구비의 합계입니다.
+    - region [ref=e58]:
+      - generic [ref=e60]:
+        - paragraph [ref=e61]: How it changed
+        - heading "연구 활동은 어떻게 늘었나" [level=2] [ref=e62]
+        - paragraph [ref=e63]: 활성 프로젝트와 신규 프로젝트를 함께 봅니다. 2026년은 9월 30일까지의 진행 중 자료이므로 완결 연도와 증감률로 직접 비교하지 않습니다.
+      - generic [ref=e64]:
+        - article [ref=e65]:
+          - generic [ref=e66]:
+            - heading "연도별 활성·신규 프로젝트" [level=3] [ref=e67]
+            - generic [ref=e68]: "단위: 프로젝트"
+          - generic "연도별 활성 프로젝트와 신규 프로젝트 막대그래프" [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e71]:
+                - generic [ref=e72]: "27"
+                - generic [ref=e74]: "27"
+              - generic [ref=e76]:
+                - text: "2023"
+                - generic [ref=e77]: 완결 연도
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: "197"
+                - generic [ref=e82]: "213"
+              - generic [ref=e84]:
+                - text: "2024"
+                - generic [ref=e85]: 완결 연도
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - generic [ref=e88]: "358"
+                - generic [ref=e90]: "529"
+              - generic [ref=e92]:
+                - text: "2025"
+                - generic [ref=e93]: 완결 연도
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - generic [ref=e96]: "569"
+                - generic [ref=e98]: "929"
+              - generic [ref=e100]:
+                - text: "2026"
+                - generic [ref=e101]: 9월 30일 현재
+          - generic [ref=e102]:
+            - generic [ref=e103]: 활성 프로젝트
+            - generic [ref=e105]: 신규 프로젝트
+        - complementary [ref=e107]:
+          - generic [ref=e108]:
+            - heading "연구비 스냅샷" [level=3] [ref=e109]
+            - generic [ref=e110]: 정부투자연구비
+          - generic [ref=e111]:
+            - generic [ref=e112]:
+              - strong [ref=e113]: 2025년 정부 연구비
+              - generic [ref=e114]: 1,138.7억원
+              - paragraph [ref=e115]: 완결 연도 중 가장 최근 연도. 활성 529개 프로젝트.
+            - generic [ref=e116]:
+              - strong [ref=e117]: 2026년 9월 30일 현재 정부 연구비
+              - generic [ref=e118]: 2,009.3억원
+              - paragraph [ref=e119]: 진행 중 자료이므로 2025년과 증감률로 직접 비교하지 않습니다.
+            - generic [ref=e120]:
+              - strong [ref=e121]: 전체 정부 연구비
+              - generic [ref=e122]: 3,670.4억원
+              - paragraph [ref=e123]: 2023년–2026년 9월 30일 분석 범위에 포함된 연도별 금액 합계.
+    - region [ref=e124]:
+      - generic [ref=e126]:
+        - paragraph [ref=e127]: Where
+        - heading "어디에서 연구하는가" [level=2] [ref=e128]
+        - paragraph [ref=e129]: 연구비 주집행지역이 아니라 정규화한 대표 수행기관의 공식 소재지를 사용했습니다. 지역을 누르면 해당 프로젝트로 이동합니다.
+      - generic [ref=e130]:
+        - article [ref=e131]:
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - heading "시도별 연구 분포" [level=3] [ref=e134]
+              - text: 타일 지도 · 진할수록 많음
+            - generic "지역 지도 보기 방식" [ref=e135]:
+              - button "타일" [pressed] [ref=e136] [cursor=pointer]
+              - button "지도" [ref=e137] [cursor=pointer]
+          - generic "시도별 프로젝트 수 타일 지도" [ref=e138]:
+            - button "서울 프로젝트 553개" [ref=e139] [cursor=pointer]:
+              - generic [ref=e140]: 서울
+              - generic [ref=e141]: "553"
+              - generic [ref=e142]: 48.0%
+            - button "경기 프로젝트 114개" [ref=e143] [cursor=pointer]:
+              - generic [ref=e144]: 경기
+              - generic [ref=e145]: "114"
+              - generic [ref=e146]: 9.9%
+            - button "인천 프로젝트 34개" [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]: 인천
+              - generic [ref=e149]: "34"
+              - generic [ref=e150]: 3.0%
+            - button "강원 프로젝트 42개" [ref=e151] [cursor=pointer]:
+              - generic [ref=e152]: 강원
+              - generic [ref=e153]: "42"
+              - generic [ref=e154]: 3.6%
+            - button "충북 프로젝트 27개" [ref=e155] [cursor=pointer]:
+              - generic [ref=e156]: 충북
+              - generic [ref=e157]: "27"
+              - generic [ref=e158]: 2.3%
+            - button "충남 프로젝트 27개" [ref=e159] [cursor=pointer]:
+              - generic [ref=e160]: 충남
+              - generic [ref=e161]: "27"
+              - generic [ref=e162]: 2.3%
+            - button "세종 프로젝트 15개" [ref=e163] [cursor=pointer]:
+              - generic [ref=e164]: 세종
+              - generic [ref=e165]: "15"
+              - generic [ref=e166]: 1.3%
+            - button "대전 프로젝트 108개" [ref=e167] [cursor=pointer]:
+              - generic [ref=e168]: 대전
+              - generic [ref=e169]: "108"
+              - generic [ref=e170]: 9.4%
+            - button "경북 프로젝트 30개" [ref=e171] [cursor=pointer]:
+              - generic [ref=e172]: 경북
+              - generic [ref=e173]: "30"
+              - generic [ref=e174]: 2.6%
+            - button "대구 프로젝트 36개" [ref=e175] [cursor=pointer]:
+              - generic [ref=e176]: 대구
+              - generic [ref=e177]: "36"
+              - generic [ref=e178]: 3.1%
+            - button "울산 프로젝트 24개" [ref=e179] [cursor=pointer]:
+              - generic [ref=e180]: 울산
+              - generic [ref=e181]: "24"
+              - generic [ref=e182]: 2.1%
+            - button "부산 프로젝트 55개" [ref=e183] [cursor=pointer]:
+              - generic [ref=e184]: 부산
+              - generic [ref=e185]: "55"
+              - generic [ref=e186]: 4.8%
+            - button "경남 프로젝트 20개" [ref=e187] [cursor=pointer]:
+              - generic [ref=e188]: 경남
+              - generic [ref=e189]: "20"
+              - generic [ref=e190]: 1.7%
+            - button "전북 프로젝트 16개" [ref=e191] [cursor=pointer]:
+              - generic [ref=e192]: 전북
+              - generic [ref=e193]: "16"
+              - generic [ref=e194]: 1.4%
+            - button "전남 프로젝트 1개" [ref=e195] [cursor=pointer]:
+              - generic [ref=e196]: 전남
+              - generic [ref=e197]: "1"
+              - generic [ref=e198]: 0.1%
+            - button "광주 프로젝트 42개" [ref=e199] [cursor=pointer]:
+              - generic [ref=e200]: 광주
+              - generic [ref=e201]: "42"
+              - generic [ref=e202]: 3.6%
+            - button "제주 프로젝트 7개" [ref=e203] [cursor=pointer]:
+              - generic [ref=e204]: 제주
+              - generic [ref=e205]: "7"
+              - generic [ref=e206]: 0.6%
+        - article [ref=e207]:
+          - generic [ref=e208]:
+            - heading "상위 지역" [level=3] [ref=e209]
+            - generic [ref=e210]: 프로젝트 수 · 정부 연구비
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - generic "서울" [ref=e213]
+              - generic [ref=e216]:
+                - text: "553"
+                - generic [ref=e217]: 1,527.9억원
+            - generic [ref=e218]:
+              - generic "경기" [ref=e219]
+              - generic [ref=e222]:
+                - text: "114"
+                - generic [ref=e223]: 666.3억원
+            - generic [ref=e224]:
+              - generic "대전" [ref=e225]
+              - generic [ref=e228]:
+                - text: "108"
+                - generic [ref=e229]: 642.5억원
+            - generic [ref=e230]:
+              - generic "부산" [ref=e231]
+              - generic [ref=e234]:
+                - text: "55"
+                - generic [ref=e235]: 63억원
+            - generic [ref=e236]:
+              - generic "강원" [ref=e237]
+              - generic [ref=e240]:
+                - text: "42"
+                - generic [ref=e241]: 85.1억원
+            - generic [ref=e242]:
+              - generic "광주" [ref=e243]
+              - generic [ref=e246]:
+                - text: "42"
+                - generic [ref=e247]: 73.5억원
+            - generic [ref=e248]:
+              - generic "대구" [ref=e249]
+              - generic [ref=e252]:
+                - text: "36"
+                - generic [ref=e253]: 39.4억원
+            - generic [ref=e254]:
+              - generic "인천" [ref=e255]
+              - generic [ref=e258]:
+                - text: "34"
+                - generic [ref=e259]: 59.7억원
+            - generic [ref=e260]:
+              - generic "경북" [ref=e261]
+              - generic [ref=e264]:
+                - text: "30"
+                - generic [ref=e265]: 100.4억원
+            - generic [ref=e266]:
+              - generic "충남" [ref=e267]
+              - generic [ref=e270]:
+                - text: "27"
+                - generic [ref=e271]: 20.2억원
+    - region [ref=e272]:
+      - generic [ref=e274]:
+        - paragraph [ref=e275]: Who
+        - heading "누가 연구하는가" [level=2] [ref=e276]
+        - paragraph [ref=e277]: 산학협력단과 과거 명칭은 대학 본체로 통합하고, 연구그룹은 동명이인 위험을 줄이기 위해 연구책임자와 기관의 조합으로 셌습니다.
+      - generic [ref=e278]:
+        - article [ref=e279]:
+          - generic [ref=e280]:
+            - heading "프로젝트 수 상위 기관" [level=3] [ref=e281]
+            - generic [ref=e282]: 정규화 기관 기준
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - generic "연세대학교" [ref=e285]
+              - generic [ref=e288]:
+                - text: "76"
+                - generic [ref=e289]: 196.2억원
+            - generic [ref=e290]:
+              - generic "서울대학교" [ref=e291]
+              - generic [ref=e294]:
+                - text: "69"
+                - generic [ref=e295]: 161.3억원
+            - generic [ref=e296]:
+              - generic "고려대학교" [ref=e297]
+              - generic [ref=e300]:
+                - text: "66"
+                - generic [ref=e301]: 239억원
+            - generic [ref=e302]:
+              - generic "한국과학기술원" [ref=e303]
+              - generic [ref=e306]:
+                - text: "62"
+                - generic [ref=e307]: 136.1억원
+            - generic [ref=e308]:
+              - generic "성균관대학교" [ref=e309]
+              - generic [ref=e312]:
+                - text: "49"
+                - generic [ref=e313]: 56.7억원
+            - generic [ref=e314]:
+              - generic "한양대학교" [ref=e315]
+              - generic [ref=e318]:
+                - text: "45"
+                - generic [ref=e319]: 166.5억원
+            - generic [ref=e320]:
+              - generic "중앙대학교" [ref=e321]
+              - generic [ref=e324]:
+                - text: "30"
+                - generic [ref=e325]: 78.5억원
+            - generic [ref=e326]:
+              - generic "이화여자대학교" [ref=e327]
+              - generic [ref=e330]:
+                - text: "29"
+                - generic [ref=e331]: 39.6억원
+            - generic [ref=e332]:
+              - generic "부산대학교" [ref=e333]
+              - generic [ref=e336]:
+                - text: "25"
+                - generic [ref=e337]: 31.2억원
+            - generic [ref=e338]:
+              - generic "경희대학교" [ref=e339]
+              - generic [ref=e342]:
+                - text: "23"
+                - generic [ref=e343]: 72억원
+        - complementary [ref=e344]:
+          - generic [ref=e345]:
+            - heading "집중도" [level=3] [ref=e346]
+            - generic [ref=e347]: 상위 기관 합계
+          - generic [ref=e348]:
+            - generic [ref=e349]:
+              - strong [ref=e350]: 상위 5개 기관
+              - generic [ref=e351]: 322개 · 28.0%
+              - paragraph [ref=e352]: 연세대, 서울대, 고려대, KAIST, 성균관대.
+            - generic [ref=e353]:
+              - strong [ref=e354]: 상위 10개 기관
+              - generic [ref=e355]: 474개 · 41.2%
+              - paragraph [ref=e356]: 지역 집중도보다 기관 집중도는 낮습니다.
+            - generic [ref=e357]:
+              - strong [ref=e358]: 연구그룹 최대 프로젝트 수
+              - generic [ref=e359]: 3개
+              - paragraph [ref=e360]: 대부분의 연구책임자+기관 조합은 1–2개 프로젝트를 수행합니다.
+    - region [ref=e361]:
+      - generic [ref=e363]:
+        - paragraph [ref=e364]: What
+        - heading "무엇을 연구하는가" [level=2] [ref=e365]
+        - paragraph [ref=e366]: 공식 연구분야의 미분류를 보완하기 위해 과제명과 키워드로 기술 접근과 적용 영역을 따로 분류했습니다.
+      - article [ref=e367]:
+        - generic [ref=e368]:
+          - group "주제 분류 축" [ref=e369]:
+            - button "기술 접근" [ref=e370] [cursor=pointer]
+            - button "적용 영역" [ref=e371] [cursor=pointer]
+          - generic [ref=e372]: 6개 기술 접근 대표 주제군
+        - generic [ref=e373]:
+          - article [ref=e374]:
+            - heading "일반 활용·기타" [level=3] [ref=e375]
+            - generic [ref=e376]: 54147.0%
+          - article [ref=e379]:
+            - heading "안전·신뢰·거버넌스" [level=3] [ref=e380]
+            - generic [ref=e381]: 19817.2%
+          - article [ref=e384]:
+            - heading "멀티모달·생성콘텐츠" [level=3] [ref=e385]
+            - generic [ref=e386]: 14412.5%
+          - article [ref=e389]:
+            - heading "모델·학습·추론" [level=3] [ref=e390]
+            - generic [ref=e391]: 14212.3%
+          - article [ref=e394]:
+            - heading "에이전트·상호작용" [level=3] [ref=e395]
+            - generic [ref=e396]: 847.3%
+          - article [ref=e399]:
+            - heading "RAG·지식검색" [level=3] [ref=e400]
+            - generic [ref=e401]: 423.6%
+    - region [ref=e404]:
+      - generic [ref=e405]:
+        - generic [ref=e406]:
+          - paragraph [ref=e407]: Research landscape
+          - heading "키워드와 연구 관계" [level=2] [ref=e408]
+          - paragraph [ref=e409]: 1,151개 대표 프로젝트의 제목·키워드·연구목표·연구내용을 함께 분석해 반복되는 연구어와 가까운 프로젝트를 살펴봅니다.
+        - generic [ref=e410]: 탐색 분석 · 공식 학문 분류 아님
+      - article [ref=e411]:
+        - tablist "탐색 분석 보기" [ref=e412]:
+          - tab "키워드" [ref=e413] [cursor=pointer]
+          - tab "연구 지도" [active] [selected] [ref=e414] [cursor=pointer]
+          - tab "군집 요약" [ref=e415] [cursor=pointer]
+        - generic [ref=e802]:
+          - generic [ref=e803]:
+            - generic [ref=e804]:
+              - text: 군집 보기
+              - combobox "연구 지도 군집 필터" [ref=e805]:
+                - option "전체 14개 군집" [selected]
+                - option "1. 교육·학습·평가 · 106개"
+                - option "2. 대규모 언어모델 활용·해석 · 155개"
+                - option "3. 멀티모달·지능형 플랫폼 · 149개"
+                - option "4. 이미지·영상 생성과 탐지 · 107개"
+                - option "5. 과학·공학 생성설계 · 77개"
+                - option "6. AI 에이전트·멀티에이전트 · 49개"
+                - option "7. RAG·검색증강생성 · 37개"
+                - option "8. 응용 프레임워크·평가 · 59개"
+                - option "9. LLM 추론·메모리·가속 · 47개"
+                - option "10. 디지털 트윈·시뮬레이션 · 54개"
+                - option "11. 임상·환자 의사결정 지원 · 66개"
+                - option "12. 인간·사회 영향과 거버넌스 · 131개"
+                - option "13. 파운데이션 모델·범용 학습 · 60개"
+                - option "14. 디자인·창작·사용자 경험 · 54개"
+            - button "지도 초기화" [ref=e806] [cursor=pointer]
+          - generic [ref=e807]:
+            - img "전체 프로젝트 연구 관계 산점도. 점을 선택하면 유사 연구가 연결됩니다." [ref=e809]:
+              - generic "과학기술기반 미래연구사업 (16차년도) · 과학기술정책연구원" [ref=e816] [cursor=pointer]
+              - generic "현장상황 파악을 위한 영상 제공 및 상황정보 탐색 지능화 기술 개발 · 국립재난안전연구원" [ref=e817] [cursor=pointer]
+              - 'generic "인공지능을 활용한 진로융합 교사연수 프로그램 개발 및 수용의도 촉진효과: 진로전담교사의 학습스타일에 따른 인공지능리터러시의 변화를 중심으로 · 국립공주대학교" [ref=e818] [cursor=pointer]'
+              - generic "생성형 AI의 범죄위험성 예측 및 형사정책적 대응방안 · 조선대학교" [ref=e819] [cursor=pointer]
+              - 'generic "질문하는 뇌의 발달: 학령기 아동의 질문 능력 · 연세대학교" [ref=e820] [cursor=pointer]'
+              - generic "AI기반 자동채점의 성능평가와 인간-AI협업 채점을 위한 평가설계모형 탐색 · 국립공주대학교" [ref=e821] [cursor=pointer]
+              - generic "포스트 AI 시대의 이공계 교육정책 연구 · 세종대학교" [ref=e822] [cursor=pointer]
+              - generic "생성형 AI 이미지 모델을 활용한 메이크업 디자인 모티브 개발 및 교육 활용 방안 연구 · 서경대학교" [ref=e823] [cursor=pointer]
+              - generic "설명인터페이스와 공감인터페이스의 서비스 유형 별 적용을 통한 생성형 인공지능 경험 디자인 · 성신여자대학교" [ref=e824] [cursor=pointer]
+              - 'generic "생성형 인공지능(AI) 기반 예술 속 기술적 대상들의 존재 양식: 시몽동의 기술철학적 접근을 넘어 · 상지대학교" [ref=e825] [cursor=pointer]'
+              - generic "진로상담과 인공지능 · 국립공주대학교" [ref=e826] [cursor=pointer]
+              - generic "맞춤형 음악 창제작을 위한 생성 인공지능 기반 협업 저작 기술 연구 · 성균관대학교" [ref=e827] [cursor=pointer]
+              - generic "디자인대학에서 'Generative AI'의 활용 방안에 관한 연구 - 디자인 프로세스 교육 프로그램 개발을 중심으로 - · 국립부경대학교" [ref=e828] [cursor=pointer]
+              - generic "생성형 인공지능의 법적 쟁점과 규제에 관한 연구 · 영남대학교" [ref=e829] [cursor=pointer]
+              - 'generic "인간 중심 디자인 접근 방식을 통한 책임감 있는 인공지능 설계 : 생성형 인공지능을 중심으로 · 연세대학교" [ref=e830] [cursor=pointer]'
+              - generic "대규모 언어모델, 소셜 미디어 및 시장자료에 기반을 둔 포트폴리오 분석 · 조선대학교" [ref=e831] [cursor=pointer]
+              - generic "문제해결과정 스캐폴딩을 위한 생성형 AI 기반 챗봇 설계 및 효과성 검증 · 이화여자대학교" [ref=e832] [cursor=pointer]
+              - generic "생성형 인공지능에 대한 미디어의 표현 방식과 이용자의 판단 유형에 따른 정보 수용 과정 분석 · 성균관대학교" [ref=e833] [cursor=pointer]
+              - generic "SMC-BERT; 대규모 언어모델 개발을 위한 가명화 및 annotation된 응급실 기록지 데이터 생성 · 삼성서울병원" [ref=e834] [cursor=pointer]
+              - generic "생성형 인공지능을 활용한 류마티스질환 환자의 약물치료 선택 공유의사결정 시스템 구축 · 한양대학교" [ref=e835] [cursor=pointer]
+              - generic "암질환 의료영상과 판독문을 이용한 생성형 인공지능 모델 개발 연구 · 국립암센터" [ref=e836] [cursor=pointer]
+              - generic "식의약 안전정보 제공 서비스 향상을 위한 생성형 인공지능(AI) 활용 방안 연구(1) · 동국대학교" [ref=e837] [cursor=pointer]
+              - generic "대규모 언어모델 기반 지식적용 제어가능 문장 생성 기술 연구 · 충남대학교" [ref=e838] [cursor=pointer]
+              - generic "생성형 인공지능을 활용한 메타버스 플랫폼 콘텐츠 구성 방법의 연구 및 개발 · 호서대학교" [ref=e839] [cursor=pointer]
+              - generic "활동 기반 교통수요 예측을 위해 모빌리티 데이터를 융합하는 생성형 인공지능 · 아주대학교" [ref=e840] [cursor=pointer]
+              - 'generic "뇌의 지속가능성: 생성 AI 알고리즘과 멀티모달 데이터 네트워크 분석 기반 퇴행성 뇌질환 예방 및 조기 예측 시스템 개발 · 한림대학교" [ref=e841] [cursor=pointer]'
+              - generic "3차원 사람-공간 상호 작용 이해를 위한 기초 모델 (Foundation Model) · 서울대학교" [ref=e842] [cursor=pointer]
+              - generic "동물-사람 멀티스케일 신경과학 파운데이션 모델을 기반으로한 뇌-외부환경 상호작용시의 정서에 의해 맥락화된 (contextualized) 지각의 디코딩 · 서울대학교" [ref=e843] [cursor=pointer]
+              - generic "과학기술정보의 초지능화 기술 연구 · 한국과학기술정보연구원" [ref=e844] [cursor=pointer]
+              - generic "생성형 인공지능-다중물리해석 기반 차세대 원전용 증기발생기 및 검사시스템 설계 기술 개발 · 충남대학교" [ref=e845] [cursor=pointer]
+              - generic "생성 AI 기반 탄소중립형 주거단지 최적화 설계기법 개발 · 서울대학교" [ref=e846] [cursor=pointer]
+              - generic "한-일 생성AI(Generative AI) 및 멀티모달AI(Multi-Modal AI) 기술 공동 세미나 · 고려대학교" [ref=e847] [cursor=pointer]
+              - generic "거대언어모델 연산가속을 위한 디지털 뉴로모픽 프로세서 연구 · 한양대학교" [ref=e848] [cursor=pointer]
+              - generic "디퓨전 모델을 이용한 생성형 AI 연구에 대한 기초 협력 연구 · 조선대학교" [ref=e849] [cursor=pointer]
+              - generic "생성형 인공지능 시대의 창의적 문제해결을 위한 교사역량 강화 프로그램 · 이화여자대학교" [ref=e850] [cursor=pointer]
+              - generic "생성 AI 확산에 따른 디지털 인재 양성 개선 방안 연구 · 정보통신정책연구원" [ref=e851] [cursor=pointer]
+              - 'generic "개인별 특성에 따른 생성형 AI 리터러시와 윤리적 쟁점에 대한 효과 검증: 오정보, 정보편향, 오남용을 중심으로 · 성균관대학교" [ref=e852] [cursor=pointer]'
+              - generic "청소년의 생성형 AI 이용실태 및 리터러시 증진방안 연구 · 한국청소년정책연구원" [ref=e853] [cursor=pointer]
+              - generic "교사의 수업 및 평가 지원을 위한 생성형 AI 활용 방안 탐색 · 한국교육과정평가원" [ref=e854] [cursor=pointer]
+              - generic "생성형 AI 시대의 직무재설계와 혁신 방안 · 한국직업능력연구원" [ref=e855] [cursor=pointer]
+              - generic "생성형 AI 기반 안전제도 진단 지원시스템 개발 · 울산과학기술원" [ref=e856] [cursor=pointer]
+              - generic "허위조작 콘텐츠 진위여부 판별 시스템 개발 · 숭실대학교" [ref=e857] [cursor=pointer]
+              - generic "Unlearning 방법론을 활용한 공정한 대규모 언어 모델 개발 · 서울대학교" [ref=e858] [cursor=pointer]
+              - generic "Robust T-Loss와 스타일 변환 기반 데이터 증강 프레임워크를 사용한 초음파 이미지 분할 · 성균관대학교" [ref=e859] [cursor=pointer]
+              - generic "블록부동소수점 양자화를 활용한 온디바이스 LLM 추론 가속 · 한국과학기술원" [ref=e860] [cursor=pointer]
+              - generic "인간-AI 상호작용을 통한 조형물 제작용 생성형 AI 설계 및 구현 · 서울대학교" [ref=e861] [cursor=pointer]
+              - generic "생성형 AI 기반 스마트 대피로 시스템 최적화 연구 · 대진대학교" [ref=e862] [cursor=pointer]
+              - generic "LLM 기반 창작적 협업 업무의 중간작업물 공유 지원 서비스 · 포항공과대학교" [ref=e863] [cursor=pointer]
+              - generic "생성형AI 기반 바이오필릭 디자인의 계획요소별 주거공간 시각화 방안 · 계명대학교" [ref=e864] [cursor=pointer]
+              - 'generic "인공지능(AI)과 인간 협업 시대를 위한 노동법 연구: AI 활용 단계별 노동환경 변화에 조응하는 인간중심적 (human-centered) 법제도 방향 구축 · 한동대학교" [ref=e865] [cursor=pointer]'
+              - generic "자기주도 한국어 학습을 위한 프롬프트 엔지니어링 교육 프로그램 개발과 적용 · 동아대학교" [ref=e866] [cursor=pointer]
+              - generic "공연콘텐츠 가치사슬에 기반한 생성형 AI 활용방안연구 · 가톨릭관동대학교" [ref=e867] [cursor=pointer]
+              - generic "인공지능 통합형 탐구활동의 학습 기여 및 제약에 관한 연구 · 이화여자대학교" [ref=e868] [cursor=pointer]
+              - generic "생성형 AI를 활용한 유아 재난안전교육 애플리케이션 모델 개발 · 동덕여자대학교" [ref=e869] [cursor=pointer]
+              - generic "인간과 생성형 AI의 발화의도 처리 기제 규명 · 서울대학교" [ref=e870] [cursor=pointer]
+              - generic "애니메이션 수용자의 이미지 생성형 AI에 대한 흥미가 인간-AI 협업의도에 미치는 영향 · 명지대학교" [ref=e871] [cursor=pointer]
+              - generic "알랭 바디우의 철학에 기반한 생성형 인공지능 사용자의 주체성 강화를 위한 연구 · 경성대학교" [ref=e872] [cursor=pointer]
+              - generic "Human-AI 상호작용을 활용한 다중감각 창의적 패션디자인 · 부산대학교" [ref=e873] [cursor=pointer]
+              - 'generic "생성형 AI 시대의 영어 교수자 역할 연구: 읽기 수업에서 교수자 개입 정도에 따른 효과성 분석을 중심으로 · 부산대학교" [ref=e874] [cursor=pointer]'
+              - generic "생성형 AI를 활용한 확장형 읽기 자료 개발 및 교육적 적용 연구 - 학문 목적 학습자를 대상으로 · 연세대학교" [ref=e875] [cursor=pointer]
+              - generic "중소기업 애로 해소를 위한 특허 분석 기반 생성형 AI 기술 활용 방안 연구 · 연세대학교" [ref=e876] [cursor=pointer]
+              - generic "생성형 AI를 활용한 대학 영문법 수업에서 학습자의 문법능력과 학습동기 변화 분석 · 충남대학교" [ref=e877] [cursor=pointer]
+              - generic "생성형 AI와 동작 인식 기술을 활용한 스마트 지능형 헬스코칭 시스템 개발 · 한국체육대학교" [ref=e878] [cursor=pointer]
+              - 'generic "생성형 AI 광고에 대한 소비자 반응 연구 : 조절초점의 조절 효과를 중심으로 · 성신여자대학교" [ref=e879] [cursor=pointer]'
+              - 'generic "생성형 AI 챗봇 챗GPT의 서비스품질과 신뢰가 서비스 수용에 미치는 영향: 휴먼터치와 혁신저항의 조절효과를 중심으로 · 부산대학교" [ref=e880] [cursor=pointer]'
+              - generic "생성형 AI 질적 코딩과 데이터 시각화 오픈소스를 활용한 텍스트 자료의 질적 인과관계 분석 기법 · 상명대학교" [ref=e881] [cursor=pointer]
+              - generic "신유형 디지털 계약에서의 권리, 시효 및 계약법이론의 변용에 관한 연구 · 국립금오공과대학교" [ref=e882] [cursor=pointer]
+              - generic "창의적 사회과 학습을 위한 생성형 AI 기반 프로그램 개발과 적용 · 부산교육대학교" [ref=e883] [cursor=pointer]
+              - generic "AI 챗봇을 활용한 제2언어 상호작용 능력 발달에 관한 연구 · 서울대학교" [ref=e884] [cursor=pointer]
+              - 'generic "생성형 AI 및 메타버스 기반의 영어 교과서 제작 및 효과 검증: TechBoox 프로토타입 개발을 기반으로 · 전북대학교" [ref=e885] [cursor=pointer]'
+              - generic "GPTs에 기반한 학술 번역과 문학 번역 AI 모델 연구 :영-중-한 번역을 실례로 · 서강대학교" [ref=e886] [cursor=pointer]
+              - generic "기술, 관광, 커뮤니케이션 분야에서의 생성형 AI 활용에 대한 융합 연구 · 경희대학교" [ref=e887] [cursor=pointer]
+              - generic "생성형 AI 기반 디자인 비즈니스 모델 설계용 BI(Business Intelligence) 프로그램 개발 · 동서대학교" [ref=e888] [cursor=pointer]
+              - generic "생성형 AI 활용 수학적 모델링 교수 역량 함양 교육과정 개발 · 전주교육대학교" [ref=e889] [cursor=pointer]
+              - 'generic "공감적 통찰력: 인공지능 기반의 대규모언어모델(LLM)을 활용한 심리상담 텍스트에 관한 감정분석 모델 연구 · 계명대학교" [ref=e890] [cursor=pointer]'
+              - generic "『명심보감』과 ChatGPT를 융합한 대학생의 자기성찰 학습법 · 계명대학교" [ref=e891] [cursor=pointer]
+              - generic "생성형 ai를 활용한 브랜드 아이덴티티 디자인의 소비자 평가 · 전남대학교" [ref=e892] [cursor=pointer]
+              - generic "생성형 인공지능 시대 책임 있는 학습과 윤리적 사용을 위한 대학생용 AI 리터러시 측정도구 및 교양교육 모델 개발 · 인하대학교" [ref=e893] [cursor=pointer]
+              - generic "과목의 인공지능 기반 수학적 대상화 과정 분석과 개선 방향에 대한 연구 · 고려대학교" [ref=e894] [cursor=pointer]
+              - generic "학습 대화를 지원하는 생성형 인공지능 챗봇 개발 연구 · 홍익대학교" [ref=e895] [cursor=pointer]
+              - 'generic "생성형 학습분석 시스템 개발 및 학습경험 분석: 생성형 AI와 인간 중심 학습분석의 결합 · 중앙대학교" [ref=e896] [cursor=pointer]'
+              - generic "한국의 초중등 영어 학습자를 위한 아동 문학 기반 영어 지문/질문/답변 자동 생성 모델의 효과 연구 · 성균관대학교" [ref=e897] [cursor=pointer]
+              - generic "인공지능 시대의 대학 글쓰기 교육 연구 -학생들의 생성형 인공지능 활용 방식과 관련 논의를 중심으로 · 연세대학교" [ref=e898] [cursor=pointer]
+              - 'generic "4차 산업혁명 시대 대학무용교육: 테크놀로지 활용 교육 커리큘럼 설계와 교육자의 전문적 역량 연구 · 한양대학교" [ref=e899] [cursor=pointer]'
+              - generic "생성형 인공지능 도구 기반 창의적 제품 디자인 방법과 프레임워크 개발 · 홍익대학교" [ref=e900] [cursor=pointer]
+              - 'generic "인공지능 문학의 독서 경험 연구: 『어느 작가의 죽음』을 중심으로 · 충남대학교" [ref=e901] [cursor=pointer]'
+              - generic "생성형 AI 스플래시 화면 애니메이션 제작 관련 Z세대 사용자 선호도 및 감정형용사 지표 기반 이미지평가 연구 · 국립한밭대학교" [ref=e902] [cursor=pointer]
+              - generic "건설업 디지털 전환 가속화를 위한 심층학습 기반 생성형 인공지능 모델 개발 · 서울과학기술대학교" [ref=e903] [cursor=pointer]
+              - generic "검증된 폐기학습을 통한 강건한 텍스트-이미지 생성형 인공지능 · 포항공과대학교" [ref=e904] [cursor=pointer]
+              - generic "생성형 AI를 활용한 공간 사용률 및 만족도 예측 기반 평면도 자동 생성 연구 · 한국과학기술원" [ref=e905] [cursor=pointer]
+              - generic "멀티모달 학습 기반 생성형 AI를 활용한 맞춤형 BIM 모델 생성 자동화 · 세종대학교" [ref=e906] [cursor=pointer]
+              - generic "생성형AI 기반 텍스트 시각 효과 자동 생성 기술 개발 · 광주과학기술원" [ref=e907] [cursor=pointer]
+              - 'generic "생성형 인공지능에 대한 사용자 인식 및 이용 효과 연구 : 개인적 특성과 정보기술에 대한 태도 중심으로 · 한국과학기술원" [ref=e908] [cursor=pointer]'
+              - generic "지속 가능한 사회를 위한 디지털 플랫폼의 생성형 인공지능 활용 전략 · 한국과학기술원" [ref=e909] [cursor=pointer]
+              - 'generic "개인별 특성에 따른 생성형 AI 리터러시와 윤리적 쟁점에 대한 효과 검증: 오정보, 정보편향, 오남용을 중심으로 · 성균관대학교" [ref=e910] [cursor=pointer]'
+              - 'generic "백워드 설계를 통한 컴퓨팅 사고력 증진 : 생성형 AI 기반 SW 교육을 중심으로 · 제주대학교" [ref=e911] [cursor=pointer]'
+              - generic "코디자인에서 지식공유활동 촉진을 위한 생성형 AI 활용 연구 · 홍익대학교" [ref=e912] [cursor=pointer]
+              - generic "검색 증강 생성 기반의 멀티모달 웹툰 생성형 AI 연구 · 조선대학교" [ref=e913] [cursor=pointer]
+              - generic "정밀한 객체 추적을 위한 Optimal Transport 기반 생성형 모델 이벤트-프레임 데이터 재구성 연구 · 광운대학교" [ref=e914] [cursor=pointer]
+              - generic "Neuro-symbolic 접근법을 통한 LLM의 인과 추론 능력 개선 · 서울대학교" [ref=e915] [cursor=pointer]
+              - generic "웨어러블 센서 인장 범위 증가를 위한 생성형 인공지능 기반 키리가미 구조 역설계 기술 개발 · 부산대학교" [ref=e916] [cursor=pointer]
+              - generic "물리 지식을 활용한 생성형 인공지능 기반 기계 시스템 해석 경량화 및 설계기술 개발 · 한국과학기술원" [ref=e917] [cursor=pointer]
+              - generic "전장환경 특화 한국어 LLM 기반 시각 질의응답 · 성균관대학교" [ref=e918] [cursor=pointer]
+              - generic "디지털 치료제를 위한 감정 환기와 기억 강화 기능의미세조정 적용 Text-to-Image 생성형 AI 모델 연구 · 한국기술교육대학교" [ref=e919] [cursor=pointer]
+              - generic "개방형 소음 감쇠 구조의 인공지능 기반 역설계 기술 개발 · 부산대학교" [ref=e920] [cursor=pointer]
+              - generic "심리공간의 관점으로 생성형 인공지능 이해하기 · 연세대학교" [ref=e921] [cursor=pointer]
+              - generic "생성형 인공지능을 활용한 Pass-through 기기에서의 몰입형 번역 시스템 개발 · 서울과학기술대학교" [ref=e922] [cursor=pointer]
+              - generic "스스로 성장하는 생성형 모델 프레임워크 연구 · 서울과학기술대학교" [ref=e923] [cursor=pointer]
+              - generic "코드 번역 검증을 위한 LLM 기반 의미 인식 테스팅 기법 연구 · 울산과학기술원" [ref=e924] [cursor=pointer]
+              - generic "생성형 AI를 활용한 극한 환경에서의 DIC 보정 시스템 개발 · 조선대학교" [ref=e925] [cursor=pointer]
+              - generic "생성형 인공지능 기반의 다중 오믹스 데이터 통합 분석을 통한 암종 특이적 염증성 세포사멸 조절기전 규명 및 맞춤형 면역치료 전략 개발 · 고려대학교" [ref=e926] [cursor=pointer]
+              - generic "Nursing-smaller-foundation LLM 기반 ICU 간호사 인수인계 보고서 오류 방지를 위한 ING-AI(ICU Nuring Generative AI) 구축 및 실증 · 전북대학교" [ref=e927] [cursor=pointer]
+              - generic "당뇨병 환자의 치료/합병증 예측을 위한 다중차원 바이오마커 선별 및 AI-Foundation Model 구축 · 고려대학교" [ref=e928] [cursor=pointer]
+              - 'generic "Legi Tech 모델 개발과 입법교육: 입법학의 디지털 전환 · 경인교육대학교" [ref=e929] [cursor=pointer]'
+              - 'generic "빅데이터, 딥러닝(거대언어모델), 질적연구 기법을 통한 교사의 수업·평가 담화 실천과 학생 성취 간 관계: 교사역량과 교수내용 간 관련성 분석과 교사 전문성 예측 및 피드백 모형화 · 한국교원대학교" [ref=e930] [cursor=pointer]'
+              - generic "근감소증 진단 및 재활치료 모니터링을 위한 매니폴드 러닝 기반 스켈레톤 데이터 분석 및 생성형 AI 통합 솔루션 개발 · 영남대학교" [ref=e931] [cursor=pointer]
+              - 'generic "\"자비스처럼 생각하는 AI를 원해\": 생성형 AI의 프레이밍 효과와 의사결정 · 서울시립대학교" [ref=e932] [cursor=pointer]'
+              - generic "생성형 딥러닝 알고리즘 기반 유가증권시장 미시구조 빅데이터 분석과 구조적 리스크 발생 메카니즘의 수리 모형 연구 · 아주대학교" [ref=e933] [cursor=pointer]
+              - generic "생성형 AI 기술을 활용한 감성 형용사 기반 얼굴 표정 생성 모델 개발 · 상명대학교" [ref=e934] [cursor=pointer]
+              - generic "생성형 인공지능을 이용한 한국어 학습자의 오류 분석 및 교육 방안 연구 · 동국대학교" [ref=e935] [cursor=pointer]
+              - generic "한국프로야구 구단의 재무성과 분석을 위한 RAG-LLM 프레임워크 개발 · 한양대학교" [ref=e936] [cursor=pointer]
+              - 'generic "AI 기반 차세대 메타버스 패션 리테일테크: 고객 맞춤형 상품추천, 프로모션 및 VMD 연구 · 충남대학교" [ref=e937] [cursor=pointer]'
+              - generic "생성형 AI 기반 기술문서 해석과 가상데이터 활용을 통한 디자인-공학 협업 및 특수목적 시스템 UX디자인 프로세스 개선 연구 · 동명대학교" [ref=e938] [cursor=pointer]
+              - generic "생성형 인공지능의 할루시네이션 현상이 기본권에 미치는 영향 분석과 입법적 대응 방안 연구 · 우석대학교" [ref=e939] [cursor=pointer]
+              - 'generic "AI 기반 한-미-일 인구감소 통합적 대응방안 연구 : LLM과 PESTEL 넥서스를 활용한 글로벌 비교, 예측 모델 개발 및 상호호혜적 전략 도출 · 서울대학교" [ref=e940] [cursor=pointer]'
+              - generic "생성형 AI 기반 디지털 숙의 플랫폼 연구 · 경희대학교" [ref=e941] [cursor=pointer]
+              - generic "Generative AI를 활용한 디자인 프로세스에 관한 연구- UTAUT2 모델을 중심으로 - · 부산대학교" [ref=e942] [cursor=pointer]
+              - generic "생성형 AI를 활용한 이공계 글쓰기 교육 방안 연구 · 전북대학교" [ref=e943] [cursor=pointer]
+              - generic "산업용 로봇이 고용에 미치는 영향에 관한 분위회귀 모형 연구 · 부산대학교" [ref=e944] [cursor=pointer]
+              - 'generic "인공지능에 대한 도덕적 인식: 마음지각이론(Mind Perception Theory)을 통한 생성형 AI에 대한 인간의 판단 · 서울대학교" [ref=e945] [cursor=pointer]'
+              - generic "생성형 AI 기반 무용 데이터셋 구축을 위한 최적의 워크플로우 연구 · 부산대학교" [ref=e946] [cursor=pointer]
+              - generic "생성형 AI의 원문번역 비교 분석연구를 통한 디지털 인문학 교육 컨텐츠와 활용방안 - 승정원 일기를 기준으로 · 조선대학교" [ref=e947] [cursor=pointer]
+              - 'generic "생성형 인공지능을 활용한 고객리뷰 분석 및 응대지원 서비스 개발: 디자인 사이언스 방법론 적용 · 경희대학교" [ref=e948] [cursor=pointer]'
+              - 'generic "AI 문학번역의 품질 향상과 교육적 활용: 프롬프트 최적화 전략을 중심으로 · 중앙대학교" [ref=e949] [cursor=pointer]'
+              - 'generic "인공지능(AI) 기반 기술의 사회적 가치 창출 역할 탐색 및 지속가능성 예측연구: 노년층의 AI 이용을 중심으로 시뮬레이션 기법을 활용하여 · 수원대학교" [ref=e950] [cursor=pointer]'
+              - generic "사회과학 분야 내 연구 신뢰성 평가를 위한 LLM 기반 자동 분석 및 검증 연구 · 광운대학교" [ref=e951] [cursor=pointer]
+              - generic "생성형 LLM(대규모언어모델)과 RAG(검색증강생성)을 활용한 팩트체크 자동화 시스템 구축 및 고도화 연구 · 경희대학교" [ref=e952] [cursor=pointer]
+              - 'generic "생성형 인공지능 시대의 학습 재개념화 연구: 시몽동의 기술철학과 대학 현장 적용을 중심으로 · 한양대학교" [ref=e953] [cursor=pointer]'
+              - 'generic "AI, LLMs, 머신러닝을 활용한 재난구호 관리: 미디어가재난구호성호금 및 자원봉사에 미치는 영향 분석 및 재난구호성금 및 자원봉사자 분배 예측 모델 개발 · 울산과학기술원" [ref=e954] [cursor=pointer]'
+              - 'generic "인공지능 트랜스크리틱: 인공지능 비판을 위하여 · 경북대학교" [ref=e955] [cursor=pointer]'
+              - generic "생성형 AI 시대의 대학 글쓰기 변화 연구-어휘, 문장, 문단의 평가를 중심으로- · 한국과학기술원" [ref=e956] [cursor=pointer]
+              - generic "지역주민 대상 생성형 AI 기반 온라인 재난교육 프로그램 개발 및 효과 검증 · 국립창원대학교" [ref=e957] [cursor=pointer]
+              - generic "스텔라리움을 활용한 음악과 과학의 AI 융합교육이 과학영재의 과학 창의성과 정서지능에 미치는 효과 · 이화여자대학교" [ref=e958] [cursor=pointer]
+              - generic "생성형 AI를 활용한 등급별, 학습 목적별 읽기 자료 개발 연구 · 명지대학교" [ref=e959] [cursor=pointer]
+              - 'generic "교차 언어 분석을 통한 LLM의 정보구조 구현 정밀화: 한국어-중국어, 한국어-타갈로그어를 중심으로 · 서울대학교" [ref=e960] [cursor=pointer]'
+              - generic "윤리적 딜레마 상황에서 심리상담사와 생성형 인공지능의 의사결정 비교 · 고려대학교" [ref=e961] [cursor=pointer]
+              - generic "멀티모달 데이터, 딥러닝, 생성형AI, 양자기계학습을 활용한 지능형 기업 의사결정시스템 · 경희대학교" [ref=e962] [cursor=pointer]
+              - 'generic "자동채점을 활용한 시나리오 기반 서술형 교직 적·인성 검사 개발 및 타당화: 중등 예비교사를 중심으로 · 숙명여자대학교" [ref=e963] [cursor=pointer]'
+              - 'generic "다차원적 생성형 AI 의존성 척도의 개발: 정서·인지·행동적 요인과 ChatGPT 프롬프트 전략의 통합적 접근 · 성균관대학교" [ref=e964] [cursor=pointer]'
+              - generic "생성형 AI 기반 한국어 쓰기 피드백의 신뢰성 검증 연구 - 교사 그룹 및 생성형 AI의 피드백 비교를 중심으로 - · 연세대학교" [ref=e965] [cursor=pointer]
+              - generic "매체별 의료 메시지에 관한 한일 담화분석 대조연구:언어문화 특징이 반영된 의료용 생성형 AI 데이터 구축의 타진 · 고려대학교" [ref=e966] [cursor=pointer]
+              - generic "생성형 AI를 활용한 멀티모달 과학 데이터 분석이 예비 과학교사의 탐구 수행과 데이터 활용에 미치는 영향 · 전남대학교" [ref=e967] [cursor=pointer]
+              - 'generic "기억의 무기화와 혐오의 알고리즘: AI 기반 허위조작정보가 동아시아 지역의 갈등 역학에 미치는 영향 연구 · 연세대학교" [ref=e968] [cursor=pointer]'
+              - generic "생성형 AI가 산업디자인 프로세스에 단계별로 적용될 때 디자인 결과와 교육적 효과에 미칠 영향에 관한 연구 -산업디자인 전공 학생 대상 프로젝트를 중심으로- · 국립부경대학교" [ref=e969] [cursor=pointer]
+              - 'generic "인공지능을 활용한 사역 교체 연구: 보편적 동인과 개별 언어의 특수성 · 성균관대학교" [ref=e970] [cursor=pointer]'
+              - 'generic "학문 목적 한국어 학습자를 위한 생성형 AI 활용 글쓰기 윤리 지침 개발 연구 : 델파이 조사를 중심으로 · 동아대학교" [ref=e971] [cursor=pointer]'
+              - 'generic "완전한 개인화 비즈니스를 위한 LLM 활용 전략: 스마트 TV 추천시스템 맥락에서의 대규모 현장 실험 · 한양대학교" [ref=e972] [cursor=pointer]'
+              - generic "데이터 기반 맞춤형 수학수업 설계에서 초등교사의 생성형 AI 활용에 대한 연구 · 이화여자대학교" [ref=e973] [cursor=pointer]
+              - generic "AI 보조교사 시스템의 효과성 분석을 위한 교육용 LLM 성능평가 벤치마크 및 가이드라인 개발 연구 · 대구교육대학교" [ref=e974] [cursor=pointer]
+              - generic "창의적 문제해결 메커니즘을 위한 데이터·인공지능 융합 모델 개발 연구 · 제주대학교" [ref=e975] [cursor=pointer]
+              - 'generic "대학생들을 위한 형성적 진로 지원 시스템: RAG기반의 생성형 AI시스템 개발 및 효과분석 · 서울대학교" [ref=e976] [cursor=pointer]'
+              - generic "생성형 인공지능 시대 AI 코칭 연구 동향 · 대림대학교" [ref=e977] [cursor=pointer]
+              - generic "소상공인을 위한 생성형 AI 마케팅 전략 도출 · 동아대학교" [ref=e978] [cursor=pointer]
+              - generic "생성형 AI는 협업 네트워크를 어떻게 변화시키고 조직 성과를 높이는가? · 경상국립대학교" [ref=e979] [cursor=pointer]
+              - generic "생성형 AI 기술 확산에 따른 지식재산권의 새로운 도전과 규범의 재구성 · 고려대학교" [ref=e980] [cursor=pointer]
+              - 'generic "팀-AI 창의적 협업 모델: LLM과 인지적 다양성과의 상호작용 분석 · 성균관대학교" [ref=e981] [cursor=pointer]'
+              - generic "한국 학령전기 및 학령기 아동의 생성형 인공지능에 대한 이해와 생성형 인공지능 사용 능력 · 연세대학교" [ref=e982] [cursor=pointer]
+              - generic "AX 시대에 생성형 AI에 의한 디지털 레플리카의 법적 문제 · 동아대학교" [ref=e983] [cursor=pointer]
+              - generic "특허 가치 평가를 위한 다중 대규모 언어 모델(LLM) 기반 프롬프트 모델링 프레임워크 개발 및 검증 · 연세대학교" [ref=e984] [cursor=pointer]
+              - 'generic "디지털 취약 고령층의 정신건강 및 건강행동 증진을 위한 디지털-헬스 교육 프로그램 개발과 평가: 생성형 AI 활용 · 국민대학교" [ref=e985] [cursor=pointer]'
+              - generic "생성형 인공지능 관련 범죄에 대한 형사법적 대응 방안 연구 · 성균관대학교" [ref=e986] [cursor=pointer]
+              - 'generic "실시간 상호작용 데이터를 활용한 대화형 AI 엔진구축: 텍스트에서 음성 및 영상 인터페이스 · 서강대학교" [ref=e987] [cursor=pointer]'
+              - generic "거대언어모델과 멀티 에이전트 시스템 기반 교육 콘텐츠 자동 생성 파이프라인 개발 연구 · 서강대학교" [ref=e988] [cursor=pointer]
+              - 'generic "초거대 언어 모델(Large Language Model: LLM) 기반 한국어 에세이 피드백 학습 데이터셋 구축 및 AI 모델 개발 연구 · 한국교원대학교" [ref=e989] [cursor=pointer]'
+              - generic "초등영어학습자들의 의사소통능력 함양을 위한 생성형 AI 기반 교수-학습 모형과 역동적 평가 방법 · 서울교육대학교" [ref=e990] [cursor=pointer]
+              - 'generic "신뢰할 수 있는 인공지능 기반 저널리즘 연구: 개념, 학습데이터, 모델 · 경북대학교" [ref=e991] [cursor=pointer]'
+              - 'generic "패션 산업에서의 생성형 AI 창작물 가치 평가: 공동 창작 단계와 브랜드 개성의 조절 효과 · 성균관대학교" [ref=e992] [cursor=pointer]'
+              - generic "생성형 AI 기반 맞춤형 뷰티 디자인 창작 프로세스 개발 및 교육·실무 적용 연구 · 서경대학교" [ref=e993] [cursor=pointer]
+              - generic "학문 목적 한국어 학습자의 정보전달형 발표 피드백을 위한 프롬프트 엔지니어링 연구 - 제미나이(Gemini)를 중심으로 - · 중앙대학교" [ref=e994] [cursor=pointer]
+              - 'generic "생성형 AI 시대의 증명학습: 학습자 수학적 자율성 함양을 위한 장기적 실천연구 · 고려대학교" [ref=e995] [cursor=pointer]'
+              - generic "생성형 인공지능(AI)을 활용한 사회과 교사의 법교육 평가 방안 개발 · 부산교육대학교" [ref=e996] [cursor=pointer]
+              - generic "스포츠 도메인 특화 대규모 언어모델(LLM)과 검색증강생성(RAG) 기술을 활용한 데이터 기반 스포츠정책 지원 모델 개발 · 인하대학교" [ref=e997] [cursor=pointer]
+              - generic "한국, 미국, 중국의 생성형 AI 모델의 오류 유형 비교 연구 - AI-Hub '방송콘텐츠 한국어-중국어 번역 말뭉치' 중심으로 · 신한대학교" [ref=e998] [cursor=pointer]
+              - 'generic "생성형 인공지능 시대의 잉여 데이터: 플로리디의 정보철학적 탐구 · 한양대학교" [ref=e999] [cursor=pointer]'
+              - generic "생성형 인공지능을 활용한 외국인 학부생 대상 상호작용적 한국어 읽기 학습 도구 개발 및 효과 연구 · 고려대학교" [ref=e1000] [cursor=pointer]
+              - generic "과정 중심 영어 글쓰기에서 생성형 AI 기반 피드백 효과 연구 · 강원대학교" [ref=e1001] [cursor=pointer]
+              - generic "인류의 웰빙을 위한 LLM 기반 AI 에이전트의 효과적 활용 · 고려대학교" [ref=e1002] [cursor=pointer]
+              - generic "LLM 기반 버추얼 휴먼의 페르소나 연구 · 서울예술대학교" [ref=e1003] [cursor=pointer]
+              - generic "AI 기반 신경건축학적 접근을 통한 바이오필릭 업무 환경의 창의성 향상 효과 연구 · 가톨릭대학교" [ref=e1004] [cursor=pointer]
+              - generic "생성형 AI 및 디지털 커뮤니케이션 데이터를 활용한 스트레스 및 정서 평가 연구 · 순천향대학교" [ref=e1005] [cursor=pointer]
+              - 'generic "생성형 AI 상호작용 개인화: 사용자의 성격과 작업 유형의 조절 역할을 중심으로 · 홍익대학교" [ref=e1006] [cursor=pointer]'
+              - generic "생성형 AI를 활용한 대화 데이터 기반 협력적 문제해결역량 평가 도구 개발 및 타당성 검증 · 숭실대학교" [ref=e1007] [cursor=pointer]
+              - generic "거대언어모델 기반 간호기록 데이터 활용 근치적 위절제술 후 합병증 발생 예측 모델 개발 및 평가 · 전남대학교" [ref=e1008] [cursor=pointer]
+              - generic "생성형 인공지능과 완전 분포형 수문 모델의 연계를 통한 차세대 하천 수질 오염원 추적 프레임워크 개발 · 광주과학기술원" [ref=e1009] [cursor=pointer]
+              - generic "홈서비스 에이전트의 퍼소나 유형별 공감적 인간-에이전트 상호작용 연구 · 성신여자대학교" [ref=e1010] [cursor=pointer]
+              - 'generic "생성형 AI의 인문고전연구 활용과 비판적 성찰 : 부버 ''나와 너'' 와 가다머 ''지평융합''을 중심으로 · 경상국립대학교" [ref=e1011] [cursor=pointer]'
+              - generic "생성형 인공지능을 활용한 한국어 말하기 교수?학습 모형 연구 · 중앙대학교" [ref=e1012] [cursor=pointer]
+              - generic "LLM을 활용한 학술 자료 요약의 품질 분석 및 평가 프레임워크 개발 · 경북대학교" [ref=e1013] [cursor=pointer]
+              - 'generic "AI 기반 심리서비스 대화 모델 개발을 위한 심리학적 접근: 메타역량(metacompetence)의 체계적 개념화와 생성형 AI를 사용한 구현 및 타당성/효과성 검증 · 연세대학교" [ref=e1014] [cursor=pointer]'
+              - generic "Local LLM을 활용한 AI 기반 서술형 자동 채점 연구 · 연세대학교" [ref=e1015] [cursor=pointer]
+              - generic "이미지 데이터의 정량적 구도 분류와 생성형 AI를 위한 LoRA 훈련 전략 · 서울대학교" [ref=e1016] [cursor=pointer]
+              - 'generic "온라인 Q&A 커뮤니티에서 대규모 언어 모델(LLM)을 활용한 채택 답변 예측: 개별 사용자 선호의 영향 · 한국과학기술원" [ref=e1017] [cursor=pointer]'
+              - 'generic "생성형 AI 혁명, 조직 성과로의 성공적 전환: 개인 생산성 향상을 조직 성과로 연결하는 일선관리자의 역량 · 서울대학교" [ref=e1018] [cursor=pointer]'
+              - generic "생성형 인공지능 예술에 나타난 시각적 불확정성과 감상자의 예술적 판단 분석 · 한국과학기술원" [ref=e1019] [cursor=pointer]
+              - generic "노년층의 뉴미디어리터러시 향상을 위한 통합예술교육 프로그램 개발 및 적용에 관한 실행연구 :생성형 AI 기술을 중심으로 · 전남대학교" [ref=e1020] [cursor=pointer]
+              - generic "Knowledge graph 기반 RAG-LLM을 활용한 산업안전 AI Agent 개발 및 실증 · 부산대학교" [ref=e1021] [cursor=pointer]
+              - generic "산업설비 안전성 제고를 위한AI 기반 상태진단 및 LLM 연계 유지보수 기술 개발 · 아주대학교" [ref=e1022] [cursor=pointer]
+              - generic "생성형 AI 기반 멀티모달 의료 종단 예측 모델 개발 및 개인 맞춤형 질병 궤적 예측과 조기 진단이 가능한 범용 정밀의료 플랫폼 구현 · 아주대학교" [ref=e1023] [cursor=pointer]
+              - generic "1-bit LLM을 위한 파라미터 효율적 미세조정 및 직접 선호 최적화 기반 지시 학습 연구 연구 · 강원대학교" [ref=e1024] [cursor=pointer]
+              - generic "건설업 디지털 전환을 위한 멀티모달 LLM 합성 데이터 자동화 프레임워크 개발 · 국립군산대학교" [ref=e1025] [cursor=pointer]
+              - generic "노인 돌봄 로봇의 개인화된 상호작용을 위한 LLM 기반 추론 기술 개발 · 한국과학기술연구원" [ref=e1026] [cursor=pointer]
+              - generic "Digital Rock 및 AI 기반 CO2 지중저장 안정성·효율성 향상을 위한 지질매질 특성 분석 및 불확실성 정량화 기술 개발 · 인하대학교" [ref=e1027] [cursor=pointer]
+              - generic "유전체-뇌영상 통합 딥러닝 기반 알츠하이머 조기예측 생성형 AI 모델 개발 · 광주과학기술원" [ref=e1028] [cursor=pointer]
+              - 'generic "약물 사용장애 환자의 재발 예측을 위한 디지털 바이오마커 탐색 연구: LLM 분석을 활용하여 · 한림대학교" [ref=e1029] [cursor=pointer]'
+              - generic "계층적 정보를 통합하는 LLM 기반의 계층적 데이터 증강 기술 연구 · 한국기술교육대학교" [ref=e1030] [cursor=pointer]
+              - generic "생성형 AI 기술 혁신의 역기능과 사용자 위험요인 대응 정책 방안 연구 · 동국대학교" [ref=e1031] [cursor=pointer]
+              - 'generic "AI, 한국 사회의 양극화 해법이 될 수 있을까?: LLM 기반 에이전트를 활용한 사회갈등 시뮬레이션과 정책 피드백 시스템 구축을 위한 기초 연구 · 서울대학교" [ref=e1032] [cursor=pointer]'
+              - 'generic "음성기반 LLM (Large Language Model) 간호 인수인계 시뮬레이션 앱 개발: SBAR 루브릭 기반 자율 학습 플랫폼 · 강원대학교" [ref=e1033] [cursor=pointer]'
+              - generic "시각-텍스트 지식그래프 기반 멀티모달 LLM을 활용한 건설현장 위험요소 인식 및 추론 기술 개발 · 서울대학교" [ref=e1034] [cursor=pointer]
+              - generic "의료 데이터 한계 극복을 위한 위암 특화 합성 위내시경 이미지 생성 모델 개발 · 가천대학교" [ref=e1035] [cursor=pointer]
+              - generic "금속-유기 골격체 설계를 위한 딥러닝 기반 생성 모델 · 한국과학기술원" [ref=e1036] [cursor=pointer]
+              - generic "분포기반 생성형 모델을 활용한 불균형 분류 대응 오버샘플링 알고리즘 개발 · 한양대학교" [ref=e1037] [cursor=pointer]
+              - 'generic "고효율 Li-S 배터리 구현을 위한 2D MXene 소재의 최적 설계 연구: 원자 수준 시뮬레이션과 LLM 기반 문헌 DB의 통합 AI 접근 · 충북대학교" [ref=e1038] [cursor=pointer]'
+              - generic "이종 자원 환경에서 효율적인 대규모 생성형 AI 학습을 위한 시스템-모델 공동 최적화 기술 개발 · 고려대학교" [ref=e1039] [cursor=pointer]
+              - generic "캐시 기반 LLM RAG 지연시간 최적화 · 성균관대학교" [ref=e1040] [cursor=pointer]
+              - generic "LLM을 활용한 설계 문서 내 의미 기반 텍스트 분류 기술 개발 · 고려대학교" [ref=e1041] [cursor=pointer]
+              - generic "2D 가우시안 객체를 활용한 실시간 3D 포토 모자이크 렌더링 기법 연구 · 중앙대학교" [ref=e1042] [cursor=pointer]
+              - generic "6SV 물리적 제약조건이 적용된 생성형 AI 기반의 고해상도 위성영상 대기보정 연구 · 국립부경대학교" [ref=e1043] [cursor=pointer]
+              - generic "의료 객체 의미 관계 이해를 통한 해석 가능한 진단 보고서 생성에 관한 연구 · 가천대학교" [ref=e1044] [cursor=pointer]
+              - generic "이종 클러스터 환경에서 다양한 요청 특성을 고려한 대규모 언어 모델 추론의 자원 효율 최적화 · 고려대학교" [ref=e1045] [cursor=pointer]
+              - generic "생성형 AI 및 물리모델을 활용한 도로 표면 균열 감지 및 방향 예측 기술 개발 · 성균관대학교" [ref=e1046] [cursor=pointer]
+              - generic "다중 모달 단일세포 공간전사체 기반 모델을 활용한 면역항암제 반응성 예측 · 성균관대학교" [ref=e1047] [cursor=pointer]
+              - generic "소프트웨어 진화를 위한 생성형AI기술을 활용한 체계적인 이슈관리 연구 · 경상국립대학교" [ref=e1048] [cursor=pointer]
+              - generic "실시간 생체신호 기반 시계열 지식그래프(TKG) 구축 및 대형 언어모델(LLM) 추론 프레임워크 연구 · 성균관대학교" [ref=e1049] [cursor=pointer]
+              - generic "CoT 기반 추론 뉴런의 식별 및 활성화에 기반한 LLM 내부 메커니즘 분석 · 한양대학교" [ref=e1050] [cursor=pointer]
+              - generic "RAG 기반 LLM 모델을 활용한 차세대 리튬 금속 전지용 wide-range 전해질 조성 예측 및 검증 프레임워크 개발 · 중앙대학교" [ref=e1051] [cursor=pointer]
+              - generic "청각장애인 소리 접근성 향상을 위한 의성어 기반 소리 저작 LLM 에이전트 연구 · 광주과학기술원" [ref=e1052] [cursor=pointer]
+              - generic "구조-물성 정렬 기반 화학 멀티모달 파운데이션 언어 모델 · 한국과학기술원" [ref=e1053] [cursor=pointer]
+              - generic "생성형 AI 에이전트가 탑재된 간호 시뮬레이션 교육자료 자동생성 플랫폼 개발 · 부산가톨릭대학교" [ref=e1054] [cursor=pointer]
+              - generic "다양한 공간영상을 이용한 딥러닝 기법의 개선 및 공간정보 추출의 적용 · 국립강릉원주대학교" [ref=e1055] [cursor=pointer]
+              - generic "FAHP & 이미지 생성형 AI 융합 디자인 프로세스 개발 · 국립금오공과대학교" [ref=e1056] [cursor=pointer]
+              - generic "LLM 기반 재실자 맞춤 적응형 실내 열환경 제어 모델 개발 · 중앙대학교" [ref=e1057] [cursor=pointer]
+              - generic "Physics-Informed Diffusion Model을 활용한 다상 유동 및 상변화 예측 · 경북대학교" [ref=e1058] [cursor=pointer]
+              - generic "멀티모달 생성 AI 모델의 추론 효율성 향상을 위한 연구 · 성균관대학교" [ref=e1059] [cursor=pointer]
+              - generic "산불 조기 대응을 위한 딥러닝 기반 비화재보 저감 및 정밀 탐지 기술 개발 · 세명대학교" [ref=e1060] [cursor=pointer]
+              - generic "VR-MRI-신경심리검사 연계 멀티모달 추론을 통한 LLM 기반 치매 조기진단 보조 기술 연구 · 서울과학기술대학교" [ref=e1061] [cursor=pointer]
+              - generic "생성형 AI와 신경생리학적 분석을 활용한 바이오필릭 주거공간 디자인 전략 연구 · 계명대학교" [ref=e1062] [cursor=pointer]
+              - 'generic "NP-hard 조합최적화 문제 해결을 위한 디퓨전 모델 기반 심층강화학습: 머신 스케줄링 문제를 중심으로 · 인천대학교" [ref=e1063] [cursor=pointer]'
+              - generic "양방향으로 안전한 클라우드 기반 인공지능 추론을 위한 효율적 실수연산 프로토콜 개발 · 서울대학교" [ref=e1064] [cursor=pointer]
+              - generic "최적 수송 기반 플로우매칭으로 향상된 rPPG와 얼굴 특징 및 오디오 정보를 융합한 멀티모달과 LLM 감정 분류모델 개발 · 광운대학교" [ref=e1065] [cursor=pointer]
+              - generic "에이전트 LLM 기술 기반 항암환자의 신장손상 예방 임상의사결정지원시스템(CDSS) 개발 · 고려대학교" [ref=e1066] [cursor=pointer]
+              - generic "뇌신경 오가노이드 단일세포 아틀라스 기반 신경발달장애 위험 유전자 예측을 위한 foundation model 및 virtual cell 연구 · 고려대학교" [ref=e1067] [cursor=pointer]
+              - generic "도메인 특화 RL 파인튜닝 및 SubgraphRAG을 통한 LLM의 환각 감소 및 응답 품질 개선 · 명지대학교" [ref=e1068] [cursor=pointer]
+              - generic "텍스트 속성 기반 확장형 그래프 지식 추출 프레임워크 · 충남대학교" [ref=e1069] [cursor=pointer]
+              - generic "생성형 AI를 통한 목표 지향적인 개인 맞춤형 학습 경로 생성(LPDM) · 한국과학기술원" [ref=e1070] [cursor=pointer]
+              - generic "시공단계 탄소정보 연계를 위한 LLM 기반 통합 플랫폼 구축 · 영남대학교" [ref=e1071] [cursor=pointer]
+              - generic "다중 뇌파에 적용가능한 범용적 뇌파 해석을 위한 EEG Foundation Model 개발 · 한동대학교" [ref=e1072] [cursor=pointer]
+              - generic "RBM 기반 생성형 AI 연산 특화형 활성화 함수 구현을 위한 3D 적층 뉴로모픽 하드웨어 설계 · 연세대학교" [ref=e1073] [cursor=pointer]
+              - generic "LLM을 활용한 한국어 텍스트 기반 이모지 시퀀스 생성 · 동국대학교" [ref=e1074] [cursor=pointer]
+              - generic "신뢰성 보장이 가능한 검색 증강 생성 알고리즘 개발 · 연세대학교" [ref=e1075] [cursor=pointer]
+              - generic "적응적 교대 제안 협상 기반의 분산적 자원 분배 연구 및 LLM 기반 멀티에이전트 시스템을 활용한 검증 · 이화여자대학교" [ref=e1076] [cursor=pointer]
+              - generic "사회활동 데이터를 활용한 그래프 기반 공동활동 목적지 선택 모형 개발 · 연세대학교" [ref=e1077] [cursor=pointer]
+              - 'generic "MADREC: 다중 측면 정보를 활용한 설명 가능한 초개인화 추천 LLM 에이전트 · 한양대학교" [ref=e1078] [cursor=pointer]'
+              - generic "텍스트-이미지 생성 모델의 선택적 개념 제거를 위한 알고리즘 및 평가 지표 제안 · 서강대학교" [ref=e1079] [cursor=pointer]
+              - generic "생성형 인공지능 기반 치아 파노라마 이미지 생성 및 조건부 FcF 인페이팅을 통한 희귀 질환 합성 데이터 구축과 질병 탐지 AI 고도화 연구 · 동국대학교" [ref=e1080] [cursor=pointer]
+              - generic "텐서공간모델 기반 생성형 AI를 활용한 난이도 제어 텍스트 생성 기술 · 서울시립대학교" [ref=e1081] [cursor=pointer]
+              - generic "의미적, 문체적 이중 모듈을 활용한 AI 생성 한국어 텍스트의 제로샷 탐지 · 성균관대학교" [ref=e1082] [cursor=pointer]
+              - generic "AI 작곡 지원 도구:합성 데이터를 통한 텍스트 투 심볼릭 음악 생성 모델 성능 개선 연구 · 서울대학교" [ref=e1083] [cursor=pointer]
+              - generic "인공지능 기반 치과 영상·안면 사진 성장 예후 예측-시각화 모델 · 이화여자대학교" [ref=e1084] [cursor=pointer]
+              - generic "난임 환자의 치료 성공 가능성 향상을 위한 LLM 기반 임신율 및 최적 약물 용량 예측 연구 · 차의과학대학교" [ref=e1085] [cursor=pointer]
+              - generic "거대언어모델 기반 적응형 프로그래밍 학습 지원 프레임워크 개발 · 성균관대학교" [ref=e1086] [cursor=pointer]
+              - generic "LoRA 적용 대형 언어 모델 기반 거주자 특성 반영 공간 행동 데이터 생성 연구 · 한국과학기술원" [ref=e1087] [cursor=pointer]
+              - generic "CLIP 기반 개념 제거와 생성형 모델에 대한 적용 가능성 연구 · 한국과학기술원" [ref=e1088] [cursor=pointer]
+              - generic "LLM의 코드 의미 추론을 활용한 목적지향 Greybox Fuzzing 탐색 기술 연구 · 충북대학교" [ref=e1089] [cursor=pointer]
+              - generic "스파이킹 신경망(SNN) 기반 멀티모달 LLM 경량화 설계를 통한 동적 물체 포착 로봇팔 연구 · 광운대학교" [ref=e1090] [cursor=pointer]
+              - generic "사용자 친화적 생성형 교통 시뮬레이션을 위한 멀티모달 생성 모델 연구 · 순천향대학교" [ref=e1091] [cursor=pointer]
+              - generic "Stable Diffusion 기반 생성형 AI를 활용한 건물 외장재 분류용 데이터 증강 프레임워크 개발 · 아주대학교" [ref=e1092] [cursor=pointer]
+              - generic "이산 스파이크 기반 Flow Matching을 활용한 저전력 뉴로모픽 생성 모델 개발 · 광운대학교" [ref=e1093] [cursor=pointer]
+              - generic "자동화 공정을 통한 ITO 나노크리스탈 합성 및 플라즈모닉 메모리 소자 구현 · 계명대학교" [ref=e1094] [cursor=pointer]
+              - generic "수술 환자 질의응답을 위한 한국어 의료 특화 LLM 개발 및 평가지표 설계 · 성균관대학교" [ref=e1095] [cursor=pointer]
+              - generic "인간 중심 스마트 건축 설계와 창의성 교육을 위한 생성형 AI 기반 통합 지식 시스템 개발 · 숭실대학교" [ref=e1096] [cursor=pointer]
+              - generic "복잡한 논리적 사고가 가능한 화학 LLM 개발 · 한국과학기술원" [ref=e1097] [cursor=pointer]
+              - generic "강화 미세조정 기반 전뇌·주제불문 fMRI-LLM 통합 디코딩 프레임워크 개발 · 고려대학교" [ref=e1098] [cursor=pointer]
+              - generic "실시간 스트리밍 음성 인터페이스를 위한 LLM-TTS 파이프라인 최적화 · 성균관대학교" [ref=e1099] [cursor=pointer]
+              - generic "LLM을 활용한 고령 친화형 음성 기반 3D 객체 조작 VR 인터페이스 개발 · 한국과학기술원" [ref=e1100] [cursor=pointer]
+              - generic "웨어러블 센서와 LLM을 활용한 개인 맞춤형 수면의 질 예측 및 피드백 시스템 개발 · 순천향대학교" [ref=e1101] [cursor=pointer]
+              - generic "거대언어모델(LLM)기반의 경영, 경제분야 토픽 탐지(topic detection)와 감성 분석(sentiment analysis) 특화 한국형 딥러닝 모델 · 연세대학교" [ref=e1102] [cursor=pointer]
+              - generic "생성형 AI 피드백 기반 마이크로러닝 교수설계를 활용한 외국인 학습자의 한국어 발음 개선 효과 연구 · 성균관대학교" [ref=e1103] [cursor=pointer]
+              - 'generic "관광객의 여행계획 과정에서 ChatGPT 지속사용의도의 결정 요인: 정보품질과 ChatGPT 리터러시의 역할 · 세종대학교" [ref=e1104] [cursor=pointer]'
+              - 'generic "생성형 AI 기반 성취 수준 적응형 과학 탐구 과정 피드백 시스템 개발 및 적용: 시선 추적 및 EEG 기반 효과 검증 · 대구대학교" [ref=e1105] [cursor=pointer]'
+              - 'generic "인간 문장 이해의 인과적 처리 메커니즘과 언어모델: 한국어 기반 인간?LLM 정합성 연구 · 경북대학교" [ref=e1106] [cursor=pointer]'
+              - generic "Large language model을 활용한 한국은행 Communication 기반 공급망 병목 지수가 기업의 차입에 미치는 영향 · 성균관대학교" [ref=e1107] [cursor=pointer]
+              - 'generic "로지스틱스 미디어: AI 자본주의와 모든 것의 물류화 · 연세대학교" [ref=e1108] [cursor=pointer]'
+              - generic "뇌파(EEG)와 안구움직임 측정(eye-tracking)을 통한 인공지능 생성 영상에 대한 연령대별 인지적·정서적 반응 분석 및 예측 모델 개발 · 홍익대학교" [ref=e1109] [cursor=pointer]
+              - 'generic "저탄소 경제로의 전환 정책 설계와 갈등 조정 : LLM 및 빅데이터 기반 연구 · 경희대학교" [ref=e1110] [cursor=pointer]'
+              - generic "인공지능 시대 교육격차의 구조적 이해와 해소를 위한 STEM 자본(Capital) 축적 기반 교육모델 개발 및 적용 효과 분석 · 조선대학교" [ref=e1111] [cursor=pointer]
+              - generic "자기조절학습(SRL) 기반 생성형 AI 활용 프로그래밍 교육 모델 개발 및 검증 · 한국체육대학교" [ref=e1112] [cursor=pointer]
+              - generic "말은 어떻게 시장을 움직이는가? 경영자의 언어와 기업 성과에 대한 거대언어모델 접근 · 충남대학교" [ref=e1113] [cursor=pointer]
+              - 'generic "''피지컬 AI''의 시대의 젠더: 로봇의 신체, 노동, 상호작용 그리고 인간다움 · 동아대학교" [ref=e1114] [cursor=pointer]'
+              - 'generic "생성형 AI 기반 한국 체육정책 변천사 추적 및 대화형 의사결정 지원 챗봇 시스템 개발: 비정형 체육 행정 데이터의 RAG(검색 증강 생성) 기술 적용 · 한국체육대학교" [ref=e1115] [cursor=pointer]'
+              - 'generic "생성형 AI와의 협력적 논증: 수학적 증명 교수·학습에서의 상호작용 패턴과 인지적 변화 분석 · 강원대학교" [ref=e1116] [cursor=pointer]'
+              - generic "동적 모델링 교육을 위한 생성형 AI 기반 3차원 스캐폴딩 프레임워크 개발 · 한국교원대학교" [ref=e1117] [cursor=pointer]
+              - generic "초등교사의 기초 수리력 진단 역량의 신장을 위한 생성형 AI 활용 교사교육 프로그램 개발 연구 · 광주교육대학교" [ref=e1118] [cursor=pointer]
+              - 'generic "AI-매개 리터러시 역량과 메타인지·자기조절을 중심으로 한 생성형 AI 활용 글쓰기 교육 설계 원리 개발: 하이브리드 피드백 기반 반복 횡단 연구 및 설계기반연구 · 명지대학교" [ref=e1119] [cursor=pointer]'
+              - generic "범주 학습에 따른 심리공간의 왜곡과 전이 · 성신여자대학교" [ref=e1120] [cursor=pointer]
+              - generic "고등교육 생성형 AI 활용 과제에서 '비어있는 성취' 메커니즘 규명과 교수·학습 지원 패키지의 개발 및 검증 · 한신대학교" [ref=e1121] [cursor=pointer]
+              - generic "거대언어모델(LLM)기반 지역생활자본의 인과적 해석 및 시각화를 통한 지방소멸 정책 분석 프레임워크 개발 · 경북대학교" [ref=e1122] [cursor=pointer]
+              - generic "한국어 간접화행과 담화 전략에 기반한 LLM 탈옥 공격의 화용론적 및 텍스트 언어학적 분석 · 고려대학교" [ref=e1123] [cursor=pointer]
+              - 'generic "AI 건강문해력은 노인의 건강행동을 어떻게 유도하는가?: RAG 기반 생성형 AI 행동 중재 프레임워크 · 부산대학교" [ref=e1124] [cursor=pointer]'
+              - 'generic "MCP 기반 생성형 AI를 활용한 디지털 공예 디자인 교육 모델 연구: Rhino 3D 실무 접근성 제고를 중심으로 · 단국대학교" [ref=e1125] [cursor=pointer]'
+              - generic "신유물론(New Materialism)적 접근에 기반한 생성형 AI 시대 예술가적 교사 정체성 연구 · 서울교육대학교" [ref=e1126] [cursor=pointer]
+              - 'generic "비정형 소비자 행동 데이터를 활용한 소상공인 폐점 위험의 구조적 분석: 리뷰 신뢰도 판별과 구조적 폐점 위험 예측을 위한 모델링 프레임워크 · 성균관대학교" [ref=e1127] [cursor=pointer]'
+              - 'generic "성찰적 마찰(Reflective Friction) 설계 프레임워크의 개발 및 효과 검증: 생성형 AI 인터페이스를 중심으로 · 홍익대학교" [ref=e1128] [cursor=pointer]'
+              - generic "한국적 미학의 시계열 일관성 확보를 위한 영상 생성 AI 미세조정 및 제어 기법 연구 · 국민대학교" [ref=e1129] [cursor=pointer]
+              - generic "생성형 인공지능의 발달장애 재현에서 나타나는 미세차별적 알고리즈믹 에이블리즘 규명 및 안전기준 수립 · 고려대학교" [ref=e1130] [cursor=pointer]
+              - 'generic "생성형 AI 시대 디지털 환경에서의 청소년 디지털 회복탄력성 연구: 개념 모델 수립, 측정도구 개발 및 교육 적용가능성 탐색 · 강남대학교" [ref=e1131] [cursor=pointer]'
+              - generic "다양한 생성형 AI 도구에 대한 예비교사의 적응적 역량 강화를 위한 비판적·윤리적 AI 리터러시 교육 모듈 개발 및 효과 검증 · 한양대학교" [ref=e1132] [cursor=pointer]
+              - 'generic "수행과 학습의 역설: 생성형 AI 활용 학습에서 메타인지적 착각을 극복하는 생성학습 설계 · 연세대학교" [ref=e1133] [cursor=pointer]'
+              - 'generic "바이브 코딩 기반 인간?AI 협력 통번역 교육 모델의 설계와 검증: AI 피드백 활용 방안과 교수자 개입 가이드라인을 중심으로 · 한국외국어대학교" [ref=e1134] [cursor=pointer]'
+              - generic "거대언어모델(LLM)을 활용한 읽기 평가 지문 및 수준별 문항 생성 연구 · 충북대학교" [ref=e1135] [cursor=pointer]
+              - generic "LLM기반 임베딩 방법론을 활용한 기업의 AI 도입 전략 분석 · 한국개발연구원국제정책대학원대학교" [ref=e1136] [cursor=pointer]
+              - 'generic "울리포와 우연 연구: 주사위 던지기에서 생성형 인공지능까지, 울리포의 창작이 우연과 맺는 관계에 대한 고찰 · 서울여자대학교" [ref=e1137] [cursor=pointer]'
+              - 'generic "생성형 인공지능이 매개하는 청각 환경의 미학: 인간?기술?환경의 얽힘과 미적 경험의 재구성 · 한국예술종합학교" [ref=e1138] [cursor=pointer]'
+              - 'generic "설명하는 지능(LLM)과 결정하는 지능(강화학습)의 결합: 공공행정 책임성 내재화를 위한 계층적 에이전트 구현 · 성신여자대학교" [ref=e1139] [cursor=pointer]'
+              - 'generic "LLM 할루시네이션의 도덕 존재론적 진단: 찰스 테일러의 매개적 인식론 비판과 접촉 이론을 중심으로 · 전북대학교" [ref=e1140] [cursor=pointer]'
+              - generic "설명가능한 인공지능(XAI) 기반 패션디자인 교수·학습 지원 챗봇의 설계원리 개발 및 적용 · 배재대학교" [ref=e1141] [cursor=pointer]
+              - generic "대학생의 스마트폰 과의존 예방을 위한 앱 기반 대화형 AI(LLM) 웰빙 코치 개발 및 파일럿 무작위 대조 연구 · 대전대학교" [ref=e1142] [cursor=pointer]
+              - 'generic "멀티모달 생성형 AI 패션 소비자 페르소나 구축 및 타당성 검증: 상품 반응 예측과 의미 매핑 체계의 고도화 · 경북대학교" [ref=e1143] [cursor=pointer]'
+              - generic "생성형 AI 기반의 오토 레이블링을 활용한 노후 저층 주거지의 환경색채 탐색 · 수원과학대학교" [ref=e1144] [cursor=pointer]
+              - generic "생성형 AI 시대, 디자인력(Designology) 기반 디자인 리터러시 교육 모델 개발 및 실증 연구 · 홍익대학교" [ref=e1145] [cursor=pointer]
+              - 'generic "생성형 AI와 생산의 사회적 조직 변화: 게임 산업에 대한 질적 종단 연구 · 서울대학교" [ref=e1146] [cursor=pointer]'
+              - generic "문화간 진료 참여 AI 포지션의 담화분석적 연구 · 계명대학교" [ref=e1147] [cursor=pointer]
+              - generic "LLM기반 분수 서술형 문항 자동 평가 모델 개발을 위한 데이터 구축과 프롬프트 엔지니어링 효과성 분석 · 한국교원대학교" [ref=e1148] [cursor=pointer]
+              - generic "멀티모달 인공지능(AI) 기반 영화 수익 예측을 위한 시각·전문가 신호 변수 개발 연구 · 국립공주대학교" [ref=e1149] [cursor=pointer]
+              - generic "AI 시대의 무의식과 정동 · 국립부경대학교" [ref=e1150] [cursor=pointer]
+              - generic "생성형 AI를 적용한 공공형 초개인화 PBV 디자인 연구 · 배재대학교" [ref=e1151] [cursor=pointer]
+              - generic "대형언어모형(LLM)의 철학적 문제와 구조주의 철학 · 연세대학교" [ref=e1152] [cursor=pointer]
+              - 'generic "AI 매개 학습 환경에서의 전략적 수행성과 평가 생태계 재설계 연구: 행위적 실재론과 활동이론의 통합적 접근 · 한양사이버대학교" [ref=e1153] [cursor=pointer]'
+              - generic "LLM 기반 페르소나 에이전트를 활용한 인간 리더십 평가 재현 가능성 및 판단 구조 분석 연구 · 성균관대학교" [ref=e1154] [cursor=pointer]
+              - generic "멀티모달 생성형 AI 환경에서 메이크업 디자인 사고의 형성과 전환에 관한 연구 -감성 기반 시각적 선택 구조와 이미지·영상 매체 확장을 중심으로- · 삼육보건대학교" [ref=e1155] [cursor=pointer]
+              - 'generic "LLM 기반 공공번역 품질평가와 워크플로 구축: 글로벌 지식공유사업(KSP) 사례를 중심으로 · 이화여자대학교" [ref=e1156] [cursor=pointer]'
+              - generic "RAG 기반 생성형 AI의 학습 과정 및 지식 구성 경로에 관한 실증 연구 · 전주대학교" [ref=e1157] [cursor=pointer]
+              - 'generic "인간-AI의 공동창작성과 창작 실천에서의 프롬프트 연구: 디지털 민족지와 멀티모달 방법론을 중심으로 · 강원대학교" [ref=e1158] [cursor=pointer]'
+              - generic "대학생 인성 핵심역량 강화를 위한 글쓰기 기반 과정중심 '촉진자 루브릭' 개발 · 강원대학교" [ref=e1159] [cursor=pointer]
+              - generic "AI 기반 학습 환경에서의 수행평가 재구성 ? 진단·형성평가 기반 과정증거 중심 수학 수행평가 설계 및 효과 탐색 · 인천대학교" [ref=e1160] [cursor=pointer]
+              - 'generic "보이지 않는 수요 발견: 생성형 AI 접근법 · 한국과학기술원" [ref=e1161] [cursor=pointer]'
+              - generic "미용의료 산업의 고객 페르소나 도출 및 LLM 기반 메시지 생성 프레임워크 설계 및 검증 · 경기대학교" [ref=e1162] [cursor=pointer]
+              - generic "창의성 함양을 위한 생성형 인공지능을 활용한 텍스타일 디자인 개발 교수학습 모델 수립 및 검증 · 서경대학교" [ref=e1163] [cursor=pointer]
+              - generic "AI 협업 기반 집단창의성 학습을 위한 LLM 멀티-에이전트 팀 상호작용 시뮬레이터 구현 및 교육효과?과정기제?예측모델 검증 · 영남대학교" [ref=e1164] [cursor=pointer]
+              - 'generic "한국어 존대법 처리의 인지신경과학 모델: EEG, fMRI, LLM 통합 연구 · 고려대학교" [ref=e1165] [cursor=pointer]'
+              - generic "과학탐구에서 귀추적 사고 교육모델 개발 및 AI-TPACK 역량 발달 연구 · 한국교원대학교" [ref=e1166] [cursor=pointer]
+              - 'generic "콜리지 시학의 기계적 자동성 연구: 인공지능 시대 저자성 담론에 대한 비평적 시사점을 중심으로 · 울산대학교" [ref=e1167] [cursor=pointer]'
+              - generic "AI 대전환 시대, 삶의 질 향상을 위한 디지털 웰빙 척도 개발 및 타당화 · 이화여자대학교" [ref=e1168] [cursor=pointer]
+              - 'generic "AI 판타스마고리아: 19세기 시각문화로 본 인공지능의 비선형적 계보 · 국립군산대학교" [ref=e1169] [cursor=pointer]'
+              - generic "자동 피드백을 제공하는 생성형 AI 기반 소아과 가상환자 병력청취 자기주도학습 시스템의 개발과 교육적 효과 · 제주대학교" [ref=e1170] [cursor=pointer]
+              - 'generic "LLM 기반 정신장애 뉴스 보도 감성 및 프레이밍 분석: API 기반 자동 분석의 신뢰성 검증 · 차의과학대학교" [ref=e1171] [cursor=pointer]'
+              - generic "생성형 AI 활용 지리탐구에서 피드백 유형의 효과와 학습자 인식 분석 · 이화여자대학교" [ref=e1172] [cursor=pointer]
+              - 'generic "AI 시대 영화 작가이론의 계보학: 알고리즘 영화장치와 정동을 경유한 작가성과 우연성의 재독해 · 중앙대학교" [ref=e1173] [cursor=pointer]'
+              - generic "생성형 AI 기반 적응형 PBL(Adaptive AI-PBL) 교육 생태계 및 학습 데이터 뱅크 구축 · 연세대학교" [ref=e1174] [cursor=pointer]
+              - generic "플립러닝 기반 영어 작문 수업의 단계별 AI 지원 효과 분석 · 한림대학교" [ref=e1175] [cursor=pointer]
+              - generic "학습자 주도적 문제해결을 위한 생성형 AI 프롬프트 스캐폴딩 활용 디자인 씽킹 교육 모델 및 평가체계 개발 · 인제대학교" [ref=e1176] [cursor=pointer]
+              - generic "생성형 AI 기반 수업 분석 피드백 시스템이 예비 과학교사의 교수적 메타인지와 개념 형성에 미치는 영향 · 경상국립대학교" [ref=e1177] [cursor=pointer]
+              - 'generic "바쁨의 심리학: 바쁜 마음가짐의 동기와 인지 경로가 디지털 정보 평가에 미치는 영향 · 연세대학교" [ref=e1178] [cursor=pointer]'
+              - generic "교사의 정서행동위기 학생 대응 역량 강화를 위한 생성형 AI 통합 지능형 시뮬레이션 개발 · 서울대학교" [ref=e1179] [cursor=pointer]
+              - generic "플랫폼 경제의 도덕적, 감각적 아키텍처로서의 디지털 플랫폼 · 경희대학교" [ref=e1180] [cursor=pointer]
+              - 'generic "데이터와 계시 사이: AI 시대의 구약해석, 공공신학, 목회윤리 · 목원대학교" [ref=e1181] [cursor=pointer]'
+              - generic "헤어트렌드 시각화를 위한 생성형 AI 프롬프트의 의미론적 구조 분석 및 최적화 데이터베이스(DB) 구축 · 동강대학교" [ref=e1182] [cursor=pointer]
+              - 'generic "생성형 AI를 활용한 협력적 귀추 기반 과학 가설 생성 과정 모형 개발: 인지·주의 수준의 분석을 중심으로 · 공주교육대학교" [ref=e1183] [cursor=pointer]'
+              - generic "데이터 희소 환경의 집단 측정을 위한 페르소나 캘리브레이션 LLM 시뮬레이션 방법론 개발 · 한국과학기술원" [ref=e1184] [cursor=pointer]
+              - 'generic "생성형 AI의 ''맥락 소거''와 ''R-C-V 검증'': 인터랙션 디자인 교육 표준화 연구 · 조선대학교" [ref=e1185] [cursor=pointer]'
+              - 'generic "독일의 German Angst와 AI 공포: 기술 회의주의의 역사와 변화 양상 · 전남대학교" [ref=e1186] [cursor=pointer]'
+              - generic "거대언어모델(LLM)의 언어주의 실증과 동아시아 언어 공정성 평가 체계(LVIB) 구축 · 경희대학교" [ref=e1187] [cursor=pointer]
+              - generic "중국어 어기 조사에 나타난 한국어 종결어미 화용 정보 대응 양상 연구 - LLM 기반 분석 및 평가 체계 구축 · 부산외국어대학교" [ref=e1188] [cursor=pointer]
+              - generic "생성형 AI(GEO)는 소비자 의사결정 여정을 어떻게 재구성하는가? · 고려대학교" [ref=e1189] [cursor=pointer]
+              - 'generic "보이지 않는 돌봄, 새로운 연결: 가족돌봄청년의 스트레스 과정, AI 기반 대처전략, 웰빙에 관한 3년 종단연구 · 한양대학교" [ref=e1190] [cursor=pointer]'
+              - generic "AI 플랫폼은 서로 다른 미디어 행위자인가? 플랫폼별 AI 커뮤니케이션 특성이 사회적 판단과 공론장 참여에 미치는 영향 · 경희대학교" [ref=e1191] [cursor=pointer]
+              - generic "지식 그래프 기반 근대 인물 LOD 구축 및 LLM 연계를 위한 지식 보충 생성(KAG) 모델 연구 · 한국학중앙연구원" [ref=e1192] [cursor=pointer]
+              - generic "거대언어모델 기반 다중 에이전트 시스템을 활용한 한국어 학습자 작문 자동 평가 연구 · 세종대학교" [ref=e1193] [cursor=pointer]
+              - generic "이미지생성형 AI를 활용한 문학교육 방법론 및 모델 개발 -카프카의 의 매체융합 과정을 통한 '해석학적 시각화'를 중심으로 · 숭실대학교" [ref=e1194] [cursor=pointer]
+              - generic "영화VFX 제작공정에서 생성형 AI기반 배경이미지 데이터 미세조정 설계, 생성 및 적용 · 동서대학교" [ref=e1195] [cursor=pointer]
+              - 'generic "생성형 AI 미디어의 수용과 신뢰 메커니즘 연구: 제작 공정, 제작 주체 표기, 이용자 의심을 중심으로 · 고려대학교" [ref=e1196] [cursor=pointer]'
+              - generic "생성형 AI 기반 맞춤형 교육을 위한 AI 융합 교육 모델 연구 · 제주대학교" [ref=e1197] [cursor=pointer]
+              - generic "초등 경계선 지능 학생을 위한 생성형 AI 활용 사회정서학습(SEL) 통합 수학문제해결 프로그램 개발 및 적용 · 순천향대학교" [ref=e1198] [cursor=pointer]
+              - generic "인공지능 의존이 인간의 판단과 협업에 미치는 영향에 관한 연구 · 국립목포대학교" [ref=e1199] [cursor=pointer]
+              - generic "생성형 인공지능 시대 사고의 외주화에 대응하기 위한 박학심문(博學審問)형 교양역량 측정도구 개발 및 질문기반 교양교육 모델 구축 · 인하대학교" [ref=e1200] [cursor=pointer]
+              - generic "생성형 AI 기반 무용 감상·평가 프레임워크 개발 및 검증 · 부산대학교" [ref=e1201] [cursor=pointer]
+              - generic "생성형 AI의 한국어 의미 감수성 벤치마크 구축 및 문화적 정렬 · 성균관대학교" [ref=e1202] [cursor=pointer]
+              - 'generic "대학 영작문 수업의 생성형 AI 과의존과 쓰기 수행 간의 관계: 자기조절학습 및 AI 리터러시 매개효과와 스캐폴딩 수업 모형 개발 · 부산외국어대학교" [ref=e1203] [cursor=pointer]'
+              - 'generic "노래에서 말로: 생성형 인공지능 기반 음악적 운율을 활용한 중국어 성조 발화 훈련의 적응형 설계 및 교육적 효과 검증 · 서울대학교" [ref=e1204] [cursor=pointer]'
+              - generic "생성형 AI 기반 창작에서의 저자성 재검토― 바요르의 '인과적 저자성 kausale Autorschaft' 논의와 켈만의 『나의 알고리즘과 나 Mein Algorithmus und ich』 분석을 중심으로 · 한국외국어대학교" [ref=e1205] [cursor=pointer]
+              - generic "AI 챗봇 활용 과제가 한국 대학생의 영어 말하기 성취도와 정의적 영역에 미치는 효과 · 인제대학교" [ref=e1206] [cursor=pointer]
+              - 'generic "생성형 AI 시대 교실 윤리의 공백과 재구성: 퇴계 이황의 인성교육론을 기반으로 한 현상학적 연구 · 신라대학교" [ref=e1207] [cursor=pointer]'
+              - 'generic "생성형 AI 이용에서 자기조절 실패의 구조적 관계: 사용자 충동성, 통제력 부족, 스트레스와 문제적 사용 · 조선대학교" [ref=e1208] [cursor=pointer]'
+              - generic "플립러닝 사전학습에서 생성형 AI 매개 형태초점 상호작용 설계가 문법·어휘 성취와 형태초점 강도에 미치는 차이 · 한국외국어대학교" [ref=e1209] [cursor=pointer]
+              - 'generic "생성형 AI 협업에서 창의적 개입 과정의 재구조화: 생성에서 탐색으로의 전환 · 인천대학교" [ref=e1210] [cursor=pointer]'
+              - generic "KBLE-PeFe 벤치마크를 통한 생성형 인공지능의 한국어 구 단위 및 표현 문형 오류 판별·교정 능력 분석 · 연세대학교" [ref=e1211] [cursor=pointer]
+              - 'generic "패션기획 생성형 AI 실무자 행동모형 검증: T-O-E와 S-O-R 프레임워크를 중심으로 · 충남대학교" [ref=e1212] [cursor=pointer]'
+              - generic "상황적 관점 기반의 학습 문해력 사례 연구 · 서울대학교" [ref=e1213] [cursor=pointer]
+              - generic "생성형 AI 활용 학습에서 환각을 측정하기 위한 행동 기반 분석 프레임:대학 학습 과제 사례를 중심으로 · 경상국립대학교" [ref=e1214] [cursor=pointer]
+              - 'generic "어린이 철학(P4wC)의 고유성 탐구: ''철학적 실천''의 의미 규명과 대형언어모델(LLM)에 의한 대체 가능성 검토 · 이화여자대학교" [ref=e1215] [cursor=pointer]'
+              - generic "생성형 AI 시대의 시가장(詩歌場) 재편 - 샤오빙(小?), DeepSeek를 중심으로 · 서울대학교" [ref=e1216] [cursor=pointer]
+              - 'generic "생성형 AI 시대 영어교육의 인식론적 전환: 인식론적 주체성과 제2언어 정체성의 관계 분석 · 숙명여자대학교" [ref=e1217] [cursor=pointer]'
+              - generic "예비 교사를 위한 휴타고지 기반의 생성형 AI 활용 수업모델 개발과 적용 · 대진대학교" [ref=e1218] [cursor=pointer]
+              - generic "대학생 교양글쓰기 수업을 위한 한국 구비설화 기반 생성형 AI 지원 창작 교육 프로그램 개발 연구 · 경기대학교" [ref=e1219] [cursor=pointer]
+              - generic "생성형 AI와 언리얼 엔진의 협업적 활용을 통한 브랜드 스토리텔링 기반 패션 버추얼 쇼룸 콘텐츠 제작 프로토타입 설계 및 구현 연구 · 성신여자대학교" [ref=e1220] [cursor=pointer]
+              - generic "인간과 인공지능과의 대화에서'질문'화행의 의미 고찰 ? 대화형 AI의 프롬프트 엔지니어링과 관련하여 · 서울대학교" [ref=e1221] [cursor=pointer]
+              - generic "생성형 AI(ChatGPT) 활용 대학생 긍정적 성취정서 증진 교육프로그램 개발 연구 · 부산대학교" [ref=e1222] [cursor=pointer]
+              - generic "생성형 AI 이용에서 정보 품질이 유발하는 과부하와 피로·소진에 관한 연구 · 경남대학교" [ref=e1223] [cursor=pointer]
+              - 'generic "포스트미디어 시대 공적 기독교교육의 전환과 교육 모형 연구: 종교 리터러시 개념을 중심으로 · 연세대학교" [ref=e1224] [cursor=pointer]'
+              - 'generic "생성형 AI 기반 멀티모달 광고언어 연구: 동·서양 문화 DNA의 비교 · 부산대학교" [ref=e1225] [cursor=pointer]'
+              - 'generic "한국 생성형 AI 영상의 포스트-시네마 미학과 영상문화: 2024-2026년 국내 영화제·공모전 선정작의 미학적 증후와 감각정치적 배치 · 동국대학교" [ref=e1226] [cursor=pointer]'
+              - generic "생성형 AI 협업 환경에서 디자인 프로세스의 구조적 재편과 디자이너 판단의 핵심 속성 연구 · 성신여자대학교" [ref=e1227] [cursor=pointer]
+              - generic "프롬프트 지시 구조에 따른 생성형 AI 영상의 감정 전이 표현 연구 · 부산대학교" [ref=e1228] [cursor=pointer]
+              - generic "명명 과제를 통한 생성형 AI 화자의 임시어 형성 연구 · 강원대학교" [ref=e1229] [cursor=pointer]
+              - generic "예비과학교사의 반응적 교수 전문성 향상을 위한 생성형 AI 기반 가상 학생 에이전트에 대한 연구 · 서울대학교" [ref=e1230] [cursor=pointer]
+              - 'generic "기술디스토피아는 여성을 어떻게 호출하는가 : 에 나타난 여성 신체-기술의 얽힘에 대한 행위자 연결망 분석 · 경북대학교" [ref=e1231] [cursor=pointer]'
+              - generic "생성형 AI 챗봇을 활용한 학습자 특성별 어휘 학습 프롬프트 설계 및 효과 검증 · 인천대학교" [ref=e1232] [cursor=pointer]
+              - 'generic "이른바 ''시적''인 것: 시교육의 바깥에서 ''시적''의 의미와 사용에 관한 연구 · 한양대학교" [ref=e1233] [cursor=pointer]'
+              - generic "인공지능 시대의 동료 평가와 인식적 동료 · 한양대학교" [ref=e1234] [cursor=pointer]
+              - generic "생성형 AI 기반 온라인 교육서비스의 품질 측정도구 개발 · 경상국립대학교" [ref=e1235] [cursor=pointer]
+              - 'generic "인공지능 시대 독일어 담화에서의 언어적 정체성과 화용적 변이: 한국계 독일어 이중언어 화자와 GenAI의 다차원 벡터 공간 비교 분석 · 한양대학교" [ref=e1236] [cursor=pointer]'
+              - 'generic "생성형 AI 기반 맞춤형 창의성 평가의 공정성 검증: 시나리오 과제의 차별기능문항 분석 · 인천대학교" [ref=e1237] [cursor=pointer]'
+              - generic "옛한글 자료 번역을 위한 MCP기반 번역가-LLM 협업 번역 모델 연구 · 강원대학교" [ref=e1238] [cursor=pointer]
+              - generic "생성형 AI 환경에서 중등 수학교사의 수업 설계 양상과 질문 프롬프트 개발 · 서강대학교" [ref=e1239] [cursor=pointer]
+              - 'generic "생성형 AI 스캐폴딩을 활용한 적응형 독일어 독해 수업 설계 연구: 학습자 수준별 텍스트 복잡도 조절 및 피드백 기제를 중심으로 · 한국외국어대학교" [ref=e1240] [cursor=pointer]'
+              - generic "AI 생성 가상 인간 광고 모델에 대한 소비자의 인식 연구 · 동국대학교" [ref=e1241] [cursor=pointer]
+              - generic "생성형 AI 활용의 다차원적 의존 구조와 잠재유형 분석 · 광운대학교" [ref=e1242] [cursor=pointer]
+              - 'generic "연구자 중심 생성형 AI 답변 신뢰성 판단 프레임워크 구축: 학문 분야별 특수성을 중심으로 · 연세대학교" [ref=e1243] [cursor=pointer]'
+              - 'generic "생성형 AI 기반 패러디의 재매개를 통한 상향식 트랜스미디어 스토리텔링: ''흑백요리사 2'' AI 패러디 사례를 중심으로 · 부산대학교" [ref=e1244] [cursor=pointer]'
+              - 'generic "LLM의 인과와 반사실 추론 진단: 연결어·거리·간섭 조건별 인과추론 선택과제 수행과 인간 시선추적과 모델 처리비용의 일치도 분석 · 서울대학교" [ref=e1245] [cursor=pointer]'
+              - generic "온톨로지 기반 문화정책 도메인 특화 LLM 및 RAG 시스템 개발에 관한 연구 · 홍익대학교" [ref=e1246] [cursor=pointer]
+              - 'generic "ChatGPT 생성 문법 피드백에 대한 EFL 학습자의 협상 양상: 포트폴리오 기반 쓰기 과제를 중심으로 · 중앙대학교" [ref=e1247] [cursor=pointer]'
+              - 'generic "대학 교양영어 글쓰기에서 생성형 AI와 원어민 교수자 피드백 비교 연구: 효과성?공정성에 대한 이중 관점 분석과 CTL 운영 가이드 제안 · 우송대학교" [ref=e1248] [cursor=pointer]'
+              - generic "AI 시대의 뉴노멀 정립에 필요한 인간의 존엄과 행복을 위한 철학적 성찰 ? 토마스 아퀴나스의 사상을 중심으로 - · 가톨릭대학교" [ref=e1249] [cursor=pointer]
+              - 'generic "보편적 학습설계(UDL) 경험을 통한 예비 일반교사의 통합교육 역량 강화 방안 연구: 성찰적 비계로서의 생성형 AI 활용을 중심으로 · 경상국립대학교" [ref=e1250] [cursor=pointer]'
+              - 'generic "테크노숭고의 신경기호학: 퍼스의 가추법과 김아영의 · 서울대학교" [ref=e1251] [cursor=pointer]'
+              - generic "Multi Human?AI 협업 환경에서 아이디어 외재화와 인지적 행위 분석 기반 AI 인터페이스 디자인 연구 · 홍익대학교" [ref=e1252] [cursor=pointer]
+              - 'generic "송신자의 전복: 베르톨트 브레히트의 라디오 이론, 프리드리히 니체의 인식비판, 그리고 생성형 AI의 계보학 · 성균관대학교" [ref=e1253] [cursor=pointer]'
+              - 'generic "물리적 특성 기반 생성형 AI 소재 이미지의 시각적 촉감 전이와 촉각 평가 일치도 분석: 린넨 혼방 소재를 중심으로 · 충북대학교" [ref=e1254] [cursor=pointer]'
+              - generic "생성형 인공지능의 편향과 여성 독자의 정동적 읽기-디지털 독서 문화의 수행과 재현을 중심으로 · 연세대학교" [ref=e1255] [cursor=pointer]
+              - 'generic "생성형 AI 기반 관람객 경험 데이터의 설계 지식 전환 모델 개발: 기업 박물관 전시공간 및 서비스 디자인 개선 연구 · 한국과학기술원" [ref=e1256] [cursor=pointer]'
+              - 'generic "LLM의 문학 해석과 문화적 반응성: 현대 아프리카계 미국 여성 작가 단편소설 속 인종·젠더·계급 복합 서사에 대한 AI 생성 해석과 인간 비평 담론의 비교 연구 · 인천대학교" [ref=e1257] [cursor=pointer]'
+              - 'generic "세대별 디지털 자본 인식의 인간-LLM 비교 연구: 디지털 전환에서의 AI 활용 장벽과 포용적 AI 정책 설계를 중심으로 · 고려대학교" [ref=e1258] [cursor=pointer]'
+              - generic "노인 유튜버의 생성형 AI 을 활용한 문화 생산 실천 · 연세대학교" [ref=e1259] [cursor=pointer]
+              - 'generic "주요국 R&D 시스템 유효성 평가 프레임워크 구축: Large Language Model(LLM) 및 딥러닝 기반 이전된 지식의 참신성 측정과 국가별 성과 요인 분석을 중심으로 · 서울대학교" [ref=e1260] [cursor=pointer]'
+              - generic "디퓨전 모델과 뇌 신호를 이용한 고해상도 시각 인지 디코딩 및 재구성 알고리즘 개발 · 조선대학교" [ref=e1261] [cursor=pointer]
+              - generic "AI-내러티브 기반 정서적 휴먼케어 평가지표 개발 · 충남대학교" [ref=e1262] [cursor=pointer]
+              - generic "대학생의 생성형 AI 활용 부정행위 의도에 미치는 사회학습 요인의 영향과 중화기제의 매개효과 · 동국대학교" [ref=e1263] [cursor=pointer]
+              - generic "생성형 인공지능 기반 설명 인터페이스가 인간-알고리즘 협업 의사결정에 미치는 행동적 영향 · 연세대학교" [ref=e1264] [cursor=pointer]
+              - 'generic "LLM 활용에서 메타인지적 프롬프트가 학습과 뇌 기능적 연결성에 미치는 영향: 기능적 근적외선 분광법 (Functional Near-Infrared Spectroscopy) 기반 연구 · 이화여자대학교" [ref=e1265] [cursor=pointer]'
+              - generic "LLM 디지털 페르소나를 활용한 농촌공간재구조화 정책 수용성 사전 탐색 도구의 유효성 검증 · 서울시립대학교" [ref=e1266] [cursor=pointer]
+              - 'generic "인공지능의 행위자성과 책임성에 관한 대중적 의미 형성: 온라인 담론의 비난 양상에 대한 혼합 연구 · 한국과학기술원" [ref=e1267] [cursor=pointer]'
+              - 'generic "동적 시각 노이즈 자극에서 추출된 정서 표정의 시공간적 특징이 접근-회피 행동 반응에 미치는 영향: 역상관 접근 · 한림대학교" [ref=e1268] [cursor=pointer]'
+              - generic "생성형 AI 기반 조명 디자인에서 텍스트 입력 구조화 방식이 창작 경험과 의도 충실도에 미치는 영향 · 한국과학기술원" [ref=e1269] [cursor=pointer]
+              - generic "LLM 기반 가상 소비자 페르소나를 활용한 광고 효과 예측에 관한 연구 · 한국과학기술원" [ref=e1270] [cursor=pointer]
+              - generic "생성형 AI 모바일 앱 사용에 따른 모바일 앱 효용 구조 변화에 관한 연구 · 한국과학기술원" [ref=e1271] [cursor=pointer]
+              - generic "생성형 AI를 활용한 과학 수업에서 나타난 교사와 학생의 언어적 상호작용 분석 · 전남대학교" [ref=e1272] [cursor=pointer]
+              - 'generic "생성형 AI 협업 과정에서 나타나는 패션 디자이너의 경험적 역동 탐색: 관계적 신뢰와 창작 주체성을 중심으로 · 경희대학교" [ref=e1273] [cursor=pointer]'
+              - 'generic "AI 시대의 직장 내 감정노동 전략: 감정 노출 대상과 직무 상호의존성이 감정조절과 번아웃에 미치는 영향 · 서울대학교" [ref=e1274] [cursor=pointer]'
+              - 'generic "인지적 유창성이 주는 착각을 넘어: 생성형 AI 활용 시점이 학습 수행, 메타인지적 판단 및 신경 활성화에 미치는 영향 · 연세대학교" [ref=e1275] [cursor=pointer]'
+              - 'generic "“와, 너 정말 핵심을 찔렀어!”의 대가: AI 아첨이 신념 확신 강화와 오프라인 상호작용에 미치는 영향 · 고려대학교" [ref=e1276] [cursor=pointer]'
+              - generic "대학생의 생성형 인공지능 기반 정서적 지지 활용 강도와 심리사회적 특성 및 사용 경험의 관계 · 숙명여자대학교" [ref=e1277] [cursor=pointer]
+              - 'generic "관광 젠트리피케이션 완화를 위한 관광객 도덕적 행동 촉진 전략: 생성형 AI를 활용한 페르소나 맞춤 넛지 전략 도출 · 부산대학교" [ref=e1278] [cursor=pointer]'
+              - generic "생성형 AI 기반의 융합 예술 교육 프레임워크 설계 및 '생성형 사고(Generative Thinking)' 모델 연구 · 이화여자대학교" [ref=e1279] [cursor=pointer]
+              - generic "BFI-2 성격 특성과 주의 회복 이론(ART) 기반의 생성형 AI 맞춤형 치유 공간 구축 및 VR 실증 연구 · 중앙대학교" [ref=e1280] [cursor=pointer]
+              - generic "생성형 AI 시대 인간 예술가의 역할과 가치 상상하기 · 울산과학기술원" [ref=e1281] [cursor=pointer]
+              - generic "생성형 AI 기반 자기조절 쓰기전략(SRSD) 프로그램이 학습장애 위험군 초등학생의 쓰기 능력 및 쓰기 효능감에 미치는 효과 · 전남대학교" [ref=e1282] [cursor=pointer]
+              - generic "사용자의 한국어 유머 선호 기반 LLM 정렬 연구 · 연세대학교" [ref=e1283] [cursor=pointer]
+              - 'generic "안전한 사회적 대리물로서의 AI 예술: 거부민감성 관련 불안 및 반추 완화를 위한 생성형 AI 기반 수용적 예술치료 메커니즘 연구 · 서강대학교" [ref=e1284] [cursor=pointer]'
+              - 'generic "LLM 내부 신호의 인간 언어 의미 구조 정합도 비교: 신호 유형, 과제 유형, 교차 언어 조건에 따른 RSA 분석 · 서울대학교" [ref=e1285] [cursor=pointer]'
+              - generic "대규모 언어모델 기반 멀티모달 시장 레짐 탐색과 동적 포트폴리오 의사결정 지원 연구 · 한국과학기술원" [ref=e1286] [cursor=pointer]
+              - 'generic "인공지능 협업 환경에서 디자이너의 의사 결정권 강화 연구: AI-Driven 디자인 워크플로우 오케스트레이터 개발 · 고려대학교" [ref=e1287] [cursor=pointer]'
+              - 'generic "생성형 인공지능이 지식집약 산업에 미치는 영향에 대한 실증연구: 리걸테크와 의료 서비스 이용을 중심으로 · 한국과학기술원" [ref=e1288] [cursor=pointer]'
+              - generic "중학생의 탐구 활동에 생성형 AI를 사용하기 위한 교수·학습 전략 개발 및 적용 · 경북대학교" [ref=e1289] [cursor=pointer]
+              - 'generic "고등교육 학제성의 노동 시장 임금 프리미엄 효과 연구: 강의계획서 텍스트 데이터와 LLM 분석을 중심으로 · 한국과학기술원" [ref=e1290] [cursor=pointer]'
+              - generic "HCI 기반 생성형 AI VR 개인화 영어학습 최적화 연구 · 광운대학교" [ref=e1291] [cursor=pointer]
+              - generic "인공지능 실패 설명 방식이 사용자 신뢰와 반응에 미치는 영향 · 한국과학기술원" [ref=e1292] [cursor=pointer]
+              - 'generic "생성형 AI 도입과 의사결정 왜곡: 신념 오보정과 책임 귀속에 관한 실험적 증거 · 서울대학교" [ref=e1293] [cursor=pointer]'
+              - 'generic "생성형 AI시대 학문 활동체계의 구조적 전환과 대학원 연구자의 행위자성 재구성 : 활동이론 기반 질적 연구 · 서울대학교" [ref=e1294] [cursor=pointer]'
+              - generic "노년층의 생성형 AI를 통한 무형식학습 경험 탐색, 인식 유형 분석 및 교육요구도 조사 · 숭실대학교" [ref=e1295] [cursor=pointer]
+              - generic "생성형 AI 의존-회피-재의존 루프 메커니즘에 관한 연구 · 연세대학교" [ref=e1296] [cursor=pointer]
+              - generic "생성형 AI 활용 학습자의 인지적 주도권 함양을 위한 '질적 도약(Qualitative Leap)' 분석 기반 교수설계 원리 개발 및 타당화 · 단국대학교" [ref=e1297] [cursor=pointer]
+              - generic "생성형 AI의 개인화 및 설명가능성이 사용자의 신뢰와 사회적 수용성에 미치는 영향 연구 · 성균관대학교" [ref=e1298] [cursor=pointer]
+              - generic "영유아교사의 생성형 AI 프롬프트 엔지니어링 역량 강화 프로그램 개발 및 효과 연구 · 강원대학교" [ref=e1299] [cursor=pointer]
+              - 'generic "생성형 인공지능 투명성의 역설: 사용자 통제권의 역할 · 성균관대학교" [ref=e1300] [cursor=pointer]'
+              - 'generic "출처가 많을수록 덜 확인한다: 생성형 AI 답변에서 ''신뢰?검증 역설''의 행동 실증 · 한림대학교" [ref=e1301] [cursor=pointer]'
+              - generic "건축 설계를 위한 생성형 AI 평가지표 및 다중 AI 협업 프로세스 모델 · 한양대학교" [ref=e1302] [cursor=pointer]
+              - generic "LLM의 구조적 이해와 데이터 재구성 기반 AI 추천 프레임워크 개발 · 경희대학교" [ref=e1303] [cursor=pointer]
+              - generic "클라우드 기반 치과 파노라마 방사선 영상 진단을 위한 지도학습·자기지도학습·대규모 언어모델(LLM) 통합 플랫폼 개발 · 충북대학교" [ref=e1304] [cursor=pointer]
+              - generic "소통약자(신경다양성) 개인의 정서 표현 지원을 위한 안전 정책 기반 음악 창작 LLM 에이전트 연구 · 광주과학기술원" [ref=e1305] [cursor=pointer]
+              - generic "단일세포 트리플 멀티오믹스와 생성형 AI 기반 종양 미세환경 시뮬레이션을 통한 폐암 뼈 전이 기전 규명 및 치료 타겟 발굴 · 서울대학교" [ref=e1306] [cursor=pointer]
+              - generic "당뇨병 생애 전주기 예측 및 맞춤 약물 추천을 위한 생성형 트랜스포머 기반 파운데이션 모델 연구 및 검증 · 경희대학교" [ref=e1307] [cursor=pointer]
+              - generic "LLM과 텐서 분해를 활용한 암 대상 미발굴 약물재창출 후보 탐색 · 아주대학교" [ref=e1308] [cursor=pointer]
+              - generic "물리 정보 기반 심층 생성 모델 융합 3차원 전자 타이코그래피 개발을 통한 단일 원자층 심도 분해능 돌파 연구 · 서울대학교" [ref=e1309] [cursor=pointer]
+              - generic "RGB 영상 기반 가상 초분광 추론을 위한 생성형 인공지능 프레임워크 개발 및 수박의 생물적·비생물적 스트레스 실시간 모니터링 · 충남대학교" [ref=e1310] [cursor=pointer]
+              - generic "교차 도메인 다중 에이전트 LLM 시스템에서의 은닉 공모 탐지를 위한 Causal Shadow 프레임워크 개발 · 한경국립대학교" [ref=e1311] [cursor=pointer]
+              - generic "AX 시대 신질서와 규범의 형성 · 인하대학교" [ref=e1312] [cursor=pointer]
+              - generic "생성형 파운데이션 모델을 통한 빠른 검출기 시뮬레이션 · 서울시립대학교" [ref=e1313] [cursor=pointer]
+              - generic "유방암 환자의 인구통계학적·임상적·심리사회적 특성 기반 심리적 적응 유형화 및 LLM 기반 맞춤형 마음챙김 개입 개발 · 연세대학교" [ref=e1314] [cursor=pointer]
+              - generic "3D 생성형 인공지능·신규 접근법(NAMs) 기반 미규제 신종오염물질 독성 작용기작(MoA) 규명 및 수생태계 통합 위해성 평가 프레임워크 실증 · 광주과학기술원" [ref=e1315] [cursor=pointer]
+              - generic "의료 분야 생성형 인공지능 평가 프레임워크 및 자동평가 에이전트 개발 · 연세대학교" [ref=e1316] [cursor=pointer]
+              - generic "디지털 트윈과 생성형 인공지능 기반 교통약자 보행환경 평가 시스템 및 유니버설디자인 모형 개발 · 한양대학교" [ref=e1317] [cursor=pointer]
+              - generic "정서·행동 위기 학생의 조기 선별 및 맞춤형 통합지원을 위한 LLM 대화 분석·CASEL 프레임워크 융합 플랫폼(K-SEAP) 개발·검증 · 대구대학교" [ref=e1318] [cursor=pointer]
+              - generic "멀티모달 생체신호 기반 공공건축물 회복환경 AI 디자인 평가 시스템 개발 · 연세대학교" [ref=e1319] [cursor=pointer]
+              - generic "스트리밍 환경 온디바이스 검색 증강 생성을 위한 벡터 DB-LLM 실행 통합 최적화 시스템 연구 · 경북대학교" [ref=e1320] [cursor=pointer]
+              - generic "면역항암제 부작용 다중오믹스 아틀라스 및 Bio-LLM 기반 AI 모델을 활용한 중증 부작용 예측 및 경감 전략 개발 · 한국과학기술원" [ref=e1321] [cursor=pointer]
+              - generic "구조적 정보 기반 멀티태스크 오더북 파운데이션 모델 개발 · 부산대학교" [ref=e1322] [cursor=pointer]
+              - 'generic "쉬운 성공의 역설: 생성형 AI 시대의 노력의 가치와 끈기 · 성균관대학교" [ref=e1323] [cursor=pointer]'
+              - generic "신약개발과 의료 헬스케어 기반모델로서 횡단 환자-오믹스 거대언어모델 설계 연구 · 가천대학교" [ref=e1324] [cursor=pointer]
+              - generic "인공지능(AI) 활용 보건의료 빅데이터(RWD) 기반 소아 약물 이상반응 선제적 탐지 및 인과적 안전성 구명 연구 · 성균관대학교" [ref=e1325] [cursor=pointer]
+              - generic "생성형 AI 기반 가상 사용자 시뮬레이션을 활용한 디지털헬스 사용성 평가 프레임워크 및 AI 에이전트 개발 · 연세대학교" [ref=e1326] [cursor=pointer]
+              - generic "생성형 AI 기반 목조건축 설계안 도출 및 다중 환경성능 평가 · 연세대학교" [ref=e1327] [cursor=pointer]
+              - generic "실제 데이터베이스 환경에서의 LLM 기반 자연어 질의응답을 위한 다중 테이블 구조 이해 기술 연구 · 중앙대학교" [ref=e1328] [cursor=pointer]
+              - generic "생성형 AI 기반 폭발·화재 복합재난 철근콘크리트 기둥 손상 예측 및 잔존성능 평가 기술 개발 · 경상국립대학교" [ref=e1329] [cursor=pointer]
+              - generic "생성형 AI를 활용한 바이오필릭 매스 유형별 파사드 디자인 연구 · 계명대학교" [ref=e1330] [cursor=pointer]
+              - generic "수면 생체신호의 언어적 해석을 통한 생체신호간 번역 매커니즘 연구 · 서울대학교" [ref=e1331] [cursor=pointer]
+              - generic "LLM 기반 멀티 에이전트 시스템을 활용한 패턴 자동 어노테이션 및 봉제 순서 계획 통합 프레임워크 개발 · 서울대학교" [ref=e1332] [cursor=pointer]
+              - generic "LLM 기반 국제협력 건설 R&D 핵심주제 도출을 위한 AI 프레임워크 개발 · 서울대학교" [ref=e1333] [cursor=pointer]
+              - generic "사용자 편의성을 고려한 원본 콘텐츠 보존형 동영상 움직임 편집 기술 · 연세대학교" [ref=e1334] [cursor=pointer]
+              - generic "해부학적 조건부 생성 모델 기반 손상 및 결손 반월판의 정상 형상 자동 재건 기술 개발 · 서울여자대학교" [ref=e1335] [cursor=pointer]
+              - generic "확산모델의 안정적 이미지 생성 및 편집을 위한 초기 노이즈 재배열 신기술 연구 · 서울대학교" [ref=e1336] [cursor=pointer]
+              - 'generic "PopCon: 시나리오 맞춤형 모빌리티 시스템 분석을 위한 차세대 가상인구 생성 프레임워크 개발 · 고려대학교" [ref=e1337] [cursor=pointer]'
+              - generic "Omni-modal LLM 모델에 대한 크로스 모달적대적 취약점 분석 및 방어 체계 연구 · 중앙대학교" [ref=e1338] [cursor=pointer]
+              - 'generic "Cliff Tokens: LLM 수학 추론의 토큰 수준 성능 하락 발생 원인 분석 및 개선 · 서울대학교" [ref=e1339] [cursor=pointer]'
+              - generic "생성형 AI 기반 형상 설계와 친환경 고밀도 소재 융합 소파블록 개발 · 대진대학교" [ref=e1340] [cursor=pointer]
+              - 'generic "거대언어모델 에이전트의 발산적 사고 측정 및 향상: 언어 기반에서 시각 기반 환경 시뮬레이션까지 · 중앙대학교" [ref=e1341] [cursor=pointer]'
+              - generic "Sparse Attention 기반 LLM 서빙을 위한 KV 캐시 관리 및 CXL-SSD 활용 최적화 연구 · 서강대학교" [ref=e1342] [cursor=pointer]
+              - generic "LLM 기반 자율 CAD 설계 End-to-End 프레임워크를 위한 3D 정보 및 계층적 지식이 통합된 지식 그래프 연구 · 한국과학기술원" [ref=e1343] [cursor=pointer]
+              - generic "대규모 언어모델 기반 다중 에이전트 의사결정 시스템의 공정성 및 신뢰성 보장 기법 연구 · 연세대학교" [ref=e1344] [cursor=pointer]
+              - generic "LLM 생성 유기합성 프로토콜의 할루시네이션 유형 분류 및 외부 화학 DB 기반 사후 검증 · 충남대학교" [ref=e1345] [cursor=pointer]
+              - generic "사후양자화 기반 거대언어모델 압축 및 가변 포맷 연산기 개발 · 건국대학교" [ref=e1346] [cursor=pointer]
+              - generic "설명 가능한 AI(XAI) 기반의 도시 환경 쾌적성 개선안 이미지 자동 생성 및 정량적 평가 파이프라인 연구 · 이화여자대학교" [ref=e1347] [cursor=pointer]
+              - generic "LLM은 인간의 가치를 대변할 수 있는가? 페르소나 주입을 통한 LLM과 인간 간 가치 괴리 측정 연구 · 한양대학교" [ref=e1348] [cursor=pointer]
+              - generic "센서 데이터 기반 우울 추론의 종단적 개인화를 위한 LLM 자가 정제 페르소나 프레임워크 개발 · 한양대학교" [ref=e1349] [cursor=pointer]
+              - generic "생성형 AI 사용기록 기반 학습자 모델링 및 교육적 판단을 위한 형성적 근거 인터페이스 · 포항공과대학교" [ref=e1350] [cursor=pointer]
+              - generic "건축설계교육에서 생성형 AI 사용이 학생들의 창의적인 형태와 공간구성, 적합성, 사용 시나리오 탐구에 미치는 효과에 관한 연구 · 인하대학교" [ref=e1351] [cursor=pointer]
+              - generic "다중프로젝트 결함 탐지를 위한 LLM 기반 소프트웨어 변경영향 분석 기술 · 충북대학교" [ref=e1352] [cursor=pointer]
+              - generic "LLM 추론 가속을 위한 Sparse Attention Head 예측 기반 HW-SW 공동 최적화 · 서울시립대학교" [ref=e1353] [cursor=pointer]
+              - generic "XR 환경 내 VR-AR 전환 시 체화감 유지를 위한 생성형 AI 기반 아바타 트랜지션 기술 개발 · 연세대학교" [ref=e1354] [cursor=pointer]
+              - generic "LLM 기반 도면 해석과 MCP 에이전트 연동을 통한 2D 건축 도면의 BIM 자동 구축 프레임워크 개발 · 경상국립대학교" [ref=e1355] [cursor=pointer]
+              - generic "분산 엣지-클라우드 에이전트 시스템을 위한 LLM 도구의 다중 목적 스케줄링 연구 · 한양대학교" [ref=e1356] [cursor=pointer]
+              - generic "생성형 AI를 활용한 법과학 족적 마모 시뮬레이션 및 검증 · 부산대학교" [ref=e1357] [cursor=pointer]
+              - generic "VR과 LLM 기반 일상 시나리오 생성을 통한 양극성 장애 중재 시스템 연구 · 충북대학교" [ref=e1358] [cursor=pointer]
+              - generic "거대언어모델 기반 사회적 신호와 물리 기반 신경망을 이용한 감염병 확산 예측 및 유효감염재생산지수 추정 · 고려대학교" [ref=e1359] [cursor=pointer]
+              - generic "LLM 기반의 암환자 경험 데이터 분석을 통한 미충족 의료 수요 분류 및 환자 중심의 서비스 가이드라인 수립 · 성균관대학교" [ref=e1360] [cursor=pointer]
+              - generic "고속 초고분해능 생세포 영상 복원을 위한 생성형 딥러닝 모델 개발 · 서울대학교" [ref=e1361] [cursor=pointer]
+              - generic "생성 이미지 판별에서 자기확신과 AI 신뢰가 설명 수용 및 판단 변화에 미치는 영향 · 성균관대학교" [ref=e1362] [cursor=pointer]
+              - generic "대형언어모델(LLM) 기반 텍스트-수치 데이터 융합을 통한 혐기소화효율 예측 모델 프레임워크 개발 · 성균관대학교" [ref=e1363] [cursor=pointer]
+              - generic "LLM 추론을 위한 고대역폭 플래시 메모리 구조 개발 · 서울과학기술대학교" [ref=e1364] [cursor=pointer]
+              - generic "온칩 가중치 복원을 통한 거대언어모델 가속기 설계 · 건국대학교" [ref=e1365] [cursor=pointer]
+              - generic "멀티모달 생성형 AI 모델의 데이터셋 저작권 핵심 기술 개발 · 한국전자기술연구원" [ref=e1366] [cursor=pointer]
+              - generic "시니어의 콘텐츠 제작 접근성 향상을 위한 생성형 AI 기반 콘텐츠 창·저작 플랫폼 기술 개발 · 한국전자통신연구원" [ref=e1367] [cursor=pointer]
+              - generic "생성형 AI 저작권 관리 및 보호 기술 개발을 위한 국제공동연구 및 글로벌 인재 양성 · 고려대학교" [ref=e1368] [cursor=pointer]
+              - generic "생성형 AI 3D 콘텐츠 저작권 보호를 위한 뉴럴 워터마크 기술 연구 · 고려대학교" [ref=e1369] [cursor=pointer]
+              - generic "생성형 AI 및 클라우드 기반 콘텐츠 제작 R&D 인재 양성 · 중앙대학교" [ref=e1370] [cursor=pointer]
+              - generic "생성형 AI 모델을 활용한 기사저작물(뉴스기사)의 유사도 비교 기술 개발 · 한국전자기술연구원" [ref=e1371] [cursor=pointer]
+              - generic "중소 게임 기업의 게임 제작 검증 효율화를 위한 AI 기반의 대규모 게임 자동검증 기술 개발 · 한국전자통신연구원" [ref=e1372] [cursor=pointer]
+              - generic "공연 연출 효율화를 위한 생성형 AI 기반 테크 리허설 지원 및 실감형 플랫폼 기술 개발 · 한국전자통신연구원" [ref=e1373] [cursor=pointer]
+              - generic "생성형, 감정인식형 AI 기반 증가상현실(XR) 콘텐츠 기술 전문 인력 양성 사업 · 한국예술종합학교" [ref=e1374] [cursor=pointer]
+              - generic "생성형 AI 콘텐츠 저작권 침해 판별 기술 개발 및 글로벌형 전문인력 양성 · 연세대학교" [ref=e1375] [cursor=pointer]
+              - 'generic "지능형 초실감 XR 전문인력 양성을 위한 국제 협력 연구센터 : G-DeepXR · 한양대학교" [ref=e1376] [cursor=pointer]'
+              - generic "초실감 문화콘텐츠 체험을 위한 텔레프레즌스 Robo-VFX 서비스 플랫폼 기술 개발 · 한국전자기술연구원" [ref=e1377] [cursor=pointer]
+              - generic "e스포츠 운영 효율화를 위한 생성형 AI 기반 e스포츠 서비스 자동화 플랫폼 기술 개발 · 한국전자통신연구원" [ref=e1378] [cursor=pointer]
+              - generic "악의적 활용을 차단하는 생성형 AI 모델을 탑재한 콘텐츠 창작 및 공유 플랫폼 기술 개발 · 한국전자기술연구원" [ref=e1379] [cursor=pointer]
+              - generic "역사적 데이터 기반 디지털 휴먼 자동 생성 기술 개발 · 광주과학기술원" [ref=e1380] [cursor=pointer]
+              - generic "공간 감각의 지능형 복원·확장 기반 멀티모달 체험 콘텐츠 창작 기술 개발 · 한국전자통신연구원" [ref=e1381] [cursor=pointer]
+              - generic "크라우드소싱 기반 한국문화예술 해설·대화형 인공지능 플랫폼 개발 · 서강대학교" [ref=e1382] [cursor=pointer]
+              - generic "생성형 AI 이미지 서비스 환경에서 캐릭터 및 웹툰 저작권 옵트아웃 대응 기술 및 평가 모델 개발 · 세종대학교" [ref=e1383] [cursor=pointer]
+              - generic "스마트 디바이스 기반 개인맞춤형 문화예술(악기) AI 학습 서비스 개발 · 광주과학기술원" [ref=e1384] [cursor=pointer]
+              - generic "글로벌 CORE-AX 공동 연구를 통한 저작권 원천기술 확보 및 선도형 융합인재 양성 · 상명대학교" [ref=e1385] [cursor=pointer]
+              - generic "인공지능 기술 활용 참외 생산 및 수확후 관리 고도화 기술 개발 · 경상북도농업기술원" [ref=e1386] [cursor=pointer]
+              - 'generic "생각으로 하는 제조: LLM 연계 생성형 AI 기반 자율 설계·생산 플랫폼 기술 · 고려대학교" [ref=e1387] [cursor=pointer]'
+              - generic "LLM 가속을 위한 CXL 기반 PNM 아키텍처 및 시뮬레이션 플랫폼 개발 · 연세대학교" [ref=e1388] [cursor=pointer]
+              - generic "제조 대중화를 위한 생성형 AI 기술 기반 클라우드형 디지털 메뉴팩처링 플랫폼 · 한국생산기술연구원" [ref=e1389] [cursor=pointer]
+              - generic "생활지원을 위한 서비스로봇 부품 기술지원 기반구축 · 한국전자기술연구원" [ref=e1390] [cursor=pointer]
+              - generic "기계·자동차·전자·철강·이차전지·나노소재 분야 제조특화 AI 공통 모델 개발 · 한국전자기술연구원" [ref=e1391] [cursor=pointer]
+              - generic "국제표준 대응 도심내 환경기반 보행자·마이크로모빌리티 충돌경감 기술 개발 · 한국전자기술연구원" [ref=e1392] [cursor=pointer]
+              - generic "주력 제조업종의 자율제조를 위한 휴머노이드 로봇 기반 자율공정 운영 기술 개발 · 한국전자기술연구원" [ref=e1393] [cursor=pointer]
+              - generic "가정용 휴머노이드 고도화를 위한 Generative AI(Foundation model) 기반 인간-로봇 협업 플랫폼 개발 및 서비스 실증/사업화 · 광주과학기술원" [ref=e1394] [cursor=pointer]
+              - generic "스마트 커넥티드 환경 기반의 지능형 에이지테크 서비스모델 표준 연구 개발 · 연세대학교" [ref=e1395] [cursor=pointer]
+              - generic "생성형 AI 기반 디지털의료제품 검증 기술 개발 및 실증 · 한국산업기술시험원" [ref=e1396] [cursor=pointer]
+              - generic "비정형 의료데이터 중심 합성기술 및 합성데이터 활용 온디바이스 인공지능 디지털의료제품 개발 · 가천대 길병원" [ref=e1397] [cursor=pointer]
+              - generic "(2세부) 초거대 AI 기반 간호 기록지 자동 생성 및 업무 자동화 기술 개발 · 연세대학교" [ref=e1398] [cursor=pointer]
+              - generic "의료 특화 멀티모달 초거대 생성형 AI 개발 지원 · 한국산업기술시험원" [ref=e1399] [cursor=pointer]
+              - generic "반도체 제조물류 생산성 향상을 위한 디지털 트윈 내 LLM 기반 OHT 군집 혼잡도 개선 및 의사결정 고도화 기술 개발 · 아주대학교" [ref=e1400] [cursor=pointer]
+              - generic "생성형AI 연동을 위한 사실적 3차원 동적 아바타 재현 기술 개발 · 한국전자통신연구원" [ref=e1401] [cursor=pointer]
+              - generic "생성형 AI 수정영역 탐지 및 불법 콘텐츠 검색 표준 기술 개발 · 명지대학교" [ref=e1402] [cursor=pointer]
+              - generic "AI 전사체 분석 기반 자가면역질환 정밀진단 플랫폼 개발 · 연세대학교" [ref=e1403] [cursor=pointer]
+              - generic "반도체 제조물류 생산성 향상을 위한 디지털 트윈 내 LLM 기반 OHT 군집 혼잡도 개선 및 의사결정 고도화 기술 개발 · 아주대학교" [ref=e1404] [cursor=pointer]
+              - generic "디자인 전주기 지능화를 위한 멀티모달 데이터 통합 기술 및 AI 서비스 플랫폼 개발 · 한국디자인진흥원" [ref=e1405] [cursor=pointer]
+              - generic "2025년 AI기반 특허행정혁신 · 한국특허정보원" [ref=e1406] [cursor=pointer]
+              - generic "LMM(Large Language Model) 인공지능 기술을 활용한 가상환자 시뮬레이션 기반 정신건강의학과 전공의 교육의 효과성 연구 · 국립춘천병원" [ref=e1407] [cursor=pointer]
+              - generic "대규모 언어모델과 임상 의사결정 지원 시스템을 활용한 중환자 발생 예측 및 안전한 이송 지원 플랫폼 개발 및 실증 연구 · 세종충남대학교병원" [ref=e1408] [cursor=pointer]
+              - generic "생성형 AI기반 초고속 약물 발굴 및 신속 검증을 통한 난치성 삼중음성유방암, 췌장암 대상 방사성리간드치료제 개발 · 서울대학교병원" [ref=e1409] [cursor=pointer]
+              - generic "생성형 인공지능을 활용한 근골격 견관절 초음파의 자동 MRI 영상화 기법에 관한 연구 · 서울의료원" [ref=e1410] [cursor=pointer]
+              - generic "혼합연구방법을 활용한 생성형 AI 및 XR 기술 기반 치매 환자 구강관리 프로그램 개발 · 서울대학교" [ref=e1411] [cursor=pointer]
+              - generic "딥러닝과 LLM 기술을 활용한 음향·언어 통합분석 기반 인지검사 플랫폼 · 서울대학교" [ref=e1412] [cursor=pointer]
+              - 'generic "FLAME-ARK 솔루션 개발 실증: 입/퇴원 지원 AI · 연세대학교" [ref=e1413] [cursor=pointer]'
+              - 'generic "FLAME-ARK 솔루션 개발 실증: 병원 특화 연합학습 기반 멀티모달 파운데이션 모델 구축 및 AI 솔루션 개발 · 삼성서울병원" [ref=e1414] [cursor=pointer]'
+              - generic "멀티모달기반 심폐질환 및 병원 행정 AI 서비스 개발 · 울산대학교병원" [ref=e1415] [cursor=pointer]
+              - generic "소아 특화 Voice EMR 요약 AI 서비스 개발 · 강원대학교병원" [ref=e1416] [cursor=pointer]
+              - generic "만성신질환 예방/관리 및 급성악화 감지를 위한 XAI-LLM 기반 Multimodal 3D Vital Node 개발 · 충남대학교병원" [ref=e1417] [cursor=pointer]
+              - generic "LLM 기반 정밀 병력청취와 멀티모달 데이터 융합을 통한 어지럼증 진단모델 개발 · 연세대학교" [ref=e1418] [cursor=pointer]
+              - generic "단일세포-공간전사체 eQTL 기반 맞춤형 MASH 표적치료제 개발 · 서울특별시 보라매병원" [ref=e1419] [cursor=pointer]
+              - generic "뇌영상과 임상 정보를 이용한 뇌전이암 환자 치료에 대한 환자-의사 공유 의사 결정 모형 개발 · 국립암센터" [ref=e1420] [cursor=pointer]
+              - generic "암정보 관련 LLM 학습·기술 개발·검증 시스템 개발 및 대국민 활용 가능한 암 관련 AI-chat 모델 개발 · 국립암센터" [ref=e1421] [cursor=pointer]
+              - generic "암환자 생존 분석을 위한 생성형 AI 활용 방법 개발 연구 · 국립암센터" [ref=e1422] [cursor=pointer]
+              - generic "다중 척도 구조 매핑 및 합성 펩타이드 기반 알츠하이머병 신규 위험 요인 규명 · 울산대학교" [ref=e1423] [cursor=pointer]
+              - generic "빅데이터·AI 기반 식품 안전성 판단 알고리즘 개발 · 전남대학교" [ref=e1424] [cursor=pointer]
+              - generic "거대 언어 모델을 적용한 의료기기의 안전관리방안 마련을 위한 연구(2) · 분당서울대학교병원" [ref=e1425] [cursor=pointer]
+              - generic "거대 언어 모델을 적용한 의료기기의 안전관리방안 마련을 위한 연구(1) · 한국전자통신연구원" [ref=e1426] [cursor=pointer]
+              - generic "생성형 AI 디지털의료제품 레드팀 시험 평가 기술 개발 및 실증 · 한국전자통신연구원" [ref=e1427] [cursor=pointer]
+              - generic "첨단 AI 취약점 동향조사 및 글로벌 대응체계 마련 · 분당서울대학교병원" [ref=e1428] [cursor=pointer]
+              - generic "(세부3) AI 기반 위험예측·진단·자율 안전 등 고안전성 확보 기술개발 · 한국전자기술연구원" [ref=e1429] [cursor=pointer]
+              - generic "생성형 AI 활용 저온성 작물의 스마트온실 관리 시스템 상용화 · 한국전자기술연구원" [ref=e1430] [cursor=pointer]
+              - generic "생성형 AI 활용 양돈 스마트 개체관리 시스템 상용화 · 전남대학교" [ref=e1431] [cursor=pointer]
+              - generic "생성형 AI 활용 축우 스마트 개체관리 시스템 상용화 · 중앙대학교" [ref=e1432] [cursor=pointer]
+              - generic "미디어 소비 이력을 축적한 페르소나 AI 모델 기술개발 · 한국전자기술연구원" [ref=e1433] [cursor=pointer]
+              - generic "고속 검색 기반 사실형 영상 합성 기술개발 · 한국전자기술연구원" [ref=e1434] [cursor=pointer]
+              - 'generic "자율주행차용 Positioning 고도화 기술: 3D 맵핑을 이용한 오버바운딩 편의 0.5m 미만급 기술 · 서울시립대학교" [ref=e1435] [cursor=pointer]'
+              - generic "AI 기반 도시단위 3차원 공간정보 자동생성 기술개발 기획 · 한국건설기술연구원" [ref=e1436] [cursor=pointer]
+              - generic "국제협력 기반 자율주행 상용화 환경 조성 및 글로벌 실증 · 한국교통안전공단" [ref=e1437] [cursor=pointer]
+              - generic "해안 산업현장의 형상을 고려한 3D 디지털 트윈 및 생성형 AI 기반 핀포인트 풍해 리스크 평가 · 국립공주대학교" [ref=e1438] [cursor=pointer]
+              - generic "생성형 AI 기반의 지능형 자율 레이저 가공기술 연구 · 울산과학기술원" [ref=e1439] [cursor=pointer]
+              - 'generic "오픈소스기반 공간 빅데이터와 3차원 공간 시뮬레이션을 활용한 도시 경관 평가 및 생성 모형 개발: 몰입형 가상현실 기술과 생성형 AI를 활용하여 · 한양대학교" [ref=e1440] [cursor=pointer]'
+              - generic "건강의 사회적, 디지털 결정요인을 고려한 간호사-생성형 인공지능 협업 당뇨병 노인 자기관리 프로그램 개발 및 평가 · 서울대학교" [ref=e1441] [cursor=pointer]
+              - generic "탄소중립을 위한 드릴링 공정 결함 예측용 대규모 멀티모달 모델(LMM) 기반의 가공면 이미지 생성 AI 기술 개발 · 고려대학교" [ref=e1442] [cursor=pointer]
+              - 'generic "과학교수학습 상황에서 생성형 인공지능의 개발과 활용: 인공지능이 학습자의 학습성과 및 정서에 미치는 영향에 대한 연구 · 단국대학교" [ref=e1443] [cursor=pointer]'
+              - generic "노인성 만성질환 극복을 위하여 증거 기반 멀티모달 인공지능을 활용한 자기공명영상에서의 신체기관 노화 예측 시스템 개발 · 고려대학교" [ref=e1444] [cursor=pointer]
+              - generic "생성형 AI 기반 한의학이론의 인지계산신경과학적 모형개발을 통한 한의임상보조 AI 에이전트 개발 · 가천대학교" [ref=e1445] [cursor=pointer]
+              - generic "생성형 AI를 활용한 활동 기반 교통수요 예측 · 중앙대학교" [ref=e1446] [cursor=pointer]
+              - 'generic "치매행동심리증상 대처 가상 시뮬레이션 교육 프로그램 개발: NDB 모델 기반 알고리즘 및 생성형 인공지능의 활용 · 고려대학교" [ref=e1447] [cursor=pointer]'
+              - generic "기초 시각 언어 모델을 이용한 환자 중심 의료영상의 시각적 질문 및 응답 시스템 기술 개발 · 이화여자대학교" [ref=e1448] [cursor=pointer]
+              - generic "멀티모달 초거대 언어모델 가속을 위한 HW/SW 통합설계 연구 · 한국과학기술원" [ref=e1449] [cursor=pointer]
+              - generic "임상 빅데이터와 행동경제학 이론을 적용한 다면적 낙상예방 중재개발과 다기관 효과 탐색 · 인하대학교" [ref=e1450] [cursor=pointer]
+              - generic "멀티모달 생성형 AI를 응용한 다차원 장면 분석 및 재현 · 중앙대학교" [ref=e1451] [cursor=pointer]
+              - generic "거대언어모델을 이용한 멀티모달 단일세포유전체 데이터분석 플랫폼 개발 · 숭실대학교" [ref=e1452] [cursor=pointer]
+              - generic "미래의 눈 및 전신 질환 발생 예측을 위한 안저사진 중심의 맞춤형 인공지능생태계 구축 · 서울대학교병원" [ref=e1453] [cursor=pointer]
+              - 'generic "인공지능 기반 첨단 제조 공정 설계 지능화: 다중 물리-AI 융합 모델 구축 및 공학적 생성형 인공지능 기술 개발 · 중앙대학교" [ref=e1454] [cursor=pointer]'
+              - generic "돌연변이 단백질을 표적하는 신약후보물질 발굴을 위한 거대 사전학습 모델 기반의 분자구조 설계 기법 연구 · 한림대학교" [ref=e1455] [cursor=pointer]
+              - generic "생성형 AI 기반 비침습적 대화형 앱 자율 실행 기술 개발 · 한국과학기술원" [ref=e1456] [cursor=pointer]
+              - generic "생성형 AI의 프라이버시 보존을 위한 메모리 중심 이기종 HW-SW 시스템 연구 · 한국과학기술원" [ref=e1457] [cursor=pointer]
+              - generic "생성형 AI 기반 국내·외 건설 프로젝트 계약 리스크 관리를 위한 프롬프트 엔지니어링 프레임워크 개발 · 강원대학교" [ref=e1458] [cursor=pointer]
+              - generic "요통 만성화 예방을 위한 생물심리사회모델 기반 정밀간호의 적용 · 고려대학교" [ref=e1459] [cursor=pointer]
+              - generic "생성형 인공지능 이용 3차원 작물 모델의 표현체학 통합 연구 · 한국과학기술연구원" [ref=e1460] [cursor=pointer]
+              - generic "생성형 AI 디지털콘텐츠 저작권 보호 기술 개발 · 재단법인 차세대융합기술연구원" [ref=e1461] [cursor=pointer]
+              - generic "대규모 온라인 커뮤니티 중재 설계를 위한 생성형 에이전트 기반 문제 행동 시뮬레이션 기술 개발 · 한국과학기술원" [ref=e1462] [cursor=pointer]
+              - generic "생성형 AI를 이용한 개인 맞춤형 이명 디지털 치료제 개발 · 이화여자대학교" [ref=e1463] [cursor=pointer]
+              - generic "생성형 인공지능 기반의 유방확대촬영술 영상 합성 · 연세대학교" [ref=e1464] [cursor=pointer]
+              - generic "간경변증 환자의 자가관리 증진을 위한 생성형 AI 기술 활용 맞춤형 생활습관 코칭 프로그램 개발 · 전주대학교" [ref=e1465] [cursor=pointer]
+              - generic "대규모 언어모델에 기반한 유니버설 멀티모달 생성 모델 개발 · 고려대학교" [ref=e1466] [cursor=pointer]
+              - generic "환각과 편향이 제거된 지식 그래프 기반 생체신호 기반모델 개발 및 검증 · 충남대학교" [ref=e1467] [cursor=pointer]
+              - generic "거대언어모델에 기반한 상담 및 AI 알고리즘 추천 맞춤형 번아웃증후군 중재 개발 · 이화여자대학교" [ref=e1468] [cursor=pointer]
+              - generic "거대 언어 모델의 창발적 능력을 활용한 제로샷 및 퓨샷 기반의 정확한 키워드 생성 방법 연구 · 인천대학교" [ref=e1469] [cursor=pointer]
+              - generic "동적 정보 확산모델을 이용한 생성형 모방학습과 데이터 기반 제어 · 경북대학교" [ref=e1470] [cursor=pointer]
+              - generic "노이즈에 강건하고 설명 가능한 실시간 제조 디지털 트윈 · 경희대학교" [ref=e1471] [cursor=pointer]
+              - generic "거대언어모델 파이프라인 기반 약물이상반응 조기 탐지 플랫폼 개발 · 한림대학교" [ref=e1472] [cursor=pointer]
+              - generic "LLM 서버 시스템 내 고비용 GPU 최소화를 위한 혁신적 메모리 계층 구조 연구 · 연세대학교" [ref=e1473] [cursor=pointer]
+              - generic "검색 증강 대규모 언어 모델 기반의 생성형 에이전트를 활용한 특허 침해 자동 탐지 및 분석 시스템 개발 · 국립부경대학교" [ref=e1474] [cursor=pointer]
+              - generic "LLM 기반의 멀티 모달 시공간 도시 변화 예측 소프트웨어 개발 · 한국과학기술원" [ref=e1475] [cursor=pointer]
+              - generic "AI기법으로 고도화된 유해 멀티미디어 콘텐츠 탐지 및 삭제 학습 기법 연구 · 성균관대학교" [ref=e1476] [cursor=pointer]
+              - generic "긍정적 사용자 경험을 위한 생성형 AI기반 공간디자인 시스템의 다크패턴 디자인 연구 · 연세대학교" [ref=e1477] [cursor=pointer]
+              - generic "간호대학생을 위한 생성형 인공지능과 텍스트 음성변환기술을 활용한 혼합현실 시뮬레이션 교육프로그램 개발 및 가상플랫폼에 적용 · 전북대학교" [ref=e1478] [cursor=pointer]
+              - generic "실세계 비정제 데이터 환경에서 확산 생성 모델 강인성 향상을 위한 연구 · 성균관대학교" [ref=e1479] [cursor=pointer]
+              - generic "난독화 및 생성형 AI 기반의 역난독화 기술의 소프트웨어의 보안 사업화 추진을 위한 IP 고도화 및 상용화 · 숭실대학교" [ref=e1480] [cursor=pointer]
+              - generic "생성형 AI 및 실시간 3D 영상정보 기반의 지능형 지휘통제 역량강화 · 육군사관학교" [ref=e1481] [cursor=pointer]
+              - generic "LLM 구현을 위한 효율적인 메모리 관리 및 병렬화 기법을 갖는 추론연산 DRAM PIM 하드웨어 구조 개발 · 한국과학기술원" [ref=e1482] [cursor=pointer]
+              - generic "생성형 인공지능 기반 차세대 배터리 소재 설계 플랫폼 개발 · 연세대학교" [ref=e1483] [cursor=pointer]
+              - generic "지능형 개인 맞춤 만성질환 관리를 위한 AI 기반 생체데이터 융합 및 생성 기술 · 한양대학교" [ref=e1484] [cursor=pointer]
+              - generic "생성형 인공지능 기반의 바이너리 역난독화 기술 개발과 평가 방안 연구 · 숭실대학교" [ref=e1485] [cursor=pointer]
+              - generic "생성형 AI 보안 위협 대응 기술 개발 · 숭실대학교" [ref=e1486] [cursor=pointer]
+              - generic "생성형 AI 기반 실감형 메타버스 팩토리 기술 개발 · 성균관대학교" [ref=e1487] [cursor=pointer]
+              - generic "생성 AI 기반 특수효과 자동 생성 및 합성 기술 개발 · 한국전자통신연구원" [ref=e1488] [cursor=pointer]
+              - generic "세계와 인간 이해를 위한 멀티-교차 모달리티 기반의 생성 시뮬레이션 · 단국대학교" [ref=e1489] [cursor=pointer]
+              - generic "신뢰가능한 사회안전 관제시스템을 위한 시맨틱 정보 추출-전달 융합 기술 개발 · 고려대학교" [ref=e1490] [cursor=pointer]
+              - generic "조합최적화 문제 해결을 위한 인공지능 기초모델 개발과 이를 활용한 다양한 산업문제 해결 · 한국과학기술원" [ref=e1491] [cursor=pointer]
+              - generic "뿌리공정 혁신을 위한 생성형 인공지능 교육 및 활용 기술개발(1/1) · 한국생산기술연구원" [ref=e1492] [cursor=pointer]
+              - generic "패키징 인쇄물의 불량 감정용 인공지능의 학습용 이미지 데이터 생성을 위한 Stable Diffusion 기반 생성형 인공지능 개발 · 한국생산기술연구원" [ref=e1493] [cursor=pointer]
+              - generic "뇌 신경 유래 엑소좀과 도파민 프로파일링을 활용한 뇌/심인성 질환의 AI-다차원 진단 및 제어 기초 연구실 · 동국대학교" [ref=e1494] [cursor=pointer]
+              - generic "인공지능기술 및 데이터를 활용한 우주항공용 초내열 비철 금속소재의 HUB구축 · 부산대학교" [ref=e1495] [cursor=pointer]
+              - generic "생성형 인공지능을 위한 영상 모델의 수학 기반 이론 연구 및 기술 개발 · 서울대학교" [ref=e1496] [cursor=pointer]
+              - 'generic "시공간 확장형 다중매체 기반 생성형 경험 연결 상호작용 프레임워크: 사회적 의사소통장애 해결 중심으로 · 포항공과대학교" [ref=e1497] [cursor=pointer]'
+              - generic "생성형 인공지능의 사회적 부작용을 방지하기 위한 자가 진화형 딥페이크 탐지 기술 · 한국전자기술연구원" [ref=e1498] [cursor=pointer]
+              - generic "강화학습 기반 생성형 AI 통합 모델 적용 야생동물 행동 생태 제어 기술 연구 · 건국대학교" [ref=e1499] [cursor=pointer]
+              - generic "Generative AI를 위한 PromptBase 연구실 · 서울대학교" [ref=e1500] [cursor=pointer]
+              - generic "자율 생산 시스템을 위한 생성, 예지, 처방형 보전 아키텍처 · 한양대학교" [ref=e1501] [cursor=pointer]
+              - generic "지속가능한 생성형 인공지능 컴퓨팅 플랫폼 연구실 · 서울대학교" [ref=e1502] [cursor=pointer]
+              - generic "탄력적 GAN모형 개발과 파생상품 및 금융시장 연구 · 가천대학교" [ref=e1503] [cursor=pointer]
+              - generic "인카메라 VFX를 위한 생성형 AI 기반 통합 프레임워크 개발 · 부산대학교" [ref=e1504] [cursor=pointer]
+              - generic "생성형 AI 반응속도에 대한 사용자의 인지 및 태도와 그 활용에 대한 인간-컴퓨터 상호작용, 심리학, 인지과학의 융합연구 · 서울대학교" [ref=e1505] [cursor=pointer]
+              - generic "모달리티간 상호작용을 고려한 멀티모달 LLM기반 정신질환 및 퇴행성신경질환 예측모델 · 한국외국어대학교" [ref=e1506] [cursor=pointer]
+              - generic "LLM (Large Language Model) 기반 악성 바이너리 코드에 대한 가상화 난독화 해제 방안 연구 · 충남대학교" [ref=e1507] [cursor=pointer]
+              - generic "탐색적인 시각적 분석을 위한 LLM 기반의 동적 쿼리 인터페이스 · 숭실대학교" [ref=e1508] [cursor=pointer]
+              - generic "멀티모달 생성모델의 신뢰성 및 제어가능성 향상을 위한 그래프 구조 기반의 상호작용 · 건국대학교" [ref=e1509] [cursor=pointer]
+              - generic "비전 환경 인식을 통한 대형 멀티모달 모델 기반 사물인터넷 오케스트레이션 최적화 · 연세대학교" [ref=e1510] [cursor=pointer]
+              - generic "자폐 스펙트럼 장애인을 위한 생성형 AI 기반 보완 대체 의사소통 시스템의 개발 · 한국과학기술원" [ref=e1511] [cursor=pointer]
+              - 'generic "제어와 튜닝이 어려운 생성 AI 서비스의 작업 맥락 맞춤화를 위한 생성 결과 편집 모델 개발 및 실증: 작업 맥락의 잠재된 다목적 최적화 접근 · 울산과학기술원" [ref=e1512] [cursor=pointer]'
+              - generic "생성형 AI 기반의 보행 활성화를 위한 디지털 트윈 시스템 개발 · 서울시립대학교" [ref=e1513] [cursor=pointer]
+              - generic "질병 조기 진단을 위한 생성형 인공지능 기반 상 변화 예측 기술 개발 · 서강대학교" [ref=e1514] [cursor=pointer]
+              - generic "AI 기반 자동화된 취약점 탐지 및 안전한 코드 생성 · 고려대학교" [ref=e1515] [cursor=pointer]
+              - generic "생성형 AI 기반 지반재료의 디지털 및 물리적 트윈 모델 설계 기술 개발 · 연세대학교" [ref=e1516] [cursor=pointer]
+              - generic "종합적 의사결정을 위한 생성형 에이전트 연구실 · 한국과학기술원" [ref=e1517] [cursor=pointer]
+              - generic "생성형 인공지능을 통한 로봇 설계 및 제어 방법론 연구 · 서울대학교" [ref=e1518] [cursor=pointer]
+              - generic "미래 응급의료 멀티모달 인공지능 모델 연구 · 경희대학교" [ref=e1519] [cursor=pointer]
+              - generic "능동학습형 AI 모델 기반 고엔트로피 합금 수소발생반응 촉매 개발 · 울산과학기술원" [ref=e1520] [cursor=pointer]
+              - generic "설명가능한 인공지능 기반 지능형 의료 진단 시스템 개발 · 제주대학교" [ref=e1521] [cursor=pointer]
+              - generic "6G를 위한 다중 안테나 통신의 새로운 패러다임 · 서울대학교" [ref=e1522] [cursor=pointer]
+              - generic "사용자 중심의 자율주행 모빌리티 안전성 증강 연구 · 대구경북과학기술원" [ref=e1523] [cursor=pointer]
+              - generic "사용자 중심의 자율주행 모빌리티 안전성 증강 연구 · (재)대구경북과학기술원" [ref=e1524] [cursor=pointer]
+              - generic "관광 및 환대산업에서의 생성형 인공지능(Generative AI)을 활용한 고객관계관리(CRM) 시스템 도입을 위한 연구 · 경희대학교" [ref=e1525] [cursor=pointer]
+              - generic "Soft Wearable Robot을 위한 Foundation Model 기반의 인간-로봇 협력제어모델 개발 · 연세대학교" [ref=e1526] [cursor=pointer]
+              - generic "(KAIST 창업육성사업)연구실창업(뉴로모픽 컴퓨팅 기반 LLM 가속 시스템) · 한국과학기술원" [ref=e1527] [cursor=pointer]
+              - 'generic "생성형 인공지능(AI)을 활용한 서비스 조직구성원의 세대간 연결: 생성형 AI 시대에서 중고령 서비스 종업원의 통합 및 AI 문해력 향상 · 인하대학교" [ref=e1528] [cursor=pointer]'
+              - 'generic "보고되지 않은 환자안전 이벤트와 미충족 케어요구 식별: 비정형 데이터 검색을 강화한 생성형 인공지능 기술 활용 · 인하대학교" [ref=e1529] [cursor=pointer]'
+              - generic "생성형 인공 지능을 활용한 가상환경 내 촉각 경험 디자인 시스템 개발 · 한국과학기술원" [ref=e1530] [cursor=pointer]
+              - generic "인공지능 기반 단백질디자인을 통한 생명현상 규명 및 혁신적 바이오신소재 개발 (인공지능 기반 단백질디자인 융합연구소) · 한국과학기술원" [ref=e1531] [cursor=pointer]
+              - generic "개념 기반 딥러닝 한국어처리를 위한 어휘의미망 확장 및 응용개발 · 울산대학교" [ref=e1532] [cursor=pointer]
+              - generic "바이오 빅데이터 기반 당뇨병 및 합병증 정밀 의료를 위한 AI 플랫폼 및 모델 개발 · 서울대학교병원" [ref=e1533] [cursor=pointer]
+              - generic "생성형 인공지능 기술을 통한 사용자 중심의 콘텐츠 생성 및 편집 기술 연구 · 한국과학기술원" [ref=e1534] [cursor=pointer]
+              - generic "표현형 기반 신약개발을 위한 다중목표 최적화 인공지능 체계 연구 · 서울대학교" [ref=e1535] [cursor=pointer]
+              - generic "멀티모달 자기공명영상에서 모달리티 어텐션과 생성형 확산 모델을 통한 설명 가능한 전립선암 악성도 예측 연구 · 서울여자대학교" [ref=e1536] [cursor=pointer]
+              - generic "500만장의 흉부X-ray영상과 한영 혼합 판독문을 이용한 생성형 비전-언어 기반모델 구축 및 성능평가 · 서울아산병원" [ref=e1537] [cursor=pointer]
+              - generic "다기관 임상연구를 위한 의료진-하이브리드 LLM 협업 기반 의료 데이터 정형화 및 신뢰성 검증 시스템 개발 · 한국외국어대학교" [ref=e1538] [cursor=pointer]
+              - generic "다중 자율 이동체 협동 운영을 위한 인공지능 기반 작업할당 및 스케줄링 알고리즘 개발 · 한국과학기술원" [ref=e1539] [cursor=pointer]
+              - generic "대규모 언어 모델의 환각 완화를 위한 메타인지적 생성형 AI 프레임워크 기술 연구 · 한양대학교" [ref=e1540] [cursor=pointer]
+              - generic "머신 언러닝에 기반한 책임 있는 이미지 생성 인공지능 · 연세대학교" [ref=e1541] [cursor=pointer]
+              - generic "범용성과 적응성을 갖춘 Vision Foundation Models 기반 차세대 지능형 관제 시스템 개발 · 서울시립대학교" [ref=e1542] [cursor=pointer]
+              - 'generic "생성형 AI를 활용한 데이터 증강과 새로운 영상 바이오마커 발굴: 난치성 고형암의 악성도 정밀 진단을 위한 고성능 자동 진단모델 개발 · 연세대학교" [ref=e1543] [cursor=pointer]'
+              - 'generic "인간중심 인더스트리5.0 제조 달성을 위한 대화형 AI 생산계획 플랫폼 핵심기술 개발: cLOK(Collaborative LLM/Optimization/Knowledge) 프레임워크 · 서울대학교" [ref=e1544] [cursor=pointer]'
+              - generic "조합형 상태 기반 액추에이션 디바이스와 생성형 모델을 활용한 제어 방법 제안 및 개발 · 울산과학기술원" [ref=e1545] [cursor=pointer]
+              - generic "책임감 있는 AI를 위한 생성형 콘텐츠 검출 및 검증 연구 · 서울대학교" [ref=e1546] [cursor=pointer]
+              - generic "청각장애인 소리 접근성 개선을 위한 LLM 기반 Context-aware 비음성-시각화 기술 개발 · 광주과학기술원" [ref=e1547] [cursor=pointer]
+              - generic "체화형 인공지능의 온디바이스 구현을 위한 멀티모달 LLM의 알고리즘-하드웨어 공동 최적화 · 한양대학교" [ref=e1548] [cursor=pointer]
+              - generic "COPD 조기발견부터 장기 관리까지 RAG-LLM 기반의 전주기 포괄적 디지털 헬스케어 시스템 개발 및 평가 · 성균관대학교" [ref=e1549] [cursor=pointer]
+              - generic "청소년 암 생존자를 위한 생성형 인공지능 챗봇과 기능성 모바일 게임을 융합한 총체적 건강생활양식 프로그램 개발 및 평가 · 삼육대학교" [ref=e1550] [cursor=pointer]
+              - generic "Hyperdimensional Computing 기반의 LLM과 RAPTOR를 적용한 병동 간호사 Shift Handout Report 에러 프로텍션을 위한 On-device Generative AI 기술 개발 · 차의과학대학교" [ref=e1551] [cursor=pointer]
+              - generic "농업사회수문시스템 탐색과 HELPING에의 기여를 위한 인간사회탐사 기반 SOHO 수문모델링 프레임워크 개발 · 서울과학기술대학교" [ref=e1552] [cursor=pointer]
+              - generic "전립선 종양세포 아연조절 기전 규명을 통한 전립선암 특이적 억제전략 구축 · 대구경북과학기술원" [ref=e1553] [cursor=pointer]
+              - generic "확률미분방정식 기반 생성형 AI 모형을 활용한 금융 시장 모형 프레임워크 개발 · 아주대학교" [ref=e1554] [cursor=pointer]
+              - generic "머신러닝 기반 노인 환자의 약물이상반응 예측 및 투약간호 중재프로그램 개발 · 극동대학교" [ref=e1555] [cursor=pointer]
+              - generic "건강도시 설계를 위한 생성형 AI 기반 근린환경 진단 및 최적화 모형 개발 · 중앙대학교" [ref=e1556] [cursor=pointer]
+              - generic "생성형 인공지능 기반 데이터 증강을 통한안전관리 플랫폼 개발 · 신라대학교" [ref=e1557] [cursor=pointer]
+              - 'generic "유휴-방치부동산 대응 근린-생활권 계획 시스템 개발: AI 협업형 시공간분석 및 LLM 기반 가상주민의견 통합 모델 · 서울대학교" [ref=e1558] [cursor=pointer]'
+              - generic "거대 언어 모델(LLM)을 활용한 고문서의 복원과 번역 · 강원대학교" [ref=e1559] [cursor=pointer]
+              - generic "벡터 RAG 기반 생성형 AI를 위한 NIC 중심 호스트 네트워킹 기술 · 성신여자대학교" [ref=e1560] [cursor=pointer]
+              - generic "제로카본 건축을 위한 생성형 AI 의사결정 인텔리전스 기반 건물 에너지 최적화 기법 개발 · 청주대학교" [ref=e1561] [cursor=pointer]
+              - generic "멀티모달 생성형 AI 모델의 저작권 보호 및 생성물 위·변조 방지 연구 · 고려대학교" [ref=e1562] [cursor=pointer]
+              - generic "생성형 AI 기반의 이산화탄소 전기환원 촉매 역설계 방법론 개발 · 고려대학교" [ref=e1563] [cursor=pointer]
+              - generic "온디바이스 환경에서 동작하는 개인 맞춤형 차세대 생성형 인공지능 기술 개발 · 고려대학교" [ref=e1564] [cursor=pointer]
+              - generic "지형공간정보를 이용한 저해상 위성영상 초해상화 기술 개발 · 남서울대학교" [ref=e1565] [cursor=pointer]
+              - generic "이질성이 존재하는 현실세계 순차적 데이터 분석을 위한 데이터·모델 중심 통합적 딥러닝 프레임워크 개발 · 서울대학교" [ref=e1566] [cursor=pointer]
+              - generic "생성형 AI 기반의 적응형 콘텐츠 생성을 위한 초실감형 디스플레이 프레임워크 개발 · 국립금오공과대학교" [ref=e1567] [cursor=pointer]
+              - generic "생성적 적대 신경망(Generative Adversarial Networks, GAN) 알고리즘을 이용한 비조영증강-MR 영상으로부터 가상의 조영증강-MR 영상(M2M-C)의 생성과 임상 적용 · 영남대학교" [ref=e1568] [cursor=pointer]
+              - generic "순환적 생성형 인공지능과 자기지도 학습 모델 개발을 통한 저선량 복부CT영상으로부터의 연부조직 예측 · 서울과학기술대학교" [ref=e1569] [cursor=pointer]
+              - generic "멀티모달 행동 모델의 지속 학습을 통한 뉴스 데이터의 이종 모달리티 생성에 관한 연구 · 가천대학교" [ref=e1570] [cursor=pointer]
+              - generic "실세계 의생명 파운데이션 모델의 데이터 한계 문제 극복을 위한 생성형 인공지능 기반기술 개발 · 이화여자대학교" [ref=e1571] [cursor=pointer]
+              - generic "심혈관질환 발생 예측과 관상동맥 영상 해석을 위한 인공지능 기술 개발 · 분당서울대학교병원" [ref=e1572] [cursor=pointer]
+              - generic "(세부2) 온디바이스AI 사물 간 협력 행동(인지, 판단, 대응) 핵심기술 개발 · 한국전자기술연구원" [ref=e1573] [cursor=pointer]
+              - generic "생성형 AI 기반 미디어 제작보조 공간 사전시각화 기술 개발 · 한국전자통신연구원" [ref=e1574] [cursor=pointer]
+              - generic "거대 언어 모델을 위한 칩렛 기반 DNN-SNN 혼합 컴퓨팅 프로세서 개발 · 연세대학교" [ref=e1575] [cursor=pointer]
+              - generic "AI반도체 클라우드를 위한 고속 병렬 파일시스템 기술 개발 · 한국전자기술연구원" [ref=e1576] [cursor=pointer]
+              - generic "그래프 딥러닝을 통한 복잡계 연구 고도화 · 고등과학원" [ref=e1577] [cursor=pointer]
+              - generic "AX기반 제조·서비스에서 전주기 제로터치를 달성하기 위한 디지털 혁신요소기술 개발 · 성균관대학교" [ref=e1578] [cursor=pointer]
+              - 'generic "STEP BY STEP 자율형제조 : 데이터셋 구축부터 생성형 AI 활용까지 · 경희대학교" [ref=e1579] [cursor=pointer]'
+              - generic "멀티모달 뇌신경신호와 생성모델 기반 실생활 복합인지/기억 디코딩 및 조절 기술 개발 · 성균관대학교" [ref=e1580] [cursor=pointer]
+              - generic "대규모 언어모델 특화 Multi-bit 저항변화메모리 기반 초고효율 PIM (eRPIM) 칩 개발 · 포항공과대학교" [ref=e1581] [cursor=pointer]
+              - generic "생성형 AI 개발을 위한 효율적인 콘텐츠 데이터 활용제도에 관한 연구 · 한국교원대학교" [ref=e1582] [cursor=pointer]
+              - generic "생성모델 컴플라이언스를 위한 모듈형 AI 워터마킹 기술 연구실 · 한림대학교" [ref=e1583] [cursor=pointer]
+              - generic "인간 중심의 몰입형 HyperSpace 글로벌 연구실 · 연세대학교" [ref=e1584] [cursor=pointer]
+              - generic "학교에서의 안전한 AI 도입 및 활용 방안 연구 · 서강대학교" [ref=e1585] [cursor=pointer]
+              - generic "한의약 빅데이터 기반 인공지능 활용 기술 개발 · 한국한의학연구원" [ref=e1586] [cursor=pointer]
+              - generic "AI for Science 기술 개발 · 한국과학기술정보연구원" [ref=e1587] [cursor=pointer]
+              - generic "AI 기반 표적 특이성, 투과성 및 합성 가능성을 고려한 차세대 항생제 개발 · 한국파스퇴르연구소" [ref=e1588] [cursor=pointer]
+              - generic "생성형 인공지능 기술(머신러닝, 검색증강생성 기반 거대언어모델)을 활용한 노화 표현형 예측 모델 및 맞춤형 노인 통합건강관리 음성 챗봇 개발·평가 · 연세대학교" [ref=e1589] [cursor=pointer]
+              - generic "맥락 이해 기반 데이터 효율적 자율 물리행동 생성 휴머노이드 조작 지능 기술 개발 · 한국과학기술연구원" [ref=e1590] [cursor=pointer]
+              - generic "AI반도체글로벌역량강화 · 한양대학교" [ref=e1591] [cursor=pointer]
+              - generic "인간 중심의 범용 인공지능을 위한 휴먼 파운데이션 모델 개발 및 인력양성 · 한국전자기술연구원" [ref=e1592] [cursor=pointer]
+              - generic "SDx 지능형 서비스의 최적 실행을 위한 생성형AI 지원 시스템SW 프레임워크 기술개발 · 한국전자통신연구원" [ref=e1593] [cursor=pointer]
+              - generic "멀티모달 시각-촉각 융합 AGI 기반 가상촉각신호 생성 플랫폼 기술 개발 · 고려대학교" [ref=e1594] [cursor=pointer]
+              - generic "AGI 발현을 위한 메타인지 프레임워크 핵심기술 개발 및 실증 · 한양대학교" [ref=e1595] [cursor=pointer]
+              - 'generic "Cross-National AI Mobility: 한·일 도로환경 기반 Cross-Domain 인식 및 LLM·VLM 판단 시스템 공동연구 · 한성대학교" [ref=e1596] [cursor=pointer]'
+              - generic "첨단 제조를 위한 Agentic RAG와 LLM 기반 로봇 비전검사 경로생성 기술 · 한국생산기술연구원" [ref=e1597] [cursor=pointer]
+              - generic "개인화된 설계 패턴 기반 BIM 소프트웨어 행동 생성 모델 · 연세대학교" [ref=e1598] [cursor=pointer]
+              - generic "영상 생성 AI 기반 콜드 스프레이 적층 공정 예측 및 가상 제조 프레임워크 · 울산과학기술원" [ref=e1599] [cursor=pointer]
+              - generic "초정밀 반도체 극저온 식각을 위한 AI기반 가상 공정-물리 시스템 통합 플랫폼 · 울산과학기술원" [ref=e1600] [cursor=pointer]
+              - generic "첨단 제조산업 생산성 향상을 위한 특화형 거대언어모델 적용 기술 개발 · 한국과학기술원" [ref=e1601] [cursor=pointer]
+              - generic "시계열 3D 이미징 및 LLM(대규모 언어모델) 기반 작물육종체계 구축 · 충남대학교" [ref=e1602] [cursor=pointer]
+              - generic "다물리 메타물질 설계를 위한 파운데이션 모델 개발 · 서강대학교" [ref=e1603] [cursor=pointer]
+              - generic "소프트 컴퓨팅 기반의 부호론 연구 · 서강대학교" [ref=e1604] [cursor=pointer]
+              - generic "배터리 소재 특성 예측과 설계 혁신을 위한 AI 파운데이션 모델 개발 · 연세대학교" [ref=e1605] [cursor=pointer]
+              - generic "증강 도시 디지털트윈-물리정보기반신경망 기반 초고속 도시 일사 예측 시뮬레이션 기법 개발 · 중앙대학교" [ref=e1606] [cursor=pointer]
+              - 'generic "Text-To-Traffic (TTT): 자연어 기반 고수준 네트워크 트래픽 합성을 위한 생성형 시뮬레이터 개발 · 광운대학교" [ref=e1607] [cursor=pointer]'
+              - generic "개인 프로파일 기반 생성형 AI를 활용한 사회적 의사소통장애 중재 기술 개발 및 적용 · 이화여자대학교" [ref=e1608] [cursor=pointer]
+              - generic "글쓰기의 개별화 학습 지원을 위한 LLM 기반 에세이 평가 및 개선 기술 연구 · 한국과학기술원" [ref=e1609] [cursor=pointer]
+              - generic "LR 파싱 기반 구문 통계를 활용한 LLM 기반 코드 완성 향상 기법 · 전남대학교" [ref=e1610] [cursor=pointer]
+              - generic "학술 논문 분류 및 추천을 위한 DRL 기반 하이브리드형 LLM과 GRCN 모델 개발에 관한 연구 · 제주대학교" [ref=e1611] [cursor=pointer]
+              - generic "AI+X를 위한 처방형 기술 인텔리젼스 방법론 · 서울과학기술대학교" [ref=e1612] [cursor=pointer]
+              - generic "인체 사전 지식 및 멀티모달 LLM을 활용한 한국 수어 생성 연구 · 고려대학교" [ref=e1613] [cursor=pointer]
+              - generic "생성형 도시 인공지능 개발을 위한 공간-지식 융합 그래프 이론 · 한국과학기술원" [ref=e1614] [cursor=pointer]
+              - generic "생성형 AI 악용을 방지하기 위한 다중 정보 기반의 자가 적응형 딥페이크 탐지 기술 개발 · 중앙대학교" [ref=e1615] [cursor=pointer]
+              - 'generic "소아 전문소생술 교육을 위한 가상 거대언어모델 플랫폼 개발 및 효과성 검증: 동영상 교육과의 6개월 추적 무작위 대조군 연구 · 삼성서울병원" [ref=e1616] [cursor=pointer]'
+              - generic "효율적인 대규모 언어 모델 서비스를 위한 다계층 GPU 자원 스케줄링 프레임워크 개발 · 중앙대학교" [ref=e1617] [cursor=pointer]
+              - generic "Multimodal Large Language Model을 활용한 초감각 정보 추론 및 행동 기반 완전 자율주행 기술 · 국민대학교" [ref=e1618] [cursor=pointer]
+              - generic "중저사양 GPU 서버 환경에서 다중 멀티모달 LLM 서비스를 위한 효율적인 시스템 설계 · 한성대학교" [ref=e1619] [cursor=pointer]
+              - generic "Diffusion 기반 촉매 역설계 모델 개발 및 재충전 수소 가스 배터리용 고효율 이중기능성 하이브리드 나노 구조 산소 발생/환원 촉매 설계 · 인하대학교" [ref=e1620] [cursor=pointer]
+              - generic "LLM 및 정적 분석을 활용한 상용 OS 커널 퍼징 기술 연구 · 서강대학교" [ref=e1621] [cursor=pointer]
+              - generic "생성형 AI와 그래프 신경망을 활용한 결합 에너지 예측 기반의 단백질 상호작용 설계 자동화 플랫폼 개발 · 세종대학교" [ref=e1622] [cursor=pointer]
+              - generic "LLM 기반 합성 페르소나 시뮬레이터를 활용한 강화학습 모델 개발 및 응용 연구 · 이화여자대학교" [ref=e1623] [cursor=pointer]
+              - generic "제조 공정 멀티모달 데이터를 활용한 LLM 기반 비전문가용 AI 분석·제어 기술 개발 · 고려대학교" [ref=e1624] [cursor=pointer]
+              - generic "차세대 생성형 AI 향 고용량 Hopfield 신경망 메모리 기술 · 한국과학기술연구원" [ref=e1625] [cursor=pointer]
+              - generic "디퓨전 생성모델의 데이터 암기 취약점 탐지 및 프라이버시보호 연구 · 연세대학교" [ref=e1626] [cursor=pointer]
+              - generic "증강된 자기지도를 통한 인간에 정렬된 시각표현 학습기법 · 고려대학교" [ref=e1627] [cursor=pointer]
+              - generic "대규모 생성형 AI 모델 개발 및 운용 전반 상호 연관성을 고려한 자원 효율적인 모델/시스템 통합 최적화 · 고려대학교" [ref=e1628] [cursor=pointer]
+              - generic "멀티모달 생성형 AI 및 몰입형 가상현실 기반 고령자 건강 친화적 도시환경 평가 모델 개발 · 한양대학교" [ref=e1629] [cursor=pointer]
+              - generic "멀티모달 생성형 AI 기반 상가 공실 추정 및 장소이미지 진단 기술 개발 · 울산과학기술원" [ref=e1630] [cursor=pointer]
+              - generic "생성형 AI 알고리듬 활용 지질 매질 특성화 연구 · 인하대학교" [ref=e1631] [cursor=pointer]
+              - generic "고해상도 농경지 수문환경 관측을 위한 생성형 AI 기반 다중센서 영상 융합을 이용한 가상 분광밴드 생성 · 인하대학교" [ref=e1632] [cursor=pointer]
+              - generic "생성형 인공지능 기반 위험 시나리오 인지 및 반자율 건설장비 제어기술 개발 · 아주대학교" [ref=e1633] [cursor=pointer]
+              - generic "End-to-end 대규모 자율군집 제어를 위한 LLM기반 다중 에이전트 강화학습 기술 개발 · 울산과학기술원" [ref=e1634] [cursor=pointer]
+              - 'generic "개인 맞춤형 휴식 프로파일링 및 생성형 AI 기반 진단 가이드 시스템 개발 : 학령기 아동의 휴식 유형 및 질 평가 · 전주대학교" [ref=e1635] [cursor=pointer]'
+              - generic "MoE-LLM 기반의 의료 비정형 텍스트 정형화 모델 및 로컬 구동형 저자원 정형화 모듈 개발 연구 · 가톨릭대학교" [ref=e1636] [cursor=pointer]
+              - generic "수술 마취 및 시술 동의서 설명을 위한 생성형 AI기반의 LLM 챗봇 개발 · 삼성서울병원" [ref=e1637] [cursor=pointer]
+              - generic "생성형 인공지능 기반 손발톱 흑색종 진단 보조 시스템 개발 · 연세대학교" [ref=e1638] [cursor=pointer]
+              - 'generic "LLM 기반 PREP-SDM 개발: 복합만성질환자를 위한 공유의사결정 중심 자가간호 계획 수립을 지원하는 의료인 트레이닝 프로그램 · 서울대학교" [ref=e1639] [cursor=pointer]'
+              - 'generic "관리-진단-교육 통합형 ''상처 전문 AI 에이전트'': 대규모언어모델(LLM)-검색증강생성(RAG) 기반 수요자 지원 솔루션 · 수원대학교" [ref=e1640] [cursor=pointer]'
+              - generic "전문가·사용자 생성형 AI 기반 UX 접근성 평가 자동화를 위한 GUI 에이전트 기술 개발 및 검증 · 서울과학기술대학교" [ref=e1641] [cursor=pointer]
+              - generic "생성형 인공지능 기반 사용자 경험 디자인 프로세스 혁신을 위한 연구 · 연세대학교" [ref=e1642] [cursor=pointer]
+              - generic "정교한 다중 객체 이미지 및 비디오 편집을 위한 잠재 공간 기반 생성형 인공지능 기술 연구 · 숙명여자대학교" [ref=e1643] [cursor=pointer]
+              - generic "생성형 AI를 활용한 예술매체 기반 고립청년 정서중재 프로그램 개발 · 세명대학교" [ref=e1644] [cursor=pointer]
+              - generic "극소량 파인튜닝을 통해 LLM으로부터 구현하는 범용 생성형 음성 모델 · 고려대학교" [ref=e1645] [cursor=pointer]
+              - generic "효율적인 온디바이스 LLM 추론을 위한 입력 복잡도 기반 적응형 실행 및 메모리 관리 기술 연구 · 경북대학교" [ref=e1646] [cursor=pointer]
+              - generic "비침습 뇌파 신호 기반의 잠재 벡터 조정을 적용한 생성형 BCI 시스템 개발 · 한국과학기술원" [ref=e1647] [cursor=pointer]
+              - generic "생성형 인공지능을 활용한 인공지능 하드웨어 가속기 설계 자동화 프레임워크 · 국민대학교" [ref=e1648] [cursor=pointer]
+              - generic "지능형 배전계통을 위한 대규모 언어 모델 기반 하이브리드 상태추정 기법 연구 · 국립금오공과대학교" [ref=e1649] [cursor=pointer]
+              - generic "생성형 AI 모델 기반 음성 합성 모델의 프라이버시 취약성 분석과 방어 기술 개발 · 이화여자대학교" [ref=e1650] [cursor=pointer]
+              - generic "컴파일러 퍼즈 테스팅 입력 생성을 위한 거대언어모델 (LLM) 최적화 연구 · 울산과학기술원" [ref=e1651] [cursor=pointer]
+              - generic "LLM 기반 AI 에이전트 보안 위협 탐지 및 대응 프레임워크 · 단국대학교" [ref=e1652] [cursor=pointer]
+              - generic "차세대 음성 대화 시스템을 위한 음성-텍스트 파운데이션 모델 개발 · 아주대학교" [ref=e1653] [cursor=pointer]
+              - generic "LLM (거대언어모델) 기반 단백질-나노구조물질 표면 상호작용 분석 플랫폼 구축을 통한 효소 고정화 분석 및 예측 인공지능 모델 개발 · 고려대학교" [ref=e1654] [cursor=pointer]
+              - generic "생성형 AI 기반 합성 의료 데이터의 정량적 유사도 분석 및 임상예측모델 성능 평가 연구 · 연세대학교" [ref=e1655] [cursor=pointer]
+              - generic "상수도 이상상황 대응을 위한 Generative AI 기반 전략 실험 시뮬레이터 개발 · 명지대학교" [ref=e1656] [cursor=pointer]
+              - generic "생성형 AI와 심장 영상 기반 비침습적 전기생리 기질 예측 연구 · 연세대학교" [ref=e1657] [cursor=pointer]
+              - generic "목표 지향형 자율 에이전트와 실시간 물리 반응을 융합한 신개념 생성형 로봇 제어 연구 · 숙명여자대학교" [ref=e1658] [cursor=pointer]
+              - generic "물리기반 생성형 인공지능을 활용한 저자장 및 휴대용 자기공명영상 품질 향상 연구 · 홍익대학교" [ref=e1659] [cursor=pointer]
+              - generic "수의학 임상 의사결정 지원을 위한 멀티 에이전트 기반 LLM 모델 개발 · 서울대학교" [ref=e1660] [cursor=pointer]
+              - generic "심뇌혈관질환의 생물·심리·사회 인과지도를 위한 MR 및 생성형 AI 기반 분석 연구 · 순천향대학교" [ref=e1661] [cursor=pointer]
+              - generic "Compassion 기반 실시간 간호감시 모델링 및 협업형 의사결정지원을 위한 확산기술 개발 · 아주대학교" [ref=e1662] [cursor=pointer]
+              - generic "물리 기반 생성형 AI를 활용한 회전체 설비 고장 예측 기술 개발 · 부산대학교" [ref=e1663] [cursor=pointer]
+              - generic "생성형모델을 활용한 시계열데이터 기반의 이상탐지 알고리즘 개발 · 중앙대학교" [ref=e1664] [cursor=pointer]
+              - generic "다중감각 경험을 위한 생성 모델과 평가 이론 개발을 위한 융합 연구 · 포항공과대학교" [ref=e1665] [cursor=pointer]
+              - 'generic "LLM의 암시적 인지 편향: 사용자 맥락 추론에 따른 AI 응답 조정 현상 연구 · 광주과학기술원" [ref=e1666] [cursor=pointer]'
+              - generic "AI 기반 Osteopontin의 변형체 별 구조 분석과 바인더 단백질 설계를 통한 진단 및 치료 융합 표적화 연구 · 성균관대학교" [ref=e1667] [cursor=pointer]
+              - generic "AI기반 철도 디지털트윈 통합플랫폼 핵심기술 개발 · 한국철도기술연구원" [ref=e1668] [cursor=pointer]
+              - generic "안전하고 신뢰가능한 인공지능을 위한 생성 모델 개발 · 고등과학원" [ref=e1669] [cursor=pointer]
+              - generic "생성형 인공지능 모델과 저차원 다양체 구조 · 고등과학원" [ref=e1670] [cursor=pointer]
+              - generic "2025년 과학기술정책의 과학화 기반구축 연구 · 한국과학기술기획평가원" [ref=e1671] [cursor=pointer]
+              - generic "방산 부품 생산 고도화를 위한 LLM 기반 자율 에이전트 개발 · 한국전기연구원" [ref=e1672] [cursor=pointer]
+              - generic "방산 부품 생산 고도화를 위한 LLM 기반 자율 에이전트 개발 · 한국전기연구원" [ref=e1673] [cursor=pointer]
+              - generic "(N-HRHR)사고의 연쇄를 활용한 물리 법칙 준수 비디오 생성 모델 연구 · 대구경북과학기술원" [ref=e1674] [cursor=pointer]
+              - 'generic "프롬프트 엔지니어링의 창의적 기여에 대한 연구: 인공지능-인간의 협업 기반 창작 개념 재구성 · 한국과학기술원" [ref=e1675] [cursor=pointer]'
+              - 'generic "AI와 인간의 스토리텔링 비교 연구: 인물 관계 및 사건 전개 분석을 중심으로 · 한국과학기술원" [ref=e1676] [cursor=pointer]'
+              - generic "거대언어모델 기반 문헌자료 학습을 통한 수전해용 신규 촉매 추천시스템 개발 · 한국과학기술원" [ref=e1677] [cursor=pointer]
+              - generic "차세대 위조 탐지 AI 모델 및 Foundation 모형 연구 · 중앙대학교" [ref=e1678] [cursor=pointer]
+              - generic "LLM 기반 에이전트 시스템의 테스팅 및 디버깅 · 한국과학기술원" [ref=e1679] [cursor=pointer]
+              - generic "스마트팩토리 시설물자산관리의 LLM 최적화를 위한 정보식별체계 개발 · 명지대학교" [ref=e1680] [cursor=pointer]
+              - generic "물리기반 고차 그래프 기초 모델 구축과 퇴행성 뇌질환에 대한 반사실적 학습 연구 · 포항공과대학교" [ref=e1681] [cursor=pointer]
+              - generic "생성형 신경망 기반 나노클러스터 촉매 설계를 통한 아산화질소 전기화학적 전환 · 서울대학교" [ref=e1682] [cursor=pointer]
+              - generic "위상 민감도 가이드 물리정보-생성형 AI 기반 전자기 역문제 해결 기법 · 성균관대학교" [ref=e1683] [cursor=pointer]
+              - generic "효율적 생성형 인공지능을 위한 합성곱 기반 확산 모델 · 한국과학기술원" [ref=e1684] [cursor=pointer]
+              - generic "TCR-pMHC 예측 구조 신뢰도 기반 TCR-항원 상호작용 판별 모델 및 신항원 예측 파이프라인 개발 · 한국과학기술원" [ref=e1685] [cursor=pointer]
+              - generic "생성형 AI 기반의 비스포크 콘텐츠 생성 시스템 구현 및 디자인 가이드라인 도출 연구 · 한국과학기술원" [ref=e1686] [cursor=pointer]
+              - 'generic "정밀치료를 위한 성차기반 심혈관질환 관련 약물효과 평가 연구: 약물역학 및 AI 기반 접근 · 연세대학교" [ref=e1687] [cursor=pointer]'
+              - 'generic "의료 AI연구를 위한 LLM 기반 멀티 에이전트 플랫폼 개발: 멀티모달 의료 데이터의 자동 구조화, 자율 분석 및 근거 추적 시스템 · 서울대학교병원" [ref=e1688] [cursor=pointer]'
+              - generic "거대언어모델(LLM) 기반 가상환자 페르소나 및 음성대화 시뮬레이션을 활용한 완화의료·호스피스 간호 교육 플랫폼 개발 · 고신대학교" [ref=e1689] [cursor=pointer]
+              - generic "축소도시와 사회 문화적 변화 대응을 위한 디지털트윈-LLM 기반 건축물 에너지전환 워크벤치 · 경북대학교" [ref=e1690] [cursor=pointer]
+              - generic "한국형 소버린 AI 구축을 위한 산림 특화 한국어 LLM 개발 및 산업 적용 가능성 분석 · 충남대학교" [ref=e1691] [cursor=pointer]
+              - generic "멀티-다이 AI 시스템 아키텍처 연구 · 부산대학교" [ref=e1692] [cursor=pointer]
+              - generic "LLM 기반 계층적 개인화 패션 큐레이션 에이전트 기술 개발 및 평가 · 한양대학교" [ref=e1693] [cursor=pointer]
+              - generic "생성형 AI 기반 보행자 관점의 야간 도시환경 평가 프레임워크 개발 · 이화여자대학교" [ref=e1694] [cursor=pointer]
+              - 'generic "적응형 프롬프트 캐싱 기반 에너지 효율적 LLM 서비스: 대규모 AI 추론을 위한 비용 절감형 캐싱 아키텍처 · 강원대학교" [ref=e1695] [cursor=pointer]'
+              - generic "온디바이스 LLM 서비스 실현을 위한 모바일-엣지 컴퓨팅 최적화 · 인하대학교" [ref=e1696] [cursor=pointer]
+              - generic "이상 시계열 탐지를 위한 신뢰 가능한 생성형 AI 모델 개발 · 충북대학교" [ref=e1697] [cursor=pointer]
+              - generic "적층제조 구조물의 제조 실현성을 고려한 다중 전문가 생성형 인공지능 기반 자율설계 프레임워크 개발 · 가천대학교" [ref=e1698] [cursor=pointer]
+              - generic "편마비 환자를 위한 멀티모달 대규모 언어모델 비대면 상지 피드백 운동 시스템의 개발 및 기능적 근적외선 분광법을 이용한 효과 검증 · 고려대학교" [ref=e1699] [cursor=pointer]
+              - generic "경구용 비천연 고리형 펩타이드 정밀 설계를 위한 물리 지식 기반 인공지능 플랫폼 기술 개발 · 고려대학교" [ref=e1700] [cursor=pointer]
+              - generic "거대언어모델 기반 대규모 유전자 예측?검증 통합 플랫폼을 이용한 간질환 핵심 유전자 탐색 파이프라인 구축에 관한 연구 · 이화여자대학교" [ref=e1701] [cursor=pointer]
+              - generic "4D IoT 교통상황 데이터 자율주행 차량 궤적 예측을 위한 SQC-D SSM 거대언어모델 알고리즘 개발 · 고려대학교" [ref=e1702] [cursor=pointer]
+              - generic "다중 모달리티 기반 경계표현 재구축 및 LLM 기반 인식 기술 연구 · 충남대학교" [ref=e1703] [cursor=pointer]
+              - generic "생성형 AI 기반의 모니터링과 적응형 학습 기반의 제어를 통한 스마트 적층 제조 공정 실현 · 한양대학교" [ref=e1704] [cursor=pointer]
+              - 'generic "요양병원 간호사의 도덕적 고뇌 완화를 위한 맞춤형 생성형 AI 멘토링 시스템 개발: 간호-교육공학 융합 모델 적용 · 경동대학교" [ref=e1705] [cursor=pointer]'
+              - 'generic "통합 잠재 표현 기반 제조 AI 에이전트 시스템: 예측·스케줄링 통합 및 구조적 LLM 오케스트레이션 · 서울과학기술대학교" [ref=e1706] [cursor=pointer]'
+              - generic "ViT와 LLM을 융합한 4기 치주염 치료를 위한 임상 의사결정 지원 시스템 개발 · 국립강릉원주대학교" [ref=e1707] [cursor=pointer]
+              - generic "AI Pathway 개념 정립을 통한 생성형 AI 전주기 보안 프레임워크 구축 연구 · 연세대학교" [ref=e1708] [cursor=pointer]
+              - generic "표기법 통일을 통한 효율적인 범언어 음성 거대언어모델 개발 · 연세대학교" [ref=e1709] [cursor=pointer]
+              - 'generic "Circuit-Guided Steering: 회로 기반 Subspace 선택을 통한 LLM 행동 제어 및 실시간 안전성 강화 · 강원대학교" [ref=e1710] [cursor=pointer]'
+              - generic "파운데이션 모델 일반지식 기반 도메인 강건 인식의 진단·적응·최소라벨 확장 원천기술 개발 · 이화여자대학교" [ref=e1711] [cursor=pointer]
+              - generic "생성형 AI 에이전트 기반의 환자 맞춤형 삼첨판막 제너레이티브 설계 및 인실리코-임상 연계 검증 기술 개발 · 대구기계부품연구원" [ref=e1712] [cursor=pointer]
+              - generic "하이피델리티 시뮬레이션과 생성형 AI 기반의 적응형 건설안전 합성데이터 재생성 시스템 개발 · 고려대학교" [ref=e1713] [cursor=pointer]
+              - generic "교대근무 간호사의 시간 기반 생활패턴(Chrono-pattern)을 이용한 설명가능한 AI 수면 예측 및 LLM 기반 개인화 상황적응형 디지털 중재 개발 · 전북대학교" [ref=e1714] [cursor=pointer]
+              - generic "LLM 에이전트와 함수 호출 기술을 이용한 지능형 선형 설계 시스템 · 서울대학교" [ref=e1715] [cursor=pointer]
+              - generic "텍스트 마이닝과 거대언어모델 융합 기반의 맥락 인식형 서비스 품질 평가 및 개선 프레임워크 · 아주대학교" [ref=e1716] [cursor=pointer]
+              - generic "초고해상도 멀티모달 이미지 생성을 위한 점진적 디퓨전 모델 구축 · 한양대학교" [ref=e1717] [cursor=pointer]
+              - generic "웹 비디오, 시뮬레이션, 실세계의 순환적 확장을 통한 비전-언어 네비게이션 에이전트 연구 · 국민대학교" [ref=e1718] [cursor=pointer]
+              - generic "장기요양기관 요양보호사를 위한 생성형 AI 기반 인간중심돌봄 시뮬레이션 교육 프로그램 개발 및 효과 검증 · 대전대학교" [ref=e1719] [cursor=pointer]
+              - generic "연합학습 및 4DGS 기반 다기관 공동 내시경 디지털 트윈 및 수술 시뮬레이션용 월드 모델 플랫폼 개발 · 국립부경대학교" [ref=e1720] [cursor=pointer]
+              - 'generic "생성형 AI를 활용한 공공디자인 초기 개념 형성 연구: 디자인 브리프 매트릭스(Design Brief Matrix) 기반 설계 방법론 · 한양대학교" [ref=e1721] [cursor=pointer]'
+              - generic "Wastewater Foundation Model 기반 분산형 WRRF 자율 에이전틱 디시전 인텔리전스 연구 · 강원대학교" [ref=e1722] [cursor=pointer]
+              - generic "LLM 기반 AI 에이전트를 활용한 경제·사회 실험 시뮬레이션 플랫폼 · 한국과학기술원" [ref=e1723] [cursor=pointer]
+              - generic "자연어 명령 기반의 이종 로봇 자율 작업 수행을 위한 3D Vision-Language-Planning 프레임워크 개발 · 동국대학교" [ref=e1724] [cursor=pointer]
+              - generic "수소-천연가스 혼입 배관망의 딥러닝 기반 해석·설계·운전 통합 디지털 플랫폼 및 AI 에이전트 개발 · 동아대학교" [ref=e1725] [cursor=pointer]
+              - generic "온디바이스 LLM-뉴로어댑티브 인체 모델 융합 기반 자율주행 차량의 개인화 승차감·멀미 저감 통합 제어 기술 개발 · 서울과학기술대학교" [ref=e1726] [cursor=pointer]
+              - 'generic "치과 치료계획 자동 수립을 위한 멀티모달 생성AI 모델 개발: EMR,판독문,영상 기반 융합 모델 구축 및 임상 검증 · 서울대학교" [ref=e1727] [cursor=pointer]'
+              - generic "달 표면 RF 지도 기반 미션 플래닝 기법 연구 · 충북대학교" [ref=e1728] [cursor=pointer]
+              - 'generic "다중 에이전트 협업을 위한 동기화된 초경량 4D 월드 모델: 분산형 메모리 압축 및 충돌 없는 생성 제어 프레임워크 · 세종대학교" [ref=e1729] [cursor=pointer]'
+              - generic "비근육침윤성 방광암의 맞춤형 예후예측을 위한 저자원 학습 기반 Agentic LLM 임상지원 시스템 개발 · 중앙대학교" [ref=e1730] [cursor=pointer]
+              - generic "음성인식-LLM 기반 자동 의무기록 생성 시스템 개발과 응급실 업무효율 향상에 관한 연구 · 중앙대학교" [ref=e1731] [cursor=pointer]
+              - generic "LLM·Graph RAG 기반의 신뢰성 높은 개인 맞춤형 임상 의사결정 지원 기술 개발 · 숙명여자대학교" [ref=e1732] [cursor=pointer]
+              - generic "AI가 시각 창작물 시장과 상표 디자인에 미치는 영향:비상업적 거래의 위축과 상표 디자인의 동질화 · 서울대학교" [ref=e1733] [cursor=pointer]
+              - generic "인공지능 기반 합성 가능한 표적 단백질 분해 치료제 설계 연구 · 한국화학연구원" [ref=e1734] [cursor=pointer]
+              - generic "무전력 기계 신호 인지 및 추론을 위한 메타구조 시스템 개발 · 부산대학교" [ref=e1735] [cursor=pointer]
+              - generic "동형암호 기반 거대 언어 모델 인공지능 기술 개발 · 한양대학교" [ref=e1736] [cursor=pointer]
+              - generic "고해상도 이미지 복원을 위한 주파수 적응형 Flow Matching Mamba 파운데이션 모델 · 고려대학교" [ref=e1737] [cursor=pointer]
+              - generic "제조 AX를 위한 다양한 공정조건에 강건한 프레스 성형 품질 예측용 물리기반 가공표면 이미지 생성 모델 개발 · 경북대학교" [ref=e1738] [cursor=pointer]
+              - generic "메디컬 트윈 모델과 생성형 AI를 활용한 한의 LLM 맞춤형 Real-World-Like 데이터 생성 기술 개발 연구 · 한국한의학연구원" [ref=e1739] [cursor=pointer]
+              - generic "노년층 친화형 LLM 상호작용을 위한 사용자 행동 기반 평가 프레임워크 연구 · 한국과학기술원" [ref=e1740] [cursor=pointer]
+              - generic "General Neural Adjoint method 기반 탠덤 OLED 역설계 기술 개발 · 경희대학교" [ref=e1741] [cursor=pointer]
+              - generic "폴리올레핀 대체를 위한 가역적 해중합성 고분자 소재의 전산 설계 · 서울과학기술대학교" [ref=e1742] [cursor=pointer]
+              - generic "전 암종 면역항암 다중오믹스 아틀라스 기반 치료반응 예측 바이오마커 발굴 및 Bio-LLM 융합형 앙상블 AI 예측 모델 개발 · 한국과학기술원" [ref=e1743] [cursor=pointer]
+              - generic "멀티모달 뇌영상 생성형 인공지능 기반 조현병 정밀 진단 및 예후 예측 통합 기술 개발 · 경희대학교" [ref=e1744] [cursor=pointer]
+              - generic "멀티모달 LLM 기반 K-12 STEAM 탐구활동 '추론-오류 그래프' 자동평가·피드백 시스템 개발 · 홍익대학교" [ref=e1745] [cursor=pointer]
+              - generic "금융시장 패턴 해석 및 신뢰 가능한 투자 의사결정을 위한 생성형 모델 기반 설명 가능한 AI 연구 · 연세대학교" [ref=e1746] [cursor=pointer]
+              - generic "대규모 언어 모델(LLM) 내부 작동 원리 해석을 위한 파라미터 식별, 제어, 이식 기술 개발 및 활용 연구 · 숭실대학교" [ref=e1747] [cursor=pointer]
+              - generic "임베디드 하드웨어 플랫폼의 특성을 고려한 생성형 AI 소프트웨어 최적화 · 서울대학교" [ref=e1748] [cursor=pointer]
+              - 'generic "LLM 편향 메커니즘 규명 연구: Data-Model-Inference 관점에서 · 가천대학교" [ref=e1749] [cursor=pointer]'
+              - generic "Multi-robot system의 자율적 협업을 위한 분산 학습모델 개발 · 고려대학교" [ref=e1750] [cursor=pointer]
+              - 'generic "초개인화 모바일 부착형 다중감각 햅틱 시스템: 생성형 AI 기반 컨텐츠 및 인지적 보상 기술 · 고려대학교" [ref=e1751] [cursor=pointer]'
+              - generic "온톨로지 기반 운동 및 스포츠영양 처방 도메인 특화 대규모 언어모델(LLM)과 검색 증강 생성(RAG) 기술을 활용한 개인화된 건강관리 대화 시스템 구축 연구 · 인하대학교" [ref=e1752] [cursor=pointer]
+              - generic "거대언어모델 분산 처리를 위한 이종 멀티칩 하드웨어-소프트웨어 통합설계 · 건국대학교" [ref=e1753] [cursor=pointer]
+              - 'generic "A3HCI: LLM 기반 의도 이해와 맥락 적응형 오류 복구를 통한자폐스펙트럼장애 맞춤형 음성 상호작용 프레임워크 설계 및 검증 · 이화여자대학교" [ref=e1754] [cursor=pointer]'
+              - generic "지능적 단위체 모델을 통해 상호작용이 가능한 인공지능 기술 · 서울대학교" [ref=e1755] [cursor=pointer]
+              - generic "대규모 언어 모델(LLM) 및 멀티스케일 해석 기반 고용량 전고체 전지 전극 미세구조 최적화 및 설계 자동화 플랫폼 개발 · 중앙대학교" [ref=e1756] [cursor=pointer]
+              - 'generic "LabWorld: 심층 생성형 세계모델 기반 상호작용가능한 가상연구실 · 울산과학기술원" [ref=e1757] [cursor=pointer]'
+              - 'generic "DiffusionScore: 사전 학습된 확산 모델 기반 이미지 창의성 및 사실성 정량화 기술 개발 · 서강대학교" [ref=e1758] [cursor=pointer]'
+              - generic "AI 통합 형상 모델링 기반의 제품 상세형상 설계 자동화 기술 개발 · 고려대학교" [ref=e1759] [cursor=pointer]
+              - generic "제어 루프 병렬 샤딩 및 의미론적 가속화를 통한 실시간 LLM 기반 ICS 침입탐지 기술 · 동국대학교" [ref=e1760] [cursor=pointer]
+              - generic "다중 해상도 네트워크 기반 CLU 병리적 상호작용체의 구조 해독 및 알츠하이머병 표적 펩타이드 제어제 발굴 · 울산대학교" [ref=e1761] [cursor=pointer]
+              - generic "희귀암 정밀의료 구현을 위한 전주기적 데이터 사이언스 통합연구:역학적 규명부터 AI·LLM 예후 예측 플랫폼 개발 및 전향적 검증까지 · 고려대학교" [ref=e1762] [cursor=pointer]
+              - generic "온디바이스 AI 에이전트와 테스트-타임 스케일링을 위한 멀티 피델리티 LLM 기반 NPU-SoC 및 LPDDR-PIM 아키텍처 · 광주과학기술원" [ref=e1763] [cursor=pointer]
+              - generic "고령자 신경 성능 기반 바이오필릭 복지시설 AI 설계지원 플랫폼 구축 · 계명대학교" [ref=e1764] [cursor=pointer]
+              - generic "인공지능과 QM/MM 및 멀티스케일 생체분자 시뮬레이션을 통한 시그널 네트워크 허브 단백질의 다이나믹 커뮤니케이션 메커니즘 규명 및 선택적 알로스테릭 조절제 개발 · 이화여자대학교" [ref=e1765] [cursor=pointer]
+              - generic "확률편미분방정식 기반 확률론적 생성모형 기술의 근간 이론을 위한 함수해석적 기법 연구 · 고려대학교" [ref=e1766] [cursor=pointer]
+              - generic "ESM-2 기반 구조·서열 정보와 대규모 언어모델 융합을 통한 질병-비부호화 RNA 연관성 예측 기술 개발 · 국립부경대학교" [ref=e1767] [cursor=pointer]
+              - generic "LLM 활용 장소 지능화 기반 인식 및 추론 기술 개발 · 건국대학교" [ref=e1768] [cursor=pointer]
+              - generic "이종 도메인 지식 정렬 및 생성형 모델 기반 신사업 기회 발굴 및 평가 방법론 개발 · 고려대학교" [ref=e1769] [cursor=pointer]
+              - generic "대규모 배전계통의 상태추정을 위한 멀티모달 Foundation 모델 연구 · 국립금오공과대학교" [ref=e1770] [cursor=pointer]
+              - generic "대규모 LLM 추론을 위한 초광대역·저전력·고신뢰성 HBF 向 차세대 3D IGZO FeAND 어레이 개발 · 서강대학교" [ref=e1771] [cursor=pointer]
+              - generic "임상판단능력 향상을 위한 GenAI/NLP 기반 멀티에이전트 정밀평가시스템 개발 · 이화여자대학교" [ref=e1772] [cursor=pointer]
+              - 'generic "고립에서 동행으로: 중년 1인 가구의 생심리사회적 건강증진을 위한 맞춤형 통합 중재 개발 및 적용 효과 · 중앙대학교" [ref=e1773] [cursor=pointer]'
+              - generic "멀티모달 생성형 AI와 BIM 연동을 통한 혼합현실 기반의 스마트 안전관리 시스템 개발 · 인천대학교" [ref=e1774] [cursor=pointer]
+              - generic "Misconception-Tuned Lightweight LLM 기반 물리 교육 캘리브레이션 시스템 개발 · 경북대학교" [ref=e1775] [cursor=pointer]
+              - generic "흉부 영상 판독에서 인간-AI 상호작용 분석 및 범용 비지도 이상탐지 모델을 활용한 개인 맞춤형 협업 솔루션 개발 · 분당서울대학교병원" [ref=e1776] [cursor=pointer]
+              - 'generic "자기 진화형 Physical LLM: 불확실한 환경에서 행동 파운데이션 모델의 강건하고 효율적인 적응 기술 연구 · 대구경북과학기술원" [ref=e1777] [cursor=pointer]'
+              - generic "의료영상 AI 에이전트 구동을 위한 대형언어모델 기반 PACS 서버(LLM-PACS) 프레임워크 개발 및 임상 검증 · 삼성서울병원" [ref=e1778] [cursor=pointer]
+              - generic "계산과학-강화학습-LLM 자율 최적화 프레임워크에 기반한직접 암모니아 연료전지 음극 촉매설계 · 한양대학교" [ref=e1779] [cursor=pointer]
+              - generic "월드모델 기반의 고정밀 무선 디지털 트윈 구축 및 6G AI-RAN 핵심 기술 개발 · 성균관대학교" [ref=e1780] [cursor=pointer]
+              - 'generic "AI 융합 초개인화 VR 테라피(VRT) 플랫폼 개발: 사용자 내러티브 기반 환경 조절을 통한 스트레스 및 불안 완화 메커니즘의 실증적 규명 · 연세대학교" [ref=e1781] [cursor=pointer]'
+              - 'generic "중환자실 지능형 디지털 트윈: 파운데이션 모델 기반 인과 시뮬레이터와 에이전틱 LLM을 통한 디지털 트윈 지능화 · 고려대학교" [ref=e1782] [cursor=pointer]'
+              - generic "생성형 AI 콜드 데이터의 장기 보존을 위한 재구성 가능한 DNA 토큰 스토리지 원천기술 개발 · 인천대학교" [ref=e1783] [cursor=pointer]
+              - generic "신뢰성·설명가능성·고속성을 보장하는 로봇 파운데이션 모델 및 실환경 기반 검증 벤치마크 개발 · 포항공과대학교" [ref=e1784] [cursor=pointer]
+              - generic "멀티스케일 유전자발현 파운데이션모델기반 정형적/비정형적 유전자 발현 조절기전 제어 및 설계기술 연구 · 한양대학교" [ref=e1785] [cursor=pointer]
+              - generic "대규모 언어모델 기반 다양한 마이크 배열에서의 공간 음향 추론 연구 · 서강대학교" [ref=e1786] [cursor=pointer]
+              - generic "Agentic AI와 모빌리티 시뮬레이션을 연계한 교통 시스템 운영 및 평가 연구 · 가천대학교" [ref=e1787] [cursor=pointer]
+              - generic "멀티오믹스 지식 그래프와 초거대 AI (LLM+LDM) 융합 기반 자율 추론형 파운데이션 모델 및 플랫폼 개발 · 숙명여자대학교" [ref=e1788] [cursor=pointer]
+              - generic "영상-법률 지식 그래프와 세계 모델을 융합한 뉴로-심볼릭 AI 기반 교통사고 과실 책임 산정 및 시뮬레이션 검증 기술 개발 · 국민대학교" [ref=e1789] [cursor=pointer]
+              - generic "초소형 인공위성 특화 가상설계/가상센싱 에이전트:입력 프롬프트로 상세설계 및 가상센싱까지 · 경희대학교" [ref=e1790] [cursor=pointer]
+              - generic "딥러닝 기반의 멀티모달 디지털 콘텐츠를 위한 저작권 기술 프레임워크 · 홍익대학교" [ref=e1791] [cursor=pointer]
+              - 'generic "재훈련 없는 파운데이션 모델 연결: 희소 오토인코더 기반 단일 의미성 확보 및 범용 개념 공간 정렬 기술 · 연세대학교" [ref=e1792] [cursor=pointer]'
+              - generic "멀티모달 플로우 매칭과 AlphaFold3 구조 정보를 활용하는 다중 속성 최적화 나노바디 생성 연구 · 강원대학교" [ref=e1793] [cursor=pointer]
+              - 'generic "외상 간호 예측 모델 및 교육 프로그램 개발: 공공 데이터의 SNOMED CT 기반 표준간호용어 매핑 · 대전대학교" [ref=e1794] [cursor=pointer]'
+              - generic "3차원 수직 적층형 강유전체 터널 접합 어레이 기반 초저전력 인메모리 LLM 연산 가속기 개발 · 한양대학교" [ref=e1795] [cursor=pointer]
+              - generic "Physics-Informed AI 기반 PEM 연료전지 물리장 예측·설계·운전 최적화 통합 모델 및 실시간 디지털트윈 구현 · 국립공주대학교" [ref=e1796] [cursor=pointer]
+              - 'generic "생성형 AI 시대의 Responsible AI 알고리즘 설계 연구: 인간·AI 상호작용에 기반하여 · 성균관대학교" [ref=e1797] [cursor=pointer]'
+              - generic "멀티모달 햅틱 슬리브 기반 실시간 촉각 상호작용을 위한 생성 모델 연구 · 광주과학기술원" [ref=e1798] [cursor=pointer]
+              - generic "부반응 경로 탐색 및 불순물 예측을 위한 생성형 인공지능 모델 개발 · 국민대학교" [ref=e1799] [cursor=pointer]
+              - generic "이기종 모바일 SoC향 QoS 및 Accuracy 인지 기반 에너지 효율형 LLM 추론 시스템 연구 및 개발 · 울산과학기술원" [ref=e1800] [cursor=pointer]
+              - generic "생성형 AI를 활용한 랜드마크 기반 임플란트 보철 설계 및 예후 예측용 4D 시뮬레이션 · 고려대학교" [ref=e1801] [cursor=pointer]
+              - generic "신뢰 기반 ESG 자동 보고를 위한 Multi-Agent LLM OrchestrESG 시스템 개발 · 동국대학교" [ref=e1802] [cursor=pointer]
+              - generic "생성형 AI 바이오 파운데이션 모델 기반 청신경종양 제어 타겟 발굴 및 고효율 약물전달시스템 구축 · 순천향대학교" [ref=e1803] [cursor=pointer]
+              - generic "대규모 생성형 인공지능 자기검증 기술 개발 · 국민대학교" [ref=e1804] [cursor=pointer]
+              - generic "LLM기반 지능형 오픈 도메인 다중 테이블 질의응답 시스템 개발 · 서울대학교" [ref=e1805] [cursor=pointer]
+              - generic "생성형 AI 기반 SAF 생산 최적 공정 설계, 평가 및 공급망 모델 구축 자동화 오픈 플랫폼 개발 · 포항공과대학교" [ref=e1806] [cursor=pointer]
+              - generic "메모리 중심 데이터 표현 기반 차세대 LLM 가속 프로세서 설계 연구 · 연세대학교" [ref=e1807] [cursor=pointer]
+              - generic "멀티모달 엣지 인텔리전스와 인간공학 전문가 LLM 기반의 개인화 산업안전 AI 플랫폼 설계 및 개발 · 고려대학교" [ref=e1808] [cursor=pointer]
+              - generic "휴먼 파운데이션 모델 기반의 건설안전관리 에이전트 구축 · 부산대학교" [ref=e1809] [cursor=pointer]
+              - generic "시설물 보수보강 DB 및 LLM 유지보수 이력 기반 비용예측모델 개발 · 영남대학교" [ref=e1810] [cursor=pointer]
+              - 'generic "멀티모달 대형언어모델(LLM)을 활용한 통합 도시안전성 진단: 로드뷰·위성영상 기반 교통사고·범죄의 객관적 위험과 주관적 안전 인식 차이 분석 · 성균관대학교" [ref=e1811] [cursor=pointer]'
+              - generic "물리 정보 신경망과 LLM-강화 융합을 통한 정밀 순 부하 역전 시점 예측 · 제주대학교" [ref=e1812] [cursor=pointer]
+              - generic "생성형 파운데이션 모델의 편향 완화 및 안전성 확보를 위한 가드레일 프레임워크 개발 및 응용 · 아주대학교" [ref=e1813] [cursor=pointer]
+              - generic "생성형 인공지능을 위한 계산적 광학 시스템 개발 · 서울대학교" [ref=e1814] [cursor=pointer]
+              - generic "멀티모달 생성형 AI의 교차 모달 재등장 차단을 위한 견고한 통합 개념 삭제 프레임워크 개발 · 숭실대학교" [ref=e1815] [cursor=pointer]
+              - generic "3세대 디지털 PET/CT 리스트 모드 데이터와 생성형 AI를 활용한 Sub-millisievert 초저선량 영상 복원 기술 개발 · 한림대학교" [ref=e1816] [cursor=pointer]
+              - generic "Geometric deep learning과 LLM을 이용한 외부유동 특화 aerodynamic foundation model architecture 설계 · 한국생산기술연구원" [ref=e1817] [cursor=pointer]
+              - generic "대규모 언어모델 기반 3D CAD 설계 자동화 개발 · 강원대학교" [ref=e1818] [cursor=pointer]
+              - generic "언어 모델 생성 로봇 작업 계획 및 제어 실시간 컴퓨팅 기술 개발 · 한양대학교" [ref=e1819] [cursor=pointer]
+              - 'generic "생성형 AI 시대의 과학 교육 평가: AI 저항 문항 생성 시스템(AIGS) 개발 및 활용을 통한 학습자의 인식적 오케스트레이션 역량 함양 · 서울대학교" [ref=e1820] [cursor=pointer]'
+              - generic "선형 LM Head 구조 기반 은닉 표현 섭동의 선형 투영을 이용한 학습 불필요 LLM 워터마킹 및 탐지 · 세명대학교" [ref=e1821] [cursor=pointer]
+              - generic "근골격계(MSK) 멀티모달 파운데이션 모델 개발 및 생성형 AI 기반 의무기록지 자동 생성 시스템 구축 · 서울대학교병원" [ref=e1822] [cursor=pointer]
+              - 'generic "생성형 AI 사용과 인지적 오프로딩: 인지 통제력 약화와 노력 회피의 신경학적 기전 규명 · 포항공과대학교" [ref=e1823] [cursor=pointer]'
+              - generic "인공지능 융합 기반 건설공사 기간 예측 및 공정계획 생성 모델 개발 · 국립금오공과대학교" [ref=e1824] [cursor=pointer]
+              - generic "전기 구동 시스템 스위칭 소음 저감을 위한 AI 기반 가청주파수 대역자기 차폐 물질 최적 설계 · 동의대학교" [ref=e1825] [cursor=pointer]
+              - generic "다중 모달 생성형 AI 악용 차단을 위한 실시간 범용 영상 면역화 기술 · 포항공과대학교" [ref=e1826] [cursor=pointer]
+              - generic "리만계량 OT 기반 Flow-Matching 생성형 모델의 손톱모세혈관 영상 및 DVS 이벤트 분석을 통한 비침습 혈당 예측 · 광운대학교" [ref=e1827] [cursor=pointer]
+              - generic "표적·면역치료 암환자 맞춤형 임상의사결정 지원을 위한 멀티모달 Onco-LLM 기반 디지털 간호서비스 모델 개발 및 임상 검증 · 중앙대학교" [ref=e1828] [cursor=pointer]
+              - 'generic "서사형 디지털 트윈 기반 암 환자 환자 중심 보고 결과(Patient-Reported Outcome) 체계 개발: Zero Raw-Data 아키텍처를 이용한 대리 인터뷰 플랫폼 구축 및 검증 · 서울대학교병원" [ref=e1829] [cursor=pointer]'
+              - generic "설명 가능 추천을 위한 파라메트릭 개인화 대형 언어 모델 연구 · 단국대학교" [ref=e1830] [cursor=pointer]
+              - generic "RAG 기반 생성형 AI 탐구 네비게이터를 활용한 개방형 물리 탐구 지원 및 메타인지 증진 방안 연구 · 경북대학교" [ref=e1831] [cursor=pointer]
+              - generic "LLM 가속을 위한 터너리 기반 3T IGZO-FeFET PIM 어레이 소자 제작 및 연산 검증 · 동국대학교" [ref=e1832] [cursor=pointer]
+              - generic "이기종 디바이스의 개인화 감각 정보 공유와 상호작용 기술 개발 · 한국전자기술연구원" [ref=e1833] [cursor=pointer]
+              - generic "저가시-비가시 환경에 대한 3D 공간 구성과 시각화 기술 개발 · 한국전자기술연구원" [ref=e1834] [cursor=pointer]
+              - generic "AI 기반 차세대 이차전지 소재-전극-셀 통합 설계 및 안정성 예측 플랫폼 개발 · 연세대학교" [ref=e1835] [cursor=pointer]
+              - generic "능동적 문제 해결을 위한 거대 행동 모델 기반 디지털트윈 자율 운용 기술 개발 · 한국전자기술연구원" [ref=e1836] [cursor=pointer]
+              - generic "온디바이스 LLM 데이터 플로우에 최적화된 차세대 LPDDR PIM 구조 및 반도체 개발 · 한양대학교" [ref=e1837] [cursor=pointer]
+              - generic "공존형 인간-로봇 상호작용을 위한 사용자 맥락 인지 멀티모달 피지컬 AI 프레임워크 연구 · 한국과학기술원" [ref=e1838] [cursor=pointer]
+              - 'generic "DNA 결합 단백질의 확산 동역학에서 IDR의 역할 규명: 물리 기반 시뮬레이션과 인공지능 기반 모델링 · 고등과학원" [ref=e1839] [cursor=pointer]'
+              - generic "생성형 AI 주도 극저온향 소듐 전해질용 De Novo 설계 기술 개발 · 경희대학교" [ref=e1840] [cursor=pointer]
+              - generic "관상동맥조영술의 방사선 선량 저감 및 진단 정확도 향상을 위한 생성형 AI(VFI) 솔루션 개발 및 실시간 영상 처리 Standalone시스템 구현 · 분당서울대학교병원" [ref=e1841] [cursor=pointer]
+              - generic "LLM 기반 질의형 임상 데이터베이스와 동적 예측 모델 및 비전 EMR 인터페이스를 통합한 임상 모니터링 플랫폼 개발을 위한 장비 구축 · 울산대학교" [ref=e1842] [cursor=pointer]
+              - generic "완성형 콘텐츠에 감정-감성을 투영하는 XR 콘텐츠 자율변형 프레임워크 기술 개발 · 한국전자기술연구원" [ref=e1843] [cursor=pointer]
+              - generic "생성형 AI 기반 구조 역설계 및 혁신공정 기반 고엔트로피 제어형 초고이온전도 고체전해질 개발 · 한국과학기술연구원" [ref=e1844] [cursor=pointer]
+              - generic "LLM 에이전트 기반의 공간 인지(Geo-aware) 능동 학습과 정책 증류를 이용한 고해상도 건물 변화탐지 · 조선대학교" [ref=e1845] [cursor=pointer]
+              - generic "전천후 지구 관측을 위한 생성형 AI 기반고해상도 SAR 영상 시각화 및 분석 기술 연구 · 한국과학기술원" [ref=e1846] [cursor=pointer]
+              - generic "복합 생성형 딥페이크 대응을 위한 능동 탐지·심층 분석 솔루션 개발 · 한국전자기술연구원" [ref=e1847] [cursor=pointer]
+              - generic "바이오 멀티모달 파운데이션 모델 개발을 위한 초고차원 비선형 생체 복잡계 데이터 동화 기법 연구용 고성능 컴퓨팅 서버 구축 · 한국과학기술원" [ref=e1848] [cursor=pointer]
+              - 'generic "SENTINEL (Semantic ENcoded Traffic INtelligence for Evasive Links): 산업별 네트워크 트래픽 특성의 의미적 일탈을 학습하는 합성 데이터 기반 생성형 AI의 자율 위협 탐지·대응 요소기술 개발 · 차의과학대학교" [ref=e1849] [cursor=pointer]'
+              - generic "생성형 AI 악용 Long-term 사이버 스캠 대응을 위한 이미지?대화?워터마크 통합 분석 기술 개발을 위한 GPU 장비 구축 · 충남대학교" [ref=e1850] [cursor=pointer]
+              - generic "AI 기반 당뇨병성 신장질환(DKD) 바이오마커 발굴을 통한 진단제 및 항체치료제 기술 개발 · (재)스크립스코리아항체연구원" [ref=e1851] [cursor=pointer]
+              - generic "멀티모달 데이터 기반 자율 추론 및 의사결정 지원형 바이오소재 통합 검색/분석 플랫폼 개발 · 한국화학융합시험연구원" [ref=e1852] [cursor=pointer]
+              - 'generic "VITAL-AI: 멀티모달 세포 데이터 기반 가상세포 파운데이션 AI 모델 구축 · 동국대학교" [ref=e1853] [cursor=pointer]'
+              - 'generic "K-Sleep Foundation Model (K-SleepFM): 기초-임상 수면 표현형 융합을 통한 인공지능 기반 한국형 다중모달 신경퇴행성 질환 예측 모델 · 광주과학기술원" [ref=e1854] [cursor=pointer]'
+              - generic "고품질 RNA 2차 구조 데이터 생산을 통한 고정밀 RNA 2차 구조 예측·설계 플랫폼 개발 및 치료용 구조 RNA 신약 유효물질 발굴 · 한양대학교" [ref=e1855] [cursor=pointer]
+              - generic "대규모 생성형 AI 병렬컴퓨팅 기술개발 · 한국전자통신연구원" [ref=e1856] [cursor=pointer]
+              - 'generic "\"NeuroX\" 다중 스케일(fMRI-iEEG) 뇌 데이터와 행동·언어·환경의 정렬 기반 생성형 뇌 파운데이션 모델: 전 생애주기 종/횡단 데이터 기반 생성형 뇌 에뮬레이터 · 서울대학교" [ref=e1857] [cursor=pointer]'
+              - generic "엣지 AI 기반 에이전트 LLM 협력 학습 및 추론 연구 · 서울대학교" [ref=e1858] [cursor=pointer]
+              - generic "다개체 제조환경에서의 조작 숙련성 개선을 위한 고정밀 디지털트윈 기술 개발 · 국립금오공과대학교" [ref=e1859] [cursor=pointer]
+              - generic "스케일 아웃 컨텍스트 메모리 기반 고효율 초거대 LLM 추론 시스템 · 아주대학교" [ref=e1860] [cursor=pointer]
+              - generic "인공지능 기반 연속체 로봇을 활용한 뇌혈관 내비게이션 및 중재 시술 자동화 시스템 개발 · 경희대학교" [ref=e1861] [cursor=pointer]
+              - generic "연산자 합성 관점의 심층 신경망 이론 분석:Transformer(LLM 핵심 구조) 중심 · 경북대학교" [ref=e1862] [cursor=pointer]
+              - generic "로봇 촉각 파운데이션 모델 기초연구실 · 고려대학교" [ref=e1863] [cursor=pointer]
+              - generic "LLM 기반 디지털 덴티스트리 멀티-AI 에이전트 플랫폼 · 서울대학교" [ref=e1864] [cursor=pointer]
+              - generic "노화 지표 실시간 검출 및 AI 노화 예측을 위한 오가노이드칩 연구실 · 서강대학교" [ref=e1865] [cursor=pointer]
+              - generic "뉴럴 파운데이션 모델 기반 에이전트 중심 Brain-To-Speech 기술 개발 · 고려대학교" [ref=e1866] [cursor=pointer]
+              - generic "위성-UAV-6G 융합 네트워크에서의 비디오 전송을 위한 확률 모델링 및 생성형 AI 기반 에너지-체감품질 결합 최적화 · 명지대학교" [ref=e1867] [cursor=pointer]
+              - generic "AI와 양자역학 첨단 테크놀로지를 활용한 약물설계 및 작용 메커니즘 연구 · 이화여자대학교" [ref=e1868] [cursor=pointer]
+              - generic "수학적 원리 기반 차세대 AI 구조·학습 알고리즘의 전주기 설계·검증 프레임워크 개발 · 한국과학기술원" [ref=e1869] [cursor=pointer]
+              - generic "전이학습 및 LLM 통합 AI 기반 지속가능 콘크리트 배합설계 모델 개발 · 한양대학교" [ref=e1870] [cursor=pointer]
+              - generic "생성형 AI로부터 이미지를 보호하기 위한 모델과 창작자의 협력적 정렬 원천 기술 개발 · 인하대학교" [ref=e1871] [cursor=pointer]
+              - generic "LLM 에이전트를 통해 C-러스트 포인터 번역의 올바름을 정형 검증하는 베리코딩 기술 개발 · 울산과학기술원" [ref=e1872] [cursor=pointer]
+              - generic "물리데이터 품질관리 기술 개발 · 한국전자통신연구원" [ref=e1873] [cursor=pointer]
+              - generic "무인공장 운용-피지컬AI SDF 특화 기반모델 연구개발 · 전북대학교" [ref=e1874] [cursor=pointer]
+              - generic "능동형 피지컬 AI를 위한 신뢰도 보증 기반 센서 독립형 범용 인지 프레임워크 개발 및 반도체 나노 계측 실증 · 숙명여자대학교" [ref=e1875] [cursor=pointer]
+              - 'generic "예측에서 발견으로: AI 공동과학자·의미론적 도시 지능 LLM·물리정보 그래프 신경망의 수렴 프레임워크를 통한 도시열섬 과학의 패러다임 전환 · 경희대학교" [ref=e1876] [cursor=pointer]'
+              - generic "생성형 인공지능의 효율적 추론을 위한 입력 인지형 동적 모델 압축 기법 연구 · 한국과학기술원" [ref=e1877] [cursor=pointer]
+              - generic "발전소 블랙아웃·SMR 중대사고 예방을 위한 디지털 트윈 기반 이상탐지 및 LLM 에이전트 추론 프레임워크 · 연세대학교" [ref=e1878] [cursor=pointer]
+              - generic "통합 센서-메시지 융합, 엣지 중심 연합학습, 그리고 LLM 강화 의사결정을 통한 온-비히클 AI 기반 완전자율주행 · 인하대학교" [ref=e1879] [cursor=pointer]
+              - generic "패치 단위 표현을 활용한 시공간 분석 기반 AI 생성 동영상 탐지 프레임워크 · 성균관대학교" [ref=e1880] [cursor=pointer]
+              - generic "온디바이스 LLM을 위한 공유 잠재 서브스페이스 기반 Nested LLM 및 동적 추론 프레임워크 개발 · 대구경북과학기술원" [ref=e1881] [cursor=pointer]
+              - generic "현대 홉필드 동역학 기반 어텐션 방향성 분석을 통한 안정적·범용 생성형 인공지능 가이드 프레임워크 개발 · 광주과학기술원" [ref=e1882] [cursor=pointer]
+              - generic "침 근거 합성 연구에서 spin 감소를 위한 전문가 합의 기반 프레임워크(SPIN-Acu) 및 LLM 기반 자동 탐지 도구 개발과 확산 · 경희대학교" [ref=e1883] [cursor=pointer]
+              - generic "경량 형식검증 기반 신뢰 가능한 LLM 기반 자동 프로그램 수정 연구 · 강원대학교" [ref=e1884] [cursor=pointer]
+              - generic "자율주행차 LLM 에이전트의 XAI 설명 차원과 멀티모달 정보 양식이 사용자 신뢰에 미치는 영향 · 광운대학교" [ref=e1885] [cursor=pointer]
+              - 'generic "K-MedAlign: 다국어 의료 LLM 정합성 향상을 위한 표현 공간 조정 방법 및 프레임워크 개발 · 한국외국어대학교" [ref=e1886] [cursor=pointer]'
+              - generic "결정소성-딥러닝 통합 기반 다상강 미세조직-물성 역설계 기술 개발 · 성균관대학교" [ref=e1887] [cursor=pointer]
+              - generic "생성형 AI를 활용한 메타 서페이스 구조의 방음벽 흡음 소재 연구 · 한양대학교" [ref=e1888] [cursor=pointer]
+              - generic "하이브리드 모델링·생성형 AI 기반 도로교통 미시적 배출량 산정 및 LLM 의사결정 지원 플랫폼 개발 · 인하대학교" [ref=e1889] [cursor=pointer]
+              - generic "간호학생의 심혈관 간호 임상판단 역량 강화를 위한 NCSBN 임상판단측정모델 기반 검색증강생성(RAG) AI 튜터링 시스템 개발 및 효과평가 · 조선대학교" [ref=e1890] [cursor=pointer]
+              - 'generic "2D X-ray의 3D 진화: 양안시차 원리와 생성형 인공지능을 융합한 3D 삼차원 영상 과 CT 재구성 플랫폼 개발 · 서울의료원" [ref=e1891] [cursor=pointer]'
+              - generic "희소한 사용자 입력으로부터의 인지 상태 추론과 지식 궤적 최적화를 위한 개인화 LLM 에이전트 연구 · 경상국립대학교" [ref=e1892] [cursor=pointer]
+              - generic "시간 변화에 따른 LLM 평가 벤치마크의 유효성 관리 기법 개발 · 전남대학교" [ref=e1893] [cursor=pointer]
+              - generic "청소년의 과학 탐구력 향상을 위한 인지적 오프로딩 최적화 기반 Brain-AI Agent 개발 · 한국교원대학교" [ref=e1894] [cursor=pointer]
+              - generic "시맨틱 워터마크의 위조·제거 취약성 분석 기반 신뢰 가능한 이미지 워터마킹 설계 원리 연구 · 가천대학교" [ref=e1895] [cursor=pointer]
+              - generic "AX 시대의 디지털 지식생태계 및 지식노동시장 구조 변화 분석과 파급도 통합지표 개발 · 한양대학교" [ref=e1896] [cursor=pointer]
+              - generic "모바일 NPU 환경 온디바이스 LLM 가속을 위한 하드웨어 친화적 Speculative Decoding 연구 · 인하대학교" [ref=e1897] [cursor=pointer]
+              - generic "유니버셜 시맨틱 통신을 위한 파운데이션 모델 기반 시맨틱 송수신 및 생성형 복원 기술 개발 · 세종대학교" [ref=e1898] [cursor=pointer]
+              - generic "VRP(Vehicle Routing Problem)를 위한 온톨로지-LLM 연계 지식 유도형 강화학습 기술 연구 · 이화여자대학교" [ref=e1899] [cursor=pointer]
+              - generic "질병-식이 지식 그래프와 체계적 문헌 검토 자동화를 통한 의료 식이 의사결정 LLM 신뢰도 검증 및 영양·요리 도메인 응용 · 부산대학교" [ref=e1900] [cursor=pointer]
+              - generic "청소년 마약류·약물 오남용 조기 예방을 위한드럭-프리 세이프틴(Drug-Free SafeTeen) AI프로그램 개발 및 효과검증 · 중부대학교" [ref=e1901] [cursor=pointer]
+              - generic "인공지능의 정치적 편향 진단 · 완화 · 검증을 위한 통합 연구 · 한국과학기술원" [ref=e1902] [cursor=pointer]
+              - generic "임상 증후(症候) 중심 변증-질환 통합 교육모듈 개발 및 적용 · 원광대학교" [ref=e1903] [cursor=pointer]
+              - 'generic "인공지능을 활용한 가로 환경의 정밀 유형화 및 맞춤형 설계·시각화 대시보드 및 RAG 데이터베이스 개발: 가로 고유 특성과 지역 맥락적 특성의 상호작용 규명을 중심으로 · 연세대학교" [ref=e1904] [cursor=pointer]'
+              - generic "지역사회 노인의 만성질환 자기관리를 위한 안전한 근거기반 RAG-LLM 챗봇 개발 및 예비 임상검증 · 계명대학교" [ref=e1905] [cursor=pointer]
+              - generic "RAG-XR 기반 통합 건강사정 및 임상 추론 교육프로그램 개발 및 평가 · 동명대학교" [ref=e1906] [cursor=pointer]
+              - generic "초장문 LLM 추론 가속을 위한 Semantic-Aware In-Situ KV 캐시 선별 및 재계산 기술 개발 · 한양대학교" [ref=e1907] [cursor=pointer]
+              - generic "LLM 기반 계층적 단백질 기능 분류 AI 모델 개발 및 경량화 연구 · 한국외국어대학교" [ref=e1908] [cursor=pointer]
+              - generic "RAG-LLM 행위자 기반 모형을 활용한 청년층 지역 이동 시뮬레이션 및 정책 효과 평가 모형 개발 · 충북대학교" [ref=e1909] [cursor=pointer]
+              - generic "차세대 지식 관리 및 다중 홉 추론을 위한 그래프 증강 LLM 에이전트 프레임워크 · 한국외국어대학교" [ref=e1910] [cursor=pointer]
+              - generic "병리 데이터 이질성 및 임상환경 변화에 강건한 병리진단 Foundation Model 고도화 및 Agentic AI 구현 연구 · 광운대학교" [ref=e1911] [cursor=pointer]
+              - generic "허혈성 뇌졸중 CT 영상 기반 병변 재현성 중심 조건부 합성 DWI 생성 모델 개발 및 멀티모달 병변 분할 검증 연구 · 가천대 길병원" [ref=e1912] [cursor=pointer]
+              - generic "사고 능력 향상을 위한 효율적인 LLM 시스템 연구 · 고려대학교" [ref=e1913] [cursor=pointer]
+              - generic "혈액투석실 신규 간호사를 위한 생성형 AI·VR 융합 교육 플랫폼 개발 및 효과 검증 · 백석대학교" [ref=e1914] [cursor=pointer]
+              - generic "지리공간 코드 생성을 위한 강화학습 기반 도메인 특화 LLM 에이전트 개발 · 서울시립대학교" [ref=e1915] [cursor=pointer]
+              - generic "생성형 AI 조정 벡터를 활용한 유해 콘텐츠 사전 감지·대응 모델 개발 · 성균관대학교" [ref=e1916] [cursor=pointer]
+              - generic "거대언어모델 능력의 다면적·효율적 진단 방법 연구 · 한국외국어대학교" [ref=e1917] [cursor=pointer]
+              - generic "노년층 인지 능력 저하 탐지를 위한 거대 언어 모델(LLM) 프롬프트 자동 최적화 기술 개발 · 고려대학교" [ref=e1918] [cursor=pointer]
+              - generic "생성형 AI 추론 서비스의 효율적 확장을 위한 엣지-서버 다계층 협력 시스템 · 아주대학교" [ref=e1919] [cursor=pointer]
+              - generic "간호학생의 임상추론 향상을 위한 생성형 AI기반 통합 사례 · 문항 자동설계 알고리즘 개발 및 타당화 · 한양대학교" [ref=e1920] [cursor=pointer]
+              - generic "실시간 고화질 생성 영상 스트리밍을 위한 압축성 개선 경량 확산 모델 개발 · 성신여자대학교" [ref=e1921] [cursor=pointer]
+              - generic "다기관 데이터 통합을 위한 개인정보 보호형 가상 의료데이터 생성 기술 개발 · 강원대학교" [ref=e1922] [cursor=pointer]
+              - generic "적응형 KV 복원을 통한 장문 LLM 추론 메모리 절감 연구 · 숙명여자대학교" [ref=e1923] [cursor=pointer]
+              - generic "동물의 시각적 형질 예측을 위한 유전체-영상 교차 모달 생성형 AI 기술 개발 · 강원대학교" [ref=e1924] [cursor=pointer]
+              - generic "자율주행 혼합 교통 환경에서 AI Agent 기반 멀티모달 생성형 AI를 활용한 교통 맥락 해석 및 최적 교통 제어 프레임워크 연구 · 명지대학교" [ref=e1925] [cursor=pointer]
+              - generic "고주파 센서 데이터의 도메인 일반화 표현과 이종지식 온톨로지를 활용한 멀티 LLM 에이전트 시스템 개발 및 근거강화 추론 방법 연구 · 서울시립대학교" [ref=e1926] [cursor=pointer]
+              - generic "생성 모델의 유해·불법 콘텐츠 생성 차단을 위한 설명 가능한 머신 언러닝 기법 연구 · 덕성여자대학교" [ref=e1927] [cursor=pointer]
+              - generic "지리적 분산 환경에서 Agentic LLM의 도구 호출 실행 위치 최적화를 위한 네트워크 인지 서버리스 시스템 · 동국대학교" [ref=e1928] [cursor=pointer]
+              - generic "구조 재편 중심 LLM 기반 HLS 설계 프레임워크 · 인하대학교" [ref=e1929] [cursor=pointer]
+              - generic "생성형 AI 기반 여론 조작 신호의 조기 탐지 조건 규명과 LLM 에이전트 시뮬레이션의 설명 가능 범위 분석 · 청주대학교" [ref=e1930] [cursor=pointer]
+              - generic "전기화학 기반 생성형 AI 모델을 활용한 배터리 데이터 증강 및 배터리 팩 상태 진단 알고리즘 개발 · 포항공과대학교" [ref=e1931] [cursor=pointer]
+              - generic "최신 흐름·변환기 생성모델을 위한 문장조건 기반 광범위·다중 개념 삭제 기술 개발 · 연세대학교" [ref=e1932] [cursor=pointer]
+              - generic "LLM 기반 code-generation MAS의 멀티 스텝 공격 분석·검증 및 보안성 평가체계 연구 · 동국대학교" [ref=e1933] [cursor=pointer]
+              - generic "외국인 환자를 돌보는 간호사의 문화간 의사소통 역량 강화를 위한 거대언어모델 기반 다중에이전트 가상환자 시뮬레이션 (ICARE-Sim) 프로그램 개발 및 평가 · 가천대학교" [ref=e1934] [cursor=pointer]
+              - generic "구강암 진단 및 병기결정 보조를 위한 설명가능 대규모 언어모델(LLM) 기반 임상 의사결정 지원 시스템 개발 · 서울대학교" [ref=e1935] [cursor=pointer]
+              - generic "고효율 온디바이스 검색 증강 생성을 위한 벡터 DB-LLM 통합 자원 관리 및 적응형 실행 시스템 연구 · 경북대학교" [ref=e1936] [cursor=pointer]
+              - generic "ACT-Core 기반 간호 DX 역량모델 개발 및 생성형 AI 간호기록 교육프로그램 효과 검증 · 부산여자대학교" [ref=e1937] [cursor=pointer]
+              - generic "생성형 AI 기반 차원 확장을 통한 재료 미세구조 재구성·역설계 파운데이션 모델 · 숭실대학교" [ref=e1938] [cursor=pointer]
+              - generic "생성형 AI를 활용한 프로그래밍 과정에서 요구되는 컴퓨팅 사고력(CT)의 재구조화와 수행형 기반 CT 측정 도구 개발 · 고려사이버대학교" [ref=e1939] [cursor=pointer]
+              - generic "거대언어모델(LLM) 기반 의미론적 뇌 신경 표현을 활용한 신경정신질환 정밀 진단 모델 개발 · 강원대학교" [ref=e1940] [cursor=pointer]
+              - generic "국방 보급운영 도메인 특화형 거대언어모델 기반 온톨로지 구축 프레임워크 · 한국외국어대학교" [ref=e1941] [cursor=pointer]
+              - generic "노후 공동주택 재정비 사업성 비교 분석을 위한 LLM+룰 기반 하이브리드 의사결정 지원 플랫폼 개발 및 실증 · 아주대학교" [ref=e1942] [cursor=pointer]
+              - 'generic "유전성 유방암·난소암 고위험군의 가족 유전정보 공유 커뮤니케이션 평가도구 개발: 생성형 AI 기반 소셜미디어 텍스트 분석을 활용한 혼합연구 · 고신대학교" [ref=e1943] [cursor=pointer]'
+              - generic "생성형 AI 건축 이미지의 설계 소통 신뢰성 향상을 위한 의도-수신 격차 측정·영향·개입 체계 개발 · 청운대학교" [ref=e1944] [cursor=pointer]
+              - generic "자폐스펙트럼장애 아동 부모를 위한 LLM 기반 의사소통 코칭 시스템 개발 및 효과 검증 · 성균관대학교" [ref=e1945] [cursor=pointer]
+              - generic "간호대학생의 환자안전 수행역량 향상을 위한 생성형 AI 기반 시뮬레이션 교육 프로그램 개발 및 효과 검증 · 인천가톨릭대학교" [ref=e1946] [cursor=pointer]
+              - generic "다중자원 상호작용 기반 생성형 AI 학습과정 상태진단 및 적응형 지원 시스템 개발 · 중앙대학교" [ref=e1947] [cursor=pointer]
+              - generic "간호대학생의 임상판단 향상을 위한 생성형 AI 기반 멀티모달 환자사례 학습·평가모델 개발 · 동남보건대학교" [ref=e1948] [cursor=pointer]
+              - generic "건설 입찰문서의 LLM기반 반복학습 시 도메인 편향 문제 보정 연구 · 서울시립대학교" [ref=e1949] [cursor=pointer]
+              - 'generic "임상 의사결정 보조를 위한폐암 TNM 병기 분류 Explainable AI 모델 개발: 전문의·머신러닝·대규모 언어모델 비교 · 동아대학교의료원" [ref=e1950] [cursor=pointer]'
+              - generic "정보이론 기반 변수 상관관계 모사를 통한 고신뢰성 태뷸러 데이터 생성 모델 연구 · 인하대학교" [ref=e1951] [cursor=pointer]
+              - generic "EMR 연계형 LLM 기반 환자 치료여정 맞춤형 메시지 생성 시스템 개발 및 검증 · 가천대학교" [ref=e1952] [cursor=pointer]
+              - generic "진단 자연어 조건부 Anatomy-Informed 생성형 AI를 이용한 환자맞춤형 초음파 치료과정 설명 이미지 생성 기술 개발 · 한국기술교육대학교" [ref=e1953] [cursor=pointer]
+              - generic "AI기반 멀티모달 생체신호 융합-합성 및 강화학습 매칭을 활용한 만성통증 표현형 정밀 중재 시스템(BPS-PPIS) 알고리즘 개발 · 광주보건대학교" [ref=e1954] [cursor=pointer]
+              - generic "생성형 AI 기반 자기참조 연하 동작관찰 및 운동모방 이중훈련 디지털 재활 프로그램 개발과 멀티모달 기반 신경반응 및 삼킴기능 회복에 대한 임상적 검증 · 인제대학교" [ref=e1955] [cursor=pointer]
+              - 'generic "물리 모의 연계 대리 모델과 강화학습 기반 복합 홍수 리스크 평가: LLM 에이전트 기반 자동화 프레임워크 구축 · 고려대학교" [ref=e1956] [cursor=pointer]'
+              - 'generic "식품 영양표시 자동화·검증 시스템 개발 및 실효성 검증: LLM과 반사실적 설명 활용을 중심으로 · 호남대학교" [ref=e1957] [cursor=pointer]'
+              - generic "한국어 대규모언어모델(LLM) 응답의 정신건강 낙인성 진단·완화·검증 통합 시스템 개발 · 서울여자대학교" [ref=e1958] [cursor=pointer]
+              - generic "초거대 언어모델 생성 텍스트의 신뢰성 확보를 위한 ECC-PN 시퀀스 연접 워터마킹 이론 및 고강건 검출 기술 연구 · 울산대학교" [ref=e1959] [cursor=pointer]
+              - generic "회복탄력적 6G/NextG를 위한 월드 모델 기반 상황인지/적응형 통신 아키텍처 연구 · 고려대학교" [ref=e1960] [cursor=pointer]
+              - generic "AI스타펠로우십지원(전북대학교, 학제연계형) · 전북대학교" [ref=e1961] [cursor=pointer]
+              - generic "디지털 헬스케어 분야 생성형 인공지능 연구 윤리 가이드 개발 · 연세대학교" [ref=e1962] [cursor=pointer]
+              - generic "우선순위 감염병 치료제 국가 데이터베이스 구축 및 소재 라이브러리 전략적 비축 · 한국생명공학연구원" [ref=e1963] [cursor=pointer]
+              - generic "생성형 AI 모델의 프라이버시 취약성 평가 및 보호 수준 진단 기술 개발 · 국립창원대학교" [ref=e1964] [cursor=pointer]
+              - generic "Foundation Model 학습 데이터의 프라이버시 리스크 관리 기술 개발 · 한국전자통신연구원" [ref=e1965] [cursor=pointer]
+              - generic "Foundation Model 운용과정에서 민감정보 추론 방지 및 리스크 평가 기술 개발 · 숭실대학교" [ref=e1966] [cursor=pointer]
+            - complementary "선택한 프로젝트 상세" [ref=e1967]:
+              - generic [ref=e1968]: 군집 13 · 파운데이션 모델·범용 학습
+              - heading "무인공장 운용-피지컬AI SDF 특화 기반모델 연구개발" [level=3] [ref=e1969]
+              - generic [ref=e1970]: 전북대학교류덕산 · 전북 전주시 · 2026–2026 (9.30 현재)
+              - generic [ref=e1971]: 79억원
+              - generic [ref=e1972]:
+                - generic [ref=e1973]: 무인공장 운용
+                - generic [ref=e1974]: 무인공장
+                - generic [ref=e1975]: 연구개발
+                - generic [ref=e1976]: 운용 피지컬
+                - generic [ref=e1977]: 기반모델 연구개발
+                - generic [ref=e1978]: sdf
+              - heading "텍스트가 가장 유사한 연구" [level=4] [ref=e1979]
+              - generic [ref=e1980]:
+                - button "Wastewater Foundation Model 기반 분산형 WRRF 자율 에이전틱 디시전 인텔리전스 연구 강원대학교 · 유사도 16.0%" [ref=e1981] [cursor=pointer]:
+                  - text: Wastewater Foundation Model 기반 분산형 WRRF 자율 에이전틱 디시전 인텔리전스 연구
+                  - generic [ref=e1982]: 강원대학교 · 유사도 16.0%
+                - button "능동적 문제 해결을 위한 거대 행동 모델 기반 디지털트윈 자율 운용 기술 개발 한국전자기술연구원 · 유사도 16.0%" [ref=e1983] [cursor=pointer]:
+                  - text: 능동적 문제 해결을 위한 거대 행동 모델 기반 디지털트윈 자율 운용 기술 개발
+                  - generic [ref=e1984]: 한국전자기술연구원 · 유사도 16.0%
+                - button "기계·자동차·전자·철강·이차전지·나노소재 분야 제조특화 AI 공통 모델 개발 한국전자기술연구원 · 유사도 14.2%" [ref=e1985] [cursor=pointer]:
+                  - text: 기계·자동차·전자·철강·이차전지·나노소재 분야 제조특화 AI 공통 모델 개발
+                  - generic [ref=e1986]: 한국전자기술연구원 · 유사도 14.2%
+                - button "생성형 AI 기반 실감형 메타버스 팩토리 기술 개발 성균관대학교 · 유사도 13.9%" [ref=e1987] [cursor=pointer]:
+                  - text: 생성형 AI 기반 실감형 메타버스 팩토리 기술 개발
+                  - generic [ref=e1988]: 성균관대학교 · 유사도 13.9%
+                - button "주력 제조업종의 자율제조를 위한 휴머노이드 로봇 기반 자율공정 운영 기술 개발 한국전자기술연구원 · 유사도 13.9%" [ref=e1989] [cursor=pointer]:
+                  - text: 주력 제조업종의 자율제조를 위한 휴머노이드 로봇 기반 자율공정 운영 기술 개발
+                  - generic [ref=e1990]: 한국전자기술연구원 · 유사도 13.9%
+          - paragraph [ref=e1991]: 점 하나는 대표 프로젝트 하나입니다. 색은 탐색 군집, 크기는 정부 연구비를 완만하게 변환한 값입니다. 점을 선택하면 텍스트가 가장 유사한 연구 5개를 연결합니다. 좌표축 자체에는 의미가 없습니다.
+    - region [ref=e534]:
+      - generic [ref=e536]:
+        - paragraph [ref=e537]: Explore
+        - heading "프로젝트 탐색" [level=2] [ref=e538]
+        - paragraph [ref=e539]: 과제명·연구책임자·기관을 검색하거나 지역과 두 주제 축을 조합해 좁혀보세요.
+      - generic [ref=e540]:
+        - generic "프로젝트 필터" [ref=e541]:
+          - searchbox "과제 검색" [ref=e543]
+          - combobox "지역 필터" [ref=e545]:
+            - option "모든 지역" [selected]
+            - option "서울"
+            - option "경기"
+            - option "대전"
+            - option "부산"
+            - option "강원"
+            - option "광주"
+            - option "대구"
+            - option "인천"
+            - option "경북"
+            - option "충남"
+            - option "충북"
+            - option "울산"
+            - option "경남"
+            - option "전북"
+            - option "세종"
+            - option "제주"
+            - option "전남"
+          - combobox "기술 접근 필터" [ref=e547]:
+            - option "모든 기술 접근" [selected]
+            - option "일반 활용·기타"
+            - option "안전·신뢰·거버넌스"
+            - option "멀티모달·생성콘텐츠"
+            - option "모델·학습·추론"
+            - option "에이전트·상호작용"
+            - option "RAG·지식검색"
+          - combobox "적용 영역 필터" [ref=e549]:
+            - option "모든 적용 영역" [selected]
+            - option "과학·연구"
+            - option "건강·바이오"
+            - option "제조·산업·로봇"
+            - option "교육·인재"
+            - option "문화·콘텐츠"
+            - option "공공·국방·법·사회"
+            - option "비즈니스·서비스"
+            - option "범용·기타"
+          - button "필터 초기화" [ref=e550] [cursor=pointer]
+        - generic [ref=e551]:
+          - generic [ref=e552]:
+            - strong [ref=e553]: 1,151
+            - text: 개 프로젝트
+          - generic [ref=e554]: 정부 연구비는 포함 연도 누적액
+        - generic [ref=e555]:
+          - article [ref=e556]:
+            - generic [ref=e557]:
+              - heading "과학기술기반 미래연구사업 (16차년도)" [level=3] [ref=e558]
+              - generic [ref=e559]:
+                - generic [ref=e560]: 과학기술정책연구원
+                - generic [ref=e561]: 윤정섭
+                - generic [ref=e562]: 세종 세종특별자치시
+                - generic [ref=e563]: 2024–2024
+              - generic [ref=e564]:
+                - generic [ref=e565]: 일반 활용·기타
+                - generic [ref=e566]: 과학·연구
+                - generic [ref=e567]: 인간·사회 영향과 거버넌스
+            - generic [ref=e568]:
+              - strong [ref=e569]: 1.5억원
+              - link "NTIS에서 찾기 ↗" [ref=e570] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1105018595&sort=RANK%2FDESC
+          - article [ref=e571]:
+            - generic [ref=e572]:
+              - heading "현장상황 파악을 위한 영상 제공 및 상황정보 탐색 지능화 기술 개발" [level=3] [ref=e573]
+              - generic [ref=e574]:
+                - generic [ref=e575]: 국립재난안전연구원
+                - generic [ref=e576]: 최선화
+                - generic [ref=e577]: 울산 중구
+                - generic [ref=e578]: 2025–2025
+              - generic [ref=e579]:
+                - generic [ref=e580]: 일반 활용·기타
+                - generic [ref=e581]: 문화·콘텐츠
+                - generic [ref=e582]: 멀티모달·지능형 플랫폼
+            - generic [ref=e583]:
+              - strong [ref=e584]: 6억원
+              - link "NTIS에서 찾기 ↗" [ref=e585] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1315002016&sort=RANK%2FDESC
+          - article [ref=e586]:
+            - generic [ref=e587]:
+              - 'heading "인공지능을 활용한 진로융합 교사연수 프로그램 개발 및 수용의도 촉진효과: 진로전담교사의 학습스타일에 따른 인공지능리터러시의 변화를 중심으로" [level=3] [ref=e588]'
+              - generic [ref=e589]:
+                - generic [ref=e590]: 국립공주대학교
+                - generic [ref=e591]: 어윤경
+                - generic [ref=e592]: 충남 공주시
+                - generic [ref=e593]: 2024–2025
+              - generic [ref=e594]:
+                - generic [ref=e595]: 일반 활용·기타
+                - generic [ref=e596]: 교육·인재
+                - generic [ref=e597]: 교육·학습·평가
+            - generic [ref=e598]:
+              - strong [ref=e599]: 32,175,000원
+              - link "NTIS에서 찾기 ↗" [ref=e600] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368551&sort=RANK%2FDESC
+          - article [ref=e601]:
+            - generic [ref=e602]:
+              - heading "생성형 AI의 범죄위험성 예측 및 형사정책적 대응방안" [level=3] [ref=e603]
+              - generic [ref=e604]:
+                - generic [ref=e605]: 조선대학교
+                - generic [ref=e606]: 이원상
+                - generic [ref=e607]: 광주 동구
+                - generic [ref=e608]: 2023–2025
+              - generic [ref=e609]:
+                - generic [ref=e610]: 안전·신뢰·거버넌스
+                - generic [ref=e611]: 공공·국방·법·사회
+                - generic [ref=e612]: 인간·사회 영향과 거버넌스
+            - generic [ref=e613]:
+              - strong [ref=e614]: 45,656,000원
+              - link "NTIS에서 찾기 ↗" [ref=e615] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368646&sort=RANK%2FDESC
+          - article [ref=e616]:
+            - generic [ref=e617]:
+              - 'heading "질문하는 뇌의 발달: 학령기 아동의 질문 능력" [level=3] [ref=e618]'
+              - generic [ref=e619]:
+                - generic [ref=e620]: 연세대학교
+                - generic [ref=e621]: 송현주
+                - generic [ref=e622]: 서울 서대문구
+                - generic [ref=e623]: 2024–2025
+              - generic [ref=e624]:
+                - generic [ref=e625]: 일반 활용·기타
+                - generic [ref=e626]: 교육·인재
+                - generic [ref=e627]: 인간·사회 영향과 거버넌스
+            - generic [ref=e628]:
+              - strong [ref=e629]: 3.9억원
+              - link "NTIS에서 찾기 ↗" [ref=e630] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368838&sort=RANK%2FDESC
+          - article [ref=e631]:
+            - generic [ref=e632]:
+              - heading "AI기반 자동채점의 성능평가와 인간-AI협업 채점을 위한 평가설계모형 탐색" [level=3] [ref=e633]
+              - generic [ref=e634]:
+                - generic [ref=e635]: 국립공주대학교
+                - generic [ref=e636]: 함은혜
+                - generic [ref=e637]: 충남 공주시
+                - generic [ref=e638]: 2024–2026 (9.30 현재)
+              - generic [ref=e639]:
+                - generic [ref=e640]: 일반 활용·기타
+                - generic [ref=e641]: 교육·인재
+                - generic [ref=e642]: 디자인·창작·사용자 경험
+            - generic [ref=e643]:
+              - strong [ref=e644]: 57,915,000원
+              - link "NTIS에서 찾기 ↗" [ref=e645] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368945&sort=RANK%2FDESC
+          - article [ref=e646]:
+            - generic [ref=e647]:
+              - heading "포스트 AI 시대의 이공계 교육정책 연구" [level=3] [ref=e648]
+              - generic [ref=e649]:
+                - generic [ref=e650]: 세종대학교
+                - generic [ref=e651]: 장혜원
+                - generic [ref=e652]: 서울 광진구
+                - generic [ref=e653]: 2024–2026 (9.30 현재)
+              - generic [ref=e654]:
+                - generic [ref=e655]: 일반 활용·기타
+                - generic [ref=e656]: 교육·인재
+                - generic [ref=e657]: 교육·학습·평가
+            - generic [ref=e658]:
+              - strong [ref=e659]: 57,717,000원
+              - link "NTIS에서 찾기 ↗" [ref=e660] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369662&sort=RANK%2FDESC
+          - article [ref=e661]:
+            - generic [ref=e662]:
+              - heading "생성형 AI 이미지 모델을 활용한 메이크업 디자인 모티브 개발 및 교육 활용 방안 연구" [level=3] [ref=e663]
+              - generic [ref=e664]:
+                - generic [ref=e665]: 서경대학교
+                - generic [ref=e666]: 주영주
+                - generic [ref=e667]: 서울 성북구
+                - generic [ref=e668]: 2023–2023
+              - generic [ref=e669]:
+                - generic [ref=e670]: 일반 활용·기타
+                - generic [ref=e671]: 교육·인재
+                - generic [ref=e672]: 디자인·창작·사용자 경험
+            - generic [ref=e673]:
+              - strong [ref=e674]: 24,370,000원
+              - link "NTIS에서 찾기 ↗" [ref=e675] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369678&sort=RANK%2FDESC
+          - article [ref=e676]:
+            - generic [ref=e677]:
+              - heading "설명인터페이스와 공감인터페이스의 서비스 유형 별 적용을 통한 생성형 인공지능 경험 디자인" [level=3] [ref=e678]
+              - generic [ref=e679]:
+                - generic [ref=e680]: 성신여자대학교
+                - generic [ref=e681]: 강효진
+                - generic [ref=e682]: 서울 성북구
+                - generic [ref=e683]: 2023–2026 (9.30 현재)
+              - generic [ref=e684]:
+                - generic [ref=e685]: 일반 활용·기타
+                - generic [ref=e686]: 비즈니스·서비스
+                - generic [ref=e687]: 디자인·창작·사용자 경험
+            - generic [ref=e688]:
+              - strong [ref=e689]: 77,640,000원
+              - link "NTIS에서 찾기 ↗" [ref=e690] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369846&sort=RANK%2FDESC
+          - article [ref=e691]:
+            - generic [ref=e692]:
+              - 'heading "생성형 인공지능(AI) 기반 예술 속 기술적 대상들의 존재 양식: 시몽동의 기술철학적 접근을 넘어" [level=3] [ref=e693]'
+              - generic [ref=e694]:
+                - generic [ref=e695]: 상지대학교
+                - generic [ref=e696]: 신종천
+                - generic [ref=e697]: 강원 원주시
+                - generic [ref=e698]: 2024–2026 (9.30 현재)
+              - generic [ref=e699]:
+                - generic [ref=e700]: 멀티모달·생성콘텐츠
+                - generic [ref=e701]: 문화·콘텐츠
+                - generic [ref=e702]: 인간·사회 영향과 거버넌스
+            - generic [ref=e703]:
+              - strong [ref=e704]: 43,808,000원
+              - link "NTIS에서 찾기 ↗" [ref=e705] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345370759&sort=RANK%2FDESC
+          - article [ref=e706]:
+            - generic [ref=e707]:
+              - heading "진로상담과 인공지능" [level=3] [ref=e708]
+              - generic [ref=e709]:
+                - generic [ref=e710]: 국립공주대학교
+                - generic [ref=e711]: 어윤경
+                - generic [ref=e712]: 충남 공주시
+                - generic [ref=e713]: 2024–2025
+              - generic [ref=e714]:
+                - generic [ref=e715]: 일반 활용·기타
+                - generic [ref=e716]: 비즈니스·서비스
+                - generic [ref=e717]: 교육·학습·평가
+            - generic [ref=e718]:
+              - strong [ref=e719]: 20,000,000원
+              - link "NTIS에서 찾기 ↗" [ref=e720] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345370848&sort=RANK%2FDESC
+          - article [ref=e721]:
+            - generic [ref=e722]:
+              - heading "맞춤형 음악 창제작을 위한 생성 인공지능 기반 협업 저작 기술 연구" [level=3] [ref=e723]
+              - generic [ref=e724]:
+                - generic [ref=e725]: 성균관대학교
+                - generic [ref=e726]: 이종현
+                - generic [ref=e727]: 서울 종로구
+                - generic [ref=e728]: 2023–2026 (9.30 현재)
+              - generic [ref=e729]:
+                - generic [ref=e730]: 일반 활용·기타
+                - generic [ref=e731]: 문화·콘텐츠
+                - generic [ref=e732]: 멀티모달·지능형 플랫폼
+            - generic [ref=e733]:
+              - strong [ref=e734]: 1.9억원
+              - link "NTIS에서 찾기 ↗" [ref=e735] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345371109&sort=RANK%2FDESC
+        - button "더 보기" [ref=e736] [cursor=pointer]
+    - region [ref=e737]:
+      - generic [ref=e739]:
+        - paragraph [ref=e740]: Key findings
+        - heading "데이터가 말하는 세 가지" [level=2] [ref=e741]
+      - generic [ref=e742]:
+        - article [ref=e743]:
+          - text: FINDING 01
+          - heading "프로젝트의 절반 가까이가 서울에 모였다" [level=3] [ref=e744]
+          - generic [ref=e745]: 48.0% · 553개
+          - paragraph [ref=e746]: 서울·경기·대전 세 지역을 합치면 67.3%다. 대표 수행기관의 공식 소재지 기준이라 실제 공동연구 장소와는 다를 수 있다.
+        - article [ref=e747]:
+          - text: FINDING 02
+          - heading "지역 집중과 기관 집중은 같은 이야기가 아니다" [level=3] [ref=e748]
+          - generic [ref=e749]: 28.0% · 상위 5개 기관
+          - paragraph [ref=e750]: 서울 비중은 크지만 상위 5개 기관이 차지하는 비중은 28.0%다. 연구 활동은 수도권에 모였어도 여러 기관에 나뉘어 있다.
+        - article [ref=e751]:
+          - text: FINDING 03
+          - heading "생성형 AI 연구는 모델 개발보다 활용이 더 넓다" [level=3] [ref=e752]
+          - generic [ref=e753]: 47.0% · 일반 활용·기타
+          - paragraph [ref=e754]: 건강·바이오, 과학·연구, 제조·산업·로봇, 교육 등 적용 영역이 고르게 나타난다. 주제군은 탐색용 규칙 기반 대표 분류다.
+    - region [ref=e755]:
+      - generic [ref=e757]:
+        - paragraph [ref=e758]: Data & methodology
+        - heading "어떻게 만들었나" [level=2] [ref=e759]
+        - paragraph [ref=e760]: NTIS 공식 다운로드 네 패스를 합치고, 관련성·기관 범위·다년도 연결·기관 소재지를 순서대로 검증했습니다.
+      - generic [ref=e761]:
+        - article [ref=e762]:
+          - generic [ref=e763]:
+            - heading "수집에서 분석까지" [level=3] [ref=e764]
+            - generic [ref=e765]: 재현 가능한 단계별 건수
+          - generic [ref=e766]:
+            - generic [ref=e767]:
+              - generic [ref=e768]:
+                - generic [ref=e769]: 네 검색 패스 원본
+                - text: 과제명·한글 키워드·영문 키워드·기본 전체검색
+              - strong [ref=e770]: 6,193
+            - generic [ref=e771]:
+              - generic [ref=e772]:
+                - generic [ref=e773]: 과제 ID 통합
+                - text: 검색 패스 간 정확 중복 제거
+              - strong [ref=e774]: 3,241
+            - generic [ref=e775]:
+              - generic [ref=e776]:
+                - generic [ref=e777]: 최종 포함 연도 레코드
+                - text: 관련성·기관 범위 판정
+              - strong [ref=e778]: 1,698
+            - generic [ref=e779]:
+              - generic [ref=e780]:
+                - generic [ref=e781]: 다년도 대표 프로젝트
+                - text: 이전과제고유번호 체인 연결
+              - strong [ref=e782]: 1,151
+        - complementary [ref=e783]:
+          - heading "해석할 때 주의할 점" [level=3] [ref=e785]
+          - list [ref=e786]:
+            - listitem [ref=e787]: 검색식에 포착된 NTIS 과제만 포함하므로 전체 생성형 AI 연구를 뜻하지 않는다.
+            - listitem [ref=e788]: 2026년은 9월 30일까지 수집한 진행 중 자료다.
+            - listitem [ref=e789]: 지도는 대표 수행기관 소재지이며 실제 연구 현장 전체를 나타내지 않는다. 행정경계는 통계청 2013년 시도 경계 자료를 사용했다.
+            - listitem [ref=e790]: 주제군은 과제명·키워드 규칙의 대표값이며 공식 학문 분류가 아니다.
+            - listitem [ref=e791]: 의미 기반 14개 군집은 텍스트 유사도를 이용한 탐색용 묶음이며, 안정도 ARI 0.61로 경계에 있는 연구는 다른 군집으로 달라질 수 있다.
+            - listitem [ref=e792]: 웹 공개본에서 연구 원문·사업자번호·연락처·내부 검토 로그를 제외했다.
+          - generic [ref=e793]:
+            - link "NTIS 원자료" [ref=e794] [cursor=pointer]:
+              - /url: https://www.ntis.go.kr
+            - link "행정경계 지도 출처" [ref=e795] [cursor=pointer]:
+              - /url: https://github.com/southkorea/southkorea-maps
+            - link "웹 데이터 사전" [ref=e796] [cursor=pointer]:
+              - /url: data/web_data_dictionary.md
+            - link "프로젝트 CSV" [ref=e797] [cursor=pointer]:
+              - /url: data/projects.csv
+  - contentinfo [ref=e798]:
+    - paragraph [ref=e799]:
+      - text: Made by
+      - strong [ref=e800]: Yena Kim (Yenarue)
+      - text: · KAIST ITM.690 · 데이터 갱신 2026-10-01
+    - paragraph [ref=e801]: "출처: NTIS 검색결과 다운로드 · 분석 대상 2023년–2026년 9월 30일 대학·공공 연구기관 생성형 AI 국가 R&D"

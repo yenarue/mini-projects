@@ -59,7 +59,7 @@ function setBlock(set, quiz) {
 </section>`;
 }
 
-export function renderCorePage({ coreSets, quizSchedule = [] }) {
+export function renderCorePage({ coreSets, quizSchedule = [], weeks = [] }) {
   const quizById = new Map(quizSchedule.map((q) => [q.n, q]));
   const multi = coreSets.length > 1;
 
@@ -75,7 +75,7 @@ export function renderCorePage({ coreSets, quizSchedule = [] }) {
 
   const first = coreSets[0];
   const body = `
-${topbar({ active: 'core' })}
+${topbar({ active: 'core', weeks })}
 <div class="layout" id="top">
   ${sidebar({
     chapterLabel: '쪽지시험 대비',
@@ -83,8 +83,6 @@ ${topbar({ active: 'core' })}
     subtitle: multi ? `${coreSets.length}개 회차` : (first ? `Quiz ${first.quiz}` : ''),
     progressText: `항목 ${navItems.length}개`,
     navItems,
-    prev: { href: 'index.html', label: '학기 지도' },
-    next: first ? { href: `quiz.html?quiz=${first.quiz}`, label: '퀴즈' } : null,
   })}
   <main>
     <p class="breadcrumb"><a href="index.html">학기 지도</a> › 핵심 개념</p>

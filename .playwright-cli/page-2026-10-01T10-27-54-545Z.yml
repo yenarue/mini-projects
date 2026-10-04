@@ -1,0 +1,1904 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - link "예나르의 KAIST ITM" [ref=f1e3] [cursor=pointer]:
+      - /url: ../../index.html
+    - navigation "페이지 섹션" [ref=f1e6]:
+      - link "← 프로젝트" [ref=f1e7] [cursor=pointer]:
+        - /url: ../../index.html#projects
+      - link "한눈에" [ref=f1e8] [cursor=pointer]:
+        - /url: "#summary"
+      - link "지역" [ref=f1e9] [cursor=pointer]:
+        - /url: "#where"
+      - link "기관" [ref=f1e10] [cursor=pointer]:
+        - /url: "#who"
+      - link "주제" [ref=f1e11] [cursor=pointer]:
+        - /url: "#what"
+      - link "관계" [ref=f1e12] [cursor=pointer]:
+        - /url: "#relations"
+      - link "과제 탐색" [ref=f1e13] [cursor=pointer]:
+        - /url: "#explore"
+      - link "방법론" [ref=f1e14] [cursor=pointer]:
+        - /url: "#method"
+    - button "라이트·다크 테마 전환" [ref=f1e16] [cursor=pointer]: ◐
+  - main [ref=f1e17]:
+    - generic [ref=f1e19]:
+      - generic [ref=f1e20]:
+        - paragraph [ref=f1e21]: KAIST ITM.690 · 인공지능 경영과 법 · 과제 2
+        - heading "대한민국 생성형 AI 연구 지도" [level=1] [ref=f1e22]
+        - paragraph [ref=f1e23]: 국가 R&D 과제로 보는 누가, 어디서, 무엇을 연구하고 있는가. 2023년부터 2026년 9월 30일까지 대학·공공 연구기관의 생성형 AI 프로젝트를 연결해 살펴봅니다.
+        - generic [ref=f1e24]:
+          - generic [ref=f1e25]: NTIS 국가 R&D
+          - generic [ref=f1e26]: 2023–2026.09.30
+          - generic [ref=f1e27]: 대학·공공 연구기관
+          - generic [ref=f1e28]: 다년도 프로젝트 기준
+      - complementary "데이터 범위" [ref=f1e29]:
+        - strong [ref=f1e30]: 이 지도에서 세는 것
+        - paragraph [ref=f1e31]: 연도별 과제 레코드를 그대로 더하지 않고, NTIS 이전과제 연결을 따라 하나의 연구 프로젝트로 묶었습니다.
+        - generic [ref=f1e32]: 분석 기준 2026-09-30 · 데이터 갱신 2026-10-01 · 1,151개 프로젝트
+    - region [ref=f1e33]:
+      - generic [ref=f1e34]:
+        - generic [ref=f1e35]:
+          - paragraph [ref=f1e36]: Overview
+          - heading "한눈에 보기" [level=2] [ref=f1e37]
+        - generic [ref=f1e38]: 대표 프로젝트 기준 · 2026.09.30 현재
+      - generic [ref=f1e39]:
+        - article [ref=f1e40]:
+          - generic [ref=f1e41]: 1,151개
+          - generic [ref=f1e42]: 대표 프로젝트
+          - generic [ref=f1e43]: 1,698개 연도 레코드를 다년도 연결
+        - article [ref=f1e44]:
+          - generic [ref=f1e45]: 172개
+          - generic [ref=f1e46]: 대표 수행기관
+          - generic [ref=f1e47]: 산학협력단·과거 기관명 정규화
+        - article [ref=f1e48]:
+          - generic [ref=f1e49]: 1,110개
+          - generic [ref=f1e50]: 연구그룹
+          - generic [ref=f1e51]: 연구책임자 + 정규화 기관
+        - article [ref=f1e52]:
+          - generic [ref=f1e53]: 3,670.4억원
+          - generic [ref=f1e54]: 정부 연구비
+          - generic [ref=f1e55]: 포함 연도의 정부투자연구비 누적
+      - generic [ref=f1e56]:
+        - strong [ref=f1e57]: "읽는 법:"
+        - text: 프로젝트 수는 다년도 연차를 연결한 대표 프로젝트, 연구비는 분석 범위에 포함된 연도별 정부투자연구비의 합계입니다.
+    - region [ref=f1e58]:
+      - generic [ref=f1e60]:
+        - paragraph [ref=f1e61]: How it changed
+        - heading "연구 활동은 어떻게 늘었나" [level=2] [ref=f1e62]
+        - paragraph [ref=f1e63]: 활성 프로젝트와 신규 프로젝트를 함께 봅니다. 2026년은 9월 30일까지의 진행 중 자료이므로 완결 연도와 증감률로 직접 비교하지 않습니다.
+      - generic [ref=f1e64]:
+        - article [ref=f1e65]:
+          - generic [ref=f1e66]:
+            - heading "연도별 활성·신규 프로젝트" [level=3] [ref=f1e67]
+            - generic [ref=f1e68]: "단위: 프로젝트"
+          - generic "연도별 활성 프로젝트와 신규 프로젝트 막대그래프" [ref=f1e69]:
+            - generic [ref=f1e70]:
+              - generic [ref=f1e71]:
+                - generic [ref=f1e72]: "27"
+                - generic [ref=f1e74]: "27"
+              - generic [ref=f1e76]:
+                - text: "2023"
+                - generic [ref=f1e77]: 완결 연도
+            - generic [ref=f1e78]:
+              - generic [ref=f1e79]:
+                - generic [ref=f1e80]: "197"
+                - generic [ref=f1e82]: "213"
+              - generic [ref=f1e84]:
+                - text: "2024"
+                - generic [ref=f1e85]: 완결 연도
+            - generic [ref=f1e86]:
+              - generic [ref=f1e87]:
+                - generic [ref=f1e88]: "358"
+                - generic [ref=f1e90]: "529"
+              - generic [ref=f1e92]:
+                - text: "2025"
+                - generic [ref=f1e93]: 완결 연도
+            - generic [ref=f1e94]:
+              - generic [ref=f1e95]:
+                - generic [ref=f1e96]: "569"
+                - generic [ref=f1e98]: "929"
+              - generic [ref=f1e100]:
+                - text: "2026"
+                - generic [ref=f1e101]: 9월 30일 현재
+          - generic [ref=f1e102]:
+            - generic [ref=f1e103]: 활성 프로젝트
+            - generic [ref=f1e105]: 신규 프로젝트
+        - complementary [ref=f1e107]:
+          - generic [ref=f1e108]:
+            - heading "연구비 스냅샷" [level=3] [ref=f1e109]
+            - generic [ref=f1e110]: 정부투자연구비
+          - generic [ref=f1e111]:
+            - generic [ref=f1e112]:
+              - strong [ref=f1e113]: 2025년 정부 연구비
+              - generic [ref=f1e114]: 1,138.7억원
+              - paragraph [ref=f1e115]: 완결 연도 중 가장 최근 연도. 활성 529개 프로젝트.
+            - generic [ref=f1e116]:
+              - strong [ref=f1e117]: 2026년 9월 30일 현재 정부 연구비
+              - generic [ref=f1e118]: 2,009.3억원
+              - paragraph [ref=f1e119]: 진행 중 자료이므로 2025년과 증감률로 직접 비교하지 않습니다.
+            - generic [ref=f1e120]:
+              - strong [ref=f1e121]: 전체 정부 연구비
+              - generic [ref=f1e122]: 3,670.4억원
+              - paragraph [ref=f1e123]: 2023년–2026년 9월 30일 분석 범위에 포함된 연도별 금액 합계.
+    - region [ref=f1e124]:
+      - generic [ref=f1e126]:
+        - paragraph [ref=f1e127]: Where
+        - heading "어디에서 연구하는가" [level=2] [ref=f1e128]
+        - paragraph [ref=f1e129]: 연구비 주집행지역이 아니라 정규화한 대표 수행기관의 공식 소재지를 사용했습니다. 지역을 누르면 해당 프로젝트로 이동합니다.
+      - generic [ref=f1e130]:
+        - article [ref=f1e131]:
+          - generic [ref=f1e132]:
+            - generic [ref=f1e133]:
+              - heading "시도별 연구 분포" [level=3] [ref=f1e134]
+              - text: 타일 지도 · 진할수록 많음
+            - generic "지역 지도 보기 방식" [ref=f1e135]:
+              - button "타일" [pressed] [ref=f1e136] [cursor=pointer]
+              - button "지도" [ref=f1e137] [cursor=pointer]
+          - generic "시도별 프로젝트 수 타일 지도" [ref=f1e138]:
+            - button "서울 프로젝트 553개" [ref=f1e139] [cursor=pointer]:
+              - generic [ref=f1e140]: 서울
+              - generic [ref=f1e141]: "553"
+              - generic [ref=f1e142]: 48.0%
+            - button "경기 프로젝트 114개" [ref=f1e143] [cursor=pointer]:
+              - generic [ref=f1e144]: 경기
+              - generic [ref=f1e145]: "114"
+              - generic [ref=f1e146]: 9.9%
+            - button "인천 프로젝트 34개" [ref=f1e147] [cursor=pointer]:
+              - generic [ref=f1e148]: 인천
+              - generic [ref=f1e149]: "34"
+              - generic [ref=f1e150]: 3.0%
+            - button "강원 프로젝트 42개" [ref=f1e151] [cursor=pointer]:
+              - generic [ref=f1e152]: 강원
+              - generic [ref=f1e153]: "42"
+              - generic [ref=f1e154]: 3.6%
+            - button "충북 프로젝트 27개" [ref=f1e155] [cursor=pointer]:
+              - generic [ref=f1e156]: 충북
+              - generic [ref=f1e157]: "27"
+              - generic [ref=f1e158]: 2.3%
+            - button "충남 프로젝트 27개" [ref=f1e159] [cursor=pointer]:
+              - generic [ref=f1e160]: 충남
+              - generic [ref=f1e161]: "27"
+              - generic [ref=f1e162]: 2.3%
+            - button "세종 프로젝트 15개" [ref=f1e163] [cursor=pointer]:
+              - generic [ref=f1e164]: 세종
+              - generic [ref=f1e165]: "15"
+              - generic [ref=f1e166]: 1.3%
+            - button "대전 프로젝트 108개" [ref=f1e167] [cursor=pointer]:
+              - generic [ref=f1e168]: 대전
+              - generic [ref=f1e169]: "108"
+              - generic [ref=f1e170]: 9.4%
+            - button "경북 프로젝트 30개" [ref=f1e171] [cursor=pointer]:
+              - generic [ref=f1e172]: 경북
+              - generic [ref=f1e173]: "30"
+              - generic [ref=f1e174]: 2.6%
+            - button "대구 프로젝트 36개" [ref=f1e175] [cursor=pointer]:
+              - generic [ref=f1e176]: 대구
+              - generic [ref=f1e177]: "36"
+              - generic [ref=f1e178]: 3.1%
+            - button "울산 프로젝트 24개" [ref=f1e179] [cursor=pointer]:
+              - generic [ref=f1e180]: 울산
+              - generic [ref=f1e181]: "24"
+              - generic [ref=f1e182]: 2.1%
+            - button "부산 프로젝트 55개" [ref=f1e183] [cursor=pointer]:
+              - generic [ref=f1e184]: 부산
+              - generic [ref=f1e185]: "55"
+              - generic [ref=f1e186]: 4.8%
+            - button "경남 프로젝트 20개" [ref=f1e187] [cursor=pointer]:
+              - generic [ref=f1e188]: 경남
+              - generic [ref=f1e189]: "20"
+              - generic [ref=f1e190]: 1.7%
+            - button "전북 프로젝트 16개" [ref=f1e191] [cursor=pointer]:
+              - generic [ref=f1e192]: 전북
+              - generic [ref=f1e193]: "16"
+              - generic [ref=f1e194]: 1.4%
+            - button "전남 프로젝트 1개" [ref=f1e195] [cursor=pointer]:
+              - generic [ref=f1e196]: 전남
+              - generic [ref=f1e197]: "1"
+              - generic [ref=f1e198]: 0.1%
+            - button "광주 프로젝트 42개" [ref=f1e199] [cursor=pointer]:
+              - generic [ref=f1e200]: 광주
+              - generic [ref=f1e201]: "42"
+              - generic [ref=f1e202]: 3.6%
+            - button "제주 프로젝트 7개" [ref=f1e203] [cursor=pointer]:
+              - generic [ref=f1e204]: 제주
+              - generic [ref=f1e205]: "7"
+              - generic [ref=f1e206]: 0.6%
+        - article [ref=f1e207]:
+          - generic [ref=f1e208]:
+            - heading "상위 지역" [level=3] [ref=f1e209]
+            - generic [ref=f1e210]: 프로젝트 수 · 정부 연구비
+          - generic [ref=f1e211]:
+            - generic [ref=f1e212]:
+              - generic "서울" [ref=f1e213]
+              - generic [ref=f1e216]:
+                - text: "553"
+                - generic [ref=f1e217]: 1,527.9억원
+            - generic [ref=f1e218]:
+              - generic "경기" [ref=f1e219]
+              - generic [ref=f1e222]:
+                - text: "114"
+                - generic [ref=f1e223]: 666.3억원
+            - generic [ref=f1e224]:
+              - generic "대전" [ref=f1e225]
+              - generic [ref=f1e228]:
+                - text: "108"
+                - generic [ref=f1e229]: 642.5억원
+            - generic [ref=f1e230]:
+              - generic "부산" [ref=f1e231]
+              - generic [ref=f1e234]:
+                - text: "55"
+                - generic [ref=f1e235]: 63억원
+            - generic [ref=f1e236]:
+              - generic "강원" [ref=f1e237]
+              - generic [ref=f1e240]:
+                - text: "42"
+                - generic [ref=f1e241]: 85.1억원
+            - generic [ref=f1e242]:
+              - generic "광주" [ref=f1e243]
+              - generic [ref=f1e246]:
+                - text: "42"
+                - generic [ref=f1e247]: 73.5억원
+            - generic [ref=f1e248]:
+              - generic "대구" [ref=f1e249]
+              - generic [ref=f1e252]:
+                - text: "36"
+                - generic [ref=f1e253]: 39.4억원
+            - generic [ref=f1e254]:
+              - generic "인천" [ref=f1e255]
+              - generic [ref=f1e258]:
+                - text: "34"
+                - generic [ref=f1e259]: 59.7억원
+            - generic [ref=f1e260]:
+              - generic "경북" [ref=f1e261]
+              - generic [ref=f1e264]:
+                - text: "30"
+                - generic [ref=f1e265]: 100.4억원
+            - generic [ref=f1e266]:
+              - generic "충남" [ref=f1e267]
+              - generic [ref=f1e270]:
+                - text: "27"
+                - generic [ref=f1e271]: 20.2억원
+    - region [ref=f1e272]:
+      - generic [ref=f1e274]:
+        - paragraph [ref=f1e275]: Who
+        - heading "누가 연구하는가" [level=2] [ref=f1e276]
+        - paragraph [ref=f1e277]: 산학협력단과 과거 명칭은 대학 본체로 통합하고, 연구그룹은 동명이인 위험을 줄이기 위해 연구책임자와 기관의 조합으로 셌습니다.
+      - generic [ref=f1e278]:
+        - article [ref=f1e279]:
+          - generic [ref=f1e280]:
+            - heading "프로젝트 수 상위 기관" [level=3] [ref=f1e281]
+            - generic [ref=f1e282]: 정규화 기관 기준
+          - generic [ref=f1e283]:
+            - generic [ref=f1e284]:
+              - generic "연세대학교" [ref=f1e285]
+              - generic [ref=f1e288]:
+                - text: "76"
+                - generic [ref=f1e289]: 196.2억원
+            - generic [ref=f1e290]:
+              - generic "서울대학교" [ref=f1e291]
+              - generic [ref=f1e294]:
+                - text: "69"
+                - generic [ref=f1e295]: 161.3억원
+            - generic [ref=f1e296]:
+              - generic "고려대학교" [ref=f1e297]
+              - generic [ref=f1e300]:
+                - text: "66"
+                - generic [ref=f1e301]: 239억원
+            - generic [ref=f1e302]:
+              - generic "한국과학기술원" [ref=f1e303]
+              - generic [ref=f1e306]:
+                - text: "62"
+                - generic [ref=f1e307]: 136.1억원
+            - generic [ref=f1e308]:
+              - generic "성균관대학교" [ref=f1e309]
+              - generic [ref=f1e312]:
+                - text: "49"
+                - generic [ref=f1e313]: 56.7억원
+            - generic [ref=f1e314]:
+              - generic "한양대학교" [ref=f1e315]
+              - generic [ref=f1e318]:
+                - text: "45"
+                - generic [ref=f1e319]: 166.5억원
+            - generic [ref=f1e320]:
+              - generic "중앙대학교" [ref=f1e321]
+              - generic [ref=f1e324]:
+                - text: "30"
+                - generic [ref=f1e325]: 78.5억원
+            - generic [ref=f1e326]:
+              - generic "이화여자대학교" [ref=f1e327]
+              - generic [ref=f1e330]:
+                - text: "29"
+                - generic [ref=f1e331]: 39.6억원
+            - generic [ref=f1e332]:
+              - generic "부산대학교" [ref=f1e333]
+              - generic [ref=f1e336]:
+                - text: "25"
+                - generic [ref=f1e337]: 31.2억원
+            - generic [ref=f1e338]:
+              - generic "경희대학교" [ref=f1e339]
+              - generic [ref=f1e342]:
+                - text: "23"
+                - generic [ref=f1e343]: 72억원
+        - complementary [ref=f1e344]:
+          - generic [ref=f1e345]:
+            - heading "집중도" [level=3] [ref=f1e346]
+            - generic [ref=f1e347]: 상위 기관 합계
+          - generic [ref=f1e348]:
+            - generic [ref=f1e349]:
+              - strong [ref=f1e350]: 상위 5개 기관
+              - generic [ref=f1e351]: 322개 · 28.0%
+              - paragraph [ref=f1e352]: 연세대, 서울대, 고려대, KAIST, 성균관대.
+            - generic [ref=f1e353]:
+              - strong [ref=f1e354]: 상위 10개 기관
+              - generic [ref=f1e355]: 474개 · 41.2%
+              - paragraph [ref=f1e356]: 지역 집중도보다 기관 집중도는 낮습니다.
+            - generic [ref=f1e357]:
+              - strong [ref=f1e358]: 연구그룹 최대 프로젝트 수
+              - generic [ref=f1e359]: 3개
+              - paragraph [ref=f1e360]: 대부분의 연구책임자+기관 조합은 1–2개 프로젝트를 수행합니다.
+    - region [ref=f1e361]:
+      - generic [ref=f1e363]:
+        - paragraph [ref=f1e364]: What
+        - heading "무엇을 연구하는가" [level=2] [ref=f1e365]
+        - paragraph [ref=f1e366]: 공식 연구분야의 미분류를 보완하기 위해 과제명과 키워드로 기술 접근과 적용 영역을 따로 분류했습니다.
+      - article [ref=f1e367]:
+        - generic [ref=f1e368]:
+          - group "주제 분류 축" [ref=f1e369]:
+            - button "기술 접근" [ref=f1e370] [cursor=pointer]
+            - button "적용 영역" [ref=f1e371] [cursor=pointer]
+          - generic [ref=f1e372]: 6개 기술 접근 대표 주제군
+        - generic [ref=f1e373]:
+          - article [ref=f1e374]:
+            - heading "일반 활용·기타" [level=3] [ref=f1e375]
+            - generic [ref=f1e376]: 54147.0%
+          - article [ref=f1e379]:
+            - heading "안전·신뢰·거버넌스" [level=3] [ref=f1e380]
+            - generic [ref=f1e381]: 19817.2%
+          - article [ref=f1e384]:
+            - heading "멀티모달·생성콘텐츠" [level=3] [ref=f1e385]
+            - generic [ref=f1e386]: 14412.5%
+          - article [ref=f1e389]:
+            - heading "모델·학습·추론" [level=3] [ref=f1e390]
+            - generic [ref=f1e391]: 14212.3%
+          - article [ref=f1e394]:
+            - heading "에이전트·상호작용" [level=3] [ref=f1e395]
+            - generic [ref=f1e396]: 847.3%
+          - article [ref=f1e399]:
+            - heading "RAG·지식검색" [level=3] [ref=f1e400]
+            - generic [ref=f1e401]: 423.6%
+    - region [ref=f1e404]:
+      - generic [ref=f1e405]:
+        - generic [ref=f1e406]:
+          - paragraph [ref=f1e407]: Research landscape
+          - heading "키워드와 연구 관계" [level=2] [ref=f1e408]
+          - paragraph [ref=f1e409]: 1,151개 대표 프로젝트의 제목·키워드·연구목표·연구내용을 함께 분석해 반복되는 연구어와 가까운 프로젝트를 살펴봅니다.
+        - generic [ref=f1e410]: 탐색 분석 · 공식 학문 분류 아님
+      - article [ref=f1e411]:
+        - tablist "탐색 분석 보기" [ref=f1e412]:
+          - tab "키워드" [ref=f1e413] [cursor=pointer]
+          - tab "연구 지도" [selected] [ref=f1e414] [cursor=pointer]
+          - tab "군집 요약" [ref=f1e415] [cursor=pointer]
+        - generic [ref=f1e802]:
+          - generic [ref=f1e803]:
+            - generic [ref=f1e804]:
+              - text: 군집 보기
+              - combobox "연구 지도 군집 필터" [ref=f1e805]:
+                - option "전체 14개 군집" [selected]
+                - option "1. 교육·학습·평가 · 106개"
+                - option "2. 대규모 언어모델 활용·해석 · 155개"
+                - option "3. 멀티모달·지능형 플랫폼 · 149개"
+                - option "4. 이미지·영상 생성과 탐지 · 107개"
+                - option "5. 과학·공학 생성설계 · 77개"
+                - option "6. AI 에이전트·멀티에이전트 · 49개"
+                - option "7. RAG·검색증강생성 · 37개"
+                - option "8. 응용 프레임워크·평가 · 59개"
+                - option "9. LLM 추론·메모리·가속 · 47개"
+                - option "10. 디지털 트윈·시뮬레이션 · 54개"
+                - option "11. 임상·환자 의사결정 지원 · 66개"
+                - option "12. 인간·사회 영향과 거버넌스 · 131개"
+                - option "13. 파운데이션 모델·범용 학습 · 60개"
+                - option "14. 디자인·창작·사용자 경험 · 54개"
+            - button "지도 초기화" [ref=f1e806] [cursor=pointer]
+          - generic [ref=f1e807]:
+            - img "전체 프로젝트 연구 관계 산점도. 점을 선택하면 유사 연구가 연결됩니다." [ref=f1e2056]:
+              - generic [aria-hidden] [ref=f1e2063] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2064] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2065] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2066] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2067] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2068] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2069] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2070] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2071] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2072] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2073] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2074] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2075] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2076] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2077] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2078] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2079] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2080] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2081] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2082] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2083] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2084] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2085] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2086] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2087] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2088] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2089] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2090] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2091] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2092] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2093] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2094] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2095] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2096] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2097] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2098] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2099] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2100] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2101] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2102] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2103] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2104] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2105] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2106] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2107] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2108] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2109] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2110] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2111] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2112] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2113] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2114] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2115] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2116] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2117] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2118] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2119] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2120] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2121] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2122] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2123] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2124] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2125] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2126] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2127] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2128] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2129] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2130] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2131] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2132] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2133] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2134] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2135] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2136] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2137] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2138] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2139] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2140] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2141] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2142] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2143] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2144] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2145] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2146] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2147] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2148] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2149] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2150] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2151] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2152] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2153] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2154] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2155] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2156] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2157] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2158] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2159] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2160] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2161] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2162] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2163] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2164] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2165] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2166] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2167] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2168] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2169] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2170] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2171] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2172] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2173] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2174] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2175] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2176] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2177] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2178] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2179] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2180] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2181] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2182] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2183] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2184] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2185] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2186] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2187] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2188] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2189] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2190] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2191] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2192] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2193] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2194] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2195] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2196] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2197] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2198] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2199] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2200] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2201] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2202] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2203] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2204] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2205] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2206] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2207] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2208] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2209] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2210] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2211] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2212] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2213] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2214] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2215] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2216] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2217] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2218] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2219] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2220] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2221] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2222] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2223] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2224] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2225] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2226] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2227] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2228] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2229] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2230] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2231] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2232] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2233] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2234] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2235] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2236] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2237] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2238] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2239] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2240] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2241] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2242] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2243] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2244] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2245] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2246] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2247] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2248] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2249] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2250] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2251] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2252] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2253] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2254] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2255] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2256] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2257] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2258] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2259] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2260] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2261] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2262] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2263] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2264] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2265] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2266] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2267] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2268] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2269] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2270] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2271] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2272] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2273] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2274] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2275] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2276] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2277] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2278] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2279] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2280] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2281] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2282] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2283] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2284] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2285] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2286] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2287] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2288] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2289] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2290] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2291] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2292] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2293] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2294] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2295] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2296] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2297] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2298] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2299] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2300] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2301] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2302] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2303] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2304] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2305] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2306] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2307] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2308] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2309] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2310] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2311] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2312] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2313] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2314] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2315] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2316] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2317] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2318] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2319] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2320] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2321] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2322] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2323] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2324] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2325] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2326] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2327] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2328] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2329] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2330] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2331] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2332] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2333] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2334] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2335] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2336] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2337] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2338] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2339] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2340] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2341] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2342] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2343] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2344] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2345] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2346] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2347] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2348] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2349] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2350] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2351] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2352] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2353] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2354] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2355] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2356] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2357] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2358] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2359] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2360] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2361] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2362] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2363] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2364] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2365] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2366] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2367] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2368] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2369] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2370] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2371] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2372] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2373] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2374] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2375] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2376] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2377] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2378] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2379] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2380] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2381] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2382] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2383] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2384] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2385] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2386] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2387] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2388] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2389] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2390] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2391] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2392] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2393] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2394] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2395] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2396] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2397] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2398] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2399] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2400] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2401] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2402] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2403] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2404] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2405] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2406] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2407] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2408] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2409] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2410] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2411] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2412] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2413] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2414] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2415] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2416] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2417] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2418] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2419] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2420] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2421] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2422] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2423] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2424] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2425] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2426] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2427] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2428] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2429] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2430] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2431] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2432] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2433] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2434] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2435] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2436] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2437] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2438] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2439] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2440] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2441] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2442] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2443] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2444] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2445] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2446] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2447] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2448] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2449] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2450] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2451] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2452] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2453] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2454] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2455] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2456] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2457] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2458] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2459] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2460] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2461] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2462] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2463] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2464] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2465] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2466] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2467] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2468] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2469] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2470] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2471] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2472] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2473] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2474] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2475] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2476] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2477] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2478] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2479] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2480] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2481] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2482] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2483] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2484] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2485] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2486] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2487] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2488] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2489] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2490] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2491] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2492] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2493] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2494] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2495] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2496] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2497] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2498] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2499] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2500] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2501] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2502] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2503] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2504] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2505] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2506] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2507] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2508] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2509] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2510] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2511] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2512] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2513] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2514] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2515] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2516] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2517] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2518] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2519] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2520] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2521] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2522] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2523] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2524] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2525] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2526] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2527] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2528] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2529] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2530] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2531] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2532] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2533] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2534] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2535] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2536] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2537] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2538] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2539] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2540] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2541] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2542] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2543] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2544] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2545] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2546] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2547] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2548] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2549] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2550] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2551] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2552] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2553] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2554] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2555] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2556] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2557] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2558] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2559] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2560] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2561] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2562] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2563] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2564] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2565] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2566] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2567] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2568] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2569] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2570] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2571] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2572] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2573] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2574] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2575] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2576] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2577] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2578] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2579] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2580] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2581] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2582] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2583] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2584] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2585] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2586] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2587] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2588] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2589] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2590] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2591] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2592] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2593] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2594] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2595] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2596] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2597] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2598] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2599] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2600] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2601] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2602] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2603] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2604] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2605] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2606] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2607] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2608] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2609] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2610] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2611] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2612] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2613] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2614] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2615] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2616] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2617] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2618] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2619] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2620] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2621] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2622] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2623] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2624] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2625] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2626] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2627] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2628] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2629] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2630] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2631] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2632] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2633] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2634] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2635] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2636] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2637] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2638] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2639] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2640] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2641] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2642] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2643] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2644] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2645] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2646] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2647] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2648] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2649] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2650] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2651] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2652] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2653] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2654] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2655] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2656] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2657] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2658] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2659] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2660] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2661] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2662] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2663] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2664] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2665] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2666] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2667] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2668] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2669] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2670] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2671] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2672] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2673] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2674] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2675] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2676] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2677] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2678] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2679] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2680] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2681] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2682] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2683] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2684] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2685] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2686] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2687] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2688] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2689] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2690] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2691] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2692] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2693] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2694] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2695] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2696] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2697] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2698] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2699] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2700] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2701] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2702] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2703] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2704] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2705] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2706] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2707] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2708] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2709] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2710] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2711] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2712] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2713] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2714] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2715] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2716] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2717] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2718] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2719] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2720] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2721] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2722] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2723] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2724] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2725] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2726] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2727] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2728] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2729] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2730] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2731] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2732] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2733] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2734] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2735] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2736] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2737] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2738] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2739] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2740] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2741] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2742] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2743] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2744] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2745] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2746] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2747] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2748] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2749] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2750] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2751] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2752] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2753] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2754] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2755] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2756] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2757] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2758] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2759] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2760] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2761] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2762] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2763] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2764] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2765] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2766] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2767] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2768] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2769] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2770] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2771] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2772] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2773] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2774] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2775] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2776] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2777] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2778] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2779] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2780] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2781] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2782] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2783] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2784] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2785] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2786] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2787] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2788] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2789] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2790] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2791] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2792] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2793] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2794] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2795] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2796] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2797] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2798] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2799] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2800] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2801] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2802] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2803] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2804] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2805] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2806] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2807] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2808] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2809] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2810] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2811] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2812] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2813] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2814] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2815] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2816] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2817] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2818] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2819] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2820] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2821] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2822] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2823] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2824] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2825] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2826] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2827] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2828] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2829] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2830] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2831] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2832] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2833] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2834] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2835] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2836] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2837] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2838] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2839] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2840] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2841] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2842] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2843] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2844] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2845] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2846] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2847] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2848] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2849] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2850] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2851] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2852] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2853] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2854] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2855] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2856] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2857] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2858] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2859] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2860] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2861] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2862] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2863] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2864] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2865] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2866] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2867] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2868] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2869] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2870] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2871] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2872] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2873] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2874] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2875] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2876] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2877] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2878] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2879] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2880] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2881] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2882] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2883] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2884] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2885] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2886] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2887] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2888] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2889] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2890] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2891] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2892] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2893] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2894] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2895] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2896] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2897] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2898] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2899] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2900] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2901] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2902] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2903] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2904] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2905] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2906] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2907] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2908] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2909] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2910] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2911] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2912] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2913] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2914] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2915] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2916] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2917] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2918] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2919] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2920] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2921] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2922] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2923] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2924] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2925] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2926] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2927] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2928] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2929] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2930] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2931] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2932] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2933] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2934] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2935] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2936] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2937] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2938] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2939] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2940] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2941] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2942] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2943] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2944] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2945] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2946] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2947] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2948] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2949] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2950] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2951] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2952] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2953] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2954] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2955] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2956] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2957] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2958] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2959] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2960] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2961] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2962] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2963] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2964] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2965] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2966] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2967] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2968] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2969] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2970] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2971] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2972] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2973] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2974] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2975] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2976] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2977] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2978] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2979] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2980] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2981] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2982] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2983] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2984] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2985] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2986] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2987] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2988] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2989] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2990] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2991] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2992] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2993] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2994] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2995] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2996] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2997] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2998] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e2999] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3000] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3001] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3002] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3003] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3004] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3005] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3006] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3007] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3008] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3009] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3010] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3011] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3012] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3013] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3014] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3015] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3016] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3017] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3018] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3019] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3020] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3021] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3022] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3023] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3024] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3025] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3026] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3027] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3028] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3029] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3030] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3031] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3032] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3033] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3034] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3035] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3036] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3037] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3038] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3039] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3040] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3041] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3042] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3043] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3044] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3045] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3046] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3047] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3048] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3049] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3050] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3051] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3052] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3053] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3054] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3055] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3056] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3057] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3058] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3059] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3060] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3061] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3062] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3063] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3064] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3065] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3066] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3067] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3068] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3069] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3070] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3071] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3072] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3073] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3074] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3075] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3076] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3077] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3078] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3079] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3080] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3081] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3082] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3083] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3084] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3085] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3086] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3087] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3088] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3089] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3090] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3091] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3092] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3093] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3094] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3095] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3096] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3097] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3098] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3099] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3100] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3101] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3102] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3103] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3104] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3105] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3106] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3107] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3108] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3109] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3110] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3111] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3112] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3113] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3114] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3115] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3116] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3117] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3118] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3119] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3120] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3121] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3122] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3123] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3124] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3125] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3126] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3127] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3128] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3129] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3130] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3131] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3132] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3133] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3134] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3135] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3136] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3137] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3138] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3139] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3140] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3141] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3142] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3143] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3144] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3145] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3146] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3147] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3148] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3149] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3150] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3151] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3152] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3153] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3154] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3155] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3156] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3157] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3158] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3159] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3160] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3161] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3162] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3163] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3164] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3165] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3166] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3167] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3168] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3169] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3170] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3171] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3172] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3173] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3174] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3175] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3176] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3177] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3178] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3179] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3180] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3181] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3182] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3183] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3184] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3185] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3186] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3187] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3188] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3189] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3190] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3191] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3192] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3193] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3194] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3195] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3196] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3197] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3198] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3199] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3200] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3201] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3202] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3203] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3204] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3205] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3206] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3207] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3208] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3209] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3210] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3211] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3212] [cursor=pointer]
+              - generic [aria-hidden] [ref=f1e3213] [cursor=pointer]
+            - complementary "선택한 프로젝트 상세" [ref=f1e1967]:
+              - generic [ref=f1e3214]: 군집 2 · 대규모 언어모델 활용·해석
+              - heading "생성형 AI 기반 한의학이론의 인지계산신경과학적 모형개발을 통한 한의임상보조 AI 에이전트 개발" [level=3] [ref=f1e3215]
+              - generic [ref=f1e3216]: 가천대학교김창업 · 경기 성남시 · 2024–2026 (9.30 현재)
+              - generic [ref=f1e3217]: 9.5억원
+              - generic [ref=f1e3218]:
+                - generic [ref=f1e3219]: 인지계산신경과학적 모형개발을
+                - generic [ref=f1e3220]: 인지계산신경과학적
+                - generic [ref=f1e3221]: 모형개발을
+                - generic [ref=f1e3222]: 모형개발을 한의임상보조
+                - generic [ref=f1e3223]: medicine
+                - generic [ref=f1e3224]: 에이전트
+              - heading "텍스트가 가장 유사한 연구" [level=4] [ref=f1e3225]
+              - generic [ref=f1e3226]:
+                - button "메디컬 트윈 모델과 생성형 AI를 활용한 한의 LLM 맞춤형 Real-World-Like 데이터 생성 기술 개발 연구 한국한의학연구원 · 유사도 29.0%" [ref=f1e3227] [cursor=pointer]:
+                  - text: 메디컬 트윈 모델과 생성형 AI를 활용한 한의 LLM 맞춤형 Real-World-Like 데이터 생성 기술 개발 연구
+                  - generic [ref=f1e3228]: 한국한의학연구원 · 유사도 29.0%
+                - button "한의약 빅데이터 기반 인공지능 활용 기술 개발 한국한의학연구원 · 유사도 23.8%" [ref=f1e3229] [cursor=pointer]:
+                  - text: 한의약 빅데이터 기반 인공지능 활용 기술 개발
+                  - generic [ref=f1e3230]: 한국한의학연구원 · 유사도 23.8%
+                - button "임상 증후(症候) 중심 변증-질환 통합 교육모듈 개발 및 적용 원광대학교 · 유사도 13.2%" [ref=f1e3231] [cursor=pointer]:
+                  - text: 임상 증후(症候) 중심 변증-질환 통합 교육모듈 개발 및 적용
+                  - generic [ref=f1e3232]: 원광대학교 · 유사도 13.2%
+                - 'button "한국어 존대법 처리의 인지신경과학 모델: EEG, fMRI, LLM 통합 연구 고려대학교 · 유사도 12.8%" [ref=f1e3233] [cursor=pointer]':
+                  - text: "한국어 존대법 처리의 인지신경과학 모델: EEG, fMRI, LLM 통합 연구"
+                  - generic [ref=f1e3234]: 고려대학교 · 유사도 12.8%
+                - button "한국프로야구 구단의 재무성과 분석을 위한 RAG-LLM 프레임워크 개발 한양대학교 · 유사도 12.6%" [ref=f1e3235] [cursor=pointer]:
+                  - text: 한국프로야구 구단의 재무성과 분석을 위한 RAG-LLM 프레임워크 개발
+                  - generic [ref=f1e3236]: 한양대학교 · 유사도 12.6%
+          - paragraph [ref=f1e1991]: 점 하나는 대표 프로젝트 하나입니다. 색은 탐색 군집, 크기는 정부 연구비를 완만하게 변환한 값입니다. 점을 선택하면 텍스트가 가장 유사한 연구 5개를 연결합니다. 좌표축 자체에는 의미가 없습니다.
+    - region [ref=f1e534]:
+      - generic [ref=f1e536]:
+        - paragraph [ref=f1e537]: Explore
+        - heading "프로젝트 탐색" [level=2] [ref=f1e538]
+        - paragraph [ref=f1e539]: 과제명·연구책임자·기관을 검색하거나 지역과 두 주제 축을 조합해 좁혀보세요.
+      - generic [ref=f1e540]:
+        - generic "프로젝트 필터" [ref=f1e541]:
+          - searchbox "과제 검색" [ref=f1e543]
+          - combobox "지역 필터" [ref=f1e545]:
+            - option "모든 지역" [selected]
+            - option "서울"
+            - option "경기"
+            - option "대전"
+            - option "부산"
+            - option "강원"
+            - option "광주"
+            - option "대구"
+            - option "인천"
+            - option "경북"
+            - option "충남"
+            - option "충북"
+            - option "울산"
+            - option "경남"
+            - option "전북"
+            - option "세종"
+            - option "제주"
+            - option "전남"
+          - combobox "기술 접근 필터" [ref=f1e547]:
+            - option "모든 기술 접근" [selected]
+            - option "일반 활용·기타"
+            - option "안전·신뢰·거버넌스"
+            - option "멀티모달·생성콘텐츠"
+            - option "모델·학습·추론"
+            - option "에이전트·상호작용"
+            - option "RAG·지식검색"
+          - combobox "적용 영역 필터" [ref=f1e549]:
+            - option "모든 적용 영역" [selected]
+            - option "과학·연구"
+            - option "건강·바이오"
+            - option "제조·산업·로봇"
+            - option "교육·인재"
+            - option "문화·콘텐츠"
+            - option "공공·국방·법·사회"
+            - option "비즈니스·서비스"
+            - option "범용·기타"
+          - button "필터 초기화" [ref=f1e550] [cursor=pointer]
+        - generic [ref=f1e551]:
+          - generic [ref=f1e552]:
+            - strong [ref=f1e553]: 1,151
+            - text: 개 프로젝트
+          - generic [ref=f1e554]: 정부 연구비는 포함 연도 누적액
+        - generic [ref=f1e555]:
+          - article [ref=f1e556]:
+            - generic [ref=f1e557]:
+              - heading "과학기술기반 미래연구사업 (16차년도)" [level=3] [ref=f1e558]
+              - generic [ref=f1e559]:
+                - generic [ref=f1e560]: 과학기술정책연구원
+                - generic [ref=f1e561]: 윤정섭
+                - generic [ref=f1e562]: 세종 세종특별자치시
+                - generic [ref=f1e563]: 2024–2024
+              - generic [ref=f1e564]:
+                - generic [ref=f1e565]: 일반 활용·기타
+                - generic [ref=f1e566]: 과학·연구
+                - generic [ref=f1e567]: 인간·사회 영향과 거버넌스
+            - generic [ref=f1e568]:
+              - strong [ref=f1e569]: 1.5억원
+              - link "NTIS에서 찾기 ↗" [ref=f1e570] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1105018595&sort=RANK%2FDESC
+          - article [ref=f1e571]:
+            - generic [ref=f1e572]:
+              - heading "현장상황 파악을 위한 영상 제공 및 상황정보 탐색 지능화 기술 개발" [level=3] [ref=f1e573]
+              - generic [ref=f1e574]:
+                - generic [ref=f1e575]: 국립재난안전연구원
+                - generic [ref=f1e576]: 최선화
+                - generic [ref=f1e577]: 울산 중구
+                - generic [ref=f1e578]: 2025–2025
+              - generic [ref=f1e579]:
+                - generic [ref=f1e580]: 일반 활용·기타
+                - generic [ref=f1e581]: 문화·콘텐츠
+                - generic [ref=f1e582]: 멀티모달·지능형 플랫폼
+            - generic [ref=f1e583]:
+              - strong [ref=f1e584]: 6억원
+              - link "NTIS에서 찾기 ↗" [ref=f1e585] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1315002016&sort=RANK%2FDESC
+          - article [ref=f1e586]:
+            - generic [ref=f1e587]:
+              - 'heading "인공지능을 활용한 진로융합 교사연수 프로그램 개발 및 수용의도 촉진효과: 진로전담교사의 학습스타일에 따른 인공지능리터러시의 변화를 중심으로" [level=3] [ref=f1e588]'
+              - generic [ref=f1e589]:
+                - generic [ref=f1e590]: 국립공주대학교
+                - generic [ref=f1e591]: 어윤경
+                - generic [ref=f1e592]: 충남 공주시
+                - generic [ref=f1e593]: 2024–2025
+              - generic [ref=f1e594]:
+                - generic [ref=f1e595]: 일반 활용·기타
+                - generic [ref=f1e596]: 교육·인재
+                - generic [ref=f1e597]: 교육·학습·평가
+            - generic [ref=f1e598]:
+              - strong [ref=f1e599]: 32,175,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e600] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368551&sort=RANK%2FDESC
+          - article [ref=f1e601]:
+            - generic [ref=f1e602]:
+              - heading "생성형 AI의 범죄위험성 예측 및 형사정책적 대응방안" [level=3] [ref=f1e603]
+              - generic [ref=f1e604]:
+                - generic [ref=f1e605]: 조선대학교
+                - generic [ref=f1e606]: 이원상
+                - generic [ref=f1e607]: 광주 동구
+                - generic [ref=f1e608]: 2023–2025
+              - generic [ref=f1e609]:
+                - generic [ref=f1e610]: 안전·신뢰·거버넌스
+                - generic [ref=f1e611]: 공공·국방·법·사회
+                - generic [ref=f1e612]: 인간·사회 영향과 거버넌스
+            - generic [ref=f1e613]:
+              - strong [ref=f1e614]: 45,656,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e615] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368646&sort=RANK%2FDESC
+          - article [ref=f1e616]:
+            - generic [ref=f1e617]:
+              - 'heading "질문하는 뇌의 발달: 학령기 아동의 질문 능력" [level=3] [ref=f1e618]'
+              - generic [ref=f1e619]:
+                - generic [ref=f1e620]: 연세대학교
+                - generic [ref=f1e621]: 송현주
+                - generic [ref=f1e622]: 서울 서대문구
+                - generic [ref=f1e623]: 2024–2025
+              - generic [ref=f1e624]:
+                - generic [ref=f1e625]: 일반 활용·기타
+                - generic [ref=f1e626]: 교육·인재
+                - generic [ref=f1e627]: 인간·사회 영향과 거버넌스
+            - generic [ref=f1e628]:
+              - strong [ref=f1e629]: 3.9억원
+              - link "NTIS에서 찾기 ↗" [ref=f1e630] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368838&sort=RANK%2FDESC
+          - article [ref=f1e631]:
+            - generic [ref=f1e632]:
+              - heading "AI기반 자동채점의 성능평가와 인간-AI협업 채점을 위한 평가설계모형 탐색" [level=3] [ref=f1e633]
+              - generic [ref=f1e634]:
+                - generic [ref=f1e635]: 국립공주대학교
+                - generic [ref=f1e636]: 함은혜
+                - generic [ref=f1e637]: 충남 공주시
+                - generic [ref=f1e638]: 2024–2026 (9.30 현재)
+              - generic [ref=f1e639]:
+                - generic [ref=f1e640]: 일반 활용·기타
+                - generic [ref=f1e641]: 교육·인재
+                - generic [ref=f1e642]: 디자인·창작·사용자 경험
+            - generic [ref=f1e643]:
+              - strong [ref=f1e644]: 57,915,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e645] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368945&sort=RANK%2FDESC
+          - article [ref=f1e646]:
+            - generic [ref=f1e647]:
+              - heading "포스트 AI 시대의 이공계 교육정책 연구" [level=3] [ref=f1e648]
+              - generic [ref=f1e649]:
+                - generic [ref=f1e650]: 세종대학교
+                - generic [ref=f1e651]: 장혜원
+                - generic [ref=f1e652]: 서울 광진구
+                - generic [ref=f1e653]: 2024–2026 (9.30 현재)
+              - generic [ref=f1e654]:
+                - generic [ref=f1e655]: 일반 활용·기타
+                - generic [ref=f1e656]: 교육·인재
+                - generic [ref=f1e657]: 교육·학습·평가
+            - generic [ref=f1e658]:
+              - strong [ref=f1e659]: 57,717,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e660] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369662&sort=RANK%2FDESC
+          - article [ref=f1e661]:
+            - generic [ref=f1e662]:
+              - heading "생성형 AI 이미지 모델을 활용한 메이크업 디자인 모티브 개발 및 교육 활용 방안 연구" [level=3] [ref=f1e663]
+              - generic [ref=f1e664]:
+                - generic [ref=f1e665]: 서경대학교
+                - generic [ref=f1e666]: 주영주
+                - generic [ref=f1e667]: 서울 성북구
+                - generic [ref=f1e668]: 2023–2023
+              - generic [ref=f1e669]:
+                - generic [ref=f1e670]: 일반 활용·기타
+                - generic [ref=f1e671]: 교육·인재
+                - generic [ref=f1e672]: 디자인·창작·사용자 경험
+            - generic [ref=f1e673]:
+              - strong [ref=f1e674]: 24,370,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e675] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369678&sort=RANK%2FDESC
+          - article [ref=f1e676]:
+            - generic [ref=f1e677]:
+              - heading "설명인터페이스와 공감인터페이스의 서비스 유형 별 적용을 통한 생성형 인공지능 경험 디자인" [level=3] [ref=f1e678]
+              - generic [ref=f1e679]:
+                - generic [ref=f1e680]: 성신여자대학교
+                - generic [ref=f1e681]: 강효진
+                - generic [ref=f1e682]: 서울 성북구
+                - generic [ref=f1e683]: 2023–2026 (9.30 현재)
+              - generic [ref=f1e684]:
+                - generic [ref=f1e685]: 일반 활용·기타
+                - generic [ref=f1e686]: 비즈니스·서비스
+                - generic [ref=f1e687]: 디자인·창작·사용자 경험
+            - generic [ref=f1e688]:
+              - strong [ref=f1e689]: 77,640,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e690] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369846&sort=RANK%2FDESC
+          - article [ref=f1e691]:
+            - generic [ref=f1e692]:
+              - 'heading "생성형 인공지능(AI) 기반 예술 속 기술적 대상들의 존재 양식: 시몽동의 기술철학적 접근을 넘어" [level=3] [ref=f1e693]'
+              - generic [ref=f1e694]:
+                - generic [ref=f1e695]: 상지대학교
+                - generic [ref=f1e696]: 신종천
+                - generic [ref=f1e697]: 강원 원주시
+                - generic [ref=f1e698]: 2024–2026 (9.30 현재)
+              - generic [ref=f1e699]:
+                - generic [ref=f1e700]: 멀티모달·생성콘텐츠
+                - generic [ref=f1e701]: 문화·콘텐츠
+                - generic [ref=f1e702]: 인간·사회 영향과 거버넌스
+            - generic [ref=f1e703]:
+              - strong [ref=f1e704]: 43,808,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e705] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345370759&sort=RANK%2FDESC
+          - article [ref=f1e706]:
+            - generic [ref=f1e707]:
+              - heading "진로상담과 인공지능" [level=3] [ref=f1e708]
+              - generic [ref=f1e709]:
+                - generic [ref=f1e710]: 국립공주대학교
+                - generic [ref=f1e711]: 어윤경
+                - generic [ref=f1e712]: 충남 공주시
+                - generic [ref=f1e713]: 2024–2025
+              - generic [ref=f1e714]:
+                - generic [ref=f1e715]: 일반 활용·기타
+                - generic [ref=f1e716]: 비즈니스·서비스
+                - generic [ref=f1e717]: 교육·학습·평가
+            - generic [ref=f1e718]:
+              - strong [ref=f1e719]: 20,000,000원
+              - link "NTIS에서 찾기 ↗" [ref=f1e720] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345370848&sort=RANK%2FDESC
+          - article [ref=f1e721]:
+            - generic [ref=f1e722]:
+              - heading "맞춤형 음악 창제작을 위한 생성 인공지능 기반 협업 저작 기술 연구" [level=3] [ref=f1e723]
+              - generic [ref=f1e724]:
+                - generic [ref=f1e725]: 성균관대학교
+                - generic [ref=f1e726]: 이종현
+                - generic [ref=f1e727]: 서울 종로구
+                - generic [ref=f1e728]: 2023–2026 (9.30 현재)
+              - generic [ref=f1e729]:
+                - generic [ref=f1e730]: 일반 활용·기타
+                - generic [ref=f1e731]: 문화·콘텐츠
+                - generic [ref=f1e732]: 멀티모달·지능형 플랫폼
+            - generic [ref=f1e733]:
+              - strong [ref=f1e734]: 1.9억원
+              - link "NTIS에서 찾기 ↗" [ref=f1e735] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345371109&sort=RANK%2FDESC
+        - button "더 보기" [ref=f1e736] [cursor=pointer]
+    - region [ref=f1e737]:
+      - generic [ref=f1e739]:
+        - paragraph [ref=f1e740]: Key findings
+        - heading "데이터가 말하는 세 가지" [level=2] [ref=f1e741]
+      - generic [ref=f1e742]:
+        - article [ref=f1e743]:
+          - text: FINDING 01
+          - heading "프로젝트의 절반 가까이가 서울에 모였다" [level=3] [ref=f1e744]
+          - generic [ref=f1e745]: 48.0% · 553개
+          - paragraph [ref=f1e746]: 서울·경기·대전 세 지역을 합치면 67.3%다. 대표 수행기관의 공식 소재지 기준이라 실제 공동연구 장소와는 다를 수 있다.
+        - article [ref=f1e747]:
+          - text: FINDING 02
+          - heading "지역 집중과 기관 집중은 같은 이야기가 아니다" [level=3] [ref=f1e748]
+          - generic [ref=f1e749]: 28.0% · 상위 5개 기관
+          - paragraph [ref=f1e750]: 서울 비중은 크지만 상위 5개 기관이 차지하는 비중은 28.0%다. 연구 활동은 수도권에 모였어도 여러 기관에 나뉘어 있다.
+        - article [ref=f1e751]:
+          - text: FINDING 03
+          - heading "생성형 AI 연구는 모델 개발보다 활용이 더 넓다" [level=3] [ref=f1e752]
+          - generic [ref=f1e753]: 47.0% · 일반 활용·기타
+          - paragraph [ref=f1e754]: 건강·바이오, 과학·연구, 제조·산업·로봇, 교육 등 적용 영역이 고르게 나타난다. 주제군은 탐색용 규칙 기반 대표 분류다.
+    - region [ref=f1e755]:
+      - generic [ref=f1e757]:
+        - paragraph [ref=f1e758]: Data & methodology
+        - heading "어떻게 만들었나" [level=2] [ref=f1e759]
+        - paragraph [ref=f1e760]: NTIS 공식 다운로드 네 패스를 합치고, 관련성·기관 범위·다년도 연결·기관 소재지를 순서대로 검증했습니다.
+      - generic [ref=f1e761]:
+        - article [ref=f1e762]:
+          - generic [ref=f1e763]:
+            - heading "수집에서 분석까지" [level=3] [ref=f1e764]
+            - generic [ref=f1e765]: 재현 가능한 단계별 건수
+          - generic [ref=f1e766]:
+            - generic [ref=f1e767]:
+              - generic [ref=f1e768]:
+                - generic [ref=f1e769]: 네 검색 패스 원본
+                - text: 과제명·한글 키워드·영문 키워드·기본 전체검색
+              - strong [ref=f1e770]: 6,193
+            - generic [ref=f1e771]:
+              - generic [ref=f1e772]:
+                - generic [ref=f1e773]: 과제 ID 통합
+                - text: 검색 패스 간 정확 중복 제거
+              - strong [ref=f1e774]: 3,241
+            - generic [ref=f1e775]:
+              - generic [ref=f1e776]:
+                - generic [ref=f1e777]: 최종 포함 연도 레코드
+                - text: 관련성·기관 범위 판정
+              - strong [ref=f1e778]: 1,698
+            - generic [ref=f1e779]:
+              - generic [ref=f1e780]:
+                - generic [ref=f1e781]: 다년도 대표 프로젝트
+                - text: 이전과제고유번호 체인 연결
+              - strong [ref=f1e782]: 1,151
+        - complementary [ref=f1e783]:
+          - heading "해석할 때 주의할 점" [level=3] [ref=f1e785]
+          - list [ref=f1e786]:
+            - listitem [ref=f1e787]: 검색식에 포착된 NTIS 과제만 포함하므로 전체 생성형 AI 연구를 뜻하지 않는다.
+            - listitem [ref=f1e788]: 2026년은 9월 30일까지 수집한 진행 중 자료다.
+            - listitem [ref=f1e789]: 지도는 대표 수행기관 소재지이며 실제 연구 현장 전체를 나타내지 않는다. 행정경계는 통계청 2013년 시도 경계 자료를 사용했다.
+            - listitem [ref=f1e790]: 주제군은 과제명·키워드 규칙의 대표값이며 공식 학문 분류가 아니다.
+            - listitem [ref=f1e791]: 의미 기반 14개 군집은 텍스트 유사도를 이용한 탐색용 묶음이며, 안정도 ARI 0.61로 경계에 있는 연구는 다른 군집으로 달라질 수 있다.
+            - listitem [ref=f1e792]: 웹 공개본에서 연구 원문·사업자번호·연락처·내부 검토 로그를 제외했다.
+          - generic [ref=f1e793]:
+            - link "NTIS 원자료" [ref=f1e794] [cursor=pointer]:
+              - /url: https://www.ntis.go.kr
+            - link "행정경계 지도 출처" [ref=f1e795] [cursor=pointer]:
+              - /url: https://github.com/southkorea/southkorea-maps
+            - link "웹 데이터 사전" [ref=f1e796] [cursor=pointer]:
+              - /url: data/web_data_dictionary.md
+            - link "프로젝트 CSV" [ref=f1e797] [cursor=pointer]:
+              - /url: data/projects.csv
+  - contentinfo [ref=f1e798]:
+    - paragraph [ref=f1e799]:
+      - text: Made by
+      - strong [ref=f1e800]: Yena Kim (Yenarue)
+      - text: · KAIST ITM.690 · 데이터 갱신 2026-10-01
+    - paragraph [ref=f1e801]: "출처: NTIS 검색결과 다운로드 · 분석 대상 2023년–2026년 9월 30일 대학·공공 연구기관 생성형 AI 국가 R&D"

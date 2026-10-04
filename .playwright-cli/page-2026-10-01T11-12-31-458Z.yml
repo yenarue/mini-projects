@@ -1,0 +1,792 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - link "예나르의 KAIST ITM" [ref=e3] [cursor=pointer]:
+      - /url: ../../index.html
+    - navigation "페이지 섹션" [ref=e6]:
+      - link "← 프로젝트" [ref=e7] [cursor=pointer]:
+        - /url: ../../index.html#projects
+      - link "한눈에" [ref=e8] [cursor=pointer]:
+        - /url: "#summary"
+      - link "지역" [ref=e9] [cursor=pointer]:
+        - /url: "#where"
+      - link "기관" [ref=e10] [cursor=pointer]:
+        - /url: "#who"
+      - link "주제" [ref=e11] [cursor=pointer]:
+        - /url: "#what"
+      - link "관계" [ref=e12] [cursor=pointer]:
+        - /url: "#relations"
+      - link "과제 탐색" [ref=e13] [cursor=pointer]:
+        - /url: "#explore"
+      - link "방법론" [ref=e14] [cursor=pointer]:
+        - /url: "#method"
+    - button "라이트·다크 테마 전환" [ref=e16] [cursor=pointer]: ◐
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: KAIST ITM.690 · 인공지능 경영과 법 · 과제 2
+        - heading "대한민국 생성형 AI 연구 지도" [level=1] [ref=e22]
+        - paragraph [ref=e23]: 국가 R&D 과제로 보는 누가, 어디서, 무엇을 연구하고 있는가. 2023년부터 2026년 9월 30일까지 대학·공공 연구기관의 생성형 AI 프로젝트를 연결해 살펴봅니다.
+        - generic [ref=e24]:
+          - generic [ref=e25]: NTIS 국가 R&D
+          - generic [ref=e26]: 2023–2026.09.30
+          - generic [ref=e27]: 대학·공공 연구기관
+          - generic [ref=e28]: 다년도 프로젝트 기준
+      - complementary "데이터 범위" [ref=e29]:
+        - strong [ref=e30]: 이 지도에서 세는 것
+        - paragraph [ref=e31]: 연도별 과제 레코드를 그대로 더하지 않고, NTIS 이전과제 연결을 따라 하나의 연구 프로젝트로 묶었습니다.
+        - generic [ref=e32]: 분석 기준 2026-09-30 · 데이터 갱신 2026-10-01 · 1,151개 프로젝트
+    - region [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Overview
+          - heading "한눈에 보기" [level=2] [ref=e37]
+        - generic [ref=e38]: 대표 프로젝트 기준 · 2026.09.30 현재
+      - generic [ref=e39]:
+        - article [ref=e40]:
+          - generic [ref=e41]: 1,151개
+          - generic [ref=e42]: 대표 프로젝트
+          - generic [ref=e43]: 1,698개 연도 레코드를 다년도 연결
+        - article [ref=e44]:
+          - generic [ref=e45]: 172개
+          - generic [ref=e46]: 대표 수행기관
+          - generic [ref=e47]: 산학협력단·과거 기관명 정규화
+        - article [ref=e48]:
+          - generic [ref=e49]: 1,110개
+          - generic [ref=e50]: 연구그룹
+          - generic [ref=e51]: 연구책임자 + 정규화 기관
+        - article [ref=e52]:
+          - generic [ref=e53]: 3,670.4억원
+          - generic [ref=e54]: 정부 연구비
+          - generic [ref=e55]: 포함 연도의 정부투자연구비 누적
+      - generic [ref=e56]:
+        - strong [ref=e57]: "읽는 법:"
+        - text: 프로젝트 수는 다년도 연차를 연결한 대표 프로젝트, 연구비는 분석 범위에 포함된 연도별 정부투자연구비의 합계입니다.
+    - region [ref=e58]:
+      - generic [ref=e60]:
+        - paragraph [ref=e61]: How it changed
+        - heading "연구 활동은 어떻게 늘었나" [level=2] [ref=e62]
+        - paragraph [ref=e63]: 활성 프로젝트와 신규 프로젝트를 함께 봅니다. 2026년은 9월 30일까지의 진행 중 자료이므로 완결 연도와 증감률로 직접 비교하지 않습니다.
+      - generic [ref=e64]:
+        - article [ref=e65]:
+          - generic [ref=e66]:
+            - heading "연도별 활성·신규 프로젝트" [level=3] [ref=e67]
+            - generic [ref=e68]: "단위: 프로젝트"
+          - generic "연도별 활성 프로젝트와 신규 프로젝트 막대그래프" [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e71]:
+                - generic [ref=e72]: "27"
+                - generic [ref=e74]: "27"
+              - generic [ref=e76]:
+                - text: "2023"
+                - generic [ref=e77]: 완결 연도
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: "197"
+                - generic [ref=e82]: "213"
+              - generic [ref=e84]:
+                - text: "2024"
+                - generic [ref=e85]: 완결 연도
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - generic [ref=e88]: "358"
+                - generic [ref=e90]: "529"
+              - generic [ref=e92]:
+                - text: "2025"
+                - generic [ref=e93]: 완결 연도
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - generic [ref=e96]: "569"
+                - generic [ref=e98]: "929"
+              - generic [ref=e100]:
+                - text: "2026"
+                - generic [ref=e101]: 9월 30일 현재
+          - generic [ref=e102]:
+            - generic [ref=e103]: 활성 프로젝트
+            - generic [ref=e105]: 신규 프로젝트
+        - complementary [ref=e107]:
+          - generic [ref=e108]:
+            - heading "연구비 스냅샷" [level=3] [ref=e109]
+            - generic [ref=e110]: 정부투자연구비
+          - generic [ref=e111]:
+            - generic [ref=e112]:
+              - strong [ref=e113]: 2025년 정부 연구비
+              - generic [ref=e114]: 1,138.7억원
+              - paragraph [ref=e115]: 완결 연도 중 가장 최근 연도. 활성 529개 프로젝트.
+            - generic [ref=e116]:
+              - strong [ref=e117]: 2026년 9월 30일 현재 정부 연구비
+              - generic [ref=e118]: 2,009.3억원
+              - paragraph [ref=e119]: 진행 중 자료이므로 2025년과 증감률로 직접 비교하지 않습니다.
+            - generic [ref=e120]:
+              - strong [ref=e121]: 전체 정부 연구비
+              - generic [ref=e122]: 3,670.4억원
+              - paragraph [ref=e123]: 2023년–2026년 9월 30일 분석 범위에 포함된 연도별 금액 합계.
+    - region [ref=e124]:
+      - generic [ref=e126]:
+        - paragraph [ref=e127]: Where
+        - heading "어디에서 연구하는가" [level=2] [ref=e128]
+        - paragraph [ref=e129]: 연구비 주집행지역이 아니라 정규화한 대표 수행기관의 공식 소재지를 사용했습니다. 지역을 누르면 해당 프로젝트로 이동합니다.
+      - generic [ref=e130]:
+        - article [ref=e131]:
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - heading "시도별 연구 분포" [level=3] [ref=e134]
+              - text: 타일 지도 · 진할수록 많음
+            - generic "지역 지도 보기 방식" [ref=e135]:
+              - button "타일" [pressed] [ref=e136] [cursor=pointer]
+              - button "지도" [ref=e137] [cursor=pointer]
+          - generic "시도별 프로젝트 수 타일 지도" [ref=e138]:
+            - button "서울 프로젝트 553개" [ref=e139] [cursor=pointer]:
+              - generic [ref=e140]: 서울
+              - generic [ref=e141]: "553"
+              - generic [ref=e142]: 48.0%
+            - button "경기 프로젝트 114개" [ref=e143] [cursor=pointer]:
+              - generic [ref=e144]: 경기
+              - generic [ref=e145]: "114"
+              - generic [ref=e146]: 9.9%
+            - button "인천 프로젝트 34개" [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]: 인천
+              - generic [ref=e149]: "34"
+              - generic [ref=e150]: 3.0%
+            - button "강원 프로젝트 42개" [ref=e151] [cursor=pointer]:
+              - generic [ref=e152]: 강원
+              - generic [ref=e153]: "42"
+              - generic [ref=e154]: 3.6%
+            - button "충북 프로젝트 27개" [ref=e155] [cursor=pointer]:
+              - generic [ref=e156]: 충북
+              - generic [ref=e157]: "27"
+              - generic [ref=e158]: 2.3%
+            - button "충남 프로젝트 27개" [ref=e159] [cursor=pointer]:
+              - generic [ref=e160]: 충남
+              - generic [ref=e161]: "27"
+              - generic [ref=e162]: 2.3%
+            - button "세종 프로젝트 15개" [ref=e163] [cursor=pointer]:
+              - generic [ref=e164]: 세종
+              - generic [ref=e165]: "15"
+              - generic [ref=e166]: 1.3%
+            - button "대전 프로젝트 108개" [ref=e167] [cursor=pointer]:
+              - generic [ref=e168]: 대전
+              - generic [ref=e169]: "108"
+              - generic [ref=e170]: 9.4%
+            - button "경북 프로젝트 30개" [ref=e171] [cursor=pointer]:
+              - generic [ref=e172]: 경북
+              - generic [ref=e173]: "30"
+              - generic [ref=e174]: 2.6%
+            - button "대구 프로젝트 36개" [ref=e175] [cursor=pointer]:
+              - generic [ref=e176]: 대구
+              - generic [ref=e177]: "36"
+              - generic [ref=e178]: 3.1%
+            - button "울산 프로젝트 24개" [ref=e179] [cursor=pointer]:
+              - generic [ref=e180]: 울산
+              - generic [ref=e181]: "24"
+              - generic [ref=e182]: 2.1%
+            - button "부산 프로젝트 55개" [ref=e183] [cursor=pointer]:
+              - generic [ref=e184]: 부산
+              - generic [ref=e185]: "55"
+              - generic [ref=e186]: 4.8%
+            - button "경남 프로젝트 20개" [ref=e187] [cursor=pointer]:
+              - generic [ref=e188]: 경남
+              - generic [ref=e189]: "20"
+              - generic [ref=e190]: 1.7%
+            - button "전북 프로젝트 16개" [ref=e191] [cursor=pointer]:
+              - generic [ref=e192]: 전북
+              - generic [ref=e193]: "16"
+              - generic [ref=e194]: 1.4%
+            - button "전남 프로젝트 1개" [ref=e195] [cursor=pointer]:
+              - generic [ref=e196]: 전남
+              - generic [ref=e197]: "1"
+              - generic [ref=e198]: 0.1%
+            - button "광주 프로젝트 42개" [ref=e199] [cursor=pointer]:
+              - generic [ref=e200]: 광주
+              - generic [ref=e201]: "42"
+              - generic [ref=e202]: 3.6%
+            - button "제주 프로젝트 7개" [ref=e203] [cursor=pointer]:
+              - generic [ref=e204]: 제주
+              - generic [ref=e205]: "7"
+              - generic [ref=e206]: 0.6%
+        - article [ref=e207]:
+          - generic [ref=e208]:
+            - heading "상위 지역" [level=3] [ref=e209]
+            - generic [ref=e210]: 프로젝트 수 · 정부 연구비
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - generic "서울" [ref=e213]
+              - generic [ref=e216]:
+                - text: "553"
+                - generic [ref=e217]: 1,527.9억원
+            - generic [ref=e218]:
+              - generic "경기" [ref=e219]
+              - generic [ref=e222]:
+                - text: "114"
+                - generic [ref=e223]: 666.3억원
+            - generic [ref=e224]:
+              - generic "대전" [ref=e225]
+              - generic [ref=e228]:
+                - text: "108"
+                - generic [ref=e229]: 642.5억원
+            - generic [ref=e230]:
+              - generic "부산" [ref=e231]
+              - generic [ref=e234]:
+                - text: "55"
+                - generic [ref=e235]: 63억원
+            - generic [ref=e236]:
+              - generic "강원" [ref=e237]
+              - generic [ref=e240]:
+                - text: "42"
+                - generic [ref=e241]: 85.1억원
+            - generic [ref=e242]:
+              - generic "광주" [ref=e243]
+              - generic [ref=e246]:
+                - text: "42"
+                - generic [ref=e247]: 73.5억원
+            - generic [ref=e248]:
+              - generic "대구" [ref=e249]
+              - generic [ref=e252]:
+                - text: "36"
+                - generic [ref=e253]: 39.4억원
+            - generic [ref=e254]:
+              - generic "인천" [ref=e255]
+              - generic [ref=e258]:
+                - text: "34"
+                - generic [ref=e259]: 59.7억원
+            - generic [ref=e260]:
+              - generic "경북" [ref=e261]
+              - generic [ref=e264]:
+                - text: "30"
+                - generic [ref=e265]: 100.4억원
+            - generic [ref=e266]:
+              - generic "충남" [ref=e267]
+              - generic [ref=e270]:
+                - text: "27"
+                - generic [ref=e271]: 20.2억원
+    - region [ref=e272]:
+      - generic [ref=e274]:
+        - paragraph [ref=e275]: Who
+        - heading "누가 연구하는가" [level=2] [ref=e276]
+        - paragraph [ref=e277]: 산학협력단과 과거 명칭은 대학 본체로 통합하고, 연구그룹은 동명이인 위험을 줄이기 위해 연구책임자와 기관의 조합으로 셌습니다.
+      - generic [ref=e278]:
+        - article [ref=e279]:
+          - generic [ref=e280]:
+            - heading "프로젝트 수 상위 기관" [level=3] [ref=e281]
+            - generic [ref=e282]: 정규화 기관 기준
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - generic "연세대학교" [ref=e285]
+              - generic [ref=e288]:
+                - text: "76"
+                - generic [ref=e289]: 196.2억원
+            - generic [ref=e290]:
+              - generic "서울대학교" [ref=e291]
+              - generic [ref=e294]:
+                - text: "69"
+                - generic [ref=e295]: 161.3억원
+            - generic [ref=e296]:
+              - generic "고려대학교" [ref=e297]
+              - generic [ref=e300]:
+                - text: "66"
+                - generic [ref=e301]: 239억원
+            - generic [ref=e302]:
+              - generic "한국과학기술원" [ref=e303]
+              - generic [ref=e306]:
+                - text: "62"
+                - generic [ref=e307]: 136.1억원
+            - generic [ref=e308]:
+              - generic "성균관대학교" [ref=e309]
+              - generic [ref=e312]:
+                - text: "49"
+                - generic [ref=e313]: 56.7억원
+            - generic [ref=e314]:
+              - generic "한양대학교" [ref=e315]
+              - generic [ref=e318]:
+                - text: "45"
+                - generic [ref=e319]: 166.5억원
+            - generic [ref=e320]:
+              - generic "중앙대학교" [ref=e321]
+              - generic [ref=e324]:
+                - text: "30"
+                - generic [ref=e325]: 78.5억원
+            - generic [ref=e326]:
+              - generic "이화여자대학교" [ref=e327]
+              - generic [ref=e330]:
+                - text: "29"
+                - generic [ref=e331]: 39.6억원
+            - generic [ref=e332]:
+              - generic "부산대학교" [ref=e333]
+              - generic [ref=e336]:
+                - text: "25"
+                - generic [ref=e337]: 31.2억원
+            - generic [ref=e338]:
+              - generic "경희대학교" [ref=e339]
+              - generic [ref=e342]:
+                - text: "23"
+                - generic [ref=e343]: 72억원
+        - complementary [ref=e344]:
+          - generic [ref=e345]:
+            - heading "집중도" [level=3] [ref=e346]
+            - generic [ref=e347]: 상위 기관 합계
+          - generic [ref=e348]:
+            - generic [ref=e349]:
+              - strong [ref=e350]: 상위 5개 기관
+              - generic [ref=e351]: 322개 · 28.0%
+              - paragraph [ref=e352]: 연세대, 서울대, 고려대, KAIST, 성균관대.
+            - generic [ref=e353]:
+              - strong [ref=e354]: 상위 10개 기관
+              - generic [ref=e355]: 474개 · 41.2%
+              - paragraph [ref=e356]: 지역 집중도보다 기관 집중도는 낮습니다.
+            - generic [ref=e357]:
+              - strong [ref=e358]: 연구그룹 최대 프로젝트 수
+              - generic [ref=e359]: 3개
+              - paragraph [ref=e360]: 대부분의 연구책임자+기관 조합은 1–2개 프로젝트를 수행합니다.
+    - region [ref=e361]:
+      - generic [ref=e363]:
+        - paragraph [ref=e364]: What
+        - heading "무엇을 연구하는가" [level=2] [ref=e365]
+        - paragraph [ref=e366]: 공식 연구분야의 미분류를 보완하기 위해 과제명과 키워드로 기술 접근과 적용 영역을 따로 분류했습니다.
+      - article [ref=e367]:
+        - generic [ref=e368]:
+          - group "주제 분류 축" [ref=e369]:
+            - button "기술 접근" [ref=e370] [cursor=pointer]
+            - button "적용 영역" [ref=e371] [cursor=pointer]
+          - generic [ref=e372]: 6개 기술 접근 대표 주제군
+        - generic [ref=e373]:
+          - article [ref=e374]:
+            - heading "일반 활용·기타" [level=3] [ref=e375]
+            - generic [ref=e376]: 54147.0%
+          - article [ref=e379]:
+            - heading "안전·신뢰·거버넌스" [level=3] [ref=e380]
+            - generic [ref=e381]: 19817.2%
+          - article [ref=e384]:
+            - heading "멀티모달·생성콘텐츠" [level=3] [ref=e385]
+            - generic [ref=e386]: 14412.5%
+          - article [ref=e389]:
+            - heading "모델·학습·추론" [level=3] [ref=e390]
+            - generic [ref=e391]: 14212.3%
+          - article [ref=e394]:
+            - heading "에이전트·상호작용" [level=3] [ref=e395]
+            - generic [ref=e396]: 847.3%
+          - article [ref=e399]:
+            - heading "RAG·지식검색" [level=3] [ref=e400]
+            - generic [ref=e401]: 423.6%
+    - region [ref=e404]:
+      - generic [ref=e405]:
+        - generic [ref=e406]:
+          - paragraph [ref=e407]: Research landscape
+          - heading "키워드와 연구 관계" [level=2] [ref=e408]
+          - paragraph [ref=e409]: 1,151개 대표 프로젝트의 제목·키워드·연구목표·연구내용을 함께 분석해 반복되는 연구어와 가까운 프로젝트를 살펴봅니다.
+        - generic [ref=e410]: 탐색 분석 · 공식 학문 분류 아님
+      - article [ref=e411]:
+        - tablist "탐색 분석 보기" [ref=e412]:
+          - tab "키워드" [ref=e413] [cursor=pointer]
+          - tab "연구 지도" [ref=e414] [cursor=pointer]
+          - tab "군집 요약" [active] [selected] [ref=e415] [cursor=pointer]
+        - generic [ref=e3194]:
+          - generic [ref=e3195]:
+            - strong [ref=e3196]: Security는 별도 군집보다 교차주제로 보는 편이 적절했습니다.
+            - text: 198개(17.2%)가 14개 군집 모두에 분포했고, 군집 4에는 24개(22.4%)가 포함됐습니다. 연구 지도에서 Security 강조로 분포를 확인할 수 있습니다.
+          - generic [ref=e3197]:
+            - button "교육·학습·평가, 106개 프로젝트, 연구 지도에서 보기" [ref=e3198] [cursor=pointer]:
+              - generic [ref=e3199]:
+                - heading "교육·학습·평가" [level=3] [ref=e3200]
+                - strong [ref=e3201]: "106"
+              - paragraph [ref=e3202]: education · 교육 · learning · 학습 · 학습자의 · 피드백
+              - paragraph [ref=e3203]: 9.2% · 43.1억원 · Security 11개
+            - button "대규모 언어모델 활용·해석, 155개 프로젝트, 연구 지도에서 보기" [ref=e3204] [cursor=pointer]:
+              - generic [ref=e3205]:
+                - heading "대규모 언어모델 활용·해석" [level=3] [ref=e3206]
+                - strong [ref=e3207]: "155"
+              - paragraph [ref=e3208]: llm · language · large · large language · 언어 · language llm
+              - paragraph [ref=e3209]: 13.5% · 285.5억원 · Security 30개
+            - button "멀티모달·지능형 플랫폼, 149개 프로젝트, 연구 지도에서 보기" [ref=e3210] [cursor=pointer]:
+              - generic [ref=e3211]:
+                - heading "멀티모달·지능형 플랫폼" [level=3] [ref=e3212]
+                - strong [ref=e3213]: "149"
+              - paragraph [ref=e3214]: 멀티모달 · multimodal · 플랫폼 · 콘텐츠 · 지능형 · 맞춤형
+              - paragraph [ref=e3215]: 12.9% · 1,535.4억원 · Security 31개
+            - button "이미지·영상 생성과 탐지, 107개 프로젝트, 연구 지도에서 보기" [ref=e3216] [cursor=pointer]:
+              - generic [ref=e3217]:
+                - heading "이미지·영상 생성과 탐지" [level=3] [ref=e3218]
+                - strong [ref=e3219]: "107"
+              - paragraph [ref=e3220]: image · 이미지 · diffusion · 영상 · generation · 탐지
+              - paragraph [ref=e3221]: 9.3% · 163억원 · Security 24개
+            - button "과학·공학 생성설계, 77개 프로젝트, 연구 지도에서 보기" [ref=e3222] [cursor=pointer]:
+              - generic [ref=e3223]:
+                - heading "과학·공학 생성설계" [level=3] [ref=e3224]
+                - strong [ref=e3225]: "77"
+              - paragraph [ref=e3226]: design · 예측 · 구조 · physics · 물리 · 역설계
+              - paragraph [ref=e3227]: 6.7% · 240.9억원 · Security 2개
+            - button "AI 에이전트·멀티에이전트, 49개 프로젝트, 연구 지도에서 보기" [ref=e3228] [cursor=pointer]:
+              - generic [ref=e3229]:
+                - heading "AI 에이전트·멀티에이전트" [level=3] [ref=e3230]
+                - strong [ref=e3231]: "49"
+              - paragraph [ref=e3232]: 에이전트 · agent · llm · llm 에이전트 · multi agent · llm agent
+              - paragraph [ref=e3233]: 4.3% · 74.8억원 · Security 8개
+            - button "RAG·검색증강생성, 37개 프로젝트, 연구 지도에서 보기" [ref=e3234] [cursor=pointer]:
+              - generic [ref=e3235]:
+                - heading "RAG·검색증강생성" [level=3] [ref=e3236]
+                - strong [ref=e3237]: "37"
+              - paragraph [ref=e3238]: rag · augmented · retrieval augmented · retrieval · augmented generation · generation
+              - paragraph [ref=e3239]: 3.2% · 101.2억원 · Security 6개
+            - button "응용 프레임워크·평가, 59개 프로젝트, 연구 지도에서 보기" [ref=e3240] [cursor=pointer]:
+              - generic [ref=e3241]:
+                - heading "응용 프레임워크·평가" [level=3] [ref=e3242]
+                - strong [ref=e3243]: "59"
+              - paragraph [ref=e3244]: 프레임워크 · framework · llm · language · evaluation · large language
+              - paragraph [ref=e3245]: 5.1% · 130.9억원 · Security 10개
+            - button "LLM 추론·메모리·가속, 47개 프로젝트, 연구 지도에서 보기" [ref=e3246] [cursor=pointer]:
+              - generic [ref=e3247]:
+                - heading "LLM 추론·메모리·가속" [level=3] [ref=e3248]
+                - strong [ref=e3249]: "47"
+              - paragraph [ref=e3250]: 메모리 · llm · memory · 추론 · efficient · 연산
+              - paragraph [ref=e3251]: 4.1% · 175.9억원 · Security 3개
+            - button "디지털 트윈·시뮬레이션, 54개 프로젝트, 연구 지도에서 보기" [ref=e3252] [cursor=pointer]:
+              - generic [ref=e3253]:
+                - heading "디지털 트윈·시뮬레이션" [level=3] [ref=e3254]
+                - strong [ref=e3255]: "54"
+              - paragraph [ref=e3256]: 디지털 · digital · 트윈 · 디지털 트윈 · twin · digital twin
+              - paragraph [ref=e3257]: 4.7% · 211억원 · Security 11개
+            - button "임상·환자 의사결정 지원, 66개 프로젝트, 연구 지도에서 보기" [ref=e3258] [cursor=pointer]:
+              - generic [ref=e3259]:
+                - heading "임상·환자 의사결정 지원" [level=3] [ref=e3260]
+                - strong [ref=e3261]: "66"
+              - paragraph [ref=e3262]: 임상 · llm · clinical · nursing · 환자 · decision
+              - paragraph [ref=e3263]: 5.7% · 243.9억원 · Security 9개
+            - button "인간·사회 영향과 거버넌스, 131개 프로젝트, 연구 지도에서 보기" [ref=e3264] [cursor=pointer]:
+              - generic [ref=e3265]:
+                - heading "인간·사회 영향과 거버넌스" [level=3] [ref=e3266]
+                - strong [ref=e3267]: "131"
+              - paragraph [ref=e3268]: 인간 · human · 사회적 · 특히 · chatgpt · 인간의
+              - paragraph [ref=e3269]: 11.4% · 57.3억원 · Security 38개
+            - button "파운데이션 모델·범용 학습, 60개 프로젝트, 연구 지도에서 보기" [ref=e3270] [cursor=pointer]:
+              - generic [ref=e3271]:
+                - heading "파운데이션 모델·범용 학습" [level=3] [ref=e3272]
+                - strong [ref=e3273]: "60"
+              - paragraph [ref=e3274]: foundation · 파운데이션 · 멀티모달 · 범용 · multi · 학습
+              - paragraph [ref=e3275]: 5.2% · 383.3억원 · Security 8개
+            - button "디자인·창작·사용자 경험, 54개 프로젝트, 연구 지도에서 보기" [ref=e3276] [cursor=pointer]:
+              - generic [ref=e3277]:
+                - heading "디자인·창작·사용자 경험" [level=3] [ref=e3278]
+                - strong [ref=e3279]: "54"
+              - paragraph [ref=e3280]: 디자인 · design · 바이오필릭 · 프로세스 · 교육 · 사용자
+              - paragraph [ref=e3281]: 4.7% · 24.3억원 · Security 7개
+          - paragraph [ref=e3282]: 군집 안정도 ARI는 0.61로 중간 수준입니다. 카드를 누르면 해당 군집만 연구 지도에서 볼 수 있습니다.
+    - region [ref=e535]:
+      - generic [ref=e537]:
+        - paragraph [ref=e538]: Explore
+        - heading "프로젝트 탐색" [level=2] [ref=e539]
+        - paragraph [ref=e540]: 과제명·연구책임자·기관을 검색하거나 지역과 두 주제 축을 조합해 좁혀보세요.
+      - generic [ref=e541]:
+        - generic "프로젝트 필터" [ref=e542]:
+          - searchbox "과제 검색" [ref=e544]
+          - combobox "지역 필터" [ref=e546]:
+            - option "모든 지역" [selected]
+            - option "서울"
+            - option "경기"
+            - option "대전"
+            - option "부산"
+            - option "강원"
+            - option "광주"
+            - option "대구"
+            - option "인천"
+            - option "경북"
+            - option "충남"
+            - option "충북"
+            - option "울산"
+            - option "경남"
+            - option "전북"
+            - option "세종"
+            - option "제주"
+            - option "전남"
+          - combobox "기술 접근 필터" [ref=e548]:
+            - option "모든 기술 접근" [selected]
+            - option "일반 활용·기타"
+            - option "안전·신뢰·거버넌스"
+            - option "멀티모달·생성콘텐츠"
+            - option "모델·학습·추론"
+            - option "에이전트·상호작용"
+            - option "RAG·지식검색"
+          - combobox "적용 영역 필터" [ref=e550]:
+            - option "모든 적용 영역" [selected]
+            - option "과학·연구"
+            - option "건강·바이오"
+            - option "제조·산업·로봇"
+            - option "교육·인재"
+            - option "문화·콘텐츠"
+            - option "공공·국방·법·사회"
+            - option "비즈니스·서비스"
+            - option "범용·기타"
+          - button "필터 초기화" [ref=e551] [cursor=pointer]
+        - generic [ref=e552]:
+          - generic [ref=e553]:
+            - strong [ref=e554]: 1,151
+            - text: 개 프로젝트
+          - generic [ref=e555]: 정부 연구비는 포함 연도 누적액
+        - generic [ref=e556]:
+          - article [ref=e557]:
+            - generic [ref=e558]:
+              - heading "과학기술기반 미래연구사업 (16차년도)" [level=3] [ref=e559]
+              - generic [ref=e560]:
+                - generic [ref=e561]: 과학기술정책연구원
+                - generic [ref=e562]: 윤정섭
+                - generic [ref=e563]: 세종 세종특별자치시
+                - generic [ref=e564]: 2024–2024
+              - generic [ref=e565]:
+                - generic [ref=e566]: 일반 활용·기타
+                - generic [ref=e567]: 과학·연구
+                - generic [ref=e568]: 인간·사회 영향과 거버넌스
+            - generic [ref=e569]:
+              - strong [ref=e570]: 1.5억원
+              - link "NTIS에서 찾기 ↗" [ref=e571] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1105018595&sort=RANK%2FDESC
+          - article [ref=e572]:
+            - generic [ref=e573]:
+              - heading "현장상황 파악을 위한 영상 제공 및 상황정보 탐색 지능화 기술 개발" [level=3] [ref=e574]
+              - generic [ref=e575]:
+                - generic [ref=e576]: 국립재난안전연구원
+                - generic [ref=e577]: 최선화
+                - generic [ref=e578]: 울산 중구
+                - generic [ref=e579]: 2025–2025
+              - generic [ref=e580]:
+                - generic [ref=e581]: 일반 활용·기타
+                - generic [ref=e582]: 문화·콘텐츠
+                - generic [ref=e583]: 멀티모달·지능형 플랫폼
+            - generic [ref=e584]:
+              - strong [ref=e585]: 6억원
+              - link "NTIS에서 찾기 ↗" [ref=e586] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1315002016&sort=RANK%2FDESC
+          - article [ref=e587]:
+            - generic [ref=e588]:
+              - 'heading "인공지능을 활용한 진로융합 교사연수 프로그램 개발 및 수용의도 촉진효과: 진로전담교사의 학습스타일에 따른 인공지능리터러시의 변화를 중심으로" [level=3] [ref=e589]'
+              - generic [ref=e590]:
+                - generic [ref=e591]: 국립공주대학교
+                - generic [ref=e592]: 어윤경
+                - generic [ref=e593]: 충남 공주시
+                - generic [ref=e594]: 2024–2025
+              - generic [ref=e595]:
+                - generic [ref=e596]: 일반 활용·기타
+                - generic [ref=e597]: 교육·인재
+                - generic [ref=e598]: 교육·학습·평가
+            - generic [ref=e599]:
+              - strong [ref=e600]: 32,175,000원
+              - link "NTIS에서 찾기 ↗" [ref=e601] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368551&sort=RANK%2FDESC
+          - article [ref=e602]:
+            - generic [ref=e603]:
+              - heading "생성형 AI의 범죄위험성 예측 및 형사정책적 대응방안" [level=3] [ref=e604]
+              - generic [ref=e605]:
+                - generic [ref=e606]: 조선대학교
+                - generic [ref=e607]: 이원상
+                - generic [ref=e608]: 광주 동구
+                - generic [ref=e609]: 2023–2025
+              - generic [ref=e610]:
+                - generic [ref=e611]: 안전·신뢰·거버넌스
+                - generic [ref=e612]: 공공·국방·법·사회
+                - generic [ref=e613]: 인간·사회 영향과 거버넌스
+            - generic [ref=e614]:
+              - strong [ref=e615]: 45,656,000원
+              - link "NTIS에서 찾기 ↗" [ref=e616] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368646&sort=RANK%2FDESC
+          - article [ref=e617]:
+            - generic [ref=e618]:
+              - 'heading "질문하는 뇌의 발달: 학령기 아동의 질문 능력" [level=3] [ref=e619]'
+              - generic [ref=e620]:
+                - generic [ref=e621]: 연세대학교
+                - generic [ref=e622]: 송현주
+                - generic [ref=e623]: 서울 서대문구
+                - generic [ref=e624]: 2024–2025
+              - generic [ref=e625]:
+                - generic [ref=e626]: 일반 활용·기타
+                - generic [ref=e627]: 교육·인재
+                - generic [ref=e628]: 인간·사회 영향과 거버넌스
+            - generic [ref=e629]:
+              - strong [ref=e630]: 3.9억원
+              - link "NTIS에서 찾기 ↗" [ref=e631] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368838&sort=RANK%2FDESC
+          - article [ref=e632]:
+            - generic [ref=e633]:
+              - heading "AI기반 자동채점의 성능평가와 인간-AI협업 채점을 위한 평가설계모형 탐색" [level=3] [ref=e634]
+              - generic [ref=e635]:
+                - generic [ref=e636]: 국립공주대학교
+                - generic [ref=e637]: 함은혜
+                - generic [ref=e638]: 충남 공주시
+                - generic [ref=e639]: 2024–2026 (9.30 현재)
+              - generic [ref=e640]:
+                - generic [ref=e641]: 일반 활용·기타
+                - generic [ref=e642]: 교육·인재
+                - generic [ref=e643]: 디자인·창작·사용자 경험
+            - generic [ref=e644]:
+              - strong [ref=e645]: 57,915,000원
+              - link "NTIS에서 찾기 ↗" [ref=e646] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345368945&sort=RANK%2FDESC
+          - article [ref=e647]:
+            - generic [ref=e648]:
+              - heading "포스트 AI 시대의 이공계 교육정책 연구" [level=3] [ref=e649]
+              - generic [ref=e650]:
+                - generic [ref=e651]: 세종대학교
+                - generic [ref=e652]: 장혜원
+                - generic [ref=e653]: 서울 광진구
+                - generic [ref=e654]: 2024–2026 (9.30 현재)
+              - generic [ref=e655]:
+                - generic [ref=e656]: 일반 활용·기타
+                - generic [ref=e657]: 교육·인재
+                - generic [ref=e658]: 교육·학습·평가
+            - generic [ref=e659]:
+              - strong [ref=e660]: 57,717,000원
+              - link "NTIS에서 찾기 ↗" [ref=e661] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369662&sort=RANK%2FDESC
+          - article [ref=e662]:
+            - generic [ref=e663]:
+              - heading "생성형 AI 이미지 모델을 활용한 메이크업 디자인 모티브 개발 및 교육 활용 방안 연구" [level=3] [ref=e664]
+              - generic [ref=e665]:
+                - generic [ref=e666]: 서경대학교
+                - generic [ref=e667]: 주영주
+                - generic [ref=e668]: 서울 성북구
+                - generic [ref=e669]: 2023–2023
+              - generic [ref=e670]:
+                - generic [ref=e671]: 일반 활용·기타
+                - generic [ref=e672]: 교육·인재
+                - generic [ref=e673]: 디자인·창작·사용자 경험
+            - generic [ref=e674]:
+              - strong [ref=e675]: 24,370,000원
+              - link "NTIS에서 찾기 ↗" [ref=e676] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369678&sort=RANK%2FDESC
+          - article [ref=e677]:
+            - generic [ref=e678]:
+              - heading "설명인터페이스와 공감인터페이스의 서비스 유형 별 적용을 통한 생성형 인공지능 경험 디자인" [level=3] [ref=e679]
+              - generic [ref=e680]:
+                - generic [ref=e681]: 성신여자대학교
+                - generic [ref=e682]: 강효진
+                - generic [ref=e683]: 서울 성북구
+                - generic [ref=e684]: 2023–2026 (9.30 현재)
+              - generic [ref=e685]:
+                - generic [ref=e686]: 일반 활용·기타
+                - generic [ref=e687]: 비즈니스·서비스
+                - generic [ref=e688]: 디자인·창작·사용자 경험
+            - generic [ref=e689]:
+              - strong [ref=e690]: 77,640,000원
+              - link "NTIS에서 찾기 ↗" [ref=e691] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345369846&sort=RANK%2FDESC
+          - article [ref=e692]:
+            - generic [ref=e693]:
+              - 'heading "생성형 인공지능(AI) 기반 예술 속 기술적 대상들의 존재 양식: 시몽동의 기술철학적 접근을 넘어" [level=3] [ref=e694]'
+              - generic [ref=e695]:
+                - generic [ref=e696]: 상지대학교
+                - generic [ref=e697]: 신종천
+                - generic [ref=e698]: 강원 원주시
+                - generic [ref=e699]: 2024–2026 (9.30 현재)
+              - generic [ref=e700]:
+                - generic [ref=e701]: 멀티모달·생성콘텐츠
+                - generic [ref=e702]: 문화·콘텐츠
+                - generic [ref=e703]: 인간·사회 영향과 거버넌스
+            - generic [ref=e704]:
+              - strong [ref=e705]: 43,808,000원
+              - link "NTIS에서 찾기 ↗" [ref=e706] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345370759&sort=RANK%2FDESC
+          - article [ref=e707]:
+            - generic [ref=e708]:
+              - heading "진로상담과 인공지능" [level=3] [ref=e709]
+              - generic [ref=e710]:
+                - generic [ref=e711]: 국립공주대학교
+                - generic [ref=e712]: 어윤경
+                - generic [ref=e713]: 충남 공주시
+                - generic [ref=e714]: 2024–2025
+              - generic [ref=e715]:
+                - generic [ref=e716]: 일반 활용·기타
+                - generic [ref=e717]: 비즈니스·서비스
+                - generic [ref=e718]: 교육·학습·평가
+            - generic [ref=e719]:
+              - strong [ref=e720]: 20,000,000원
+              - link "NTIS에서 찾기 ↗" [ref=e721] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345370848&sort=RANK%2FDESC
+          - article [ref=e722]:
+            - generic [ref=e723]:
+              - heading "맞춤형 음악 창제작을 위한 생성 인공지능 기반 협업 저작 기술 연구" [level=3] [ref=e724]
+              - generic [ref=e725]:
+                - generic [ref=e726]: 성균관대학교
+                - generic [ref=e727]: 이종현
+                - generic [ref=e728]: 서울 종로구
+                - generic [ref=e729]: 2023–2026 (9.30 현재)
+              - generic [ref=e730]:
+                - generic [ref=e731]: 일반 활용·기타
+                - generic [ref=e732]: 문화·콘텐츠
+                - generic [ref=e733]: 멀티모달·지능형 플랫폼
+            - generic [ref=e734]:
+              - strong [ref=e735]: 1.9억원
+              - link "NTIS에서 찾기 ↗" [ref=e736] [cursor=pointer]:
+                - /url: https://www.ntis.go.kr/ThSearchProjectList.do?dbt=project&searchWord=1345371109&sort=RANK%2FDESC
+        - button "더 보기" [ref=e737] [cursor=pointer]
+    - region [ref=e738]:
+      - generic [ref=e740]:
+        - paragraph [ref=e741]: Key findings
+        - heading "데이터가 말하는 세 가지" [level=2] [ref=e742]
+      - generic [ref=e743]:
+        - article [ref=e744]:
+          - text: FINDING 01
+          - heading "프로젝트의 절반 가까이가 서울에 모였다" [level=3] [ref=e745]
+          - generic [ref=e746]: 48.0% · 553개
+          - paragraph [ref=e747]: 서울·경기·대전 세 지역을 합치면 67.3%다. 대표 수행기관의 공식 소재지 기준이라 실제 공동연구 장소와는 다를 수 있다.
+        - article [ref=e748]:
+          - text: FINDING 02
+          - heading "지역 집중과 기관 집중은 같은 이야기가 아니다" [level=3] [ref=e749]
+          - generic [ref=e750]: 28.0% · 상위 5개 기관
+          - paragraph [ref=e751]: 서울 비중은 크지만 상위 5개 기관이 차지하는 비중은 28.0%다. 연구 활동은 수도권에 모였어도 여러 기관에 나뉘어 있다.
+        - article [ref=e752]:
+          - text: FINDING 03
+          - heading "생성형 AI 연구는 모델 개발보다 활용이 더 넓다" [level=3] [ref=e753]
+          - generic [ref=e754]: 47.0% · 일반 활용·기타
+          - paragraph [ref=e755]: 건강·바이오, 과학·연구, 제조·산업·로봇, 교육 등 적용 영역이 고르게 나타난다. 주제군은 탐색용 규칙 기반 대표 분류다.
+    - region [ref=e756]:
+      - generic [ref=e758]:
+        - paragraph [ref=e759]: Data & methodology
+        - heading "어떻게 만들었나" [level=2] [ref=e760]
+        - paragraph [ref=e761]: NTIS 공식 다운로드 네 패스를 합치고, 관련성·기관 범위·다년도 연결·기관 소재지를 순서대로 검증했습니다.
+      - generic [ref=e762]:
+        - article [ref=e763]:
+          - generic [ref=e764]:
+            - heading "수집에서 분석까지" [level=3] [ref=e765]
+            - generic [ref=e766]: 재현 가능한 단계별 건수
+          - generic [ref=e767]:
+            - generic [ref=e768]:
+              - generic [ref=e769]:
+                - generic [ref=e770]: 네 검색 패스 원본
+                - text: 과제명·한글 키워드·영문 키워드·기본 전체검색
+              - strong [ref=e771]: 6,193
+            - generic [ref=e772]:
+              - generic [ref=e773]:
+                - generic [ref=e774]: 과제 ID 통합
+                - text: 검색 패스 간 정확 중복 제거
+              - strong [ref=e775]: 3,241
+            - generic [ref=e776]:
+              - generic [ref=e777]:
+                - generic [ref=e778]: 최종 포함 연도 레코드
+                - text: 관련성·기관 범위 판정
+              - strong [ref=e779]: 1,698
+            - generic [ref=e780]:
+              - generic [ref=e781]:
+                - generic [ref=e782]: 다년도 대표 프로젝트
+                - text: 이전과제고유번호 체인 연결
+              - strong [ref=e783]: 1,151
+        - complementary [ref=e784]:
+          - heading "해석할 때 주의할 점" [level=3] [ref=e786]
+          - list [ref=e787]:
+            - listitem [ref=e788]: 검색식에 포착된 NTIS 과제만 포함하므로 전체 생성형 AI 연구를 뜻하지 않는다.
+            - listitem [ref=e789]: 2026년은 9월 30일까지 수집한 진행 중 자료다.
+            - listitem [ref=e790]: 지도는 대표 수행기관 소재지이며 실제 연구 현장 전체를 나타내지 않는다. 행정경계는 통계청 2013년 시도 경계 자료를 사용했다.
+            - listitem [ref=e791]: 주제군은 과제명·키워드 규칙의 대표값이며 공식 학문 분류가 아니다.
+            - listitem [ref=e792]: 의미 기반 14개 군집은 텍스트 유사도를 이용한 탐색용 묶음이며, 안정도 ARI 0.61로 경계에 있는 연구는 다른 군집으로 달라질 수 있다.
+            - listitem [ref=e793]: 웹 공개본에서 연구 원문·사업자번호·연락처·내부 검토 로그를 제외했다.
+          - generic [ref=e794]:
+            - link "NTIS 원자료" [ref=e795] [cursor=pointer]:
+              - /url: https://www.ntis.go.kr
+            - link "행정경계 지도 출처" [ref=e796] [cursor=pointer]:
+              - /url: https://github.com/southkorea/southkorea-maps
+            - link "웹 데이터 사전" [ref=e797] [cursor=pointer]:
+              - /url: data/web_data_dictionary.md
+            - link "프로젝트 CSV" [ref=e798] [cursor=pointer]:
+              - /url: data/projects.csv
+            - link "탐색 분석 워크북" [ref=e799] [cursor=pointer]:
+              - /url: data/ntis_genai_exploration.xlsx
+  - contentinfo [ref=e800]:
+    - paragraph [ref=e801]:
+      - text: Made by
+      - strong [ref=e802]: Yena Kim (Yenarue)
+      - text: · KAIST ITM.690 · 데이터 갱신 2026-10-01
+    - paragraph [ref=e803]: "출처: NTIS 검색결과 다운로드 · 분석 대상 2023년–2026년 9월 30일 대학·공공 연구기관 생성형 AI 국가 R&D"

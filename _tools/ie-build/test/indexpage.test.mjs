@@ -1,18 +1,24 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { renderIndexPage } from '../templates/index.mjs';
+import { renderCorePage } from '../templates/core.mjs';
+import { renderQuizPage } from '../templates/quiz.mjs';
+import { buildGraph, renderMapPage } from '../templates/map.mjs';
+import { renderConcept } from '../lib/render.mjs';
+import { renderWeekPage } from '../templates/week.mjs';
+import { Warnings } from '../build.mjs';
 
 const weeks = [
   {
     id: 'W01', date: '2026-09-05', topic: 'Intro', subtitle: '', source: 'a.pdf', quiz: null, lectured: true,
     concepts: [
-      { slug: 'c01', no: 1, title: '사회 속의 시스템', status: 'done' },
-      { slug: 'c02', no: 2, title: '상호구성', status: 'draft' },
+      { slug: 'c01', no: 1, title: '사회 속의 시스템' },
+      { slug: 'c02', no: 2, title: '상호구성' },
     ],
   },
   {
     id: 'W02-1', date: '2026-09-12', topic: '미시적 기초', subtitle: '', source: '', quiz: null, lectured: true,
-    concepts: [{ slug: 'c01', no: 1, title: '암묵지', status: 'draft' }],
+    concepts: [{ slug: 'c01', no: 1, title: '암묵지' }],
   },
   {
     id: 'W03', date: '2026-09-19', topic: '거시 I', subtitle: '', source: '', quiz: 1, lectured: false, concepts: [],
@@ -53,7 +59,7 @@ test('퀴즈 배지와 일정 타임라인을 렌더한다', () => {
 test('진행 현황 합계가 맞다', () => {
   const html = renderIndexPage({ weeks, quizSchedule, builtAt: '' });
   assert.match(html, /개념 3개/);
-  assert.match(html, /완료 1개/);
+  assert.doesNotMatch(html, /완료 \d+개/);
 });
 
 test('강의 프레임 3분류를 렌더한다', () => {
@@ -86,4 +92,26 @@ test('핵심 개념을 아직 추리지 않은 회차는 비활성 표시로 자
   const html = renderIndexPage({ weeks, quizSchedule, coreSets: [], builtAt: '' });
   assert.match(html, /<span class="btn btn-disabled" aria-disabled="true">핵심 개념 준비 중<\/span>/);
   assert.match(html, /href="quiz\.html\?quiz=1"/);
+});
+
+test('주차 서브메뉴(weeknav)는 주차 페이지에서만 보이고, 학기 지도·핵심 개념·퀴즈·개념 지도에는 없다', () => {
+  const indexHtml = renderIndexPage({ weeks, quizSchedule, builtAt: '' });
+  const coreHtml = renderCorePage({ coreSets: [], quizSchedule: [] });
+  const quizHtml = renderQuizPage({ items: [], answers: {}, weeks: [], quizSchedule: [] });
+  const mapHtml = renderMapPage({ graph: buildGraph([]), weeks: [], comparisons: [] });
+
+  for (const html of [indexHtml, coreHtml, quizHtml, mapHtml]) {
+    assert.ok(!html.includes('class="weeknav"'));
+  }
+
+  const warnings = new Warnings();
+  const concept = {
+    week: 'W01', no: 1, slug: 'c01', file: '01-x.md', title: 'x', en: 'x', subtitle: '',
+    tags: [], slides: [], hasMyNotes: false, related: [],
+    sections: [{ key: 'definition', heading: '한 줄 정의', md: '정의.' }],
+  };
+  renderConcept(concept, warnings);
+  const week = { id: 'W01', date: '2026-09-05', topic: 'Intro', subtitle: '', source: '', concepts: [concept] };
+  const weekHtml = renderWeekPage({ week, weeks: [week] });
+  assert.match(weekHtml, /<nav class="weeknav"/);
 });

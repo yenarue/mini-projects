@@ -92,7 +92,7 @@ export function renderQuizPage({ items, answers, weeks, quizSchedule }) {
     .replace(/</g, '\\u003c');
 
   const body = `
-${topbar({ active: 'quiz' })}
+${topbar({ active: 'quiz', weeks })}
 <main class="page-quiz-main" id="top">
   <p class="eyebrow">퀴즈 대비</p>
   <h1>예상 퀴즈 포인트</h1>
