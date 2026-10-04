@@ -163,6 +163,21 @@
     .funding-item .amount { color: var(--brand); font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
     .funding-item p { margin: 2px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
 
+    .institution-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .institution-filter { flex-wrap: wrap; border-radius: var(--radius-sm); }
+    .institution-filter button { min-height: 44px; }
+    .institution-category-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .institution-category-card { min-width: 0; padding: 15px 16px; border: 1px solid var(--line); border-top: 3px solid var(--category-color, var(--brand)); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); cursor: pointer; text-align: left; transition: border-color .16s ease, transform .16s ease, background .16s ease; }
+    .institution-category-card:hover { border-color: var(--category-color, var(--brand)); transform: translateY(-2px); }
+    .institution-category-card.active { background: color-mix(in srgb, var(--category-color, var(--brand)) 9%, var(--surface)); box-shadow: inset 0 0 0 1px var(--category-color, var(--brand)); }
+    .institution-category-card .category-name { display: block; min-height: 40px; font-size: 13px; font-weight: 760; line-height: 1.45; word-break: keep-all; }
+    .institution-category-card .category-count { display: block; margin-top: 8px; color: var(--category-color, var(--brand)); font-size: 24px; font-weight: 830; line-height: 1; }
+    .institution-category-card .category-count small { color: var(--muted); font-size: 11px; font-weight: 650; }
+    .institution-category-card .category-meta { display: block; margin-top: 7px; color: var(--muted); font-size: 10.5px; line-height: 1.5; }
+    .region-category-filter { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding: 12px 14px; }
+    .region-category-filter > strong { flex-shrink: 0; font-size: 12px; }
+    .region-category-filter .panel-note { margin-left: auto; text-align: right; }
+
     .region-layout { display: grid; grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr); gap: 14px; align-items: stretch; }
     .region-layout[hidden] { display: none; }
     .tile-map { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-areas:
@@ -317,7 +332,7 @@
     .security-audit { margin-bottom: 12px; padding: 12px 14px; border-left: 3px solid var(--note); border-radius: 0 8px 8px 0; background: var(--surface-2); color: var(--ink-soft); font-size: 12px; line-height: 1.65; }
 
     .explorer-shell { overflow: hidden; }
-    .filters { display: grid; grid-template-columns: minmax(210px, 1.7fr) repeat(3, minmax(150px, 1fr)) auto; gap: 8px; padding: 16px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+    .filters { display: grid; grid-template-columns: minmax(210px, 1.7fr) repeat(4, minmax(140px, 1fr)) auto; gap: 8px; padding: 16px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
     .field { position: relative; }
     .field input, .field select { width: 100%; min-height: 42px; padding: 8px 11px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); color: var(--ink); font-size: 13px; }
     .field input::placeholder { color: var(--muted); }
@@ -333,6 +348,7 @@
     .project-meta { display: flex; flex-wrap: wrap; gap: 5px 12px; margin-top: 7px; color: var(--muted); font-size: 11.5px; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
     .tag { padding: 3px 8px; border-radius: var(--radius-pill); font-size: 10.5px; font-weight: 700; }
+    .tag.institution { color: var(--ink-soft); background: var(--surface-2); }
     .tag.tech { color: var(--brand); background: var(--brand-soft); }
     .tag.domain { color: var(--prof); background: var(--prof-soft); }
     .tag.cluster { color: var(--slide); background: var(--slide-soft); }
@@ -374,6 +390,7 @@
     @media (max-width: 1024px) {
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .analysis-grid, .region-layout, .regional-layout, .method-grid, .semantic-layout { grid-template-columns: 1fr; }
+      .institution-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .field.search-field { grid-column: 1 / -1; }
@@ -391,6 +408,8 @@
       .hero-grid { grid-template-columns: 1fr; gap: 22px; }
       .hero-aside { border-left: 0; border-top: 1px solid var(--line); padding: 16px 0 0; }
       .section-head { align-items: start; flex-direction: column; gap: 7px; }
+      .institution-toolbar, .region-category-filter { align-items: flex-start; flex-direction: column; }
+      .region-category-filter .panel-note { margin-left: 0; text-align: left; }
       .region-layout { grid-template-columns: 1fr; }
       .tile-map { min-height: 340px; }
       .region-view, .geo-map-shell, .geo-map-status { min-height: 340px; }
@@ -402,7 +421,7 @@
       .project-side { display: flex; align-items: center; justify-content: space-between; text-align: left; }
     }
     @media (max-width: 520px) {
-      .stats, .topic-grid, .filters { grid-template-columns: 1fr; }
+      .stats, .topic-grid, .filters, .institution-category-grid { grid-template-columns: 1fr; }
       .field.search-field { grid-column: auto; }
       .stat { padding: 16px; }
       .panel { padding: 16px; }
@@ -445,8 +464,8 @@
     <nav class="topbar-nav" aria-label="페이지 섹션">
       <a href="../../index.html#projects">← 프로젝트</a>
       <a href="#summary">한눈에</a>
-      <a href="#where">지역</a>
       <a href="#who">기관</a>
+      <a href="#where">지역</a>
       <a href="#what">주제</a>
       <a href="#relations">관계</a>
       <a href="#explore">과제 탐색</a>
@@ -511,6 +530,31 @@
       </div>
     </section>
 
+    <section class="section" id="who" aria-labelledby="who-h">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Who</p>
+          <h2 id="who-h">누가 연구하는가</h2>
+          <p class="section-desc">정규화한 대표 수행기관을 대학·과학기술원, 정부출연 연구기관, 기타 공공·전문 연구기관, 의료기관으로 나눴습니다. 유형을 선택하면 해당 기관의 순위와 연구비 구성이 함께 바뀝니다.</p>
+        </div>
+      </div>
+      <div class="institution-toolbar">
+        <div class="segmented institution-filter" id="institution-category-filter" aria-label="기관 유형 선택"></div>
+        <span class="panel-note" id="institution-category-note">전체 기관 기준</span>
+      </div>
+      <div class="institution-category-grid" id="institution-category-grid" aria-live="polite"></div>
+      <div class="analysis-grid">
+        <article class="card panel">
+          <div class="panel-head"><h3 id="institution-ranking-title">프로젝트 수 상위 기관</h3><span class="panel-note">정규화 기관 기준</span></div>
+          <div class="rank-list" id="institution-ranking"></div>
+        </article>
+        <aside class="card panel">
+          <div class="panel-head"><h3 id="institution-insight-title">기관 유형 해석</h3><span class="panel-note">프로젝트 · 연구비</span></div>
+          <div class="funding-list" id="institution-concentration"></div>
+        </aside>
+      </div>
+    </section>
+
     <section class="section" id="where" aria-labelledby="where-h">
       <div class="section-head">
         <div>
@@ -518,6 +562,11 @@
           <h2 id="where-h">어디에서 연구하는가</h2>
           <p class="section-desc">연구비 주집행지역이 아니라 정규화한 대표 수행기관의 공식 소재지를 사용했습니다. 서울과 경기를 누르면 시·군·구 상세 통계를, 다른 지역을 누르면 해당 프로젝트를 확인할 수 있습니다.</p>
         </div>
+      </div>
+      <div class="region-category-filter card">
+        <strong>기관 유형별로 보기</strong>
+        <div class="segmented institution-filter" id="map-category-filter" aria-label="지도 기관 유형 선택"></div>
+        <span class="panel-note" id="map-category-note">전체 기관 1,151개 프로젝트</span>
       </div>
       <div class="region-layout" id="national-region-view">
         <article class="card panel">
@@ -554,26 +603,6 @@
         </div>
         <p class="regional-method-note"><strong>해석 주의:</strong> 실제 연구실이나 공동연구 장소가 아니라 대표 수행기관의 공식 소재지 기준입니다. 따라서 대학·연구기관의 입지가 강하게 반영됩니다.</p>
       </article>
-    </section>
-
-    <section class="section" id="who" aria-labelledby="who-h">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Who</p>
-          <h2 id="who-h">누가 연구하는가</h2>
-          <p class="section-desc">산학협력단과 과거 명칭은 대학 본체로 통합하고, 연구그룹은 동명이인 위험을 줄이기 위해 연구책임자와 기관의 조합으로 셌습니다.</p>
-        </div>
-      </div>
-      <div class="analysis-grid">
-        <article class="card panel">
-          <div class="panel-head"><h3>프로젝트 수 상위 기관</h3><span class="panel-note">정규화 기관 기준</span></div>
-          <div class="rank-list" id="institution-ranking"></div>
-        </article>
-        <aside class="card panel">
-          <div class="panel-head"><h3>집중도</h3><span class="panel-note">상위 기관 합계</span></div>
-          <div class="funding-list" id="institution-concentration"></div>
-        </aside>
-      </div>
     </section>
 
     <section class="section" id="what" aria-labelledby="what-h">
@@ -650,13 +679,14 @@
         <div>
           <p class="section-kicker">Explore</p>
           <h2 id="explore-h">프로젝트 탐색</h2>
-          <p class="section-desc">과제명·연구책임자·기관을 검색하거나 지역과 두 주제 축을 조합해 좁혀보세요.</p>
+          <p class="section-desc">과제명·연구책임자·기관을 검색하거나 지역, 기관 유형, 두 주제 축을 조합해 좁혀보세요.</p>
         </div>
       </div>
       <div class="card explorer-shell">
         <div class="filters" aria-label="프로젝트 필터">
           <label class="field search-field"><span class="sr-only"></span><input id="search-input" type="search" placeholder="과제명, 연구책임자, 기관 검색" aria-label="과제 검색"></label>
           <label class="field"><select id="region-filter" aria-label="지역 필터"><option value="">모든 지역</option></select></label>
+          <label class="field"><select id="institution-filter" aria-label="기관 유형 필터"><option value="">모든 기관 유형</option></select></label>
           <label class="field"><select id="technical-filter" aria-label="기술 접근 필터"><option value="">모든 기술 접근</option></select></label>
           <label class="field"><select id="domain-filter" aria-label="적용 영역 필터"><option value="">모든 적용 영역</option></select></label>
           <button type="button" class="reset-btn" id="reset-filters">필터 초기화</button>
@@ -680,9 +710,9 @@
         </article>
         <article class="card finding">
           <span class="no">FINDING 02</span>
-          <h3 data-pretext contenteditable="true" spellcheck="false">지역 집중과 기관 집중은 같은 이야기가 아니다</h3>
-          <div class="big">28.0<small>% · 상위 5개 기관</small></div>
-          <p>서울 비중은 크지만 상위 5개 기관이 차지하는 비중은 28.0%다. 연구 활동은 수도권에 모였어도 여러 기관에 나뉘어 있다.</p>
+          <h3 data-pretext contenteditable="true" spellcheck="false">프로젝트 수와 연구비의 기관 구성은 다르다</h3>
+          <div class="big">40.1<small>% · 비대학 기관 연구비</small></div>
+          <p>대학·과학기술원이 프로젝트의 90.4%를 수행하지만, 정부출연·공공·의료기관의 110개 프로젝트가 전체 정부 연구비의 40.1%를 차지한다.</p>
         </article>
         <article class="card finding">
           <span class="no">FINDING 03</span>
@@ -716,6 +746,7 @@
           <ul class="method-list">
             <li>검색식에 포착된 NTIS 과제만 포함하므로 전체 생성형 AI 연구를 뜻하지 않는다.</li>
             <li>2026년은 9월 30일까지 수집한 진행 중 자료다.</li>
+            <li>기관 유형은 NTIS 원유형을 바탕으로 기관 단위에서 네 범주로 정규화했다. 과학기술원은 대학, 고등과학원은 정부출연 연구기관으로 일관되게 분류했다.</li>
             <li>지도는 대표 수행기관 소재지이며 실제 연구 현장 전체를 나타내지 않는다. 행정경계는 통계청 2013년 시도·서울 자치구·경기도 시군 경계 자료를 사용했다.</li>
             <li>주제군은 과제명·키워드 규칙의 대표값이며 공식 학문 분류가 아니다.</li>
             <li>의미 기반 14개 군집은 텍스트 유사도를 이용한 탐색용 묶음이며, 안정도 ARI 0.61로 경계에 있는 연구는 다른 군집으로 달라질 수 있다.</li>
@@ -742,11 +773,18 @@
   <script>
     (function () {
       'use strict';
-      const ASSET_VERSION = '20261003-2';
+      const ASSET_VERSION = '20261004-1';
       const SECURITY_TOPIC = '안전·신뢰·거버넌스';
-      const state = { data: null, mapData: null, detailMapData: {}, projectById: null, visible: 12, topicAxis: 'technical', regionView: 'tile', regionScope: 'national', selectedSubregion: null, relationTab: 'keywords', keywordYear: 'overall', clusterFilter: '', mapColorMode: 'cluster', selectedProjectId: null, filters: { query: '', region: '', technical: '', domain: '' } };
+      const state = { data: null, mapData: null, detailMapData: {}, projectById: null, visible: 12, topicAxis: 'technical', institutionCategory: 'all', mapInstitutionCategory: 'all', regionView: 'tile', regionScope: 'national', selectedSubregion: null, relationTab: 'keywords', keywordYear: 'overall', clusterFilter: '', mapColorMode: 'cluster', selectedProjectId: null, filters: { query: '', region: '', institution: '', technical: '', domain: '' } };
       const topicColors = ['var(--brand)', 'var(--prof)', 'var(--slide)', 'var(--note)', 'var(--term)', 'var(--brand-dark)', 'var(--muted)', 'var(--ink-soft)'];
       const clusterColors = ['#3355d1','#2f6b52','#6b5bd2','#c2255c','#b8792e','#1f7a8c','#8b5e34','#5b6475','#3a7d44','#b24c63','#4a6fa5','#7a5195','#2a9d8f','#d97706'];
+      const institutionCategories = [
+        { code: 'university_science_institute', label: '대학·과학기술원', shortLabel: '대학·과기원', color: 'var(--brand)' },
+        { code: 'government_funded_research_institute', label: '정부출연 연구기관', shortLabel: '정부출연', color: 'var(--prof)' },
+        { code: 'public_professional_research_institute', label: '기타 공공·전문 연구기관', shortLabel: '기타 공공·전문', color: 'var(--slide)' },
+        { code: 'medical_institution', label: '의료기관', shortLabel: '의료기관', color: 'var(--note)' }
+      ];
+      const institutionCategoryMap = new Map(institutionCategories.map((item) => [item.code, item]));
       const regionOrder = ['서울','경기','인천','강원','충북','충남','세종','대전','경북','대구','울산','부산','경남','전북','전남','광주','제주'];
       const seoulDistrictOrder = ['강남구','강동구','강북구','강서구','관악구','광진구','구로구','금천구','노원구','도봉구','동대문구','동작구','마포구','서대문구','서초구','성동구','성북구','송파구','양천구','영등포구','용산구','은평구','종로구','중구','중랑구'];
       const gyeonggiMunicipalityOrder = ['가평군','고양시','과천시','광명시','광주시','구리시','군포시','김포시','남양주시','동두천시','부천시','성남시','수원시','시흥시','안산시','안성시','안양시','양주시','양평군','여주시','연천군','오산시','용인시','의왕시','의정부시','이천시','파주시','평택시','포천시','하남시','화성시'];
@@ -770,6 +808,19 @@
         return `${formatNumber(value)}원`;
       };
       const escapeHTML = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
+      const getCategoryLabel = (code, short = false) => code === 'all' ? '전체 기관' : (institutionCategoryMap.get(code)?.[short ? 'shortLabel' : 'label'] || code);
+      const filterProjectsByInstitutionCategory = (projects, code) => code === 'all' || !code ? projects : projects.filter((project) => project.institution_category === code);
+
+      function aggregateInstitutions(projects) {
+        const byInstitution = new Map();
+        projects.forEach((project) => {
+          const item = byInstitution.get(project.institution) || { institution: project.institution, project_count: 0, government_funding_krw: 0 };
+          item.project_count += 1;
+          item.government_funding_krw += project.government_funding_krw;
+          byInstitution.set(project.institution, item);
+        });
+        return [...byInstitution.values()].sort((a, b) => b.project_count - a.project_count || b.government_funding_krw - a.government_funding_krw || a.institution.localeCompare(b.institution, 'ko'));
+      }
 
       function renderSummary() {
         const projects = state.data.projects;
@@ -804,7 +855,9 @@
       function selectRegion(name) {
         if (regionDetailConfig[name]) { openRegionDetail(name); return; }
         state.filters.region = name;
+        state.filters.institution = state.mapInstitutionCategory === 'all' ? '' : state.mapInstitutionCategory;
         $('#region-filter').value = name;
+        $('#institution-filter').value = state.filters.institution;
         state.visible = 12;
         renderProjects();
         $('#explore').scrollIntoView({ behavior: 'smooth' });
@@ -829,7 +882,7 @@
       function getRegionDetailStats(regionName) {
         const config = regionDetailConfig[regionName];
         const byArea = new Map(config.order.map((name) => [name, { name, project_count: 0, government_funding_krw: 0, institutions: new Map() }]));
-        const projects = state.data.projects.filter((project) => project.sido === regionName);
+        const projects = filterProjectsByInstitutionCategory(state.data.projects, state.mapInstitutionCategory).filter((project) => project.sido === regionName);
         const totalFunding = projects.reduce((sum, project) => sum + project.government_funding_krw, 0);
         projects.forEach((project) => {
           const item = byArea.get(project.sigungu);
@@ -840,7 +893,7 @@
         });
         return [...byArea.values()].map((item) => {
           const topInstitution = [...item.institutions.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ko'))[0] || ['', 0];
-          return { ...item, share: item.project_count / projects.length, funding_share: totalFunding ? item.government_funding_krw / totalFunding : 0, top_institution: topInstitution[0], top_institution_count: topInstitution[1] };
+          return { ...item, share: projects.length ? item.project_count / projects.length : 0, funding_share: totalFunding ? item.government_funding_krw / totalFunding : 0, top_institution: topInstitution[0], top_institution_count: topInstitution[1] };
         }).sort((a, b) => b.project_count - a.project_count || a.name.localeCompare(b.name, 'ko'));
       }
 
@@ -912,13 +965,18 @@
         const observed = stats.filter((item) => item.project_count > 0).length;
         const topFive = stats.slice(0, 5).reduce((sum, item) => sum + item.project_count, 0);
         const fundingLeader = [...stats].sort((a, b) => b.government_funding_krw - a.government_funding_krw)[0];
+        const categoryLabel = getCategoryLabel(state.mapInstitutionCategory);
         if (!state.selectedSubregion || !statsByName.has(state.selectedSubregion)) state.selectedSubregion = stats[0].name;
         $('#regional-title').textContent = `${config.displayName} ${config.areaLabel}별 연구 분포`;
-        $('#regional-summary-note').textContent = `${formatNumber(total)}개 · ${observed}개 ${config.areaLabel} 분포 · 상위 5개 ${config.areaLabel} ${formatPercent(topFive / total)}`;
+        $('#regional-summary-note').textContent = total
+          ? `${categoryLabel} · ${formatNumber(total)}개 · ${observed}개 ${config.areaLabel} 분포 · 상위 5개 ${config.areaLabel} ${formatPercent(topFive / total)}`
+          : `${categoryLabel} · 분석 대상 프로젝트 없음`;
         $('#regional-ranking-title').textContent = `${stats.length}개 ${config.areaLabel} 순위`;
-        $('#regional-insight').innerHTML = regionName === '경기'
-          ? `<strong>${formatPercent(fundingLeader.funding_share)}</strong>${config.displayName} 정부 연구비 ${formatFunding(totalFunding)} 중 ${formatFunding(fundingLeader.government_funding_krw)}이 ${escapeHTML(fundingLeader.name)}에 집중되어 있습니다.`
-          : `<strong>${formatPercent(topFive / total)}</strong>${config.displayName} 프로젝트가 상위 5개 ${config.areaLabel}에 집중되어 있습니다.`;
+        $('#regional-insight').innerHTML = !total
+          ? `<strong>0개</strong>${categoryLabel}에 해당하는 ${config.displayName} 프로젝트가 없습니다.`
+          : regionName === '경기'
+            ? `<strong>${formatPercent(fundingLeader.funding_share)}</strong>${categoryLabel} 기준, ${config.displayName} 정부 연구비 ${formatFunding(totalFunding)} 중 ${formatFunding(fundingLeader.government_funding_krw)}이 ${escapeHTML(fundingLeader.name)}에 집중되어 있습니다.`
+            : `<strong>${formatPercent(topFive / total)}</strong>${categoryLabel} 프로젝트가 상위 5개 ${config.areaLabel}에 집중되어 있습니다.`;
         const max = Math.max(...stats.map((item) => item.project_count), 1);
         renderRegionDetailMap(regionName, statsByName, max);
         renderSubregionDetail(statsByName.get(state.selectedSubregion), config);
@@ -984,7 +1042,8 @@
             labels.push(`<text class="geo-label ${heat > 52 ? 'on-dark' : ''}" x="${(cx + dx).toFixed(1)}" y="${(cy + dy).toFixed(1)}">${name}</text>`);
           }
         });
-        shell.innerHTML = `<svg class="geo-map" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="geo-map-title geo-map-desc"><title id="geo-map-title">시도별 생성형 AI 연구 프로젝트 지도</title><desc id="geo-map-desc">색이 진할수록 프로젝트 수가 많습니다. 지역을 선택하면 과제 목록을 필터링합니다.</desc>${paths.join('')}${labels.join('')}</svg>`;
+        const categoryLabel = getCategoryLabel(state.mapInstitutionCategory);
+        shell.innerHTML = `<svg class="geo-map" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="geo-map-title geo-map-desc"><title id="geo-map-title">${categoryLabel} 시도별 생성형 AI 연구 프로젝트 지도</title><desc id="geo-map-desc">색이 진할수록 선택한 기관 유형의 프로젝트 수가 많습니다. 지역을 선택하면 과제 목록을 필터링합니다.</desc>${paths.join('')}${labels.join('')}</svg>`;
         $$('.geo-region').forEach((region) => {
           region.addEventListener('click', () => selectRegion(region.dataset.region));
           region.addEventListener('keydown', (event) => {
@@ -993,10 +1052,42 @@
         });
       }
 
+      function getRegionStats() {
+        const projects = filterProjectsByInstitutionCategory(state.data.projects, state.mapInstitutionCategory);
+        const byRegion = new Map(regionOrder.map((sido) => [sido, { sido, project_count: 0, government_funding_krw: 0 }]));
+        projects.forEach((project) => {
+          const item = byRegion.get(project.sido);
+          if (!item) return;
+          item.project_count += 1;
+          item.government_funding_krw += project.government_funding_krw;
+        });
+        return [...byRegion.values()].map((item) => ({ ...item, share: projects.length ? item.project_count / projects.length : 0 }))
+          .sort((a, b) => b.project_count - a.project_count || a.sido.localeCompare(b.sido, 'ko'));
+      }
+
+      function renderMapCategoryFilter() {
+        const options = [{ code: 'all', shortLabel: '전체' }, ...institutionCategories];
+        $('#map-category-filter').innerHTML = options.map((item) => `<button type="button" class="${state.mapInstitutionCategory === item.code ? 'active' : ''}" data-map-institution-category="${item.code}" aria-pressed="${state.mapInstitutionCategory === item.code}">${escapeHTML(item.shortLabel)}</button>`).join('');
+        const projects = filterProjectsByInstitutionCategory(state.data.projects, state.mapInstitutionCategory);
+        $('#map-category-note').textContent = `${getCategoryLabel(state.mapInstitutionCategory)} · ${formatNumber(projects.length)}개 프로젝트`;
+        $$('[data-map-institution-category]').forEach((button) => button.addEventListener('click', () => {
+          state.mapInstitutionCategory = button.dataset.mapInstitutionCategory;
+          state.selectedSubregion = null;
+          renderMapCategoryFilter();
+          renderRegions();
+          if (state.regionScope !== 'national') renderRegionDetail();
+        }));
+      }
+
+      function updateRegionViewNote() {
+        const viewLabel = state.regionView === 'tile' ? '타일 지도' : '대한민국 지도';
+        $('#region-view-note').textContent = `${getCategoryLabel(state.mapInstitutionCategory, true)} · ${viewLabel} · 진할수록 많음`;
+      }
+
       function renderRegions() {
-        const regions = state.data.summaries.regions;
+        const regions = getRegionStats();
         const byName = new Map(regions.map((d) => [d.sido, d]));
-        const max = Math.max(...regions.map((d) => d.project_count));
+        const max = Math.max(...regions.map((d) => d.project_count), 1);
         $('#region-map').innerHTML = regionOrder.map((name) => {
           const item = byName.get(name) || { project_count: 0, share: 0 };
           const heat = item.project_count ? Math.max(8, Math.round(item.project_count / max * 78)) : 3;
@@ -1004,8 +1095,9 @@
           return `<button type="button" class="region-tile ${hot}" data-name="${name}" data-region="${name}" style="background:color-mix(in srgb,var(--brand) ${heat}%,var(--surface))" aria-label="${name} 프로젝트 ${item.project_count}개"><b>${name}</b><span>${item.project_count}</span><small>${formatPercent(item.share)}</small></button>`;
         }).join('');
         renderGeoMap(byName, max);
-        const top = regions.slice(0, 10);
-        $('#region-ranking').innerHTML = rankRows(top, 'sido', regions[0].project_count);
+        const top = regions.filter((item) => item.project_count > 0).slice(0, 10);
+        $('#region-ranking').innerHTML = top.length ? rankRows(top, 'sido', top[0].project_count) : '<div class="empty">선택한 기관 유형의 지역 데이터가 없습니다.</div>';
+        updateRegionViewNote();
         $$('.region-tile').forEach((button) => button.addEventListener('click', () => selectRegion(button.dataset.region)));
       }
 
@@ -1014,15 +1106,50 @@
       }
 
       function renderInstitutions() {
-        const institutions = state.data.summaries.institutions;
+        const allProjects = state.data.projects;
+        const totalFunding = allProjects.reduce((sum, project) => sum + project.government_funding_krw, 0);
+        const summaries = state.data.summaries.institution_categories;
+        const options = [{ code: 'all', shortLabel: '전체' }, ...institutionCategories];
+        $('#institution-category-filter').innerHTML = options.map((item) => `<button type="button" class="${state.institutionCategory === item.code ? 'active' : ''}" data-institution-category-filter="${item.code}" aria-pressed="${state.institutionCategory === item.code}">${escapeHTML(item.shortLabel)}</button>`).join('');
+        $('#institution-category-grid').innerHTML = institutionCategories.map((category) => {
+          const item = summaries.find((summary) => summary.category === category.code);
+          const fundingShare = item.government_funding_krw / totalFunding;
+          return `<button type="button" class="institution-category-card ${state.institutionCategory === category.code ? 'active' : ''}" data-institution-category-card="${category.code}" aria-pressed="${state.institutionCategory === category.code}" style="--category-color:${category.color}">
+            <span class="category-name">${escapeHTML(category.label)}</span>
+            <strong class="category-count">${formatNumber(item.project_count)}개 <small>${formatPercent(item.share)}</small></strong>
+            <span class="category-meta">${formatNumber(item.institution_count)}개 기관 · ${formatFunding(item.government_funding_krw)} (${formatPercent(fundingShare)})</span>
+          </button>`;
+        }).join('');
+        const selectedProjects = filterProjectsByInstitutionCategory(allProjects, state.institutionCategory);
+        const institutions = aggregateInstitutions(selectedProjects);
         const top = institutions.slice(0, 10);
-        $('#institution-ranking').innerHTML = rankRows(top, 'institution', top[0].project_count);
+        const selectedLabel = getCategoryLabel(state.institutionCategory);
+        $('#institution-category-note').textContent = `${selectedLabel} · ${formatNumber(selectedProjects.length)}개 프로젝트`;
+        $('#institution-ranking-title').textContent = state.institutionCategory === 'all' ? '프로젝트 수 상위 기관' : `${selectedLabel} 상위 기관`;
+        $('#institution-ranking').innerHTML = top.length ? rankRows(top, 'institution', top[0].project_count) : '<div class="empty">선택한 유형의 기관이 없습니다.</div>';
         const top5Count = institutions.slice(0, 5).reduce((sum, d) => sum + d.project_count, 0);
-        const top10Count = institutions.slice(0, 10).reduce((sum, d) => sum + d.project_count, 0);
-        $('#institution-concentration').innerHTML = `
-          <div class="funding-item"><strong>상위 5개 기관</strong><div class="amount">${formatNumber(top5Count)}개 · ${formatPercent(top5Count / state.data.projects.length)}</div><p>연세대, 서울대, 고려대, KAIST, 성균관대.</p></div>
-          <div class="funding-item"><strong>상위 10개 기관</strong><div class="amount">${formatNumber(top10Count)}개 · ${formatPercent(top10Count / state.data.projects.length)}</div><p>지역 집중도보다 기관 집중도는 낮습니다.</p></div>
-          <div class="funding-item"><strong>연구그룹 최대 프로젝트 수</strong><div class="amount">3개</div><p>대부분의 연구책임자+기관 조합은 1–2개 프로젝트를 수행합니다.</p></div>`;
+        if (state.institutionCategory === 'all') {
+          const university = summaries.find((item) => item.category === 'university_science_institute');
+          const nonUniversityCount = allProjects.length - university.project_count;
+          const nonUniversityFunding = totalFunding - university.government_funding_krw;
+          $('#institution-insight-title').textContent = '기관 유형 해석';
+          $('#institution-concentration').innerHTML = `
+            <div class="funding-item"><strong>대학·과학기술원</strong><div class="amount">${formatPercent(university.share)} · ${formatNumber(university.project_count)}개</div><p>프로젝트 비중은 크지만 정부 연구비 비중은 ${formatPercent(university.government_funding_krw / totalFunding)}입니다.</p></div>
+            <div class="funding-item"><strong>비대학 연구기관·의료기관</strong><div class="amount">${formatPercent(nonUniversityFunding / totalFunding)} · ${formatFunding(nonUniversityFunding)}</div><p>${formatNumber(nonUniversityCount)}개 프로젝트가 전체 정부 연구비의 ${formatPercent(nonUniversityFunding / totalFunding)}를 차지합니다.</p></div>
+            <div class="funding-item"><strong>상위 5개 기관</strong><div class="amount">${formatNumber(top5Count)}개 · ${formatPercent(top5Count / allProjects.length)}</div><p>지역 집중도보다 기관 집중도는 낮습니다.</p></div>`;
+        } else {
+          const summary = summaries.find((item) => item.category === state.institutionCategory);
+          const selectedFunding = selectedProjects.reduce((sum, project) => sum + project.government_funding_krw, 0);
+          const leader = institutions[0];
+          $('#institution-insight-title').textContent = '유형 구성';
+          $('#institution-concentration').innerHTML = `
+            <div class="funding-item"><strong>전체 프로젝트 중 비중</strong><div class="amount">${formatNumber(summary.project_count)}개 · ${formatPercent(summary.share)}</div><p>${formatNumber(summary.institution_count)}개 정규화 기관이 포함됩니다.</p></div>
+            <div class="funding-item"><strong>전체 정부 연구비 중 비중</strong><div class="amount">${formatFunding(selectedFunding)} · ${formatPercent(selectedFunding / totalFunding)}</div><p>프로젝트 수와 연구비 비중을 함께 비교해 해석합니다.</p></div>
+            <div class="funding-item"><strong>프로젝트 수 1위 기관</strong><div class="amount">${escapeHTML(leader.institution)}</div><p>${formatNumber(leader.project_count)}개 · 유형 내 ${formatPercent(leader.project_count / selectedProjects.length)}</p></div>`;
+        }
+        const choose = (category) => { state.institutionCategory = category; renderInstitutions(); };
+        $$('[data-institution-category-filter]').forEach((button) => button.addEventListener('click', () => choose(button.dataset.institutionCategoryFilter)));
+        $$('[data-institution-category-card]').forEach((button) => button.addEventListener('click', () => choose(button.dataset.institutionCategoryCard)));
       }
 
       function renderTopics() {
@@ -1172,6 +1299,7 @@
           values.forEach((value) => select.insertAdjacentHTML('beforeend', `<option value="${escapeHTML(value)}">${escapeHTML(value)}</option>`));
         };
         addOptions('#region-filter', state.data.summaries.regions.map((d) => d.sido));
+        institutionCategories.forEach((item) => $('#institution-filter').insertAdjacentHTML('beforeend', `<option value="${item.code}">${escapeHTML(item.label)}</option>`));
         addOptions('#technical-filter', state.data.summaries.technical_topics.map((d) => d.topic));
         addOptions('#domain-filter', state.data.summaries.application_domains.map((d) => d.domain));
       }
@@ -1182,6 +1310,7 @@
           const haystack = `${p.title} ${p.pi} ${p.institution}`.toLocaleLowerCase('ko');
           return (!query || haystack.includes(query)) &&
             (!state.filters.region || p.sido === state.filters.region) &&
+            (!state.filters.institution || p.institution_category === state.filters.institution) &&
             (!state.filters.technical || p.technical_topic === state.filters.technical) &&
             (!state.filters.domain || p.application_domain === state.filters.domain);
         });
@@ -1196,7 +1325,7 @@
             <div>
               <h3 class="project-title">${escapeHTML(p.title)}</h3>
               <div class="project-meta"><span>${escapeHTML(p.institution)}${p.site ? ` · ${escapeHTML(p.site)}` : ''}</span><span>${escapeHTML(p.pi)}</span><span>${escapeHTML(p.region_key)}</span><span>${p.start_year}–${p.end_year}${p.end_year === 2026 ? ' (9.30 현재)' : ''}</span></div>
-              <div class="project-tags"><span class="tag tech">${escapeHTML(p.technical_topic)}</span><span class="tag domain">${escapeHTML(p.application_domain)}</span><span class="tag cluster">${escapeHTML(p.cluster_label)}</span></div>
+              <div class="project-tags"><span class="tag institution">${escapeHTML(getCategoryLabel(p.institution_category))}</span><span class="tag tech">${escapeHTML(p.technical_topic)}</span><span class="tag domain">${escapeHTML(p.application_domain)}</span><span class="tag cluster">${escapeHTML(p.cluster_label)}</span></div>
             </div>
             <div class="project-side"><strong>${formatFunding(p.government_funding_krw)}</strong><a href="${escapeHTML(p.ntis_url)}" target="_blank" rel="noopener noreferrer">NTIS에서 찾기 ↗</a></div>
           </article>`).join('') : '<div class="empty">조건에 맞는 프로젝트가 없습니다. 검색어나 필터를 바꿔보세요.</div>';
@@ -1250,7 +1379,7 @@
             item.setAttribute('aria-pressed', String(active));
           });
           $$('[data-region-panel]').forEach((panel) => { panel.hidden = panel.dataset.regionPanel !== state.regionView; });
-          $('#region-view-note').textContent = state.regionView === 'tile' ? '타일 지도 · 진할수록 많음' : '대한민국 지도 · 진할수록 많음';
+          updateRegionViewNote();
         }));
         $('#regional-back').addEventListener('click', showNationalRegions);
         const syncFilter = (selector, key) => $(selector).addEventListener(key === 'query' ? 'input' : 'change', (event) => {
@@ -1260,12 +1389,14 @@
         });
         syncFilter('#search-input', 'query');
         syncFilter('#region-filter', 'region');
+        syncFilter('#institution-filter', 'institution');
         syncFilter('#technical-filter', 'technical');
         syncFilter('#domain-filter', 'domain');
         $('#reset-filters').addEventListener('click', () => {
-          state.filters = { query: '', region: '', technical: '', domain: '' };
+          state.filters = { query: '', region: '', institution: '', technical: '', domain: '' };
           $('#search-input').value = '';
           $('#region-filter').value = '';
+          $('#institution-filter').value = '';
           $('#technical-filter').value = '';
           $('#domain-filter').value = '';
           state.visible = 12;
@@ -1297,7 +1428,7 @@
           if (seoulMapResponse?.ok) state.detailMapData.서울 = await seoulMapResponse.json();
           if (gyeonggiMapResponse?.ok) state.detailMapData.경기 = await gyeonggiMapResponse.json();
           $('#updated-at').textContent = `분석 기준 2026-09-30 · 데이터 갱신 ${state.data.meta.updated_at} · ${formatNumber(state.data.meta.project_count)}개 프로젝트`;
-          renderSummary(); renderAnnual(); renderRegions(); renderInstitutions(); renderTopics(); populateFilters(); renderExploration(); bindInteractions(); renderProjects();
+          renderSummary(); renderAnnual(); renderInstitutions(); renderMapCategoryFilter(); renderRegions(); renderTopics(); populateFilters(); renderExploration(); bindInteractions(); renderProjects();
         } catch (error) {
           const alert = $('#data-error');
           alert.textContent = location.protocol === 'file:'
