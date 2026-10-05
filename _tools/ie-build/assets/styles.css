@@ -1202,6 +1202,26 @@ a.badge-core:hover { border-color: var(--term); }
   box-shadow: var(--shadow);
 }
 #map-svg text { pointer-events: none; user-select: none; }
+/* 확대·이동. 배율 1에서는 세로 스크롤을 페이지에 넘기고(pan-y) 핀치만 지도가
+   받는다. 확대된 뒤에는 한 손가락 끌기도 지도 이동으로 쓴다(none). */
+#map-svg { touch-action: pan-y; }
+#map-svg.is-zoomed { touch-action: none; cursor: grab; }
+#map-svg.is-dragging, #map-svg.is-dragging .map-node { cursor: grabbing; }
+.map-zoom {
+  position: absolute; top: 12px; right: 12px; z-index: 3;
+  display: flex; align-items: center; gap: 2px; padding: 3px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+.map-zoom button {
+  min-width: 30px; height: 30px; padding: 0 8px; border: 0; border-radius: 6px;
+  background: none; color: var(--ink); font: inherit; font-size: 16px; line-height: 1; cursor: pointer;
+}
+.map-zoom button.map-zoom-fit { font-size: 12.5px; }
+.map-zoom button:hover:not(:disabled) { background: var(--surface-2); }
+.map-zoom button:disabled { color: var(--muted); opacity: .45; cursor: default; }
+.map-zoom-level { min-width: 42px; padding: 0 6px 0 2px; font-size: 12px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.map-zoom-hint { margin: 6px 2px 0; font-size: 12px; color: var(--muted); text-align: right; }
 .map-node { cursor: pointer; transition: opacity .15s; }
 .map-dot { stroke: var(--surface); stroke-width: 2px; }
 .map-node:hover .map-dot, .map-node:focus .map-dot { opacity: 1; stroke: var(--ink); }
@@ -1211,16 +1231,18 @@ a.badge-core:hover { border-color: var(--term); }
    (map.js가 viewBox와 함께 설정). paint-order로 글자 뒤에 배경색 테두리를 깔아
    선 위에서도 읽히게 한다. */
 .map-label {
-  font-size: calc(10.5px * var(--map-ls, 1)); fill: var(--ink-soft); font-weight: 500;
+  font-size: calc(10.5px * var(--map-lz, var(--map-ls, 1))); fill: var(--ink-soft); font-weight: 500;
   opacity: 0; transition: opacity .15s;
-  paint-order: stroke; stroke: var(--surface); stroke-width: calc(3px * var(--map-ls, 1)); stroke-linejoin: round;
+  paint-order: stroke; stroke: var(--surface); stroke-width: calc(3px * var(--map-lz, var(--map-ls, 1))); stroke-linejoin: round;
 }
-.map-label.is-hub { opacity: 1; }
+.map-label.is-hub, #map-svg.show-all-labels .map-label { opacity: 1; }
 .map-label.is-hover { opacity: 1; fill: var(--ink); font-weight: 700; }
 /* 키워드에 맞은 개념: 진한 테두리 + 굵은 라벨 */
 .map-node.is-hit .map-dot { stroke: var(--ink); stroke-width: 3px; }
 .map-label.is-hit { fill: var(--ink); font-weight: 700; }
 .map-edge { stroke: var(--line); stroke-width: 1.1; opacity: .55; transition: opacity .15s; }
+/* 확대해도 선·테두리 굵기는 화면 기준으로 유지 */
+.map-edge, .map-dot { vector-effect: non-scaling-stroke; }
 .map-edge-cross { stroke: var(--term); stroke-width: 2.4; opacity: .8; }
 
 /* 선택 강조: 고른 개념(.is-focus)과 바로 이웃(.is-near)만 남기고 나머지는 흐리게 */
@@ -1319,6 +1341,10 @@ a.badge-core:hover { border-color: var(--term); }
   .ctrl-search input[type="search"] { flex: 1; width: auto; min-width: 0; }
   .cmp-table { min-width: 560px; }
   .map-tip { max-width: 220px; font-size: 12px; }
+  .map-zoom { top: 8px; right: 8px; padding: 2px; }
+  .map-zoom button { min-width: 28px; height: 28px; padding: 0 6px; }
+  .map-zoom-level { display: none; }
+  .map-zoom-hint { display: none; }
   /* 좁은 화면에서는 패널이 그래프를 가리지 않도록 아래로 내린다. */
   .map-focus { position: relative; top: auto; left: auto; width: auto; max-height: none; margin-top: 10px; }
 }

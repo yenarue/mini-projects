@@ -108,6 +108,13 @@
 
   <div class="map-wrap">
     <svg id="map-svg" viewBox="0 0 960 680" role="img" aria-label="개념 관계 그래프"></svg>
+    <div class="map-zoom" role="group" aria-label="확대·축소">
+      <button type="button" id="map-zoom-in" aria-label="확대" title="확대 (+)">+</button>
+      <button type="button" id="map-zoom-out" aria-label="축소" title="축소 (−)">−</button>
+      <button type="button" id="map-zoom-fit" class="map-zoom-fit" title="전체 보기 (0)">전체</button>
+      <span class="map-zoom-level" id="map-zoom-level" aria-live="polite">100%</span>
+    </div>
+    <p class="map-zoom-hint">⌘/Ctrl + 스크롤·핀치·더블클릭으로 확대, 확대한 뒤 드래그로 이동</p>
     <div class="map-tip" id="map-tip" hidden></div>
     <aside class="map-focus" id="map-focus" aria-live="polite" hidden></aside>
     <p class="map-empty" id="map-empty" hidden>조건에 맞는 개념이 없다.</p>

@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   layoutGraph, hubThreshold, mulberry32, matchesKeyword, VIEW_W, VIEW_H,
+  zoomAt, panBy, centerOn, zoomLevel, ZOOM_MAX,
 } from '../assets/js/map-layout.mjs';
 
 /**
@@ -119,4 +120,29 @@ test('키워드: 제목·영문명·태그·정의에서 공백 분리 AND로 �
   assert.ok(matchesKeyword(n, 'LOCK'));
   assert.ok(matchesKeyword(n, 'path 사용자'));
   assert.ok(!matchesKeyword(n, '고착 시민'));
+});
+
+test('확대: 기준점은 제자리에 두고 배율만 바꾼다', () => {
+  const base = [0, 0, 960, 680];
+  const v = zoomAt(base, base, 2, 240, 170);
+  assert.deepEqual(v, [120, 85, 480, 340]);
+  assert.equal(zoomLevel(base, v), 2);
+  // 기준점의 상대 위치가 유지된다: (240-120)/480 === 240/960
+  assert.equal((240 - v[0]) / v[2], 240 / 960);
+});
+
+test('확대: 전체 맞춤보다 작게 축소되지 않고 최대 배율을 넘지 않는다', () => {
+  const base = [-100, -50, 960, 680];
+  assert.deepEqual(zoomAt(base, base, 0.5, 0, 0), base);
+  const max = zoomAt(base, base, 1000, 380, 290);
+  assert.equal(zoomLevel(base, max), ZOOM_MAX);
+});
+
+test('이동: 전체 영역 밖으로는 나가지 않는다', () => {
+  const base = [0, 0, 960, 680];
+  const z = zoomAt(base, base, 2, 480, 340); // [240, 170, 480, 340]
+  assert.deepEqual(panBy(base, z, -1000, -1000), [0, 0, 480, 340]);
+  assert.deepEqual(panBy(base, z, 1000, 1000), [480, 340, 480, 340]);
+  assert.deepEqual(panBy(base, base, 50, 50), base); // 배율 1이면 움직일 곳이 없다
+  assert.deepEqual(centerOn(base, z, 900, 20), [480, 0, 480, 340]);
 });

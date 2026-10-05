@@ -266,6 +266,44 @@ function matchesKeyword(node, query) {
   return words.every((w) => hay.includes(w));
 }
 
+/* ------------------------------------------------------------------
+ * 확대·이동. 화면 상태는 viewBox 하나([x, y, w, h])로 표현한다. base는
+ * layoutGraph가 돌려준 "전체 맞춤" viewBox이고, 확대 배율 k = base.w / cur.w.
+ * 축소는 전체 맞춤(k=1)까지만 허용하고, 이동은 base 밖으로 나가지 않게 막는다
+ * — 그래프를 화면 밖으로 날려 보내 길을 잃는 일이 없도록.
+ * ------------------------------------------------------------------ */
+const ZOOM_MIN = 1;
+const ZOOM_MAX = 8;
+
+function zoomLevel(base, cur) { return base[2] / cur[2]; }
+
+/** 보이는 영역이 base 안에 머물도록 x, y만 보정한다. */
+function clampView(base, v) {
+  const [bx, by, bw, bh] = base;
+  const x = Math.min(Math.max(v[0], bx), bx + bw - v[2]);
+  const y = Math.min(Math.max(v[1], by), by + bh - v[3]);
+  return [x, y, v[2], v[3]];
+}
+
+/** (fx, fy) — viewBox 좌표의 한 점 — 을 화면에서 제자리에 둔 채 factor배 확대(1 미만이면 축소). */
+function zoomAt(base, cur, factor, fx, fy) {
+  const k = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, zoomLevel(base, cur) * factor));
+  const w = base[2] / k, h = base[3] / k;
+  const x = fx - (fx - cur[0]) * (w / cur[2]);
+  const y = fy - (fy - cur[1]) * (h / cur[3]);
+  return clampView(base, [x, y, w, h]);
+}
+
+/** viewBox 좌표 단위로 (dx, dy)만큼 보이는 영역을 옮긴다. */
+function panBy(base, cur, dx, dy) {
+  return clampView(base, [cur[0] + dx, cur[1] + dy, cur[2], cur[3]]);
+}
+
+/** 배율은 그대로 두고 (px, py)가 가운데 오도록 옮긴다. */
+function centerOn(base, cur, px, py) {
+  return clampView(base, [px - cur[2] / 2, py - cur[3] / 2, cur[2], cur[3]]);
+}
+
 (function () {
   'use strict';
 
@@ -368,9 +406,9 @@ function matchesKeyword(node, query) {
     emptyMsg.hidden = true;
 
     var out = layoutGraph(g.nodes, g.edges, { seed: currentSeed, weeks: WEEKS });
-    svg.setAttribute('viewBox', out.viewBox.join(' '));
-    // 그림이 커져 축소돼 보일 때도 라벨이 읽히는 크기를 유지한다(map-layout.mjs).
-    svg.style.setProperty('--map-ls', String(out.labelScale));
+    // 필터를 바꾸거나 다시 배치하면 확대 상태를 풀고 전체 맞춤에서 시작한다.
+    baseVB = out.viewBox;
+    labelScale = out.labelScale;
 
     view = { byId: {}, nodeEls: {}, labelEls: {}, edgeEls: [], links: out.links };
     g.nodes.forEach(function (n) { view.byId[n.id] = n; });
@@ -462,15 +500,191 @@ function matchesKeyword(node, query) {
     }).join('') +
       '<span class="map-legend-item"><i class="cross"></i>주차 간 연결</span>';
 
+    setView(baseVB);
+
     // 필터를 바꾸거나 다시 배치해도 선택한 개념이 아직 보이면 강조를 유지한다.
     if (selected && view.byId[selected]) focusNode(selected);
     else clearFocus();
   }
 
+  /* ---------- 확대·이동 ----------
+   * 화면 상태는 viewBox 하나다(계산은 map-layout.mjs의 zoomAt/panBy). 라벨은
+   * 확대할수록 덜 커지게(배율의 제곱근만큼 상쇄) 해서, 확대하면 라벨끼리 사이가
+   * 벌어지고 숨겨 둔 라벨도 꺼내 보일 수 있게 한다. */
+  var baseVB = [0, 0, 960, 680];
+  var curVB = baseVB;
+  var labelScale = 1;
+  var zoomBtns = {
+    inn: document.getElementById('map-zoom-in'),
+    out: document.getElementById('map-zoom-out'),
+    fit: document.getElementById('map-zoom-fit'),
+  };
+  var zoomPct = document.getElementById('map-zoom-level');
+
+  function setView(vb) {
+    curVB = vb;
+    svg.setAttribute('viewBox', vb.join(' '));
+    var k = zoomLevel(baseVB, vb);
+    var lz = labelScale / Math.sqrt(k);
+    // 확대한 상태에서는 라벨이 화면에서 9px 아래로 작아지지 않게 한다 — 폭이 좁은
+    // 모바일에서는 √k 상쇄만으로는 확대해도 글자가 읽히지 않았다. 배율 1(전체
+    // 보기)은 허브 라벨 배치가 깨지지 않도록 그대로 둔다.
+    var w = svg.getBoundingClientRect().width;
+    if (k > 1.01 && w) lz = Math.max(lz, 9 / (10.5 * (w / vb[2])));
+    svg.style.setProperty('--map-ls', String(labelScale));
+    svg.style.setProperty('--map-lz', String(lz));
+    svg.classList.toggle('is-zoomed', k > 1.01);
+    // 2.5배 이상 확대하면 허브가 아닌 개념의 이름도 모두 보여준다.
+    svg.classList.toggle('show-all-labels', k >= 2.5);
+    // 원 반경과 라벨까지의 거리도 라벨 글자와 같은 비율(√k)로 상쇄한다 — 확대할수록
+    // 노드 사이가 벌어져 빽빽한 곳이 풀린다. 라벨 오프셋은 원 반경과 글자 크기의
+    // 합이라 같은 비율로 줄이면 정확히 맞는다.
+    var c = 1 / Math.sqrt(k);
+    var cl = Math.max(c, lz / labelScale); // 라벨 거리: 글자가 하한에 걸리면 그만큼 덜 줄인다
+    Object.keys(view.nodeEls).forEach(function (id) {
+      var n = view.byId[id];
+      view.nodeEls[id].firstChild.setAttribute('r', n.r * c);
+      var lb = view.labelEls[id];
+      lb.setAttribute('x', n.x + (n.lx - n.x) * cl);
+      lb.setAttribute('y', n.y + (n.ly - n.y) * cl);
+    });
+    zoomPct.textContent = Math.round(k * 100) + '%';
+    zoomBtns.inn.disabled = k >= ZOOM_MAX - 1e-6;
+    zoomBtns.out.disabled = zoomBtns.fit.disabled = k <= ZOOM_MIN + 1e-6;
+  }
+
+  /** 화면 좌표(clientX/Y) → viewBox 좌표 */
+  function toUser(cx, cy) {
+    var m = svg.getScreenCTM();
+    if (!m) return { x: curVB[0] + curVB[2] / 2, y: curVB[1] + curVB[3] / 2 };
+    var p = svg.createSVGPoint();
+    p.x = cx; p.y = cy;
+    p = p.matrixTransform(m.inverse());
+    return { x: p.x, y: p.y };
+  }
+  function zoomCenter(factor) {
+    setView(zoomAt(baseVB, curVB, factor, curVB[0] + curVB[2] / 2, curVB[1] + curVB[3] / 2));
+  }
+
+  // 창 폭이 바뀌면 화면 기준 라벨 하한을 다시 계산한다.
+  var resizeTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () { setView(curVB); }, 150);
+  });
+
+  zoomBtns.inn.addEventListener('click', function () { zoomCenter(1.5); });
+  zoomBtns.out.addEventListener('click', function () { zoomCenter(1 / 1.5); });
+  zoomBtns.fit.addEventListener('click', function () { setView(baseVB); });
+
+  // 휠: 그냥 스크롤은 페이지 스크롤로 남겨 두고, Ctrl/⌘ + 휠과 트랙패드
+  // 핀치(브라우저가 ctrlKey 휠로 보낸다)만 확대로 쓴다 — 페이지를 내리다
+  // 지도 위를 지나갈 때 스크롤이 갑자기 확대로 바뀌지 않도록.
+  svg.addEventListener('wheel', function (evt) {
+    if (!evt.ctrlKey && !evt.metaKey) return;
+    evt.preventDefault();
+    var d = Math.max(-50, Math.min(50, evt.deltaY));
+    var p = toUser(evt.clientX, evt.clientY);
+    setView(zoomAt(baseVB, curVB, Math.exp(-d * 0.01), p.x, p.y));
+  }, { passive: false });
+
+  // 빈 곳 더블클릭: 그 지점을 중심으로 확대(Shift면 축소).
+  svg.addEventListener('dblclick', function (evt) {
+    if (evt.target.closest('.map-node')) return;
+    evt.preventDefault();
+    var p = toUser(evt.clientX, evt.clientY);
+    setView(zoomAt(baseVB, curVB, evt.shiftKey ? 1 / 1.6 : 1.6, p.x, p.y));
+  });
+
+  // 드래그 이동 + 두 손가락 핀치. 4px 넘게 움직이면 "끌기"로 보고 뒤따르는
+  // click(노드 선택·강조 해제)을 삼킨다.
+  var pointers = {};
+  var drag = null;
+  var swallowClick = false;
+  function pointerList() { return Object.keys(pointers).map(function (k) { return pointers[k]; }); }
+
+  svg.addEventListener('pointerdown', function (evt) {
+    if (evt.pointerType === 'mouse' && evt.button !== 0) return;
+    pointers[evt.pointerId] = { x: evt.clientX, y: evt.clientY };
+    var ps = pointerList();
+    if (ps.length === 1) {
+      drag = { x: evt.clientX, y: evt.clientY, vb: curVB, moved: false, id: evt.pointerId };
+    } else if (ps.length === 2) {
+      var a = ps[0], b = ps[1];
+      drag = {
+        pinch: true, vb: curVB, moved: true,
+        dist: Math.hypot(a.x - b.x, a.y - b.y) || 1,
+        mid: toUser((a.x + b.x) / 2, (a.y + b.y) / 2),
+      };
+    }
+  });
+  svg.addEventListener('pointermove', function (evt) {
+    if (!pointers[evt.pointerId] || !drag) return;
+    pointers[evt.pointerId] = { x: evt.clientX, y: evt.clientY };
+    var rect = svg.getBoundingClientRect();
+    var unit = drag.vb[2] / rect.width; // 화면 1px = viewBox 몇 단위인가
+    if (drag.pinch) {
+      var ps = pointerList();
+      if (ps.length < 2) return;
+      var dist = Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y);
+      setView(zoomAt(baseVB, drag.vb, dist / drag.dist, drag.mid.x, drag.mid.y));
+      return;
+    }
+    var dx = evt.clientX - drag.x, dy = evt.clientY - drag.y;
+    if (!drag.moved) {
+      if (Math.hypot(dx, dy) < 4) return;
+      // 전체 맞춤 상태(배율 1)에서는 옮길 곳이 없으니 끌기를 시작하지 않는다
+      // — 노드 클릭이 손떨림 때문에 무시되지 않게.
+      if (zoomLevel(baseVB, curVB) <= 1.01) return;
+      drag.moved = true;
+      svg.classList.add('is-dragging');
+      tip.hidden = true;
+      try { svg.setPointerCapture(evt.pointerId); } catch (e) { /* 무시 */ }
+    }
+    setView(panBy(baseVB, drag.vb, -dx * unit, -dy * unit));
+  });
+  function endPointer(evt) {
+    delete pointers[evt.pointerId];
+    if (!drag) return;
+    if (drag.moved) swallowClick = true;
+    if (pointerList().length === 0) {
+      drag = null;
+      svg.classList.remove('is-dragging');
+    } else if (drag.pinch) {
+      // 핀치 중 한 손가락을 떼면 남은 손가락으로 이어서 끌 수 있게 다시 잡는다.
+      var p = pointerList()[0];
+      drag = { x: p.x, y: p.y, vb: curVB, moved: true };
+    }
+  }
+  svg.addEventListener('pointerup', endPointer);
+  svg.addEventListener('pointercancel', endPointer);
+  // 캡처 단계에서 끌기 직후의 click을 막는다(노드 <a>의 이동·선택보다 먼저).
+  svg.addEventListener('click', function (evt) {
+    if (!swallowClick) return;
+    swallowClick = false;
+    evt.preventDefault();
+    evt.stopPropagation();
+  }, true);
+
+  // 지도 영역에 포커스가 있을 때 + / - / 0 키
+  document.querySelector('.map-wrap').addEventListener('keydown', function (evt) {
+    if (evt.target.closest('input, textarea, select')) return;
+    if (evt.key === '+' || evt.key === '=') { zoomCenter(1.5); evt.preventDefault(); }
+    else if (evt.key === '-' || evt.key === '_') { zoomCenter(1 / 1.5); evt.preventDefault(); }
+    else if (evt.key === '0') { setView(baseVB); evt.preventDefault(); }
+  });
+
   /** 선택한 개념과 바로 이웃한 개념·연결만 남기고 나머지를 흐리게 한다. */
-  function focusNode(id) {
+  function focusNode(id, reveal) {
     var n = view.byId[id];
     if (!n) return;
+    // 패널 목록에서 고른 이웃이 확대된 화면 밖에 있으면 그 개념이 가운데 오게 옮긴다.
+    if (reveal) {
+      var v = curVB, m = v[2] * 0.08;
+      if (n.x < v[0] + m || n.x > v[0] + v[2] - m || n.y < v[1] + m || n.y > v[1] + v[3] - m) {
+        setView(centerOn(baseVB, curVB, n.x, n.y));
+      }
+    }
     selected = id;
     tip.hidden = true;
 
@@ -530,7 +744,7 @@ function matchesKeyword(node, query) {
     var btn = evt.target.closest('button');
     if (!btn) return;
     if (btn.classList.contains('map-focus-close')) { clearFocus(); return; }
-    if (btn.dataset.id) focusNode(btn.dataset.id);
+    if (btn.dataset.id) focusNode(btn.dataset.id, true);
   });
   // 노드가 아닌 빈 곳을 누르면 강조를 푼다.
   svg.addEventListener('click', function (evt) {
