@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
-import { combineQuizScript, buildQuizScript } from '../lib/quizscript.mjs';
+import { combineQuizScript, buildQuizScript, buildMapScript } from '../lib/quizscript.mjs';
 
 /**
  * file:// CORS 회귀 수정: quiz-logic.mjs(ESM)와 quiz.js(module 스크립트, 브라우저
@@ -60,4 +60,14 @@ test('buildQuizScript: 실제 assets/js 소스 파일을 읽어 합쳐도 export
   // 실제 함수 이름이 살아있는지 최소 확인
   assert.match(combined, /function sortByImportance/);
   assert.match(combined, /function applyFilters/);
+});
+
+test('buildMapScript: map-layout.mjs + map.js를 classic script로 합치고 문법 오류가 없다', () => {
+  const toolDir = new URL('..', import.meta.url).pathname;
+  const combined = buildMapScript(toolDir);
+  assert.ok(!/\bexport\s+(function|const|class)\b/.test(combined));
+  assert.ok(!/^import\b/m.test(combined));
+  assert.match(combined, /function layoutGraph/);
+  // 파싱만 해본다(실행하면 document가 없어 IIFE가 바로 return하지만, 문법 오류는 여기서 잡힌다).
+  assert.doesNotThrow(() => new vm.Script(combined));
 });
