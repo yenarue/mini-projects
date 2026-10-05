@@ -120,6 +120,10 @@ async function main() {
   const { buildQuizScript } = await import('./lib/quizscript.mjs');
   fsp.writeFileSync(path.join(cfg.outDir, 'js', 'quiz.js'), buildQuizScript(HERE), 'utf8');
   fsp.rmSync(path.join(cfg.outDir, 'js', 'quiz-logic.mjs'), { force: true });
+  // 개념 지도도 같은 이유로 레이아웃 순수 함수(map-layout.mjs)를 map.js와 합친다.
+  const { buildMapScript } = await import('./lib/quizscript.mjs');
+  fsp.writeFileSync(path.join(cfg.outDir, 'js', 'map.js'), buildMapScript(HERE), 'utf8');
+  fsp.rmSync(path.join(cfg.outDir, 'js', 'map-layout.mjs'), { force: true });
 
   let pages = 0;
   for (const week of orderedWeeks) {

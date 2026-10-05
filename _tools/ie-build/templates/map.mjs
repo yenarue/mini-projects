@@ -101,9 +101,21 @@ ${topbar({ active: 'map', weeks })}
     각 개념 파일의 <code>related</code>로 이은 그래프다. 개념 ${graph.nodes.length}개 ·
     연결 ${graph.edges.length}개 · 그중 주차를 넘는 연결 <strong>${crossCount}개</strong> —
     퀴즈의 비교형 문제가 나오는 자리라 굵고 진한 색으로 표시했다.
+    노드의 색은 주차, <strong class="plain">크기는 연결 수</strong>다 — 클수록 여러 개념과 이어진 허브 개념이고,
+    허브 개념만 이름을 늘 표시한다.
+    개념을 클릭하면 바로 이어진 개념만 남기고 나머지를 흐리게 한다 — 한 번 더 누르면 개념 페이지로 간다.
   </p>
 
   <div class="map-controls">
+    <label class="ctrl ctrl-search">
+      <span>키워드</span>
+      <input type="search" id="map-q" placeholder="예: 고착, lock-in, 시민" autocomplete="off" spellcheck="false">
+    </label>
+    <label class="ctrl ctrl-inline" title="키워드에 맞는 개념과 바로 이어진 개념도 함께 보여준다">
+      <input type="checkbox" id="map-q-near" checked>
+      <span>연결된 개념도</span>
+    </label>
+    <span class="map-q-count" id="map-q-count" aria-live="polite"></span>
     <label class="ctrl">
       <span>주차</span>
       <select id="map-week">
@@ -128,6 +140,7 @@ ${topbar({ active: 'map', weeks })}
   <div class="map-wrap">
     <svg id="map-svg" viewBox="0 0 960 680" role="img" aria-label="개념 관계 그래프"></svg>
     <div class="map-tip" id="map-tip" hidden></div>
+    <aside class="map-focus" id="map-focus" aria-live="polite" hidden></aside>
     <p class="map-empty" id="map-empty" hidden>조건에 맞는 개념이 없다.</p>
   </div>
   <p class="map-legend" id="map-legend"></p>
