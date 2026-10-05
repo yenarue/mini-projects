@@ -262,3 +262,41 @@ export function matchesKeyword(node, query) {
     .join(' ').toLowerCase();
   return words.every((w) => hay.includes(w));
 }
+
+/* ------------------------------------------------------------------
+ * 확대·이동. 화면 상태는 viewBox 하나([x, y, w, h])로 표현한다. base는
+ * layoutGraph가 돌려준 "전체 맞춤" viewBox이고, 확대 배율 k = base.w / cur.w.
+ * 축소는 전체 맞춤(k=1)까지만 허용하고, 이동은 base 밖으로 나가지 않게 막는다
+ * — 그래프를 화면 밖으로 날려 보내 길을 잃는 일이 없도록.
+ * ------------------------------------------------------------------ */
+export const ZOOM_MIN = 1;
+export const ZOOM_MAX = 8;
+
+export function zoomLevel(base, cur) { return base[2] / cur[2]; }
+
+/** 보이는 영역이 base 안에 머물도록 x, y만 보정한다. */
+export function clampView(base, v) {
+  const [bx, by, bw, bh] = base;
+  const x = Math.min(Math.max(v[0], bx), bx + bw - v[2]);
+  const y = Math.min(Math.max(v[1], by), by + bh - v[3]);
+  return [x, y, v[2], v[3]];
+}
+
+/** (fx, fy) — viewBox 좌표의 한 점 — 을 화면에서 제자리에 둔 채 factor배 확대(1 미만이면 축소). */
+export function zoomAt(base, cur, factor, fx, fy) {
+  const k = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, zoomLevel(base, cur) * factor));
+  const w = base[2] / k, h = base[3] / k;
+  const x = fx - (fx - cur[0]) * (w / cur[2]);
+  const y = fy - (fy - cur[1]) * (h / cur[3]);
+  return clampView(base, [x, y, w, h]);
+}
+
+/** viewBox 좌표 단위로 (dx, dy)만큼 보이는 영역을 옮긴다. */
+export function panBy(base, cur, dx, dy) {
+  return clampView(base, [cur[0] + dx, cur[1] + dy, cur[2], cur[3]]);
+}
+
+/** 배율은 그대로 두고 (px, py)가 가운데 오도록 옮긴다. */
+export function centerOn(base, cur, px, py) {
+  return clampView(base, [px - cur[2] / 2, py - cur[3] / 2, cur[2], cur[3]]);
+}
