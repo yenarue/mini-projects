@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+<html lang="ko" data-header="two">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="혁신에의 거시적 접근 II 개념 정리 13개">
+  <title>W05-1 · 혁신에의 거시적 접근 II — 혁신생태계론</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
+      } catch (e) {}
+    })();
+  </script>
+  
+</head>
+<body class="page-week">
+
+
+<header class="topbar">
+  <a class="topbar-home" href="../../index.html" title="KAIST ITM 대시보드로">← ITM</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
+  <nav class="topbar-nav">
+    <a href="index.html">학기 지도</a>
+    <a href="W01.html" class="active">주차별 개념</a>
+    <a href="core.html">핵심 개념</a>
+    <a href="quiz.html">퀴즈</a>
+    <a href="map.html">개념 지도</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
+    <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
+    </button>
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="개념 검색">
+    <input type="search" id="search-input" placeholder="개념명 · 영어 · 태그 · 본문 검색" autocomplete="off">
+    <ul class="search-results" id="search-results"></ul>
+    <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
+  </div>
+</div>
+
+<nav class="weeknav" aria-label="주차별 개념 바로가기"><a href="W01.html">W01</a><a href="W02-1.html">W02-1</a><a href="W02-2.html">W02-2</a><a href="W03.html">W03</a><a href="W05-1.html" class="active" aria-current="page">W05-1</a><a href="W05-2.html">W05-2</a></nav>
+<div class="layout" id="top">
+  
+<aside class="sidebar">
+  <div class="chapter-label">W05-1 · 10/03</div>
+  <h1>혁신에의 거시적 접근 II</h1>
+  <p class="side-subtitle">Macro approach II · Mode 2 / Triple Helix · Zoom 비대면</p>
+  <div class="side-progress">개념 13개</div>
+  <div class="side-tools">
+    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
+    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
+  </div>
+  <nav><ul class="side-nav">
+    <li data-item="c01" class="is-open">
+      <a href="#c01" data-concept="c01" class="active">
+        <span class="side-no">01</span>
+        <span class="side-title">★ Mode 1 vs Mode 2</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c01-definition" class="side-sub-sec" data-anchor="c01-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c01-h-슬라이드-w05a-p7-8" class="side-sub-h" data-anchor="c01-h-슬라이드-w05a-p7-8">📄 슬라이드 (W05a p7–8)</a></li>
+        <li><a href="#c01-h-1-다섯-차원-비교-퀴즈-1순위" class="side-sub-h" data-anchor="c01-h-1-다섯-차원-비교-퀴즈-1순위">1) 다섯 차원 비교 ★★ (퀴즈 1순위)</a></li>
+        <li><a href="#c01-h-2-배경-2차-대전과-과학기술의-시대" class="side-sub-h" data-anchor="c01-h-2-배경-2차-대전과-과학기술의-시대">2) 🗣 배경: 2차 대전과 과학기술의 시대</a></li>
+        <li><a href="#c01-h-3-초학제-transdisciplinary-vs-학제-interdisciplinary" class="side-sub-h" data-anchor="c01-h-3-초학제-transdisciplinary-vs-학제-interdisciplinary">3) 🗣 초학제(transdisciplinary) vs 학제(interdisciplinary) ★★</a></li>
+        <li><a href="#c01-h-4-왜-현장에서-풀어야-하는가" class="side-sub-h" data-anchor="c01-h-4-왜-현장에서-풀어야-하는가">4) 🗣 왜 현장에서 풀어야 하는가</a></li>
+        <li><a href="#c01-h-5-r-amp-d란-무엇인가-교수의-정의" class="side-sub-h" data-anchor="c01-h-5-r-amp-d란-무엇인가-교수의-정의">5) 🗣 R&amp;D란 무엇인가 — 교수의 정의 💡</a></li>
+        <li><a href="#c01-h-6-저자들과-교수의-인연" class="side-sub-h" data-anchor="c01-h-6-저자들과-교수의-인연">6) 🗣 저자들과 교수의 인연</a></li>
+        <li><a href="#c01-discussion" class="side-sub-sec" data-anchor="c01-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c01-examples" class="side-sub-sec" data-anchor="c01-examples">보충 사례</a></li>
+        <li><a href="#c01-position" class="side-sub-sec" data-anchor="c01-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c01-related" class="side-sub-sec" data-anchor="c01-related">관련 개념 · 논문</a></li>
+        <li><a href="#c01-quiz" class="side-sub-sec" data-anchor="c01-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c02">
+      <a href="#c02" data-concept="c02">
+        <span class="side-no">02</span>
+        <span class="side-title">초학제성과 다원화된 품질 관리</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c02-definition" class="side-sub-sec" data-anchor="c02-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c02-h-슬라이드-w05a-p9-10" class="side-sub-h" data-anchor="c02-h-슬라이드-w05a-p9-10">📄 슬라이드 (W05a p9–10)</a></li>
+        <li><a href="#c02-h-1-핵심-명제" class="side-sub-h" data-anchor="c02-h-1-핵심-명제">1) 핵심 명제 ★</a></li>
+        <li><a href="#c02-h-2-네-가지-장치" class="side-sub-h" data-anchor="c02-h-2-네-가지-장치">2) 네 가지 장치 ★</a></li>
+        <li><a href="#c02-h-3-그러나-쉽지-않다-교수의-단서" class="side-sub-h" data-anchor="c02-h-3-그러나-쉽지-않다-교수의-단서">3) 🗣 그러나 쉽지 않다 — 교수의 단서 ★</a></li>
+        <li><a href="#c02-h-4-초학제의-경계-어디까지-참여하나" class="side-sub-h" data-anchor="c02-h-4-초학제의-경계-어디까지-참여하나">4) 🗣 초학제의 경계 — 어디까지 참여하나 💡</a></li>
+        <li><a href="#c02-h-5-혼종적-공론장-hybrid-fora" class="side-sub-h" data-anchor="c02-h-5-혼종적-공론장-hybrid-fora">5) 혼종적 공론장(hybrid fora) 💡</a></li>
+        <li><a href="#c02-discussion" class="side-sub-sec" data-anchor="c02-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c02-examples" class="side-sub-sec" data-anchor="c02-examples">보충 사례</a></li>
+        <li><a href="#c02-position" class="side-sub-sec" data-anchor="c02-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c02-related" class="side-sub-sec" data-anchor="c02-related">관련 개념 · 논문</a></li>
+        <li><a href="#c02-quiz" class="side-sub-sec" data-anchor="c02-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c03">
+      <a href="#c03" data-concept="c03">
+        <span class="side-no">03</span>
+        <span class="side-title">Mode 2의 구조적 동인</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c03-definition" class="side-sub-sec" data-anchor="c03-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c03-h-슬라이드-w05a-p11-12" class="side-sub-h" data-anchor="c03-h-슬라이드-w05a-p11-12">📄 슬라이드 (W05a p11–12)</a></li>
+        <li><a href="#c03-h-1-세-방향의-동인" class="side-sub-h" data-anchor="c03-h-1-세-방향의-동인">1) 세 방향의 동인 ★</a></li>
+        <li><a href="#c03-h-2-핵심-용어" class="side-sub-h" data-anchor="c03-h-2-핵심-용어">2) 핵심 용어 💡</a></li>
+        <li><a href="#c03-h-3-ai-시대에-달라지는-것" class="side-sub-h" data-anchor="c03-h-3-ai-시대에-달라지는-것">3) 🗣 AI 시대에 달라지는 것 ★</a></li>
+        <li><a href="#c03-discussion" class="side-sub-sec" data-anchor="c03-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c03-examples" class="side-sub-sec" data-anchor="c03-examples">보충 사례</a></li>
+        <li><a href="#c03-position" class="side-sub-sec" data-anchor="c03-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c03-related" class="side-sub-sec" data-anchor="c03-related">관련 개념 · 논문</a></li>
+        <li><a href="#c03-quiz" class="side-sub-sec" data-anchor="c03-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c04">
+      <a href="#c04" data-concept="c04">
+        <span class="side-no">04</span>
+        <span class="side-title">확장된 대학과 정직한 중개자</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c04-definition" class="side-sub-sec" data-anchor="c04-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c04-h-슬라이드-w05a-p13-14" class="side-sub-h" data-anchor="c04-h-슬라이드-w05a-p13-14">📄 슬라이드 (W05a p13–14)</a></li>
+        <li><a href="#c04-h-1-확장된-대학-extended-university" class="side-sub-h" data-anchor="c04-h-1-확장된-대학-extended-university">1) 확장된 대학(Extended University) ★</a></li>
+        <li><a href="#c04-h-2-정부는-통제자에서-정직한-중개자로" class="side-sub-h" data-anchor="c04-h-2-정부는-통제자에서-정직한-중개자로">2) 정부는 통제자에서 정직한 중개자로 ★</a></li>
+        <li><a href="#c04-h-3-인문학의-재구성" class="side-sub-h" data-anchor="c04-h-3-인문학의-재구성">3) 🗣 인문학의 재구성</a></li>
+        <li><a href="#c04-discussion" class="side-sub-sec" data-anchor="c04-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c04-examples" class="side-sub-sec" data-anchor="c04-examples">보충 사례</a></li>
+        <li><a href="#c04-position" class="side-sub-sec" data-anchor="c04-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c04-related" class="side-sub-sec" data-anchor="c04-related">관련 개념 · 논문</a></li>
+        <li><a href="#c04-quiz" class="side-sub-sec" data-anchor="c04-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c05">
+      <a href="#c05" data-concept="c05">
+        <span class="side-no">05</span>
+        <span class="side-title">Re-Thinking Science — 함의의 맥락과 아고라</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c05-definition" class="side-sub-sec" data-anchor="c05-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c05-h-슬라이드-w05a-p15-16" class="side-sub-h" data-anchor="c05-h-슬라이드-w05a-p15-16">📄 슬라이드 (W05a p15–16)</a></li>
+        <li><a href="#c05-h-1-함의의-맥락-context-of-implication" class="side-sub-h" data-anchor="c05-h-1-함의의-맥락-context-of-implication">1) 함의의 맥락(Context of Implication) ★</a></li>
+        <li><a href="#c05-h-2-배경-ulrich-beck의-위험사회" class="side-sub-h" data-anchor="c05-h-2-배경-ulrich-beck의-위험사회">2) 🗣 배경: Ulrich Beck의 위험사회</a></li>
+        <li><a href="#c05-h-3-과학과-사회의-공진화" class="side-sub-h" data-anchor="c05-h-3-과학과-사회의-공진화">3) 과학과 사회의 공진화 ★</a></li>
+        <li><a href="#c05-h-4-아고라-agora" class="side-sub-h" data-anchor="c05-h-4-아고라-agora">4) 아고라(Agora) ★</a></li>
+        <li><a href="#c05-h-5-세-가지-사례" class="side-sub-h" data-anchor="c05-h-5-세-가지-사례">5) 🗣 세 가지 사례 ★</a></li>
+        <li><a href="#c05-h-6-시민은-인식론적-행위자가-된다" class="side-sub-h" data-anchor="c05-h-6-시민은-인식론적-행위자가-된다">6) 시민은 인식론적 행위자가 된다 ★★</a></li>
+        <li><a href="#c05-discussion" class="side-sub-sec" data-anchor="c05-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c05-examples" class="side-sub-sec" data-anchor="c05-examples">보충 사례</a></li>
+        <li><a href="#c05-position" class="side-sub-sec" data-anchor="c05-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c05-related" class="side-sub-sec" data-anchor="c05-related">관련 개념 · 논문</a></li>
+        <li><a href="#c05-quiz" class="side-sub-sec" data-anchor="c05-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c06">
+      <a href="#c06" data-concept="c06">
+        <span class="side-no">06</span>
+        <span class="side-title">★ 분산된 지식 ≠ 강건한 지식</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c06-definition" class="side-sub-sec" data-anchor="c06-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c06-h-슬라이드-w05a-p17-18" class="side-sub-h" data-anchor="c06-h-슬라이드-w05a-p17-18">📄 슬라이드 (W05a p17–18)</a></li>
+        <li><a href="#c06-h-1-두-개념의-구분" class="side-sub-h" data-anchor="c06-h-1-두-개념의-구분">1) 두 개념의 구분 ★★</a></li>
+        <li><a href="#c06-h-2-강건해지기-위한-세-가지-가교" class="side-sub-h" data-anchor="c06-h-2-강건해지기-위한-세-가지-가교">2) 강건해지기 위한 세 가지 가교 📄 ★</a></li>
+        <li><a href="#c06-h-3-gmo-예시" class="side-sub-h" data-anchor="c06-h-3-gmo-예시">3) 🗣 GMO 예시 ★</a></li>
+        <li><a href="#c06-h-4-상아탑의-담장을-넘어" class="side-sub-h" data-anchor="c06-h-4-상아탑의-담장을-넘어">4) 🗣 상아탑의 담장을 넘어 ★</a></li>
+        <li><a href="#c06-h-5-원자력-위험-소통의-사례" class="side-sub-h" data-anchor="c06-h-5-원자력-위험-소통의-사례">5) 🗣 원자력 위험 소통의 사례 ★★</a></li>
+        <li><a href="#c06-h-6-mode-2는-mode-1을-대체하지-않는다" class="side-sub-h" data-anchor="c06-h-6-mode-2는-mode-1을-대체하지-않는다">6) Mode 2는 Mode 1을 대체하지 않는다 📄 ★</a></li>
+        <li><a href="#c06-discussion" class="side-sub-sec" data-anchor="c06-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c06-examples" class="side-sub-sec" data-anchor="c06-examples">보충 사례</a></li>
+        <li><a href="#c06-position" class="side-sub-sec" data-anchor="c06-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c06-related" class="side-sub-sec" data-anchor="c06-related">관련 개념 · 논문</a></li>
+        <li><a href="#c06-quiz" class="side-sub-sec" data-anchor="c06-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c07">
+      <a href="#c07" data-concept="c07">
+        <span class="side-no">07</span>
+        <span class="side-title">Triple Helix — 세 주체와 재조합의 지대</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c07-definition" class="side-sub-sec" data-anchor="c07-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c07-h-슬라이드-w05a-p19-22" class="side-sub-h" data-anchor="c07-h-슬라이드-w05a-p19-22">📄 슬라이드 (W05a p19–22)</a></li>
+        <li><a href="#c07-h-1-mode-2와의-차이" class="side-sub-h" data-anchor="c07-h-1-mode-2와의-차이">1) 🗣 Mode 2와의 차이 ★★</a></li>
+        <li><a href="#c07-h-2-배경과-비유" class="side-sub-h" data-anchor="c07-h-2-배경과-비유">2) 🗣 배경과 비유</a></li>
+        <li><a href="#c07-h-3-세-주체의-역할" class="side-sub-h" data-anchor="c07-h-3-세-주체의-역할">3) 세 주체의 역할 ★</a></li>
+        <li><a href="#c07-h-4-결정적-단서-룰은-정부가-만든다" class="side-sub-h" data-anchor="c07-h-4-결정적-단서-룰은-정부가-만든다">4) 🗣 결정적 단서 — 룰은 정부가 만든다</a></li>
+        <li><a href="#c07-h-5-대학-중심이면-th-기업-중심이면-오픈-이노베이션" class="side-sub-h" data-anchor="c07-h-5-대학-중심이면-th-기업-중심이면-오픈-이노베이션">5) 🗣 대학 중심이면 TH, 기업 중심이면 오픈 이노베이션 💡</a></li>
+        <li><a href="#c07-discussion" class="side-sub-sec" data-anchor="c07-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c07-examples" class="side-sub-sec" data-anchor="c07-examples">보충 사례</a></li>
+        <li><a href="#c07-position" class="side-sub-sec" data-anchor="c07-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c07-related" class="side-sub-sec" data-anchor="c07-related">관련 개념 · 논문</a></li>
+        <li><a href="#c07-quiz" class="side-sub-sec" data-anchor="c07-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c08">
+      <a href="#c08" data-concept="c08">
+        <span class="side-no">08</span>
+        <span class="side-title">기업가적 대학과 제2차 학문 혁명</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c08-definition" class="side-sub-sec" data-anchor="c08-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c08-h-슬라이드-w05a-p23" class="side-sub-h" data-anchor="c08-h-슬라이드-w05a-p23">📄 슬라이드 (W05a p23)</a></li>
+        <li><a href="#c08-h-1-두-번의-학문-혁명" class="side-sub-h" data-anchor="c08-h-1-두-번의-학문-혁명">1) 두 번의 학문 혁명 ★</a></li>
+        <li><a href="#c08-h-2-기업가적-대학의-인프라" class="side-sub-h" data-anchor="c08-h-2-기업가적-대학의-인프라">2) 기업가적 대학의 인프라 📄</a></li>
+        <li><a href="#c08-h-3-39-서울대-10개-만들기-39-에-대한-논평" class="side-sub-h" data-anchor="c08-h-3-39-서울대-10개-만들기-39-에-대한-논평">3) 🗣 '서울대 10개 만들기'에 대한 논평 ★★</a></li>
+        <li><a href="#c08-h-4-왜-대학이-그-역할을-할-수-있나" class="side-sub-h" data-anchor="c08-h-4-왜-대학이-그-역할을-할-수-있나">4) 🗣 왜 대학이 그 역할을 할 수 있나 ★</a></li>
+        <li><a href="#c08-discussion" class="side-sub-sec" data-anchor="c08-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c08-examples" class="side-sub-sec" data-anchor="c08-examples">보충 사례</a></li>
+        <li><a href="#c08-position" class="side-sub-sec" data-anchor="c08-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c08-related" class="side-sub-sec" data-anchor="c08-related">관련 개념 · 논문</a></li>
+        <li><a href="#c08-quiz" class="side-sub-sec" data-anchor="c08-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c09">
+      <a href="#c09" data-concept="c09">
+        <span class="side-no">09</span>
+        <span class="side-title">★ 세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c09-definition" class="side-sub-sec" data-anchor="c09-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c09-h-슬라이드-w05a-p24-25" class="side-sub-h" data-anchor="c09-h-슬라이드-w05a-p24-25">📄 슬라이드 (W05a p24–25)</a></li>
+        <li><a href="#c09-h-1-네-차원-비교표-통째로-암기-권장" class="side-sub-h" data-anchor="c09-h-1-네-차원-비교표-통째로-암기-권장">1) 네 차원 비교표 ★★ (통째로 암기 권장)</a></li>
+        <li><a href="#c09-h-2-시민의-역할-차이-가장-결정적인-대목" class="side-sub-h" data-anchor="c09-h-2-시민의-역할-차이-가장-결정적인-대목">2) ★★ 시민의 역할 차이 — 가장 결정적인 대목</a></li>
+        <li><a href="#c09-h-3-세-모델의-관계-정리" class="side-sub-h" data-anchor="c09-h-3-세-모델의-관계-정리">3) 세 모델의 관계 정리 💡</a></li>
+        <li><a href="#c09-h-4-w03-16과의-비교" class="side-sub-h" data-anchor="c09-h-4-w03-16과의-비교">4) W03/16과의 비교 ★ 💡</a></li>
+        <li><a href="#c09-discussion" class="side-sub-sec" data-anchor="c09-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c09-examples" class="side-sub-sec" data-anchor="c09-examples">보충 사례</a></li>
+        <li><a href="#c09-position" class="side-sub-sec" data-anchor="c09-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c09-related" class="side-sub-sec" data-anchor="c09-related">관련 개념 · 논문</a></li>
+        <li><a href="#c09-quiz" class="side-sub-sec" data-anchor="c09-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c10">
+      <a href="#c10" data-concept="c10">
+        <span class="side-no">10</span>
+        <span class="side-title">Triple Helix의 처방성과 정책 사례</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c10-definition" class="side-sub-sec" data-anchor="c10-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c10-h-슬라이드-w05a-p26-29" class="side-sub-h" data-anchor="c10-h-슬라이드-w05a-p26-29">📄 슬라이드 (W05a p26–29)</a></li>
+        <li><a href="#c10-h-1-처방적-vs-진단적" class="side-sub-h" data-anchor="c10-h-1-처방적-vs-진단적">1) 처방적 vs 진단적 ★★</a></li>
+        <li><a href="#c10-h-2-사례들" class="side-sub-h" data-anchor="c10-h-2-사례들">2) 사례들 📄🗣</a></li>
+        <li><a href="#c10-h-3-결정적-단서-유럽의-희망사항" class="side-sub-h" data-anchor="c10-h-3-결정적-단서-유럽의-희망사항">3) 🗣 결정적 단서 — 유럽의 희망사항? ★★</a></li>
+        <li><a href="#c10-h-4-두-모델의-분업" class="side-sub-h" data-anchor="c10-h-4-두-모델의-분업">4) 두 모델의 분업 💡</a></li>
+        <li><a href="#c10-discussion" class="side-sub-sec" data-anchor="c10-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c10-examples" class="side-sub-sec" data-anchor="c10-examples">보충 사례</a></li>
+        <li><a href="#c10-position" class="side-sub-sec" data-anchor="c10-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c10-related" class="side-sub-sec" data-anchor="c10-related">관련 개념 · 논문</a></li>
+        <li><a href="#c10-quiz" class="side-sub-sec" data-anchor="c10-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c11">
+      <a href="#c11" data-concept="c11">
+        <span class="side-no">11</span>
+        <span class="side-title">Shinn의 Mode 2 비판</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c11-definition" class="side-sub-sec" data-anchor="c11-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c11-h-슬라이드-w05a-p32-33" class="side-sub-h" data-anchor="c11-h-슬라이드-w05a-p32-33">📄 슬라이드 (W05a p32–33)</a></li>
+        <li><a href="#c11-h-1-네-가지-비판" class="side-sub-h" data-anchor="c11-h-1-네-가지-비판">1) 네 가지 비판 ★</a></li>
+        <li><a href="#c11-h-2-결론-정치적-선언문" class="side-sub-h" data-anchor="c11-h-2-결론-정치적-선언문">2) 결론: 정치적 선언문 ★★</a></li>
+        <li><a href="#c11-h-3-③번-비판의-무게" class="side-sub-h" data-anchor="c11-h-3-③번-비판의-무게">3) ③번 비판의 무게 💡</a></li>
+        <li><a href="#c11-h-4-④번-역사적-반론" class="side-sub-h" data-anchor="c11-h-4-④번-역사적-반론">4) ④번 역사적 반론 💡</a></li>
+        <li><a href="#c11-discussion" class="side-sub-sec" data-anchor="c11-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c11-examples" class="side-sub-sec" data-anchor="c11-examples">보충 사례</a></li>
+        <li><a href="#c11-position" class="side-sub-sec" data-anchor="c11-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c11-related" class="side-sub-sec" data-anchor="c11-related">관련 개념 · 논문</a></li>
+        <li><a href="#c11-quiz" class="side-sub-sec" data-anchor="c11-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c12">
+      <a href="#c12" data-concept="c12">
+        <span class="side-no">12</span>
+        <span class="side-title">Shinn의 Triple Helix 비판과 연구-기술</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c12-definition" class="side-sub-sec" data-anchor="c12-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c12-h-슬라이드-w05a-p34-36" class="side-sub-h" data-anchor="c12-h-슬라이드-w05a-p34-36">📄 슬라이드 (W05a p34–36)</a></li>
+        <li><a href="#c12-h-1-상대적-우위-인정" class="side-sub-h" data-anchor="c12-h-1-상대적-우위-인정">1) 상대적 우위 인정 📄</a></li>
+        <li><a href="#c12-h-2-핵심-비판" class="side-sub-h" data-anchor="c12-h-2-핵심-비판">2) 핵심 비판 ★</a></li>
+        <li><a href="#c12-h-3-대안-연구-기술-research-technology" class="side-sub-h" data-anchor="c12-h-3-대안-연구-기술-research-technology">3) 대안 — 연구-기술(Research-Technology) ★★</a></li>
+        <li><a href="#c12-h-4-실증-반론" class="side-sub-h" data-anchor="c12-h-4-실증-반론">4) 실증 반론 📄</a></li>
+        <li><a href="#c12-h-5-교수의-재반론" class="side-sub-h" data-anchor="c12-h-5-교수의-재반론">5) 🗣 교수의 재반론 ★★</a></li>
+        <li><a href="#c12-h-6-지식-비용이라는-개념" class="side-sub-h" data-anchor="c12-h-6-지식-비용이라는-개념">6) 💡 지식 비용이라는 개념</a></li>
+        <li><a href="#c12-discussion" class="side-sub-sec" data-anchor="c12-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c12-examples" class="side-sub-sec" data-anchor="c12-examples">보충 사례</a></li>
+        <li><a href="#c12-position" class="side-sub-sec" data-anchor="c12-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c12-related" class="side-sub-sec" data-anchor="c12-related">관련 개념 · 논문</a></li>
+        <li><a href="#c12-quiz" class="side-sub-sec" data-anchor="c12-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c13">
+      <a href="#c13" data-concept="c13">
+        <span class="side-no">13</span>
+        <span class="side-title">★ 공급자 중심성 비판 (교수의 핵심 주장)</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c13-definition" class="side-sub-sec" data-anchor="c13-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c13-h-슬라이드-w05a-p37" class="side-sub-h" data-anchor="c13-h-슬라이드-w05a-p37">📄 슬라이드 (W05a p37)</a></li>
+        <li><a href="#c13-h-1-문제-제기" class="side-sub-h" data-anchor="c13-h-1-문제-제기">1) 🗣 문제 제기 ★★</a></li>
+        <li><a href="#c13-h-2-담론들의-공통-한계" class="side-sub-h" data-anchor="c13-h-2-담론들의-공통-한계">2) 📄 담론들의 공통 한계 ★★</a></li>
+        <li><a href="#c13-h-3-공정한-단서" class="side-sub-h" data-anchor="c13-h-3-공정한-단서">3) 🗣 공정한 단서</a></li>
+        <li><a href="#c13-h-4-후쿠시마-사례-안전-vs-안심" class="side-sub-h" data-anchor="c13-h-4-후쿠시마-사례-안전-vs-안심">4) 후쿠시마 사례 — 안전 vs 안심 ★★</a></li>
+        <li><a href="#c13-h-5-교수가-이-주제에-꽂힌-계기" class="side-sub-h" data-anchor="c13-h-5-교수가-이-주제에-꽂힌-계기">5) 🗣 교수가 이 주제에 꽂힌 계기 ★</a></li>
+        <li><a href="#c13-discussion" class="side-sub-sec" data-anchor="c13-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c13-examples" class="side-sub-sec" data-anchor="c13-examples">보충 사례</a></li>
+        <li><a href="#c13-position" class="side-sub-sec" data-anchor="c13-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c13-related" class="side-sub-sec" data-anchor="c13-related">관련 개념 · 논문</a></li>
+        <li><a href="#c13-quiz" class="side-sub-sec" data-anchor="c13-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li></ul></nav>
+</aside>
+  <main>
+    <p class="breadcrumb"><a href="index.html">학기 지도</a> › W05-1 · 혁신에의 거시적 접근 II</p>
+    <div class="week-intro">
+      <h1 class="week-title">혁신에의 거시적 접근 II</h1>
+      <p class="week-meta">2026-10-03 · 개념 13개 · 자료 <code>W05_혁신생태계론 거시적 속성2 261003.pdf</code></p>
+      
+<p class="legend">
+  <span class="legend-item">🗣 교수 발언</span>
+  <span class="legend-item">📄 슬라이드</span>
+  <span class="legend-item">💡 보충(외부 지식)</span>
+</p>
+    </div>
+    
+<section class="concept" id="c01">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 01</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 5/5 — ★ Mode 1 vs Mode 2 — Gibbons(1994) Core Reading의 중심 대비. 배경·저자 인연까지 약 20분을 들여 Mode 2 블록을 열었고, 다섯 차원 비교가 ★★로 표시된 전형적인 비교 서술형" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+      <button type="button" class="focus-btn" data-focus-target="c01" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★ Mode 1 vs Mode 2</h2>
+    <p class="concept-en">Mode 1 and Mode 2 Knowledge Production (Gibbons et al. 1994) — 지식 생산 패러다임의 전환</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p7</span> <span class="chip chip-slide">📄 W05a p8</span> <a class="chip chip-tag" href="map.html?tag=mode1">#mode1</a> <a class="chip chip-tag" href="map.html?tag=mode2">#mode2</a> <a class="chip chip-tag" href="map.html?tag=gibbons">#gibbons</a> <a class="chip chip-tag" href="map.html?tag=context-of-application">#context-of-application</a> <a class="chip chip-tag" href="map.html?tag=transdisciplinarity">#transdisciplinarity</a> <a class="chip chip-tag" href="map.html?tag=reflexivity">#reflexivity</a> <a class="chip chip-tag" href="map.html?tag=knowledge-production">#knowledge-production</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c01-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Gibbons et al. (1994) The New Production of Knowledge ★W04 Core Reading</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §2-1 ~ §2-3 [04:28–24:50]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c01-definition"><h4>한 줄 정의</h4><p>지식이 만들어지는 방식 자체가 바뀌었다. <strong>Mode 1</strong>은 대학의 학문 분과 안에서, 동료 학자들의 평가를 받으며, 학문적 호기심에서 출발해 만들어지는 지식이다. <strong>Mode 2</strong>는 <strong>현장의 문제를 풀기 위해(응용의 맥락)</strong>, 학문 경계를 넘어, 여러 조직이 모인 임시 팀에서, <strong>시장성·사회적 수용성까지 함께 평가받으며</strong> 만들어진다.</p>
+</div>
+<div class="sec sec-analogy" id="c01-analogy"><h4>쉽게 말하면</h4><p>병을 고치는 두 가지 방식과 같다.</p>
+<ul>
+<li><strong>Mode 1</strong>: 의대 연구실에서 특정 질환의 기전을 밝힌다. 평가는 <strong>같은 분야 교수들의 논문 심사</strong>로 받는다. &quot;이 연구가 돈이 되나&quot;는 묻지 않는다.</li>
+<li><strong>Mode 2</strong>: 특정 환자의 특정 상황을 해결하려고 <strong>의사·공학자·간호사·보호자·보험 담당자</strong>가 한 팀이 된다. 평가 기준은 논문성만이 아니라 <strong>실제로 환자가 나아졌는가, 비용을 감당할 수 있는가, 환자가 받아들이는가</strong>까지 포함된다.</li>
+</ul>
+<p>🗣 교수의 표현: <strong>&quot;대학 교수님이 풀 수 있는 문제가 아니라는 걸 다 아시잖아요.&quot;</strong></p>
+</div>
+<div class="sec sec-core" id="c01-core"><h4>핵심 내용</h4><h3 id="c01-h-슬라이드-w05a-p7-8">📄 슬라이드 (W05a p7–8)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p07.png" alt="W05a p7 Mode 1 vs Mode 2" loading="lazy" decoding="async"><figcaption>W05a p7 Mode 1 vs Mode 2</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p08.png" alt="W05a p8" loading="lazy" decoding="async"><figcaption>W05a p8</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c01-h-1-다섯-차원-비교-퀴즈-1순위"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">다섯 차원 비교 ★★ (퀴즈 1순위)</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>비교 차원</th>
+<th><strong>Mode 1</strong></th>
+<th><strong>Mode 2</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>지식 생산 맥락</strong></td>
+<td>학문 커뮤니티의 인지적 관심사, 기초 연구</td>
+<td><strong>응용의 맥락(context of application)</strong>, 현장 문제 해결</td>
+</tr>
+<tr>
+<td><strong>학문적 구조</strong></td>
+<td>단일 분과 학문 중심</td>
+<td><strong>초학제성(transdisciplinarity)</strong>, 학문 간 상호 침투</td>
+</tr>
+<tr>
+<td><strong>조직·장소</strong></td>
+<td>대학 중심의 위계적·동질적·지속적 조직</td>
+<td>기업·정부·싱크탱크 등 <strong>다양한 장소의 유연한 네트워크 팀</strong></td>
+</tr>
+<tr>
+<td><strong>품질 관리</strong></td>
+<td>학문 내부의 동료 평가(peer review)</td>
+<td>학문적 엄밀성 + <strong>시장성, 비용 효율성, 사회적 수용성</strong></td>
+</tr>
+<tr>
+<td><strong>사회적 책임</strong></td>
+<td>사회와 분리된 내부 자율성</td>
+<td>높은 <strong>성찰성(reflexivity)</strong>과 넓은 사회적 책임</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text"><strong>&quot;응용의 맥락&quot;이 &quot;응용 연구&quot;가 아니라는 점</strong>에 주의할 것. 기초/응용의 구분은 Mode 1 안에서의 구분이다. Mode 2의 &quot;context of application&quot;은 <strong>문제가 제기되고 해법이 쓰일 현장 그 자체에서 지식이 생산된다</strong>는 뜻이다.</span></p>
+</div></div>
+<div class="step-card" id="c01-h-2-배경-2차-대전과-과학기술의-시대"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">🗣 배경: 2차 대전과 과학기술의 시대</p>
+<ul>
+<li>2차 대전을 보며 사람들이 <strong>과학기술이 중요하다는 것을 깨달았다.</strong> 과학자들에게 맡겼더니 <strong>원자폭탄</strong>을 만들어 버렸다. 예전엔 TNT만 터뜨리다가 <strong>&quot;과학자한테 맡기니까 되네&quot;</strong> 하게 된 것.</li>
+<li>그리고 보니 <strong>과학기술을 생산하는 방식 자체도 많이 달라졌다</strong>는 것을 알게 되었다. 거기서 Mode 2 논의가 나온다.</li>
+<li>Triple Helix는 <strong>정부 입장에서 이것을 어떻게 매니지할 것인가</strong>를 고민하며 나온 이야기. → W05-1/07.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">원자폭탄은 W02 토론에서 <strong>STI의 가장 혁혁한 모습</strong>(현장에서는 생각도 못 할 급진적 혁신)으로도 나왔다. 같은 사건이 두 맥락에서 쓰인다.</span></p>
+</div></div>
+<div class="step-card" id="c01-h-3-초학제-transdisciplinary-vs-학제-interdisciplinary"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 초학제(transdisciplinary) vs 학제(interdisciplinary) ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;학제적이라는 얘기는 철학하고 공학, 컴퓨터가 만나는 거라면, <strong>초학제적이라는 얘기는 논(non)-아카데미까지 같이 할 때.</strong> 그러니까 <strong>일반 시민들도 같이 할 때</strong> 초학제적이라는 표현을 씁니다. 환경 문제 해결할 때 조사하고 그럴 때 보면 <strong>일반 마을 사람들도 등장하죠.</strong>&quot;</p><span class="quote-time">09:45</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 구분이 시험에 나오기 좋다. 한 줄로 외우면 — <strong>학제는 학문끼리, 초학제는 학계 밖까지.</strong></span></p>
+</div></div>
+<div class="step-card" id="c01-h-4-왜-현장에서-풀어야-하는가"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 왜 현장에서 풀어야 하는가</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;그냥 대학 연구실에 가서 하면 되는 거 아니냐? 그렇지 않다는 얘기죠. 여러분도 다 지식집약적인 일을 하시기 때문에 <strong>대학 교수님이 풀 수 있는 문제가 아니라는 걸 다 아시잖아요.</strong> 그때그때 맞게 <strong>그 현장에서 풀어야 되는 문제들</strong>이 다 있다는 거.&quot;</p><span class="quote-time">13:06</span></blockquote>
+<ul>
+<li>🗣 품질 관리가 다원화되는 것은 <strong>하이에크의 이야기와도 통한다</strong> — 지식이 시장 곳곳에 퍼져 있다는 점에서. 다만 Mode 2에서 중요한 것은 <strong>경제적 가치만이 아니라 사회적 책임</strong>이다.</li>
+<li>🗣 환경 문제, GMO, 낙태, 광우병 사태, 해양 오염수 배출 등 <strong>그런 질문들이 등장했다는 사실 자체를 Mode 2가 드러낸다.</strong></li>
+</ul>
+</div></div>
+<div class="step-card" id="c01-h-5-r-amp-d란-무엇인가-교수의-정의"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 R&amp;D란 무엇인가 — 교수의 정의 💡</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;R&amp;D를 한다는 건 <strong>질문을 정하는 거</strong>잖아요. &#39;이건 왜 그렇게 될까&#39;라고 질문을 정하고 그걸 파보는 작업. 그냥 매일 와서 일하고 가고 자기 미션도 있지만, 한편으로 <strong>&#39;이걸 더 잘하는 방법이 뭘까, 이 일은 왜 일어날까&#39;</strong> 이런 식의 고민을 하는 거고 그게 결국 R&amp;D라고 얘기할 수 있습니다.&quot;</p><span class="quote-time">10:56</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 정의가 Mode 2의 핵심을 담는다. R&amp;D를 <strong>예산 항목이나 조직 단위</strong>가 아니라 <strong>질문을 정하는 행위</strong>로 보면, 대학 밖에서도 R&amp;D가 일어난다는 주장이 자연스러워진다.</span></p>
+</div></div>
+<div class="step-card" id="c01-h-6-저자들과-교수의-인연"><span class="step-no" aria-hidden="true">6</span><div class="step-body"><p class="step-title">🗣 저자들과 교수의 인연</p>
+<ul>
+<li><strong>Gibbons et al. (1994)</strong> <em>The New Production of Knowledge</em> → <strong>Nowotny et al. (2001)</strong> <em>Re-Thinking Science</em>로 이어진다. 유럽 쪽 학자들이며 Gibbons는 SPRU에서 경제학·사회학·경영학을 공부했고 나머지는 사회학·철학 전공.</li>
+<li>🗣 <strong>영국 SPRU(서섹스)에서 석사를 할 때 디렉터가 Michael Gibbons</strong>였다. Gibbons는 원래 맨체스터에 있다가 스카웃된 사람이고, 교수는 박사를 맨체스터에서 했다. <strong>맨체스터 쪽에 이런 Mode 2 흐름이 있었다.</strong></li>
+</ul>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c01-discussion" data-sec="c01-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">W01/03과의 연결</th><td class="deflist-desc">📄 W01 p8에 이미 <strong>&quot;Mode I production vs Mode II production&quot;</strong>이 한 줄로 적혀 있었다. 그때 예고된 것이 이 주차의 본편이다.</td></tr>
+<tr><th scope="row" class="deflist-term">W05-1/09</th><td class="deflist-desc">Mode 1 / Mode 2 / Triple Helix 세 모델 비교에서 이 구분이 다시 쓰인다.</td></tr>
+<tr><th scope="row" class="deflist-term">W05-1/13</th><td class="deflist-desc">🗣 교수의 비판 — Mode 2조차 <strong>공급자 중심</strong>이라는 것. Mode 2를 배우는 목적이 그 비판으로 가기 위해서다.</td></tr>
+</tbody></table>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-examples" data-sec="c01-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Gibbons et al. (1994)</strong>: 💡 W04(거시적 접근 II) Core Reading으로 리딩리스트에 올라 있던 책이다. 수업 순서상 이번 주에 다뤄졌다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>Mode 2 논의가 받은 비판</strong>은 W05-1/11에서 Shinn으로 본격화되지만, 일반적으로도 <strong>&quot;Mode 1이 과거에 정말 순수했는가&quot;</strong>가 쟁점이다. 19세기 독일 화학 산업과 대학은 이미 긴밀했고, 미국의 랜드그랜트 대학은 처음부터 농업 현장 문제를 풀려고 세워졌다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>한국 맥락</strong>: 대학 평가가 여전히 논문 편수(Mode 1 기준)로 이뤄지면서 산학협력(Mode 2 활동)을 요구하는 이중 구조가 문제로 지적된다. W05 토론의 &quot;지표 위주 평가&quot; 논의와 통한다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-position" data-sec="c01-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>이 주차의 <strong>출발점</strong>. 지식 생산 방식의 변화를 먼저 그리고, 그것을 제도로 관리하려는 시도(Triple Helix)와 비판(Shinn)이 뒤따른다.</li>
+<li>W02-1/03의 STI/DUI와 비교하면 층위가 다르다. STI/DUI는 <strong>학습 모드</strong>(개인·기업 수준), Mode 1/2는 <strong>지식 생산 체제</strong>(사회 수준)다. 다만 <strong>Mode 2가 DUI 쪽에 가깝다</strong>는 대응은 성립한다.</li>
+<li>W01/03에서 한 줄로 지나간 Mode 1/2가 여기서 본격화된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-related" data-sec="c01-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Gibbons, Limoges, Nowotny, Schwartzman, Scott &amp; Trow (1994)</strong> <em>The New Production of Knowledge</em> — ★Core Reading.</li>
+<li>연결: <a href="W05-1.html#c02">W05-1/02 초학제성</a> · <a href="W05-1.html#c05">W05-1/05 Re-Thinking Science</a> · <a href="W05-1.html#c09">W05-1/09 세 모델 비교</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W01.html#c03">W01/03</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c01-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★★ Mode 1과 Mode 2를 다섯 차원(생산 맥락·학문 구조·조직·품질 관리·사회적 책임)으로 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 초학제성(transdisciplinarity)과 학제성(interdisciplinarity)의 차이를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">&quot;응용의 맥락(context of application)&quot;이 &quot;응용 연구&quot;와 어떻게 다른지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">Mode 2에서 품질 관리가 다원화된다는 것의 의미와, 그것이 객관성을 훼손하지 않는다는 주장의 근거를 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">비교형: Mode 1/Mode 2 구분과 STI/DUI 학습 모드는 어떤 관계인가? 층위의 차이를 밝혀 설명하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c01">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c02">초학제성과 다원화된 품질 관리</a> · <a href="W05-1.html#c05">Re-Thinking Science — 함의의 맥락과 아고라</a> · <a href="W05-1.html#c09">★ 세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</a> · <a href="W01.html#c03">인간에 대한 4가지 기본 이해</a> · <a href="W02-1.html#c03">STI mode vs DUI mode</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c02">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 02</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 3/5 — 초학제성과 다원화된 품질 관리 — 강의에서는 Mode 1 vs 2 설명 안에서 짧게 지나갔다. 학제/초학제 구분은 정의형으로 나오기 좋지만 Mode 1 vs 2 답안에 흡수되기 쉽다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c02" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>초학제성과 다원화된 품질 관리</h2>
+    <p class="concept-en">Transdisciplinarity and Pluralised Quality Control — 평가 기준이 늘어나면 과학이 느슨해지는가</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p9</span> <span class="chip chip-slide">📄 W05a p10</span> <a class="chip chip-tag" href="map.html?tag=transdisciplinarity">#transdisciplinarity</a> <a class="chip chip-tag" href="map.html?tag=quality-control">#quality-control</a> <a class="chip chip-tag" href="map.html?tag=error-friendly">#error-friendly</a> <a class="chip chip-tag" href="map.html?tag=hybrid-fora">#hybrid-fora</a> <a class="chip chip-tag" href="map.html?tag=objectivity">#objectivity</a> <a class="chip chip-tag" href="map.html?tag=peer-review">#peer-review</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c02-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Gibbons et al. (1994)</li><li>Callon — hybrid forum</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §2-3, §2-4 [09:45–19:45]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c02-definition"><h4>한 줄 정의</h4><p>Mode 2에서는 지식의 품질을 <strong>동료 학자들만 평가하지 않는다.</strong> 시장성, 비용 효율성, 사회적 수용성까지 함께 따진다. 그러면 과학이 물러지는 것 아닌가? 📄 슬라이드의 답은 단호하다. <strong>다원화된 품질 관리는 객관성의 훼손이 아니라 과학과 사회의 엄밀한 결합이다.</strong></p>
+</div>
+<div class="sec sec-analogy" id="c02-analogy"><h4>쉽게 말하면</h4><p>음식의 품질을 누가 판정하는가에 비유할 수 있다.</p>
+<ul>
+<li><strong>Mode 1식</strong>: 요리 전문가들끼리 심사한다. 조리법의 정확성, 기술의 난도를 본다.</li>
+<li><strong>Mode 2식</strong>: 전문가 심사에 더해 <strong>손님이 실제로 맛있어하는지, 가격이 감당되는지, 알레르기나 종교적 금기에 걸리지 않는지</strong>까지 본다.</li>
+</ul>
+<p>두 번째가 더 느슨한가? 아니다. <strong>통과해야 할 관문이 늘어난 것</strong>이다. 다만 관문의 종류가 달라서 전문가에게는 불편하다.</p>
+</div>
+<div class="sec sec-core" id="c02-core"><h4>핵심 내용</h4><h3 id="c02-h-슬라이드-w05a-p9-10">📄 슬라이드 (W05a p9–10)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p09.png" alt="W05a p9 다원화된 품질 관리" loading="lazy" decoding="async"><figcaption>W05a p9 다원화된 품질 관리</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p10.png" alt="W05a p10" loading="lazy" decoding="async"><figcaption>W05a p10</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c02-h-1-핵심-명제"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">핵심 명제 ★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text"><strong>다원화된 품질 관리는 객관성의 훼손이 아니라 과학과 사회의 엄밀한 결합이다.</strong></span></p>
+</div></div>
+<div class="step-card" id="c02-h-2-네-가지-장치"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">네 가지 장치 ★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>장치</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>① 과학적 타당성의 지속</strong></td>
+<td>학문적 엄밀성이 사라지는 것이 아니다. 유지된 위에 더해진다</td>
+</tr>
+<tr>
+<td><strong>② 보완적 평가 기준 결합</strong></td>
+<td>시장성·비용 효율성·사회적 수용성</td>
+</tr>
+<tr>
+<td><strong>③ 오류 친화적(error-friendly) 피드백</strong></td>
+<td><strong>평가 지점이 늘어나 오류를 빨리 고친다</strong></td>
+</tr>
+<tr>
+<td><strong>④ 혼종적 공론장(hybrid fora) 검증</strong></td>
+<td>전문가와 비전문가가 섞인 자리에서의 검증</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">③번이 이 주장의 논리적 핵심이다. 평가자가 많아지면 통과가 어려워지는 게 아니라 <strong>오류가 더 빨리 드러난다</strong>는 것. 동료 평가만으로는 같은 분야 사람들이 공유하는 맹점을 잡을 수 없다.</span></p>
+</div></div>
+<div class="step-card" id="c02-h-3-그러나-쉽지-않다-교수의-단서"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 그러나 쉽지 않다 — 교수의 단서 ★</p>
+<ul>
+<li>🗣 초학제 연구는 <strong>쉽지 않다.</strong> 연구자와 일반 시민이 <strong>공유하는 분석 틀</strong>이 만들어지기는 어렵다. 일반인이 가져온 이야기가 <strong>전문가 눈에는 논리적으로 말이 안 되는 경우도 많다.</strong></li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;현장에서도 서로 얘기하다가 결국 <strong>보스가 좋아하나 마나</strong> 이런 식으로 기준이 확 바뀌어버리는 황당한 경우도 있습니다만, 그럼에도 불구하고 로지컬하게 고민을 더 하죠.&quot;</p><span class="quote-time">19:45</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 단서가 중요하다. 다원적 품질 관리가 <strong>이론적으로는 좋지만 실행이 어렵다.</strong> 평가 기준이 늘면 <strong>가장 목소리 큰 기준</strong>(보스의 선호)이 다른 기준을 덮어 버릴 위험이 있다. W05-1/11에서 Shinn이 제기할 <strong>&quot;시장 수요로의 환원&quot;</strong> 우려와 같은 지점.</span></p>
+</div></div>
+<div class="step-card" id="c02-h-4-초학제의-경계-어디까지-참여하나"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 초학제의 경계 — 어디까지 참여하나 💡</p>
+<ul>
+<li>🗣 (W05b 논의에서) <strong>&quot;혁신 공유지에 들어가서 활동하려면 기술적 지식이 있어야 되죠. 그거 없이는 할 수가 없으니까. 그렇다고 완전히 전문가가 될 필요는 없죠. 자기한테 필요한 것만큼은 가지고 있는 것이죠.&quot;</strong></li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">즉 초학제 참여는 <strong>아무나 아무 말이나 하는 것</strong>이 아니다. 참여자에게도 일정한 학습이 요구된다. 이것이 W05-2/03의 <strong>&quot;시민은 알고 있는 주체&quot;</strong>와 이어지면서, 동시에 <strong>결함 모델에 대한 반박이 무조건적이지 않다</strong>는 균형을 준다.</span></p>
+</div></div>
+<div class="step-card" id="c02-h-5-혼종적-공론장-hybrid-fora"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">혼종적 공론장(hybrid fora) 💡</p>
+<ul>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>Callon의 용어다. 전문가와 비전문가, 과학과 정치가 뒤섞여 <strong>문제의 정의 자체를 함께 만드는</strong> 자리를 뜻한다. W03/05에서 본 Callon의 TEN·ANT와 같은 저자이며, 그의 일관된 관심(누가 네트워크에 들어오는가)이 여기서도 작동한다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>W05-1/05의 <strong>아고라(Agora)</strong>가 거의 같은 개념이다. Nowotny가 Callon의 문제의식을 Mode 2 틀 안으로 가져온 셈.</li>
+</ul>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c02-discussion" data-sec="c02-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W03/08 CTA와의 연결</strong> 💡: 구성적 기술평가의 <strong>기술적 넥서스</strong>(미시 개발자와 거시 규제자를 잇는 번역자)가 혼종적 공론장을 작동시키는 장치다. 두 주차가 같은 처방을 다른 이름으로 제시한다.</li>
+<li><strong>W05-1/06</strong>: 다원적 품질 관리를 거쳐야 지식이 <strong>강건해진다(socially robust)</strong>. 이 절은 그 메커니즘 설명이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-examples" data-sec="c02-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>에이즈 운동가와 임상시험</strong> 💡: 1980~90년대 미국 에이즈 환자 단체가 임상시험 설계에 개입해 <strong>대조군 설정과 환자 선정 기준을 바꾼</strong> 사례. Steven Epstein의 연구로 유명하다. 💡 비전문가가 전문 지식을 학습해 연구 설계의 질을 실제로 높인 사례로, &quot;참여가 과학을 물렁하게 만든다&quot;는 통념에 대한 반례로 자주 인용된다.</li>
+<li><strong>환자 유래 데이터와 희귀질환 연구</strong> 💡: 희귀질환은 환자 수가 적어 연구자가 데이터를 모으기 어려운데, 환자 단체가 직접 레지스트리를 구축해 연구를 가능하게 하는 경우가 많다. 초학제 협업이 <strong>선택이 아니라 필수</strong>인 영역.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>반대 방향의 위험</strong>: 평가 기준이 늘어나면 <strong>&quot;모두를 만족시키려다 아무것도 못 하는&quot;</strong> 상황이 올 수 있다. W03/08에서 🗣 교수가 CTA에 대해 &quot;그러는 사이 미국·중국이 밀고 들어왔다&quot;고 평가한 것과 같은 긴장.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-position" data-sec="c02-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-1/01의 다섯 차원 중 <strong>품질 관리 차원</strong>을 확대한 것.</li>
+<li>W05-1/06(강건한 지식)의 전제. 다원적 검증을 거쳐야 강건해진다.</li>
+<li>W03/08 CTA, W03/18 사회적 허용과 같은 계열의 처방.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-related" data-sec="c02-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Gibbons et al. (1994)</strong> — 📄 다원적 품질 관리.</li>
+<li><strong>Callon</strong> — 💡 hybrid forum.</li>
+<li>연결: <a href="W05-1.html#c01">W05-1/01 Mode 1 vs Mode 2</a> · <a href="W05-1.html#c05">W05-1/05 아고라</a> · <a href="W05-1.html#c06">W05-1/06 강건한 지식</a> · <a href="W03.html#c08">W03/08 CTA</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c02-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 다원화된 품질 관리의 네 가지 장치를 쓰고 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;평가 기준이 늘어나면 객관성이 훼손되는 것 아닌가&quot;라는 반론에 대해 어떻게 답할 수 있는가? 오류 친화성 개념을 사용하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">초학제 연구의 현실적 어려움을 서술하고, 그럼에도 추진해야 하는 이유를 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">혼종적 공론장(hybrid fora)이란 무엇이며, 아고라와 어떤 관계인가?</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c02">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c01">★ Mode 1 vs Mode 2</a> · <a href="W05-1.html#c05">Re-Thinking Science — 함의의 맥락과 아고라</a> · <a href="W05-1.html#c06">★ 분산된 지식 ≠ 강건한 지식</a> · <a href="W03.html#c08">구성적 기술평가(CTA)</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c03">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 03</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 3/5 — Mode 2의 구조적 동인 — 수 분 분량의 배경 설명. 단독 출제보다 배경 논거로 쓰인다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c03" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>Mode 2의 구조적 동인</h2>
+    <p class="concept-en">Structural Drivers of Mode 2 — Supply, Demand, Digital — 왜 지금 지식 생산 방식이 바뀌었나</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p11</span> <span class="chip chip-slide">📄 W05a p12</span> <a class="chip chip-tag" href="map.html?tag=massification">#massification</a> <a class="chip chip-tag" href="map.html?tag=symbolic-analysts">#symbolic-analysts</a> <a class="chip chip-tag" href="map.html?tag=economies-of-scope">#economies-of-scope</a> <a class="chip chip-tag" href="map.html?tag=transaction-cost">#transaction-cost</a> <a class="chip chip-tag" href="map.html?tag=digital">#digital</a> <a class="chip chip-tag" href="map.html?tag=drivers">#drivers</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c03-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Gibbons et al. (1994)</li><li>Reich (1991) The Work of Nations — symbolic analysts</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §2-5 [19:45–]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c03-definition"><h4>한 줄 정의</h4><p>Mode 2는 누가 주장해서 생긴 것이 아니라 <strong>구조가 바뀌어서 생겼다.</strong> <strong>공급 쪽</strong>에서는 대학 졸업자가 쏟아져 나와 지식을 다루는 사람이 사회 전역에 퍼졌고, <strong>수요 쪽</strong>에서는 글로벌 경쟁과 범위의 경제가 현장 문제 해결을 요구했으며, <strong>디지털 기술</strong>이 소통 비용을 급격히 낮췄다.</p>
+</div>
+<div class="sec sec-analogy" id="c03-analogy"><h4>쉽게 말하면</h4><p>예전에는 마을에 <strong>글 읽을 줄 아는 사람이 훈장 한 명</strong>뿐이었다. 그러니 모든 문서 일이 서당으로 갔다. 그런데 모두가 글을 배우자 <strong>집집마다 문서를 처리</strong>하게 됐다. 훈장이 무능해진 게 아니라 <strong>글 읽는 사람이 많아진 것</strong>이다.</p>
+<p>지식도 같다. 대학이 지식을 독점하던 시대는 <strong>대졸자가 드물었기 때문</strong>이지 대학이 특별히 뛰어나서가 아니었다. 사회 전체의 연구 역량이 올라가면 지식 생산도 분산된다.</p>
+</div>
+<div class="sec sec-core" id="c03-core"><h4>핵심 내용</h4><h3 id="c03-h-슬라이드-w05a-p11-12">📄 슬라이드 (W05a p11–12)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p11.png" alt="W05a p11 구조적 동인" loading="lazy" decoding="async"><figcaption>W05a p11 구조적 동인</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p12.png" alt="W05a p12" loading="lazy" decoding="async"><figcaption>W05a p12</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c03-h-1-세-방향의-동인"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">세 방향의 동인 ★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>방향</th>
+<th>📄 내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>공급 측면</strong></td>
+<td>고등교육 대중화, 지식 생산 <strong>장소의 다변화</strong>(졸업생이 기업·현장으로), 사회 전반의 연구 역량 축적, <strong>상징 분석가(symbolic analysts)</strong>의 부상</td>
+</tr>
+<tr>
+<td><strong>수요 측면</strong></td>
+<td>글로벌 경쟁 심화, <strong>범위의 경제(economies of scope)</strong>로의 전환, 현장 문제 해결 요구</td>
+</tr>
+<tr>
+<td><strong>디지털 기술</strong></td>
+<td>정보 교환·처리·소통 비용을 대폭 줄였다 — <strong>거래비용의 급감</strong></td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c03-h-2-핵심-용어"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">핵심 용어 💡</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">상징 분석가(symbolic analysts)</th><td class="deflist-desc">💡 Robert Reich의 용어. 데이터·기호·개념을 다루며 문제를 정의하고 해결하는 직군(엔지니어, 컨설턴트, 디자이너, 분석가). 반복 생산직·대인 서비스직과 구분된다. 💡 이들이 <strong>대학 밖에서 지식을 생산</strong>하는 주체가 된다는 점이 Mode 2의 인적 기반이다.</td></tr>
+<tr><th scope="row" class="deflist-term">범위의 경제(economies of scope)</th><td class="deflist-desc">💡 하나를 많이 만들어 단가를 낮추는 <strong>규모의 경제</strong>와 달리, <strong>여러 종류를 함께 만들어</strong> 자원을 공유하며 이득을 얻는 것. 💡 범위의 경제가 중요해지면 <strong>서로 다른 분야의 지식을 결합</strong>할 능력이 경쟁력이 되고, 이것이 초학제성의 수요 쪽 근거가 된다.</td></tr>
+<tr><th scope="row" class="deflist-term">거래비용의 급감</th><td class="deflist-desc">→ W03/14의 비용 3분류와 직결. 💡 거래비용이 낮아지면 <strong>조직 안에 다 두지 않고 밖과 협력</strong>하는 쪽이 유리해진다. 네트워크형 조직이 가능해지는 조건.</td></tr>
+</tbody></table>
+</div></div>
+<div class="step-card" id="c03-h-3-ai-시대에-달라지는-것"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 AI 시대에 달라지는 것 ★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;AI 시대에는 <strong>새로운 지식의 범위 같은 건 오히려 디지털 기술로 해결할 수 있는 부분이 많이 있죠.</strong> 그것보다 오히려 <strong>진짜 철학이랄까, 가치 판단의 기준</strong> 이런 게 훨씬 더 중요해지는 때로 변하고 있습니다.&quot;</p><span class="quote-time">19:45</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">중요한 관찰이다. Mode 2의 동인이던 <strong>&quot;지식을 넓게 결합하는 능력&quot;</strong>은 AI가 상당 부분 대신할 수 있다. 그러면 남는 희소 자원은 <strong>무엇을 할지 정하는 가치 판단</strong>이 된다. → 이 주차 후반부(시민 인식론)로 가는 다리이자, W03/13의 <strong>&quot;희소 자원은 정보&quot;</strong>에서 한 걸음 더 나간 진단.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c03-discussion" data-sec="c03-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W03/04(디지털 3단계)와의 연결</strong>: 디지털이 거래비용을 낮춘다는 관찰은 두 주차에 걸쳐 반복된다. W03에서는 DX의 단계로, 여기서는 Mode 2의 구조적 조건으로.</li>
+<li><strong>W05-1/04</strong>: 이 동인들이 대학과 정부의 역할 변화로 이어진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-examples" data-sec="c03-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>고등교육 대중화의 규모</strong> 💡: 한국의 대학 진학률은 1980년대 30% 안팎에서 2000년대 이후 70%를 넘어섰다. 💡 &quot;대학 교수만 지식을 생산한다&quot;는 전제가 성립하지 않게 된 가장 직접적인 이유다. 🗣 W05 토론의 &quot;지식 포션이 커진다&quot;는 관찰과 같은 맥락.</li>
+<li><strong>Reich (1991)</strong> <em>The Work of Nations</em> 💡: 세계화 시대의 직업을 세 범주로 나누고, 상징 분석가만이 임금 상승을 누린다고 전망했다. 💡 지금의 AI 논쟁은 <strong>그 상징 분석가 직군마저 대체될 수 있는가</strong>를 묻는 것이라 🗣의 코멘트가 날카롭다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>반론</strong>: 구조적 동인 설명은 Mode 2를 <strong>불가피한 흐름</strong>으로 그린다. Shinn(W05-1/11)은 바로 이 점을 비판한다 — 역사적 데이터를 보면 현장형 지식 생산은 150년 전부터 있었으므로 &quot;최근의 구조 변화 때문&quot;이라는 설명은 과장이라는 것.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-position" data-sec="c03-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-1/01의 <strong>원인 설명</strong>. Mode 2가 왜 지금 나타났는지를 다룬다.</li>
+<li>W03/02 기술경제패러다임 전환이 배경이다. 🗣 &quot;1990년대 후반에 나온 논의로, 배경은 W03에서 다룬 기술경제패러다임 전환&quot;이라고 W05-1/07에서 명시된다.</li>
+<li>W03/14 거래비용 개념이 여기서 재사용된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-related" data-sec="c03-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Gibbons et al. (1994)</strong> — 📄 구조적 동인.</li>
+<li><strong>Reich (1991)</strong> — 💡 상징 분석가.</li>
+<li>연결: <a href="W05-1.html#c01">W05-1/01 Mode 1 vs Mode 2</a> · <a href="W05-1.html#c04">W05-1/04 확장된 대학</a> · <a href="W03.html#c14">W03/14 비용 3종류</a> · <a href="W03.html#c04">W03/04 디지털 3단계</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c03-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ Mode 2가 등장한 구조적 동인을 공급·수요·기술의 세 방향으로 나누어 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">상징 분석가(symbolic analysts)와 범위의 경제가 Mode 2와 어떻게 연결되는지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">디지털 기술이 거래비용을 낮춘 것이 지식 생산 방식에 미친 영향을 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">응용: AI 시대에 &quot;지식의 범위를 넓히는 능력&quot;보다 &quot;가치 판단의 기준&quot;이 중요해진다는 주장의 함의를 서술하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c03">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c01">★ Mode 1 vs Mode 2</a> · <a href="W05-1.html#c04">확장된 대학과 정직한 중개자</a> · <a href="W03.html#c14">경제활동 비용의 3종류</a> · <a href="W03.html#c04">디지털 기술혁명의 3단계</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c04">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 04</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 3/5 — 확장된 대학과 정직한 중개자 — 강의 비중이 Mode 2 블록에서 가장 가볍다. '정직한 중개자 vs 제도 건축가(W03/17)' 비교 소재로는 쓸 만하다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c04" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>확장된 대학과 정직한 중개자</h2>
+    <p class="concept-en">Extended University; Government as Honest Broker — Mode 2가 요구하는 제도 재구성</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p13</span> <span class="chip chip-slide">📄 W05a p14</span> <a class="chip chip-tag" href="map.html?tag=extended-university">#extended-university</a> <a class="chip chip-tag" href="map.html?tag=honest-broker">#honest-broker</a> <a class="chip chip-tag" href="map.html?tag=technology-interchange">#technology-interchange</a> <a class="chip chip-tag" href="map.html?tag=intermediary">#intermediary</a> <a class="chip chip-tag" href="map.html?tag=humanities">#humanities</a> <a class="chip chip-tag" href="map.html?tag=government-role">#government-role</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c04-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Gibbons et al. (1994)</li><li>Pielke (2007) The Honest Broker</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §2-6 [~24:50]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c04-definition"><h4>한 줄 정의</h4><p>Mode 2가 작동하려면 기관들이 바뀌어야 한다. 대학은 담장을 낮춰 <strong>사회와 경계가 뒤섞인 확장된 대학</strong>이 되고, 정부는 위에서 지시하는 통제자가 아니라 <strong>서로를 이어 주는 정직한 중개자</strong>가 된다. 지식 이전도 한 방향으로 넘기는 것이 아니라 <strong>축구 경기처럼 주고받는 상호작용</strong>이다.</p>
+</div>
+<div class="sec sec-analogy" id="c04-analogy"><h4>쉽게 말하면</h4><p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">슬라이드가 쓴 <strong>&quot;축구 경기&quot;</strong> 비유가 그대로 좋다.</span></p>
+<ul>
+<li><strong>옛날 방식(선형적 이전)</strong>: 대학이 지식을 만들어 <strong>택배로 기업에 보낸다.</strong> 받는 쪽은 상자를 열어 쓰면 된다.</li>
+<li><strong>기술 교환(technology interchange)</strong>: 축구처럼 <strong>공이 계속 오간다.</strong> 누가 보내고 누가 받는지가 고정되지 않는다. 경기가 끝나야 결과를 안다.</li>
+</ul>
+<p>정부의 역할도 바뀐다. 감독이 선수 하나하나에게 지시하는 대신 <strong>경기장을 만들고 규칙을 정하고 심판을 세운다.</strong></p>
+</div>
+<div class="sec sec-core" id="c04-core"><h4>핵심 내용</h4><h3 id="c04-h-슬라이드-w05a-p13-14">📄 슬라이드 (W05a p13–14)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p13.png" alt="W05a p13 확장된 대학" loading="lazy" decoding="async"><figcaption>W05a p13 확장된 대학</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p14.png" alt="W05a p14" loading="lazy" decoding="async"><figcaption>W05a p14</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c04-h-1-확장된-대학-extended-university"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">확장된 대학(Extended University) ★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">구성 요소:</span></p>
+<ul>
+<li>사회와의 <strong>경계 침투성 증대</strong></li>
+<li><strong>프로젝트 중심 임시 네트워크 팀</strong></li>
+<li>산학협력단·창업 지원·벤처 투자 같은 <strong>매개 조직</strong></li>
+<li><strong>기술 교환(technology interchange)</strong> — 선형적 이전이 아니라 <strong>&quot;축구 경기&quot; 같은 상호작용</strong></li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">&quot;확장된&quot;이라는 말에 주의할 것. 대학이 <strong>커지는</strong> 것이 아니라 <strong>경계가 흐려지는</strong> 것이다. 어디까지가 대학이고 어디부터가 기업인지 구분하기 어려워진다.</span></p>
+</div></div>
+<div class="step-card" id="c04-h-2-정부는-통제자에서-정직한-중개자로"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">정부는 통제자에서 정직한 중개자로 ★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text"><strong>중앙집권적 통제를 탈피</strong>하고, <strong>기관 간 침투성을 촉진</strong>하며, <strong>&#39;사람&#39;과 &#39;역량&#39; 중심</strong>의 지원 체계를 구축해 <strong>현장에 더 가깝게</strong> 간다.</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>통제자(Controller)</strong></th>
+<th><strong>정직한 중개자(Honest Broker)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>하는 일</td>
+<td>지시하고 배분한다</td>
+<td><strong>잇고 촉진한다</strong></td>
+</tr>
+<tr>
+<td>지원 대상</td>
+<td>과제·기관</td>
+<td><strong>사람과 역량</strong></td>
+</tr>
+<tr>
+<td>위치</td>
+<td>중앙</td>
+<td><strong>현장 가까이</strong></td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 이것이 W03/17의 <strong>&quot;지휘관에서 제도 건축가로&quot;</strong>와 거의 같은 주장이다. 두 주차가 다른 계보(Potts vs Gibbons)에서 출발해 <strong>같은 정책 결론</strong>에 도달한다. 퀴즈 비교형으로 쓸 수 있다.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">다만 미묘한 차이가 있다. <strong>제도 건축가</strong>는 Phase 0의 공유지를 짓는 쪽에 무게가 있고, <strong>정직한 중개자</strong>는 이미 있는 기관들(대학·기업) 사이를 잇는 쪽에 무게가 있다. 후자가 더 온건하다.</span></p>
+</div></div>
+<div class="step-card" id="c04-h-3-인문학의-재구성"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 인문학의 재구성</p>
+<ul>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span>문화 산업과 결합, 역사·텍스트 자산의 맥락적 재구성.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>한국의 문화 산업이 왜 이렇게 세계적인 명성을 얻을까.</strong> 우리 인문·사회 하시는 분들도 열심히 했다는 얘기죠.&quot;</p><span class="quote-time">23:32</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">Mode 2 논의가 이공계 이야기로만 읽히기 쉬운데, 📄 슬라이드는 인문학도 포함한다. 한류의 사례는 <strong>인문·문화 지식이 응용의 맥락에서 생산되고 평가받은</strong> 사례로 제시된다.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c04-discussion" data-sec="c04-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05-1/08 기업가적 대학</strong>과 비교할 것. 확장된 대학(Mode 2)과 기업가적 대학(Triple Helix)은 <strong>비슷해 보이지만 강조점이 다르다.</strong><ul>
+<li>확장된 대학: <strong>경계가 흐려진다</strong>(사회 전반과의 침투).</li>
+<li>기업가적 대학: <strong>대학이 경제 주체가 된다</strong>(TTO, 창업, 지분 참여).</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>전자는 기술(記述)적이고 후자는 처방적이다. → W05-1/09, W05-1/10.</li>
+</ul>
+</li>
+<li><strong>W05 토론(지방 산학협력)</strong>: 🗣 <strong>&quot;정부는 시장으로 연결시키지 못해요. 돈만 줄 뿐이지.&quot;</strong> 정직한 중개자 역할이 현실에서 작동하지 않는다는 진단.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-examples" data-sec="c04-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Honest Broker</strong> 💡: Roger Pielke Jr.의 책 제목이기도 하다. 그는 과학자가 정책에서 맡을 수 있는 역할을 네 가지(순수 과학자, 과학 중재자, 쟁점 옹호자, <strong>정직한 중개자</strong>)로 나누고, 정직한 중개자는 <strong>선택지를 좁히지 않고 넓혀 주는</strong> 역할이라고 정의했다. 💡 여기 슬라이드에서는 정부의 역할로 쓰였지만, 개념의 뿌리는 과학자-정책 관계 논의다.</li>
+<li><strong>산학협력단 제도</strong> 💡: 한국은 2003년 산업교육진흥법 개정으로 대학에 산학협력단을 법인으로 두게 했다. 💡 확장된 대학의 <strong>매개 조직</strong>에 해당하며, W05-1/10에서 Triple Helix의 정책 사례로도 언급된다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>비판적으로 보면</strong>: 매개 조직이 늘어나는 것이 반드시 침투성 증대로 이어지지 않는다. W05 토론의 🗣 <strong>&quot;지표 위주로 한단 말이에요&quot;</strong>가 그 증상이다. 조직은 생겼는데 <strong>평가 기준이 Mode 1에 머물러</strong> 있으면 형식만 남는다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-position" data-sec="c04-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-1/01–03의 <strong>제도적 귀결</strong>. 지식 생산 방식이 바뀌면 기관도 바뀌어야 한다.</li>
+<li>W05-1/07–08의 Triple Helix가 이 변화를 <strong>더 구체적인 처방</strong>으로 밀어붙인다.</li>
+<li>W03/17 제도 건축가와 같은 방향의 정부론.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-related" data-sec="c04-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Gibbons et al. (1994)</strong> — 📄 확장된 대학.</li>
+<li><strong>Pielke (2007)</strong> <em>The Honest Broker</em> — 💡 용어의 뿌리.</li>
+<li>연결: <a href="W05-1.html#c01">W05-1/01 Mode 1 vs Mode 2</a> · <a href="W05-1.html#c08">W05-1/08 기업가적 대학</a> · <a href="W05-1.html#c09">W05-1/09 세 모델 비교</a> · <a href="W03.html#c17">W03/17 제도 건축가</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c04-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 확장된 대학(Extended University)의 구성 요소를 쓰고, &quot;기술 교환&quot;이 선형적 이전과 어떻게 다른지 축구 비유로 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 정부가 통제자에서 정직한 중개자로 바뀐다는 것의 내용을 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 비교형: Mode 2의 &quot;정직한 중개자&quot;와 Potts 논의의 &quot;제도 건축가&quot;는 어떤 관계인가? 공통점과 강조점의 차이를 밝혀라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">인문학의 재구성이 Mode 2 논의에 포함되는 이유를 한류 사례로 설명하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c04">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c01">★ Mode 1 vs Mode 2</a> · <a href="W05-1.html#c03">Mode 2의 구조적 동인</a> · <a href="W05-1.html#c08">기업가적 대학과 제2차 학문 혁명</a> · <a href="W03.html#c17">국가 역할의 전환 — 지휘관에서 제도 건축가로</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c05">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 05</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 4/5 — 함의의 맥락과 아고라 — 약 10분을 들여 위험사회 사례(신고리 공론화 등)로 풀었다. '사회가 과학에 되받아 말한다'가 공급자 중심성 비판과 시민 인식론으로 넘어가는 다리" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c05" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>Re-Thinking Science — 함의의 맥락과 아고라</h2>
+    <p class="concept-en">Context of Implication; Agora (Nowotny et al. 2001) — 응용을 넘어, 사회가 과학에 되받아 말하다</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p15</span> <span class="chip chip-slide">📄 W05a p16</span> <a class="chip chip-tag" href="map.html?tag=nowotny">#nowotny</a> <a class="chip chip-tag" href="map.html?tag=agora">#agora</a> <a class="chip chip-tag" href="map.html?tag=context-of-implication">#context-of-implication</a> <a class="chip chip-tag" href="map.html?tag=risk-society">#risk-society</a> <a class="chip chip-tag" href="map.html?tag=beck">#beck</a> <a class="chip chip-tag" href="map.html?tag=epistemic-actor">#epistemic-actor</a> <a class="chip chip-tag" href="map.html?tag=co-evolution">#co-evolution</a> <a class="chip chip-tag" href="map.html?tag=mad-cow">#mad-cow</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c05-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Nowotny, Scott &amp; Gibbons (2001) Re-Thinking Science</li><li>Beck (1986) Risk Society</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §3 [24:50–34:21]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c05-definition"><h4>한 줄 정의</h4><p>Mode 2가 &quot;<strong>응용의 맥락</strong>&quot;을 말했다면, 그 후속작은 한 걸음 더 간다. <strong>함의의 맥락(Context of Implication)</strong> — 응용을 넘어 <strong>예측 불가능한 부작용과 윤리적·환경적 위험까지 성찰적으로 내재화</strong>하는 것이다. 그리고 그것이 논의되는 자리가 <strong>아고라</strong>다. 핵심 전환은 한 문장이다. <strong>사회가 과학에 되받아 말한다(society speaking back to science).</strong></p>
+</div>
+<div class="sec sec-analogy" id="c05-analogy"><h4>쉽게 말하면</h4><p>약을 개발하는 과정에 비유하면,</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">Mode 1</th><td class="deflist-desc">실험실에서 약효를 밝힌다.</td></tr>
+<tr><th scope="row" class="deflist-term">Mode 2(응용의 맥락)</th><td class="deflist-desc">실제 환자에게 듣는 약을 만든다.</td></tr>
+<tr><th scope="row" class="deflist-term">Re-Thinking Science(함의의 맥락)</th><td class="deflist-desc">이 약이 퍼졌을 때 <strong>누가 못 사게 되는지, 내성균이 생기지 않는지, 의료 체계가 어떻게 바뀌는지</strong>까지 미리 안고 간다.</td></tr>
+</tbody></table>
+<p>그리고 그 논의를 <strong>연구자끼리</strong> 하지 않고 <strong>환자·시민·정책 담당자가 함께</strong> 하는 자리를 아고라라고 부른다.</p>
+</div>
+<div class="sec sec-core" id="c05-core"><h4>핵심 내용</h4><h3 id="c05-h-슬라이드-w05a-p15-16">📄 슬라이드 (W05a p15–16)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p15.png" alt="W05a p15 Re-Thinking Science" loading="lazy" decoding="async"><figcaption>W05a p15 Re-Thinking Science</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c05-h-1-함의의-맥락-context-of-implication"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">함의의 맥락(Context of Implication) ★</p>
+<ul>
+<li>🗣 <strong>Nowotny</strong>(여성 철학자)가 주도해 2001년에 다시 쓴 책.</li>
+<li>핵심은 <strong>응용을 넘어 예측 불가능한 부작용과 윤리적·환경적 위험을 성찰적으로 내재화</strong>하는 것.</li>
+</ul>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>Mode 2 (1994)</th>
+<th>Re-Thinking Science (2001)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>맥락</td>
+<td><strong>응용의 맥락</strong> (context of application)</td>
+<td><strong>함의의 맥락</strong> (context of implication)</td>
+</tr>
+<tr>
+<td>질문</td>
+<td>이 문제를 어떻게 풀 것인가</td>
+<td>이것이 <strong>퍼지면 무슨 일이 일어나는가</strong></td>
+</tr>
+<tr>
+<td>배경</td>
+<td>지식 생산 방식의 변화</td>
+<td><strong>위험사회</strong>(Beck)와 불확실성</td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c05-h-2-배경-ulrich-beck의-위험사회"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">🗣 배경: Ulrich Beck의 위험사회</p>
+<ul>
+<li>🗣 핵심 주장은 <strong>옛날에는 자연재해만 있었는데 이제 과학기술이 만든 재해(manufactured risk)가 있다</strong>는 것. 원자력, 환경오염, 그리고 최근 네팔의 빙하 붕괴 같은 기후재난까지.</li>
+<li>🗣 <em>Re-Thinking Science</em>는 여기에 <strong>불확실성</strong>을 더해 Mode 2를 고도화한다.</li>
+</ul>
+<p>→ W01/02에서 이미 나온 Beck 논의의 재등장. 그때는 &quot;인간–제도–과학기술&quot; 문제의식의 근거로, 여기서는 Mode 2 고도화의 배경으로 쓰인다.</p>
+</div></div>
+<div class="step-card" id="c05-h-3-과학과-사회의-공진화"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">과학과 사회의 공진화 ★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">과학이 사회로 <strong>일방 전달되는 것이 아니라 사회가 과학에 되받아 말한다(society speaking back to science).</strong></span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 문장이 이 절의 핵심이다. 전통적 과학 커뮤니케이션은 <strong>한 방향</strong>(과학 → 대중 이해)이었다. 여기서는 <strong>되돌아오는 화살표</strong>가 본질이 된다. → W05-2/03의 결함 모델 비판으로 직결.</span></p>
+</div></div>
+<div class="step-card" id="c05-h-4-아고라-agora"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">아고라(Agora) ★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text"><strong>전문가·시민·정책 입안자가 모여 사회적 위험을 논의하고 연구 어젠다를 공동 창출하는 중범위 공론장.</strong></span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">&quot;중범위&quot;라는 말에 주목. 실험실(미시)도 아니고 국회(거시)도 아닌 <strong>중간 규모의 숙의 공간</strong>이다. 공론화위원회, 시민배심원단, 합의회의가 이에 해당한다.</span></p>
+</div></div>
+<div class="step-card" id="c05-h-5-세-가지-사례"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 세 가지 사례 ★</p>
+<p><strong>① 광우병</strong></p>
+<ul>
+<li>영국이 한국보다 약 10년 먼저 겪었다. 🗣 교수가 영국 유학 중일 때 <strong>보건부 장관이 쇠고기 햄버거가 안전하다는 것을 보이려고 자기 딸이 먹는 장면을 TV에 내보냈다.</strong> 그러고도 한바탕 혼란을 겪었다.</li>
+<li>한국은 이명박 정부 때 겪었고, 나중에 잘못된 정보 전달이 있었다는 사실도 드러났지만 <strong>사람들이 되물어보는 작용이 나온 것</strong> 자체가 중요하다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">영국 장관의 딸 사건은 STS에서 유명한 사례다. 💡 <strong>&quot;전문가가 직접 먹어 보이면 믿을 것&quot;</strong>이라는 전제 자체가 신뢰의 작동 방식을 오해한 것이었다. W05-2/04의 영국식 시민 인식론(전문가 신뢰 기반)이 바로 이 사건으로 큰 타격을 입었다.</span></p>
+<p><strong>② 신고리 5·6호기 공론화</strong></p>
+<ul>
+<li>🗣 원래라면 국회 같은 기존 의사결정 시스템에서 할 일인데, <strong>전문가·시민·정책 담당자가 며칠 동안 함께 고민하고 결정</strong>했다. <strong>이것이 아고라다.</strong></li>
+</ul>
+<p><strong>③ 천안함</strong></p>
+<ul>
+<li>🗣 정부가 아무리 설명해도 사람들이 믿지 않았다.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>좌파라서 안 믿은 게 아니고 그냥 안 믿은 사람들이 있었던 거예요.</strong> 그 사실을 인정을 해야 돼요. 왜 사람들이 안 믿을까, 믿게 하려면 어떻게 해야 되는가라는 질문이 나온 겁니다. &#39;<strong>니들이 좌파라서, 반체제라서</strong>&#39; 하고 막 그럴 게 아니고 <strong>사람들이 어떻게 새로운 사실을 믿느냐, 그 과정을 들여다봐야</strong> 된다는 얘기입니다.&quot;</p><span class="quote-time">31:01</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 이 발언이 이 주차 후반부(시민 인식론)로 가는 <strong>문턱</strong>이다. &quot;왜 안 믿나&quot;를 <strong>진영 문제가 아니라 인식의 작동 방식 문제</strong>로 재정의하는 순간, Jasanoff의 질문이 열린다.</span></p>
+</div></div>
+<div class="step-card" id="c05-h-6-시민은-인식론적-행위자가-된다"><span class="step-no" aria-hidden="true">6</span><div class="step-body"><p class="step-title">시민은 인식론적 행위자가 된다 ★★</p>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p16.png" alt="W05a p16 epistemic actor" loading="lazy" decoding="async"><figcaption>W05a p16 epistemic actor</figcaption></figure>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>우리 모두가 이제 에피스테믹 액터(epistemic actor), 인식론적 행위자가 되는 겁니다.</strong> Mode 1에서는 전문가가 따로 있는 거예요. 대학에 과학자·전문가가 있고 일반 시민이 있고, <strong>지식 격차(knowledge gap)</strong>가 분명히 있죠. 근데 Mode 2의 세상에서는 그 격차가 없거나 그렇게 크지 않다는 얘기. 곳곳에서 문제 해결하면서 지식이 계속 축적되는 것이죠. <strong>앙트러프러너이면서 동시에 에피스테믹 액터인 것이죠.</strong>&quot;</p><span class="quote-time">28:23</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">마지막 문장이 중요하다. W01/07에서 🗣 교수는 사람을 <strong>entrepreneur와 civic actor</strong> 두 가지로 봐야 한다고 했다. 여기서 <strong>epistemic actor</strong>라는 세 번째 이름이 추가된다. 혁신의 주체이면서 <strong>동시에 지식의 판정자</strong>라는 것.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c05-discussion" data-sec="c05-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">W05-1/06</th><td class="deflist-desc">아고라 참여가 지식을 <strong>강건하게</strong> 만드는 세 가지 가교 중 하나다.</td></tr>
+<tr><th scope="row" class="deflist-term">W05-1/13</th><td class="deflist-desc">🗣 교수의 비판 — 아고라조차 <strong>공급자가 자기 지식의 정당성을 방어하려고 만든 자리</strong>일 수 있다. ★ 이 절을 배운 뒤 그 비판을 들어야 의미가 산다.</td></tr>
+<tr><th scope="row" class="deflist-term">W03/18</th><td class="deflist-desc">혁신의 사회적 허용, 기술-사회 공론장과 같은 처방. 다른 계보(McCloskey)에서 같은 결론.</td></tr>
+</tbody></table>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-examples" data-sec="c05-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>영국 광우병과 피셔 보고서</strong> 💡: 1980~90년대 영국 정부는 쇠고기가 안전하다고 반복 발표했으나 1996년 인간 감염 가능성을 인정했다. 💡 이후 정부 조사(Phillips Inquiry)는 <strong>불확실성을 숨기고 안심시키려 한 것</strong>이 신뢰를 무너뜨렸다고 결론 내렸다. 이 사건이 영국의 과학 자문 체계를 바꿨고, <strong>&quot;불확실성을 투명하게 말하라&quot;</strong>는 원칙이 자리 잡는 계기가 됐다. → W05-2/06 겸손의 기술과 연결.</li>
+<li><strong>합의회의(consensus conference)</strong> 💡: 덴마크 기술위원회가 1980년대에 제도화한 형식. 시민 패널이 전문가에게 질문하고 보고서를 내는 방식으로, 아고라의 전형적 제도 형태다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>아고라 개념의 한계</strong>: 누가 아고라에 들어오는지, 결론에 구속력이 있는지가 정해지지 않으면 <strong>형식적 자문</strong>에 그친다. 신고리 공론화가 주목받은 것은 <strong>결과에 구속력이 있었기 때문</strong>이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-position" data-sec="c05-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-1/01 Mode 2의 <strong>고도화 버전</strong>. 1994년 책에서 2001년 책으로의 이동.</li>
+<li>W05-1/06(강건한 지식)이 이 절의 이론적 결론이다.</li>
+<li>W05-1/13에서 교수가 비판할 대상이기도 하다. 아고라는 이 주차의 <strong>정점이자 전환점</strong>.</li>
+<li>W01/02 Beck, W01/03 시민 인식론 예고, W03/18 사회적 허용이 모두 여기서 만난다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-related" data-sec="c05-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Nowotny, Scott &amp; Gibbons (2001)</strong> <em>Re-Thinking Science</em> — 📄 함의의 맥락, 아고라.</li>
+<li><strong>Beck (1986)</strong> <em>Risk Society</em> — 🗣 제조된 위험.</li>
+<li>연결: <a href="W05-1.html#c01">W05-1/01 Mode 1 vs Mode 2</a> · <a href="W05-1.html#c06">W05-1/06 강건한 지식</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W01.html#c02">W01/02</a> · <a href="W03.html#c18">W03/18 사회적 허용</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c05-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ &quot;응용의 맥락&quot;과 &quot;함의의 맥락&quot;의 차이를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 아고라(Agora)란 무엇이며, 신고리 공론화가 왜 아고라의 사례인가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;사회가 과학에 되받아 말한다&quot;는 명제의 뜻과, 그것이 전통적 과학 커뮤니케이션과 어떻게 다른지 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 시민이 &quot;인식론적 행위자(epistemic actor)&quot;가 된다는 것은 무슨 뜻인가? Mode 1의 지식 격차 전제와 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">천안함 사례에서 교수가 &quot;좌파라서 안 믿은 게 아니다&quot;라고 한 발언의 함의를 논하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c05">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c01">★ Mode 1 vs Mode 2</a> · <a href="W05-1.html#c06">★ 분산된 지식 ≠ 강건한 지식</a> · <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W01.html#c02">인간–제도–과학기술의 상호구성</a> · <a href="W03.html#c18">McCloskey의 부르주아적 합의와 혁신의 사회적 허용</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c06">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 06</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 4/5 — ★ 분산된 지식 vs 강건한 지식 — 강의는 2분 남짓이지만 수업노트에 ★로 표시됐고 '분산은 필요조건일 뿐' 구분이 ★★ 문제. GMO 발언이 W05-2와 직결된다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c06" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★ 분산된 지식 ≠ 강건한 지식</h2>
+    <p class="concept-en">Socially Distributed vs Socially Robust Knowledge — 흩어져 있다고 튼튼한 것은 아니다</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p17</span> <span class="chip chip-slide">📄 W05a p18</span> <a class="chip chip-tag" href="map.html?tag=socially-distributed">#socially-distributed</a> <a class="chip chip-tag" href="map.html?tag=socially-robust">#socially-robust</a> <a class="chip chip-tag" href="map.html?tag=gmo">#gmo</a> <a class="chip chip-tag" href="map.html?tag=knowledge-reservoir">#knowledge-reservoir</a> <a class="chip chip-tag" href="map.html?tag=agora">#agora</a> <a class="chip chip-tag" href="map.html?tag=nuclear-risk-communication">#nuclear-risk-communication</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c06-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Nowotny et al. (2001)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §3 분산된 지식 ≠ 강건한 지식 [32:06–34:21]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c06-definition"><h4>한 줄 정의</h4><p>Mode 2에서 지식은 사회 곳곳으로 <strong>흩어진다(socially distributed)</strong>. 그런데 흩어졌다고 해서 그 지식이 <strong>튼튼해지는(socially robust)</strong> 것은 아니다. 분산은 <strong>필요조건일 뿐</strong>이다. 강건해지려면 세 가지 가교가 필요하다. <strong>함의의 맥락 성찰, 아고라 참여, 다차원적 품질 검증.</strong></p>
+</div>
+<div class="sec sec-analogy" id="c06-analogy"><h4>쉽게 말하면</h4><p>소문과 평판의 차이 같다.</p>
+<ul>
+<li><strong>분산된 지식</strong>: 동네 사람들이 저마다 그 가게에 대해 한마디씩 한다. 정보는 여기저기 많다. 그런데 <strong>서로 모순되고 아무도 확신하지 못한다.</strong></li>
+<li><strong>강건한 지식</strong>: 그 이야기들이 <strong>한자리에서 오가고 검증되어</strong> &quot;저 집은 이런 집이다&quot;라는 <strong>공유된 판단</strong>이 생긴다.</li>
+</ul>
+<p>흩어진 정보가 많다고 저절로 신뢰가 생기지 않는다. <strong>모여서 부딪히는 과정</strong>이 있어야 한다.</p>
+</div>
+<div class="sec sec-core" id="c06-core"><h4>핵심 내용</h4><h3 id="c06-h-슬라이드-w05a-p17-18">📄 슬라이드 (W05a p17–18)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p17.png" alt="W05a p17 분산된 지식 vs 강건한 지식" loading="lazy" decoding="async"><figcaption>W05a p17 분산된 지식 vs 강건한 지식</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p18.png" alt="W05a p18" loading="lazy" decoding="async"><figcaption>W05a p18</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c06-h-1-두-개념의-구분"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">두 개념의 구분 ★★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>사회적으로 분산된 지식</strong> (socially distributed)</th>
+<th><strong>사회적으로 강건한 지식</strong> (socially robust)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>상태</td>
+<td>지식이 여러 장소에서 생산된다</td>
+<td>사회적 검증을 거쳐 <strong>받아들여진다</strong></td>
+</tr>
+<tr>
+<td>지위</td>
+<td><strong>필요조건일 뿐, 그 자체로 견고함을 보장하지 않는다</strong></td>
+<td>목표 상태</td>
+</tr>
+<tr>
+<td>비유</td>
+<td>재료가 모였다</td>
+<td>집이 지어졌다</td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c06-h-2-강건해지기-위한-세-가지-가교"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">강건해지기 위한 세 가지 가교 📄 ★</p>
+<ol>
+<li><strong>함의의 맥락 성찰</strong> (→ W05-1/05)</li>
+<li><strong>아고라 참여</strong> (→ W05-1/05)</li>
+<li><strong>다차원적 품질 검증</strong> (→ W05-1/02)</li>
+</ol>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 세 가지가 앞 절들의 내용이다. 즉 이 절은 <strong>Mode 2 논의 전체의 결론</strong>에 해당한다.</span></p>
+</div></div>
+<div class="step-card" id="c06-h-3-gmo-예시"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 GMO 예시 ★</p>
+<ul>
+<li><strong>GMO가 안전한 식품이 되려면 테스트를 거치는 것뿐 아니라 사람들이 인정을 해야 한다.</strong></li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 한 문장이 Mode 2에서 시민 인식론으로 넘어가는 다리다. <strong>안전성 검증(과학)과 사회적 수용(정치)은 다른 절차</strong>이며, 둘 다 통과해야 지식이 작동한다. W03/18의 <strong>혁신의 사회적 허용</strong>, W05-2/01의 <strong>시민 인식론</strong>이 모두 이 지점에서 갈라져 나온다.</span></p>
+</div></div>
+<div class="step-card" id="c06-h-4-상아탑의-담장을-넘어"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 상아탑의 담장을 넘어 ★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;지식의 강건성은 <strong>상아탑의 담장을 넘어 아고라에서 대중 및 사회와 나누는 끊임없는 성찰적 대화 속에서</strong> 완성된다. 이게 그냥 좋은 말을 쓴 게 아니라 실제로 그렇다는 얘기. <strong>대학에서 아무리 얘기해봤자 아무 의미가 없죠.</strong> 거꾸로 얘기하면 <strong>현장에서 &#39;이건 잘 모르겠다&#39;고 얘기하는 사람들의 질문을 잘 들어야 된다</strong>는 얘기예요.&quot;</p><span class="quote-time">32:06</span></blockquote>
+</div></div>
+<div class="step-card" id="c06-h-5-원자력-위험-소통의-사례"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 원자력 위험 소통의 사례 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;원자력 논쟁에서 과학자는 &#39;<strong>사고 날 확률이 몇천만 분의 일이기 때문에 안전합니다</strong>&#39;라고 얘기하죠. 근데 시민이나 환경론자들은 &#39;그거랑 다른 거랑 비교했을 때 큰 차이 안 나더라&#39;고 하거나, <strong>그 몇만 분의 1이 어떤 의미인지 설명을 못한다</strong>고 하죠. <strong>그 사람들이 이해할 수 있는 방식으로 얘기해 주는 것도 중요</strong>하다고 할 수 있습니다.&quot;</p><span class="quote-time">33:08</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 예가 좋은 이유: 과학자 쪽 진술은 <strong>틀리지 않았다.</strong> 확률 계산은 정확할 수 있다. 그런데도 강건한 지식이 되지 못한다. 💡 왜냐하면 <strong>&quot;천만 분의 일&quot;이라는 숫자가 사람들의 의사결정 언어로 번역되지 않기</strong> 때문이다. 위험 인식 연구에서는 사람들이 확률보다 <strong>통제 가능성, 자발성, 피해의 파국성</strong>에 더 민감하다고 본다. 원전 사고는 셋 다 나쁜 쪽이다.</span></p>
+</div></div>
+<div class="step-card" id="c06-h-6-mode-2는-mode-1을-대체하지-않는다"><span class="step-no" aria-hidden="true">6</span><div class="step-body"><p class="step-title">Mode 2는 Mode 1을 대체하지 않는다 📄 ★</p>
+<ul>
+<li><strong>Mode 2가 Mode 1을 완전히 대체하는 것이 아니라, Mode 1의 자산을 &#39;지식 저수지(knowledge reservoir)&#39;로 포섭하고 보완</strong>한다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">시험에서 자주 틀리는 지점이다. Mode 2 논의를 &quot;대학 무용론&quot;으로 읽으면 오독이다. 💡 Shinn(W05-1/11)이 &quot;대학의 종말을 말한다&quot;고 비판하지만, 원문은 이렇게 <strong>보완 관계</strong>를 명시한다. 답안에서 이 점을 짚으면 균형 잡힌 서술이 된다.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c06-discussion" data-sec="c06-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05-1/13</strong>: 🗣 교수는 이 &#39;강건한 지식&#39; 개념조차 <strong>공급자 중심</strong>이라고 비판한다. 📄 &quot;과학자들이 스스로 유발한 제조된 위험과 대중적 반발을 완화하고 <strong>지식의 정당성을 방어하기 위한</strong> 공급자 중심의 자기보호적 해법에 불과하다.&quot;<ul>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>즉 &quot;사람들이 인정해야 한다&quot;는 말이 <strong>&quot;인정받으려면 어떻게 설득할까&quot;</strong>로 읽히면 여전히 공급자 관점이다. 시민 인식론은 <strong>&quot;그들이 어떤 기준으로 판단하는가&quot;</strong>로 질문을 뒤집는다. ★ 이 차이가 이 주차의 핵심 전환.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-examples" data-sec="c06-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>위험 인식의 심리학</strong> 💡: Paul Slovic 등의 연구는 전문가의 위험 평가(사망 확률)와 일반인의 위험 인식이 체계적으로 다르다는 점을 보였다. 일반인은 <strong>두려움(dread)</strong>과 <strong>미지성(unknown)</strong> 두 축으로 위험을 평가한다. 원자력은 두 축 모두 극단에 있다. 💡 &quot;일반인이 비합리적&quot;이 아니라 <strong>다른 차원을 본다</strong>는 것이 요지.</li>
+<li><strong>GMO 수용의 국가 차이</strong> 💡: 미국은 GMO 식품을 광범위하게 유통하지만 EU는 엄격히 제한한다. 안전성 데이터는 거의 같다. 💡 이 차이를 설명하려면 과학으로는 부족하고 <strong>각 사회의 검증 방식</strong>을 봐야 한다 — 그것이 W05-2/04 시민 인식론의 출발점이다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>&quot;강건하다&quot;는 말의 함의</strong>: robust는 원래 <strong>여러 조건에서도 깨지지 않는다</strong>는 뜻이다. 실험실에서만 성립하는 지식은 fragile하고, 현장·정치·문화의 압력을 견디는 지식이 robust하다. 공학적 비유가 들어 있는 용어.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-position" data-sec="c06-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>Mode 2 블록(W05-1/01–06)의 <strong>결론</strong>.</li>
+<li>W05-1/13에서 비판받을 대상이자, 그 비판이 성립하려면 먼저 이해해야 할 개념.</li>
+<li>W03/18 혁신의 사회적 허용과 거의 같은 주장. 다른 계보에서 같은 결론에 도달하는 또 하나의 사례.</li>
+<li>W01/03의 <strong>&quot;안전과 안심은 다르다&quot;</strong>가 이론 언어로 정식화된 것.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-related" data-sec="c06-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Nowotny et al. (2001)</strong> — 📄 socially robust knowledge.</li>
+<li>연결: <a href="W05-1.html#c05">W05-1/05 아고라</a> · <a href="W05-1.html#c02">W05-1/02 다원적 품질 관리</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W01.html#c03">W01/03 시민 인식론 예고</a> · <a href="W03.html#c18">W03/18</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c06-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 사회적으로 분산된 지식과 강건한 지식을 구분하고, 분산이 왜 필요조건에 불과한지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 지식이 강건해지기 위한 세 가지 가교를 쓰라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;GMO가 안전한 식품이 되려면 테스트뿐 아니라 사람들이 인정해야 한다&quot;는 명제의 함의를 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">원자력 위험 소통 사례에서 과학자의 진술이 틀리지 않았음에도 강건한 지식이 되지 못하는 이유를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">Mode 2가 Mode 1을 대체하는 것이 아니라는 점을 &#39;지식 저수지&#39; 개념으로 설명하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c06">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c05">Re-Thinking Science — 함의의 맥락과 아고라</a> · <a href="W05-1.html#c02">초학제성과 다원화된 품질 관리</a> · <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W03.html#c18">McCloskey의 부르주아적 합의와 혁신의 사회적 허용</a> · <a href="W01.html#c03">인간에 대한 4가지 기본 이해</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c07">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 07</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 4/5 — Triple Helix 세 주체 — Mode 2와의 차이에 약 7분을 썼다. 진단적/처방적 비교가 ★★이고 '사회가 빠진다'는 교수 비판이 이후 논의의 출발점" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c07" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>Triple Helix — 세 주체와 재조합의 지대</h2>
+    <p class="concept-en">Triple Helix; Zones of Recombination — 대학–기업–정부의 세 나선</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p19</span> <span class="chip chip-slide">📄 W05a p20</span> <span class="chip chip-slide">📄 W05a p21</span> <span class="chip chip-slide">📄 W05a p22</span> <a class="chip chip-tag" href="map.html?tag=triple-helix">#triple-helix</a> <a class="chip chip-tag" href="map.html?tag=etzkowitz">#etzkowitz</a> <a class="chip chip-tag" href="map.html?tag=university-industry-government">#university-industry-government</a> <a class="chip chip-tag" href="map.html?tag=zones-of-recombination">#zones-of-recombination</a> <a class="chip chip-tag" href="map.html?tag=open-innovation">#open-innovation</a> <a class="chip chip-tag" href="map.html?tag=prescriptive">#prescriptive</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c07-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Etzkowitz &amp; Leydesdorff — Triple Helix</li><li>Chesbrough — Open Innovation</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §4-1, §4-2 [34:21–41:09]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c07-definition"><h4>한 줄 정의</h4><p>Mode 2가 &quot;지식 생산 방식이 이렇게 바뀌었다&quot;는 <strong>관찰</strong>이라면, Triple Helix는 &quot;그러니 <strong>대학·기업·정부가 이렇게 엮여야 한다</strong>&quot;는 <strong>처방</strong>이다. DNA의 이중 나선처럼 세 가닥이 서로 꼬이며 함께 발전한다는 비유다. 🗣 다만 결정적 약점이 있다. <strong>사회(society)가 빠진다.</strong></p>
+</div>
+<div class="sec sec-analogy" id="c07-analogy"><h4>쉽게 말하면</h4><p>세 가닥 밧줄을 생각하면 된다. 한 가닥씩은 약하지만 <strong>서로 꼬면 훨씬 튼튼해진다.</strong> 중요한 것은 세 가닥이 <strong>각자 제자리에 있으면서도 계속 접촉</strong>한다는 점이다.</p>
+<p>문제는 이 밧줄에 <strong>네 번째 가닥인 시민이 없다</strong>는 것이다. 시민은 밧줄을 쓰는 사람으로만 등장한다. 밧줄이 어떤 용도로 쓰일지는 세 가닥이 정한다.</p>
+</div>
+<div class="sec sec-core" id="c07-core"><h4>핵심 내용</h4><h3 id="c07-h-슬라이드-w05a-p19-22">📄 슬라이드 (W05a p19–22)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p19.png" alt="W05a p19 Triple Helix" loading="lazy" decoding="async"><figcaption>W05a p19 Triple Helix</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p21.png" alt="W05a p21 핵심 메커니즘" loading="lazy" decoding="async"><figcaption>W05a p21 핵심 메커니즘</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c07-h-1-mode-2와의-차이"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">🗣 Mode 2와의 차이 ★★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Mode 2</strong></th>
+<th><strong>Triple Helix</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>성격</td>
+<td><strong>진단적(descriptive)</strong> — 관찰과 사례 스케치</td>
+<td><strong>처방적(prescriptive)</strong> — 제도를 바꾸라고 주장</td>
+</tr>
+<tr>
+<td>실증</td>
+<td>🗣 <strong>실증 데이터로 뒷받침하지 않는다</strong></td>
+<td>🗣 <strong>더 실증적인 데이터를 제시</strong>한다</td>
+</tr>
+<tr>
+<td>관심</td>
+<td>지식 생산 지형의 변화 전반</td>
+<td><strong>대학이 어떻게 변해야 경쟁력이 생기는가</strong></td>
+</tr>
+<tr>
+<td>약점</td>
+<td>데이터 부족</td>
+<td>🗣 <strong>사회(society)가 빠진다</strong></td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>🗣 Triple Helix는 <strong>시장적 맥락에서 지식 기반의 새로운 가치를 어떻게 창출할 것인가</strong>에 관심이 더 많다.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c07-h-2-배경과-비유"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">🗣 배경과 비유</p>
+<ul>
+<li>🗣 1990년대 후반에 나온 논의로, 배경은 <strong>W03에서 다룬 기술경제패러다임 전환</strong>이다. 디지털 기술이 퍼져 거래비용이 작아졌고 대졸자가 많아지면서 <strong>경제활동에서 지식의 비중이 계속 커졌다.</strong></li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;사회가 발전될수록 <strong>사이언스 앤 테크놀로지의 포션이 점점 커지는 겁니다.</strong> 우리 생활을 보세요. 옛날처럼 수건에 손 닦고 세수하고 이런 것도 있지만 핸드폰 쓰고 인터넷 쓰고 컴퓨터 쓰고. <strong>생산 현장, 연구 현장, 생활의 현장에서 과학기술의 비중이 점점 증가하고 있는 거예요.</strong>&quot;</p><span class="quote-time">36:27</span></blockquote>
+<ul>
+<li>🗣 <strong>Triple Helix라는 비유</strong>: DNA의 이중 나선(double helix)처럼, <strong>세 가닥이 서로 관계를 맺으며 발전한다</strong>는 메타포.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c07-h-3-세-주체의-역할"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">세 주체의 역할 ★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>주체</th>
+<th>📄 역할</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>대학</strong></td>
+<td>지식 생산 및 혁신 엔진. <strong>기업가적 대학(Entrepreneurial University)</strong>. 기술이전·사업화 직접 수행</td>
+</tr>
+<tr>
+<td><strong>기업</strong></td>
+<td>자사 R&amp;D 한계 극복을 위한 산학협력, R&amp;D 얼라이언스, <strong>범위의 경제</strong> 실현, <strong>co-opetition</strong></td>
+</tr>
+<tr>
+<td><strong>정부</strong></td>
+<td>일방적 통제를 벗어난 <strong>성찰적 중개자</strong>. <strong>&#39;재조합의 지대(Zones of Recombination)&#39;</strong> 조성, 안전·윤리·교환 규칙 제정</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text"><strong>재조합의 지대(Zones of Recombination)</strong>: 서로 다른 영역의 지식·자원·사람이 섞여 새 조합이 나오는 공간. 사이언스파크, 인큐베이터, 산학협력 지구가 그 예다. 💡 W03/12의 <strong>혁신 공유지</strong>와 발상이 비슷하지만, 공유지는 <strong>참여자들이 스스로 만드는</strong> 것이고 재조합의 지대는 <strong>정부가 조성하는</strong> 것이다. ★ 비교 포인트.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text"><strong>co-opetition</strong>: cooperation + competition. 경쟁하면서 동시에 협력하는 관계. W03 Q2의 <strong>조선 3사 AI 경진대회</strong>가 실제 사례다.</span></p>
+</div></div>
+<div class="step-card" id="c07-h-4-결정적-단서-룰은-정부가-만든다"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 결정적 단서 — 룰은 정부가 만든다</p>
+<ul>
+<li>🗣 다만 <strong>룰을 제정하는 것은 정부가 한다</strong>는 점에서, <strong>사회와 함께 한다기보다 공급주의적 맥락</strong>에 있다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 한 줄이 W05-1/13 공급자 중심성 비판의 복선이다. 세 주체 모두 <strong>공급 쪽</strong>이고, 시민은 규칙 제정에 참여하지 않는다.</span></p>
+</div></div>
+<div class="step-card" id="c07-h-5-대학-중심이면-th-기업-중심이면-오픈-이노베이션"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 대학 중심이면 TH, 기업 중심이면 오픈 이노베이션 💡</p>
+<ul>
+<li>🗣 <strong>대학이 중심이 되면 Triple Helix, 기업이 중심이 되면 오픈 이노베이션</strong>(Chesbrough) 이야기를 많이 한다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">유용한 정리다. 두 논의는 같은 현상(조직 경계를 넘는 지식 흐름)을 <strong>누구 입장에서 보느냐</strong>로 갈린다. 💡 오픈 이노베이션은 &quot;우리 회사가 외부 지식을 어떻게 들여오고 내보낼까&quot;를 묻고, Triple Helix는 &quot;대학이 어떻게 혁신 엔진이 될까&quot;를 묻는다. W01/11의 Innovation Ecosystem은 또 다른 각도(오케스트레이터 기업 관점)다.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c07-discussion" data-sec="c07-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">W05-1/09</th><td class="deflist-desc">Mode 1 / Mode 2 / Triple Helix 세 모델 구조 비교. 특히 <strong>시민의 역할 차이</strong>가 결정적.</td></tr>
+<tr><th scope="row" class="deflist-term">W05-1/12</th><td class="deflist-desc">Shinn의 비판 — 세 나선이 합성된 <strong>독자적 신제도의 실체가 불분명</strong>하다.</td></tr>
+<tr><th scope="row" class="deflist-term">W05-1/13</th><td class="deflist-desc">🗣 Triple Helix도 결국 공급자 담론이다.</td></tr>
+</tbody></table>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-examples" data-sec="c07-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Etzkowitz &amp; Leydesdorff</strong> 💡: Triple Helix의 주창자들. Etzkowitz는 미국 사회학자, Leydesdorff는 네덜란드 과학계량학자다. 💡 Leydesdorff가 계량 분석을 담당해 <strong>실증 데이터</strong>를 붙인 것이 Mode 2와의 차이를 만들었다.</li>
+<li><strong>Quadruple / Quintuple Helix</strong> 💡: Triple Helix에 <strong>시민사회(미디어·문화)</strong>를 더한 것이 Quadruple Helix, 거기에 <strong>자연환경</strong>을 더한 것이 Quintuple Helix다. 💡 🗣 교수가 지적한 &quot;사회가 빠진다&quot;는 약점을 후속 논의가 보완하려 한 흔적이다. 다만 교수는 그 방향이 아니라 <strong>시민 인식론</strong>(W05-2/01)으로 간다. ★ 답안에서 이 점을 언급하면 깊이가 생긴다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>한국의 적용</strong>: 산학협력단, LINC 사업, 기술지주회사, 대학 창업보육센터가 모두 Triple Helix 처방의 산물이다. W05 토론의 지방 산학협력 문제가 바로 이 제도들의 작동을 묻는 것.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-position" data-sec="c07-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>Mode 2 블록(W05-1/01–06) 다음의 <strong>제도 거버넌스 블록</strong>.</li>
+<li>W05-1/08(기업가적 대학)이 그 핵심 처방, W05-1/10이 정책 사례.</li>
+<li>W05-1/11–12에서 Shinn에게 비판받고, W05-1/13에서 교수에게 <strong>공급자 중심</strong>이라고 비판받는다.</li>
+<li>W03/02 기술경제패러다임이 배경으로 명시된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-related" data-sec="c07-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Etzkowitz &amp; Leydesdorff</strong> — Triple Helix.</li>
+<li><strong>Chesbrough</strong> — 💡 Open Innovation (기업 중심 버전).</li>
+<li>연결: <a href="W05-1.html#c01">W05-1/01 Mode 2</a> · <a href="W05-1.html#c08">W05-1/08 기업가적 대학</a> · <a href="W05-1.html#c09">W05-1/09 세 모델 비교</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W03.html#c12">W03/12 혁신 공유지</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c07-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ Triple Helix의 세 주체와 각 역할을 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★★ Mode 2와 Triple Helix의 차이를 성격(진단적/처방적)·실증성·약점의 세 측면에서 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;재조합의 지대(Zones of Recombination)&quot;란 무엇이며, 혁신 공유지와 어떻게 다른가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">Triple Helix에서 &quot;사회가 빠진다&quot;는 비판의 내용과, 후속 논의(Quadruple Helix)의 보완 시도를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">대학 중심의 Triple Helix와 기업 중심의 오픈 이노베이션은 어떻게 다른가?</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c07">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c01">★ Mode 1 vs Mode 2</a> · <a href="W05-1.html#c08">기업가적 대학과 제2차 학문 혁명</a> · <a href="W05-1.html#c09">★ 세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</a> · <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W03.html#c02">기술경제패러다임(TEP)과 혁신의 네 층위</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c08">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 08</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 4/5 — 기업가적 대학과 제2차 학문 혁명 — 개념 자체는 짧았지만 교수가 '서울대 10개 만들기' 논평에 2분 넘게 직접 견해를 밝혔고 term paper 후보로도 표시됐다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c08" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>기업가적 대학과 제2차 학문 혁명</h2>
+    <p class="concept-en">Entrepreneurial University; Second Academic Revolution — 대학의 세 번째 임무</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p23</span> <a class="chip chip-tag" href="map.html?tag=entrepreneurial-university">#entrepreneurial-university</a> <a class="chip chip-tag" href="map.html?tag=second-academic-revolution">#second-academic-revolution</a> <a class="chip chip-tag" href="map.html?tag=tto">#tto</a> <a class="chip chip-tag" href="map.html?tag=third-mission">#third-mission</a> <a class="chip chip-tag" href="map.html?tag=conflict-of-interest">#conflict-of-interest</a> <a class="chip chip-tag" href="map.html?tag=regional-university">#regional-university</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c08-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Etzkowitz — The Triple Helix</li><li>Clark (1998) Creating Entrepreneurial Universities</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §4-3, §4-4 [~43:36]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c08-definition"><h4>한 줄 정의</h4><p>대학의 임무는 두 번 바뀌었다. <strong>제1차 학문 혁명</strong>(19세기 말)에서 교육에 <strong>연구</strong>가 더해졌고, <strong>제2차 학문 혁명</strong>(20세기 후반)에서 거기에 <strong>경제·사회 발전에 직접 기여하는 제3의 임무</strong>가 더해졌다. 그 결과가 <strong>기업가적 대학</strong>이다. 기술이전조직을 두고, 창업을 보육하고, 교수가 학자이자 창업자로 이중 역할을 한다.</p>
+</div>
+<div class="sec sec-analogy" id="c08-analogy"><h4>쉽게 말하면</h4><p>대학이라는 가게의 취급 품목이 두 번 늘어난 것이다.</p>
+<ol>
+<li>처음에는 <strong>가르치기만</strong> 했다(중세 대학).</li>
+<li>다음에 <strong>연구도</strong> 하게 됐다(훔볼트·하버드 모델). 지식을 전수만 하지 않고 만들기 시작했다.</li>
+<li>이제 <strong>직접 사업까지</strong> 한다(MIT·스탠퍼드 모델). 만든 지식을 특허로 내고 회사를 세운다.</li>
+</ol>
+<p>취급 품목이 늘면 좋기만 할까? 아니다. <strong>가게의 정체성이 흔들린다.</strong> 이해충돌 관리가 필요해지는 이유다.</p>
+</div>
+<div class="sec sec-core" id="c08-core"><h4>핵심 내용</h4><h3 id="c08-h-슬라이드-w05a-p23">📄 슬라이드 (W05a p23)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p23.png" alt="W05a p23 기업가적 대학" loading="lazy" decoding="async"><figcaption>W05a p23 기업가적 대학</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c08-h-1-두-번의-학문-혁명"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">두 번의 학문 혁명 ★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>제1차 학문 혁명</strong></th>
+<th><strong>제2차 학문 혁명</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>시기</td>
+<td>19세기 말</td>
+<td>20세기 후반</td>
+</tr>
+<tr>
+<td>결합</td>
+<td>교육 <strong>+ 기초 연구</strong></td>
+<td>거기에 <strong>+ 경제·사회 발전에의 직접 기여(제3의 임무)</strong></td>
+</tr>
+<tr>
+<td>모델</td>
+<td><strong>하버드 모델</strong></td>
+<td><strong>MIT·스탠퍼드 모델</strong></td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">제1차 혁명은 흔히 <strong>훔볼트 이념</strong>(연구와 교육의 통일)으로 불린다. 📄 슬라이드는 하버드 모델로 표기했다.</span></p>
+</div></div>
+<div class="step-card" id="c08-h-2-기업가적-대학의-인프라"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">기업가적 대학의 인프라 📄</p>
+<ul>
+<li><strong>TTO(기술이전전담조직)</strong></li>
+<li><strong>창업보육센터·연구단지</strong></li>
+<li><strong>교수의 이중 역할</strong> — 학자이자 창업자, <strong>이해충돌 공식 관리</strong></li>
+<li><strong>기술지주회사를 통한 지분 참여</strong></li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">&quot;이해충돌 <strong>공식</strong> 관리&quot;라는 표현이 중요하다. 이중 역할 자체를 막는 것이 아니라 <strong>제도로 드러내 놓고 관리</strong>한다는 뜻이다. 숨기면 부패가 되고, 드러내면 관리 대상이 된다.</span></p>
+</div></div>
+<div class="step-card" id="c08-h-3-39-서울대-10개-만들기-39-에-대한-논평"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 &#39;서울대 10개 만들기&#39;에 대한 논평 ★★</p>
+<p>교수가 이 정책 명칭을 강하게 비판하면서도 <strong>그 취지는 인정</strong>했다.</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;제목도 정말 <strong>&#39;참을 수 없는 존재의 가벼움&#39;</strong>이죠. <strong>서울대학 10개 만들기, 이거 뭐야?</strong> 창피하게.&quot;</p><span class="quote-time">41:09</span></blockquote>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;서울대학에서 제일 멋있는 말 중 하나가 <strong>&#39;누군가 조국의 미래를 묻거든 눈을 들어 관악을 보게 하라&#39;</strong>. 이렇게 멋진 말이 어디 있어. 서울대 다니는 사람은 정말 자부심을 느끼지. 그러면 이런 얘기를 할 수 있죠. <strong>&#39;누군가 부산·울산·경남의 미래를 묻거든 부산대학을 보게 하라.&#39;</strong> 멋진 말이잖아. <strong>그런 리더십으로 지역 발전을 끌고 나갈 수 있는 힘을 갖는다.</strong> 훌륭하고 멋진 말이죠.&quot;</p><span class="quote-time">41:09</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">비판의 핵심은 <strong>&quot;서울대를 복제한다&quot;는 프레임</strong>이다. 지역 대학이 서울대의 축소판이 되는 것이 아니라 <strong>그 지역의 미래를 책임지는 고유한 주체</strong>가 되어야 한다는 것. 같은 정책도 어떻게 이름 붙이느냐에 따라 방향이 달라진다.</span></p>
+</div></div>
+<div class="step-card" id="c08-h-4-왜-대학이-그-역할을-할-수-있나"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 왜 대학이 그 역할을 할 수 있나 ★</p>
+<ul>
+<li>🗣 <strong>대학이 그런 역할을 할 수 있다.</strong> 지식의 비중이 커지는데 대학은 <strong>이해관계로 만나는 곳이 아니니</strong> 지식을 <strong>풀링하고 재조합하는 역할</strong>을 할 수 있다. 특히 한국처럼 <strong>대학이 존중받는 사회</strong>에서는.</li>
+<li>🗣 다만 그 존중 자체가 <strong>Mode 1적 세계관</strong>이었고, 이제 <strong>Mode 2적 세계관으로 넘어왔다.</strong> 현장·기업에 계신 분들이 그 역할을 하는 쪽으로.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 미묘한 논리다. <strong>대학이 중립 지대라서 지식 재조합의 허브가 될 수 있다</strong>는 주장(Triple Helix의 논거)과, <strong>대학의 권위가 Mode 1 시대의 산물이라 약해지고 있다</strong>는 관찰이 함께 제시된다. 즉 대학의 기회이자 위기다. → W03/12의 혁신 공유지 운영 주체 논의와 연결된다. 대학이 커먼즈의 중립적 관리자가 될 수 있는가?</span></p>
+<ul>
+<li>🗣 지역 사례: <strong>UNIST</strong>가 울산에서 그 역할을 하고 있다. &quot;산골짜기에 있지만 안에 들어가면 잘해 놨다&quot; — <strong>지역에도 R&amp;D 전문 기관을 따로 만들었다</strong>는 의미.</li>
+</ul>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c08-discussion" data-sec="c08-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li>★ <strong>W05 토론(지방의 산학협력은 왜 안 되는가)</strong>: 기업가적 대학 처방이 지방에서 작동하지 않는 현실.<ul>
+<li>질문자: 지방 대학 산학협력단은 <strong>&quot;창업 몇 회, 특허 몇 개&quot; 같은 정량 지표 충족 위주</strong>로 돌아간다. 차라리 자원을 집중하는 게 낫지 않나.</li>
+<li>🗣 <strong>구조적 문제가 분명히 있다.</strong> &#39;지잡대&#39;라는 말이 가리키는 <strong>사회적 모럴</strong>의 문제. <strong>똑똑한 사람에게 투자하는 논리는 의미가 있고 피할 수 없다.</strong></li>
+<li>🗣 <strong>그러나 부울경에는 다른 자산이 있다</strong> — 기존 캐피탈과 <strong>마켓 캐퍼시티</strong>, 물류. <strong>지식 포션 말고 나머지 부분</strong>에서 기회가 있다.</li>
+<li>→ ★ Term paper 후보. <code>수업노트/W05 §7</code></li>
+</ul>
+</li>
+<li>★ <strong>Term paper 후보</strong>(수업노트에 표시): <strong>&#39;서울대 10개 만들기&#39;를 Triple Helix 틀로 평가</strong> — 지역 대학이 실제로 재조합 지대 역할을 하는지.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-examples" data-sec="c08-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Bayh-Dole Act (1980)</strong> 💡: 연방 연구비로 만든 발명의 특허권을 <strong>대학이 보유</strong>할 수 있게 한 미국 법. 💡 기업가적 대학의 제도적 출발점으로 꼽히며, TTO가 폭증한 직접적 계기다. → W05-1/10에서 정책 사례로 다시 나온다.</li>
+<li><strong>Burton Clark (1998)</strong> 💡: 유럽 다섯 대학의 변화를 추적해 기업가적 대학의 <strong>다섯 가지 요소</strong>(강화된 운영 중추, 확장된 주변부, 재원 다변화, 자극받는 학문 중심부, 통합된 기업가 문화)를 제시했다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>비판</strong>: 기업가적 대학이 <strong>단기 수익이 나는 연구에 쏠리게</strong> 하고 기초연구와 인문학을 약화시킨다는 지적이 꾸준하다. 💡 또한 TTO의 수익이 실제로는 소수 대학에 집중되고 대부분은 적자라는 실증 연구도 있다. W05 토론의 &quot;지표 위주&quot; 문제와 같은 맥락.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-position" data-sec="c08-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-1/07 Triple Helix의 <strong>대학 쪽 처방</strong>.</li>
+<li>W05-1/04 확장된 대학(Mode 2)과 비교할 것. 💡 확장된 대학은 <strong>경계가 흐려지는</strong> 기술(記述)이고, 기업가적 대학은 <strong>대학이 경제 주체가 되는</strong> 처방이다.</li>
+<li>W05-1/09 세 모델 비교에서 &quot;대학의 위상&quot; 행이 이 차이를 담는다.</li>
+<li>W05 토론과 term paper로 직결되는 실천적 주제.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-related" data-sec="c08-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Etzkowitz</strong> — 기업가적 대학, 제2차 학문 혁명.</li>
+<li><strong>Clark (1998)</strong> — 💡 기업가적 대학의 다섯 요소.</li>
+<li>연결: <a href="W05-1.html#c07">W05-1/07 Triple Helix</a> · <a href="W05-1.html#c04">W05-1/04 확장된 대학</a> · <a href="W05-1.html#c09">W05-1/09 세 모델 비교</a> · <a href="W05-1.html#c10">W05-1/10 정책 사례</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c08-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 제1차·제2차 학문 혁명을 설명하고, 기업가적 대학의 구성 요소를 쓰라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 비교형: Mode 2의 &#39;확장된 대학&#39;과 Triple Helix의 &#39;기업가적 대학&#39;은 어떻게 다른가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">&#39;서울대 10개 만들기&#39;에 대한 비판과 그 대안적 프레임(&quot;부산대를 보게 하라&quot;)의 차이를 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">대학이 지식 재조합의 허브가 될 수 있다는 주장의 근거와, 동시에 그 권위가 약해지고 있다는 관찰을 함께 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">응용: 지방 대학의 산학협력이 정량 지표 충족에 머무는 문제의 원인과 해법을 논하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c08">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c07">Triple Helix — 세 주체와 재조합의 지대</a> · <a href="W05-1.html#c04">확장된 대학과 정직한 중개자</a> · <a href="W05-1.html#c10">Triple Helix의 처방성과 정책 사례</a> · <a href="W05-1.html#c09">★ 세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c09">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 09</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 5/5 — ★ 세 모델 구조 비교 — 블록 전체를 한 표로 묶고 시민의 역할 차이를 '결정적'이라 짚어 W03 시민 계보(X11)와의 주차 간 비교형으로 직결된다" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+      <button type="button" class="focus-btn" data-focus-target="c09" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★ 세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</h2>
+    <p class="concept-en">Structural Comparison of Mode 1, Mode 2 and Triple Helix — Mode 1 / Mode 2 / Triple Helix</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p24</span> <span class="chip chip-slide">📄 W05a p25</span> <a class="chip chip-tag" href="map.html?tag=comparison">#comparison</a> <a class="chip chip-tag" href="map.html?tag=mode1">#mode1</a> <a class="chip chip-tag" href="map.html?tag=mode2">#mode2</a> <a class="chip chip-tag" href="map.html?tag=triple-helix">#triple-helix</a> <a class="chip chip-tag" href="map.html?tag=citizen-role">#citizen-role</a> <a class="chip chip-tag" href="map.html?tag=university-status">#university-status</a> <a class="chip chip-tag" href="map.html?tag=knowledge-category">#knowledge-category</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c09-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Gibbons et al. (1994)</li><li>Etzkowitz &amp; Leydesdorff</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §4-5 [~48:27]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c09-definition"><h4>한 줄 정의</h4><p>세 모델은 같은 질문(&quot;지식은 어떻게 생산되는가&quot;)에 다르게 답한다. <strong>Mode 1</strong>은 대학이 독점하고, <strong>Mode 2</strong>는 경계가 해체되어 어디서나 생산되며, <strong>Triple Helix</strong>는 대학·기업·정부 세 제도가 엮여 생산한다. 가장 결정적인 차이는 <strong>시민의 자리</strong>다. Mode 2에서 시민은 <strong>생산자이자 검증자</strong>이지만, Triple Helix에서는 <strong>소비자이자 정책 수혜자</strong>에 머문다.</p>
+</div>
+<div class="sec sec-analogy" id="c09-analogy"><h4>쉽게 말하면</h4><p>마을의 물 공급에 비유하면,</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">Mode 1</th><td class="deflist-desc">마을에 <strong>우물 하나</strong>(대학)가 있고 거기서만 물이 나온다. 물 관리는 우물지기가 한다.</td></tr>
+<tr><th scope="row" class="deflist-term">Mode 2</th><td class="deflist-desc">집집마다 <strong>지하수를 뽑아 쓴다.</strong> 물은 어디에나 있고, 수질 판단도 각자 한다.</td></tr>
+<tr><th scope="row" class="deflist-term">Triple Helix</th><td class="deflist-desc"><strong>상수도 시스템</strong>을 깐다. 정수장(대학)·배관업체(기업)·수도사업소(정부)가 역할을 나눠 맡는다.</td></tr>
+</tbody></table>
+<p>세 번째가 가장 효율적으로 보인다. 다만 <strong>주민은 수도꼭지를 틀 뿐 수질 기준 회의에는 안 들어간다.</strong></p>
+</div>
+<div class="sec sec-core" id="c09-core"><h4>핵심 내용</h4><h3 id="c09-h-슬라이드-w05a-p24-25">📄 슬라이드 (W05a p24–25)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p24.png" alt="W05a p24 세 모델 비교" loading="lazy" decoding="async"><figcaption>W05a p24 세 모델 비교</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p25.png" alt="W05a p25" loading="lazy" decoding="async"><figcaption>W05a p25</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c09-h-1-네-차원-비교표-통째로-암기-권장"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">네 차원 비교표 ★★ (통째로 암기 권장)</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>구분</th>
+<th><strong>Mode 1</strong></th>
+<th><strong>Mode 2</strong></th>
+<th><strong>Triple Helix</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>주요 초점</strong></td>
+<td>단일 학문 내부의 <strong>인지적 자율성</strong></td>
+<td><strong>경계 해체</strong>, 초학문성, 응용 맥락</td>
+<td><strong>대학–기업–정부 간 제도적 거버넌스</strong></td>
+</tr>
+<tr>
+<td><strong>대학의 위상</strong></td>
+<td>지식 생산을 <strong>독점하는 상아탑</strong></td>
+<td>독점권 상실, <strong>수많은 장소 중 하나</strong></td>
+<td><strong>기업가적 대학</strong>, 경제 개발의 중심 엔진</td>
+</tr>
+<tr>
+<td><strong>조직화</strong></td>
+<td>수직적·위계적 <strong>학과 중심</strong></td>
+<td>임시적·유동적 <strong>네트워크 팀</strong></td>
+<td>TTO·산학협력단 등 <strong>혼종 조직 제도화</strong></td>
+</tr>
+<tr>
+<td><strong>지식 범주</strong></td>
+<td>학문적 <strong>순수 지식</strong></td>
+<td>인문·사회·문화·기술 <strong>전반</strong></td>
+<td><strong>S&amp;T, R&amp;D, 특허, 창업</strong> 중심</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">&quot;지식 범주&quot; 행이 특히 날카롭다. Mode 2는 <strong>인문·사회·문화까지</strong> 포함하지만 Triple Helix는 <strong>특허와 창업으로 셀 수 있는 것</strong>에 집중한다. 측정 가능성이 올라간 대신 범위가 좁아졌다.</span></p>
+</div></div>
+<div class="step-card" id="c09-h-2-시민의-역할-차이-가장-결정적인-대목"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">★★ 시민의 역할 차이 — 가장 결정적인 대목</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text"><strong>시민의 역할 차이가 결정적이다</strong>:</span></p>
+<ul>
+<li><strong>Mode 2</strong>에서 시민은 <strong>능동적 지식 생산자이자 검증자</strong></li>
+<li><strong>Triple Helix</strong>에서 시민은 <strong>주로 시장 소비자이자 정책 수혜자</strong></li>
+<li>시민의 요구는 <strong>정부 규제나 기업의 시장 수요를 통해 3자 체계 내부로 매개되고 선택될 뿐</strong>이다.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;여기(Triple Helix)는 주로 비즈니스 얘기를 하는 것이죠. <strong>공공 정책이나 규제도 예를 들면 타다 규제 이런 것만 하는 거지, GMO 규제 이런 건 크게 다루지 못하는 것이죠.</strong>&quot;</p><span class="quote-time">48:27</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 예시가 정확하다. <strong>타다 규제</strong>는 시장 질서의 문제라 3자 체계 안에서 다룰 수 있다. 반면 <strong>GMO 규제</strong>는 &quot;이 기술을 받아들일 것인가&quot;라는 가치 판단이라 3자 체계로는 못 다룬다. 그 영역을 다루려면 시민 인식론이 필요하다. → W05-2/01.</span></p>
+</div></div>
+<div class="step-card" id="c09-h-3-세-모델의-관계-정리"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">세 모델의 관계 정리 💡</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>Mode 1 → Mode 2</th>
+<th>Mode 2 → Triple Helix</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>무엇이 달라지나</td>
+<td><strong>지식 생산의 장소</strong>가 흩어진다</td>
+<td>흩어진 것을 <strong>제도로 다시 묶는다</strong></td>
+</tr>
+<tr>
+<td>시민은</td>
+<td>수동적 수용자 → <strong>능동적 검증자</strong></td>
+<td>능동적 검증자 → <strong>다시 소비자로</strong></td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 이 흐름이 중요하다. Mode 2가 열어 놓은 시민의 자리를 <strong>Triple Helix가 다시 닫는다.</strong> 제도화의 대가로 참여가 좁아진 것이다. 이것이 W05-1/13 공급자 중심성 비판의 구조적 근거이고, 교수가 시민 인식론으로 넘어가는 이유다.</span></p>
+</div></div>
+<div class="step-card" id="c09-h-4-w03-16과의-비교"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">W03/16과의 비교 ★ 💡</p>
+<p>W03/16에서 Smith·Hayek·Potts 계보의 시민 역할을 봤다. 두 표를 나란히 놓으면 흥미롭다.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>계보</th>
+<th>시민의 자리 변화</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>W03 경제학 계보</strong></td>
+<td>전문 노동자(Smith) → 정보 주체(Hayek) → <strong>공동 창작자(Potts)</strong> — 뒤로 갈수록 <strong>올라간다</strong></td>
+</tr>
+<tr>
+<td><strong>W05 지식생산 계보</strong></td>
+<td>수동적 수용자(Mode 1) → <strong>능동적 검증자(Mode 2)</strong> → 소비자(Triple Helix) — 중간에서 <strong>다시 내려간다</strong></td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">두 계보가 <strong>반대 방향</strong>으로 간다는 점이 흥미롭다. 경제학 쪽은 시민을 끌어올렸는데, 지식생산·제도 쪽은 제도화하면서 밀어냈다. 교수가 W05-1/13에서 비판하는 지점이 바로 여기다. ★ 비교형 답안으로 좋은 소재.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c09-discussion" data-sec="c09-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05-1/13</strong>: 이 표가 공급자 중심성 비판의 <strong>근거 자료</strong>다. 세 모델 모두 시민을 <strong>대상</strong>으로 둔다.</li>
+<li><strong>W05-2/01</strong>: 시민 인식론은 아예 <strong>시민을 주어로</strong> 놓는다. 네 번째 모델이라고 봐도 좋다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-examples" data-sec="c09-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>표를 읽는 요령</strong>: 세 모델은 <strong>시간 순서</strong>로도, <strong>공존하는 유형</strong>으로도 읽을 수 있다. 현실의 한 대학 안에도 Mode 1식 학과(순수 수학), Mode 2식 프로젝트(지역 환경 문제 해결), Triple Helix식 조직(기술지주회사)이 동시에 존재한다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>한국 대학의 이중 구속</strong>: 평가는 Mode 1(논문 편수)으로 받고, 정책 요구는 Triple Helix(창업·특허 건수)로 받으며, 지역 문제 해결(Mode 2)은 평가에 거의 반영되지 않는다. 💡 W05 토론의 &quot;지표 위주&quot; 문제가 이 구조에서 나온다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>Quadruple Helix</strong>가 시민사회를 네 번째 나선으로 추가한 것은 이 표의 약점을 보완하려는 시도다. 다만 교수는 그 길이 아니라 <strong>질문 자체를 뒤집는</strong> 시민 인식론으로 간다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-position" data-sec="c09-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05 전반부(Mode 2 + Triple Helix)의 <strong>종합표</strong>.</li>
+<li>W05-1/13 공급자 중심성 비판의 전제.</li>
+<li>W03/16과 교차해 읽으면 &quot;시민의 자리&quot;라는 축이 두 주차를 관통한다.</li>
+<li>★ 퀴즈에서 표 형태 서술형으로 나올 가능성이 가장 높은 항목 중 하나.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-related" data-sec="c09-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Gibbons et al. (1994)</strong>, <strong>Etzkowitz &amp; Leydesdorff</strong> — 📄 두 모델의 원출처.</li>
+<li>연결: <a href="W05-1.html#c01">W05-1/01 Mode 1 vs Mode 2</a> · <a href="W05-1.html#c07">W05-1/07 Triple Helix</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W03.html#c16">W03/16 시민의 역할</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c09-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★★ Mode 1 / Mode 2 / Triple Helix를 주요 초점·대학의 위상·조직화·지식 범주의 네 차원으로 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★★ 세 모델에서 시민의 역할이 어떻게 달라지는지 서술하고, 그 차이가 왜 결정적인지 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;타다 규제는 다룰 수 있지만 GMO 규제는 못 다룬다&quot;는 지적의 의미를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 비교형: W03의 경제학 계보(Smith·Hayek·Potts)와 W05의 지식생산 계보(Mode1·2·TH)에서 시민의 자리가 어떻게 다르게 움직이는가?</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c09">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c01">★ Mode 1 vs Mode 2</a> · <a href="W05-1.html#c07">Triple Helix — 세 주체와 재조합의 지대</a> · <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W03.html#c16">혁신 주체로서 시민의 역할</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c10">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 10</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 3/5 — Triple Helix의 처방성과 정책 사례 — Bayh-Dole·LINC 등 사례 보강용으로 분량은 있지만 '미국에서는 시장이 끌고 갔다'는 논평 외에는 교수 강조가 약하다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c10" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>Triple Helix의 처방성과 정책 사례</h2>
+    <p class="concept-en">Prescriptive vs Descriptive; Bayh-Dole, LINC, Research Triangle — 처방적 모델과 진단적 모델의 분업</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p26</span> <span class="chip chip-slide">📄 W05a p27</span> <span class="chip chip-slide">📄 W05a p28</span> <span class="chip chip-slide">📄 W05a p29</span> <a class="chip chip-tag" href="map.html?tag=prescriptive">#prescriptive</a> <a class="chip chip-tag" href="map.html?tag=descriptive">#descriptive</a> <a class="chip chip-tag" href="map.html?tag=bayh-dole">#bayh-dole</a> <a class="chip chip-tag" href="map.html?tag=linc">#linc</a> <a class="chip chip-tag" href="map.html?tag=research-triangle">#research-triangle</a> <a class="chip chip-tag" href="map.html?tag=mit-stanford">#mit-stanford</a> <a class="chip chip-tag" href="map.html?tag=aveiro">#aveiro</a> <a class="chip chip-tag" href="map.html?tag=policy">#policy</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c10-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Etzkowitz &amp; Leydesdorff</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §4-6 [~50:35]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c10-definition"><h4>한 줄 정의</h4><p>Triple Helix는 <strong>&quot;이렇게 하라&quot;</strong>고 말하는 처방적 모델이고, Mode 2와 아고라는 <strong>&quot;이런 변화가 일어나고 있다&quot;</strong>고 말하는 진단적 모델이다. 그래서 정책으로 번역되는 방식도 다르다. Triple Helix는 <strong>법과 조직</strong>(기술이전법, 산학협력단)으로, Mode 2는 <strong>절차와 공론장</strong>(기술영향평가, 공론화위원회)으로 구현된다. 🗣 다만 결정적 단서가 있다. <strong>실제로는 미국에서 시장이 끌고 간 것이다.</strong></p>
+</div>
+<div class="sec sec-analogy" id="c10-analogy"><h4>쉽게 말하면</h4><p>병원에 비유하면,</p>
+<ul>
+<li><strong>처방적 모델(Triple Helix)</strong>: <strong>&quot;이 약을 하루 세 번 드세요.&quot;</strong> 구체적이고 바로 실행할 수 있다. 다만 진단이 틀리면 엉뚱한 약을 먹는다.</li>
+<li><strong>진단적 모델(Mode 2)</strong>: <strong>&quot;환자분 몸에 이런 변화가 일어나고 있습니다.&quot;</strong> 정확하지만 당장 뭘 해야 할지는 말해 주지 않는다.</li>
+</ul>
+<p>정책 담당자가 Triple Helix를 선호하는 이유가 여기 있다. <strong>당장 만들 조직과 통과시킬 법</strong>이 나오기 때문이다.</p>
+</div>
+<div class="sec sec-core" id="c10-core"><h4>핵심 내용</h4><h3 id="c10-h-슬라이드-w05a-p26-29">📄 슬라이드 (W05a p26–29)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p26.png" alt="W05a p26 사례" loading="lazy" decoding="async"><figcaption>W05a p26 사례</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p28.png" alt="W05a p28 처방적 vs 진단적" loading="lazy" decoding="async"><figcaption>W05a p28 처방적 vs 진단적</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c10-h-1-처방적-vs-진단적"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">처방적 vs 진단적 ★★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Triple Helix: 처방적(Prescriptive)</strong></th>
+<th><strong>Mode 2 / Agora: 진단적(Descriptive)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>핵심 질문</strong></td>
+<td>혁신을 위해 대학·기업·정부가 <strong>제도를 어떻게 구성·연계</strong>할 것인가</td>
+<td>지식 생산 지형의 거대한 변화를 <strong>어떻게 관찰하고 관리</strong>할 것인가</td>
+</tr>
+<tr>
+<td><strong>정책 성격</strong></td>
+<td><strong>구체적 제도 설계 가이드라인</strong></td>
+<td><strong>탐색적 틀과 성찰적 공론장 운영</strong></td>
+</tr>
+<tr>
+<td><strong>사례</strong></td>
+<td>미국 <strong>Bayh-Dole Act(1980)</strong>와 TTO 법제화, 한국 <strong>산학협력단 법제화·LINC 사업</strong>, 생명윤리법·AI 윤리 가이드라인</td>
+<td><strong>기술영향평가·시민참여형 공론화위원회</strong>, EU <strong>Horizon Europe</strong> 미션 중심 혁신정책, 정부의 <strong>Honest Broker</strong> 역할</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">두 열의 사례를 보면 성격 차이가 분명하다. 왼쪽은 <strong>법과 조직</strong>이고 오른쪽은 <strong>절차와 자리</strong>다. 💡 한국은 왼쪽을 훨씬 열심히 했다. 산학협력단·LINC·기술지주회사는 다 갖췄지만, 공론화위원회는 신고리 등 몇 건에 그친다.</span></p>
+</div></div>
+<div class="step-card" id="c10-h-2-사례들"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">사례들 📄🗣</p>
+<ul>
+<li><strong>MIT·스탠퍼드</strong> — 실리콘밸리의 모태</li>
+<li><strong>하버드 주변 보스턴의 바이오 클러스터</strong></li>
+<li>노스캐롤라이나 <strong>리서치 트라이앵글</strong></li>
+<li>포르투갈 <strong>아베이루 대학</strong> — 🗣 <strong>지방정부 역량이 부족한 상황에서 대학이 직접 주도</strong></li>
+<li><strong>멕시코 UNAM</strong>, 프랑스의 학술 스핀오프 SME</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">아베이루 사례가 한국 지방에 시사적이다. <strong>지자체가 약할 때 대학이 대신 끌 수 있다</strong>는 모델이며, 🗣 교수의 &#39;부산대를 보게 하라&#39; 논평(W05-1/08)과 같은 구상이다.</span></p>
+</div></div>
+<div class="step-card" id="c10-h-3-결정적-단서-유럽의-희망사항"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 결정적 단서 — 유럽의 희망사항? ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;Triple Helix를 주장한 친구들이 다 유럽 친구들이에요. <strong>유럽 친구들이라 &#39;공공기관이, 정부가 뭐 할 일이 없을까&#39; 하다 보니</strong> 저런 식으로 얘기가 나온 건데, <strong>실제로는 미국에서 시장이 끌고 간 거죠.</strong>&quot;</p><span class="quote-time">49:49</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 아주 중요한 단서다. 실리콘밸리는 <strong>Triple Helix 정책으로 만들어진 것이 아니라</strong> 시장이 만든 결과인데, 유럽 학자들이 그것을 <strong>정책으로 복제할 수 있는 모델</strong>로 재해석했다는 것이다.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 지적의 함의:</span></p>
+<ul>
+<li>성공 사례를 <strong>사후적으로 모델화</strong>하면 인과가 뒤집힐 수 있다. 제도가 성공을 만든 것인지, 성공한 곳에 제도가 따라 들어간 것인지.</li>
+<li>→ W03/11 Hayek의 <strong>&quot;모르기 때문에 경쟁한다&quot;</strong>와 통한다. 어디서 혁신이 터질지 미리 알 수 있다면 제도로 지정하면 되지만, 모른다면 제도 설계만으로는 부족하다.</li>
+<li>→ W05 토론의 🗣 <strong>&quot;정부는 시장으로 연결시키지 못해요. 돈만 줄 뿐이지.&quot;</strong>와 같은 진단.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c10-h-4-두-모델의-분업"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">두 모델의 분업 💡</p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">교수의 단서를 받아들이면 결론은 &quot;둘 중 하나를 고르라&quot;가 아니다.</span></p>
+<ul>
+<li><strong>처방적 모델</strong>은 <strong>이미 방향이 분명한 영역</strong>(기술이전 절차, 창업 지원)에서 효과적이다.</li>
+<li><strong>진단적 모델</strong>은 <strong>방향 자체가 쟁점인 영역</strong>(GMO, AI 윤리, 원전)에서 필요하다.</li>
+<li>→ W03/15의 Phase 구분과 같은 논리다. Phase 2에는 처방이, Phase 0에는 공론장이 맞는다.</li>
+</ul>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c10-discussion" data-sec="c10-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05 토론(지방 산학협력)</strong>: 🗣 <strong>&quot;지표 위주로 한단 말이에요. 그 지표만 맞추면 되는 거라고 생각한단 말이에요.&quot;</strong> 처방적 모델이 <strong>지표 충족 게임</strong>으로 전락하는 문제.<ul>
+<li>🗣 <strong>SBIR &#39;mill&#39;</strong> 사례: 미국에서도 제안서 당첨 후 보고서만 내고 <strong>Phase 1·2만 반복하고 3으로 안 넘어가도 되는</strong> 구조가 있다. <strong>&quot;퍼블릭 머니를 주는 시장&quot;</strong>이 따로 형성된 것.</li>
+<li>🗣 <strong>&quot;그 시장을 줄여야 돼요. 한국은 그 시장이 너무 커요.&quot;</strong> → <code>수업노트/W05 §7</code></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-examples" data-sec="c10-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Bayh-Dole Act (1980)</strong> 💡: 연방 연구비 성과의 특허권을 대학·중소기업이 보유하게 한 법. 💡 미국 TTO 설립이 폭증한 계기이고, 각국이 모방했다(한국의 기술이전촉진법 등). 💡 다만 &quot;Bayh-Dole이 혁신을 늘렸는가&quot;는 실증적으로 논쟁 중이며, 오히려 <strong>기초연구 결과의 접근을 제한</strong>했다는 비판도 있다.</li>
+<li><strong>리서치 트라이앵글</strong> 💡: 노스캐롤라이나의 듀크·NC State·UNC 세 대학 사이에 조성된 연구단지(1959년 시작). 💡 쇠퇴하던 담배·섬유 산업 지역을 전환시킨 사례로, <strong>지역 전환</strong>의 모델로 인용된다.</li>
+<li><strong>Horizon Europe의 미션</strong> 💡: EU의 연구혁신 프로그램이 &quot;2030년까지 암 생존율 개선&quot; 같은 <strong>사회적 미션</strong>을 중심으로 재편된 것. 💡 W13 MOIP와 직결되며, 📄 표에서 진단적 모델 쪽에 배치된 것이 흥미롭다. 미션 설정 자체가 공론장을 요구하기 때문이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-position" data-sec="c10-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-1/07–08 Triple Helix 블록의 <strong>정책 번역</strong> 부분.</li>
+<li>🗣 &quot;시장이 끌고 갔다&quot;는 단서가 W05-1/11–12 Shinn의 비판, W05-1/13 교수의 비판으로 이어지는 흐름을 만든다.</li>
+<li>W03/15 Phase 구분, W03/17 제도 건축가와 함께 읽으면 &quot;언제 어떤 정책이 맞는가&quot;의 지도가 완성된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-related" data-sec="c10-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Etzkowitz &amp; Leydesdorff</strong> — Triple Helix의 처방성.</li>
+<li>연결: <a href="W05-1.html#c07">W05-1/07 Triple Helix</a> · <a href="W05-1.html#c08">W05-1/08 기업가적 대학</a> · <a href="W05-1.html#c05">W05-1/05 아고라</a> · <a href="W03.html#c15">W03/15 3단계</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c10-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ Triple Helix(처방적)와 Mode 2/아고라(진단적)를 핵심 질문·정책 성격·사례로 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;Triple Helix는 유럽 학자들의 구상이지만 실제로는 미국에서 시장이 끌고 갔다&quot;는 지적의 함의를 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">처방적 모델이 &quot;지표 충족 게임&quot;으로 전락하는 메커니즘을 SBIR mill 사례로 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">응용: 어떤 영역에 처방적 모델이 맞고 어떤 영역에 진단적 모델이 필요한가? Phase 개념을 활용해 논하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c10">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c07">Triple Helix — 세 주체와 재조합의 지대</a> · <a href="W05-1.html#c08">기업가적 대학과 제2차 학문 혁명</a> · <a href="W05-1.html#c09">★ 세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</a> · <a href="W05-1.html#c05">Re-Thinking Science — 함의의 맥락과 아고라</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c11">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 11</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 3/5 — Shinn의 Mode 2 비판 — 슬라이드 위주로 지나갔고, 교수는 이 비판에 재반론하며 강조의 중심을 공급자 중심성(W05-1/13)에 두었다. 비판적 검토형 소재로는 쓸 만하다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c11" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>Shinn의 Mode 2 비판</h2>
+    <p class="concept-en">Shinn (2002) — Mode 2 as a Political Manifesto — &quot;사회학적 패러다임이 아니라 정치적 선언문이다&quot;</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p32</span> <span class="chip chip-slide">📄 W05a p33</span> <a class="chip chip-tag" href="map.html?tag=shinn">#shinn</a> <a class="chip chip-tag" href="map.html?tag=critique">#critique</a> <a class="chip chip-tag" href="map.html?tag=anti-differentiation">#anti-differentiation</a> <a class="chip chip-tag" href="map.html?tag=neo-corporatism">#neo-corporatism</a> <a class="chip chip-tag" href="map.html?tag=empirical-evidence">#empirical-evidence</a> <a class="chip chip-tag" href="map.html?tag=manifesto">#manifesto</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c11-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Shinn (2002) The Triple Helix and New Production of Knowledge, Social Studies of Science</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §5-2 [~1:04:58]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c11-definition"><h4>한 줄 정의</h4><p>Terry Shinn은 Mode 2를 정면으로 공격한다. <strong>데이터가 없고</strong>, <strong>경계가 사라졌다는 주장은 과장이며</strong>, 모든 지식을 <strong>시장 수요로 환원</strong>시킬 위험이 있고, 무엇보다 <strong>현장형 지식 생산은 150년 전부터 있었다.</strong> 결론은 신랄하다. Mode 2는 새로운 패러다임이 아니라 <strong>특정 정책 그룹의 영향력을 높이기 위한 정치적 선언문</strong>이다.</p>
+</div>
+<div class="sec sec-analogy" id="c11-analogy"><h4>쉽게 말하면</h4><p>누군가 <strong>&quot;요즘 집밥의 시대가 끝나고 배달의 시대가 왔다&quot;</strong>고 선언했다고 하자. Shinn식 반박은 이렇다.</p>
+<ol>
+<li><strong>데이터를 가져와 봐라.</strong> 집밥이 정말 줄었나?</li>
+<li><strong>집밥이 아예 사라졌다는 건 과장</strong>이다. 여전히 대부분 집에서 먹는다.</li>
+<li>이 선언을 하는 사람이 <strong>배달업 컨설턴트</strong>라면, 이건 분석이 아니라 <strong>영업</strong>이다.</li>
+<li>게다가 <strong>배달은 100년 전에도 있었다.</strong> 새로운 시대가 아니다.</li>
+</ol>
+</div>
+<div class="sec sec-core" id="c11-core"><h4>핵심 내용</h4><h3 id="c11-h-슬라이드-w05a-p32-33">📄 슬라이드 (W05a p32–33)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p32.png" alt="W05a p32 Shinn의 Mode 2 비판" loading="lazy" decoding="async"><figcaption>W05a p32 Shinn의 Mode 2 비판</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p33.png" alt="W05a p33" loading="lazy" decoding="async"><figcaption>W05a p33</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c11-h-1-네-가지-비판"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">네 가지 비판 ★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>비판</th>
+<th>📄 내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>① 실증 데이터 부재</strong></td>
+<td>대학의 종말, 학문의 소멸 같은 <strong>대담한 주장</strong>을 하면서 사회학적·역사적 데이터가 없다</td>
+</tr>
+<tr>
+<td><strong>② 급진적 탈경계화의 오류</strong></td>
+<td>학문과 사회의 경계가 완벽히 사라졌다는 <strong>&#39;anti-differentiation&#39;은 수사학적 환영(mirage)</strong></td>
+</tr>
+<tr>
+<td><strong>③ 신기업주의 예속 위험</strong></td>
+<td>모든 지식을 <strong>사회적 유용성과 시장 수요로 환원</strong>시켜 <strong>과학을 정치가와 기업의 요구에 예속</strong>시킬 위험</td>
+</tr>
+<tr>
+<td><strong>④ 역사적 반론</strong></td>
+<td>학문 중심 연구 외에 현장 문제 해결형 지식 생산은 <strong>19세기부터 150년 이상 공존</strong>해 왔다. &quot;과거엔 순수 상아탑만 있다가 최근에야 Mode 2가 등장했다&quot;는 주장은 <strong>역사적 왜곡</strong></td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c11-h-2-결론-정치적-선언문"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">결론: 정치적 선언문 ★★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">Mode 2는 새로운 사회학적 패러다임이 아니라 <strong>특정 정책 그룹의 영향력을 높이기 위한 정치적 선언문(manifesto)</strong>에 불과하다.</span></p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;아주 이거 <strong>굉장한 비난</strong>이죠. 사회학적 패러다임이 아니라 정치적 플랫폼·선언에 불과하다는 신랄함.&quot;</p><span class="quote-time">1:04:58</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 비판의 구조가 날카롭다. <strong>&quot;당신들이 말하는 것이 사실이냐&quot;</strong>(①④)와 <strong>&quot;당신들이 왜 그 말을 하느냐&quot;</strong>(③)를 동시에 묻는다. 후자는 학문적 주장을 <strong>이해관계로 환원</strong>하는 방식이라 반박하기 까다롭다.</span></p>
+</div></div>
+<div class="step-card" id="c11-h-3-③번-비판의-무게"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">③번 비판의 무게 💡</p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">신기업주의(neo-corporatism) 예속 위험이 가장 묵직한 비판이다. Mode 2는 <strong>&quot;사회적 책임&quot;</strong>을 강조하는데, 실제로는 <strong>&quot;시장이 원하는 연구를 하라&quot;</strong>는 압력으로 작동할 수 있다는 것.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">구체적으로는:</span></p>
+<ul>
+<li>학문적 자율성이 약해지면 <strong>당장 돈이 되는 연구</strong>로 쏠린다.</li>
+<li>&quot;사회적 수용성&quot;이 평가 기준이 되면 <strong>불편한 연구</strong>(권력을 비판하는 연구)가 위축된다.</li>
+<li>→ W05-1/02에서 🗣 교수가 말한 <strong>&quot;보스가 좋아하나 마나로 기준이 확 바뀌는 황당한 경우&quot;</strong>가 같은 현상이다.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c11-h-4-④번-역사적-반론"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">④번 역사적 반론 💡</p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">가장 실증적으로 강한 비판이다. 예시를 들면:</span></p>
+<ul>
+<li>19세기 독일 화학 산업과 대학은 처음부터 긴밀했다(합성염료 연구).</li>
+<li>미국 랜드그랜트 대학은 <strong>농업 현장 문제 해결</strong>을 목적으로 세워졌다(1862년 Morrill Act).</li>
+<li>영국의 산업혁명기 기술자 집단은 대학 밖에 있었다(→ W02-1/05 Mokyr).</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">즉 <strong>&quot;순수한 Mode 1 시대&quot;라는 것이 애초에 없었다면</strong>, Mode 2를 &quot;새로운 전환&quot;으로 부를 근거가 약해진다.</span></p>
+<ul>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span>다른 실증 반론: Mode 2대로라면 대학의 연구 산출이 줄어야 하는데 <strong>오히려 줄지 않고 계속 나온다.</strong> (→ W05-1/12)</li>
+</ul>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c11-discussion" data-sec="c11-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05-1/12</strong>: Shinn의 Triple Helix 비판과 <strong>연구-기술(Research-Technology)</strong> 대안.</li>
+<li><strong>W05-1/13</strong>: 🗣 교수의 재반론과, 양쪽 모두에 대한 더 근본적인 비판(공급자 중심성).</li>
+<li>🗣 <strong>W05-1/03의 구조적 동인 설명이 Shinn의 ④번 비판 대상</strong>이다. &quot;구조가 바뀌어서 Mode 2가 나왔다&quot;는 설명은 <strong>그 이전에는 없었다</strong>는 전제를 깐다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-examples" data-sec="c11-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Terry Shinn</strong> 💡: 프랑스 CNRS 소속 과학사회학자. 💡 이 논문은 <em>Social Studies of Science</em>(2002)에 실렸는데, 이 저널은 STS 분야의 핵심 학술지다. 💡 즉 Mode 2 비판이 <strong>STS 내부에서</strong> 제기된 것이라는 점이 중요하다. 외부의 공격이 아니다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>Mode 2 측의 반론</strong>도 알아 둘 것: Gibbons 등은 &quot;Mode 1이 완전히 순수했다고 주장한 적 없다&quot;며, 자신들이 말한 것은 <strong>지배적 패턴의 이동</strong>이라고 답했다. 💡 정도의 문제인가 종류의 문제인가가 쟁점이 된다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>학문 분야의 자기 방어</strong>: Shinn의 비판에는 <strong>학문적 자율성을 지키려는 동기</strong>도 읽힌다. 모든 지식을 사회적 유용성으로 평가하면 기초연구가 설 자리가 없어진다. 이 긴장은 W05-1/06에서 Mode 2 자신도 <strong>&quot;Mode 1을 지식 저수지로 포섭한다&quot;</strong>고 말하며 인정한 바다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-position" data-sec="c11-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05 전반부(Mode 2 + Triple Helix)에 대한 <strong>외부 비판</strong>.</li>
+<li>W05-1/12와 한 쌍. Shinn은 두 담론을 모두 비판한다.</li>
+<li>W05-1/13에서 교수가 <strong>&quot;Shinn의 비판도 일리 있지만 더 근본적인 문제가 있다&quot;</strong>며 축을 바꾼다. 즉 Shinn은 <strong>디딤돌</strong>이다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>학습 전략: Shinn의 비판을 아는 것은 <strong>Mode 2를 더 정확히 이해하기 위해서</strong>다. 비판받는 지점이 그 이론의 약한 고리이기 때문.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-related" data-sec="c11-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Shinn (2002)</strong> &quot;The Triple Helix and New Production of Knowledge: Prepackaged Thinking on Science and Technology&quot;, <em>Social Studies of Science</em> 32(4).</li>
+<li>연결: <a href="W05-1.html#c01">W05-1/01 Mode 1 vs Mode 2</a> · <a href="W05-1.html#c12">W05-1/12 Triple Helix 비판</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W05-1.html#c03">W05-1/03 구조적 동인</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c11-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ Shinn의 Mode 2 비판 네 가지를 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;신기업주의 예속 위험&quot;이란 무엇이며, 왜 Mode 2의 &#39;사회적 책임&#39; 강조가 그 위험을 낳을 수 있는가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 역사적 반론(&quot;150년 이상 공존해 왔다&quot;)이 Mode 2 주장에 왜 치명적인지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">&quot;사회학적 패러다임이 아니라 정치적 선언문&quot;이라는 평가의 논리 구조를 분석하고, 그에 대해 어떻게 반박할 수 있을지 논하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c11">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c01">★ Mode 1 vs Mode 2</a> · <a href="W05-1.html#c12">Shinn의 Triple Helix 비판과 연구-기술</a> · <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W05-1.html#c03">Mode 2의 구조적 동인</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c12">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 12</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 3/5 — Shinn의 Triple Helix 비판과 연구-기술 — 교수 재반론에 약 3분을 썼지만 대안 개념 자체의 강의 비중은 작다. 생소해서 출제되면 변별력은 있다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c12" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>Shinn의 Triple Helix 비판과 연구-기술</h2>
+    <p class="concept-en">Critique of Triple Helix; Research-Technology and Interstitial Space — 경계가 무너진 게 아니라 분업이 작동하는 것이다</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p34</span> <span class="chip chip-slide">📄 W05a p35</span> <span class="chip chip-slide">📄 W05a p36</span> <a class="chip chip-tag" href="map.html?tag=shinn">#shinn</a> <a class="chip chip-tag" href="map.html?tag=research-technology">#research-technology</a> <a class="chip chip-tag" href="map.html?tag=interstitial-space">#interstitial-space</a> <a class="chip chip-tag" href="map.html?tag=generic-devices">#generic-devices</a> <a class="chip chip-tag" href="map.html?tag=differentiation">#differentiation</a> <a class="chip chip-tag" href="map.html?tag=endless-transition">#endless-transition</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c12-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Shinn (2002)</li><li>Joerges &amp; Shinn — Research-Technology</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §5-3, §5-4 [~1:10:03]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c12-definition"><h4>한 줄 정의</h4><p>Shinn은 Triple Helix에 대해 Mode 2보다는 후한 평가를 내린다. 실증을 쌓았기 때문이다. 그러나 핵심을 찌른다. <strong>세 나선이 합쳐져 생긴다는 &#39;새로운 제도&#39;의 실체가 불분명하다.</strong> 그의 대안은 정반대 방향이다. 경계가 무너져서 혁신이 생기는 게 아니라, <strong>각자의 분업과 자율성이 확고할 때</strong> 혁신이 가능하고, 그 사이의 <strong>간극(interstitial space)</strong>에서 <strong>범용 기기를 다루는 기술자 집단</strong>이 다리를 놓는다는 것이다.</p>
+</div>
+<div class="sec sec-analogy" id="c12-analogy"><h4>쉽게 말하면</h4><p>번역가를 생각하면 된다.</p>
+<ul>
+<li><strong>Triple Helix식 설명</strong>: 한국과 미국의 경계가 흐려져서 <strong>두 나라 사람이 섞인 새로운 공동체</strong>가 생긴다.</li>
+<li><strong>Shinn식 설명</strong>: 아니다. 한국은 한국이고 미국은 미국이다. <strong>두 나라가 각자 뚜렷하기 때문에</strong> 번역가가 필요하고, <strong>번역가가 오가며</strong> 교류가 일어난다.</li>
+</ul>
+<p>Shinn이 말하는 <strong>연구-기술자</strong>가 그 번역가다. 초원심분리기나 레이저 같은 <strong>어디에나 쓰이는 장비</strong>를 만드는 사람들은 대학에도 기업에도 정부 연구소에도 납품한다. 경계를 없애지 않고 <strong>가로지른다.</strong></p>
+</div>
+<div class="sec sec-core" id="c12-core"><h4>핵심 내용</h4><h3 id="c12-h-슬라이드-w05a-p34-36">📄 슬라이드 (W05a p34–36)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p34.png" alt="W05a p34 Triple Helix 비판" loading="lazy" decoding="async"><figcaption>W05a p34 Triple Helix 비판</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p35.png" alt="W05a p35" loading="lazy" decoding="async"><figcaption>W05a p35</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c12-h-1-상대적-우위-인정"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">상대적 우위 인정 📄</p>
+<ul>
+<li>Triple Helix는 <strong>사례 연구를 실증적으로 축적</strong>했다.</li>
+<li><strong>서구 유럽 바깥(남미·아시아)의 현장 정책과도 연결</strong>되는 <strong>연구 학파</strong>의 면모가 있다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">Mode 2를 &quot;선언문&quot;이라 깎아내린 것과 대조적이다. Shinn의 기준은 일관되게 <strong>실증</strong>이다.</span></p>
+</div></div>
+<div class="step-card" id="c12-h-2-핵심-비판"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">핵심 비판 ★</p>
+<ul>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span>세 나선이 합성되어 출현한다는 <strong>독자적 신제도(macro-entity)의 실체가 불분명</strong>하다.</li>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span>비판에 직면하자 <strong>창업보육센터 같은 미시적 변화</strong>나 <strong>&#39;끝없는 이행(endless transition)&#39;</strong>으로 후퇴했다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">&quot;끝없는 이행&quot;에 대한 지적이 날카롭다. 💡 어떤 이론이 <strong>&quot;지금 전환 중이다&quot;</strong>라고만 말하면 반증이 불가능해진다. 전환이 안 일어나도 &quot;아직 진행 중&quot;이라고 할 수 있기 때문이다.</span></p>
+</div></div>
+<div class="step-card" id="c12-h-3-대안-연구-기술-research-technology"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">대안 — 연구-기술(Research-Technology) ★★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">경계가 무너진 것이 아니라 <strong>학문·산업·정부의 분업과 제도적 자율성이 확고히 작동할 때 혁신이 가능</strong>하다.</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>개념</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>범용 기기(generic devices)</strong></td>
+<td>초원심분리기, 분광학, 레이저 같은 장비. <strong>여러 분야에 두루 쓰인다</strong></td>
+</tr>
+<tr>
+<td><strong>연구-기술자 집단</strong></td>
+<td>이 기기를 개발·개량하는 사람들. <strong>혁신의 숨은 주역</strong></td>
+</tr>
+<tr>
+<td><strong>간극(interstitial space)</strong></td>
+<td>기관들 <strong>사이의 공간</strong>. 여기서 <strong>탈매개·재매개하는 횡단적 역동성</strong>이 작동</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 이 대안이 왜 흥미로운가: <strong>Triple Helix와 정반대의 처방</strong>이 나온다.</span></p>
+<ul>
+<li>Triple Helix: 경계를 낮추고 <strong>섞어라</strong>.</li>
+<li>Shinn: 각자의 <strong>자율성을 지키되</strong> 가로지르는 <strong>매개자를 키워라</strong>.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">두 처방 모두 &quot;연결이 중요하다&quot;고 말하지만, 하나는 <strong>융합</strong>을, 다른 하나는 <strong>분화 + 매개</strong>를 처방한다. 조직 설계로 옮기면 전혀 다른 결론이 나온다.</span></p>
+</div></div>
+<div class="step-card" id="c12-h-4-실증-반론"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">실증 반론 📄</p>
+<ul>
+<li>Mode 2대로라면 대학의 연구 산출이 줄어야 하는데 <strong>오히려 줄지 않고 계속 나온다.</strong></li>
+</ul>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p36.png" alt="W05a p36" loading="lazy" decoding="async"><figcaption>W05a p36</figcaption></figure>
+</div></div>
+<div class="step-card" id="c12-h-5-교수의-재반론"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 교수의 재반론 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;신의 얘기는 &#39;거시 패러다임 말고 미시 메커니즘에 집중하자, 너무 뻥튀기 하는 거 아니냐&#39;는 비판인데. 근데 <strong>변화를 포착하고 그다음 변화를 만들어내는 작업을 주장하는 건 틀린 얘기가 아니죠. 매니지먼트라는 게 결국 뭡니까? 어디서 변화가 일어났는지 포착을 해야죠.</strong> 그리고 그걸 어떻게 잘 쓸 것인지 방안을 제안하는 게 매니지먼트죠.&quot;</p><span class="quote-time">1:07:28</span></blockquote>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>노동 비용, 자본 비용보다도 지식 비용이 점점 중요해지는 거죠.</strong> 그것이 왜 중요해지고 어디서 가장 가치를 많이 발생시키는지 관찰해내고 포착해내느냐, 그리고 그걸 매니지먼트에 쓸 수 있도록 만드는 작업은 당연히 해야 되는 작업이죠. <strong>신을 나쁘게 비판하자면 &#39;그냥 옛날 하던 거에서 조금씩만 바꾸면 돼&#39;라고 얘기할 수도 있어요.</strong>&quot;</p><span class="quote-time">1:08:26</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 교수의 입장 정리:</span></p>
+<ul>
+<li>Shinn의 <strong>실증 요구는 타당</strong>하다.</li>
+<li>그러나 <strong>경영학·정책학의 목적은 기술(記述)이 아니라 개입</strong>이다. 변화를 포착해 <strong>쓸 수 있게 만드는 것</strong>이 일이다.</li>
+<li>Shinn처럼 가면 <strong>보수적 결론</strong>(&quot;조금씩만 바꾸면 돼&quot;)에 머물 수 있다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 재반론은 <strong>학문 분야의 성격 차이</strong>를 드러낸다. 과학사회학(Shinn)은 <strong>정확한 서술</strong>을 목표로 하고, 기술경영(이 수업)은 <strong>유용한 처방</strong>을 목표로 한다. 같은 이론을 두고 평가가 갈리는 이유다.</span></p>
+</div></div>
+<div class="step-card" id="c12-h-6-지식-비용이라는-개념"><span class="step-no" aria-hidden="true">6</span><div class="step-body"><p class="step-title">💡 지식 비용이라는 개념</p>
+<p>🗣 <strong>&quot;노동 비용, 자본 비용보다도 지식 비용이 점점 중요해진다&quot;</strong> — 💡 W03/14의 비용 3분류(전환·거래·발굴)와 이어진다. 발굴 비용이 중요해진다는 말을 여기서는 &quot;지식 비용&quot;으로 표현했다.</p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c12-discussion" data-sec="c12-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05-1/13</strong>: 교수는 Shinn 논쟁을 <strong>디딤돌</strong>로 삼아 더 근본적인 문제를 제기한다. 🗣 <strong>&quot;각자의 장단점이 있고 (…) 그런데 담론들의 공통적 한계는 공급자 중심성.&quot;</strong></li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>즉 이 절에서 교수는 <strong>Shinn을 완전히 받아들이지도 물리치지도 않는다.</strong> 양쪽을 다 보여 준 뒤 <strong>제3의 축</strong>으로 넘어가는 구조다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c12-examples" data-sec="c12-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Research-Technology 개념</strong> 💡: Bernward Joerges와 Shinn이 함께 발전시킨 개념. 💡 과학사에서 <strong>기기(instrument)</strong>가 과소평가되어 왔다는 문제의식에서 출발한다. 현미경·분광기·컴퓨터 없이는 어떤 과학도 불가능한데, 연구는 늘 이론과 발견에만 주목해 왔다는 것.</li>
+<li><strong>간극의 행위자</strong> 💡: 비슷한 개념으로 <strong>경계 조직(boundary organization)</strong>, <strong>경계 물체(boundary object)</strong>가 있다. 💡 경계 물체는 서로 다른 집단이 각자의 방식으로 해석하면서도 협업할 수 있게 해 주는 사물(지도, 표준 양식, 데이터베이스)을 말한다. TTO나 표준화 기구가 경계 조직의 예다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>한국 맥락의 적용</strong>: 연구-기술 관점에서 보면, 한국의 약한 고리는 <strong>연구용 기기·장비 산업</strong>이다. 반도체 장비, 분석 기기, 실험 소프트웨어 대부분을 수입한다. 💡 Shinn의 틀로 보면 이것이 <strong>혁신의 숨은 병목</strong>이고, W01/11의 <strong>상류 컴포넌트 병목</strong>과도 통한다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c12-position" data-sec="c12-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-1/11과 한 쌍. Shinn의 두 갈래 비판.</li>
+<li>🗣 교수의 재반론이 들어가면서, 이 절은 <strong>방법론 논쟁</strong>(기술 vs 처방)의 성격을 띤다.</li>
+<li>W05-1/13에서 축이 바뀐다. Shinn 논쟁은 <strong>공급자들 사이의 논쟁</strong>이고, 교수는 수요자·시민 쪽으로 넘어간다.</li>
+<li>W03/09(TEP vs TEN)와 구조가 비슷하다. 💡 거기서도 거시와 미시 중 어느 쪽을 볼 것인가가 쟁점이었고, 답은 &quot;둘 다&quot;였다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c12-related" data-sec="c12-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Shinn (2002)</strong> — Triple Helix 비판.</li>
+<li><strong>Joerges &amp; Shinn</strong> — 💡 Research-Technology.</li>
+<li>연결: <a href="W05-1.html#c07">W05-1/07 Triple Helix</a> · <a href="W05-1.html#c11">W05-1/11 Mode 2 비판</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W03.html#c09">W03/09 TEP vs TEN</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c12-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ Shinn이 Triple Helix에 대해 인정한 점과 비판한 점을 각각 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 연구-기술(Research-Technology) 대안의 핵심 주장을 쓰고, Triple Helix의 처방과 어떻게 정반대인지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;끝없는 이행(endless transition)&quot;이라는 후퇴가 왜 이론적으로 문제인가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 교수의 재반론을 요약하고, 과학사회학과 기술경영의 목적 차이가 평가를 어떻게 가르는지 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">응용: 연구-기술 관점에서 한국 혁신 시스템의 약한 고리를 진단하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c12">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c07">Triple Helix — 세 주체와 재조합의 지대</a> · <a href="W05-1.html#c11">Shinn의 Mode 2 비판</a> · <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W03.html#c09">TEP vs TEN과 사회–기술적 동시 형성</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c13">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-1 · 개념 13</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 5/5 — ★ 공급자 중심성 비판 — 교수가 '이건 제 얘기'라 밝힌 W05의 핵심 주장. 문제 제기·공통 한계·계기를 합쳐 이 블록에서 가장 길게(15분 이상) 다뤘고 W03 발견 실패와의 구조 비교(X10)까지 걸린다" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+      <button type="button" class="focus-btn" data-focus-target="c13" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★ 공급자 중심성 비판 (교수의 핵심 주장)</h2>
+    <p class="concept-en">Producer-centrism of Innovation Discourses — 교수 본인의 주장 — 이 주차의 분기점</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p37</span> <a class="chip chip-tag" href="map.html?tag=producer-centrism">#producer-centrism</a> <a class="chip chip-tag" href="map.html?tag=demand-side">#demand-side</a> <a class="chip chip-tag" href="map.html?tag=fukushima">#fukushima</a> <a class="chip chip-tag" href="map.html?tag=safety-vs-assurance">#safety-vs-assurance</a> <a class="chip chip-tag" href="map.html?tag=self-protective">#self-protective</a> <a class="chip chip-tag" href="map.html?tag=professor-argument">#professor-argument</a> <a class="chip chip-tag" href="map.html?tag=pivot">#pivot</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c13-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §5-1 [54:07–58:23]</li><li>수업노트/W05_강의기록_261003.md §5-5, §5-6 [1:02:06–1:12:10]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c13-definition"><h4>한 줄 정의</h4><p>Mode 2도, 아고라도, Triple Helix도, 심지어 Shinn의 비판조차 <strong>모두 공급자(연구자·생산자) 입장에서 하는 이야기</strong>다. &quot;우리가 만든 지식을 어떻게 더 잘 만들고 어떻게 믿게 할까&quot;를 묻는다. <strong>수요가 빠져 있다.</strong> 시민이 <strong>어떤 기준으로 판단하는가</strong>는 아무도 묻지 않았다. 그래서 질문을 뒤집어야 한다. 그것이 시민 인식론이다.</p>
+</div>
+<div class="sec sec-analogy" id="c13-analogy"><h4>쉽게 말하면</h4><p>식당 주인들이 모여 회의를 한다.</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">Mode 1</th><td class="deflist-desc">&quot;우리 요리 실력을 높이자.&quot;</td></tr>
+<tr><th scope="row" class="deflist-term">Mode 2</th><td class="deflist-desc">&quot;손님 의견도 듣고 여러 기준으로 평가받자.&quot;</td></tr>
+<tr><th scope="row" class="deflist-term">아고라</th><td class="deflist-desc">&quot;손님을 회의에 초대하자.&quot;</td></tr>
+<tr><th scope="row" class="deflist-term">Triple Helix</th><td class="deflist-desc">&quot;식당·농가·시청이 협의체를 만들자.&quot;</td></tr>
+</tbody></table>
+<p>🗣 교수의 지적은 이것이다. <strong>네 가지 모두 식당이 주최하는 회의</strong>다. <strong>&quot;와서 얘기하세요&quot;</strong>이지 <strong>&quot;손님이 뭘 기준으로 식당을 고르는지&quot;</strong>를 묻는 게 아니다.</p>
+</div>
+<div class="sec sec-core" id="c13-core"><h4>핵심 내용</h4><h3 id="c13-h-슬라이드-w05a-p37">📄 슬라이드 (W05a p37)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p37.png" alt="W05a p37 담론들의 공통 한계" loading="lazy" decoding="async"><figcaption>W05a p37 담론들의 공통 한계</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c13-h-1-문제-제기"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">🗣 문제 제기 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;기술영향평가나 시민참여형 공론화위원회도, <strong>과학자들이 &#39;우리가 과학 활동을 하는데 어떻게 하면 안전하게 만들고 믿을 만하게 만들 것이냐&#39;라고 우리 입장에서 생각하는 거</strong>지 시민들 입장이 아니고. 다르게 얘기하면 <strong>&#39;우리가 하는데 와서 얘기하세요&#39;</strong>예요. 와서 얘기하셔야지, 우리가 저쪽으로 가서 얘기한다기보다는. 그게 틀렸다는 게 아니라 <strong>그 입장이 그렇다</strong>는 얘기야. &#39;우리 걸 더 잘 만들기 위해서 어떻게 할까요?&#39; 하는 건데, <strong>그렇게 한다고 문제가 해결되는 게 아니죠.</strong>&quot;</p><span class="quote-time">55:07</span></blockquote>
+<ul>
+<li>🗣 여전히 <strong>Schumpeter의 초인적 기업가 개념</strong>이 남아 있다. <strong>공급자(연구자)가 잘 만들면 된다</strong>는 생각인데, 거기에는 한계가 있다.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c13-h-2-담론들의-공통-한계"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">📄 담론들의 공통 한계 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;각자의 장단점이 있고, &#39;너무 뻥 치지 마라&#39;는 신의 얘기도 틀린 말은 아닙니다. 그런데 <strong>담론들의 공통적 한계는 공급자 및 생산자 중심성</strong>이 있다는 얘기입니다. <strong>수요가 빠져 있다</strong>는 얘기죠. 수요, 소비, 그리고 결국에는 <strong>그 정치적 결정</strong>이 빠져 있다는 얘기.&quot;</p><span class="quote-time">1:10:03</span></blockquote>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">Mode 2의 &#39;사회적으로 강건한 지식&#39;이나 &#39;사회와의 새로운 계약&#39;조차 실상은 <strong>시민을 위한 민주적 권리가 아니다.</strong> 과학자들이 스스로 유발한 <strong>제조된 위험과 대중적 반발을 완화하고 지식의 정당성을 방어하기 위한 공급자 중심의 자기보호적 해법</strong>에 불과하다.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 가장 날카로운 문장이다. <strong>&quot;강건한 지식&quot;</strong>이라는 개념조차 <strong>&quot;어떻게 하면 받아들여질까&quot;</strong>라는 공급자의 고민에서 나왔다는 것. 좋은 의도였더라도 <strong>질문의 주어가 과학자</strong>다.</span></p>
+</div></div>
+<div class="step-card" id="c13-h-3-공정한-단서"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 공정한 단서</p>
+<ul>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span>🗣 다만 공정하게 보자면, <strong>그들이 이 프레임워크를 그 목적으로 제안한 것은 아니다.</strong> 생산 속에서 벌어지는 현상을 설명하다 보니 Beck의 지적이 나타난 것이고, <strong>&quot;저쪽이 진짜 어떻게 생각하는지&quot;는 이 인식 체계에서 다루기 어렵다.</strong></li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>오히려 그 한계를 인정하는 게 서로가 좋죠.</strong>&quot;</p><span class="quote-time">1:12:03</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">비난이 아니라 <strong>인식 체계의 구조적 한계</strong>를 지적하는 것이다. 공급자의 눈으로 보면 수요자의 판단 기준은 <strong>원리적으로</strong> 보이지 않는다.</span></p>
+</div></div>
+<div class="step-card" id="c13-h-4-후쿠시마-사례-안전-vs-안심"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">후쿠시마 사례 — 안전 vs 안심 ★★</p>
+<p>🗣 (W01에서 짧게 나온 사례의 상세판)</p>
+<ul>
+<li>후쿠시마산 농식품을 <strong>정부가 안전 검사해 도쿄 시내에서도 판매</strong>했다.</li>
+<li>그런데 <strong>협동조합의 엄마들이 &quot;믿을 만하지 않다&quot;며 따로 연구</strong>했다. <strong>검사 장비를 구하고, 직접 공부해서 방사능을 측정하고, 정부 규제에 무엇이 빠져 있는지까지 다 파악</strong>했다. 미국 인류학자가 이를 연구해 정리했다.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>정부는 안전(safety)을 줬지만 안심을 주지 못했고, 그 사람들은 스스로의 작업을 통해 안심을 얻었다.</strong> 그 차이가 분명히 있는 것이죠. 일본의 맥락에서는 안심을 얻는 방법이 <strong>스스로 연구해서 얻는 안심</strong>이었던 것이고, 다른 나라에서는 다른 방법으로 할 텐데, 어쨌든 그거를 <strong>Mode 2나 Triple Helix는 담아내지 못하는 한계</strong>가 있어요.&quot;</p><span class="quote-time">56:54</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 이 사례가 결정적인 이유:</span></p>
+<ul>
+<li>엄마들은 <strong>아고라에 초대받기를 기다리지 않았다.</strong> 스스로 장비를 사고 측정했다.</li>
+<li>즉 <strong>공급자가 열어 준 참여 통로 밖에서</strong> 자기 검증 체계를 만든 것이다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>Mode 2의 틀로는 이것을 &quot;시민 참여&quot;로 분류하겠지만, 실상은 <strong>공급자의 판정을 거부하고 대안적 인식 체계를 세운 것</strong>이다. 질적으로 다르다.</li>
+<li>→ W05-2/01 시민 인식론이 바로 이것을 다룬다.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c13-h-5-교수가-이-주제에-꽂힌-계기"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 교수가 이 주제에 꽂힌 계기 ★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;Jasanoff가 강의를 한 번 해서 들었는데 제가 질문을 했어요. 그런데 <strong>Mode 2에 대해서 굉장히 불만스럽게 얘기를 하더라고요.</strong> 평가가 너무 노골적으로, 뭐랄까 <strong>화를 낸다고 해야 되나.</strong> 그래서 &#39;이 양반이 왜 이렇게 화를 내지?&#39; 하고 다 들여다봤더니 <strong>그 한계가 있었던 거예요.</strong> 그거를 너무 퉁 치고 넘어가는 부분이 있었던 거죠.&quot;</p><span class="quote-time">1:03:13</span></blockquote>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;이렇게 연결해서 얘기하는 게 있었던 게 아니에요. <strong>제가 하는 겁니다.</strong> Shinn의 비판까지 하고 끝나요. <strong>근데 제가 봤을 때는 이것들이 모두 공급자 입장에서의 얘기지, 시민의 입장에서 얘기하는 건 아니다.</strong>&quot;</p><span class="quote-time">1:02:06</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ <strong>이 대목은 토론 질문 후보</strong>로 수업노트에 표시되어 있다. 교수 본인의 주장이므로 <strong>반론 여지가 크다</strong>는 것. 예를 들어:</span></p>
+<ul>
+<li>아고라에 구속력이 있다면 여전히 공급자 중심인가?</li>
+<li>후쿠시마 엄마들의 자발적 검증도 결국 <strong>정부가 만든 기준치</strong>를 참조하지 않았나?</li>
+<li>수요자 중심으로 가면 <strong>전문성의 자리</strong>는 어떻게 되나?</li>
+</ul>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c13-discussion" data-sec="c13-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li>★ <strong>W03/13(시장 실패 vs 발견 실패)과의 구조적 유사성</strong> 💡: 두 비판 모두 <strong>&quot;기존 논의에 무엇이 빠졌나&quot;</strong>를 묻는다.<ul>
+<li>W03: 투자만 보고 <strong>발견</strong>을 못 봤다.</li>
+<li>W05: 공급만 보고 <strong>수요·판단</strong>을 못 봤다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>그리고 두 경우 모두 처방이 <strong>&quot;모여서 같이 하라&quot;</strong>(혁신 공유지 / 시민 인식론)로 수렴한다. ★ 비교형 좋은 소재.</li>
+</ul>
+</li>
+<li><strong>W02-1/06 불만족스러운 혁신</strong>과도 통한다. 🗣 Lundvall의 &quot;산업이 과학을 끌고 가야 한다&quot;는 주장이 <strong>수요 쪽을 보라</strong>는 같은 요구다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c13-examples" data-sec="c13-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>후쿠시마 시민 방사능 측정소</strong> 💡: 사고 후 일본 각지에 시민이 운영하는 측정소가 수십 곳 생겼다. 💡 전문 장비를 공동 구매하고 측정법을 익혀 식품·토양을 검사했다. 💡 주목할 점은 이들이 <strong>정부 데이터를 부정한 것이 아니라 자기 데이터를 추가로 만들었다</strong>는 것이다. 신뢰는 정보의 양이 아니라 <strong>누가 만들었는가</strong>에 달려 있음을 보여 준다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>반론 가능성</strong>: 공급자 중심성 비판은 강력하지만, <strong>대안의 실행 가능성</strong>이 과제로 남는다. 모든 기술에 대해 시민이 자기 검증 체계를 만들 수는 없다. 💡 그래서 W05-2/06의 <strong>겸손의 기술</strong>처럼 <strong>공급자가 먼저 불확실성을 인정하는</strong> 절차적 처방이 함께 필요해진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c13-position" data-sec="c13-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>★ 이 주차의 <strong>분기점(pivot)</strong>. 앞의 모든 내용(Mode 2, 아고라, Triple Helix, Shinn)이 <strong>공급자 담론</strong>으로 묶이고, 뒤의 내용(Jasanoff)이 <strong>수요자·시민 담론</strong>으로 열린다.</li>
+<li>W05-1/09 세 모델 비교표가 이 비판의 근거 자료다.</li>
+<li>W05-2/01 시민 인식론이 그 답이다.</li>
+<li>🗣 교수 본인의 주장이므로 <strong>term paper나 토론에서 비판적으로 다루기 좋은</strong> 지점이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c13-related" data-sec="c13-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li>🗣 교수 본인의 연결이라 직접 대응하는 논문은 없다. Shinn의 비판은 여기까지 가지 않는다.</li>
+<li>연결: <a href="W05-1.html#c05">W05-1/05 아고라</a> · <a href="W05-1.html#c06">W05-1/06 강건한 지식</a> · <a href="W05-1.html#c09">W05-1/09 세 모델 비교</a> · <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W03.html#c13">W03/13 발견 실패</a> · <a href="W02-1.html#c06">W02-1/06 불만족스러운 혁신</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c13-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ &quot;모든 담론이 공급자 중심이다&quot;라는 비판의 내용을 서술하고, 아고라조차 그 비판을 피하지 못하는 이유를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 후쿠시마 사례에서 &quot;정부는 안전을 줬지만 안심을 주지 못했다&quot;는 말의 의미와, 그것이 Mode 2의 한계를 어떻게 드러내는지 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 비교형: W03의 &quot;발견 실패&quot; 비판과 W05의 &quot;공급자 중심성&quot; 비판은 구조적으로 어떻게 닮았는가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">비판적 검토: 공급자 중심성 비판에 대해 제기할 수 있는 반론을 세 가지 이상 들고 평가하라. (토론 질문 후보)</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-1&amp;c=c13">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c05">Re-Thinking Science — 함의의 맥락과 아고라</a> · <a href="W05-1.html#c06">★ 분산된 지식 ≠ 강건한 지식</a> · <a href="W05-1.html#c09">★ 세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</a> · <a href="W05-2.html#c01">★ 시민 인식론의 정의</a> · <a href="W03.html#c13">★ 시장 실패 vs 발견 실패</a> · <a href="W02-1.html#c06">불만족스러운 혁신 — Lundvall의 경고</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+    
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+  </main>
+</div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

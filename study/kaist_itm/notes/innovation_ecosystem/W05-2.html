@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="ko" data-header="two">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="시민 인식론 개념 정리 7개">
+  <title>W05-2 · 시민 인식론 — 혁신생태계론</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
+      } catch (e) {}
+    })();
+  </script>
+  
+</head>
+<body class="page-week">
+
+
+<header class="topbar">
+  <a class="topbar-home" href="../../index.html" title="KAIST ITM 대시보드로">← ITM</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
+  <nav class="topbar-nav">
+    <a href="index.html">학기 지도</a>
+    <a href="W01.html" class="active">주차별 개념</a>
+    <a href="core.html">핵심 개념</a>
+    <a href="quiz.html">퀴즈</a>
+    <a href="map.html">개념 지도</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
+    <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
+    </button>
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="개념 검색">
+    <input type="search" id="search-input" placeholder="개념명 · 영어 · 태그 · 본문 검색" autocomplete="off">
+    <ul class="search-results" id="search-results"></ul>
+    <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
+  </div>
+</div>
+
+<nav class="weeknav" aria-label="주차별 개념 바로가기"><a href="W01.html">W01</a><a href="W02-1.html">W02-1</a><a href="W02-2.html">W02-2</a><a href="W03.html">W03</a><a href="W05-1.html">W05-1</a><a href="W05-2.html" class="active" aria-current="page">W05-2</a></nav>
+<div class="layout" id="top">
+  
+<aside class="sidebar">
+  <div class="chapter-label">W05-2 · 10/03</div>
+  <h1>시민 인식론</h1>
+  <p class="side-subtitle">Civic Epistemology · Zoom 비대면</p>
+  <div class="side-progress">개념 7개</div>
+  <div class="side-tools">
+    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
+    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
+  </div>
+  <nav><ul class="side-nav">
+    <li data-item="c01" class="is-open">
+      <a href="#c01" data-concept="c01" class="active">
+        <span class="side-no">01</span>
+        <span class="side-title">★ 시민 인식론의 정의</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c01-definition" class="side-sub-sec" data-anchor="c01-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c01-h-슬라이드-w05a-p38-w05b-p8" class="side-sub-h" data-anchor="c01-h-슬라이드-w05a-p38-w05b-p8">📄 슬라이드 (W05a p38, W05b p8)</a></li>
+        <li><a href="#c01-h-1-인식론적-주권의-전환" class="side-sub-h" data-anchor="c01-h-1-인식론적-주권의-전환">1) 인식론적 주권의 전환 ★★</a></li>
+        <li><a href="#c01-h-2-정의" class="side-sub-h" data-anchor="c01-h-2-정의">2) 정의 📄 ★★</a></li>
+        <li><a href="#c01-h-3-gmo-사례-탈보편주의의-증거" class="side-sub-h" data-anchor="c01-h-3-gmo-사례-탈보편주의의-증거">3) 🗣 GMO 사례 — 탈보편주의의 증거 ★★</a></li>
+        <li><a href="#c01-h-4-시스템-이야기로의-복귀" class="side-sub-h" data-anchor="c01-h-4-시스템-이야기로의-복귀">4) 🗣 시스템 이야기로의 복귀 ★</a></li>
+        <li><a href="#c01-h-5-정당성은-그냥-나오지-않는다" class="side-sub-h" data-anchor="c01-h-5-정당성은-그냥-나오지-않는다">5) 🗣 정당성은 그냥 나오지 않는다 ★★</a></li>
+        <li><a href="#c01-h-6-sheila-jasanoff-소개" class="side-sub-h" data-anchor="c01-h-6-sheila-jasanoff-소개">6) 🗣 Sheila Jasanoff 소개</a></li>
+        <li><a href="#c01-discussion" class="side-sub-sec" data-anchor="c01-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c01-examples" class="side-sub-sec" data-anchor="c01-examples">보충 사례</a></li>
+        <li><a href="#c01-position" class="side-sub-sec" data-anchor="c01-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c01-related" class="side-sub-sec" data-anchor="c01-related">관련 개념 · 논문</a></li>
+        <li><a href="#c01-quiz" class="side-sub-sec" data-anchor="c01-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c02">
+      <a href="#c02" data-concept="c02">
+        <span class="side-no">02</span>
+        <span class="side-title">공동생산 (Co-production)</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c02-definition" class="side-sub-sec" data-anchor="c02-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c02-h-슬라이드-w05b-p7" class="side-sub-h" data-anchor="c02-h-슬라이드-w05b-p7">📄 슬라이드 (W05b p7)</a></li>
+        <li><a href="#c02-h-1-개념" class="side-sub-h" data-anchor="c02-h-1-개념">1) 개념 ★</a></li>
+        <li><a href="#c02-h-2-jasanoff의-정의-문장" class="side-sub-h" data-anchor="c02-h-2-jasanoff의-정의-문장">2) 📄 Jasanoff의 정의 문장</a></li>
+        <li><a href="#c02-h-3-네-요소" class="side-sub-h" data-anchor="c02-h-3-네-요소">3) 네 요소 📄 ★</a></li>
+        <li><a href="#c02-h-4-winner와의-갈림길" class="side-sub-h" data-anchor="c02-h-4-winner와의-갈림길">4) 🗣 Winner와의 갈림길 ★★</a></li>
+        <li><a href="#c02-discussion" class="side-sub-sec" data-anchor="c02-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c02-examples" class="side-sub-sec" data-anchor="c02-examples">보충 사례</a></li>
+        <li><a href="#c02-position" class="side-sub-sec" data-anchor="c02-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c02-related" class="side-sub-sec" data-anchor="c02-related">관련 개념 · 논문</a></li>
+        <li><a href="#c02-quiz" class="side-sub-sec" data-anchor="c02-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c03">
+      <a href="#c03" data-concept="c03">
+        <span class="side-no">03</span>
+        <span class="side-title">결함 모델 비판과 시민의 네 역량</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c03-definition" class="side-sub-sec" data-anchor="c03-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c03-h-슬라이드-w05b-p5-6" class="side-sub-h" data-anchor="c03-h-슬라이드-w05b-p5-6">📄 슬라이드 (W05b p5–6)</a></li>
+        <li><a href="#c03-h-1-결함-모델-deficit-model" class="side-sub-h" data-anchor="c03-h-1-결함-모델-deficit-model">1) 결함 모델(deficit model) ★</a></li>
+        <li><a href="#c03-h-2-교수의-균형-단서-허위정보-시대" class="side-sub-h" data-anchor="c03-h-2-교수의-균형-단서-허위정보-시대">2) 🗣 교수의 균형 단서 — 허위정보 시대 ★</a></li>
+        <li><a href="#c03-h-3-jasanoff의-대안-알고-있는-주체" class="side-sub-h" data-anchor="c03-h-3-jasanoff의-대안-알고-있는-주체">3) Jasanoff의 대안 — 알고 있는 주체 ★</a></li>
+        <li><a href="#c03-h-4-다만-공짜는-아니다" class="side-sub-h" data-anchor="c03-h-4-다만-공짜는-아니다">4) 🗣 다만 공짜는 아니다 ★</a></li>
+        <li><a href="#c03-h-5-인간의-네-가지-역량" class="side-sub-h" data-anchor="c03-h-5-인간의-네-가지-역량">5) 인간의 네 가지 역량 📄 ★★</a></li>
+        <li><a href="#c03-h-6-암묵지와의-연결" class="side-sub-h" data-anchor="c03-h-6-암묵지와의-연결">6) 🗣 암묵지와의 연결 ★★</a></li>
+        <li><a href="#c03-h-7-w01-08-시민성-네-유형과의-비교" class="side-sub-h" data-anchor="c03-h-7-w01-08-시민성-네-유형과의-비교">7) W01/08 시민성 네 유형과의 비교 💡</a></li>
+        <li><a href="#c03-discussion" class="side-sub-sec" data-anchor="c03-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c03-examples" class="side-sub-sec" data-anchor="c03-examples">보충 사례</a></li>
+        <li><a href="#c03-position" class="side-sub-sec" data-anchor="c03-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c03-related" class="side-sub-sec" data-anchor="c03-related">관련 개념 · 논문</a></li>
+        <li><a href="#c03-quiz" class="side-sub-sec" data-anchor="c03-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c04">
+      <a href="#c04" data-concept="c04">
+        <span class="side-no">04</span>
+        <span class="side-title">★★ 미국·영국·독일의 세 가지 양식</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c04-definition" class="side-sub-sec" data-anchor="c04-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c04-h-슬라이드-w05b-p9-10" class="side-sub-h" data-anchor="c04-h-슬라이드-w05b-p9-10">📄 슬라이드 (W05b p9–10)</a></li>
+        <li><a href="#c04-h-1-6차원-비교표-통째로-암기-권장" class="side-sub-h" data-anchor="c04-h-1-6차원-비교표-통째로-암기-권장">1) 6차원 비교표 ★★ (통째로 암기 권장)</a></li>
+        <li><a href="#c04-h-2-gmo-위험-프레임-행이-핵심이다" class="side-sub-h" data-anchor="c04-h-2-gmo-위험-프레임-행이-핵심이다">2) GMO 위험 프레임 행이 핵심이다 ★★ 💡</a></li>
+        <li><a href="#c04-h-3-교수의-해설" class="side-sub-h" data-anchor="c04-h-3-교수의-해설">3) 🗣 교수의 해설 ★★</a></li>
+        <li><a href="#c04-h-4-투명성-행의-역설" class="side-sub-h" data-anchor="c04-h-4-투명성-행의-역설">4) 투명성 행의 역설 💡</a></li>
+        <li><a href="#c04-discussion" class="side-sub-sec" data-anchor="c04-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c04-examples" class="side-sub-sec" data-anchor="c04-examples">보충 사례</a></li>
+        <li><a href="#c04-position" class="side-sub-sec" data-anchor="c04-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c04-related" class="side-sub-sec" data-anchor="c04-related">관련 개념 · 논문</a></li>
+        <li><a href="#c04-quiz" class="side-sub-sec" data-anchor="c04-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c05">
+      <a href="#c05" data-concept="c05">
+        <span class="side-no">05</span>
+        <span class="side-title">★ 한국의 기술관료적 시민 인식론</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c05-definition" class="side-sub-sec" data-anchor="c05-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c05-h-슬라이드-w05b-p11-12" class="side-sub-h" data-anchor="c05-h-슬라이드-w05b-p11-12">📄 슬라이드 (W05b p11–12)</a></li>
+        <li><a href="#c05-h-1-39-국가-행정을-위한-과학-39" class="side-sub-h" data-anchor="c05-h-1-39-국가-행정을-위한-과학-39">1) '국가 행정을 위한 과학' ★</a></li>
+        <li><a href="#c05-h-2-quot-정부가-또-열심히-했어요-quot" class="side-sub-h" data-anchor="c05-h-2-quot-정부가-또-열심히-했어요-quot">2) 🗣 &quot;정부가 또 열심히 했어요&quot; ★★</a></li>
+        <li><a href="#c05-h-3-공민적-교란-civic-dislocation" class="side-sub-h" data-anchor="c05-h-3-공민적-교란-civic-dislocation">3) 공민적 교란(Civic Dislocation) ★★</a></li>
+        <li><a href="#c05-h-4-신고리-공론화-현장-이야기" class="side-sub-h" data-anchor="c05-h-4-신고리-공론화-현장-이야기">4) 🗣 신고리 공론화 현장 이야기 ★★</a></li>
+        <li><a href="#c05-h-5-남반구의-지식-주권-epistemic-sovereignty" class="side-sub-h" data-anchor="c05-h-5-남반구의-지식-주권-epistemic-sovereignty">5) 남반구의 지식 주권(Epistemic Sovereignty) 📄</a></li>
+        <li><a href="#c05-discussion" class="side-sub-sec" data-anchor="c05-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c05-examples" class="side-sub-sec" data-anchor="c05-examples">보충 사례</a></li>
+        <li><a href="#c05-position" class="side-sub-sec" data-anchor="c05-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c05-related" class="side-sub-sec" data-anchor="c05-related">관련 개념 · 논문</a></li>
+        <li><a href="#c05-quiz" class="side-sub-sec" data-anchor="c05-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c06">
+      <a href="#c06" data-concept="c06">
+        <span class="side-no">06</span>
+        <span class="side-title">겸손의 기술</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c06-definition" class="side-sub-sec" data-anchor="c06-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c06-h-슬라이드-w05b-p13-15" class="side-sub-h" data-anchor="c06-h-슬라이드-w05b-p13-15">📄 슬라이드 (W05b p13–15)</a></li>
+        <li><a href="#c06-h-1-네-가지-질문" class="side-sub-h" data-anchor="c06-h-1-네-가지-질문">1) 네 가지 질문 ★★</a></li>
+        <li><a href="#c06-h-2-왜-겸손이-필요한가" class="side-sub-h" data-anchor="c06-h-2-왜-겸손이-필요한가">2) 🗣 왜 겸손이 필요한가</a></li>
+        <li><a href="#c06-h-3-에너지-전환-공동생산의-현재형" class="side-sub-h" data-anchor="c06-h-3-에너지-전환-공동생산의-현재형">3) 에너지 전환 — 공동생산의 현재형 📄</a></li>
+        <li><a href="#c06-h-4-ai-규제의-분화" class="side-sub-h" data-anchor="c06-h-4-ai-규제의-분화">4) AI 규제의 분화 📄 ★★</a></li>
+        <li><a href="#c06-h-5-한국은-어디로-가야-하나" class="side-sub-h" data-anchor="c06-h-5-한국은-어디로-가야-하나">5) 🗣 한국은 어디로 가야 하나 ★</a></li>
+        <li><a href="#c06-discussion" class="side-sub-sec" data-anchor="c06-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c06-examples" class="side-sub-sec" data-anchor="c06-examples">보충 사례</a></li>
+        <li><a href="#c06-position" class="side-sub-sec" data-anchor="c06-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c06-related" class="side-sub-sec" data-anchor="c06-related">관련 개념 · 논문</a></li>
+        <li><a href="#c06-quiz" class="side-sub-sec" data-anchor="c06-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li>
+    <li data-item="c07">
+      <a href="#c07" data-concept="c07">
+        <span class="side-no">07</span>
+        <span class="side-title">★ 기술 수용 기준의 전환 — 경제적 타당성에서 사회적 타당성으로</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c07-definition" class="side-sub-sec" data-anchor="c07-definition">정의 · 비유 · 핵심 내용</a></li>
+        <li><a href="#c07-h-1-응급실-사례-출발점" class="side-sub-h" data-anchor="c07-h-1-응급실-사례-출발점">1) 🗣 응급실 사례 — 출발점 ★</a></li>
+        <li><a href="#c07-h-2-기본권으로-정하면-시장이-생긴다" class="side-sub-h" data-anchor="c07-h-2-기본권으로-정하면-시장이-생긴다">2) 🗣 기본권으로 정하면 시장이 생긴다 ★★</a></li>
+        <li><a href="#c07-h-3-soc-개념의-재정의" class="side-sub-h" data-anchor="c07-h-3-soc-개념의-재정의">3) 🗣 SOC 개념의 재정의 ★★</a></li>
+        <li><a href="#c07-h-4-왜-이것이-공동생산인가" class="side-sub-h" data-anchor="c07-h-4-왜-이것이-공동생산인가">4) 🗣 왜 이것이 공동생산인가 ★★</a></li>
+        <li><a href="#c07-h-5-유럽의-에어컨-라이프스타일의-선택" class="side-sub-h" data-anchor="c07-h-5-유럽의-에어컨-라이프스타일의-선택">5) 🗣 유럽의 에어컨 — 라이프스타일의 선택 ★</a></li>
+        <li><a href="#c07-discussion" class="side-sub-sec" data-anchor="c07-discussion">수업에서 나온 논점</a></li>
+        <li><a href="#c07-examples" class="side-sub-sec" data-anchor="c07-examples">보충 사례</a></li>
+        <li><a href="#c07-position" class="side-sub-sec" data-anchor="c07-position">수업 프레임에서의 위치</a></li>
+        <li><a href="#c07-related" class="side-sub-sec" data-anchor="c07-related">관련 개념 · 논문</a></li>
+        <li><a href="#c07-quiz" class="side-sub-sec" data-anchor="c07-quiz">예상 퀴즈 포인트</a></li>
+      </ul>
+    </li></ul></nav>
+</aside>
+  <main>
+    <p class="breadcrumb"><a href="index.html">학기 지도</a> › W05-2 · 시민 인식론</p>
+    <div class="week-intro">
+      <h1 class="week-title">시민 인식론</h1>
+      <p class="week-meta">2026-10-03 · 개념 7개 · 자료 <code>W05_혁신생태계론 시민 인식론 261003.pdf</code></p>
+      
+<p class="legend">
+  <span class="legend-item">🗣 교수 발언</span>
+  <span class="legend-item">📄 슬라이드</span>
+  <span class="legend-item">💡 보충(외부 지식)</span>
+</p>
+    </div>
+    
+<section class="concept" id="c01">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-2 · 개념 01</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 5/5 — ★ 시민 인식론의 정의 — Jasanoff Core Reading의 중심 개념으로 W05-2 도입과 정의에 긴 시간을 썼고, W01에서 한 줄로 나온 '시민 인식론'의 본편(X09). 정의형 1순위" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+      <button type="button" class="focus-btn" data-focus-target="c01" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★ 시민 인식론의 정의</h2>
+    <p class="concept-en">Civic Epistemology (Sheila Jasanoff) — 질문을 뒤집다 — 인식론적 주권의 전환</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05a p38</span> <span class="chip chip-slide">📄 W05b p8</span> <a class="chip chip-tag" href="map.html?tag=civic-epistemology">#civic-epistemology</a> <a class="chip chip-tag" href="map.html?tag=jasanoff">#jasanoff</a> <a class="chip chip-tag" href="map.html?tag=epistemic-sovereignty">#epistemic-sovereignty</a> <a class="chip chip-tag" href="map.html?tag=public-reasoning">#public-reasoning</a> <a class="chip chip-tag" href="map.html?tag=post-universalism">#post-universalism</a> <a class="chip chip-tag" href="map.html?tag=legitimacy">#legitimacy</a> <a class="chip chip-tag" href="map.html?tag=gmo">#gmo</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c01-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Jasanoff (2005) Designs on Nature ★W04 Core Reading</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §6, §6-1, §6-6 [1:12:10–1:50:07]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c01-definition"><h4>한 줄 정의</h4><p><strong>시민 인식론</strong>은 한 사회가 <strong>집단적 정치 선택의 기초로서 지식 주장을 테스트·검증·배포하는 문화적·제도화된 관행</strong>이다. 질문의 주어가 바뀐다. 기존에는 <strong>&quot;과학자가 지식을 어떻게 생산·공급할 것인가&quot;</strong>였다면, 이제는 <strong>&quot;시민과 사회가 전문가의 지식 주장을 어떤 기준과 절차로 평가하고 검증하며 승인하는가&quot;</strong>를 묻는다.</p>
+</div>
+<div class="sec sec-analogy" id="c01-analogy"><h4>쉽게 말하면</h4><p>🗣 교수가 든 <strong>약장수 비유</strong>가 가장 명쾌하다.</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;아주 옛날에 동네에 <strong>새로 약을 팔러 온 사람</strong>이 있으면, 파는 사람은 &#39;이거 괜찮습니다&#39; 하고 몇 명 불러다 테스트도 하지만, 일단 그거를 <strong>전체 공론장에 던져 놓고 사람들이 검토하는 것이죠.</strong> 그런 체계가 있습니다. <strong>그런 게 없는 게 아니에요.</strong>&quot;</p><span class="quote-time">1:12:10</span></blockquote>
+<p>약장수가 어떻게 증명하느냐(공급자 쪽)가 아니라, <strong>동네가 어떤 방식으로 그 약을 받아들이거나 물리치느냐</strong>(수요자 쪽)를 보는 것이다. 그리고 그 방식은 <strong>동네마다 다르다.</strong></p>
+</div>
+<div class="sec sec-core" id="c01-core"><h4>핵심 내용</h4><h3 id="c01-h-슬라이드-w05a-p38-w05b-p8">📄 슬라이드 (W05a p38, W05b p8)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05a/p38.png" alt="W05a p38 인식론적 주권의 전환" loading="lazy" decoding="async"><figcaption>W05a p38 인식론적 주권의 전환</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c01-h-1-인식론적-주권의-전환"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">인식론적 주권의 전환 ★★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">기존 공급자 질문 <strong>&quot;과학자가 지식을 어떻게 생산·공급할 것인가&quot;</strong>에서, <strong>&quot;시민과 사회가 전문가의 지식 주장을 어떤 기준과 절차로 평가하고 검증하며 승인하는가&quot;</strong>로.</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>공급자 질문</strong> (Mode 2 ~ Triple Helix)</th>
+<th><strong>시민 인식론의 질문</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>주어</td>
+<td>과학자·연구자</td>
+<td><strong>시민·사회</strong></td>
+</tr>
+<tr>
+<td>동사</td>
+<td>생산하고 공급한다</td>
+<td><strong>평가하고 검증하고 승인한다</strong></td>
+</tr>
+<tr>
+<td>관심</td>
+<td>어떻게 더 잘 만들고 받아들여지게 할까</td>
+<td><strong>어떤 기준으로 판단하는가</strong></td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c01-h-2-정의"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">정의 📄 ★★</p>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p08.png" alt="W05b p8 시민 인식론의 정의" loading="lazy" decoding="async"><figcaption>W05b p8 시민 인식론의 정의</figcaption></figure>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text"><strong>정의</strong>: 한 사회가 <strong>집단적 정치 선택의 기초로서 지식 주장을 테스트·검증·배포하는 문화적·제도화된 관행.</strong></span></p>
+<p>두 가지 축이 따라온다.</p>
+<ul>
+<li><strong>탈-보편주의(post-universalism)</strong>: 📄 단일한 &#39;보편적 과학&#39;이 모든 국가에서 동일하게 수용되지 않으며, 국가별로 상이한 <strong>공적 앎의 방식(knowledge-ways)</strong>이 작동한다.</li>
+<li><strong>공적 정당화(Public Reasoning)</strong>: 📄 전문가의 위험 데이터만으로는 사회적 합의를 만들 수 없다. 과학기술의 권위는 <strong>각 사회의 정치 문화·역사적 신뢰 구조·시민 권리 전통에 조응할 때</strong> 정당성을 얻는다.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c01-h-3-gmo-사례-탈보편주의의-증거"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 GMO 사례 — 탈보편주의의 증거 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;GMO 유전자 변형 작물, <strong>미국에서는 다 팔고 인도에서도 먹고 중국에서도 먹는데 한국에서는 여전히 안 되죠. 무식해서가 아니죠.</strong> 각 사회가 기술과 전문 지식을 평가하는 <strong>독자적인 시민적 검증 방식</strong>을 발전시켰다는 얘기입니다.&quot;</p><span class="quote-time">1:13:17</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ <strong>&quot;무식해서가 아니다&quot;</strong>가 이 개념의 핵심 선언이다. 💡 결함 모델(W05-2/03)은 수용 거부를 <strong>지식 부족</strong>으로 설명한다. 시민 인식론은 <strong>다른 검증 체계의 작동</strong>으로 설명한다. 같은 현상에 대한 전혀 다른 진단이고, 처방도 달라진다 — 전자는 <strong>교육</strong>, 후자는 <strong>절차 설계</strong>.</span></p>
+</div></div>
+<div class="step-card" id="c01-h-4-시스템-이야기로의-복귀"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 시스템 이야기로의 복귀 ★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;저희가 첫 시간에 <strong>시스템</strong> 얘기했잖아요. 인풋이 있고 아웃풋이 있고 그 가운데 시스템이 있어 그걸 결정한다는 얘기인데, <strong>시민 인식론은 시민의 입장에서, 사회의 입장에서의 그 시스템을 얘기하는 겁니다.</strong>&quot;</p><span class="quote-time">1:49:16</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ W01/01의 첫 슬라이드(Easton의 정치체계 모형)가 여기서 다시 호출된다. 💡 그때는 <strong>정치·경제·혁신 활동</strong>을 각각 시스템으로 봤는데, 이제 <strong>시민이 지식을 처리하는 시스템</strong>을 본다. 투입(지식 주장) → 전환(검증 관행) → 산출(승인 또는 거부) → 환류.</span></p>
+</div></div>
+<div class="step-card" id="c01-h-5-정당성은-그냥-나오지-않는다"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 정당성은 그냥 나오지 않는다 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>정당성(legitimacy)이 그냥 나오는 게 아닙니다.</strong> 위험 정책의 성패는 과학기술 자체의 완성도도 있지만 <strong>절차적 정당성</strong>이 있어야 되는 것이죠. <strong>아인슈타인이 얘기했다고 되는 게 항상 아니라는 얘기입니다.</strong>&quot;</p><span class="quote-time">1:50:07</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text"><strong>권위의 두 원천</strong>을 구분해야 한다. <strong>인식적 권위</strong>(그 사람이 맞는가)와 <strong>정치적 정당성</strong>(그 결정을 받아들일 만한가)은 다르다. 아인슈타인이 옳아도 <strong>절차가 없으면 결정이 서지 않는다.</strong></span></p>
+</div></div>
+<div class="step-card" id="c01-h-6-sheila-jasanoff-소개"><span class="step-no" aria-hidden="true">6</span><div class="step-body"><p class="step-title">🗣 Sheila Jasanoff 소개</p>
+<ul>
+<li>원래 <strong>법학(lawyer)</strong>을 했고 이후 철학과 과학기술학(STS)으로 옮겼으며, 현재 하버드에 있다. <strong>전문성(expertise)에 대한 연구</strong>를 많이 했다.</li>
+<li><em><strong>Designs on Nature</strong></em>에서 <strong>미국·영국·독일에서 생명공학이 사회적으로 어떻게 받아들여지는지</strong>를 비교했다. 🗣 <strong>과학자의 입장이 아니라 법률가와 철학자의 입장</strong>에서 검토한 것이 특징.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;책을 읽어보면 힘들어요. <strong>너무 졸려. 뭘 이렇게 말을 어렵게 하는지.</strong> 그런 어려움이 없지 않아 있긴 있습니다.&quot;</p><span class="quote-time">1:26:52</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text"><strong>법학 배경</strong>이 중요하다. 법률가는 &quot;무엇이 참인가&quot;보다 <strong>&quot;어떤 절차를 거쳐야 받아들일 수 있는가&quot;</strong>를 훈련받는다. 시민 인식론이 <strong>절차와 관행</strong>에 주목하는 이유가 여기 있다.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c01-discussion" data-sec="c01-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">W01/03</th><td class="deflist-desc">📄 W01 p8에 <strong>&quot;Expert and Civic Epistemology&quot;</strong>가 한 줄로 적혀 있었다. 이 주차가 그 본편이다.</td></tr>
+<tr><th scope="row" class="deflist-term">W05-1/13</th><td class="deflist-desc">공급자 중심성 비판이 이 개념으로 가기 위한 디딤돌이었다.</td></tr>
+<tr><th scope="row" class="deflist-term">W05-2/04–18</th><td class="deflist-desc">정의가 구체적 유형(미국·영국·독일, 한국)으로 전개된다.</td></tr>
+</tbody></table>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-examples" data-sec="c01-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (2005)</strong> <em>Designs on Nature</em> 💡: 리딩리스트에 <strong>W04 Core Reading</strong>으로 올라 있던 책(Ch.10 Civic Epistemology)이다. 💡 생명공학(배아 연구, GMO, 생명 특허)을 둘러싼 세 나라의 대응을 비교해 <strong>같은 과학, 다른 결정</strong>을 설명한다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>&quot;인식론&quot;이라는 말이 어려운 이유</strong>: 철학에서 인식론(epistemology)은 &quot;우리가 어떻게 아는가&quot;를 다루는 분야다. 💡 Jasanoff는 이를 <strong>집단 수준</strong>으로 옮겼다. 개인이 아니라 <strong>사회가 무엇을 지식으로 인정하는 방식</strong>이 있다는 것. 그래서 &quot;civic&quot;이 붙는다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>상대주의 비판에 대한 방어</strong>: &quot;나라마다 다르다&quot;는 주장은 <strong>&quot;그럼 과학적 사실도 상대적인가&quot;</strong>라는 반론을 부른다. 💡 Jasanoff의 답은 <strong>사실의 상대성이 아니라 수용 절차의 다양성</strong>을 말한다는 것이다. 중력 법칙이 나라마다 다르지 않지만, <strong>어떤 증거를 충분하다고 볼지</strong>는 다를 수 있다. 답안에서 이 구분을 지키면 안전하다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-position" data-sec="c01-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>★ 이 주차 후반부 전체의 <strong>정의 조항</strong>. W05-2/02–20이 모두 이 개념의 전개다.</li>
+<li>W05-1/13의 비판에 대한 <strong>답</strong>.</li>
+<li>W01/01의 시스템 논의, W01/03의 전문가/시민 인식론 예고가 여기서 회수된다.</li>
+<li>W15 신시민성(임홍탁 2025)으로 이어진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-related" data-sec="c01-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (2005)</strong> <em>Designs on Nature</em> — ★Core Reading.</li>
+<li>연결: <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W05-2.html#c02">W05-2/02 공동생산</a> · <a href="W05-2.html#c04">W05-2/04 세 가지 양식</a> · <a href="W01.html#c03">W01/03</a> · <a href="W01.html#c01">W01/01</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c01-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 시민 인식론의 정의를 쓰고, 그것이 기존 공급자 질문과 어떻게 다른지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 탈-보편주의와 공적 정당화(public reasoning)의 내용을 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ GMO 수용의 국가 차이를 &quot;무식해서가 아니다&quot;라는 관점에서 설명하라. 결함 모델의 설명과 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;정당성은 그냥 나오지 않는다&quot;는 말의 뜻을 인식적 권위와 정치적 정당성의 구분으로 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">시민 인식론이 상대주의라는 비판에 어떻게 답할 수 있는가?</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-2&amp;c=c01">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W05-2.html#c02">공동생산 (Co-production)</a> · <a href="W05-2.html#c04">★★ 미국·영국·독일의 세 가지 양식</a> · <a href="W01.html#c03">인간에 대한 4가지 기본 이해</a> · <a href="W01.html#c01">사회 속의 시스템 — 정치·경제·혁신 활동</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c02">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-2 · 개념 02</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 4/5 — 공동생산 — 매트릭스 비유와 Winner 대비까지 여러 절에 걸쳐 다뤘다. Geels 상호구성(W01)·ANT 동시 형성(W03)과 묶이는 주차 간 비교형(X12)이 ★★" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c02" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>공동생산 (Co-production)</h2>
+    <p class="concept-en">Co-production of Knowledge and Social Order — 지식과 사회 질서는 함께 만들어진다</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05b p7</span> <a class="chip chip-tag" href="map.html?tag=co-production">#co-production</a> <a class="chip chip-tag" href="map.html?tag=jasanoff">#jasanoff</a> <a class="chip chip-tag" href="map.html?tag=identity">#identity</a> <a class="chip chip-tag" href="map.html?tag=institution">#institution</a> <a class="chip chip-tag" href="map.html?tag=discourse">#discourse</a> <a class="chip chip-tag" href="map.html?tag=representation">#representation</a> <a class="chip chip-tag" href="map.html?tag=matrix">#matrix</a> <a class="chip chip-tag" href="map.html?tag=winner">#winner</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c02-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Jasanoff (ed.) States of Knowledge: The Co-production of Science and Social Order</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §6-2, §6-5 [1:28:31–1:41:48]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c02-definition"><h4>한 줄 정의</h4><p><strong>과학기술 지식과 사회적 질서는 따로 만들어져 나중에 만나는 것이 아니라 함께 만들어진다.</strong> GMO가 만들어지는 동안 <strong>그것을 다루는 법·제도·소비자 정체성도 함께</strong> 만들어진다. Jasanoff의 문장으로는 <strong>&quot;우리가 세계를 알고 재현하는 방식은 우리가 그 안에서 살기로 선택하는 방식과 분리될 수 없다.&quot;</strong></p>
+</div>
+<div class="sec sec-analogy" id="c02-analogy"><h4>쉽게 말하면</h4><p>🗣 교수의 <strong>매트릭스 비유</strong>가 좋다.</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;&#39;뭔 말이야, 왜 말장난이야&#39; 싶으면 <strong>매트릭스 영화를 생각하면 돼요.</strong> 매트릭스는 정말 엄청난 인문학적 함의를 담고 있습니다. <strong>파란 약을 먹느냐 빨간 약을 먹느냐에 따라서 세상이 달라지죠.</strong> 그 매트릭스 세계 안에서는 그 세계가 전부인 줄 알고 살아갈 수도 있는 거예요.&quot;</p><span class="quote-time">1:41:48</span></blockquote>
+<p>어떤 약을 먹느냐에 따라 <strong>보이는 세계가 달라지고</strong>, 동시에 <strong>살아가는 방식도 달라진다.</strong> 아는 방식과 사는 방식이 한 묶음이다.</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;그러고 보면 <strong>되게 불교적인 철학</strong>이네요. <strong>일체유심조</strong>, 당신의 마음이 당신의 세상이라는 얘기잖아요. 거꾸로 데카르트의 &#39;나는 생각한다 고로 존재한다&#39;와도 통하는 얘기. <strong>내가 생각하지 못하는 건 내가 존재로서 밝힐 수가 없는 거예요.</strong>&quot;</p><span class="quote-time">1:41:48</span></blockquote>
+</div>
+<div class="sec sec-core" id="c02-core"><h4>핵심 내용</h4><h3 id="c02-h-슬라이드-w05b-p7">📄 슬라이드 (W05b p7)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p07.png" alt="W05b p7 공동생산의 네 요소" loading="lazy" decoding="async"><figcaption>W05b p7 공동생산의 네 요소</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c02-h-1-개념"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">개념 ★</p>
+<ul>
+<li>🗣 <em><strong>States of Knowledge: The Co-production of Science and Social Order</strong></em> — <strong>과학기술 지식과 사회적 질서는 함께 만들어진다.</strong></li>
+<li>🗣 혁신학에서 말하는 <strong>기술과 사회의 공진화(co-evolution)</strong>와 비슷한 개념을, 과학사회학 쪽에서는 <strong>co-production</strong>이라 부른다.</li>
+<li>🗣 예: <strong>GMO는 그 전에 없었다. 그것이 만들어지면서 그것을 수용하고 소화하는 사회 질서도 같이 만들어진다.</strong></li>
+</ul>
+</div></div>
+<div class="step-card" id="c02-h-2-jasanoff의-정의-문장"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">📄 Jasanoff의 정의 문장</p>
+<blockquote>
+<p><em>&quot;Co-production is shorthand for the proposition that the ways in which we know and represent the world are inseparable from the ways in which we choose to live in it.&quot;</em></p>
+</blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">번역하면: <strong>세계를 알고 재현하는 방식은 그 안에서 살기로 선택하는 방식과 떼어 놓을 수 없다.</strong> 💡 &quot;choose to live&quot;에 주목할 것. <strong>선택</strong>이라는 단어가 들어 있다. 지식이 삶을 일방적으로 규정하는 것이 아니라 <strong>선택의 여지</strong>가 있다는 뜻이고, 이것이 Winner와 갈리는 지점이다.</span></p>
+</div></div>
+<div class="step-card" id="c02-h-3-네-요소"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">네 요소 📄 ★</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>요소</th>
+<th>📄 예시</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>정체성(Identity)</strong></td>
+<td>기후 시민, 프로슈머, 데이터 주권자</td>
+</tr>
+<tr>
+<td><strong>제도(Institution)</strong></td>
+<td>사전예방 위원회, 검증 기구, 배출권 거래소</td>
+</tr>
+<tr>
+<td><strong>담론(Discourse)</strong></td>
+<td>사전예방원칙, 기후 정의, 소버린 AI</td>
+</tr>
+<tr>
+<td><strong>재현·표상(Representation)</strong></td>
+<td>1.5℃ 목표, 위험 평가 수치, 벤치마크</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">네 요소를 <strong>분석 체크리스트</strong>로 쓸 수 있다. 어떤 기술이 등장할 때 — <strong>어떤 새로운 정체성이 생기나, 어떤 기구가 만들어지나, 어떤 말이 쓰이나, 무엇을 숫자로 재나.</strong> 💡 term paper에서 케이스를 분석할 때 바로 적용 가능한 틀이다.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text"><strong>재현·표상</strong>이 특히 흥미롭다. &quot;1.5℃&quot;라는 숫자는 자연이 준 것이 아니라 <strong>협상으로 정해진 것</strong>인데, 일단 정해지자 그 숫자가 정책·투자·운동을 조직한다. 숫자가 세계를 만든다.</span></p>
+</div></div>
+<div class="step-card" id="c02-h-4-winner와의-갈림길"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 Winner와의 갈림길 ★★</p>
+<ul>
+<li>🗣 쟁점: 그 질서가 만들어질 때 <strong>기존 권력에 의해 그냥 결정된다</strong>고 보는 입장(<strong>Langdon Winner</strong>)과, <strong>새롭게 다시 만들어진다</strong>고 보는 입장(<strong>Jasanoff</strong>)이 갈린다. 🗣 <strong>교수는 Jasanoff 쪽에 동의</strong>한다고 밝혔다.</li>
+</ul>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Winner</strong></th>
+<th><strong>Jasanoff</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>질서는</td>
+<td>기존 권력이 <strong>결정한다</strong></td>
+<td>새롭게 <strong>만들어진다</strong></td>
+</tr>
+<tr>
+<td>함의</td>
+<td>비관적 — 잘 안 바뀐다</td>
+<td><strong>개입의 여지가 있다</strong></td>
+</tr>
+<tr>
+<td>수업에서의 등장</td>
+<td>W01/02 &quot;인공물은 정치를 갖는다&quot;</td>
+<td>W05 시민 인식론 전체</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>🗣 Winner의 <strong>실천적 필요성(practical necessity)</strong> 논리: 철도·전력 시스템은 처음엔 생활의 편의를 위해 만들었지만, 확장할 때는 <strong>&quot;문화재 구역을 피해 돌아가자&quot;는 의견에 대해 &quot;그게 얼마나 비효율적인데&quot; 하며 밀어붙이게</strong> 된다.</li>
+<li>🗣 현재 사례: <strong>광주·전남 통합 자치단체와 메가 프로젝트</strong>. 전력·물·환경 문제가 다 걸린다.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;&#39;<strong>돈 버는데 빨리 해야지, 무슨 수를 써서라도 지하수를 파서라도 하고 해야지</strong>&#39;라고 얘기할 수도 있고, &#39;<strong>잠깐만, 우리가 여기 이 동네에서 잘 살아보려고 하는 건데 그걸 다 파괴하면서까지 할 필요가 있어?</strong>&#39;라고 질문할 수도 있죠.&quot;</p><span class="quote-time">1:46:30</span></blockquote>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;저는 처음에 메가 프로젝트가 나왔을 때도 <strong>&#39;좋다, 다 좋은데 중앙정부가 나서서 하지 말아라. 지역 정부가 현장에 맞춰서 기업들과 같이 얘기하면서 하라&#39;</strong>는 입장을 갖기도 했었습니다.&quot;</p><span class="quote-time">1:48:04</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">Winner의 역적응(reverse adaptation) 논의는 W01/02에서 <strong>전력망 사례</strong>로 이미 나왔다. 두 주차가 같은 사례를 다른 결론으로 쓴다. W01에서는 &quot;수단이 목적을 가린다&quot;는 경고로, 여기서는 <strong>&quot;그럼에도 바꿀 수 있다&quot;</strong>는 Jasanoff와의 대비로.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c02-discussion" data-sec="c02-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li>★ <strong>토론 질문 후보</strong>(수업노트 표시): <strong>Jasanoff의 공동생산 vs Winner의 권력 결정론 중 어느 쪽이 한국 사례를 더 잘 설명하나.</strong></li>
+<li><strong>W05-2/06 겸손의 기술</strong>이 공동생산의 실천 버전이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-examples" data-sec="c02-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>공진화 vs 공동생산</strong> 💡: 혁신학의 co-evolution은 <strong>기술과 사회가 서로 적응하며 변한다</strong>는 생태학적 비유이고, STS의 co-production은 <strong>지식과 질서가 애초에 같은 과정에서 나온다</strong>는 구성주의적 주장이다. 💡 후자가 더 강한 주장이다. 공진화는 둘이 먼저 있고 상호작용한다고 보지만, 공동생산은 <strong>따로 있었던 적이 없다</strong>고 본다.</li>
+<li><strong>W03/09 동시 형성(co-construction)과의 관계</strong> 💡: 거의 같은 개념이다. 💡 이 수업에서 같은 직관이 세 번 다른 이름으로 나왔다 — Geels의 <strong>상호구성</strong>(W01/02), ANT의 <strong>동시 형성</strong>(W03/09), Jasanoff의 <strong>공동생산</strong>(W05-2/02). ★ 비교형 좋은 소재이며, INDEX의 비교 항목 X12로 등록되어 있다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>1.5℃의 역사</strong>: 원래 2℃가 목표였는데 군소도서국 연합이 1.5℃를 요구해 파리협정에 병기됐고, 이후 IPCC 특별보고서를 거쳐 사실상 기준이 됐다. 💡 숫자가 정치적 협상의 산물이면서 동시에 과학적 작업의 대상이 되는 전형적 공동생산 사례.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-position" data-sec="c02-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-2/01 시민 인식론의 <strong>이론적 기반</strong>. 지식과 질서가 함께 만들어지므로, 사회마다 다른 검증 방식이 생긴다.</li>
+<li>W05-2/06 겸손의 기술, W05-2/07 기술 수용 기준의 전환이 모두 이 전제 위에 있다.</li>
+<li>W01/02, W03/09와 함께 읽으면 이 수업의 핵심 직관이 드러난다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-related" data-sec="c02-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (ed.)</strong> <em>States of Knowledge</em> — 📄 공동생산.</li>
+<li><strong>Winner</strong> — 🗣 대비 지점. W01/02에서 이미 등장.</li>
+<li>연결: <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W05-2.html#c06">W05-2/06 겸손의 기술</a> · <a href="W03.html#c09">W03/09 동시 형성</a> · <a href="W01.html#c02">W01/02 상호구성</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c02-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 공동생산(co-production)이란 무엇이며, GMO 사례로 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 공동생산의 네 요소(정체성·제도·담론·재현)를 쓰고, 에너지 전환이나 AI를 예로 각 요소를 채워 보라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★★ 비교형: Jasanoff의 공동생산과 Winner의 권력 결정론은 어떻게 갈리는가? 어느 쪽이 더 설득력 있다고 보는가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ 비교형: Geels의 상호구성(W01), ANT의 동시 형성(W03), Jasanoff의 공동생산(W05)을 비교하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-2&amp;c=c02">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-2.html#c01">★ 시민 인식론의 정의</a> · <a href="W05-2.html#c06">겸손의 기술</a> · <a href="W03.html#c09">TEP vs TEN과 사회–기술적 동시 형성</a> · <a href="W01.html#c02">인간–제도–과학기술의 상호구성</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c03">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-2 · 개념 03</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 4/5 — 결함 모델 비판과 시민의 네 역량 — 약 7분, 교수 발언이 이어진 구간. 결함 모델 반박과 네 역량이 모두 ★★이고 W02-1 암묵지·W01 시민성 유형(X14)과 연결된다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c03" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>결함 모델 비판과 시민의 네 역량</h2>
+    <p class="concept-en">Deficit Model Critique; Citizens as Knowing Agents — &quot;모르면서 왜 끼어드나&quot;에 대한 반박</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05b p5</span> <span class="chip chip-slide">📄 W05b p6</span> <a class="chip chip-tag" href="map.html?tag=deficit-model">#deficit-model</a> <a class="chip chip-tag" href="map.html?tag=pus">#pus</a> <a class="chip chip-tag" href="map.html?tag=knowing-agents">#knowing-agents</a> <a class="chip chip-tag" href="map.html?tag=experiential">#experiential</a> <a class="chip chip-tag" href="map.html?tag=ethical">#ethical</a> <a class="chip chip-tag" href="map.html?tag=humane">#humane</a> <a class="chip chip-tag" href="map.html?tag=sense-making">#sense-making</a> <a class="chip chip-tag" href="map.html?tag=tacit-knowledge">#tacit-knowledge</a> <a class="chip chip-tag" href="map.html?tag=disinformation">#disinformation</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c03-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Jasanoff (2005)</li><li>Wynne (1992) — 컴브리아 양치기 연구</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §6-3, §6-4 [1:32:13–1:39:48]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c03-definition"><h4>한 줄 정의</h4><p>전통적인 과학 대중화는 <strong>결함 모델(deficit model)</strong>에 서 있다. 일반인은 지식이 <strong>부족하니까</strong> 반대하는 것이고, 따라서 <strong>더 교육시키면</strong> 받아들인다는 전제다. Jasanoff는 이를 뒤집는다. 시민은 <strong>&#39;알고 있는 주체(Knowing Agents)&#39;</strong>이며, 과학 지식과는 <strong>다른 종류의 네 가지 역량</strong>으로 판단한다.</p>
+</div>
+<div class="sec sec-analogy" id="c03-analogy"><h4>쉽게 말하면</h4><p>의사와 환자 사이를 생각해 보자.</p>
+<ul>
+<li><strong>결함 모델</strong>: 환자가 치료를 거부하면 <strong>의학 지식이 없어서</strong>다. 설명하면 따를 것이다.</li>
+<li><strong>Jasanoff식</strong>: 환자는 <strong>자기 몸을 매일 겪어 온 사람</strong>이다. &quot;이 약 먹으면 다음 날 일을 못 한다&quot;는 것은 의사가 모르는 지식이고, &quot;그렇게까지 해서 살고 싶지 않다&quot;는 것은 <strong>지식의 문제가 아니라 가치의 문제</strong>다.</li>
+</ul>
+<p>환자가 무지한 게 아니라 <strong>다른 것을 알고 다른 것을 묻는</strong> 것이다.</p>
+</div>
+<div class="sec sec-core" id="c03-core"><h4>핵심 내용</h4><h3 id="c03-h-슬라이드-w05b-p5-6">📄 슬라이드 (W05b p5–6)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p05.png" alt="W05b p5 결함 모델 비판" loading="lazy" decoding="async"><figcaption>W05b p5 결함 모델 비판</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c03-h-1-결함-모델-deficit-model"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">결함 모델(deficit model) ★</p>
+<ul>
+<li>기존 <strong>PUS(Public Understanding of Science)</strong>의 전제: 일반인은 전문가보다 과학 지식이 부족하니 <strong>더 교육시켜야 한다.</strong></li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;&#39;<strong>전문도 잘 알지도 못하면서 왜 끼어드느냐</strong>&#39; 이렇게 핀잔 줄 때의 그 모델을 얘기하는 거. <strong>그게 틀렸다는 건 아닙니다. 근데 그것만 있는 건 아니죠.</strong>&quot;</p><span class="quote-time">1:32:13</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">&quot;틀렸다는 건 아니다&quot;라는 단서가 중요하다. 지식 전달이 필요한 상황은 분명히 있다. 문제는 <strong>그것만으로 설명하려 할 때</strong>다.</span></p>
+</div></div>
+<div class="step-card" id="c03-h-2-교수의-균형-단서-허위정보-시대"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">🗣 교수의 균형 단서 — 허위정보 시대 ★</p>
+<ul>
+<li>🗣 지금처럼 유튜브 세상에서는 <strong>허위정보(disinformation)와 오정보(misinformation)</strong>가 많으므로 <strong>정확한 정보를 주는 작업도 분명히 필요하다.</strong> 다만 그것만으로는 부족하다.</li>
+</ul>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 단서가 답안에서 균형을 잡아 준다. 💡 결함 모델 비판이 <strong>&quot;시민은 늘 옳다&quot;</strong>로 가면 곤란하다. 💡 구분하면 — <strong>사실관계의 오류</strong>는 정보로 교정할 수 있지만, <strong>가치 판단의 차이</strong>는 정보로 해소되지 않는다. 결함 모델의 잘못은 후자를 전자로 오인하는 데 있다.</span></p>
+</div></div>
+<div class="step-card" id="c03-h-3-jasanoff의-대안-알고-있는-주체"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">Jasanoff의 대안 — 알고 있는 주체 ★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">시민은 <strong>&#39;알고 있는 주체(Knowing Agents)&#39;, 완전한 인지적 주체</strong>다. 삶의 현장에서 축적된 경험과 가치로 현실을 판단하며, <strong>보편적 과학 진술이라도 시민사회의 검증과 도덕적 승인을 거쳐야 정당성을 얻는다.</strong></span></p>
+</div></div>
+<div class="step-card" id="c03-h-4-다만-공짜는-아니다"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 다만 공짜는 아니다 ★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;그걸 가지기 위해서 <strong>노력을 하긴 해야죠.</strong> 혁신 공유지에 들어가서 활동하려면 기술적 지식이 있어야 되죠. 그거 없이는 할 수가 없으니까. 그렇다고 <strong>완전히 전문가가 될 필요는 없죠. 자기한테 필요한 것만큼은 가지고 있는 것이죠.</strong>&quot;</p><span class="quote-time">1:38:35</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 균형 잡힌 입장이다. 시민이 <strong>아무 준비 없이 판단해도 된다</strong>는 말이 아니다. <strong>필요한 만큼의 학습</strong>은 전제된다. 💡 후쿠시마 엄마들(W05-1/13)이 바로 그렇게 했다 — 장비를 구하고 <strong>직접 공부해서</strong> 측정했다.</span></p>
+</div></div>
+<div class="step-card" id="c03-h-5-인간의-네-가지-역량"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">인간의 네 가지 역량 📄 ★★</p>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p06.png" alt="W05b p6 인간의 네 가지 역량" loading="lazy" decoding="async"><figcaption>W05b p6 인간의 네 가지 역량</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>역량</th>
+<th>📄 내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>경험적(Experiential)</strong></td>
+<td>수치 데이터가 아니라 <strong>삶의 현장에서 축적된 상식적 증거와 관찰</strong>로 위협을 파악</td>
+</tr>
+<tr>
+<td><strong>윤리적·도덕적(Ethical)</strong></td>
+<td>고도의 불확실성 앞에서 기술의 <strong>사회적 목적과 지배 구조</strong>에 대해 도덕적 결단</td>
+</tr>
+<tr>
+<td><strong>상상적·인간적(Humane)</strong></td>
+<td>기술 디자인과 발전 방향에 <strong>문화적 선호와 정체성</strong>을 투영</td>
+</tr>
+<tr>
+<td><strong>의미 구성(Sense-making)</strong></td>
+<td>과학기술이 영구적 요소가 된 세계를 이해하는 <strong>복합적 앎</strong></td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c03-h-6-암묵지와의-연결"><span class="step-no" aria-hidden="true">6</span><div class="step-body"><p class="step-title">🗣 암묵지와의 연결 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>타신(tacit) 지식</strong>의 다른 부분. 자전거 탈 때 말로 설명할 수 없는 능력이 있듯이, <strong>세상을 살아가면서도 다 설명할 수 없는 뭐가 있다</strong>는 얘기죠. 그거를 부정할 수는 없다는 얘기입니다.&quot;</p><span class="quote-time">1:39:48</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 아주 중요한 연결이다. W02-1/01에서 배운 <strong>암묵지</strong>가 여기서 다시 쓰인다.</span></p>
+<ul>
+<li>W02-1에서 암묵지는 <strong>생산 현장의 숙련</strong>이었다(DUI의 근거).</li>
+<li>여기서 암묵지는 <strong>생활 세계의 판단력</strong>이다(시민 역량의 근거).</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>같은 개념이 두 번 다른 용도로 쓰인다. <strong>&quot;말로 설명 못 하는 앎도 앎이다&quot;</strong>라는 주장이 한 번은 <strong>장인</strong>을, 한 번은 <strong>시민</strong>을 옹호한다. ★ 비교형 좋은 소재이며 INDEX 비교 항목 X14와 연결된다.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c03-h-7-w01-08-시민성-네-유형과의-비교"><span class="step-no" aria-hidden="true">7</span><div class="step-body"><p class="step-title">W01/08 시민성 네 유형과의 비교 💡</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>W01/08 시민성 네 유형</strong></th>
+<th><strong>W05-2/03 시민의 네 역량</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>분류 기준</td>
+<td>시민이 <strong>무엇을 요구하는가</strong></td>
+<td>시민이 <strong>무엇으로 판단하는가</strong></td>
+</tr>
+<tr>
+<td>내용</td>
+<td>공동체적·과학적·디지털·생태적</td>
+<td>경험적·윤리적·상상적·의미구성</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>요구의 유형</td>
+<td><strong>인지 역량의 유형</strong></td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">두 틀이 보완적이다. 전자는 시민 운동의 <strong>의제</strong>를, 후자는 그 판단의 <strong>근거</strong>를 설명한다.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c03-discussion" data-sec="c03-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05-1/13 후쿠시마 사례</strong>가 이 네 역량의 실증이다. 엄마들은 <strong>경험적 역량</strong>(아이에게 먹인다는 현장 감각)에서 출발해 <strong>직접 측정</strong>(학습)으로 갔고, <strong>윤리적 결단</strong>(정부 기준을 받아들이지 않겠다)을 내렸다.</li>
+<li><strong>W05-2/01</strong>: 결함 모델 비판이 시민 인식론의 전제다. 시민이 판단 능력이 있어야 &quot;어떤 기준으로 판단하는가&quot;를 물을 수 있다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-examples" data-sec="c03-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Brian Wynne의 컴브리아 양치기 연구(1992)</strong> 💡: 체르노빌 낙진 후 영국 컴브리아 지역 양에서 방사능이 검출됐다. 정부 과학자들은 <strong>몇 주면 사라진다</strong>고 했으나 틀렸다. 💡 양치기들은 <strong>그 지역 토양이 산성 이탄질이라 세슘이 오래 남는다</strong>는 것을 경험으로 알고 있었고, 과학자들의 실험 설계가 현장과 맞지 않는다는 점도 지적했다. 💡 결함 모델 비판의 <strong>가장 유명한 실증 사례</strong>이며, &quot;지역 지식(local knowledge)&quot;이 전문 지식을 보완한 전형이다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>결함 모델이 끈질긴 이유</strong>: 과학 커뮤니케이션 예산과 조직이 대부분 <strong>&quot;잘 설명하면 받아들일 것&quot;</strong>이라는 전제로 짜여 있다. 💡 이 전제를 버리면 <strong>설득이 아니라 협상</strong>이 필요해지는데, 그것은 훨씬 어렵고 결과를 통제할 수 없다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>역설</strong>: 교육 수준이 높을수록 특정 기술에 대한 반대가 <strong>더 강해지는</strong> 경우가 관찰된다(GMO, 원자력 일부 조사). 결함 모델이 맞다면 반대가 줄어야 한다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-position" data-sec="c03-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-2/01 시민 인식론의 <strong>전제</strong>. 시민이 인지 주체여야 그 검증 방식을 논할 수 있다.</li>
+<li>W05-1/13 후쿠시마 사례의 <strong>이론적 설명</strong>.</li>
+<li>W02-1/01 암묵지, W01/03 시민 인식론 예고, W01/08 시민성과 모두 연결된다.</li>
+<li>W03/16 Potts의 &quot;자유 혁신자&quot;와도 통한다. 시민을 <strong>능동적 주체</strong>로 보는 같은 방향.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-related" data-sec="c03-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (2005)</strong> — 📄 Knowing Agents, 네 역량.</li>
+<li><strong>Wynne (1992)</strong> — 💡 컴브리아 양치기, 결함 모델 비판의 고전.</li>
+<li>연결: <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성</a> · <a href="W02-1.html#c01">W02-1/01 암묵지와 형식지</a> · <a href="W01.html#c08">W01/08 시민성</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c03-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 결함 모델(deficit model)이란 무엇이며, 그에 대한 Jasanoff의 반박을 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 시민의 네 가지 역량을 쓰고 각각을 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 시민의 역량이 암묵지와 어떻게 연결되는지 설명하라. W02-1에서 배운 암묵지와 용도가 어떻게 다른가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 결함 모델 비판이 &quot;시민은 늘 옳다&quot;로 가면 안 되는 이유를 허위정보 문제와 함께 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">응용: 후쿠시마 사례를 네 가지 역량으로 분석하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-2&amp;c=c03">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-2.html#c01">★ 시민 인식론의 정의</a> · <a href="W05-1.html#c13">★ 공급자 중심성 비판 (교수의 핵심 주장)</a> · <a href="W02-1.html#c01">지식의 속성 — 암묵지와 형식지</a> · <a href="W01.html#c03">인간에 대한 4가지 기본 이해</a> · <a href="W01.html#c08">시민성 — 사회계약과 네 가지 유형</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c04">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-2 · 개념 04</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 5/5 — ★★ 미국·영국·독일 세 양식 — 강의는 2분 남짓으로 짧았지만 6차원 비교표 자체가 가장 전형적인 비교 서술형이고 GMO 위험 프레임까지 붙는다" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+      <button type="button" class="focus-btn" data-focus-target="c04" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★★ 미국·영국·독일의 세 가지 양식</h2>
+    <p class="concept-en">Contentious / Communitarian / Consensus Civic Epistemology — 같은 과학, 다른 결정</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05b p9</span> <span class="chip chip-slide">📄 W05b p10</span> <a class="chip chip-tag" href="map.html?tag=jasanoff">#jasanoff</a> <a class="chip chip-tag" href="map.html?tag=contentious">#contentious</a> <a class="chip chip-tag" href="map.html?tag=communitarian">#communitarian</a> <a class="chip chip-tag" href="map.html?tag=consensus">#consensus</a> <a class="chip chip-tag" href="map.html?tag=gmo-framing">#gmo-framing</a> <a class="chip chip-tag" href="map.html?tag=objectivity">#objectivity</a> <a class="chip chip-tag" href="map.html?tag=accountability">#accountability</a> <a class="chip chip-tag" href="map.html?tag=transparency">#transparency</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c04-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Jasanoff (2005) Designs on Nature Ch.10 ★</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §6-7 [1:50:41–1:51:46]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c04-definition"><h4>한 줄 정의</h4><p>같은 생명공학 기술을 두고 미국·영국·독일이 다르게 결정했다. 지식 수준이 달라서가 아니라 <strong>지식 주장을 검증하는 방식</strong>이 다르기 때문이다. 미국은 <strong>법정에서 다투고(contentious)</strong>, 영국은 <strong>공론장에서 전문가를 신뢰하며(communitarian)</strong>, 독일은 <strong>공공 기관의 합의 절차를 거친다(consensus)</strong>.</p>
+</div>
+<div class="sec sec-analogy" id="c04-analogy"><h4>쉽게 말하면</h4><p>이웃 간 분쟁을 해결하는 세 가지 방식과 같다.</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">미국</th><td class="deflist-desc">바로 <strong>소송</strong>한다. 각자 변호사를 쓰고 증거를 제출한다. 서로 믿지 않는 것을 전제로 하되 <strong>절차는 투명하다.</strong></td></tr>
+<tr><th scope="row" class="deflist-term">영국</th><td class="deflist-desc">동네에서 <strong>신망 있는 어른</strong>에게 간다. 그분이 조사해 의견을 내면 다들 수긍한다. 신뢰가 전제다.</td></tr>
+<tr><th scope="row" class="deflist-term">독일</th><td class="deflist-desc"><strong>주민 위원회</strong>를 연다. 각 집단의 대표가 모여 오래 협의하고 합의안을 낸다. 과정은 바깥에서 잘 안 보인다.</td></tr>
+</tbody></table>
+<p>세 방식 모두 작동한다. 다만 <strong>무엇을 믿을 만하다고 느끼는지</strong>가 다르다.</p>
+</div>
+<div class="sec sec-core" id="c04-core"><h4>핵심 내용</h4><h3 id="c04-h-슬라이드-w05b-p9-10">📄 슬라이드 (W05b p9–10)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p09.png" alt="W05b p9 세 가지 양식" loading="lazy" decoding="async"><figcaption>W05b p9 세 가지 양식</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p10.png" alt="W05b p10" loading="lazy" decoding="async"><figcaption>W05b p10</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c04-h-1-6차원-비교표-통째로-암기-권장"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">6차원 비교표 ★★ (통째로 암기 권장)</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>미국 (Contentious)</strong></th>
+<th><strong>영국 (Communitarian)</strong></th>
+<th><strong>독일 (Consensus)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>무대</strong></td>
+<td><strong>법정 / 개인들의 투쟁</strong></td>
+<td><strong>공론장 / 전문가 신뢰</strong></td>
+<td><strong>공공 기관 / 공적 프로그램</strong></td>
+</tr>
+<tr>
+<td><strong>지식 형성 양식</strong></td>
+<td>다원주의·이해관계 기반</td>
+<td>신체화·공공서비스 기반</td>
+<td>코포라티즘·기관 기반</td>
+</tr>
+<tr>
+<td><strong>책임성의 기초</strong></td>
+<td><strong>불신의 전제</strong>, 사법적 대립</td>
+<td><strong>신뢰의 전제</strong>, 관계 중심</td>
+<td><strong>신뢰의 전제</strong>, 역할 기반</td>
+</tr>
+<tr>
+<td><strong>객관성 규정</strong></td>
+<td>공식적·<strong>수치적 정량화</strong></td>
+<td><strong>자문 및 개별적 식별력</strong></td>
+<td><strong>협상된 대변</strong>과 합리적 조율</td>
+</tr>
+<tr>
+<td><strong>전문성 기준</strong></td>
+<td>전문 직무 능력·중립성</td>
+<td><strong>경험 및 공공 봉사 이력</strong></td>
+<td>훈련·<strong>제도적 대표성</strong></td>
+</tr>
+<tr>
+<td><strong>투명성</strong></td>
+<td><strong>높음, 외부 감시</strong></td>
+<td>가변적</td>
+<td><strong>비투명, 내부 합의 위임</strong></td>
+</tr>
+<tr>
+<td><strong>GMO 위험 프레임</strong></td>
+<td><strong>산물 중심</strong>(실질적 동등성)</td>
+<td><strong>과정 중심</strong>(유전자 조작 과정 자체)</td>
+<td><strong>프로그래매틱·윤리 중심</strong>(국가 권력과 과학의 결합 경계)</td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c04-h-2-gmo-위험-프레임-행이-핵심이다"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">GMO 위험 프레임 행이 핵심이다 ★★ 💡</p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">이 행만 이해해도 표 전체가 풀린다. <strong>같은 GMO를 세 나라가 다른 질문으로 본다.</strong></span></p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">미국(산물 중심)</th><td class="deflist-desc"><strong>&quot;결과물이 기존 작물과 다른가?&quot;</strong> 다르지 않으면(실질적 동등성) 규제할 이유가 없다. 💡 법정에서 다투려면 <strong>구체적 피해</strong>를 입증해야 하므로, 산물에 초점이 간다.</td></tr>
+<tr><th scope="row" class="deflist-term">영국(과정 중심)</th><td class="deflist-desc"><strong>&quot;유전자를 조작했다는 과정 자체가 문제 아닌가?&quot;</strong> 결과가 같아도 과정이 다르면 다르게 본다. 💡 광우병 경험으로 <strong>&quot;전문가가 안전하다고 했는데 아니었던&quot;</strong> 기억이 작동한다.</td></tr>
+<tr><th scope="row" class="deflist-term">독일(윤리 중심)</th><td class="deflist-desc"><strong>&quot;국가 권력과 과학이 결합해 생명을 다루는 것이 괜찮은가?&quot;</strong> 💡 나치의 우생학 경험이 <strong>과학과 국가의 결합</strong>에 대한 경계를 남겼다.</td></tr>
+</tbody></table>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">즉 <strong>각국의 역사적 트라우마가 질문의 형태를 정한다.</strong> 이것이 시민 인식론의 가장 설득력 있는 증거다.</span></p>
+</div></div>
+<div class="step-card" id="c04-h-3-교수의-해설"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 교수의 해설 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;미국은 <strong>나라가 만들어진 게 개인들이 와서 만든 나라</strong>야. 귀족도 아니고 배경도 없어. 그러니까 <strong>법정에서 다툴 수밖에 없는</strong> 거죠. 밖에서 합의하는 메커니즘이 잘 안 되는 거죠. 우리도 지금 <strong>&#39;정치의 사법화&#39;</strong>라고 얘기하는 것이, 합의하는 게 아니라 다 법정으로 가려고 하는, 우리도 살짝 그런 모습이 있죠.&quot;</p><span class="quote-time">1:50:41</span></blockquote>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;영국은 <strong>전문가·명망가</strong>. 계급 시스템이 있었고 <strong>젠트리맨 엑스퍼트</strong>에 대한 신뢰, 프레스티지가 있었어요. 사람들이 거기에 자기 책임을 지고 성명을 내고. 그런 공론장에서 <strong>누구누구 커미션</strong>을 통해 조사하면 그 결과를 사람들이 납득하고 이해하더라. 독일은 <strong>코포라티즘 전통</strong>이 있고 나치의 경험이 있어서, <strong>철저하게 시스템을 만들고 프로그램으로 만들어 여러 사람이 참여해 공적으로 해결</strong>하는.&quot;</p><span class="quote-time">1:51:46</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">세 나라의 양식이 <strong>정치사에서 나온다</strong>는 설명이다.</span></p>
+<ul>
+<li>미국: <strong>이민자들이 만든 나라</strong> → 공유된 권위가 없음 → 법정</li>
+<li>영국: <strong>계급 사회의 유산</strong> → 신사 전문가에 대한 신뢰 → 위원회</li>
+<li>독일: <strong>코포라티즘 + 나치 경험</strong> → 제도적 대표성과 절차 → 공적 프로그램</li>
+</ul>
+</div></div>
+<div class="step-card" id="c04-h-4-투명성-행의-역설"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">투명성 행의 역설 💡</p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">흥미로운 지점: <strong>미국은 투명성이 높고 독일은 낮다.</strong> 그런데 신뢰는 반대다. 미국은 <strong>불신을 전제</strong>하므로 투명하게 감시해야 하고, 독일은 <strong>신뢰를 전제</strong>하므로 내부 합의에 위임한다.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">즉 <strong>투명성이 높다고 신뢰가 높은 것이 아니다.</strong> 오히려 불신이 투명성을 요구한다. 💡 한국에서 정보공개·감사 요구가 커지는 현상을 이 틀로 읽으면, 신뢰의 하락을 가리키는 신호로 볼 수 있다. → W05-2/05.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c04-discussion" data-sec="c04-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W05-2/05</strong>: 한국은 어디에 해당하나? 🗣 <strong>기술관료적(technocratic)</strong> 양식이라는 네 번째 유형으로 설명된다.</li>
+<li><strong>W05-2/06</strong>: AI 규제도 각국 시민 인식론에 따라 분화한다. EU는 과정 중심, 미국은 산물·시장 중심. 💡 GMO 때의 패턴이 반복된다.</li>
+<li>🗣 <strong>&quot;정치의 사법화&quot;</strong> 언급은 한국이 미국형으로 기울고 있다는 관찰이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-examples" data-sec="c04-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>실질적 동등성(substantial equivalence)</strong> 💡: 미국 FDA가 채택한 원칙으로, GMO 작물이 기존 작물과 <strong>성분상 유의미하게 다르지 않으면</strong> 별도 안전성 심사를 요구하지 않는다. 💡 EU는 이 원칙을 거부하고 <strong>사전예방원칙(precautionary principle)</strong>을 택했다. 두 원칙의 대립이 WTO 분쟁까지 갔다.</li>
+<li><strong>영국의 위원회 전통</strong> 💡: BSE Inquiry, Warnock Committee(배아 연구) 등 특정 인물의 이름을 딴 위원회가 사회적 결론을 내는 방식이 영국의 전형이다. 💡 다만 광우병 사태로 이 신뢰 모델이 큰 타격을 입었고, 이후 영국도 더 공개적인 참여 절차로 옮겨 갔다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>세 유형이 고정된 것은 아니다</strong>: Jasanoff 자신도 이것이 <strong>역사적으로 형성된 것</strong>이며 변할 수 있다고 본다. 💡 답안에서 &quot;미국은 원래 그렇다&quot;는 식의 본질주의로 쓰면 오독이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-position" data-sec="c04-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>★★ W05-2/01 시민 인식론 정의의 <strong>실증 부분</strong>. 개념이 데이터로 뒷받침되는 지점.</li>
+<li>W05-2/05 한국 사례와 짝. 세 유형을 알아야 한국의 위치를 말할 수 있다.</li>
+<li>W05-2/06에서 AI 규제로 현재화된다.</li>
+<li>★ 퀴즈에서 표 서술형으로 나올 가능성이 가장 높은 항목.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-related" data-sec="c04-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (2005)</strong> <em>Designs on Nature</em> Ch.10 — ★ 이 비교의 출처.</li>
+<li>연결: <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W05-2.html#c05">W05-2/05 한국의 기술관료적 양식</a> · <a href="W05-2.html#c06">W05-2/06 겸손의 기술</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c04-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★★ 미국·영국·독일의 시민 인식론을 무대·책임성의 기초·객관성 규정·투명성의 네 차원 이상으로 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 세 나라의 GMO 위험 프레임(산물 중심·과정 중심·윤리 중심)을 설명하고, 각각이 그 나라의 역사와 어떻게 연결되는지 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 미국의 투명성이 가장 높은데도 신뢰가 전제되지 않는 이유를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">응용: 한국에서 &quot;정치의 사법화&quot;가 진행된다면 시민 인식론 관점에서 무엇을 의미하는가?</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-2&amp;c=c04">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-2.html#c01">★ 시민 인식론의 정의</a> · <a href="W05-2.html#c05">★ 한국의 기술관료적 시민 인식론</a> · <a href="W05-2.html#c06">겸손의 기술</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c05">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-2 · 개념 05</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 4/5 — ★ 한국의 기술관료적 시민 인식론 — 신고리 공론화 현장 이야기까지 교수가 직접 경험을 길게 풀었다. 세 양식과의 비교 + 공민적 교란으로 한국 맥락 적용형" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c05" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★ 한국의 기술관료적 시민 인식론</h2>
+    <p class="concept-en">Technocratic Civic Epistemology; Civic Dislocation; Epistemic Sovereignty — 정부가 다 했고, 정부가 신뢰를 잃었다</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05b p11</span> <span class="chip chip-slide">📄 W05b p12</span> <a class="chip chip-tag" href="map.html?tag=korea">#korea</a> <a class="chip chip-tag" href="map.html?tag=technocratic">#technocratic</a> <a class="chip chip-tag" href="map.html?tag=civic-dislocation">#civic-dislocation</a> <a class="chip chip-tag" href="map.html?tag=mad-cow">#mad-cow</a> <a class="chip chip-tag" href="map.html?tag=nuclear">#nuclear</a> <a class="chip chip-tag" href="map.html?tag=epistemic-sovereignty">#epistemic-sovereignty</a> <a class="chip chip-tag" href="map.html?tag=sovereign-ai">#sovereign-ai</a> <a class="chip chip-tag" href="map.html?tag=global-south">#global-south</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c05-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Jasanoff (2005)</li><li>임홍탁 (2025) 혁신주체로서의 시민 (W15 리딩)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §6-8, §6-9 [1:53:25–1:56:05]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c05-definition"><h4>한 줄 정의</h4><p>한국의 시민 인식론은 <strong>&#39;국가 행정을 위한 과학&#39;</strong>이다. 과학기술을 시민적 감시의 대상이 아니라 <strong>경제 성장·산업 경쟁력·안보를 위한 행정 수단</strong>으로 운용해 왔다. 행정 엘리트가 탑다운으로 결정하고 책임은 <strong>행정부의 관리 능력</strong>으로 묻는다. 문제는 <strong>정부가 신뢰를 잃으면 대안적 검증 기구가 없다</strong>는 것이다. 그때 일어나는 것이 <strong>공민적 교란(Civic Dislocation)</strong>이다.</p>
+</div>
+<div class="sec sec-analogy" id="c05-analogy"><h4>쉽게 말하면</h4><p>마을의 모든 분쟁을 <strong>촌장 혼자</strong> 판결해 온 마을을 생각해 보자. 촌장이 유능하고 공정한 동안에는 아주 효율적이다. 재판소도 위원회도 필요 없다.</p>
+<p>그런데 어느 날 <strong>촌장을 믿지 못하게 되면</strong> 문제가 생긴다. 다른 판결 기구가 없기 때문이다. 그러면 사람들은 <strong>각자 소문에 의지</strong>하게 된다. 🗣 <strong>&quot;정부가 신뢰를 잃어버리니까 이게 혼란이 발생하는 거예요. (…) 이제 신뢰를 잃다 보니까 음모론이.&quot;</strong></p>
+</div>
+<div class="sec sec-core" id="c05-core"><h4>핵심 내용</h4><h3 id="c05-h-슬라이드-w05b-p11-12">📄 슬라이드 (W05b p11–12)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p11.png" alt="W05b p11 한국의 기술관료적 시민 인식론" loading="lazy" decoding="async"><figcaption>W05b p11 한국의 기술관료적 시민 인식론</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p12.png" alt="W05b p12" loading="lazy" decoding="async"><figcaption>W05b p12</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c05-h-1-39-국가-행정을-위한-과학-39"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">&#39;국가 행정을 위한 과학&#39; ★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">한국은 과학기술을 시민적 감시의 대상이라기보다 <strong>경제 성장·산업 경쟁력·안보를 위한 행정적 수단</strong>으로 운용. 행정 엘리트가 <strong>탑다운</strong>으로 위험과 정책을 결정하고, 책임성은 <strong>행정부의 관리 능력</strong> 중심.</span></p>
+<p>W05-2/04의 세 유형에 한국을 넣으면 네 번째 칸이 된다.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>미국</th>
+<th>영국</th>
+<th>독일</th>
+<th><strong>한국</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>무대</td>
+<td>법정</td>
+<td>공론장·전문가</td>
+<td>공공 기관</td>
+<td><strong>행정부</strong></td>
+</tr>
+<tr>
+<td>책임성</td>
+<td>불신·사법 대립</td>
+<td>신뢰·관계</td>
+<td>신뢰·역할</td>
+<td><strong>행정 관리 능력</strong></td>
+</tr>
+<tr>
+<td>성격</td>
+<td>Contentious</td>
+<td>Communitarian</td>
+<td>Consensus</td>
+<td><strong>Technocratic</strong></td>
+</tr>
+</tbody></table></div>
+</div></div>
+<div class="step-card" id="c05-h-2-quot-정부가-또-열심히-했어요-quot"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">🗣 &quot;정부가 또 열심히 했어요&quot; ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;우리는 <strong>정부가 많이 했죠.</strong> 정부가 조사해서 정부가 결과를 발표하고. 정부 거밖에 역량이 없었고, 사실 <strong>정부가 또 열심히 했어요.</strong> 그래서 근데 문제가 뭡니까? <strong>정부가 신뢰를 잃어버리니까 이게 혼란이 발생하는 거예요.</strong> 옛날에는 다 정부가 하는 걸 믿었는데, 이제 신뢰를 잃다 보니까 <strong>음모론</strong>이 (나오는 거죠). 우리의 시민 인식론에서는 <strong>정부가 상당히 중요한 역할을 차지했었다</strong>는 얘기죠.&quot;</p><span class="quote-time">1:53:25</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 균형 잡힌 진단이다. <strong>정부가 무능해서가 아니다.</strong> 오히려 유능했고, 그래서 다른 검증 체계가 자라지 않았다. 💡 W02-1/10의 <strong>embedded autonomy</strong>(한국 관료제가 포획되지 않고 유능했다) 논의가 여기서 <strong>대가</strong>를 드러낸다. 유능한 단일 주체가 모든 것을 하면, <strong>그가 흔들릴 때 받칠 것이 없다.</strong></span></p>
+</div></div>
+<div class="step-card" id="c05-h-3-공민적-교란-civic-dislocation"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">공민적 교란(Civic Dislocation) ★★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text"><strong>사전 공론화 없는 기술관료적 통제는 위험이 분출할 때 정당한 검증 기구의 부재로 사회 전체가 극심한 불신과 시스템 마비를 겪게 만든다.</strong> 광우병, 원전이 그 예.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">&quot;dislocation&quot;은 <strong>탈구</strong>, 즉 관절이 빠진 상태를 뜻한다. 💡 평소에는 작동하던 연결이 <strong>압력을 받는 순간 어긋나는</strong> 것이다. 💡 핵심은 <strong>사후 대응이 아니라 사전 부재</strong>에 있다. 위기 때 공론장을 급조하면 이미 늦는다.</span></p>
+</div></div>
+<div class="step-card" id="c05-h-4-신고리-공론화-현장-이야기"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 신고리 공론화 현장 이야기 ★★</p>
+<p>공론화로 건설 재개가 결정된 후, <strong>부산 환경단체들이 긴급 회의</strong>를 열었고 교수가 참관했다.</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;깜짝 놀랐어요. <strong>&#39;핵 기술은 태어나서는 안 되는 기술&#39;이라고 얘기하는 사람도 있더라고요.</strong> 그런 입장을 가진 사람이 있었어요. &#39;그런 사람이 있을까&#39; 싶지만 <strong>그거는 어쩔 수가 없어요. 그런 입장을 가진 사람이 있는 거니까, 그거는 팩트니까.</strong>&quot;</p><span class="quote-time">1:55:01</span></blockquote>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;그렇다면 그런 상황에서 어떡하느냐. <strong>각자의 의견을 얘기해서 다 고민하게끔 만드는</strong> 그런 과정을 거치지 않으면 (해결할 방법이 없어요). 그분들이 의견을 바꿀 거라고 예상하지 않고. 어쨌든 <strong>집단적 의사결정</strong>이기 때문에, <strong>투명하게 그런 과정을 갖게끔 하는 것이 비용이 걸리는 것처럼 보이지만 결코 비용이 아니에요.</strong> 이거는 잘 생각을 해봐야 됩니다.&quot;</p><span class="quote-time">1:56:05</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 두 가지가 중요하다.</span></p>
+<ul>
+<li><strong>설득이 목표가 아니다.</strong> 🗣 &quot;그분들이 의견을 바꿀 거라고 예상하지 않고.&quot; 공론화의 목적은 합의가 아니라 <strong>정당한 절차</strong>다.</li>
+<li><strong>공론화는 비용이 아니다.</strong> 💡 사전에 치르지 않으면 <strong>사후에 더 크게 치른다</strong>(공민적 교란). 이것이 W03/08 CTA의 속도 딜레마에 대한 교수의 답이기도 하다.</li>
+</ul>
+</div></div>
+<div class="step-card" id="c05-h-5-남반구의-지식-주권-epistemic-sovereignty"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">남반구의 지식 주권(Epistemic Sovereignty) 📄</p>
+<ul>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span>IPCC 등 <strong>서구 주도의 기후 모델링 지표를 보편적 진리로 받아들이기보다 신식민주의적 침해로 경계</strong>하며, 인도·브라질 등은 <strong>독자적 기후 평가 패널</strong>을 설치했다.</li>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span>생물다양성협약 회의 같은 자리에서 이런 목소리가 강하게 표출된다.</li>
+<li>🗣 한국의 <strong>소버린 AI</strong>도 같은 맥락이나 쉽지 않다.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;결국 <strong>데이터 싸움</strong>이에요. 우리 데이터를 얼마나 잘 가지고 가느냐가 중요한 얘기입니다. <strong>그 데이터를 우리가 가지고 간다면 그렇게 막 걱정하지는 않아도 될 것 같아요.</strong>&quot;</p><span class="quote-time">2:05:14</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">지식 주권은 시민 인식론의 <strong>국제 버전</strong>이다. 국내에서 &quot;누가 검증하는가&quot;를 묻듯, 국제적으로 <strong>&quot;누구의 모델과 지표를 받아들일 것인가&quot;</strong>를 묻는다. → W03 부울경 데이터 커먼즈 논의와 직결.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c05-discussion" data-sec="c05-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li>★ <strong>Term paper 후보</strong>(수업노트 표시): 한국의 <strong>기술관료적 시민 인식론이 특정 기술 논쟁에서 공민적 교란으로 이어진 과정</strong>을 사례로 분석.</li>
+<li><strong>W05-2/06 겸손의 기술</strong>: 🗣 <strong>&quot;우리는 그동안 기술관료적 패턴이 있었고 그것이 변화되는 속에 있고. 그거를 두려워하지 말고 — 지역으로 내리고 현장으로 내리고 여러 사람이 참여하고 공개하고.&quot;</strong></li>
+<li><strong>W01/08 공동체적 시민성</strong>과 함께 읽을 것. 💡 &quot;국가 위기 때 알아서 희생하는&quot; 시민성과 &quot;정부가 다 결정하는&quot; 인식론은 같은 구조의 양면이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-examples" data-sec="c05-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>광우병 사태(2008)</strong> 💡: 미국산 쇠고기 수입 협상 후 대규모 시위로 이어졌다. 💡 공민적 교란의 전형 — 정부의 안전 판정을 믿지 못하는데 <strong>대안적 검증 기구가 없어</strong> 거리로 나갔다. 🗣 W05-1/05에서 &quot;나중에 잘못된 정보 전달이 있었다는 사실도 드러났지만 <strong>사람들이 되물어보는 작용이 나온 것</strong> 자체가 중요하다&quot;고 평가했다.</li>
+<li><strong>신고리 5·6호기 공론화(2017)</strong> 💡: 시민참여단 471명이 학습·숙의 후 건설 재개를 권고(59.5%)하면서 원전 축소 방향도 함께 권고했다. 💡 한국에서 <strong>기술관료적 양식에 균열을 낸 첫 대규모 실험</strong>으로 평가된다. 결과에 구속력이 있었다는 점이 핵심.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>전환의 어려움</strong>: 기술관료적 양식은 <strong>빠르다</strong>. 공론화는 느리고 비용이 든다. 💡 그래서 위기가 급할수록 다시 기술관료 방식으로 돌아가려는 압력이 생긴다. 코로나 대응이 그 예로 볼 수 있다. W01/08의 공동체적 시민성이 그 방식을 지탱했다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-position" data-sec="c05-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05-2/04 세 유형에 <strong>한국을 대입</strong>한 결과. 네 번째 유형.</li>
+<li>W02-1/10 embedded autonomy의 <strong>그림자</strong> 부분. 유능한 관료제의 대가.</li>
+<li>W05-2/06 겸손의 기술, W05-2/07 기술 수용 기준 전환이 그 처방.</li>
+<li>W15 신시민성(임홍탁 2025)으로 이어지는 직접 경로. 🗣 교수 본인의 연구 영역.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-related" data-sec="c05-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (2005)</strong> — 📄 civic dislocation.</li>
+<li><strong>임홍탁 (2025)</strong> 혁신주체로서의 시민 — W15 Core Reading.</li>
+<li>연결: <a href="W05-2.html#c04">W05-2/04 세 가지 양식</a> · <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W05-2.html#c06">W05-2/06 겸손의 기술</a> · <a href="W01.html#c08">W01/08 시민성</a> · <a href="W02-1.html#c10">W02-1/10 embedded autonomy</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c05-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★★ 한국의 기술관료적 시민 인식론의 특징을 서술하고, 미국·영국·독일 유형과 비교하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 공민적 교란(Civic Dislocation)이란 무엇이며, 왜 &quot;정부가 유능했기 때문에&quot; 발생하는가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 신고리 공론화에서 &quot;설득이 목표가 아니다&quot;, &quot;공론화는 비용이 아니다&quot;라는 주장의 근거를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 지식 주권(epistemic sovereignty)이란 무엇이며, 한국의 소버린 AI와 어떻게 연결되는가?</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">응용: embedded autonomy(W02-1)의 성공이 왜 지금 한계가 되는지 시민 인식론 관점에서 논하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-2&amp;c=c05">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-2.html#c04">★★ 미국·영국·독일의 세 가지 양식</a> · <a href="W05-2.html#c01">★ 시민 인식론의 정의</a> · <a href="W05-2.html#c06">겸손의 기술</a> · <a href="W01.html#c08">시민성 — 사회계약과 네 가지 유형</a> · <a href="W02-1.html#c10">수요–공급–연계 기술정책 프레임</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c06">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-2 · 개념 06</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 3/5 — 겸손의 기술 — 강의 끝에 1분 남짓 다뤘고 교수도 '이런 패턴이 있다는 정도만 이해하면 된다'고 했다. 네 질문은 외우기 쉬운 정의형" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+      <button type="button" class="focus-btn" data-focus-target="c06" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>겸손의 기술</h2>
+    <p class="concept-en">Technologies of Humility (Jasanoff) — 모른다는 것을 인정하는 절차</p>
+  </div>
+  <p class="concept-meta"><span class="chip chip-slide">📄 W05b p13</span> <span class="chip chip-slide">📄 W05b p14</span> <span class="chip chip-slide">📄 W05b p15</span> <a class="chip chip-tag" href="map.html?tag=technologies-of-humility">#technologies-of-humility</a> <a class="chip chip-tag" href="map.html?tag=uncertainty">#uncertainty</a> <a class="chip chip-tag" href="map.html?tag=four-questions">#four-questions</a> <a class="chip chip-tag" href="map.html?tag=ai-regulation">#ai-regulation</a> <a class="chip chip-tag" href="map.html?tag=eu-ai-act">#eu-ai-act</a> <a class="chip chip-tag" href="map.html?tag=energy-transition">#energy-transition</a> <a class="chip chip-tag" href="map.html?tag=cbam">#cbam</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c06-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Jasanoff (2003) Technologies of Humility</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §6-12 [2:07:53–2:08:48]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c06-definition"><h4>한 줄 정의</h4><p>전문가의 위험 모델은 <strong>모든 미래 불확실성을 예측할 수 없다.</strong> 그것을 솔직히 인정하고, 기술 정책을 세울 때 네 가지 질문을 공론화하자는 제안이다. <strong>무엇이 위해인가? 누가 손해를 입는가? 누가 결정하는가? 무엇이 유용한가?</strong> Jasanoff는 이를 <strong>예측의 기술(technologies of hubris)</strong>에 대비해 <strong>겸손의 기술</strong>이라 불렀다.</p>
+</div>
+<div class="sec sec-analogy" id="c06-analogy"><h4>쉽게 말하면</h4><p>일기예보에 비유하면,</p>
+<ul>
+<li><strong>예측의 기술</strong>: &quot;내일 강수 확률 30%입니다.&quot; 숫자 하나로 답한다. 모델이 정교할수록 좋다.</li>
+<li><strong>겸손의 기술</strong>: &quot;<strong>모델이 못 잡는 변수가 있습니다. 비가 오면 누가 가장 곤란해집니까? 우산을 살 수 없는 사람은요? 이 예보를 믿고 행사를 강행할지는 누가 정합니까?</strong>&quot;</li>
+</ul>
+<p>두 번째가 더 어수선해 보이지만, <strong>틀렸을 때 누가 다치는지</strong>를 미리 알 수 있다.</p>
+</div>
+<div class="sec sec-core" id="c06-core"><h4>핵심 내용</h4><h3 id="c06-h-슬라이드-w05b-p13-15">📄 슬라이드 (W05b p13–15)</h3>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p13.png" alt="W05b p13 미래 거버넌스" loading="lazy" decoding="async"><figcaption>W05b p13 미래 거버넌스</figcaption></figure>
+<figure class="slide"><img src="../../수업노트/assets/W05b/p15.png" alt="W05b p15 겸손의 기술" loading="lazy" decoding="async"><figcaption>W05b p15 겸손의 기술</figcaption></figure>
+<div class="step-group">
+<div class="step-card" id="c06-h-1-네-가지-질문"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">네 가지 질문 ★★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text">전문가 지식과 정량적 리스크 모델이 <strong>모든 미래 불확실성을 예측할 수 없음을 솔직히 인정</strong>하고, 기술 정책 수립 시 네 가지 질문을 공론화한다.</span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>질문</th>
+<th>💡 무엇을 드러내나</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>무엇이 위해인가?</strong> (framing)</td>
+<td>문제를 어떻게 규정하느냐가 답을 좌우한다. 위험 평가는 <strong>이미 정의된 위험</strong>만 잰다</td>
+</tr>
+<tr>
+<td><strong>누가 손해를 입는가?</strong> (vulnerability)</td>
+<td>평균값 뒤에 가려진 <strong>취약 집단</strong>을 드러낸다</td>
+</tr>
+<tr>
+<td><strong>누가 결정하는가?</strong> (distribution)</td>
+<td>이익과 위험이 <strong>다른 사람에게</strong> 돌아가는 구조를 묻는다</td>
+</tr>
+<tr>
+<td><strong>무엇이 유용한가?</strong> (learning)</td>
+<td>실패에서 배우는 절차가 있는가</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">네 질문 모두 <strong>기술적 질문이 아니라 정치적 질문</strong>이다. 그런데 기술 정책 결정에서는 보통 <strong>첫 번째만, 그것도 전문가가</strong> 답한다.</span></p>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">특히 <strong>&quot;누가 손해를 입는가&quot;</strong>가 중요하다. 🗣 <strong>&quot;나한테는 안전할지라도 저 사람한테는 안전하지 않을 수도 있거든. 그래서 그 사람이 인볼브가 돼야 돼요.&quot;</strong> 위험은 평균이 아니라 <strong>분포</strong>의 문제다.</span></p>
+</div></div>
+<div class="step-card" id="c06-h-2-왜-겸손이-필요한가"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">🗣 왜 겸손이 필요한가</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;왜 이러냐, <strong>불확실성이 항상 있어서 그래요.</strong> 아까 안전하고 안심 말씀드렸잖아요. <strong>나한테는 안전할지라도 저 사람한테는 안전하지 않을 수도 있거든. 그래서 그 사람이 인볼브가 돼야 돼요.</strong>&quot;</p><span class="quote-time">2:07:53</span></blockquote>
+</div></div>
+<div class="step-card" id="c06-h-3-에너지-전환-공동생산의-현재형"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">에너지 전환 — 공동생산의 현재형 📄</p>
+<ul>
+<li class="li-callout li-callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><strong>에너지 전환</strong>은 기후 지식의 측정과 배출권·CBAM 규제 질서가 <strong>동시에 공동생산되는</strong> 과정이다.</li>
+<li><strong>프레이밍</strong>: 1.5℃ 목표, 탄소 발자국</li>
+<li><strong>새로운 정체성</strong>: 프로슈머, RE100 기업, 기후 시민</li>
+<li><strong>제도와 담론</strong>: K-ETS, 기후위기위원회, 정의로운 전환</li>
+</ul>
+<p>→ W05-2/02 공동생산의 네 요소가 그대로 적용된 사례다.</p>
+</div></div>
+<div class="step-card" id="c06-h-4-ai-규제의-분화"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">AI 규제의 분화 📄 ★★</p>
+<p class="callout callout-slide"><span class="callout-badge callout-badge-slide" aria-hidden="true">📄</span><span class="callout-text"><strong>AI 규제도 각국의 시민 인식론에 따라 분화한다.</strong></span></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>접근</th>
+<th>수단</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>EU</strong></td>
+<td><strong>과정·사전예방 중심</strong></td>
+<td>AI Act, <strong>human-in-the-loop</strong>, 기본권 영향평가</td>
+</tr>
+<tr>
+<td><strong>미국</strong></td>
+<td><strong>산물·시장 중심</strong></td>
+<td><strong>사후 손해배상</strong>, 레드티밍, 혁신 우선</td>
+</tr>
+<tr>
+<td><strong>한국</strong></td>
+<td><strong>소버린 AI와 안보 중심</strong></td>
+<td>데이터 주권, 자체 모델 확보</td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ W05-2/04의 GMO 프레임이 그대로 반복된다. <strong>EU는 과정, 미국은 산물.</strong> 💡 20년 전 GMO에서 갈린 것과 똑같은 구도가 AI에서 재현되는 것이, 시민 인식론이 <strong>일시적 반응이 아니라 지속적 양식</strong>이라는 증거다.</span></p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;나라마다 <strong>뭐가 옳고 그르고의 문제가 아니고</strong> 의사결정하는 방식이 다를 테니까 이런 패턴이 있을 수 있다. 포인트는 <strong>시장에서 하듯이 1 대 1로 만들어지는 것이 아니고 사회적인 패턴이 나타나더라</strong>는 정도만 이해하시면 될 것 같습니다.&quot;</p><span class="quote-time">2:07:53</span></blockquote>
+</div></div>
+<div class="step-card" id="c06-h-5-한국은-어디로-가야-하나"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 한국은 어디로 가야 하나 ★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;실제로 해보면 <strong>나라별로 패턴이 있고</strong> 그 패턴에 맞춰서 일이 구현되는데, 우리는 그동안 기술관료적 패턴이 있었고 그것이 변화되는 속에 있고. <strong>그거를 두려워하지 말고</strong> — 그래서 제가 계속 <strong>지역으로 내리고 현장으로 내리고 여러 사람이 참여하고 공개하고</strong> 이런 식으로 작업들을 하다 보면 <strong>학습을 하게 되고 답이 얻어질 수 있을 거라고 생각을 합니다.</strong>&quot;</p><span class="quote-time">2:08:48</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 처방이 네 개로 정리된다: <strong>지역으로, 현장으로, 참여, 공개.</strong> 💡 이것이 W03/17의 <strong>&quot;거버넌스는 국지적이어야 한다&quot;</strong>, W03/12의 <strong>혁신 공유지</strong>와 정확히 같은 방향이다. 다른 계보에서 출발해 같은 처방에 도달한다.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c06-discussion" data-sec="c06-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li><strong>W03/08 CTA와의 비교</strong> 💡: 둘 다 사전 개입을 말하지만 성격이 다르다. 💡 CTA는 <strong>기술의 궤적을 바꾸려는</strong> 적극적 개입이고, 겸손의 기술은 <strong>모른다는 것을 인정하고 질문을 여는</strong> 절차적 겸손이다. 💡 CTA가 &quot;변이를 만들어라&quot;면, 겸손의 기술은 &quot;누가 다치는지 먼저 물어라&quot;다.</li>
+<li><strong>W03/18 혁신의 사회적 허용</strong>과도 짝. 💡 McCloskey 쪽이 &quot;허용을 못 받으면 기술이 소멸한다&quot;는 <strong>결과</strong>를 말한다면, 겸손의 기술은 <strong>허용을 얻는 절차</strong>를 말한다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-examples" data-sec="c06-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (2003) &quot;Technologies of Humility&quot;</strong> 💡: <em>Minerva</em>에 실린 논문으로, <strong>예측의 기술(technologies of hubris)</strong>과 대비해 제시됐다. 💡 hubris는 그리스 비극의 <strong>오만</strong>을 뜻한다. 위험 평가·비용편익분석 같은 정량 도구가 불확실성을 통제할 수 있다고 믿는 태도를 겨냥한 말이다.</li>
+<li><strong>human-in-the-loop</strong> 💡: AI 시스템의 중요한 결정에 <strong>사람이 반드시 개입</strong>하도록 하는 설계 원칙. EU AI Act의 고위험 AI 요구사항에 포함된다. 💡 &quot;과정 중심&quot; 규제의 전형적 수단이다.</li>
+<li><strong>CBAM(탄소국경조정메커니즘)</strong> 💡: EU가 탄소 배출이 많은 수입품에 비용을 부과하는 제도. 💡 기후 지식(배출량 측정)이 곧바로 <strong>무역 질서</strong>가 되는 공동생산의 사례이며, 한국 수출 기업에 직접 영향을 준다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>겸손의 기술에 대한 반론</strong>: 모든 결정에 네 질문을 던지면 <strong>아무것도 못 한다</strong>는 비판이 가능하다. 💡 이에 대한 답은 <strong>비가역성과 피해 규모에 따라 차등 적용</strong>하는 것이다. 되돌릴 수 있는 기술과 그렇지 않은 기술을 같은 절차로 다룰 필요는 없다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-position" data-sec="c06-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>W05 시민 인식론 블록의 <strong>실천 처방</strong>.</li>
+<li>W05-2/02 공동생산의 네 요소가 에너지 전환·AI 규제 사례로 구체화된다.</li>
+<li>W05-2/05 한국의 전환 방향(&quot;지역으로, 현장으로, 참여, 공개&quot;)이 여기서 제시된다.</li>
+<li>W03/08 CTA, W03/17 제도 건축가, W03/18 사회적 허용과 같은 계열의 처방.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-related" data-sec="c06-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li><strong>Jasanoff (2003)</strong> &quot;Technologies of Humility&quot; — 📄 네 질문.</li>
+<li>연결: <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W05-2.html#c02">W05-2/02 공동생산</a> · <a href="W05-2.html#c05">W05-2/05 한국의 양식</a> · <a href="W03.html#c08">W03/08 CTA</a> · <a href="W03.html#c18">W03/18 사회적 허용</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c06-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 겸손의 기술이 제시하는 네 가지 질문을 쓰고, 각 질문이 무엇을 드러내는지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ &quot;나에게 안전한 것이 저 사람에게는 안전하지 않을 수 있다&quot;는 말이 위험 평가에 주는 함의를 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ AI 규제에서 EU·미국·한국의 접근이 어떻게 분화하는지 서술하고, 그것이 GMO 때의 패턴과 어떻게 같은지 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★ 한국의 시민 인식론 전환 방향으로 제시된 네 가지(지역·현장·참여·공개)를 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">비교형: CTA(W03)와 겸손의 기술은 사전 개입이라는 점에서 같지만 성격이 다르다. 그 차이를 논하라.</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-2&amp;c=c06">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-2.html#c01">★ 시민 인식론의 정의</a> · <a href="W05-2.html#c02">공동생산 (Co-production)</a> · <a href="W05-2.html#c05">★ 한국의 기술관료적 시민 인식론</a> · <a href="W03.html#c08">구성적 기술평가(CTA)</a> · <a href="W03.html#c18">McCloskey의 부르주아적 합의와 혁신의 사회적 허용</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+
+<section class="concept" id="c07">
+  <header class="concept-head">
+    <span class="concept-eyebrow">W05-2 · 개념 07</span>
+    <span class="concept-head-spacer"></span>
+    <div class="concept-actions">
+      
+      <span class="stars" title="시험 중요도 5/5 — ★ 기술 수용 기준의 전환 — W05에서 교수 발언이 가장 길게(약 8분) 이어진 대목이자 슬라이드가 아닌 교수 자신의 주장. 응급 서비스·SOC 재정의로 강의를 닫았고 term paper 연결 지점으로 표시됐다" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+      <button type="button" class="focus-btn" data-focus-target="c07" aria-label="집중 모드로 보기" title="집중 모드 (F)">⤢</button>
+    </div>
+  </header>
+  <div class="concept-title-row">
+    <h2>★ 기술 수용 기준의 전환 — 경제적 타당성에서 사회적 타당성으로</h2>
+    <p class="concept-en">From Economic to Social Feasibility; Redefining SOC — 경제적 타당성에서 사회적 타당성으로</p>
+  </div>
+  <p class="concept-meta"><a class="chip chip-tag" href="map.html?tag=social-feasibility">#social-feasibility</a> <a class="chip chip-tag" href="map.html?tag=basic-right">#basic-right</a> <a class="chip chip-tag" href="map.html?tag=soc">#soc</a> <a class="chip chip-tag" href="map.html?tag=emergency-service">#emergency-service</a> <a class="chip chip-tag" href="map.html?tag=frugal-innovation">#frugal-innovation</a> <a class="chip chip-tag" href="map.html?tag=responsible-innovation">#responsible-innovation</a> <a class="chip chip-tag" href="map.html?tag=lifestyle">#lifestyle</a> <a class="chip chip-tag" href="map.html?tag=term-paper">#term-paper</a></p>
+  
+<details class="sec-fold source-panel" data-sec="c07-source">
+  <summary>출처</summary>
+  <div class="sec-body">
+    
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W05_강의기록_261003.md §6-10 [1:56:05–2:04:05]</li></ul>
+  </div>
+</details>
+  <div class="sec sec-definition" id="c07-definition"><h4>한 줄 정의</h4><p>지금까지 공공 투자의 근거는 <strong>경제적 타당성</strong>이었다. 비용 대비 편익이 나오는가. 교수의 주장은 이렇다. <strong>사회적 타당성으로도 얼마든지 의사결정을 할 수 있고</strong>, 그러면 <strong>투자가 일어나고 시장이 달라진다.</strong> 응급 서비스를 <strong>기본권으로 정하면</strong> 그에 맞는 투자와 시장이 생긴다. 이것이 공동생산이 <strong>구호가 아니라 실제로 작동하는</strong> 방식이다.</p>
+</div>
+<div class="sec sec-analogy" id="c07-analogy"><h4>쉽게 말하면</h4><p>의무교육을 생각해 보면 된다.</p>
+<p>처음에는 <strong>&quot;교육에 투자하면 경제적으로 이득인가&quot;</strong>를 따졌을 것이다. 그런데 어느 시점에 사회가 <strong>&quot;교육은 모든 아이가 받아야 하는 것&quot;</strong>이라고 정했다. 그 순간 계산이 바뀐다. 비용편익을 따지는 게 아니라 <strong>어떻게 할지</strong>를 따지게 된다.</p>
+<p>그리고 그 결정은 <strong>거대한 시장을 만들었다.</strong> 학교 건축, 교과서, 교사 양성, 급식, 교육 기자재. 🗣 <strong>&quot;그 시장을 우리가 키우겠다는 얘기예요.&quot;</strong></p>
+</div>
+<div class="sec sec-core" id="c07-core"><h4>핵심 내용</h4><div class="step-group">
+<div class="step-card" id="c07-h-1-응급실-사례-출발점"><span class="step-no" aria-hidden="true">1</span><div class="step-body"><p class="step-title">🗣 응급실 사례 — 출발점 ★</p>
+<p>(W01/03에서 언급된 사례의 재론) 아이를 잃은 부모의 <strong>&quot;진찰이라도 받아봤으면 여한이 없었겠다&quot;</strong>는 말.</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;과학기술의 비중이 커지고 있다는 게 사회 생활 속에서 의미하는 게 뭐냐 하면, <strong>응급 서비스는 기본으로 받는 거라고 인식을 하는 거예요.</strong> 기술이 우리 생활에 들어와 있는 거예요. <strong>그러면 &#39;우리 지역에서는 응급 서비스를 우리 지역 안에서 반드시 해결한다&#39;는 정책을 세울 수도 있어요.</strong> 돈을 얼마를 투자하든 그거는 커버하고 갑시다라고. <strong>기본권으로 정할 수도 있어요.</strong>&quot;</p><span class="quote-time">1:57:34</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">논리의 출발점이 중요하다. <strong>기술이 생활에 깊이 들어오면 그 접근이 &#39;기본&#39;으로 인식된다.</strong> 앰뷸런스가 없던 시대에는 그것이 기본권일 수 없었다. 기술의 보편화가 <strong>권리의 내용을 바꾼다</strong> — 이것이 공동생산이다.</span></p>
+</div></div>
+<div class="step-card" id="c07-h-2-기본권으로-정하면-시장이-생긴다"><span class="step-no" aria-hidden="true">2</span><div class="step-body"><p class="step-title">🗣 기본권으로 정하면 시장이 생긴다 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;응급 서비스를 기본권으로 하자고 하면 <strong>거기에 그만큼 투자가 일어나는 거야. 그 시장을 우리가 키우겠다는 얘기예요.</strong> 비용 효율적이고 사람이 몇 명 들어오고 그 질문이 아니에요. <strong>&#39;이 정도는 우리가 하고 가겠다&#39;</strong>는 얘기.&quot;</p><span class="quote-time">2:02:29</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ 핵심 전환이다. <strong>&quot;수요가 있어서 공급한다&quot;가 아니라 &quot;하기로 정했기 때문에 시장이 생긴다.&quot;</strong> 💡 W02-1/11의 <strong>공공조달을 통한 수요 창출</strong>과 같은 메커니즘이지만, 근거가 산업 육성이 아니라 <strong>권리</strong>다.</span></p>
+</div></div>
+<div class="step-card" id="c07-h-3-soc-개념의-재정의"><span class="step-no" aria-hidden="true">3</span><div class="step-body"><p class="step-title">🗣 SOC 개념의 재정의 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;도로 만들 때 어땠어요? 그거는 <strong>경제적 목적</strong>을 위해서 놨죠. 근데 그렇게 되면 이제 <strong>SOC(사회간접자본)라는 개념이 달라지는 거예요.</strong> 국방도 마찬가지예요. <strong>우리가 어느 정도 수준까지 하자라고 결정하는 것이죠.</strong> 여태까지는 경제적 타당성이 근거가 됐다면, <strong>이제 사회적 타당성을 가지고도 얼마든지 의사결정을 할 수 있고, 거기에 따른 투자가 만들어질 수 있고, 시장도 달라지는 거죠.</strong>&quot;</p><span class="quote-time">2:02:53</span></blockquote>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>경제적 타당성</strong></th>
+<th><strong>사회적 타당성</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>질문</td>
+<td>비용 대비 편익이 나오는가</td>
+<td><strong>이 정도는 하고 가야 하지 않는가</strong></td>
+</tr>
+<tr>
+<td>근거</td>
+<td>수요 예측, 경제성 분석</td>
+<td><strong>권리, 사회적 합의</strong></td>
+</tr>
+<tr>
+<td>예</td>
+<td>교통량 기준 도로 건설</td>
+<td>응급 서비스, 의무교육, 상수도</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>수익 나는 곳에만 공급</td>
+<td><strong>결정이 시장을 만든다</strong></td>
+</tr>
+</tbody></table></div>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">W01/03에서 🗣 교수가 말한 <strong>&quot;SOC를 다시 봐야 한다&quot;</strong>(이제는 전력망·디지털·AI)가 여기서 <strong>판단 기준</strong>의 문제로 깊어진다.</span></p>
+</div></div>
+<div class="step-card" id="c07-h-4-왜-이것이-공동생산인가"><span class="step-no" aria-hidden="true">4</span><div class="step-body"><p class="step-title">🗣 왜 이것이 공동생산인가 ★★</p>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;그래서 <strong>지식과 사회 질서의 공동생산</strong>이라는 말이 더 의미를 가질 수 있는. <strong>그냥 좋은 얘기 하자는 게 아니고 사회적 질서가 달라지는 거, 우리 삶의 방식이 달라지는 거</strong>지. 그냥 산업 경쟁력 강화 이런 얘기만 하는 게 아니고 <strong>생활의 경쟁력, 우리 삶의 경쟁력도 다시 들여다보자</strong>는 얘기.&quot;</p><span class="quote-time">2:04:05</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">★ <strong>&quot;생활의 경쟁력&quot;</strong>이라는 표현이 이 수업의 지향을 압축한다. 💡 혁신 논의는 보통 <strong>산업 경쟁력</strong>으로 수렴하는데, 교수는 <strong>삶의 질 자체를 혁신의 목표</strong>로 놓자고 한다. → W15 신시민성, W13 MOIP와 연결된다.</span></p>
+</div></div>
+<div class="step-card" id="c07-h-5-유럽의-에어컨-라이프스타일의-선택"><span class="step-no" aria-hidden="true">5</span><div class="step-body"><p class="step-title">🗣 유럽의 에어컨 — 라이프스타일의 선택 ★</p>
+<p>(W02-1/06에서 나온 이야기의 재론·확장)</p>
+<ul>
+<li>🗣 지구온난화로 유럽도 더워졌지만 <strong>에어컨을 안 산다. 며칠 버티면 되니까.</strong> 우리는 에어컨이 있는데도 안 쓰고 버티는 것을 이해하기 어려워한다.</li>
+<li><strong>Frugal innovation</strong>: 태양광·재생수가 있으면 24시간이라도 마음껏 쓴다.</li>
+<li><strong>Responsible innovation</strong>: 그럼에도 필요한 만큼만 쓴다.</li>
+</ul>
+<blockquote class="quote-prof"><span class="quote-icon" aria-hidden="true">🗣</span><p class="quote-text">&quot;<strong>기술이 양쪽에 있어서 그걸 선택한다기보다는 내 입장이 다른 거예요.</strong> 내가 어떤 라이프스타일을 가져갈 것인가. 영국 사람들은 &#39;에어컨 달면 되는데 뭐 며칠 참으면 되지&#39; 하는 거고 우리는 (쓰는 거고). <strong>입장이 다른 거죠.</strong> 새로운 기술을 소화해내는 방식의 차이가 다 <strong>사회적 입장</strong>을 가지고 있다는 얘기.&quot;</p><span class="quote-time">2:01:29</span></blockquote>
+<p class="callout callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><span class="callout-text">기술 선택이 <strong>효용 계산이 아니라 삶의 방식 선택</strong>이라는 주장. → W12 <strong>일상생활방식 접근(Social Practice)</strong>의 예고편이다.</span></p>
+</div></div>
+</div>
+</div>
+<details class="sec sec-fold" id="c07-discussion" data-sec="c07-discussion">
+  <summary>수업에서 나온 논점</summary>
+  <div class="sec-body"><ul>
+<li>★★ <strong>Term paper 후보</strong>(수업노트에 명시): <strong>기술 수용 기준을 경제적 타당성에서 사회적 타당성으로 전환했을 때 새로 열리는 공공 서비스 시장 분석</strong> — 응급의료를 기본권으로 설정하는 경우의 시장 형성.<ul>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span>분석틀이 이미 선다: ① 현재 경제적 타당성 기준에서 공급이 안 되는 영역 식별 ② 기본권으로 설정할 경우의 투자 규모 추정 ③ 그로 인해 생기는 시장과 산업 ④ 결정 절차(누가 정하는가 — 시민 인식론).</li>
+</ul>
+</li>
+<li><strong>W05-2/06 겸손의 기술</strong>의 네 번째 질문 <strong>&quot;무엇이 유용한가&quot;</strong>가 바로 이 논의다. 유용성의 기준을 누가 정하는가.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-examples" data-sec="c07-examples">
+  <summary>보충 사례</summary>
+  <div class="sec-body"><ul>
+<li><strong>응급의료 취약지</strong> 💡: 한국은 권역응급의료센터까지 1시간 내 도달이 어려운 지역이 존재한다. 💡 경제적 타당성으로는 인구가 적은 지역에 응급센터를 두기 어렵다. 💡 &quot;기본권&quot; 프레임으로 가면 <strong>도달 시간 기준</strong>이 투자 근거가 된다. 🗣 &quot;우리 지역에서는 우리 지역 안에서 반드시 해결한다&quot;가 그 뜻.</li>
+<li><strong>보편적 서비스(universal service) 의무</strong> 💡: 통신 분야에는 이미 이 개념이 있다. 수익이 안 나는 지역에도 기본 전화·인터넷을 제공하도록 사업자에게 의무를 지우고 비용을 분담한다. 💡 즉 사회적 타당성 기준은 이미 일부 영역에서 작동 중이며, 그 범위를 넓히자는 주장으로 읽을 수 있다.</li>
+<li class="li-callout li-callout-note"><span class="callout-badge callout-badge-note" aria-hidden="true">💡</span><strong>반론도 준비할 것</strong>: 사회적 타당성은 <strong>한계가 없다</strong>는 비판이 가능하다. 모든 것을 기본권으로 정하면 재정이 감당되지 않는다. 💡 그래서 <strong>무엇을 기본권으로 정할지 결정하는 절차</strong>가 핵심이 되고, 그것이 다시 시민 인식론(W05-2/01)의 문제가 된다. 논의가 순환하며 닫힌다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-position" data-sec="c07-position">
+  <summary>수업 프레임에서의 위치</summary>
+  <div class="sec-body"><ul>
+<li>★ W05 시민 인식론 블록의 <strong>실천적 결론</strong>이자, 이 주차에서 가장 <strong>term paper로 쓰기 좋은</strong> 대목.</li>
+<li>W05-2/02 공동생산이 <strong>추상</strong>이라면 이것이 <strong>구체</strong>다. 🗣 &quot;그냥 좋은 얘기 하자는 게 아니고.&quot;</li>
+<li>W01/03의 응급실 사례, W02-1/06의 에어컨 사례가 여기서 회수되고 확장된다.</li>
+<li>W12 Social Practice(라이프스타일), W13 MOIP(미션 설정), W15 신시민성으로 이어진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-related" data-sec="c07-related">
+  <summary>관련 개념 · 논문</summary>
+  <div class="sec-body"><ul>
+<li>🗣 교수 본인의 논의 전개라 직접 대응하는 문헌은 제시되지 않았다.</li>
+<li>연결: <a href="W05-2.html#c02">W05-2/02 공동생산</a> · <a href="W05-2.html#c06">W05-2/06 겸손의 기술</a> · <a href="W01.html#c03">W01/03</a> · <a href="W02-1.html#c06">W02-1/06 불만족스러운 혁신</a></li>
+</ul>
+</div>
+</details>
+<div class="sec sec-quiz" id="c07-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-cards">
+<li class="quiz-card">
+    <span class="quiz-no">1</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ 기술 수용 기준이 경제적 타당성에서 사회적 타당성으로 전환된다는 주장의 내용을 응급 서비스 사례로 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">2</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">★★ &quot;기본권으로 정하면 그만큼 투자가 일어나고 시장이 달라진다&quot;는 명제가 공동생산 개념과 어떻게 연결되는지 서술하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">3</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ SOC 개념이 달라진다는 말의 뜻을 도로와 응급 서비스를 대비해 설명하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">4</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-compare">비교형</span>
+      <div class="quiz-text">★ Frugal innovation과 Responsible innovation의 차이를 유럽의 에어컨 사례로 설명하고, 그것이 &quot;기술 선택이 아니라 입장의 차이&quot;라는 주장과 어떻게 연결되는지 논하라.</div>
+    </div>
+  </li>
+<li class="quiz-card">
+    <span class="quiz-no">5</span>
+    <div class="quiz-card-body">
+      <span class="quiz-badge quiz-badge-desc">서술형</span>
+      <div class="quiz-text">비판적 검토: 사회적 타당성 기준의 한계는 무엇이며, 그 한계를 다루려면 무엇이 필요한가?</div>
+    </div>
+  </li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W05-2&amp;c=c07">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W05-2.html#c02">공동생산 (Co-production)</a> · <a href="W05-2.html#c06">겸손의 기술</a> · <a href="W01.html#c03">인간에 대한 4가지 기본 이해</a> · <a href="W02-1.html#c06">불만족스러운 혁신 — Lundvall의 경고</a> · <a href="W03.html#c18">McCloskey의 부르주아적 합의와 혁신의 사회적 허용</a></p>
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+    
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+  </main>
+</div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

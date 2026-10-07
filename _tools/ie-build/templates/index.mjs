@@ -47,6 +47,9 @@ function weekCard(group) {
   const active = group.weeks.filter((w) => w.concepts.length);
   const pending = group.weeks.filter((w) => !w.concepts.length);
   const isPending = active.length === 0;
+  // 휴강 주차(weeks.json `holiday: true`)는 칸은 남겨 두되 "예정"이 아니라
+  // "휴강"으로 표시한다 — 주차 번호가 한 칸씩 밀린 이유를 지도에서 바로 보이게.
+  const isHoliday = group.weeks.every((w) => w.holiday);
   const total = active.reduce((n, w) => n + w.concepts.length, 0);
   const quizWeek = group.weeks.find((w) => w.quiz);
 
@@ -71,17 +74,17 @@ function weekCard(group) {
       <div class="wc-pending-item">
         <span class="wc-id">${esc(w.id)}</span>
         <span class="wc-topic">${esc(w.topic)}</span>
-        ${isPending ? '' : '<span class="wc-pending-tag">예정</span>'}
+        ${isPending ? '' : `<span class="wc-pending-tag">${w.holiday ? '휴강' : '예정'}</span>`}
       </div>`
     )
     .join('');
 
   return `
-<article class="week-card${isPending ? ' is-pending' : ''}">
+<article class="week-card${isHoliday ? ' is-holiday' : isPending ? ' is-pending' : ''}">
   <header class="wc-head">
     <time datetime="${esc(group.date)}">${esc(shortDate(group.date))}</time>
     ${quizWeek ? `<span class="wc-quiz" title="그날 수업 시작 전 실시 · 전주까지 누적 범위">★ Quiz ${quizWeek.quiz}</span>` : ''}
-    <span class="wc-count">${total ? `개념 ${total}개` : '예정'}</span>
+    <span class="wc-count">${total ? `개념 ${total}개` : isHoliday ? '휴강' : '예정'}</span>
   </header>
   ${links}
   ${pendingItems ? `<div class="wc-pending">${pendingItems}</div>` : ''}

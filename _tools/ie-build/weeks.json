@@ -37,15 +37,34 @@
   },
   {
     "id": "W04",
-    "date": "2026-10-03",
-    "topic": "혁신에의 거시적 접근 II",
-    "subtitle": "Macro approach II · Zoom 비대면",
+    "date": "2026-09-26",
+    "topic": "휴강 — 추석 연휴",
+    "subtitle": "수업 없음",
     "source": "",
     "quiz": null,
-    "lectured": false
+    "lectured": false,
+    "holiday": true
   },
   {
-    "id": "W05",
+    "id": "W05-1",
+    "date": "2026-10-03",
+    "topic": "혁신에의 거시적 접근 II",
+    "subtitle": "Macro approach II · Mode 2 / Triple Helix · Zoom 비대면",
+    "source": "W05_혁신생태계론 거시적 속성2 261003.pdf",
+    "quiz": null,
+    "lectured": true
+  },
+  {
+    "id": "W05-2",
+    "date": "2026-10-03",
+    "topic": "시민 인식론",
+    "subtitle": "Civic Epistemology · Zoom 비대면",
+    "source": "W05_혁신생태계론 시민 인식론 261003.pdf",
+    "quiz": null,
+    "lectured": true
+  },
+  {
+    "id": "W06",
     "date": "2026-10-10",
     "topic": "부문혁신시스템 (SIS)",
     "subtitle": "Sectoral Innovation System",
@@ -54,7 +73,7 @@
     "lectured": false
   },
   {
-    "id": "W06",
+    "id": "W07",
     "date": "2026-10-17",
     "topic": "기술혁신시스템 (TIS) + 글로벌혁신시스템 (GIS)",
     "subtitle": "",
@@ -63,7 +82,7 @@
     "lectured": false
   },
   {
-    "id": "W07",
+    "id": "W08",
     "date": "2026-10-24",
     "topic": "혁신과 생산의 사회시스템 (SSIP) + 비즈니스 시스템 (BS)",
     "subtitle": "Zoom 비대면",
@@ -72,7 +91,7 @@
     "lectured": false
   },
   {
-    "id": "W08",
+    "id": "W09",
     "date": "2026-10-31",
     "topic": "사회기술시스템 (StS)",
     "subtitle": "Socio-technical System",
@@ -81,7 +100,7 @@
     "lectured": false
   },
   {
-    "id": "W09",
+    "id": "W10",
     "date": "2026-11-07",
     "topic": "시스템 전환론 I: 전환적 사회혁신",
     "subtitle": "Transformative Social Innovation",
@@ -90,7 +109,7 @@
     "lectured": false
   },
   {
-    "id": "W10",
+    "id": "W11",
     "date": "2026-11-14",
     "topic": "시스템 전환론 II: 비즈니스 모델 혁신",
     "subtitle": "BMI",
@@ -99,7 +118,7 @@
     "lectured": false
   },
   {
-    "id": "W11",
+    "id": "W12",
     "date": "2026-11-21",
     "topic": "시스템 전환론 III: 일상생활방식 접근",
     "subtitle": "Social Practice Approach",
@@ -108,7 +127,7 @@
     "lectured": false
   },
   {
-    "id": "W12",
+    "id": "W13",
     "date": "2026-11-28",
     "topic": "시스템 전환론 IV: 임무지향형 혁신정책",
     "subtitle": "MOIP",
@@ -117,7 +136,7 @@
     "lectured": false
   },
   {
-    "id": "W13",
+    "id": "W14",
     "date": "2026-12-05",
     "topic": "시스템 전환과 국가의 역할: 개발국가",
     "subtitle": "Developmental State",
@@ -126,7 +145,7 @@
     "lectured": false
   },
   {
-    "id": "W14",
+    "id": "W15",
     "date": "2026-12-12",
     "topic": "시스템 전환과 시민의 역할: 신시민성",
     "subtitle": "Citizen as Innovation Actor",
