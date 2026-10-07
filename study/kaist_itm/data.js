@@ -179,6 +179,7 @@ window.ITM = {
     { date: '2026-10-03', course: 'ITM60062', type: 'holiday', title: '개천절 휴강' },
     { date: '2026-10-09', course: 'ITM60062', type: 'assignment', title: '과제2 Ulrich(1995) 요약' },
     { date: '2026-10-10', course: 'ITM60062', type: 'class', title: '경쟁 전략론 리뷰', tentative: true },
+    { date: '2026-10-11', course: 'ITM60062', type: 'assignment', title: 'Process DSM HW 과제', note: '23:59 · A~J 매트릭스 시퀀싱' },
     { date: '2026-10-17', course: 'ITM60062', type: 'class', title: '아키텍처 전략론 · 모노즈쿠리 경쟁전략', tentative: true },
     { date: '2026-10-24', course: 'ITM60062', type: 'class', title: '오픈/클로즈드 전략', tentative: true },
     { date: '2026-10-31', course: 'ITM60062', type: 'class', title: '모듈러 설계의 개념', tentative: true },
