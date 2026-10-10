@@ -3,7 +3,10 @@ import path from 'node:path';
 const WEEK = String.raw`W\d{2}(?:-\d)?`;
 const RELATED_RE = new RegExp(`^(${WEEK})\\/(\\d{1,2})$`);
 const CONCEPT_FILE_RE = new RegExp(`^(${WEEK})\\/(\\d{2})-.*\\.md$`);
-const IMAGE_RE = new RegExp(`(?:수업노트\\/assets|개념정리\\/assets|(?<=\\.\\.\\/)assets)\\/(${WEEK})\\/([^\\/]+)\\.(?:png|jpe?g)$`);
+// 슬라이드 캡처 폴더는 주차 폴더(W05-1)가 아니라 자료 단위(W05a, W05b)로 나뉠 수 있다 —
+// 한 수업에 슬라이드 두 벌이 배포된 경우. 그래서 이미지 경로에는 영문 소문자 접미사도 허용한다.
+const ASSET_DIR = String.raw`W\d{2}(?:-\d|[a-z])?`;
+const IMAGE_RE = new RegExp(`(?:수업노트\\/assets|개념정리\\/assets|(?<=\\.\\.\\/)assets)\\/(${ASSET_DIR})\\/([^\\/]+)\\.(?:png|jpe?g)$`);
 const EXTERNAL_RE = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 
 export function conceptHref(week, no) {

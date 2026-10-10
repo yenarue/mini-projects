@@ -55,6 +55,9 @@ test('슬라이드 이미지 경로를 images/W##/p##.jpg로 바꾼다', () => {
   assert.deepEqual(
     rewriteImagePath('../../수업노트/assets/W02-2/p07.png'),
     { href: 'images/W02-2/p07.jpg', ok: true, week: 'W02-2', name: 'p07' }
+  );  assert.deepEqual(
+    rewriteImagePath('../../수업노트/assets/W05a/p17.png'),
+    { href: 'images/W05a/p17.jpg', ok: true, week: 'W05a', name: 'p17' }
   );
 });
 
