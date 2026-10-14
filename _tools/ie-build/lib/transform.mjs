@@ -111,10 +111,16 @@ function calloutKindFromText(text) {
   return null;
 }
 
+/**
+ * DESIGN.md v2 §2.5 "표시는 예외에만": 본문 기본값은 강의 기반이라 📄(슬라이드)는
+ * 아무 표지도 달지 않고, 퀴즈 답안에서 걸러야 하는 💡(외부 보충)만 "보충" 표지를 단다.
+ * 이모지 글자 자체는 렌더 결과에 남기지 않는다(원본 md는 그대로).
+ */
+export const SUPP_TAG = '<span class="tag tag-supp">보충</span>';
+export const EXAM_TAG = '<span class="tag tag-exam">시험 포인트</span>';
+
 function calloutBadgeHtml(kind) {
-  return kind === 'slide'
-    ? `<span class="callout-badge callout-badge-slide" aria-hidden="true">${SLIDE_EMOJI}</span>`
-    : `<span class="callout-badge callout-badge-note" aria-hidden="true">${NOTE_EMOJI}</span>`;
+  return kind === 'slide' ? '' : SUPP_TAG;
 }
 
 /** T4/T5 — 문단(paragraph) 오버라이드. 기본 동작은 marked 원본 paragraph()와 동일하게 맞춘다. */
@@ -128,11 +134,11 @@ export function paragraphRenderer(token) {
       const bodyTokens = [{ ...first, text: stripped }, ...tokens.slice(1)];
       const body = this.parser.parseInline(bodyTokens);
       counts[kind === 'slide' ? 't4' : 't5'] += 1;
-      // body를 span으로 감싸는 이유: .callout이 flex 컨테이너라 배지(아이콘) 뒤에
-      // 이어지는 텍스트가 이름 없는(anonymous) flex item이 되는데, flex item은
-      // 기본값 min-width:auto라 내용 폭 밑으로 줄어들지 못해 좁은 화면(375px)에서
-      // 컨테이너 밖으로 넘친다. 감싸는 span에 min-width:0을 주면 정상적으로 줄바꿈된다.
-      return `<p class="callout callout-${kind}">${calloutBadgeHtml(kind)}<span class="callout-text">${body}</span></p>\n`;
+      // 📄 문단은 강의 기반 기본값이라 일반 문단, 💡 문단은 앞머리에 "보충" 표지.
+      // 상자(콜아웃)로 감싸지 않는다 — DESIGN.md v2 §2.1 그릇 예산.
+      return kind === 'slide'
+        ? `<p>${body}</p>\n`
+        : `<p class="supp">${calloutBadgeHtml(kind)}${body}</p>\n`;
     }
   }
   return `<p>${this.parser.parseInline(tokens)}</p>\n`;
@@ -147,12 +153,13 @@ export function paragraphRenderer(token) {
  */
 function applyListItemCallout(liHtml, kind) {
   const emoji = kind === 'slide' ? SLIDE_EMOJI : NOTE_EMOJI;
-  const cls = kind === 'slide' ? 'li-callout li-callout-slide' : 'li-callout li-callout-note';
   const re = new RegExp(`^<li>(\\s*<p>)?\\s*${emoji}\\s*`);
   let matched = false;
   const out = liHtml.replace(re, (_m, p) => {
     matched = true;
-    return `<li class="${cls}">${p ?? ''}${calloutBadgeHtml(kind)}`;
+    return kind === 'slide'
+      ? `<li>${p ?? ''}`
+      : `<li class="supp">${p ?? ''}${calloutBadgeHtml(kind)}`;
   });
   if (!matched) return { html: liHtml, changed: false };
   return { html: out, changed: true };
@@ -223,8 +230,20 @@ function profParagraphParts(renderer, p) {
   const rest = first.text.slice(m[0].length);
   const bodyTokens = [{ ...first, text: rest }, ...p.tokens.slice(1)];
   const parsedBody = renderer.parser.parseInline(bodyTokens);
-  const timestamp = m[1] ? escapeHtml(m[1].slice(1, -1)) : '';
+  // 녹취 시각은 버리고 "W01 강의" 같은 맥락만 남긴다(contextFromBracket).
+  const timestamp = m[1] ? escapeHtml(contextFromBracket(m[1].slice(1, -1))) : '';
   return { parsedBody, timestamp };
+}
+
+/**
+ * 인용문 전체를 감싼 따옴표("…" 또는 “…”)를 벗긴다. 인용 표시는 CSS의 여는
+ * 따옴표 하나가 맡으므로, 원문 따옴표까지 남으면 이중으로 보인다. 앞뒤가 정확히
+ * 짝을 이룰 때만 벗기고(중간에 따옴표가 또 있으면 원문 구조가 애매하므로 그대로).
+ */
+function unwrapQuoteMarks(html) {
+  const m = /^\s*(?:"|&quot;|“)([\s\S]*?)(?:"|&quot;|”)\s*$/.exec(html);
+  if (!m || /"|&quot;|“|”/.test(m[1])) return html;
+  return m[1];
 }
 
 /**
@@ -245,18 +264,18 @@ export function blockquoteRenderer(token) {
 
   if (allProf) {
     counts.t3 += 1;
-    const quotes = parts
-      .map(
-        ({ parsedBody, timestamp }) =>
-          `<p class="quote-text">${parsedBody}</p>` +
-          (timestamp ? `<span class="quote-time">${timestamp}</span>` : '')
-      )
-      .join('');
+    // DESIGN.md v2 §5.5: 카드·아이콘·이탤릭 없이 들여쓴 인용 + 아래 출처 줄 하나.
+    // 정확한 녹취 시각은 renderMarkdown 앞단(stripTimestamps)에서 이미 빠지고,
+    // 대괄호에 남는 것은 "W01 강의" 같은 맥락뿐이다 — 그것만 출처 줄에 붙인다.
+    const contexts = [...new Set(parts.map((p) => p.timestamp).filter(Boolean))];
+    const bodies = parts.map(({ parsedBody }) => unwrapQuoteMarks(parsedBody));
+    // 원문 따옴표를 모두 벗긴 경우에만 CSS의 여는 따옴표를 건다(이중 따옴표 방지).
+    const bare = bodies.every((b, i) => b !== parts[i].parsedBody);
+    const quotes = bodies.map((b) => `<p>${b}</p>`).join('');
+    const cite = ['교수님', ...contexts].join(' · ');
     return (
-      `<blockquote class="quote-prof">` +
-      `<span class="quote-icon" aria-hidden="true">🗣</span>` +
-      quotes +
-      `</blockquote>\n`
+      `<blockquote class="quote-prof${bare ? ' quote-bare' : ''}">${quotes}` +
+      `<footer class="quote-cite">${cite}</footer></blockquote>\n`
     );
   }
   // 기본 blockquote와 동일한 출력(marked 소스 Renderer.prototype.blockquote 참고)
@@ -395,46 +414,161 @@ export function groupNumberedSteps(html) {
 export function sourcePanel(concept) {
   const readings = concept.readings ?? [];
   const lectureRefs = concept.lectureRefs ?? [];
-  if (readings.length === 0 && lectureRefs.length === 0) return '';
+  const tags = concept.tags ?? [];
+  if (readings.length === 0 && lectureRefs.length === 0 && tags.length === 0) return '';
 
   counts.t7 += 1;
 
   const readingItems = readings.map((r) => `<li>${escapeHtml(r)}</li>`).join('');
-  const lectureItems = lectureRefs.map((r) => `<li>${escapeHtml(r)}</li>`).join('');
+  // 수업노트 참조의 녹취 시각([09:45–19:45])은 화면에 내보내지 않는다 — §2-3 같은
+  // 절 번호만으로 수업노트를 찾아가기에 충분하다(DESIGN.md v2 §10, 사용자 요청).
+  const lectureItems = lectureRefs
+    .map((r) => `<li>${escapeHtml(stripTimestampText(r))}</li>`)
+    .join('');
+  // 태그는 검색용 데이터라 개념 헤더의 칩 줄에서 빼서 이 접힌 패널로 옮긴다(§5.1).
+  const tagLinks = tags
+    .map((t) => `<a href="map.html?tag=${encodeURIComponent(t)}">${escapeHtml(t)}</a>`)
+    .join(' · ');
 
   return `
 <details class="sec-fold source-panel" data-sec="${concept.slug}-source">
-  <summary>출처</summary>
+  <summary>출처 · 태그${CHEVRON}</summary>
   <div class="sec-body">
     ${readings.length ? `<h5>리딩</h5><ul class="source-list">${readingItems}</ul>` : ''}
     ${lectureRefs.length ? `<h5>수업노트</h5><ul class="source-list">${lectureItems}</ul>` : ''}
+    ${tags.length ? `<h5>태그</h5><p class="source-tags">${tagLinks}</p>` : ''}
   </div>
 </details>`;
 }
 
 // ==================================================================
-// T8 — 예상 퀴즈 포인트 → 번호 카드 + 비교형/서술형 배지
+// T8 — 예상 퀴즈 포인트 → 번호 목록 + 비교형/서술형 표지
 // ==================================================================
 
 /**
  * concept.quizPoints(render.mjs의 renderConcept이 이미 계산한 {html, text, isComparison})를
- * 받아 번호 카드 목록으로 그린다. isComparison 재계산은 하지 않는다(요청사항).
+ * 받아 번호 목록으로 그린다. isComparison 재계산은 하지 않는다(요청사항).
+ * DESIGN.md v2 §5.10: 상자·카드·번호 원 없이 진짜 <ol>, 유형은 문항 끝 표지.
+ * 문항 앞 ★는 지운다 — 중요도는 개념 헤더 별점에 이미 있다.
  */
 export function quizCards(quizPoints) {
   if (!quizPoints || quizPoints.length === 0) return '';
   counts.t8 += 1;
   const items = quizPoints
-    .map((qp, idx) => {
-      const badgeClass = qp.isComparison ? 'quiz-badge-compare' : 'quiz-badge-desc';
-      const badgeLabel = qp.isComparison ? '비교형' : '서술형';
-      return `<li class="quiz-card">
-    <span class="quiz-no">${idx + 1}</span>
-    <div class="quiz-card-body">
-      <span class="quiz-badge ${badgeClass}">${badgeLabel}</span>
-      <div class="quiz-text">${qp.html}</div>
-    </div>
-  </li>`;
+    .map((qp) => {
+      const label = qp.isComparison ? '비교형' : '서술형';
+      const body = polishHtml(String(qp.html).replace(/^(\s*(?:<p>)?\s*)[★☆]+\s*/, '$1'));
+      return `<li>${body} <span class="tag">${label}</span></li>`;
     })
     .join('\n');
-  return `<ol class="quiz-cards">\n${items}\n</ol>`;
+  return `<ol class="quiz-list">\n${items}\n</ol>`;
+}
+
+// ==================================================================
+// DESIGN.md v2 — 주차 페이지 텍스트 정리 (이모지·녹취 시각·존칭)
+//
+// 원본 md와 퀴즈 페이지·검색 색인에 쓰이는 데이터는 건드리지 않고, 주차 페이지
+// 템플릿(templates/week.mjs)이 화면에 내보내기 직전에만 적용한다.
+// ==================================================================
+
+export const CHEVRON =
+  '<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+
+const TIME_RE = /~?\d{1,2}:(?:\d{2}|xx)(?::\d{2})?/;
+// "[19:45]" "[30:21–34:00]" "[P1 27:45]" "[W01 40:48]" "[45:00 전후]" "[12:xx]" 처럼
+// 녹취 시각이 들어 있는 대괄호 하나.
+const TS_BRACKET_RE = /\s*\[([^\]\n]*?\d{1,2}:(?:\d{2}|xx)[^\]\n]*)\]/g;
+
+/**
+ * 대괄호 안 텍스트에서 시각을 빼고 남길 맥락만 돌려준다.
+ * - 시각이 없으면 그대로가 맥락이다(예: "W05b 논의").
+ * - 앞머리가 주차("W01", "W05b")면 "W01 강의"처럼 어느 강의의 발언인지만 남긴다.
+ * - 녹음 파트("P1")나 아무 앞머리도 없으면 남길 맥락이 없다('').
+ */
+export function contextFromBracket(inner) {
+  const s = String(inner ?? '').trim();
+  if (!s) return '';
+  if (!TIME_RE.test(s)) return s;
+  const prefix = s.slice(0, s.search(/~?\d{1,2}:/)).trim();
+  return /^W\d{2}(?:-\d|[a-z])?$/.test(prefix) ? `${prefix} 강의` : '';
+}
+
+export function stripTimestampText(text) {
+  return String(text)
+    .replace(TS_BRACKET_RE, (_m, inner) => {
+      const ctx = contextFromBracket(inner);
+      return ctx ? ` (${ctx})` : '';
+    })
+    .trim();
+}
+
+/**
+ * 교수 → 교수님. 조사를 존칭형으로 맞춘다(교수가 → 교수님이, 교수에게 → 교수님께).
+ * "교수법·교수진·교수들"처럼 뒤에 다른 글자가 붙은 낱말과 이미 "교수님"인 곳은
+ * 건드리지 않고, 특정 교수가 아닌 일반 명사("대학 교수")도 제외한다.
+ */
+const HONORIFIC_PARTICLE = { 가: '이', 는: '은', 에게: '께' };
+export function honorific(text) {
+  return String(text).replace(
+    /(^|[^가-힣])(?<!대학 )교수(에게|가|는|의|도|만|와|를)?(?![가-힣])/g,
+    (_m, pre, josa) => `${pre}교수님${josa ? HONORIFIC_PARTICLE[josa] ?? josa : ''}`
+  );
+}
+
+const GLYPH_RE = /[🗣📄💡★☆⚠]️?/gu;
+
+/** 사이드바 목차처럼 태그 없이 글자만 보여줄 자리의 라벨. */
+export function cleanLabel(text) {
+  return honorific(stripTimestampText(String(text).replace(GLYPH_RE, '')))
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function polishText(text, inQuote) {
+  let t = String(text)
+    .replace(TS_BRACKET_RE, (_m, inner) => {
+      const ctx = contextFromBracket(inner);
+      return ctx ? ` (${ctx})` : '';
+    })
+    .replace(/🗣️?\s*/gu, '')
+    .replace(/📄️?\s*/gu, '')
+    .replace(/⚠️?\s*/gu, '')
+    .replace(/(\s*)[★☆]+\s*/g, (_m, sp) => `${sp}${EXAM_TAG}`)
+    .replace(/(\s*)💡️?\s*/gu, (_m, sp) => `${sp}${SUPP_TAG}`);
+  if (!inQuote) t = honorific(t);
+  return t;
+}
+
+/**
+ * 소제목(h3/h4): 글리프를 지우고 ★ → "시험 포인트", 💡 → "보충" 표지를 제목 끝에 붙인다.
+ * 🗣는 지우기만 한다 — 본문 기본값이 강의 기반이므로(§2.5).
+ */
+function decorateHeading(inner) {
+  const exam = /[★☆]/.test(inner);
+  const supp = /💡/.test(inner);
+  const text = honorific(stripTimestampText(inner.replace(GLYPH_RE, '')).replace(/\s{2,}/g, ' ').trim());
+  return `${text}${exam ? ` ${EXAM_TAG}` : ''}${supp ? ` ${SUPP_TAG}` : ''}`;
+}
+
+/** 렌더된 섹션 HTML을 주차 페이지용으로 정리한다. 태그·속성 안은 건드리지 않는다. */
+export function polishHtml(html) {
+  const withHeadings = String(html).replace(
+    /<(h[34])(\s[^>]*)?>([\s\S]*?)<\/\1>/g,
+    (_m, tag, attrs = '', inner) => `<${tag}${attrs}>${decorateHeading(inner)}</${tag}>`
+  );
+  let inQuote = false;
+  let codeDepth = 0; // <pre>·<code> 안은 원문 그대로(안전 원칙 — 코드블록은 어떤 변환도 받지 않는다)
+  return withHeadings
+    .split(/(<[^>]+>)/)
+    .map((part) => {
+      if (part.startsWith('<')) {
+        if (/^<blockquote class="quote-prof/.test(part)) inQuote = true;
+        else if (part === '</blockquote>') inQuote = false;
+        else if (/^<(pre|code)[\s>]/.test(part)) codeDepth += 1;
+        else if (/^<\/(pre|code)>/.test(part)) codeDepth = Math.max(0, codeDepth - 1);
+        return part;
+      }
+      return part && codeDepth === 0 ? polishText(part, inQuote) : part;
+    })
+    .join('');
 }

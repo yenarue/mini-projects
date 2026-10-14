@@ -1,0 +1,290 @@
+/* ============================================================
+   주차별 개념 페이지 — 본문 디자인 v2 (읽기 중심)
+   설계: Google Drive 개념정리/web/DESIGN.md (시안 A "문서형" 확정, 2026-10-15)
+
+   공용 styles.css 뒤에 주차 페이지(templates/week.mjs)에서만 불러온다.
+   적용 범위는 본문(main)과 집중 모드뿐이다 — 상단 메뉴·주차 탭·좌측 메뉴는
+   사용자 결정(2026-10-15)으로 v1 디자인을 그대로 쓴다. 그래서 토큰을 body가
+   아니라 main·집중 모드 오버레이에만 걸어, 공용 셸 규칙이 v1 값을 읽게 둔다.
+
+   원칙(DESIGN.md §2): 개념당 면 있는 상자는 한 줄 정의 하나 · 상자 중첩 0 ·
+   바탕 1 + 잉크 3단 + 강조색(청람) 1 · 굵게는 색 없이 600 · 이모지 0 ·
+   1px 넘는 색 띠 테두리 0 · 한글 이탤릭 0.
+   ============================================================ */
+
+/* ---------- 토큰 (본문 전용) ----------
+   새 이름(--bg-side 등)과 함께, 본문 안의 공용 규칙이 읽는 기존 이름도 같은
+   값으로 덮는다. 의미색(--term·--prof·--slide·--note)은 강조색 또는 잉크로 접는다. */
+.page-week main,
+.page-week .focus-overlay {
+  --bg:          #FAFAFB;
+  --bg-side:     #F3F4F6;
+  --bg-raised:   #FFFFFF;
+  --ink:         #1A1C20;
+  --ink-2:       #454A54;
+  --muted:       #676C76;
+  --line:        #E4E6EA;
+  --accent:      #2F4F8F;
+  --accent-soft: #EEF2F9;
+  --shadow-float: 0 8px 28px rgba(26, 28, 32, .12);
+  --measure:     42rem;
+
+  --surface: var(--bg-raised); --surface-2: var(--bg-side);
+  --ink-soft: var(--ink-2); --line-soft: var(--line);
+  --brand: var(--accent); --brand-dark: var(--accent); --brand-soft: var(--accent-soft);
+  --term: var(--accent); --term-soft: var(--accent-soft);
+  --prof: var(--muted); --prof-soft: var(--bg-side);
+  --slide: var(--muted); --slide-soft: var(--bg-side);
+  --note: var(--accent); --note-soft: var(--accent-soft);
+  --shadow: none; --shadow-lg: var(--shadow-float);
+  --radius: 8px; --radius-sm: 6px; --radius-pill: 6px;
+}
+:root[data-theme="dark"] .page-week main,
+:root[data-theme="dark"] .page-week .focus-overlay {
+  --bg:#131518; --bg-side:#181B20; --bg-raised:#1E2127;
+  --ink:#E6E8EC; --ink-2:#B4B9C2; --muted:#8D939D;
+  --line:#2A2E35;
+  --accent:#9DB4E8; --accent-soft:#1B2333;
+  --shadow-float: 0 8px 28px rgba(0, 0, 0, .45);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) .page-week main,
+  :root:not([data-theme="light"]):not([data-theme="dark"]) .page-week .focus-overlay {
+    --bg:#131518; --bg-side:#181B20; --bg-raised:#1E2127;
+    --ink:#E6E8EC; --ink-2:#B4B9C2; --muted:#8D939D;
+    --line:#2A2E35;
+    --accent:#9DB4E8; --accent-soft:#1B2333;
+    --shadow-float: 0 8px 28px rgba(0, 0, 0, .45);
+  }
+}
+
+/* ---------- 본문 글자 ---------- */
+:root[data-fontsize] .page-week main { font-size: 17px; }
+:root[data-fontsize="sm"] .page-week main { font-size: 15.5px; }
+:root[data-fontsize="lg"] .page-week main { font-size: 19px; }
+.page-week main {
+  color: var(--ink); line-height: 1.75; word-break: keep-all; overflow-wrap: break-word;
+}
+.page-week main ::selection { background: var(--accent-soft); color: var(--ink); }
+.page-week main a { color: var(--accent); text-underline-offset: .2em; }
+.page-week main a:hover { color: var(--accent); text-decoration: underline; }
+.page-week main :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.page-week .ico {
+  width: 18px; height: 18px; flex: none; vertical-align: -4px;
+  fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ---------- 좌측 메뉴: 디자인은 v1 그대로, 표시 분량만 조정 ----------
+   하위 목차는 h3 소제목만 한 줄씩(넘치면 말줄임) + 끝에 "예상 퀴즈 포인트" 바로가기. */
+.page-week .side-sub a {
+  display: block; -webkit-line-clamp: unset; white-space: nowrap; text-overflow: ellipsis;
+}
+.page-week .side-sub a.side-sub-quiz { margin-top: 4px; font-weight: 600; color: var(--brand); }
+
+/* ---------- 본문 칼럼 ---------- */
+.page-week main { padding: 48px 40px 40px; }
+.page-week .week-intro,
+.page-week .concept,
+.page-week .site-footer { max-width: var(--measure); margin-left: auto; margin-right: auto; }
+.page-week .week-intro { margin-bottom: 0; padding: 0; border: 0; }
+.page-week .week-title { font-size: 30px; line-height: 1.3; letter-spacing: -.02em; margin: 0 0 6px; text-wrap: balance; }
+.page-week .week-meta { font-size: 15px; color: var(--muted); margin: 0; }
+.page-week .legend { display: block; font-size: 15px; color: var(--muted); margin: 8px 0 0; }
+
+/* 표지 — 이 페이지의 유일한 작은 라벨(보충 · 시험 포인트 · 서술형/비교형) */
+.page-week .tag {
+  display: inline-block; font-size: 13px; line-height: 1.5; font-weight: 600; letter-spacing: 0;
+  color: var(--muted); border: 1px solid var(--line); border-radius: 4px;
+  padding: 0 6px; margin: 0 2px 0 6px; vertical-align: 2px; white-space: nowrap;
+  font-style: normal; text-transform: none;
+}
+.page-week .tag-exam { color: var(--accent); border-color: currentColor; }
+.page-week .legend .tag { margin: 0 2px; }
+
+/* ---------- 개념 ---------- */
+.page-week .concept {
+  margin-top: 112px; margin-bottom: 0; padding: 0;
+  background: none; border: 0; border-radius: 0; box-shadow: none;
+}
+.page-week .week-intro + .concept { margin-top: 72px; }
+.page-week .concept-title {
+  font-size: 24px; line-height: 1.35; letter-spacing: -.02em; font-weight: 700; margin: 0; text-wrap: balance;
+}
+.page-week .concept-en { margin: 4px 0 0; font-size: 16px; font-weight: 400; color: var(--ink-2); }
+.page-week .concept-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px;
+  margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--muted);
+}
+.page-week .stars { font-size: 14px; letter-spacing: 1px; }
+.page-week .stars::before { content: '중요도 '; letter-spacing: 0; color: var(--muted); }
+.page-week .stars-on { color: var(--accent); }
+.page-week .stars-off { color: var(--line); }
+/* 핵심 배지는 v2의 단일 강조색 원칙에서 예외 — 사용자 요청(2026-10-15)으로 v1의
+   빨간 강조(--term 원래 값)를 그대로 쓴다. 본문 토큰이 --term을 청람으로 접어
+   두었으므로 원래 값을 직접 적는다(좌측 메뉴의 "핵심" 표시와 같은 색). */
+.page-week .badge-core {
+  font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 999px;
+  color: #c2255c; background: #fdeaf1; border: 1px solid transparent;
+}
+.page-week a.badge-core:hover { color: #c2255c; text-decoration: none; border-color: #c2255c; }
+:root[data-theme="dark"] .page-week .badge-core { color: #f087ad; background: #3a1f2b; }
+:root[data-theme="dark"] .page-week a.badge-core:hover { color: #f087ad; border-color: #f087ad; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) .page-week .badge-core { color: #f087ad; background: #3a1f2b; }
+}
+.page-week .focus-btn {
+  margin-left: auto; width: auto; height: auto; gap: 5px; padding: 0;
+  font-size: 14px; color: var(--muted); background: none; border: 0; border-radius: 0; font-family: inherit;
+}
+.page-week .focus-btn:hover { color: var(--ink); }
+
+/* 섹션 라벨: "핵심 내용"은 작은 구획 표시, 나머지는 소제목 크기 */
+.page-week .sec { margin: 0; }
+.page-week .sec h4 {
+  font-size: 18px; line-height: 1.5; font-weight: 600; letter-spacing: 0; text-transform: none;
+  color: var(--ink); margin: 40px 0 12px;
+}
+.page-week .sec-core > h4 { font-size: 15px; color: var(--muted); margin-top: 48px; }
+
+/* 한 줄 정의 — 개념당 유일한 면 */
+.page-week .sec-definition {
+  margin-top: 24px; padding: 20px 24px; border: 0; border-radius: var(--radius);
+  background: var(--accent-soft); font-size: 1.06em; line-height: 1.7; font-weight: 500;
+}
+.page-week .sec-definition > h4 { font-size: 14px; color: var(--accent); margin: 0 0 4px; }
+.page-week .sec-analogy { padding: 0; background: none; border-radius: 0; }
+.page-week .sec-definition p:last-child { margin-bottom: 0; }
+
+/* 본문 */
+.page-week .concept h3 {
+  font-size: 18px; line-height: 1.5; font-weight: 600; margin: 40px 0 12px; text-wrap: balance;
+  /* html의 scroll-padding-top(헤더 높이 + 14px)만으로 착지시킨다. 여기에 margin까지
+     더하면 두 값이 겹쳐 목차 클릭 후 제목이 238px 아래에 멈추고, 사이드바 강조
+     기준선(main.js SUB_LINE 120px)을 못 넘어 강조가 한 칸 앞에 남는다. */
+  scroll-margin-top: 0;
+}
+.page-week .concept p { margin: 0 0 1em; text-wrap: pretty; }
+.page-week .concept ul,
+.page-week .concept ol { margin: 0 0 1em; padding-left: 1.25em; }
+.page-week .concept li { margin: .25em 0; }
+.page-week .concept li::marker { color: var(--muted); }
+.page-week .concept strong { color: inherit; font-weight: 600; }
+.page-week .concept em { font-style: normal; font-weight: 500; }
+.page-week .concept code { background: var(--bg-side); }
+
+.page-week .concept p.supp,
+.page-week .concept li.supp { color: var(--ink-2); }
+.page-week .concept p.supp > .tag:first-child,
+.page-week .concept li.supp > .tag:first-child,
+.page-week .concept li.supp > p:first-child > .tag:first-child { margin-left: 0; margin-right: 8px; }
+
+/* 교수님 발언 — 상자 없이 들여쓰기 + 여는 따옴표 하나 + 아래 출처 줄 */
+.page-week .concept blockquote {
+  margin: 20px 0 24px; padding: 0 0 0 24px; border: 0; border-radius: 0; background: none;
+  color: var(--ink-2); font-size: 1em; position: relative;
+}
+.page-week .concept blockquote p { margin: 0 0 .5em; font-style: normal; }
+.page-week .concept blockquote p:last-of-type { margin-bottom: 0; }
+.page-week .concept blockquote.quote-prof { border: 0; background: none; padding: 0 0 0 24px; color: var(--ink-2); }
+.page-week .concept blockquote.quote-bare::before {
+  content: '\201C'; position: absolute; left: 0; top: -6px;
+  font-size: 32px; line-height: 1; font-weight: 700; color: var(--accent);
+}
+.page-week .concept blockquote:not(.quote-prof) { border-left: 1px solid var(--line); padding-left: 20px; }
+.page-week .quote-cite { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
+
+/* 다이어그램 범주색 — 강조색 하나 원칙의 예외(시안 "1. 그림에만 색", 2026-10-15 사용자 선택).
+   SVG 10개는 --brand/--term/--note를 범주 칸 1·2·3으로 쓴다. 본문 토큰이 이 셋을
+   청람 하나로 접어 두었으므로, 그림 안에서만 서로 다른 세 색으로 되돌린다.
+   청람 · 주홍 · 청록 — dataviz validate_palette.js 전 쌍 검사 통과(라이트·다크 각각). */
+.page-week figure.concept-diagram {
+  --brand: #2F4F8F; --term: #C0502A; --note: #138A62;
+  --brand-soft: color-mix(in srgb, var(--brand) 12%, var(--bg));
+  --term-soft:  color-mix(in srgb, var(--term) 12%, var(--bg));
+  --note-soft:  color-mix(in srgb, var(--note) 12%, var(--bg));
+}
+:root[data-theme="dark"] .page-week figure.concept-diagram { --brand: #5B82D6; --term: #D9663A; --note: #24A27A; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) .page-week figure.concept-diagram {
+    --brand: #5B82D6; --term: #D9663A; --note: #24A27A;
+  }
+}
+
+/* 슬라이드 · 다이어그램 */
+.page-week figure.slide { margin: 16px 0 28px; text-align: left; }
+.page-week figure.slide img { border-radius: var(--radius-sm); }
+.page-week figure.slide img:hover { box-shadow: none; }
+.page-week figure.slide figcaption { font-size: 14px; color: var(--muted); }
+.page-week figure.concept-diagram { padding: 16px 0 0; background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+.page-week figure.concept-diagram figcaption.diagram-caption { font-size: 14px; color: var(--muted); margin-left: 0; }
+.page-week figure.concept-diagram .tag { margin-left: 0; margin-right: 6px; }
+
+/* 표 — 가로선만 */
+.page-week .table-scroll { border-radius: 0; margin: 8px 0 20px; }
+.page-week .concept table { border: 0; border-radius: 0; font-size: .94em; line-height: 1.6; margin: 8px 0 20px; }
+.page-week .concept th,
+.page-week .concept td { border: 0; border-bottom: 1px solid var(--line); padding: 10px 12px 10px 0; background: none; }
+.page-week .concept thead th { font-size: 14px; color: var(--muted); border-bottom-color: var(--ink-2); }
+.page-week .concept tbody tr:nth-child(even) > * { background: none; }
+.page-week .concept table.deflist th.deflist-term { color: var(--ink); background: none; }
+.page-week .concept table.deflist td.deflist-desc { color: var(--ink); }
+
+/* 접힘 섹션 — 행 사이 1px 선, 상자 없음 */
+.page-week .sec-fold { margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.page-week .sec-fold:first-of-type { margin-top: 40px; }
+.page-week details.sec-fold + :not(details) { margin-top: 0; }
+.page-week .sec-fold > summary {
+  padding: 14px 0; font-size: 1em; font-weight: 600; letter-spacing: 0; color: var(--ink); gap: 8px;
+}
+.page-week .sec-fold > summary::before { content: none; }
+.page-week .sec-fold > summary:hover { color: var(--ink); }
+.page-week .sec-fold > summary .ico-chev { margin-left: auto; color: var(--muted); transition: transform .18s ease-out; }
+.page-week .sec-fold[open] > summary .ico-chev { transform: rotate(180deg); }
+.page-week .sec-body { padding: 0 0 12px; margin: 0; border: 0; }
+.page-week .source-panel { border-bottom: 1px solid var(--line); }
+.page-week .source-panel h5 { font-size: 14px; letter-spacing: 0; text-transform: none; color: var(--muted); }
+.page-week .source-list { font-size: 15px; color: var(--ink-2); }
+.page-week .source-tags { font-size: 15px; margin: 0; }
+
+/* 예상 퀴즈 포인트 */
+.page-week .sec-quiz { padding: 0; background: none; border: 0; border-radius: 0; scroll-margin-top: 0; }
+.page-week .sec-quiz > h4 { color: var(--ink); margin-top: 48px; }
+.page-week .quiz-list { margin: 0; padding-left: 1.4em; }
+.page-week .quiz-list > li { margin: 0 0 .7em; padding-left: .2em; }
+.page-week .quiz-list > li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
+.page-week .quiz-list p { display: inline; margin: 0; }
+.page-week .sec-quiz-link { margin: 8px 0 0; font-size: 15px; }
+.page-week .sec-mynotes { padding: 0; background: none; border: 0; }
+
+.page-week .concept-related { margin-top: 28px; font-size: 15px; color: var(--muted); }
+.page-week .related-pending { font-style: normal; }
+.page-week .concept-top { margin-top: 12px; font-size: 14px; }
+.page-week .concept-top a { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); }
+
+/* ---------- 집중 모드 ---------- */
+.page-week .focus-topbar,
+.page-week .focus-bar { background: var(--bg); backdrop-filter: none; }
+.page-week .focus-body .concept { max-width: 44rem; margin-top: 0; font-size: 18px; }
+.page-week .focus-body .concept-title { font-size: 28px; }
+.page-week .focus-body .concept blockquote,
+.page-week .focus-body .source-list { font-size: 1em; }
+.page-week .focus-close,
+.page-week .focus-nav { border-radius: var(--radius-sm); background: none; }
+.page-week .focus-dot.active { border-radius: 4px; }
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 1024px) {
+  .page-week main { padding: 32px 20px 32px; }
+}
+@media (max-width: 768px) {
+  :root[data-fontsize] .page-week main { font-size: 16.5px; }
+  .page-week .week-title { font-size: 26px; }
+  .page-week .concept { margin-top: 88px; padding: 0; border-radius: 0; }
+  .page-week .concept-title { font-size: 22px; }
+  .page-week .sec-definition { padding: 16px 18px; }
+  .page-week .focus-btn { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-week * { transition: none !important; }
+}

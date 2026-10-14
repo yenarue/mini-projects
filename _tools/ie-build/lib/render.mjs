@@ -8,7 +8,6 @@ import {
   paragraphRenderer,
   blockquoteRenderer,
   tableRenderer,
-  groupNumberedSteps,
 } from './transform.mjs';
 
 /** conceptHref()가 만드는 형식("W01.html#c05")에서 week/no를 뽑아 existingKeys에 있는지 본다. */
@@ -240,10 +239,8 @@ export function renderMarkdown(md, ctx) {
   if (!ctx.headingIds) ctx.headingIds = new Map();
   const seenIds = ctx.headingIds;
 
-  // 사이드바의 소제목 목차가 쓸 목록을 이 자리에서 같이 모은다. 렌더가 끝난 HTML을
-  // 나중에 다시 훑지 않는 이유는 바로 아래 groupNumberedSteps가 h3를 카드 wrapper로
-  // 옮기면서 `<h3 id=...>` 모양을 없애기 때문이다(id 자체는 wrapper로 옮겨가 살아 있다).
-  // 제목 텍스트와 앵커가 동시에 확실한 지점은 여기뿐이다.
+  // 사이드바의 소제목 목차가 쓸 목록을 이 자리에서 같이 모은다 — 제목 텍스트와
+  // 앵커가 동시에 확실한 지점이 여기다.
   if (!ctx.headings) ctx.headings = [];
 
   html = html.replace(/<h([34])>([\s\S]*?)<\/h\1>/g, (_m, lvl, inner) => {
@@ -255,9 +252,8 @@ export function renderMarkdown(md, ctx) {
     return `<h${lvl} id="${id}">${inner}</h${lvl}>`;
   });
 
-  // T2(번호 단계 카드) — h3/h4 id가 이미 붙은 뒤에 돌려야 카드 wrapper에
-  // 그 id를 그대로 옮겨서 기존 해시 링크(#c05-h-...)가 계속 동작한다.
-  html = groupNumberedSteps(html);
+  // T2(번호 단계 카드)는 DESIGN.md v2 §5.4에서 폐기했다 — "1) …" 소제목은 상자·번호 원
+  // 없이 h3 그대로 둔다. groupNumberedSteps는 transform.mjs에 남아 있지만 호출하지 않는다.
 
   if (!ctx.images) ctx.images = [];
   ctx.images.push(...images);
@@ -287,6 +283,7 @@ const DIAGRAM_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..'
 // 작업 지시("Attribution, and this is not optional"): 다이어그램은 교수의 강의
 // 슬라이드가 아니라 이 사이트 제작자가 이해를 돕기 위해 그린 보충 자료이므로,
 // 다른 💡 보충 콘텐츠와 같은 표시 규칙(💡 접두사)을 캡션에 붙인다.
+// DESIGN.md v2 §2.4: 💡 글자 대신 "보충" 표지(주차 페이지의 polishHtml이 💡를 표지로 바꾼다).
 const DIAGRAM_CAPTION =
   '💡 이 그림은 강의 슬라이드가 아니라, 이해를 돕기 위해 직접 정리한 보충 다이어그램입니다.';
 

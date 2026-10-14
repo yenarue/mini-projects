@@ -72,7 +72,7 @@ test('개념 섹션에 슬러그 기반 앵커 id가 붙는다', () => {
   assert.match(html, /<section class="concept" id="c05">/);
 });
 
-test('정의·비유·핵심·퀴즈는 펼쳐진 div로, 나머지 4개는 접힌 details로 렌더된다', () => {
+test('정의·비유·핵심·퀴즈는 펼쳐진 div로, 나머지 4개는 접힌 details로 렌더된다(+ 맨 끝 출처·태그)', () => {
   const html = renderFixture();
   assert.match(html, /<div class="sec sec-definition" id="c05-definition">/);
   assert.match(html, /<div class="sec sec-analogy" id="c05-analogy">/);
@@ -81,10 +81,45 @@ test('정의·비유·핵심·퀴즈는 펼쳐진 div로, 나머지 4개는 접�
 
   const foldCount = (html.match(/<details class="sec sec-fold"/g) || []).length;
   assert.equal(foldCount, 4, '수업 논점·보충 사례·프레임에서의 위치·관련 개념 4개가 접혀야 한다');
-  assert.match(html, /<summary>수업에서 나온 논점<\/summary>/);
-  assert.match(html, /<summary>보충 사례<\/summary>/);
-  assert.match(html, /<summary>수업 프레임에서의 위치<\/summary>/);
-  assert.match(html, /<summary>관련 개념 · 논문<\/summary>/);
+  assert.match(html, /<summary>수업에서 나온 논점<svg/);
+  assert.match(html, /<summary>보충 사례<svg/);
+  assert.match(html, /<summary>수업 프레임에서의 위치<svg/);
+  assert.match(html, /<summary>관련 개념 · 논문<svg/);
+  // 출처·태그 패널은 헤더 밑이 아니라 접힘 섹션들 맨 끝에 온다
+  assert.ok(html.indexOf('source-panel') > html.indexOf('<summary>관련 개념 · 논문'));
+  assert.ok(html.indexOf('source-panel') < html.indexOf('id="c05-quiz"'));
+});
+
+test('개념 헤더: eyebrow·칩 없이 메타 한 줄(주차·번호·슬라이드)', () => {
+  const html = renderFixture();
+  assert.match(html, /<h2 class="concept-title">세 가지 고착<\/h2>/);
+  assert.match(html, /<span>W01 · 개념 05<\/span>/);
+  assert.match(html, /<span>슬라이드 W01 p10<\/span>/);
+  assert.doesNotMatch(html, /concept-eyebrow|class="chip/);
+});
+
+test('섹션 원제목에 💡가 있으면 라벨 끝에 "보충" 표지를 단다', () => {
+  const concept = makeConcept({
+    sections: makeConcept().sections.map((s) => (
+      s.key === 'analogy' ? { ...s, heading: '쉽게 말하면 (비유) 💡' } : s
+    )),
+  });
+  const html = renderFixture({ concepts: [concept] });
+  assert.match(html, /<h4>쉽게 말하면 <span class="tag tag-supp">보충<\/span><\/h4>/);
+});
+
+test('주차 페이지 본문에는 이모지가 남지 않는다', () => {
+  const concept = makeConcept({
+    sections: makeConcept().sections.map((s) => (
+      s.key === 'core' ? { ...s, md: '### 1) 🗣 단서 ★\n\n- 🗣 [12:30] 교수가 말했다 💡\n\n> 🗣 [W02 07:06] "인용"' } : s
+    )),
+  });
+  const html = renderFixture({ concepts: [concept] });
+  const main = html.slice(html.indexOf('<main>'));
+  assert.doesNotMatch(main, /[🗣📄💡]/u);
+  assert.doesNotMatch(main, /12:30|07:06/);
+  assert.match(main, /교수님이 말했다/);
+  assert.match(main, /교수님 · W02 강의/);
 });
 
 test('나의 이해가 비어있으면 mynotes 섹션이 렌더되지 않는다', () => {
@@ -150,22 +185,23 @@ test('topbar에 "주차별 개념" 링크가 있고 주차 페이지에서는 ac
   assert.match(html, /<a href="W01\.html" class="active">주차별 개념<\/a>/);
 });
 
-test('집중 모드 버튼은 마크업에 있지만 아직 아무 동작도 하지 않는다(R3 예약)', () => {
+test('집중 모드 버튼은 이모지 대신 선 아이콘 + 글자', () => {
   const html = renderFixture();
   assert.match(html, /<button type="button" class="focus-btn" data-focus-target="c05"/);
-  assert.match(html, />⤢<\/button>/);
+  assert.match(html, /<svg class="ico"[^>]*>[\s\S]*?<\/svg><span>집중해서 읽기<\/span><\/button>/);
+  assert.doesNotMatch(html, /⤢/);
 });
 
-test('사이드바에 개념 번호와 제목, 진행률이 렌더된다', () => {
+test('사이드바에 개념 번호와 제목, 주차 라벨에 개념 수가 렌더된다', () => {
   const html = renderFixture();
   assert.match(html, /<span class="side-no">05<\/span>/);
   assert.match(html, /<span class="side-title">세 가지 고착<\/span>/);
-  assert.match(html, /<div class="side-progress">개념 1개<\/div>/);
+  assert.match(html, /<div class="chapter-label">W01 · 09\/05 · 개념 1개<\/div>/);
 });
 
 /* ---------- 사이드바 하위 목차 · 중요도 · 핵심 배지 ---------- */
 
-test('사이드바에 개념 내부 목차가 붙고, 본문 셋은 한 항목으로 묶인다', () => {
+test('사이드바 하위 목차: h3 소제목만 싣고 끝에 "예상 퀴즈 포인트" 바로가기', () => {
   const concept = makeConcept({
     sections: makeConcept().sections.map((s) => (
       s.key === 'core'
@@ -176,13 +212,12 @@ test('사이드바에 개념 내부 목차가 붙고, 본문 셋은 한 항목�
   const html = renderFixture({ concepts: [concept] });
 
   assert.match(html, /<ul class="side-sub">/);
-  assert.match(html, /href="#c05-definition" class="side-sub-sec"[^>]*>정의 · 비유 · 핵심 내용</);
   assert.match(html, /href="#c05-h-1-첫-소제목" class="side-sub-h"[^>]*>1\) 첫 소제목</);
   assert.match(html, /href="#c05-h-2-둘째-소제목"/);
-  // 접힌 섹션도 목차 항목이 된다(클릭하면 revealHash가 펼친다)
-  assert.match(html, /href="#c05-discussion" class="side-sub-sec"/);
-  // 묶인 셋은 각각의 항목으로 중복해 나오지 않는다
-  assert.doesNotMatch(html, /href="#c05-analogy" class="side-sub-sec"/);
+  // 사용자 요청: 예상 퀴즈 포인트로 바로 가는 항목(문항 수 포함)이 목차 맨 끝에 있다
+  assert.match(html, /href="#c05-quiz" class="side-sub-quiz"[^>]*>예상 퀴즈 포인트 2</);
+  // 모든 개념에 똑같은 고정 섹션 이름은 목차에 넣지 않는다(DESIGN.md v2 §6)
+  assert.doesNotMatch(html, /class="side-sub-sec"/);
 });
 
 test('내용이 없는 나의 이해는 목차에도 본문에도 나오지 않는다', () => {
