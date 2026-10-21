@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {compareValue,robotDecision,feedbackOutcome,knowledgeJudgment} from '../src/rules.mjs';
+test('missing comparison cannot silently match',()=>{assert.equal(compareValue(undefined,undefined),'판단 불가');assert.equal(compareValue('a','a'),'일치');assert.equal(compareValue('a','b'),'불일치')});
+test('partial hold preserves permitted task',()=>{const d=robotDecision('R01',false);assert.deepEqual(d.hold,['서류 수거']);assert.deepEqual(d.keep,['장난감 정리'])});
+test('inference alone does not stop cleaning',()=>{for(const event of [false,true]){const d=robotDecision('R02',event);assert.deepEqual(d.hold,[]);assert.deepEqual(d.keep,['청소 지속']);assert.equal(d.ask,event)}});
+test('feedback requires both response and explicit persistence',()=>{assert.equal(feedbackOutcome('무응답',true).learn,false);assert.equal(feedbackOutcome('거부',false).learn,false);assert.equal(feedbackOutcome('거부',true).learn,true);assert.equal(feedbackOutcome('허용',true).explicitProhibitionsPreserved,true)});
+test('active knowledge can differ by user environment',()=>{const a=knowledgeJudgment('k001','verified','sdk2'),b=knowledgeJudgment('k001','verified','sdk3');assert.equal(a.management,'활성');assert.equal(b.management,'활성');assert.equal(a.judgment,'사용 가능');assert.equal(b.judgment,'사용 불가');assert.match(b.action,/K-002/)});
+test('missing context requires confirmation',()=>{assert.equal(knowledgeJudgment('k001','verified','unknown').judgment,'확인 필요');assert.equal(knowledgeJudgment('k001','verified','sdk2','behavior',false,'').judgment,'확인 필요')});
+test('meaningful changes follow essential dependencies only',()=>{assert.equal(knowledgeJudgment('k001','changed','sdk2').management,'재검증 필요');assert.equal(knowledgeJudgment('recovery','changed','sdk2').management,'재검증 필요');assert.equal(knowledgeJudgment('logs','changed','sdk3').management,'활성');assert.equal(knowledgeJudgment('logs','changed','sdk3').judgment,'사용 가능');assert.equal(knowledgeJudgment('k001','changed','sdk2','cosmetic').management,'활성')});
+test('review is not invalidation and scoped evidence matters',()=>{assert.equal(knowledgeJudgment('k001','changed','sdk2').judgment,'확인 필요');assert.equal(knowledgeJudgment('k001','changed','sdk2','behavior',true).judgment,'사용 가능');assert.equal(knowledgeJudgment('k001','changed','sdk3','behavior',true).judgment,'확인 필요')});

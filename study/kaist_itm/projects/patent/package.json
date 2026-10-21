@@ -1,0 +1,27 @@
+{
+  "name": "patent-workshop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --open /app.html",
+    "build": "tsc --noEmit && vite build && node scripts/inline.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "fflate": "^0.8.2",
+    "marked": "^17.0.0",
+    "dompurify": "^3.3.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@playwright/test": "^1.56.0"
+  }
+}
