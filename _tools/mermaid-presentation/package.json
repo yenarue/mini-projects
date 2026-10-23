@@ -1,0 +1,22 @@
+{
+  "name": "kaist-mermaid-presentation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "prepare:vendor": "node scripts/vendor.mjs",
+    "predev": "npm run prepare:vendor",
+    "prebuild": "npm run prepare:vendor",
+    "build:site": "npm run build && node scripts/sync-site.mjs"
+  },
+  "dependencies": {
+    "mermaid": "11.12.0",
+    "qrcode": "1.5.4"
+  },
+  "devDependencies": {
+    "vite": "6.4.1"
+  }
+}
