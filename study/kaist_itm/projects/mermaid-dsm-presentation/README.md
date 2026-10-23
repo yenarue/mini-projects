@@ -101,3 +101,8 @@ Safari·Firefox·Edge 및 실제 교실 프로젝터는 별도 확인이 필요�
 라이브 데모와 실제 과제 사이에 Flowchart, Sequence, Class, State, ER, Gantt, Mindmap, Timeline, Pie, User Journey 10종을 카드로 배치했다. 카드는 로컬 Mermaid SVG 미리보기와 한 줄 활용 설명을 제공하며, 클릭하면 큰 SVG와 접힌 Mermaid 코드 보기를 연다. 갤러리 상단의 공식 가이드 버튼은 [Mermaid 소개](https://mermaid.js.org/intro/)로 연결하고, 마지막 QR 영역에 [Mermaid 공식 사이트](https://mermaid.js.org/) 링크를 둔다. [Mermaid Live Editor](https://mermaid.live/) 링크는 갤러리와 마지막 영역에서 제공한다. 미리보기와 상호작용은 오프라인에서도 동작한다.
 
 발표 시간은 라이브 데모 2:00–4:15, 갤러리 4:15–5:15, 실제 과제 5:15–6:20, 정리 6:20–7:00으로 조정했다.
+
+
+## v2 후보안
+
+기존 발표안은 `index.html`로 보존했다. AI + Mermaid 효과를 05로 승격하고 실제 과제·정리를 06·07로 조정한 검토용 후보안은 [`index_v2.0.html`](./index_v2.0.html)이다.
