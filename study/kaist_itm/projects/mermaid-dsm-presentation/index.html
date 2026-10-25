@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>그림을 그리지 않고, 그림을 만드는 방법 · KAIST ITM</title><link rel="icon" href="data:,">  <script type="module" crossorigin src="./mermaid-assets/main-B4JMB6nw.js"></script>
-  <link rel="stylesheet" crossorigin href="./mermaid-assets/main-Cm7s1z9m.css">
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>그림을 그리지 않고, 그림을 만드는 방법 · KAIST ITM</title><link rel="icon" href="data:,">  <script type="module" crossorigin src="./mermaid-assets/index-CqavpcF1.js"></script>
+  <link rel="stylesheet" crossorigin href="./mermaid-assets/index-Cm7s1z9m.css">
 </head>
 <body>
 <header class="topbar">
   <a class="brand topbar-brand" href="../../index.html" aria-label="예나르의 KAIST ITM"><span class="brand-dot" aria-hidden="true"></span><span class="brand-full">예나르의 KAIST ITM</span><span class="brand-short" aria-hidden="true">KAIST ITM</span></a>
   <nav class="section-nav topbar-nav" aria-label="페이지 섹션">
-    <a href="../../index.html#projects">← 프로젝트</a><a href="#intro">소개</a><a href="#results">결과</a><a href="#concept">개념</a><a href="#demo">라이브 데모</a><a href="#interop">강점</a><a href="#gallery">다이어그램 종류</a><a href="#case">실제 과제</a><a href="#takeaways">정리</a>
+    <a href="../../index.html#projects">← 프로젝트</a><a href="#intro">소개</a><a href="#results">결과</a><a href="#concept">개념</a><a href="#demo">라이브 데모</a><a href="#interop">강점</a><a href="#gallery">다이어그램 종류</a><a href="#ai-method">AI + Mermaid</a><a href="#case">실제 과제</a><a href="#takeaways">정리</a>
   </nav>
-  <div class="top-actions topbar-right"><a class="version-link" href="./index_v2.0.html">v2.0 ↗</a><button type="button" id="fullscreen" class="icon-btn" aria-label="전체 화면" title="전체 화면">↗</button></div>
+  <div class="top-actions topbar-right"><button type="button" id="fullscreen" class="icon-btn" aria-label="전체 화면" title="전체 화면">↗</button></div>
 </header>
 <main>
 <section id="intro" class="hero" aria-labelledby="presentation-title">
@@ -54,13 +54,19 @@
 <p class="gallery-note">카드를 선택하면 큰 미리보기와 Mermaid 코드를 확인할 수 있습니다. 모든 미리보기는 로컬 Mermaid 번들로 렌더링됩니다.</p>
 </section>
 
+<section class="presentation-section ai-method-section" id="ai-method" aria-labelledby="title-ai-method">
+<div class="heading compact"><p class="kicker">05 / AI + Mermaid의 효과 <span>5:10–5:45</span></p><h2 class="section-title" id="title-ai-method">AI가 초안을 만들고,<br><em>Mermaid가 구조를 짧게 전달합니다.</em></h2><p class="lede">그림 전체를 다시 생성하는 대신, 관계를 담은 코드만 고치면 됩니다.</p></div>
+<div class="ai-flow" aria-label="AI와 Mermaid를 함께 사용하는 과정"><div><span>01</span><strong>자연어 요구사항</strong><p>“A 다음에 B와 C가 병렬”</p></div><b aria-hidden="true">→</b><div><span>02</span><strong>AI가 Mermaid 작성</strong><p>노드와 관계를 코드로 변환</p></div><b aria-hidden="true">→</b><div><span>03</span><strong>Mermaid 시각화</strong><p>짧은 코드가 그림이 됨</p></div><b aria-hidden="true">→</b><div><span>04</span><strong>사람의 검증</strong><p>관계가 맞는지 확인</p></div></div>
+<div class="ai-benefits"><div class="card"><span class="chip">표현 비용</span><strong>짧게 전달</strong><p>이미지나 SVG 대신 노드와 관계를 담은 텍스트만 주고받습니다.</p></div><div class="card"><span class="chip">수정 비용</span><strong>빠르게 수정</strong><p>전체 그림을 다시 만들지 않고 관계 한 줄을 바꿉니다.</p></div><div class="card"><span class="chip">협업 방식</span><strong>AI와 사람이 나눠서 검증</strong><p>AI는 초안과 문법을 돕고, 사람은 의미와 관계를 확인합니다.</p></div></div>
+</section>
+
 <section class="presentation-section" id="case" aria-labelledby="title4">
-<div class="heading compact"><p class="kicker">05 / 실제 과제에서 내 업무로 <span>5:10–6:20</span></p><h2 class="section-title" id="title4">같은 관계, <em>다른 표현 수준.</em></h2></div>
+<div class="heading compact"><p class="kicker">06 / 실제 과제에서 내 업무로 <span>5:45–6:25</span></p><h2 class="section-title" id="title4">같은 관계, <em>다른 표현 수준.</em></h2></div>
 <div class="case-toolbar"><div class="steps" aria-label="사례와 마무리"><button data-case="0" aria-pressed="true">심플 · 전체 흐름</button><button data-case="1" aria-pressed="false">상세 · 직접 의존관계</button></div><button id="enlarge">크게 보기 ↗</button></div>
 <div id="case-view" class="case-grid"><div class="card case-panel"><div id="case-graph" class="graph" role="img" aria-label="원본 과제의 Mermaid 플로우차트"></div><p class="source"><a href="./assets/flowcharts.md" download>원본 Mermaid 소스 ↓</a> · v3 PDF p.6–7 대응</p></div><aside class="case-notes"><span class="chip">PROCESS DSM HW</span><h2>세 개의<br>상호의존 블록</h2><div class="block-tags"><span>H · J</span><span>C · D · G</span><span>A · I</span></div><p id="case-explanation">C·D·G와 A·I는 서로 의존하지 않아 병렬로 진행할 수 있습니다.</p><div class="callout" id="case-legend">심플 버전은 블록 사이의 전체 흐름을 보여줍니다.</div><p class="source">실제 과제: Claude + Mermaid 이용<br><a href="https://drive.google.com/file/d/1JOZ_ZsAN-FeFeLxfG5Z5Iz1r2LEbulan/view" target="_blank" rel="noopener">제출 PDF 출처 ↗</a></p></aside></div>
 <h3 class="workflow-title">AI와 함께, 검증은 직접</h3><div class="workflow"><div><span>01</span><strong>DSM 분석</strong><p>작업과 관계 파악</p></div><div><span>02</span><strong>Claude 보조</strong><p>Mermaid 문법으로 표현</p></div><div><span>03</span><strong>Mermaid 시각화</strong><p>코드 → 다이어그램</p></div><div><span>04</span><strong>사람의 검증</strong><p>원본 대조 · 수정</p></div></div><p class="source">AI나 Mermaid가 분석 결과의 정확성을 자동 보장하지 않습니다. 원본과 비교하고 수정하는 과정은 사람이 맡습니다.</p>
 </section>
-<section id="takeaways" class="presentation-section" aria-labelledby="takeaway-title"><div class="heading"><p class="kicker">06 / 활용과 마무리 <span>6:20–7:00</span></p><h2 class="section-title" id="takeaway-title">오늘 기억했으면 하는 <em>세 가지</em></h2></div><div id="closing"><div class="closing-grid"><ol class="takeaway-list"><li><span>01</span><p><strong>Mermaid는 텍스트로</strong><br>다이어그램을 만드는 도구다.</p></li><li><span>02</span><p><strong>생성형 AI와 함께 사용하면</strong><br>문법을 몰라도 쉽게 시작할 수 있다.</p></li><li><span>03</span><p>중요한 것은 그림을 예쁘게 그리는 것이 아니라,<br><strong>표현하려는 관계를 정확히 정의하는 것이다.</strong></p></li></ol><div class="card qr-card"><a href="https://mermaid.live/" target="_blank" rel="noopener"><img id="qr" alt="Mermaid Live Editor https://mermaid.live/ 접속 QR 코드"><strong>직접 만들어 보세요 ↗</strong><span>https://mermaid.live/</span></a><a class="qr-official-link" href="https://mermaid.js.org/" target="_blank" rel="noopener">Mermaid 공식 사이트 ↗</a></div></div></div>
+<section id="takeaways" class="presentation-section" aria-labelledby="takeaway-title"><div class="heading"><p class="kicker">07 / 활용과 마무리 <span>6:25–7:00</span></p><h2 class="section-title" id="takeaway-title">오늘 기억했으면 하는 <em>네 가지</em></h2></div><div id="closing"><div class="closing-grid"><ol class="takeaway-list"><li><span>01</span><p><strong>Mermaid는 텍스트로</strong><br>다이어그램을 만드는 도구다.</p></li><li><span>02</span><p><strong>생성형 AI와 함께 사용하면</strong><br>문법을 몰라도 쉽게 시작할 수 있다.</p></li><li><span>03</span><p><strong>Mermaid 코드는 그림보다 짧고 수정하기 쉬워</strong><br>AI와 구조를 주고받는 중간 표현으로 유용하다.</p></li><li><span>04</span><p>중요한 것은 그림을 예쁘게 그리는 것이 아니라,<br><strong>표현하려는 관계를 정확히 정의하는 것이다.</strong></p></li></ol><div class="card qr-card"><a href="https://mermaid.live/" target="_blank" rel="noopener"><img id="qr" alt="Mermaid Live Editor https://mermaid.live/ 접속 QR 코드"><strong>직접 만들어 보세요 ↗</strong><span>https://mermaid.live/</span></a><a class="qr-official-link" href="https://mermaid.js.org/" target="_blank" rel="noopener">Mermaid 공식 사이트 ↗</a></div></div></div>
 </section>
 </main>
 <div class="utility-footer-wrap"><footer id="utility-footer" class="utility-footer"><span>KAIST ITM60062 · 김예나 · 2026-10-22</span><a href="https://mermaid.live/" target="_blank" rel="noopener">mermaid.live ↗</a><a href="#intro">맨 위로 ↑</a></footer></div>

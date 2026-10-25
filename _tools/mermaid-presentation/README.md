@@ -1,6 +1,6 @@
 # Mermaid · KAIST 7분 스크롤형 웹 발표
 
-제목과 발표 정보로 시작해 **결과 → 개념 → 라이브 데모 → 실제 과제 → 세 가지 정리**를 스크롤하며 진행하는 페이지입니다. 이전 슬라이드 넘김 방식은 제거했습니다.
+제목과 발표 정보로 시작해 **결과 → 개념 → 라이브 데모 → Mermaid의 세 가지 장점 → 다이어그램 갤러리 → AI + Mermaid → 실제 과제 → 네 가지 정리**를 스크롤하며 진행하는 페이지입니다. 이전 슬라이드 넘김 방식은 제거했습니다.
 
 - 발표 파일: `study/kaist_itm/projects/mermaid-dsm-presentation/index.html`
 - 개발 소스: `_tools/mermaid-presentation/`
@@ -103,6 +103,6 @@ Safari·Firefox·Edge 및 실제 교실 프로젝터는 별도 확인이 필요�
 발표 시간은 라이브 데모 2:00–4:15, 갤러리 4:15–5:15, 실제 과제 5:15–6:20, 정리 6:20–7:00으로 조정했다.
 
 
-## v2 후보안
+## 기본 발표 페이지 통합 (2026-10-25)
 
-기존 발표안은 `index.html`로 보존했다. AI + Mermaid 효과를 05로 승격하고 실제 과제·정리를 06·07로 조정한 검토용 후보안은 [`index_v2.0.html`](./index_v2.0.html)이다.
+기존 v2.0의 전체 내용을 `index.html`로 통합했다. AI + Mermaid 효과와 네 가지 정리를 포함한다. 기존 `index_v2.0.html` 링크는 `location.replace`로 `index.html`로 이동하며 쿼리와 해시(예: `#ai-method`)를 유지한다. JavaScript가 꺼져 있으면 meta refresh로 기본 페이지에 이동하며, 수동 이동 링크도 제공한다.
