@@ -25,6 +25,7 @@ export function layout({ title, description = '', bodyClass = '', head = '', bod
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="${esc(description)}">
   <title>${esc(title)}</title>
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">

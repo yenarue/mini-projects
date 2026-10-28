@@ -129,7 +129,7 @@ function progressRow(w) {
       </tr>`;
 }
 
-export function renderIndexPage({ weeks, quizSchedule, coreSets = [], builtAt }) {
+export function renderIndexPage({ weeks, quizSchedule, coreSets = [], deferred = [], builtAt }) {
   const withConcepts = weeks.filter((w) => w.concepts.length);
   const totalConcepts = withConcepts.reduce((n, w) => n + w.concepts.length, 0);
   const weeksById = new Map(weeks.map((w) => [w.id, w]));
@@ -178,6 +178,19 @@ ${topbar({ active: 'index', weeks })}
     ${groups.map(weekCard).join('')}
   </div>
 
+  ${deferred.length ? `<h2 class="section-title">아직 못 다룬 주제</h2>
+  <p class="deferred-lede">계획표에는 있었지만 실제 수업에서 아직 다루지 않은 주제다. 다룬 회차가 정해지면 위 주차별 개념으로 옮긴다.</p>
+  <ul class="deferred-list">${deferred
+    .map(
+      (d) => `
+    <li class="deferred-item">
+      <span class="deferred-topic">${esc(d.topic)}</span>
+      ${d.subtitle ? `<span class="deferred-sub">${esc(d.subtitle)}</span>` : ''}
+      <span class="deferred-note">${esc(d.note || '')}</span>
+    </li>`
+    )
+    .join('')}</ul>
+` : ''}
   <h2 class="section-title">퀴즈 일정</h2>
   <ol class="quiz-timeline">${quizSchedule.map((q) => quizRow(q, weeksById, coreByQuiz.get(q.n))).join('')}</ol>
 

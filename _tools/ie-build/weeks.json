@@ -66,8 +66,8 @@
   {
     "id": "W06",
     "date": "2026-10-10",
-    "topic": "부문혁신시스템 (SIS)",
-    "subtitle": "Sectoral Innovation System",
+    "topic": "국가혁신시스템 (NIS)",
+    "subtitle": "National Innovation System",
     "source": "",
     "quiz": null,
     "lectured": false
@@ -75,8 +75,8 @@
   {
     "id": "W07",
     "date": "2026-10-17",
-    "topic": "기술혁신시스템 (TIS) + 글로벌혁신시스템 (GIS)",
-    "subtitle": "",
+    "topic": "부문혁신시스템 (SIS) · 과학기술혁신정책",
+    "subtitle": "Sectoral Innovation System · S&T Innovation Policy",
     "source": "",
     "quiz": 2,
     "lectured": false
@@ -84,8 +84,8 @@
   {
     "id": "W08",
     "date": "2026-10-24",
-    "topic": "혁신과 생산의 사회시스템 (SSIP) + 비즈니스 시스템 (BS)",
-    "subtitle": "Zoom 비대면",
+    "topic": "기술혁신시스템 (TIS)",
+    "subtitle": "Technological Innovation System · Zoom 비대면",
     "source": "",
     "quiz": null,
     "lectured": false
@@ -93,8 +93,8 @@
   {
     "id": "W09",
     "date": "2026-10-31",
-    "topic": "사회기술시스템 (StS)",
-    "subtitle": "Socio-technical System",
+    "topic": "글로벌혁신시스템 (GIS)",
+    "subtitle": "Global Innovation System",
     "source": "",
     "quiz": 3,
     "lectured": false

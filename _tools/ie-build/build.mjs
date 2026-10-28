@@ -139,11 +139,13 @@ async function main() {
 
   const { renderIndexPage } = await import('./templates/index.mjs');
   const quizSchedule = JSON.parse(fsp.readFileSync(path.join(HERE, 'quiz-schedule.json'), 'utf8'));
+  const deferredFile = path.join(HERE, 'deferred-topics.json');
+  const deferred = fsp.existsSync(deferredFile) ? JSON.parse(fsp.readFileSync(deferredFile, 'utf8')) : [];
   const builtAt = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul', hour12: false });
 
   fsp.writeFileSync(
     path.join(cfg.outDir, 'index.html'),
-    renderIndexPage({ weeks: orderedWeeks, quizSchedule, coreSets, builtAt }),
+    renderIndexPage({ weeks: orderedWeeks, quizSchedule, coreSets, deferred, builtAt }),
     'utf8'
   );
   console.log('index.html 생성');
