@@ -107,7 +107,7 @@ window.ITM = {
           notes: { status: 'live', url: 'notes/innovation_ecosystem/',
             extraLinks: [{ label: '🗺️ 개념 지도', url: 'notes/innovation_ecosystem/map.html' }, { label: '🏷️ 퀴즈', url: 'notes/innovation_ecosystem/quiz.html' }] }, links: [] },
         { code: 'ITM60062', name: '아키텍쳐 혁신과 모노즈쿠리', professor: '박정규', schedule: '토 16:00–19:00', color: '--slide',
-          notes: { status: 'planned' }, links: [] },
+          notes: { status: 'planned' }, links: [{ label: '미니세미나 · Mermaid', url: 'projects/mermaid-dsm-presentation/' }] },
         { code: 'ITM50023', name: '인공지능 특허전략', professor: '윤태성', schedule: '토', color: '--note',
           notes: { status: 'planned' }, links: [] }
       ]
@@ -213,10 +213,12 @@ window.ITM = {
   projectCategories: [
     { id: 'research', label: '연구', desc: '논문·특허처럼 새로운 지식을 만드는 작업' },
     { id: 'analysis', label: '분석', desc: '데이터를 모으고 패턴을 찾는 작업' },
-    { id: 'study', label: '학습', desc: '수업 내용을 정리하고 복습하는 도구' }
+    { id: 'study', label: '학습', desc: '수업 내용을 정리하고 복습하는 도구' },
+    { id: 'presentation', label: '발표', desc: '수업 발표와 미니세미나 자료' }
   ],
 
   projects: [
+    { title: '그림을 그리지 않고, 그림을 만드는 방법', desc: 'Mermaid와 생성형 AI를 활용한 다이어그램 시각화 · 모노즈쿠리 W08 미니세미나', category: 'presentation', courses: ['ITM60062'], url: 'projects/mermaid-dsm-presentation/', status: 'live', linkLabel: '발표 보기' },
     // 심사 중 논문 — 상세 페이지는 공개 가능한 범위의 개요만 담는다
     { title: 'AI를 많이 쓰면 성과가 날까?', desc: '기업의 AI 활용이 성과로 이어지는 조직적 조건에 대한 연구 · 해외 저널 Information & Management 투고', category: 'research', courses: ['ITM89912'], url: 'projects/genai-paper/', status: 'live', linkLabel: '공개 개요 보기', badge: 'Under Review' },
     { title: 'AI와 인간의 의도 차이 식별 및 처리 방법', desc: '특허 아이디에이션 및 구체화 진행중 · 로봇 심리학/행동학 관련으로 Zoom In 피보팅 진행중', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
