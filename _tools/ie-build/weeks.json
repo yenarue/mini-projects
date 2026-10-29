@@ -67,28 +67,37 @@
     "id": "W06",
     "date": "2026-10-10",
     "topic": "국가혁신시스템 (NIS)",
-    "subtitle": "National Innovation System",
-    "source": "",
+    "subtitle": "National Innovation System · 대면·Zoom 병행",
+    "source": "W06_혁신생태계론_국가혁신시스템_NIS_261010.pdf",
     "quiz": null,
-    "lectured": false
+    "lectured": true
   },
   {
-    "id": "W07",
+    "id": "W07-1",
     "date": "2026-10-17",
-    "topic": "부문혁신시스템 (SIS) · 과학기술혁신정책",
-    "subtitle": "Sectoral Innovation System · S&T Innovation Policy",
-    "source": "",
+    "topic": "과학기술혁신정책 — 혁신정책의 세 프레임",
+    "subtitle": "S&T Innovation Policy · Frame 1.0 / 2.0 / 3.0",
+    "source": "W07_1_혁신생태계론_과학기술정책 TIS_261017.pdf",
     "quiz": 2,
-    "lectured": false
+    "lectured": true
+  },
+  {
+    "id": "W07-2",
+    "date": "2026-10-17",
+    "topic": "부문혁신시스템 (SIS)",
+    "subtitle": "Sectoral Innovation System",
+    "source": "W07_2_혁신생태계론_SIS 한국산업추가_261010.pdf",
+    "quiz": null,
+    "lectured": true
   },
   {
     "id": "W08",
     "date": "2026-10-24",
     "topic": "기술혁신시스템 (TIS)",
     "subtitle": "Technological Innovation System · Zoom 비대면",
-    "source": "",
+    "source": "W07_1_혁신생태계론_과학기술정책 TIS_261017.pdf (p25–47)",
     "quiz": null,
-    "lectured": false
+    "lectured": true
   },
   {
     "id": "W09",

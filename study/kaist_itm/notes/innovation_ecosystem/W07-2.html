@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="ko" data-header="two">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="부문혁신시스템 (SIS) 개념 정리 11개">
+  <title>W07-2 · 부문혁신시스템 (SIS) — 혁신생태계론</title>
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="week.css">
+</head>
+<body class="page-week">
+
+
+<header class="topbar">
+  <a class="topbar-home" href="../../index.html" title="KAIST ITM 대시보드로">← ITM</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
+  <nav class="topbar-nav">
+    <a href="index.html">학기 지도</a>
+    <a href="W01.html" class="active">주차별 개념</a>
+    <a href="core.html">핵심 개념</a>
+    <a href="quiz.html">퀴즈</a>
+    <a href="map.html">개념 지도</a>
+    <a href="termpaper.html">텀페이퍼</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
+    <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
+    </button>
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="개념 검색">
+    <input type="search" id="search-input" placeholder="개념명 · 영어 · 태그 · 본문 검색" autocomplete="off">
+    <ul class="search-results" id="search-results"></ul>
+    <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
+  </div>
+</div>
+
+<nav class="weeknav" aria-label="주차별 개념 바로가기"><a href="W01.html">W01</a><a href="W02-1.html">W02-1</a><a href="W02-2.html">W02-2</a><a href="W03.html">W03</a><a href="W05-1.html">W05-1</a><a href="W05-2.html">W05-2</a><a href="W06.html">W06</a><a href="W07-1.html">W07-1</a><a href="W07-2.html" class="active" aria-current="page">W07-2</a><a href="W08.html">W08</a></nav>
+<div class="layout" id="top">
+  
+<aside class="sidebar">
+  <div class="chapter-label">W07-2 · 10/17 · 개념 11개</div>
+  <h1>부문혁신시스템 (SIS)</h1>
+  <p class="side-subtitle">Sectoral Innovation System</p>
+  
+  <div class="side-tools">
+    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
+    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
+  </div>
+  <nav><ul class="side-nav">
+    <li data-item="c01" class="is-open">
+      <a href="#c01" data-concept="c01" class="active">
+        <span class="side-no">01</span>
+        <span class="side-title">SIS — 같은 기술 변화도 산업마다 다른 혁신으로</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c01-h-슬라이드-w07b-p6-7" class="side-sub-h" data-anchor="c01-h-슬라이드-w07b-p6-7">슬라이드 (W07b p6–7)</a></li>
+        <li><a href="#c01-h-1-pavitt와-39-동심원형-혁신-39-의-기원" class="side-sub-h" data-anchor="c01-h-1-pavitt와-39-동심원형-혁신-39-의-기원">1) Pavitt와 '동심원형 혁신'의 기원</a></li>
+        <li><a href="#c01-h-2-계보-pavitt-malerba-castellacci-이근" class="side-sub-h" data-anchor="c01-h-2-계보-pavitt-malerba-castellacci-이근">2) 계보: Pavitt → Malerba → Castellacci → 이근</a></li>
+        <li><a href="#c01-quiz" class="side-sub-quiz" data-anchor="c01-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c02">
+      <a href="#c02" data-concept="c02">
+        <span class="side-no">02</span>
+        <span class="side-title">Pavitt 분류 — 혁신의 원천은 산업마다 다르다</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c02-h-슬라이드-w07b-p8" class="side-sub-h" data-anchor="c02-h-슬라이드-w07b-p8">슬라이드 (W07b p8)</a></li>
+        <li><a href="#c02-h-네-유형-w07b-p10" class="side-sub-h" data-anchor="c02-h-네-유형-w07b-p10">네 유형 (W07b p10)</a></li>
+        <li><a href="#c02-h-세부표-w07b-p9" class="side-sub-h" data-anchor="c02-h-세부표-w07b-p9">세부표 (W07b p9)</a></li>
+        <li><a href="#c02-h-교수의-해설" class="side-sub-h" data-anchor="c02-h-교수의-해설">교수님의 해설</a></li>
+        <li><a href="#c02-quiz" class="side-sub-quiz" data-anchor="c02-quiz">예상 퀴즈 포인트 4</a></li>
+      </ul>
+    </li>
+    <li data-item="c03">
+      <a href="#c03" data-concept="c03">
+        <span class="side-no">03</span>
+        <span class="side-title">확장 분류 — Tidd의 정보집약형과 Archibugi의 패러다임별 기업 유형</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c03-h-tidd-et-al-1997-정보집약형-추가-w07b-p11" class="side-sub-h" data-anchor="c03-h-tidd-et-al-1997-정보집약형-추가-w07b-p11">Tidd et al. (1997) — 정보집약형 추가 (W07b p11)</a></li>
+        <li><a href="#c03-h-archibugi-2001-자본주의-발전과-pavitt-기업-유형-w07b-p12" class="side-sub-h" data-anchor="c03-h-archibugi-2001-자본주의-발전과-pavitt-기업-유형-w07b-p12">Archibugi (2001) — 자본주의 발전과 Pavitt 기업 유형 (W07b p12)</a></li>
+        <li><a href="#c03-h-물질세계를-치고-들어간-것" class="side-sub-h" data-anchor="c03-h-물질세계를-치고-들어간-것">물질세계를 치고 들어간 것</a></li>
+        <li><a href="#c03-quiz" class="side-sub-quiz" data-anchor="c03-quiz">예상 퀴즈 포인트 2</a></li>
+      </ul>
+    </li>
+    <li data-item="c04">
+      <a href="#c04" data-concept="c04">
+        <span class="side-no">04</span>
+        <span class="side-title">산업별 학습 방식 — DUI와 STI의 조합</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c04-h-슬라이드-w07b-p13" class="side-sub-h" data-anchor="c04-h-슬라이드-w07b-p13">슬라이드 (W07b p13)</a></li>
+        <li><a href="#c04-h-1-판별법-현장이-더-아나-교수가-더-아나" class="side-sub-h" data-anchor="c04-h-1-판별법-현장이-더-아나-교수가-더-아나">1) 판별법 — 현장이 더 아나, 교수님이 더 아나</a></li>
+        <li><a href="#c04-h-2-예나의-사례-삼성페이-앱-개발" class="side-sub-h" data-anchor="c04-h-2-예나의-사례-삼성페이-앱-개발">2) 예나의 사례 — 삼성페이 앱 개발</a></li>
+        <li><a href="#c04-quiz" class="side-sub-quiz" data-anchor="c04-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c05">
+      <a href="#c05" data-concept="c05">
+        <span class="side-no">05</span>
+        <span class="side-title">Malerba의 SIS — 산업을 이루는 여섯 요소와 그 작동</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c05-h-여섯-요소-w07b-p14" class="side-sub-h" data-anchor="c05-h-여섯-요소-w07b-p14">여섯 요소 (W07b p14)</a></li>
+        <li><a href="#c05-h-작동-방식-w07b-p16" class="side-sub-h" data-anchor="c05-h-작동-방식-w07b-p16">작동 방식 (W07b p16)</a></li>
+        <li><a href="#c05-quiz" class="side-sub-quiz" data-anchor="c05-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c06">
+      <a href="#c06" data-concept="c06">
+        <span class="side-no">06</span>
+        <span class="side-title">기술체제와 누적성 — 전기차와 바이브 코딩</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c06-h-슬라이드-w07b-p15" class="side-sub-h" data-anchor="c06-h-슬라이드-w07b-p15">슬라이드 (W07b p15)</a></li>
+        <li><a href="#c06-h-누적성을-치워-버리다-전기차" class="side-sub-h" data-anchor="c06-h-누적성을-치워-버리다-전기차">누적성을 치워 버리다 — 전기차</a></li>
+        <li><a href="#c06-h-ai도-그렇다-바이브-코딩" class="side-sub-h" data-anchor="c06-h-ai도-그렇다-바이브-코딩">AI도 그렇다 — 바이브 코딩</a></li>
+        <li><a href="#c06-quiz" class="side-sub-quiz" data-anchor="c06-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c07">
+      <a href="#c07" data-concept="c07">
+        <span class="side-no">07</span>
+        <span class="side-title">물적 기반과 추격의 창 — 철강·카메라·와인</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c07-h-물적-기반은-새-기술의-적용-경로를-매개한다-w07b-p17" class="side-sub-h" data-anchor="c07-h-물적-기반은-새-기술의-적용-경로를-매개한다-w07b-p17">물적 기반은 새 기술의 적용 경로를 매개한다 (W07b p17)</a></li>
+        <li><a href="#c07-h-세-사례-w07b-p18-20" class="side-sub-h" data-anchor="c07-h-세-사례-w07b-p18-20">세 사례 (W07b p18–20)</a></li>
+        <li><a href="#c07-h-추격의-창은-산업마다-다르다-w07b-p21-lee-amp-malerba" class="side-sub-h" data-anchor="c07-h-추격의-창은-산업마다-다르다-w07b-p21-lee-amp-malerba">추격의 창은 산업마다 다르다 (W07b p21, Lee &amp; Malerba)</a></li>
+        <li><a href="#c07-quiz" class="side-sub-quiz" data-anchor="c07-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c08">
+      <a href="#c08" data-concept="c08">
+        <span class="side-no">08</span>
+        <span class="side-title">Castellacci 분류와 KIBS — 서비스업까지 넓히다</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c08-h-네-범주-w07b-p22" class="side-sub-h" data-anchor="c08-h-네-범주-w07b-p22">네 범주 (W07b p22)</a></li>
+        <li><a href="#c08-h-세부표-w07b-p23" class="side-sub-h" data-anchor="c08-h-세부표-w07b-p23">세부표 (W07b p23)</a></li>
+        <li><a href="#c08-h-kibs-ax를-하려면-이게-필요하다" class="side-sub-h" data-anchor="c08-h-kibs-ax를-하려면-이게-필요하다">KIBS — AX를 하려면 이게 필요하다</a></li>
+        <li><a href="#c08-quiz" class="side-sub-quiz" data-anchor="c08-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c09">
+      <a href="#c09" data-concept="c09">
+        <span class="side-no">09</span>
+        <span class="side-title">한국 산업 사례와 '사용자 공동혁신형' — 휴대폰·게임·음악재생기</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c09-h-한국-산업-사례-분류-w07b-p24" class="side-sub-h" data-anchor="c09-h-한국-산업-사례-분류-w07b-p24">한국 산업 사례 분류 (W07b p24)</a></li>
+        <li><a href="#c09-h-1-휴대폰-단말기-기업-혼자가-아니다-w07b-p25" class="side-sub-h" data-anchor="c09-h-1-휴대폰-단말기-기업-혼자가-아니다-w07b-p25">1) 휴대폰 — 단말기 기업 혼자가 아니다 (W07b p25)</a></li>
+        <li><a href="#c09-h-2-게임-이용자가-혁신-과정에-들어온다-w07b-p26" class="side-sub-h" data-anchor="c09-h-2-게임-이용자가-혁신-과정에-들어온다-w07b-p26">2) 게임 — 이용자가 혁신 과정에 들어온다 (W07b p26)</a></li>
+        <li><a href="#c09-h-3-휴대용-음악재생기-기기가-아니라-생태계-w07b-p27" class="side-sub-h" data-anchor="c09-h-3-휴대용-음악재생기-기기가-아니라-생태계-w07b-p27">3) 휴대용 음악재생기 — 기기가 아니라 생태계 (W07b p27)</a></li>
+        <li><a href="#c09-quiz" class="side-sub-quiz" data-anchor="c09-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c10">
+      <a href="#c10" data-concept="c10">
+        <span class="side-no">10</span>
+        <span class="side-title">대량생산 산업 사례와 기술 안보 — DRAM·자동차·철강·제약</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c10-h-1-dram-과학기반-규모집약-w07b-p28" class="side-sub-h" data-anchor="c10-h-1-dram-과학기반-규모집약-w07b-p28">1) DRAM — 과학기반 + 규모집약 (W07b p28)</a></li>
+        <li><a href="#c10-h-2-자동차-공급망과-함께-w07b-p29" class="side-sub-h" data-anchor="c10-h-2-자동차-공급망과-함께-w07b-p29">2) 자동차 — 공급망과 함께 (W07b p29)</a></li>
+        <li><a href="#c10-h-3-기술-인프라와-기술-안보" class="side-sub-h" data-anchor="c10-h-3-기술-인프라와-기술-안보">3) 기술 인프라와 기술 안보</a></li>
+        <li><a href="#c10-h-4-철강-공정-결합-역량-그리고-탄소-w07b-p30" class="side-sub-h" data-anchor="c10-h-4-철강-공정-결합-역량-그리고-탄소-w07b-p30">4) 철강 — 공정 결합 역량, 그리고 탄소 (W07b p30)</a></li>
+        <li><a href="#c10-h-5-제약-sti가-압도적-w07b-p31" class="side-sub-h" data-anchor="c10-h-5-제약-sti가-압도적-w07b-p31">5) 제약 — STI가 압도적 (W07b p31)</a></li>
+        <li><a href="#c10-quiz" class="side-sub-quiz" data-anchor="c10-quiz">예상 퀴즈 포인트 4</a></li>
+      </ul>
+    </li>
+    <li data-item="c11">
+      <a href="#c11" data-concept="c11">
+        <span class="side-no">11</span>
+        <span class="side-title">SIS 분석 질문과 디지털의 산업별 확산 (SIS 정리)</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c11-h-디지털-기술의-산업별-확산-w07b-p32" class="side-sub-h" data-anchor="c11-h-디지털-기술의-산업별-확산-w07b-p32">디지털 기술의 산업별 확산 (W07b p32)</a></li>
+        <li><a href="#c11-h-sis-분석-질문-w07b-p33" class="side-sub-h" data-anchor="c11-h-sis-분석-질문-w07b-p33">SIS 분석 질문 (W07b p33)</a></li>
+        <li><a href="#c11-h-핵심-정리-w07b-p34" class="side-sub-h" data-anchor="c11-h-핵심-정리-w07b-p34">핵심 정리 (W07b p34)</a></li>
+        <li><a href="#c11-h-교수의-평가-수요-규제-쪽이-비어-있다" class="side-sub-h" data-anchor="c11-h-교수의-평가-수요-규제-쪽이-비어-있다">교수님의 평가 — 수요·규제 쪽이 비어 있다</a></li>
+        <li><a href="#c11-quiz" class="side-sub-quiz" data-anchor="c11-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li></ul></nav>
+</aside>
+  <main>
+    <div class="week-intro">
+      <h1 class="week-title">부문혁신시스템 (SIS)</h1>
+      <p class="week-meta">W07-2 · 2026-10-17 · Sectoral Innovation System</p>
+      <p class="legend">본문은 강의 내용 기준입니다. <span class="tag tag-supp">보충</span> 표지는 외부 지식입니다.</p>
+    </div>
+    
+<section class="concept" id="c01">
+  <h2 class="concept-title">SIS — 같은 기술 변화도 산업마다 다른 혁신으로</h2>
+  <p class="concept-en">Sectoral Innovation System (SIS); Pavitt's starting point and the genealogy Pavitt → Malerba → Castellacci → Lee</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 01</span>
+    <span>슬라이드 W07b p5, p6, p7</span>
+    <span class="stars" title="시험 중요도 5/5 — ★★ SIS 정의와 Pavitt의 출발점 — SIS의 핵심 명제이고, W03 파도형/동심원형의 출처(Freeman 발표에 대한 Pavitt 질문)가 밝혀진 대목(약 6분). NIS–SIS–TIS 분석 단위 비교(X26)의 중심" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c01" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c01-definition"><h4>한 줄 정의</h4><p><strong>부문혁신시스템(SIS)</strong>은 <strong>&quot;같은 과학기술 변화도 산업부문마다 서로 다른 혁신으로 이어진다&quot;</strong>는 관점이다. 그런데 기업마다 제각각이 아니라 <strong>산업별로 패턴이 있다.</strong> NIS가 나라별 차이를 봤다면, SIS는 <strong>산업별 차이</strong>를 본다.</p>
+</div>
+<div class="sec sec-analogy" id="c01-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>같은 비가 와도 <strong>논·과수원·비닐하우스</strong>는 다르게 반응한다. 농부 개개인이 다른 게 아니라 <strong>작물(산업)마다 패턴</strong>이 있다. AI라는 비가 와도 &quot;<strong>정유선에 쓰이는 게 다르고 자동차에 쓰이는 게 다 다르다</strong>.&quot;</p>
+</div>
+<div class="sec sec-core" id="c01-core"><h4>핵심 내용</h4><h3 id="c01-h-슬라이드-w07b-p6-7">슬라이드 (W07b p6–7)</h3>
+<figure class="slide"><img src="images/W07b/p06.jpg" alt="W07b p6 산업부문별 혁신체제" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p6 산업부문별 혁신체제</figcaption></figure>
+<p>질문: 산업의 <strong>물적·기술적 기반</strong>과 지식·수요·행위자·제도가 혁신의 <strong>방향과 속도</strong>를 어떻게 다르게 만드는가. 계보: <strong>Pavitt | Malerba | Castellacci | Lee &amp; Malerba</strong></p>
+<figure class="slide"><img src="images/W07b/p07.jpg" alt="W07b p7 SIS가 설명하는 것" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p7 SIS가 설명하는 것</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>SIS가 묻는 것</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>누가 혁신을 주도하는가</td>
+<td>생산기업, 공급자, 사용자, 대학·연구기관, 정부</td>
+</tr>
+<tr>
+<td>어떤 지식과 학습이 필요한가</td>
+<td>현장 경험과 상호작용, 과학기술 지식, 또는 둘의 결합</td>
+</tr>
+<tr>
+<td>무엇이 새 기술의 도입을 촉진·지연하는가</td>
+<td>생산기반, 수요, 투자, 표준, 제도와 기존 역량</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote-prof quote-bare"><p><strong>같은 과학기술 변화도 산업 부문마다 서로 다른 혁신으로 이어진다.</strong> AX와 AI가 들어와도 정유선에 쓰이는 게 다르고 자동차에 쓰이는 게 다 다르다는 얘기지. 근데 <strong>각 기업마다 다 다르다기보다는 패턴이 있다는 얘기</strong>, 바로 그겁니다.</p><footer class="quote-cite">교수님</footer></blockquote>
+<h3 id="c01-h-1-pavitt와-39-동심원형-혁신-39-의-기원">1) Pavitt와 &#39;동심원형 혁신&#39;의 기원 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>SIS의 출발점 <strong>Keith Pavitt</strong>는 혁신 활동 데이터를 2천 건 넘게 직접 측정해 <strong>산업마다 혁신 패턴이 다르다</strong>는 것을 찾아냈다.</li>
+<li><strong>W03의 &#39;파도형 vs 동심원형&#39; 구분의 출처가 여기서 밝혀졌다.</strong></li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>제가 SPRU에서 석사를 할 때, <strong>Chris Freeman이 기술경제패러다임 발표를 했어요.</strong> 거기에 기본 개념이 웨이브. Kondratieff 웨이브, 60년마다 왔다리 갔다리 하는 그래프 기억나시죠? 그 웨이브를 설명하는데, <strong>Pavitt가 &#39;호숫가에 돌을 딱 던지면 쫙 퍼져나가는 웨이브도 있지 않느냐&#39;</strong>, 동심원. 그 질문을 했어요.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>Freeman은 <strong>전체 시스템</strong>에서 무슨 일이 벌어지는지를 먼저 보고, Pavitt는 <strong>기업 내에서 마이크로하게</strong> 무슨 일이 벌어지는지를 본다. AI가 터지면 AI 데이터센터가 만든 새 세상도 있지만, <strong>피지컬 AI가 퍼져 나가는 웨이브가 경제적으로는 더 중요하지 않느냐</strong>는 질문이었다. 교수님이 이것을 <strong>파도형 혁신과 동심원형 혁신</strong>으로 풀어냈다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>연결 구도: <strong>Freeman = 파도형 = TEP(W03/02) = 거시</strong>, <strong>Pavitt = 동심원형 = SIS = 산업별 확산</strong>. W06/04 Freeman vs Lundvall(매크로 vs 마이크로)과도 같은 축이다.</p>
+<h3 id="c01-h-2-계보-pavitt-malerba-castellacci-이근">2) 계보: Pavitt → Malerba → Castellacci → 이근</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>연구자</th>
+<th>기여</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Pavitt</strong> (1984)</td>
+<td>산업별 혁신 원천과 방식을 <strong>경험적으로 분류</strong></td>
+</tr>
+<tr>
+<td><strong>Malerba</strong> (이탈리아)</td>
+<td><strong>섹터럴 시스템 오브 이노베이션</strong>으로 발전 — 요소들의 시스템으로 차이를 설명</td>
+</tr>
+<tr>
+<td><strong>Castellacci</strong> (2008)</td>
+<td><strong>서비스업</strong>까지 분류 확장</td>
+</tr>
+<tr>
+<td><strong>이근</strong> (서울대) · Lee &amp; Malerba</td>
+<td>한국 산업 사례, <strong>산업별 추격 경로</strong> 비교</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>이근 교수님: Schumpeter 상 수상, 서울대 경제학과에서 거의 유일하게 혁신 연구를 해 온 분(은퇴). Malerba와 함께 많이 작업했고 학생들과 한국 산업 사례를 연구했다(이근·박태영 외 2014 『산업의 추격, 추월, 추락』).</li>
+</ul>
+</div>
+<details class="sec sec-fold" id="c01-discussion" data-sec="c01-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span>W06/02에서 NIS는 &quot;<strong>왜 나라마다 다른가</strong>&quot;를 물었다. SIS는 같은 질문을 <strong>산업 단위</strong>로 바꾼다. W01/10 강의 지도에서 둘 다 <strong>&quot;구조의 차이&quot;</strong> 축이다.</li>
+<li>Term paper 오리엔테이션(W07a p24)의 교수님 예시도 SIS였다: &quot;<strong>&#39;섹터럴 이노베이션 시스템이라는 퍼스펙티브를 가지고 정유 산업을 보겠다&#39;</strong> 할 수도 있는 것이고&quot;().</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-examples" data-sec="c01-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Keith Pavitt (1937–2002)</strong>: SPRU 교수님. 1984년 <em>Research Policy</em> 논문 &quot;Sectoral patterns of technical change: Towards a taxonomy and a theory&quot;는 혁신 연구에서 가장 많이 인용되는 논문 중 하나다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-position" data-sec="c01-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>NIS(국가 단위) 다음의 두 번째 &#39;구조의 차이&#39; 이론. 다음 회차의 TIS(기술 단위)와 함께 <strong>분석 단위</strong>를 바꿔 가며 같은 시스템 관점을 적용하는 흐름이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-related" data-sec="c01-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Pavitt (1984); Malerba &amp; Orsenigo (1997); Malerba (2002); Castellacci (2008); Lee &amp; Malerba (2017); 이근·박태영 외 (2014)</li>
+<li>연결: <a href="W07-2.html#c02">W07-2/02 Pavitt 분류</a> · <a href="W07-2.html#c05">W07-2/05 Malerba 여섯 요소</a> · <a href="W03.html#c03">W03/03 파도형 vs 동심원형</a> · <a href="W03.html#c02">W03/02 TEP</a> · <a href="W06.html#c01">W06/01 NIS</a> · <a href="W06.html#c02">W06/02 왜 나라마다 다른가</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c01-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Pavitt (1984)</li><li>Malerba (2002)</li><li>Castellacci (2008)</li><li>Lee &amp; Malerba (2017)</li><li>이근·박태영 외 (2014)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-1, §5-2, §5-3</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=sectoral-innovation-system">sectoral-innovation-system</a> · <a href="map.html?tag=pavitt">pavitt</a> · <a href="map.html?tag=malerba">malerba</a> · <a href="map.html?tag=castellacci">castellacci</a> · <a href="map.html?tag=keun-lee">keun-lee</a> · <a href="map.html?tag=wave-vs-concentric">wave-vs-concentric</a> · <a href="map.html?tag=SPRU">SPRU</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c01-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>SIS의 핵심 주장(&quot;같은 기술 변화도 산업마다 다른 혁신으로, 그러나 패턴이 있다&quot;)을 설명하고, SIS가 묻는 세 질문을 쓰라. <span class="tag">서술형</span></li>
+<li>비교형: NIS와 SIS는 분석 단위와 질문이 어떻게 다른가? <span class="tag">비교형</span></li>
+<li>Pavitt의 동심원 질문과 Freeman의 파도(TEP)를 비교하고, 교수님의 파도형/동심원형 혁신 구분과 연결하라. <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c01">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c02">Pavitt 분류 — 혁신의 원천은 산업마다 다르다</a> · <a href="W07-2.html#c05">Malerba의 SIS — 산업을 이루는 여섯 요소와 그 작동</a> · <a href="W03.html#c03">파도형 혁신 vs 동심원형 혁신</a> · <a href="W03.html#c02">기술경제패러다임(TEP)과 혁신의 네 층위</a> · <a href="W06.html#c01">NIS — 혁신을 시스템의 상호작용으로 본다</a> · <a href="W06.html#c02">NIS의 네 가지 질문과 수렴 vs 발산</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c02">
+  <h2 class="concept-title">Pavitt 분류 — 혁신의 원천은 산업마다 다르다</h2>
+  <p class="concept-en">Pavitt's taxonomy (1984) — supplier-dominated, scale-intensive, specialised suppliers, science-based</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 02</span>
+    <span>슬라이드 W07b p8, p9, p10</span>
+    <span class="stars" title="시험 중요도 5/5 — ★★ Pavitt 분류 — 네 유형 표가 SIS에서 가장 전형적인 출제형. 정유·제약·DRAM 해설과 '본인 기업 매칭' 권유로 교수가 오래 머물렀다" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c02" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c02-definition"><h4>한 줄 정의</h4><p>Pavitt는 1945–1979년 영국 혁신 사례 약 2,000건을 직접 분석해, 혁신이 <strong>어디서 오는지(원천)</strong>에 따라 산업을 네 유형으로 나눴다. <strong>공급자 지배형</strong>(장비·재료를 사 와서 혁신), <strong>규모집약형</strong>(대규모 공정을 스스로 개선), <strong>전문공급자형</strong>(사용자와 함께 설계), <strong>과학기반형</strong>(R&amp;D와 공공 과학). &quot;<strong>기업이라고 다 똑같지가 않다. 근데 뭐가 똑같지 않은지를 구분해 내는 거야.</strong>&quot;</p>
+</div>
+<div class="sec sec-analogy" id="c02-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>음식점의 맛이 어디서 나오는지로 나눠 보자.</p>
+<ul>
+<li><strong>공급자 지배형</strong> = 동네 분식집. 맛은 <strong>좋은 재료·기계를 사 오는 데</strong>서 나온다.</li>
+<li><strong>규모집약형</strong> = 대형 급식업체. <strong>대량 조리 공정을 얼마나 잘 돌리느냐</strong>.</li>
+<li><strong>전문공급자형</strong> = 주방기기 제작소. <strong>요리사(사용자)가 원하는 대로 맞춤 제작</strong>하는 데서 혁신.</li>
+<li><strong>과학기반형</strong> = 식품공학 연구소. <strong>실험실 연구</strong>에서 새 식품이 나온다.</li>
+</ul>
+</div>
+<div class="sec sec-core" id="c02-core"><h4>핵심 내용</h4><h3 id="c02-h-슬라이드-w07b-p8">슬라이드 (W07b p8)</h3>
+<figure class="slide"><img src="images/W07b/p08.jpg" alt="W07b p8 Pavitt의 출발점: 혁신 패턴은 산업마다 다르다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p8 Pavitt의 출발점: 혁신 패턴은 산업마다 다르다</figcaption></figure>
+<ul>
+<li>영국 주요 혁신 사례 <strong>약 2,000건, 1945–1979</strong>. 관찰한 차이: 혁신의 원천과 기술 공급자 / 제품혁신과 공정혁신의 비중 / 혁신기업의 규모·산업 간 기술 흐름</li>
+<li>주의: <strong>특허 건수만 분석한 것이 아니다.</strong> 혁신 사례를 <strong>직접 식별</strong>한 자료가 중심이고 특허·R&amp;D 통계는 보조.</li>
+<li>혁신이 <strong>누구 이름으로</strong> 나왔는지(만든 회사인지, 기계를 납품한 회사인지)를 봤다.</li>
+<li>기업 전략의 두 큰 방향: <strong>비용 절감(cost reduction)</strong> 또는 <strong>제품 차별화(product differentiation)</strong>.</li>
+</ul>
+<h3 id="c02-h-네-유형-w07b-p10">네 유형 (W07b p10) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p10.jpg" alt="W07b p10 Pavitt 분류: 혁신 원천과 기업의 위치" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p10 Pavitt 분류: 혁신 원천과 기업의 위치</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>유형</th>
+<th>혁신의 주된 원천</th>
+<th>대표 산업·경향</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>공급자 지배형</strong></td>
+<td>장비·재료 <strong>공급자</strong></td>
+<td>농업·전통 제조·일부 서비스. 외부 기술 도입에 크게 의존</td>
+</tr>
+<tr>
+<td><strong>규모집약형</strong></td>
+<td>생산공정·설비의 <strong>자체 개선</strong></td>
+<td>철강·자동차·화학. 대규모 생산, 생산경험과 설비투자</td>
+</tr>
+<tr>
+<td><strong>전문공급자형</strong></td>
+<td><strong>사용자와의 상호작용</strong>·설계</td>
+<td>특수기계·계측기. 고객 문제에 맞춘 제품혁신</td>
+</tr>
+<tr>
+<td><strong>과학기반형</strong></td>
+<td>기업 <strong>R&amp;D와 공공 과학</strong></td>
+<td>전자·제약. 과학기술 지식과 연구 역량</td>
+</tr>
+</tbody></table></div>
+<p>원 논문은 세 범주(공급자 지배 / 생산 중심 / 과학기반)를 제시하고, <strong>생산 중심형을 규모집약형과 전문공급자형으로</strong> 나눈다.</p>
+<h3 id="c02-h-세부표-w07b-p9">세부표 (W07b p9)</h3>
+<figure class="slide"><img src="images/W07b/p09.jpg" alt="W07b p9 Pavitt's Taxonomy: 기술 혁신 유형" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p9 Pavitt's Taxonomy: 기술 혁신 유형</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>공급자 주도형</th>
+<th>규모중심형</th>
+<th>전문공급자형</th>
+<th>과학기반형</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>기술 원천</td>
+<td>공급자, 기술지도센터</td>
+<td>생산엔지니어링, 공급자, 내부 R&amp;D</td>
+<td>디자인·개발부서, 사용자</td>
+<td>내부 R&amp;D, 공공 R&amp;D</td>
+</tr>
+<tr>
+<td>사용자 유형</td>
+<td><strong>가격 민감</strong></td>
+<td>가격 민감</td>
+<td><strong>성능 민감</strong></td>
+<td>혼합</td>
+</tr>
+<tr>
+<td>전유 수단</td>
+<td><strong>비기술적</strong>(상표·마케팅·디자인)</td>
+<td>공정 비밀·노하우, 특허</td>
+<td>디자인 노하우, 사용자 지식</td>
+<td>R&amp;D 노하우, <strong>특허</strong></td>
+</tr>
+<tr>
+<td>제품/공정</td>
+<td>공정 우세</td>
+<td>공정 우세</td>
+<td><strong>제품 우세</strong></td>
+<td>혼합</td>
+</tr>
+<tr>
+<td>기업 크기</td>
+<td>소형</td>
+<td><strong>대형</strong></td>
+<td>소형</td>
+<td>대형</td>
+</tr>
+</tbody></table></div>
+<h3 id="c02-h-교수의-해설">교수님의 해설</h3>
+<blockquote class="quote-prof quote-bare"><p>제약회사랑 정유 회사랑 혁신이 똑같겠어요? 정유 회사는 <strong>규모집약형</strong>이 되겠지. 공정 기능과 노하우가 되게 중요하죠, 생산 엔지니어링 하는 사람이. 과학기반형은 내부 R&amp;D, 특허가 되게 중요하겠죠. <strong>기업이라고 다 똑같지가 않다는 얘기잖아. 당연한 얘기지. 근데 뭐가 똑같지 않은지를 구분을 해내는 거야.</strong> DNA 몇 번이 똑같지 않은지 그런 걸 찾아내는 거.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li><strong>공급자 지배형(농업)</strong>: 농부가 기계를 만들지 않는다. 인도에서 몬산토 등이 GMO 종자를 팔았고 농부들이 <strong>빚을 져서</strong> 투자했다가 작황이 나쁘자, GMO 반대 운동에 <strong>빚 농사에 대한 반발</strong>이 붙었다.</li>
+<li><strong>규모집약형</strong>: 설비 투자가 혁신에 중요. <strong>DRAM은 과학기반형이면서 규모집약형</strong> — 한 번 투자할 때 세게 해야 하니 공급량이 확 늘어 <strong>사이클이 생길 수밖에 없다</strong>.</li>
+<li><strong>전문공급자형</strong>: <strong>AI가 등장하면서 사용자들이 다 만들어 버릴 수 있게 되어 위치가 애매해질 것.</strong> 제약회사도 AI로 앞단(업스트림)을 많이 줄이고 있다.</li>
+<li>산업군마다 <strong>물적 제약(material constraint)</strong>이 다르다. 물적 기반이 다르다는 건 <strong>지식의 속성이 다르다</strong>는 얘기다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>인도 GMO 사례는 W05-2의 시민 인식론과 겹친다. GMO 반대가 &quot;과학을 몰라서&quot;가 아니라 <strong>공급자 지배형 산업에서 농부가 진 빚(경제적 위치)</strong>과 얽혀 있었다는 것.</p>
+</div>
+<details class="sec sec-fold" id="c02-discussion" data-sec="c02-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>교수님 권유: <strong>&quot;본인이 속하신 기업들을 매칭 한번 해보세요.&quot;</strong> → <a href="W07-2.html#c04">W07-2/04</a>에서 예나의 삼성페이 사례.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>DRAM의 &#39;과학기반 + 규모집약&#39; 이중 성격은 <a href="W07-2.html#c10">W07-2/10</a>에서 한국 사례로 다시 나온다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-examples" data-sec="c02-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>전유 수단의 차이</strong>: 제약은 특허 하나가 수조 원의 가치를 갖지만, 식품·의류는 특허보다 <strong>브랜드</strong>가 혁신 수익을 지킨다. 같은 &quot;혁신&quot;이라도 지키는 방법이 산업마다 다르다는 것이 Pavitt 표의 &#39;전유 수단&#39; 행이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-position" data-sec="c02-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS의 <strong>경험적 기초</strong>. Tidd·Archibugi·Castellacci·이근의 분류가 모두 이 표를 확장한 것이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-related" data-sec="c02-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Pavitt, K. (1984) Sectoral patterns of technical change: Towards a taxonomy and a theory. <em>Research Policy</em> 13(6)</li>
+<li>연결: <a href="W07-2.html#c01">W07-2/01 SIS</a> · <a href="W07-2.html#c03">W07-2/03 확장 분류</a> · <a href="W07-2.html#c04">W07-2/04 DUI·STI 조합</a> · <a href="W07-2.html#c08">W07-2/08 Castellacci</a> · <a href="W07-2.html#c10">W07-2/10 DRAM</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c02-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Pavitt (1984)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-4</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=pavitt">pavitt</a> · <a href="map.html?tag=taxonomy">taxonomy</a> · <a href="map.html?tag=supplier-dominated">supplier-dominated</a> · <a href="map.html?tag=scale-intensive">scale-intensive</a> · <a href="map.html?tag=specialised-suppliers">specialised-suppliers</a> · <a href="map.html?tag=science-based">science-based</a> · <a href="map.html?tag=DRAM">DRAM</a> · <a href="map.html?tag=refinery">refinery</a> · <a href="map.html?tag=comparison">comparison</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c02-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Pavitt의 네 유형을 쓰고, 각각의 혁신 원천·대표 산업을 설명하라. <span class="tag">서술형</span></li>
+<li>정유 회사와 제약 회사는 Pavitt 분류에서 각각 어디에 속하며, 혁신에서 무엇이 중요한가? <span class="tag">서술형</span></li>
+<li>교수님은 AI 등장으로 어떤 유형의 위치가 애매해진다고 했는가? 그 이유는? <span class="tag">서술형</span></li>
+<li>본인 소속 기업(또는 관심 산업)을 Pavitt 분류에 매칭하고 근거를 쓰라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c02">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c01">SIS — 같은 기술 변화도 산업마다 다른 혁신으로</a> · <a href="W07-2.html#c03">확장 분류 — Tidd의 정보집약형과 Archibugi의 패러다임별 기업 유형</a> · <a href="W07-2.html#c04">산업별 학습 방식 — DUI와 STI의 조합</a> · <a href="W07-2.html#c08">Castellacci 분류와 KIBS — 서비스업까지 넓히다</a> · <a href="W07-2.html#c10">대량생산 산업 사례와 기술 안보 — DRAM·자동차·철강·제약</a> · <a href="W05-2.html#c04">미국·영국·독일의 세 가지 양식</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c03">
+  <h2 class="concept-title">확장 분류 — Tidd의 정보집약형과 Archibugi의 패러다임별 기업 유형</h2>
+  <p class="concept-en">Extended taxonomies — information-intensive firms (Tidd et al. 1997); Pavitt types by techno-economic paradigm (Archibugi 2001)</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 03</span>
+    <span>슬라이드 W07b p11, p12</span>
+    <span class="stars" title="시험 중요도 3/5 — Tidd·Archibugi 확장 분류 — 수 분. Archibugi의 패러다임별 기업 유형이 W03 TEP와 이어지는 비교 소재(X27)지만 단독 출제 가능성은 낮다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c03" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c03-definition"><h4>한 줄 정의</h4><p>Pavitt 분류는 이후 두 방향으로 확장됐다. <strong>Tidd et al.(1997)</strong>은 IT 시대에 맞춰 <strong>정보집약형</strong>을 추가했고, <strong>Archibugi(2001)</strong>는 <strong>기술경제패러다임이 바뀔 때마다 새로운 기업 유형이 등장했다</strong>고 보았다(기계화 → 공급자 지배형, 증기·철도 → 전문공급자형, 과학적 발견 → 과학기반형, 포드주의 → 규모집약형, ICT → 정보집약형, 그리고 이제 <strong>플랫폼 기업</strong>). <strong>Pavitt와 Freeman을 같이 연결</strong>한 것이다.</p>
+</div>
+<div class="sec sec-analogy" id="c03-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>시대마다 <strong>새로운 직업</strong>이 생긴다. 증기기관 시대엔 기계공, 전기 시대엔 화학자, 자동차 시대엔 대량생산 공장장, 인터넷 시대엔 개발자, 지금은 플랫폼 운영자. Archibugi는 큰 기술 물결(파도형, Freeman)이 올 때마다 <strong>그 물결에 맞는 기업 형태(Pavitt 유형)</strong>가 새로 생긴다고 정리했다.</p>
+</div>
+<div class="sec sec-core" id="c03-core"><h4>핵심 내용</h4><h3 id="c03-h-tidd-et-al-1997-정보집약형-추가-w07b-p11">Tidd et al. (1997) — 정보집약형 추가 (W07b p11)</h3>
+<figure class="slide"><img src="images/W07b/p11.jpg" alt="W07b p11 산업부문별 기술혁신 유형 (Tidd et al. 1997)" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p11 산업부문별 기술혁신 유형 (Tidd et al. 1997)</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>유형</th>
+<th>대표 산업</th>
+<th>기술축적 주요 원천</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>공급자 주도형</td>
+<td>섬유·의복·가죽·목재</td>
+<td>공급자, 생산학습</td>
+</tr>
+<tr>
+<td>규모집약형</td>
+<td>철강·유리·조선·가전·자동차</td>
+<td>생산엔지니어링, 생산학습, 설비 공급자</td>
+</tr>
+<tr>
+<td><strong>정보집약형</strong></td>
+<td><strong>정보통신, 금융, 도소매, 출판, 여행</strong></td>
+<td><strong>소프트웨어·시스템 엔지니어링</strong></td>
+</tr>
+<tr>
+<td>과학기반형</td>
+<td>전기전자·화학·의약·생명공학</td>
+<td>자체 R&amp;D, 기초연구</td>
+</tr>
+<tr>
+<td>전문공급자</td>
+<td>우주항공·정밀계측·공작기계·S/W</td>
+<td>제품설계, 사용자</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li><strong>항공기는 전문공급자형</strong>(공군이 비행기를 만들 수는 없으니), <strong>오라클 같은 회사는 정보집약형</strong>.</li>
+</ul>
+<h3 id="c03-h-archibugi-2001-자본주의-발전과-pavitt-기업-유형-w07b-p12">Archibugi (2001) — 자본주의 발전과 Pavitt 기업 유형 (W07b p12) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p12.jpg" alt="W07b p12 자본주의 발전과 Pavitt's 기업 유형 (Archibugi 2001)" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p12 자본주의 발전과 Pavitt's 기업 유형 (Archibugi 2001)</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>기간</th>
+<th>기술경제 패러다임</th>
+<th>대표 산업</th>
+<th>부상한 Pavitt 유형</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1770–1830</td>
+<td>초기 기계화</td>
+<td>섬유·도기·기계</td>
+<td><strong>공급자 지배형</strong></td>
+</tr>
+<tr>
+<td>1840–1880</td>
+<td>증기력·철도</td>
+<td>기계공학·철강·석탄</td>
+<td><strong>전문공급자형</strong></td>
+</tr>
+<tr>
+<td>1890–1930</td>
+<td>과학적 발견의 기회</td>
+<td>화학·전기기계</td>
+<td><strong>과학기반형</strong></td>
+</tr>
+<tr>
+<td>1940–1980</td>
+<td>포드주의·테일러주의</td>
+<td>자동차·합성제품·내구소비재</td>
+<td><strong>규모집약형</strong></td>
+</tr>
+<tr>
+<td>1990–</td>
+<td>정보통신기술</td>
+<td>마이크로전자·통신·소프트웨어</td>
+<td><strong>정보집약형</strong> (강한 사용자–생산자 상호작용)</td>
+</tr>
+</tbody></table></div>
+<blockquote class="quote-prof"><p>파도형이 올 때마다 새로운 기업의 형태들이 나타난 거예요. (…) <strong>Pavitt과 Freeman을 같이 연결</strong>을 하는 거죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>화학 시대의 과학기반형 예: <strong>듀퐁</strong>. 정보집약형 다음은 <strong>이제 플랫폼 기업</strong>.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>W07-2/01에서 Freeman(파도)과 Pavitt(동심원)이 대비되었다면, Archibugi는 둘을 <strong>한 표에 합쳤다</strong>. 파도(패러다임)가 오면 → 새 기업 유형이 생기고 → 그 유형이 동심원처럼 퍼진다. W03/01 Kondratieff 장기파동, W03/02 TEP의 연표와 나란히 보면 좋다.</p>
+<h3 id="c03-h-물질세계를-치고-들어간-것">물질세계를 치고 들어간 것</h3>
+<blockquote class="quote-prof quote-bare"><p>따지고 보면 <strong>물질세계를 위해서 사람들이 계속 치고 들어오는 거예요.</strong> 어떻게 하면 우리가 자원을 이용할까. 그걸 가만히 보면 다 머티리얼 베이스가 다른 애들. 저번에도 얘기했지만 중국·한국·일본에서는 공자 명심하고 이랬을 때, <strong>얘네들은 딴짓을 한 거야. 물질의 세계를 치고 들어가는 거예요.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span>W06 Q1 토론의 &quot;동양은 너무 철학적이어서 실사구시를 못 했다&quot;와 같은 이야기다. 산업 유형의 차이는 결국 <strong>어떤 물질을 다루느냐(물적 기반)</strong>의 차이다 → <a href="W07-2.html#c07">W07-2/07</a>.</p>
+</div>
+<details class="sec sec-fold" id="c03-discussion" data-sec="c03-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span>예나의 삼성페이 앱 개발을 교수님은 <strong>정보집약형</strong>으로 분류했다 → <a href="W07-2.html#c04">W07-2/04</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-examples" data-sec="c03-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>플랫폼 기업의 혁신 원천</strong>: 구글·아마존 같은 플랫폼은 자체 R&amp;D도 크지만, 핵심 원천은 <strong>사용자 데이터와 외부 개발자(보완자)</strong>다. Pavitt의 어느 유형에도 딱 맞지 않아, W01/11 Innovation Ecosystem 이론(오케스트레이터)이 따로 필요해진 이유이기도 하다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-position" data-sec="c03-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS 분류가 <strong>고정된 표가 아니라 시대에 따라 바뀐다</strong>는 점을 보여 준다. 다음의 Castellacci(W07-2/08)는 이 흐름에서 <strong>서비스업</strong>까지 넓힌 것이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-related" data-sec="c03-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Tidd, J., Bessant, J. &amp; Pavitt, K. (1997) <em>Managing Innovation</em>; Archibugi, D. (2001) Pavitt&#39;s taxonomy sixteen years on: a review article</li>
+<li>연결: <a href="W07-2.html#c02">W07-2/02 Pavitt 분류</a> · <a href="W07-2.html#c08">W07-2/08 Castellacci</a> · <a href="W03.html#c01">W03/01 Kondratieff 장기파동</a> · <a href="W03.html#c02">W03/02 TEP</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c03-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Tidd, Bessant &amp; Pavitt (1997)</li><li>Archibugi (2001)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-5</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=pavitt">pavitt</a> · <a href="map.html?tag=tidd">tidd</a> · <a href="map.html?tag=archibugi">archibugi</a> · <a href="map.html?tag=information-intensive">information-intensive</a> · <a href="map.html?tag=techno-economic-paradigm">techno-economic-paradigm</a> · <a href="map.html?tag=platform">platform</a> · <a href="map.html?tag=freeman">freeman</a> · <a href="map.html?tag=material-base">material-base</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c03-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Archibugi(2001)는 Pavitt 분류와 Freeman의 기술경제패러다임을 어떻게 연결했는가? 시대별로 부상한 기업 유형을 쓰라. <span class="tag">서술형</span></li>
+<li>Tidd et al.(1997)이 추가한 정보집약형의 특징과 대표 산업을 쓰라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c03">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c02">Pavitt 분류 — 혁신의 원천은 산업마다 다르다</a> · <a href="W07-2.html#c08">Castellacci 분류와 KIBS — 서비스업까지 넓히다</a> · <a href="W03.html#c01">Kondratieff 장기파동과 범용기술 (GPT / GDT)</a> · <a href="W03.html#c02">기술경제패러다임(TEP)과 혁신의 네 층위</a> · <a href="W07-2.html#c01">SIS — 같은 기술 변화도 산업마다 다른 혁신으로</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c04">
+  <h2 class="concept-title">산업별 학습 방식 — DUI와 STI의 조합</h2>
+  <p class="concept-en">Sectoral learning modes — combinations of DUI and STI</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 04</span>
+    <span>슬라이드 W07b p13</span>
+    <span class="stars" title="시험 중요도 3/5 — 산업별 DUI·STI 조합 — 약 4분. '현장이 더 아나 교수가 더 아나' 판별법이 기억하기 쉽지만 W02 프레임의 재적용(X28)" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c04" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c04-definition"><h4>한 줄 정의</h4><p>W02의 두 학습 방식 — <strong>현장 경험 기반 DUI</strong>와 <strong>과학기술 기반 STI</strong> — 의 <strong>비중과 연결 방식이 산업마다 다르다.</strong> 간단한 판별법: <strong>현장 사람이 대학 교수보다 더 많이 알면 DUI가 강한 산업, 대학 교수가 더 많이 알면 STI가 강한 산업.</strong> 기업은 자기 강점이 어디서 오는지 알아야 하고(&quot;우리 산업의 정체가 뭔지를 파악&quot;), <strong>급진적 혁신에는 STI가 들어가야</strong> 한다.</p>
+</div>
+<div class="sec sec-analogy" id="c04-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>김치 공장과 신약 연구소. 김치 맛의 비밀은 <strong>공장 장인의 손끝(DUI)</strong>에 있어서 식품공학 교수님이 와도 쉽게 못 따라 한다. 신약의 비밀은 <strong>실험실 논문(STI)</strong>에 있어서 공장 장인이 아무리 오래 일해도 새 분자를 만들 수 없다.</p>
+</div>
+<div class="sec sec-core" id="c04-core"><h4>핵심 내용</h4><h3 id="c04-h-슬라이드-w07b-p13">슬라이드 (W07b p13)</h3>
+<figure class="slide"><img src="images/W07b/p13.jpg" alt="W07b p13 산업별 학습 방식: DUI와 STI의 조합" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p13 산업별 학습 방식: DUI와 STI의 조합</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>DUI</strong> (Doing·Using·Interacting)</th>
+<th><strong>STI</strong> (Science·Technology·Innovation)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>학습</td>
+<td>경험을 통한 학습</td>
+<td>과학·기술 지식의 활용</td>
+</tr>
+<tr>
+<td>장면</td>
+<td>생산과 문제 해결 과정 / 장비·제품의 사용 경험 / 사용자·공급자와의 협업</td>
+<td>공식 연구개발과 설계 / 과학적 원리와 전문 인력 / 특허·연구기관과의 연계</td>
+</tr>
+</tbody></table></div>
+<p>&quot;산업마다 두 지식의 <strong>비중과 연결 방식</strong>이 다르다.&quot;</p>
+<h3 id="c04-h-1-판별법-현장이-더-아나-교수가-더-아나">1) 판별법 — 현장이 더 아나, 교수님이 더 아나 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p>아주 쉽게 얘기하면, <strong>대학 교수보다 여기 현장에 있는 사람이 더 많이 알면 DUI가 강한 거고, 대학 교수가 많이 알면 STI가 강한 걸로</strong> 얘기할 수 있어요. 정유 같은 데는 아마 UNIST 교수보다 <strong>내부에 있는 사람</strong>이 훨씬 더 많이 알 걸. 근데 제약은 대학에 더 많이 가죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>기업은 <strong>내 지식의 강점이 DUI에서 나오는지, STI에서 가져와야 하는지</strong> 따져야 한다.</li>
+<li><strong>급진적 혁신에는 STI가 들어가야</strong> 한다. 면직물 공장에서 합성섬유를 만들 수는 없다 — 전혀 다른 지식 기반이 필요.</li>
+<li><strong>삼성바이오로직스</strong>는 신약 개발이 아니라 <strong>생산 엔지니어링</strong> 중심이니 규모집약형 성격이 강하다 — &quot;<strong>우리 산업의 정체가 뭔지를 파악하는 겁니다.</strong>&quot;</li>
+</ul>
+<h3 id="c04-h-2-예나의-사례-삼성페이-앱-개발">2) 예나의 사례 — 삼성페이 앱 개발 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>교수님이 참석자에게 소속을 물었고, <strong>예나</strong>가 &quot;삼성페이 앱 개발&quot;이라고 답하자: <strong>정보집약형</strong>이며, 시스템 엔지니어링 쪽은 사이언스보다 <strong>DUI가 더 강할 것</strong>이라고 했다. 네이버도 비즈니스 성격에 따라 규모 쪽으로 갈지 고민할 것.</li>
+<li>벤처 투자도 DUI가 훨씬 강하다. 다만 <strong>AI로 전문가 시스템을 만들어 현장 지식을 코드화</strong>하면 대학 교수가 진짜 잘할 수도 있다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>마지막 단서가 중요하다. AI가 DUI(암묵지)를 STI(형식지)로 바꾸면 <strong>산업의 정체성 자체가 바뀔 수 있다.</strong> W06/07의 &quot;피지컬 AI는 암묵지를 형식지로 바꾸는 작업, 그래도 암묵지는 계속 나온다&quot;와 같은 논점이다.</p>
+</div>
+<details class="sec sec-fold" id="c04-discussion" data-sec="c04-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>수업노트 정제 노트: 5-6절은 <strong>W02의 DUI/STI를 산업 분류와 결합</strong>한 것이다.</li>
+<li><strong>Term paper 후보</strong>(수업노트 표시): 본인 소속 기업을 Pavitt/Castellacci 분류에 매칭 — 예나의 경우 삼성페이 앱 개발을 <strong>정보집약형·KIBS 관점</strong>에서, AX를 매개하는 SI·KIBS의 역할로 분석 → <a href="W07-2.html#c08">W07-2/08</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-examples" data-sec="c04-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span>Jensen et al.(2007, W02-1/04)의 결론 — <strong>STI와 DUI를 결합한 기업이 혁신 성과가 가장 높다</strong> — 을 SIS 관점에서 다시 읽으면, &quot;어떤 비율로 결합하느냐&quot;가 산업마다 다르다는 것이 된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-position" data-sec="c04-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>미시적 기초(W02-1) → 국가(W06/07) → <strong>산업(W07-2/04)</strong>. 같은 STI/DUI 프레임이 세 단위에서 반복된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-related" data-sec="c04-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Jensen et al. (2007)</li>
+<li>연결: <a href="W02-1.html#c03">W02-1/03 STI/DUI</a> · <a href="W02-1.html#c12">W02-1/12 종합</a> · <a href="W06.html#c07">W06/07 NIS 안의 STI·DUI</a> · <a href="W07-2.html#c02">W07-2/02 Pavitt 분류</a> · <a href="W07-2.html#c08">W07-2/08 Castellacci·KIBS</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c04-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Jensen et al. (2007)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-6</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=DUI">DUI</a> · <a href="map.html?tag=STI">STI</a> · <a href="map.html?tag=tacit-knowledge">tacit-knowledge</a> · <a href="map.html?tag=radical-innovation">radical-innovation</a> · <a href="map.html?tag=industry-identity">industry-identity</a> · <a href="map.html?tag=information-intensive">information-intensive</a> · <a href="map.html?tag=samsung-pay">samsung-pay</a> · <a href="map.html?tag=AI-expert-system">AI-expert-system</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c04-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>산업마다 DUI와 STI의 비중이 다르다는 주장을 정유·제약 사례로 설명하라. (교수님의 판별법 포함) <span class="tag">서술형</span></li>
+<li>급진적 혁신에 STI가 필요한 이유를 설명하라. <span class="tag">서술형</span></li>
+<li>비교형: STI/DUI는 W02(기업), W06(국가), W07(산업)에서 각각 어떻게 쓰였는가? <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c04">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W02-1.html#c03">STI mode vs DUI mode</a> · <a href="W02-1.html#c12">종합 — 지식 모드의 결합과 수요 중심 정책</a> · <a href="W06.html#c07">NIS 안의 STI·DUI 결합 — 지식이 역량이 되는 경로</a> · <a href="W07-2.html#c02">Pavitt 분류 — 혁신의 원천은 산업마다 다르다</a> · <a href="W07-2.html#c08">Castellacci 분류와 KIBS — 서비스업까지 넓히다</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c05">
+  <h2 class="concept-title">Malerba의 SIS — 산업을 이루는 여섯 요소와 그 작동</h2>
+  <p class="concept-en">Malerba's SIS — six building blocks and their dynamics</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 05</span>
+    <span>슬라이드 W07b p14, p16</span>
+    <span class="stars" title="시험 중요도 4/5 — Malerba 여섯 요소 — SIS의 이론적 핵심이라 정의형으로 나오기 좋다. 강의 시간은 짧았고 교수 강조는 기술체제·누적성 쪽에 실렸다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c05" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c05-definition"><h4>한 줄 정의</h4><p>Pavitt가 산업별 차이를 <strong>분류</strong>했다면, <strong>Malerba</strong>는 그 차이를 <strong>시스템으로 설명</strong>한다. 산업은 <strong>지식과 학습 · 기술·투입요소 · 수요 · 행위자 · 상호작용 · 제도</strong>의 여섯 요소로 이뤄지고, 이 요소들이 연결되어 돌아가다가 <strong>사용과 경쟁의 결과에 따라 다시 바뀐다.</strong> 이것은 <strong>분석의 손잡이(analytical handle)</strong> — 현미경을 어디에 맞출지 알려 주는 틀이다.</p>
+</div>
+<div class="sec sec-analogy" id="c05-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>한 동네 상권을 분석하는 체크리스트다. <strong>무슨 노하우가 있나(지식)</strong>, <strong>어떤 재료·장비를 쓰나(기술·투입)</strong>, <strong>손님은 누구고 뭘 원하나(수요)</strong>, <strong>가게·도매상·구청은 누구나(행위자)</strong>, <strong>서로 얼마나 거래·협력하나(상호작용)</strong>, <strong>영업 규칙·위생 기준은 뭔가(제도)</strong>. 장사가 잘되고 안되는 결과가 다시 이 여섯 칸을 바꾼다.</p>
+</div>
+<div class="sec sec-core" id="c05-core"><h4>핵심 내용</h4><h3 id="c05-h-여섯-요소-w07b-p14">여섯 요소 (W07b p14) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p14.jpg" alt="W07b p14 Malerba의 SIS: 산업을 이루는 여섯 요소" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p14 Malerba의 SIS: 산업을 이루는 여섯 요소</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>요소</th>
+<th><span class="tag tag-supp">보충</span>묻는 것</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>지식과 학습</strong></td>
+<td>이 산업의 핵심 지식은 무엇이고 어떻게 배우나</td>
+</tr>
+<tr>
+<td><strong>기술·투입요소</strong></td>
+<td>어떤 기술·재료·장비를 쓰나</td>
+</tr>
+<tr>
+<td><strong>수요</strong></td>
+<td>누가 사고, 무엇을 요구하나</td>
+</tr>
+<tr>
+<td><strong>행위자</strong></td>
+<td>기업·대학·정부·사용자 등 (개인과 조직 포함)</td>
+</tr>
+<tr>
+<td><strong>상호작용</strong></td>
+<td>경쟁·협력·거래·네트워크</td>
+</tr>
+<tr>
+<td><strong>제도</strong></td>
+<td>규칙·표준·지원</td>
+</tr>
+</tbody></table></div>
+<p>&quot;행위자는 개인과 조직을 포함한다. <strong>산업의 범위는 연구 질문에 맞춰 설정한다.</strong>&quot;</p>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>마지막 문장이 Term paper에서 중요하다. &quot;정유 산업&quot;을 볼지 &quot;석유화학 전체&quot;를 볼지는 <strong>내 질문이 정한다.</strong> 경계를 먼저 정의하고 시작해야 한다.</p>
+<h3 id="c05-h-작동-방식-w07b-p16">작동 방식 (W07b p16)</h3>
+<figure class="slide"><img src="images/W07b/p16.jpg" alt="W07b p16 SIS의 작동: 요소들이 연결되고 다시 바뀐다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p16 SIS의 작동: 요소들이 연결되고 다시 바뀐다</figcaption></figure>
+<ul>
+<li>흐름: <strong>지식과 기술</strong>(가능한 해결책) → <strong>기업과 기관</strong>(개발·투자·조정) → <strong>생산과 사용</strong>(실제 적용·학습) → <strong>수요와 시장</strong>(선택·확산·보상) / <strong>제도와 기준</strong>(규칙·표준·지원)</li>
+<li>&quot;사용과 경쟁의 결과가 <strong>기업 역량·기술 선택·수요 기대를 바꾼다</strong>.&quot;</li>
+<li>&quot;협력과 경쟁은 같은 산업 안에서도 <strong>함께</strong> 나타난다.&quot;</li>
+<li>&quot;기술과 시장 변화는 산업 시스템의 <strong>기존 관계를 재구성</strong>할 수 있다.&quot;</li>
+</ul>
+<blockquote class="quote-prof"><p>이런 지식과 기술, 기업과 기관, 생산과 사용, 시장, 제도와 기준 — 시스템이 돌아가는 방식들이 있는데, 이걸 <strong>어널리티컬 핸들</strong>이죠. <strong>어디를 붙잡고, 현미경을 어디다 맞출 것인지</strong>를 얘기하는 겁니다.</p><footer class="quote-cite">교수님</footer></blockquote>
+</div>
+<details class="sec sec-fold" id="c05-discussion" data-sec="c05-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span>W06/01 NIS 도식(기업 가운데 + 정책·지식·노동·사용자)과 비교하면, Malerba는 <strong>수요</strong>와 <strong>기술·투입요소</strong>를 독립 요소로 세운다는 점이 다르다. 산업 단위에서는 &quot;무엇을 만드나(물적 기반)&quot;와 &quot;누가 사나&quot;가 국가 단위보다 훨씬 구체적이기 때문이다 → <a href="W07-2.html#c07">W07-2/07 물적 기반</a>.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>교수님이 강의 끝에 &quot;기존 연구는 <strong>생산 쪽이 훨씬 많이 강조</strong>되어 있고 <strong>규제·사용자 쪽은 더 연구해야</strong>&quot;라고 한 것(W07-2/11)은, 이 여섯 요소 중 <strong>수요·제도</strong> 칸이 비어 있다는 뜻이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-examples" data-sec="c05-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>제약 산업에 여섯 요소 적용</strong>: 지식(생명과학), 기술·투입(임상·생산설비), 수요(환자 → 의사 처방 → 보험), 행위자(제약사·병원·규제기관·대학), 상호작용(기술이전·임상협력), 제도(특허·허가). W07b p31의 제약 사례가 정확히 이 구조다 → <a href="W07-2.html#c10">W07-2/10</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-position" data-sec="c05-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS의 <strong>이론적 핵심</strong>. Pavitt(분류) → Malerba(시스템) → Castellacci(서비스 확장) → Lee &amp; Malerba(추격 경로)의 두 번째 단계.</li>
+<li>기술체제(W07-2/06)는 이 중 <strong>지식과 학습</strong> 요소를 더 쪼갠 것이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-related" data-sec="c05-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Malerba (2002) Sectoral systems of innovation and production. <em>Research Policy</em> 31; Malerba &amp; Orsenigo (1997)</li>
+<li>연결: <a href="W07-2.html#c01">W07-2/01 SIS</a> · <a href="W07-2.html#c06">W07-2/06 기술체제</a> · <a href="W07-2.html#c11">W07-2/11 분석 질문</a> · <a href="W06.html#c01">W06/01 NIS</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c05-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Malerba (2002)</li><li>Malerba &amp; Orsenigo (1997)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-7</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=malerba">malerba</a> · <a href="map.html?tag=building-blocks">building-blocks</a> · <a href="map.html?tag=knowledge">knowledge</a> · <a href="map.html?tag=demand">demand</a> · <a href="map.html?tag=actors">actors</a> · <a href="map.html?tag=interaction">interaction</a> · <a href="map.html?tag=institutions">institutions</a> · <a href="map.html?tag=analytical-handle">analytical-handle</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c05-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Malerba의 SIS 여섯 요소를 쓰고, Pavitt의 분류 접근과 무엇이 다른지 설명하라. <span class="tag">서술형</span></li>
+<li>&quot;사용과 경쟁의 결과가 기업 역량·기술 선택·수요 기대를 바꾼다&quot;는 SIS의 동태적 측면을 설명하라. <span class="tag">서술형</span></li>
+<li>비교형: NIS 도식(W06/01)과 Malerba의 SIS 여섯 요소를 비교하라. <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c05">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c01">SIS — 같은 기술 변화도 산업마다 다른 혁신으로</a> · <a href="W07-2.html#c06">기술체제와 누적성 — 전기차와 바이브 코딩</a> · <a href="W07-2.html#c11">SIS 분석 질문과 디지털의 산업별 확산 (SIS 정리)</a> · <a href="W06.html#c01">NIS — 혁신을 시스템의 상호작용으로 본다</a> · <a href="W06.html#c04">Freeman vs Lundvall — 서로 다른 층위의 출발</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c06">
+  <h2 class="concept-title">기술체제와 누적성 — 전기차와 바이브 코딩</h2>
+  <p class="concept-en">Technological regime — opportunity, appropriability, cumulativeness, knowledge base; Schumpeter Mark I vs Mark II</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 06</span>
+    <span>슬라이드 W07b p15</span>
+    <span class="stars" title="시험 중요도 5/5 — ★★ 기술체제와 누적성 — 전기차·바이브 코딩 발언이 길게 이어졌고 토론 질문 후보로 표시됐다. DRAM·고착과의 비교(X29)가 추격 이론 서술형으로 직결" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c06" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c06-definition"><h4>한 줄 정의</h4><p><strong>기술체제(technological regime)</strong>는 한 산업에서 혁신이 일어나는 조건을 네 차원으로 본다. <strong>기술적 기회</strong>(새 기술을 만들 기회가 풍부한가), <strong>전유 가능성</strong>(혁신의 수익을 지킬 수 있나), <strong>누적성</strong>(오늘의 지식이 내일의 혁신으로 이어지나), <strong>지식기반</strong>(지식이 얼마나 복합적·암묵적인가). 그중 <strong>누적성</strong>은 &quot;<strong>이 길을 거치지 않으면 저쪽 길로 갈 수 없다</strong>&quot;는 뜻인데, 중국 전기차와 AI 바이브 코딩은 이 누적성을 <strong>치워 버렸다.</strong></p>
+</div>
+<div class="sec sec-analogy" id="c06-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p><strong>누적성 = 계단.</strong> 피아노는 바이엘 → 체르니 → 쇼팽 순서를 밟아야 한다. 먼저 시작한 사람이 계속 앞선다. 그런데 누군가 <strong>엘리베이터(전기차, AI)</strong>를 놓으면 계단을 오래 오른 사람의 우위가 사라진다. 처음부터 엘리베이터를 탄 사람(중국)이 꼭대기에 먼저 도착할 수도 있다.</p>
+</div>
+<div class="sec sec-core" id="c06-core"><h4>핵심 내용</h4><h3 id="c06-h-슬라이드-w07b-p15">슬라이드 (W07b p15)</h3>
+<figure class="slide"><img src="images/W07b/p15.jpg" alt="W07b p15 기술체제: 산업별 혁신활동의 조건" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p15 기술체제: 산업별 혁신활동의 조건</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>차원</th>
+<th>분석 질문</th>
+<th>혁신활동에 미치는 영향</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>기술적 기회</strong></td>
+<td>새 기술을 만들 기회가 얼마나 풍부한가?</td>
+<td>기술 탐색과 혁신 진입의 폭</td>
+</tr>
+<tr>
+<td><strong>전유 가능성</strong></td>
+<td>혁신의 수익을 보호할 수 있는가?</td>
+<td>기업이 혁신투자를 회수할 가능성</td>
+</tr>
+<tr>
+<td><strong>누적성</strong></td>
+<td>오늘의 지식이 내일의 혁신으로 이어지는가?</td>
+<td><strong>기존 기업의 학습 우위와 경로 지속</strong></td>
+</tr>
+<tr>
+<td><strong>지식기반</strong></td>
+<td>지식이 얼마나 복합적·암묵적·특정적인가?</td>
+<td>필요 역량, 협력과 진입 장벽</td>
+</tr>
+</tbody></table></div>
+<p><strong>Mark I: 창조적 파괴 | Mark II: 창조적 축적</strong></p>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>Mark I / Mark II 구분:</p>
+<ul>
+<li><strong>Mark I (창조적 파괴, 젊은 Schumpeter)</strong>: 기회가 많고 누적성·전유성이 낮다 → <strong>새 기업이 쉽게 들어와</strong> 기존 기업을 무너뜨린다. 넓게 퍼진(widening) 혁신.</li>
+<li><strong>Mark II (창조적 축적, 후기 Schumpeter)</strong>: 누적성·전유성이 높다 → <strong>기존 대기업이 계속 앞선다.</strong> 깊어지는(deepening) 혁신.</li>
+<li>어느 체제냐가 <strong>그 산업에서 누가 혁신하는지</strong>를 정한다.</li>
+</ul>
+<h3 id="c06-h-누적성을-치워-버리다-전기차">누적성을 치워 버리다 — 전기차 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p><strong>누적적이라는 얘기는 이 길을 거치지 않으면 저쪽 길로 갈 수 없다는 겁니다.</strong> 근데 중국은 <strong>내연기관도 안 가고 전기차로 넘어가 버렸어요.</strong> 아예 다른 길로. <strong>누적성을 딱 치워버리는 거지.</strong> 만약 전기자동차가 없었으면 독일 자동차 회사들이 저렇게 쉽게 줄어들지 않았을 거. 독일이 내연기관에서 갖고 있던 정도의 <strong>엔지니어링 기술의 어드밴티지가 다시 사라져버렸어요.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<h3 id="c06-h-ai도-그렇다-바이브-코딩">AI도 그렇다 — 바이브 코딩 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p><strong>지금 AI도 그러거든요. 바이브 코딩.</strong> 옛날에는 코딩을 잘해야 수준이 올라가는 거였는데, 지금은 그냥 &#39;니가 해&#39; 그럼 시키는 대로. <strong>누적성이 갖고 있던 어드밴티지가 다 사라지는</strong> 거죠. (…) 그럼에도 불구하고 계속 가죠. AI가 바이브 코딩을 하더라도 <strong>AI를 잘 쓰는 방법</strong> — 일본 어떤 제조업 회사는 신입 사원들한테 AI 교육을 시켜서 실제 제조 공정을 AX로 하게끔 한다더라고요.</p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>교수님의 결론은 &quot;누적성이 끝났다&quot;가 아니다. 옛 누적성(코딩 숙련)의 우위는 사라지지만 <strong>&quot;AI를 잘 쓰는 방법&quot;이라는 새로운 누적성</strong>이 시작된다. W06/07의 &quot;암묵지는 계속 나온다&quot;와 같은 구조.</p>
+</div>
+<details class="sec sec-fold" id="c06-discussion" data-sec="c06-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>수업노트 <strong>토론 질문 후보</strong>: &quot;<strong>AI·전기차가 누적성을 무력화하면 후발국 추격 논리는 어떻게 바뀌나</strong>.&quot;</li>
+<li>수업노트 정제 노트: 5-7절의 누적성은 W02의 &quot;<strong>unlearning이 어렵다</strong>&quot;와 통한다. 누적성이 높을수록 기존 기업은 앞서지만, 판이 바뀌면 그 누적이 <strong>고착</strong>(W01/05)이 된다.</li>
+<li>DRAM은 반대로 <strong>누적성이 여전히 강한</strong> 사례다: &quot;중국이 아무리 해도 할 수가 없는 거예요&quot; → <a href="W07-2.html#c10">W07-2/10</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-examples" data-sec="c06-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>도약(leapfrogging)</strong>: 후발국이 중간 단계를 건너뛰는 추격. 아프리카가 유선전화망 없이 바로 모바일 결제(케냐 M-Pesa)로 간 것이 대표 사례다. 이근 교수님의 <strong>추격 사이클·경로 창출형 추격</strong> 논의와 맞닿는다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-position" data-sec="c06-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS 중 <strong>추격 이론과 가장 직접 연결되는</strong> 개념. 누적성이 낮아지는 순간이 W07-2/07의 <strong>추격의 창(window of opportunity)</strong>이다.</li>
+<li>W03/03 파도형 혁신(새 패러다임)이 누적성을 리셋한다고 보면, 동심원형 혁신은 기존 누적성 위에서 일어난다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-related" data-sec="c06-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Malerba &amp; Orsenigo (1997); Malerba (2002)</li>
+<li>연결: <a href="W07-2.html#c05">W07-2/05 Malerba 여섯 요소</a> · <a href="W07-2.html#c10">W07-2/10 DRAM</a> · <a href="W02-1.html#c02">W02-1/02 학습은 축적 행위</a> · <a href="W01.html#c05">W01/05 세 가지 고착</a> · <a href="W03.html#c03">W03/03 파도형 vs 동심원형</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c06-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Malerba &amp; Orsenigo (1997) Technological regimes and sectoral patterns ★SIS Core Reading</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-7</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=technological-regime">technological-regime</a> · <a href="map.html?tag=opportunity">opportunity</a> · <a href="map.html?tag=appropriability">appropriability</a> · <a href="map.html?tag=cumulativeness">cumulativeness</a> · <a href="map.html?tag=knowledge-base">knowledge-base</a> · <a href="map.html?tag=schumpeter-mark-I">schumpeter-mark-I</a> · <a href="map.html?tag=schumpeter-mark-II">schumpeter-mark-II</a> · <a href="map.html?tag=electric-vehicle">electric-vehicle</a> · <a href="map.html?tag=vibe-coding">vibe-coding</a> · <a href="map.html?tag=leapfrogging">leapfrogging</a> · <a href="map.html?tag=catch-up">catch-up</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c06-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>기술체제의 네 차원을 쓰고, 그중 누적성의 의미를 설명하라. <span class="tag">서술형</span></li>
+<li>중국 전기차와 AI 바이브 코딩 사례로 &quot;누적성이 치워질 때&quot; 무슨 일이 일어나는지 설명하고, 후발국 추격에 주는 함의를 논하라. (토론 질문 후보) <span class="tag">서술형</span></li>
+<li>Schumpeter Mark I(창조적 파괴)과 Mark II(창조적 축적)를 기술체제 차원으로 구분하라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c06">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c05">Malerba의 SIS — 산업을 이루는 여섯 요소와 그 작동</a> · <a href="W07-2.html#c10">대량생산 산업 사례와 기술 안보 — DRAM·자동차·철강·제약</a> · <a href="W02-1.html#c02">학습 — 지식생산의 미시적 기초</a> · <a href="W01.html#c05">세 가지 고착 — 조직·기술·사용자 lock-in</a> · <a href="W03.html#c03">파도형 혁신 vs 동심원형 혁신</a> · <a href="W06.html#c05">Freeman의 기술 인프라 — 액터가 아니라 네트워크</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c07">
+  <h2 class="concept-title">물적 기반과 추격의 창 — 철강·카메라·와인</h2>
+  <p class="concept-en">Material base mediates technology adoption; windows of opportunity differ by sector (Lee &amp; Malerba)</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 07</span>
+    <span>슬라이드 W07b p17, p18, p19, p20, p21</span>
+    <span class="stars" title="시험 중요도 4/5 — 물적 기반과 추격의 창 — 철강·카메라·와인·추격의 창 표(p21)까지 약 10분. Lee &amp; Malerba의 창은 비교형으로 나오기 좋다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c07" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c07-definition"><h4>한 줄 정의</h4><p>산업이 <strong>무엇을 어떻게 만드는지(물적 기반)</strong>가 새 기술이 들어오는 경로와 속도를 정한다. 연속 대규모 공정은 설비 주기가 길고, 조립제품은 공급망 조정이, 소프트웨어는 표준·사용자 규모가 관건이다. 그래서 후발국에게 <strong>추격의 창(window of opportunity)</strong>도 산업마다 다른 모습으로 열린다 — 기술 세대 전환, 경기 하강기, 수요·유통 변화.</p>
+</div>
+<div class="sec sec-analogy" id="c07-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>이사를 하려 할 때, <strong>원룸 사는 사람</strong>은 짐 싸서 바로 옮기지만 <strong>공장 가진 사람</strong>은 기계를 뜯고 옮기는 데 몇 년이 걸린다(물적 기반). 그래서 새 동네가 좋아져도 <strong>누가 먼저 옮겨 가느냐</strong>가 다르다. 추격의 창은 &quot;이사 비용이 기존 강자에게 특히 비쌀 때&quot; 열린다.</p>
+</div>
+<div class="sec sec-core" id="c07-core"><h4>핵심 내용</h4><h3 id="c07-h-물적-기반은-새-기술의-적용-경로를-매개한다-w07b-p17">물적 기반은 새 기술의 적용 경로를 매개한다 (W07b p17) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p17.jpg" alt="W07b p17 물적 기반은 새 기술의 적용 경로를 매개한다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p17 물적 기반은 새 기술의 적용 경로를 매개한다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>생산 대상·공정</th>
+<th>필요한 기술과 지식</th>
+<th>채택의 조건</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>연속·대규모 공정</td>
+<td>공정제어·재료·설비 지식</td>
+<td><strong>높은 투자와 장기 설비주기</strong></td>
+</tr>
+<tr>
+<td>복합 조립제품</td>
+<td>부품·시스템 통합 지식</td>
+<td><strong>공급망 조정</strong>과 품질 기준</td>
+</tr>
+<tr>
+<td>소프트웨어·디지털 서비스</td>
+<td>코드·데이터·사용자 지식</td>
+<td><strong>표준, 네트워크, 사용자 규모</strong></td>
+</tr>
+</tbody></table></div>
+<p>&quot;기존 역량과 설비는 새 기술의 <strong>도입 비용과 보완요건</strong>을 정한다.&quot; → 산업은 변화하지만 <strong>방향과 속도는 생산체계와 지식·수요 조건에 따라</strong> 달라진다.</p>
+<ul>
+<li>복합 조립제품의 <strong>공급망</strong>은 W01 생태계의 <strong>오케스트레이션</strong>과 겹친다. <strong>시스템 관점들은 딱딱 구분되기보다 겹치는 부분이 있다.</strong></li>
+</ul>
+<h3 id="c07-h-세-사례-w07b-p18-20">세 사례 (W07b p18–20)</h3>
+<p><strong>철강 — 설비와 공정역량</strong> (p18)
+<figure class="slide"><img src="images/W07b/p18.jpg" alt="W07b p18 철강" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p18 철강</figcaption></figure></p>
+<ul>
+<li>일본은 <strong>산소전로법</strong>을 빠르게 채택·개선, 정부가 기술 라이선스 집단 도입을 조정. <strong>POSCO</strong>는 처음엔 연속주조를 충분히 활용할 역량이 없어 <strong>성숙한 일본 기술을 도입해 생산경험을 축적</strong>하고, <strong>두 번째 제철소</strong>에서 새 공정을 채택. 경기 하강기의 설비 기회와 국가 지원도 영향.</li>
+<li>독자 공법(<strong>파이넥스</strong>)도 개발. 핵심은 <strong>설비와 공정 역량(process capability)</strong>.</li>
+</ul>
+<p><strong>카메라 — 기존 역량을 강화하거나 무력화</strong> (p19)
+<figure class="slide"><img src="images/W07b/p19.jpg" alt="W07b p19 카메라" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p19 카메라</figcaption></figure></p>
+<ul>
+<li>SLR → <strong>DSLR</strong>: 일본 기업의 광학·정밀 역량이 <strong>이어졌다(역량 강화)</strong>. → <strong>미러리스</strong>: 센서·전자 역량이 중요해지며 <strong>후발 기업에 진입 기회</strong>.</li>
+<li>디지털화로 광학 카메라가 사라지는 <strong>카니발리제이션</strong> — 나의 새 역량이 기존 역량을 잡아먹을 때, <strong>안 하려다 놓치는</strong> 일.</li>
+</ul>
+<p><strong>와인 — 수요와 유통이 혁신을 이끈다</strong> (p20)
+<figure class="slide"><img src="images/W07b/p20.jpg" alt="W07b p20 와인" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p20 와인</figcaption></figure></p>
+<ul>
+<li>소비자 취향·새 시장 → 브랜드·차별화, 마케팅·유통망 변화. 규제가 제품 분류와 시장 접근을 재설정. <strong>신세계 생산자의 성장 vs 구세계의 대응.</strong></li>
+<li>사이언스가 많지 않은 산업에서는 <strong>수요·유통의 변화</strong>가 혁신을 이끈다. <strong>연구가 많이 안 되어 있어 더 연구해야</strong> 한다. 한국 농업의 <strong>대체육</strong>도 <strong>소비·유통이 열려야</strong> 된다.</li>
+</ul>
+<h3 id="c07-h-추격의-창은-산업마다-다르다-w07b-p21-lee-amp-malerba">추격의 창은 산업마다 다르다 (W07b p21, Lee &amp; Malerba) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p21.jpg" alt="W07b p21 추격의 창은 산업마다 다른 모습으로 열린다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p21 추격의 창은 산업마다 다른 모습으로 열린다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>산업</th>
+<th>기회의 창</th>
+<th>핵심 반응</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>휴대전화</td>
+<td>표준 변화, <strong>스마트폰 전환</strong></td>
+<td>기술 전환과 사용자 수요에 대한 대응</td>
+</tr>
+<tr>
+<td>메모리 반도체</td>
+<td>기술 세대와 <strong>경기 사이클</strong></td>
+<td>대규모 설비투자, R&amp;D, <strong>경기 하강기의 투자</strong></td>
+</tr>
+<tr>
+<td>카메라</td>
+<td>SLR·DSLR·미러리스 전환</td>
+<td>기존 역량 강화 또는 새 역량 부상</td>
+</tr>
+<tr>
+<td>철강</td>
+<td>공정기술·설비 투자 기회</td>
+<td>흡수 역량, 학습과 정부 조정</td>
+</tr>
+<tr>
+<td>중형 항공기</td>
+<td>좌석 규모와 항공사 수요 변화</td>
+<td>규제, 금융, 수출 지원</td>
+</tr>
+<tr>
+<td>와인</td>
+<td>소비·유통·규제 변화</td>
+<td>브랜드, 시장 접근과 판매망</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>휴대폰: 노키아가 사라지고 애플로 정리된 것. 메모리: <strong>경기 하강기에 공격적으로 투자해 시장을 정리하는</strong> 삼성 전략.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>Lee &amp; Malerba의 창은 세 종류로 정리된다: <strong>기술의 창</strong>(새 기술 세대), <strong>수요의 창</strong>(경기 사이클·새 수요), <strong>제도의 창</strong>(정부 정책·규제). 표의 산업들을 이 세 칸에 나눠 넣으면 서술형 답안 골격이 된다.</p>
+</div>
+<details class="sec sec-fold" id="c07-discussion" data-sec="c07-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span>카메라의 카니발리제이션은 W01/05 <strong>조직 고착</strong>의 산업판이다. 기존 역량이 클수록 새 기술을 <strong>스스로 안 하려다</strong> 놓친다(코닥의 디지털카메라).</li>
+<li>와인·대체육: &quot;<strong>수요·유통 쪽은 더 연구해야</strong>&quot; — 교수님이 반복해 지적한 SIS 연구의 빈자리. <strong>Term paper 후보</strong>(수업노트 표시)인 &#39;사용자 공동혁신형·수요자 창출 시장&#39; 분석과 같은 방향이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-examples" data-sec="c07-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>코닥</strong>: 1975년 디지털카메라를 처음 만들었지만 필름 사업을 잠식할까 봐 키우지 않았고, 2012년 파산 보호를 신청했다. 카니발리제이션 회피의 교과서 사례.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>신세계 와인</strong>: 칠레·호주 와인은 품종을 라벨에 크게 쓰는 방식(구세계는 산지 중심)과 대형 유통망 공략으로 1990년대 이후 시장을 넓혔다. 기술이 아니라 <strong>표시 방식과 유통</strong>의 혁신이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-position" data-sec="c07-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS를 <strong>추격 이론</strong>으로 쓰는 대목. W02-1/09 후발국의 역방향 궤적(POSCO도 성숙기술 도입부터)과, W07-2/06 누적성(창이 열리는 조건)을 잇는다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-related" data-sec="c07-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Lee, K. &amp; Malerba, F. (2017) Catch-up cycles and changes in industrial leadership: Windows of opportunity and responses of firms and countries. <em>Research Policy</em> 46(2)</li>
+<li>연결: <a href="W07-2.html#c05">W07-2/05 Malerba 여섯 요소</a> · <a href="W07-2.html#c06">W07-2/06 누적성</a> · <a href="W07-2.html#c09">W07-2/09 한국 산업 사례</a> · <a href="W07-2.html#c10">W07-2/10 DRAM</a> · <a href="W01.html#c11">W01/11 Innovation Ecosystem</a> · <a href="W01.html#c05">W01/05 세 가지 고착</a> · <a href="W02-1.html#c09">W02-1/09 역방향 기술 궤적</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c07-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Lee &amp; Malerba (2017) Catch-up cycles and changes in industrial leadership</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-8</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=material-base">material-base</a> · <a href="map.html?tag=catch-up">catch-up</a> · <a href="map.html?tag=windows-of-opportunity">windows-of-opportunity</a> · <a href="map.html?tag=POSCO">POSCO</a> · <a href="map.html?tag=steel">steel</a> · <a href="map.html?tag=camera">camera</a> · <a href="map.html?tag=cannibalization">cannibalization</a> · <a href="map.html?tag=wine">wine</a> · <a href="map.html?tag=demand">demand</a> · <a href="map.html?tag=distribution">distribution</a> · <a href="map.html?tag=lee-malerba">lee-malerba</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c07-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>&quot;물적 기반은 새 기술의 적용 경로를 매개한다&quot;는 주장을 세 생산 유형(연속공정·조립·소프트웨어)으로 설명하라. <span class="tag">서술형</span></li>
+<li>추격의 창(window of opportunity)이 산업마다 다르게 열린다는 Lee &amp; Malerba의 주장을 두 산업 이상의 사례로 설명하라. <span class="tag">서술형</span></li>
+<li>카메라 사례에서 기술 전환이 기존 역량을 &#39;강화&#39;하는 경우와 &#39;무력화&#39;하는 경우를 구분하라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c07">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c05">Malerba의 SIS — 산업을 이루는 여섯 요소와 그 작동</a> · <a href="W07-2.html#c06">기술체제와 누적성 — 전기차와 바이브 코딩</a> · <a href="W07-2.html#c09">한국 산업 사례와 '사용자 공동혁신형' — 휴대폰·게임·음악재생기</a> · <a href="W07-2.html#c10">대량생산 산업 사례와 기술 안보 — DRAM·자동차·철강·제약</a> · <a href="W01.html#c11">Innovation Ecosystem — 병목·오케스트레이터·거버넌스</a> · <a href="W01.html#c05">세 가지 고착 — 조직·기술·사용자 lock-in</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c08">
+  <h2 class="concept-title">Castellacci 분류와 KIBS — 서비스업까지 넓히다</h2>
+  <p class="concept-en">Castellacci (2008) taxonomy of manufacturing and services; Knowledge-Intensive Business Services (KIBS)</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 08</span>
+    <span>슬라이드 W07b p22, p23</span>
+    <span class="stars" title="시험 중요도 4/5 — Castellacci와 KIBS — 'AX를 하려면 KIBS가 필요하다', '본인 기업 매칭' 권유. 네 범주 표가 출제형이고 예나의 term paper 후보로도 표시됐다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c08" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c08-definition"><h4>한 줄 정의</h4><p><strong>Castellacci(2008)</strong>는 제조업 중심이던 Pavitt 분류를 <strong>서비스업까지</strong> 넓히고, 산업이 <strong>다른 산업에 무엇을 제공하는가(산업 간 역할)</strong>로 네 범주를 만들었다: <strong>고급 지식 제공자 / 대량생산제품 / 지원 인프라 서비스 / 공급자 지배형 상품·서비스.</strong> 그 첫 칸의 핵심이 <strong>KIBS(지식집약 사업서비스)</strong> — 기계가 아니라 <strong>지식을 파는</strong> 서비스로, <strong>AX·디지털 전환이 잘 흘러가게 만드는</strong> 산업이다.</p>
+</div>
+<div class="sec sec-analogy" id="c08-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>건물을 짓는 생태계로 보면, <strong>설계사무소·구조컨설팅(고급 지식 제공자)</strong>, <strong>철근·시멘트·가전 공장(대량생산)</strong>, <strong>전기·수도·도로·은행(지원 인프라)</strong>, <strong>동네 인테리어 가게(공급자 지배형)</strong>. 설계사무소가 잘해야 나머지가 제대로 돌아간다. KIBS는 경제 전체의 설계사무소다.</p>
+</div>
+<div class="sec sec-core" id="c08-core"><h4>핵심 내용</h4><h3 id="c08-h-네-범주-w07b-p22">네 범주 (W07b p22) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p22.jpg" alt="W07b p22 Castellacci: 제조업과 서비스업을 함께 분류하다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p22 Castellacci: 제조업과 서비스업을 함께 분류하다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>범주</th>
+<th>예시</th>
+<th>산업 간 역할</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>고급 지식 제공자</strong></td>
+<td>소프트웨어·R&amp;D·엔지니어링·<strong>전문기계</strong></td>
+<td>전문 지식과 기술 해법을 <strong>다른 산업에 제공</strong></td>
+</tr>
+<tr>
+<td><strong>대량생산제품</strong></td>
+<td>과학기반·규모집약 제조업</td>
+<td>기술과 생산기술의 <strong>대량 확산</strong></td>
+</tr>
+<tr>
+<td><strong>지원 인프라 서비스</strong></td>
+<td>통신·금융·운송·도소매</td>
+<td>다른 부문의 생산과 교환을 <strong>뒷받침</strong></td>
+</tr>
+<tr>
+<td><strong>공급자 지배형 상품·서비스</strong></td>
+<td>전통 제조·개인 대상 서비스</td>
+<td>외부 장비·기술의 <strong>도입에 의존</strong></td>
+</tr>
+</tbody></table></div>
+<p>&quot;서비스 혁신에는 사용자 상호작용, 조직 변화, 소프트웨어와 장비의 적용도 포함된다.&quot;</p>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>Pavitt와의 대응: 고급 지식 제공자 = <strong>KIBS + 전문공급자형</strong>, 대량생산 = <strong>과학기반형 + 규모집약형</strong>, 공급자 지배형은 그대로. <strong>지원 인프라 서비스</strong>가 새로 생긴 칸이다.</p>
+<h3 id="c08-h-세부표-w07b-p23">세부표 (W07b p23)</h3>
+<figure class="slide"><img src="images/W07b/p23.jpg" alt="W07b p23 산업부문별 기술혁신 유형 (Castellacci 2008)" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p23 산업부문별 기술혁신 유형 (Castellacci 2008)</figcaption></figure>
+<ul>
+<li>KIBS(소프트웨어·R&amp;D·엔지니어링·컨설팅): <strong>ICT 패러다임</strong>, 기술기회 <strong>매우 높음</strong>, 외부 소스 사용자·대학, 전유 노하우·저작권, <strong>SMEs</strong>, 혁신 유형 <strong>新 서비스·조직혁신</strong>.</li>
+<li>규모집약 제조(자동차): 포드주의 패러다임, 기술기회 중간, 외부 소스 공급자·사용자, 전유 디자인·공정비밀, <strong>LEs(대기업)</strong>.</li>
+</ul>
+<h3 id="c08-h-kibs-ax를-하려면-이게-필요하다">KIBS — AX를 하려면 이게 필요하다 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li><strong>오라클 같은 회사.</strong> 기계를 파는 게 아니라 <strong>지식집약적 서비스</strong>를 판다. IT와 함께 새로 생긴 산업군.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>따지고 보면 <strong>AX를 하려면 이게 필요해요.</strong> 그 비즈니스를 다 이걸 해줘야 되는 거예요. AX를 <strong>시스템 인티그레이션 하는 회사</strong>랑 계속 같이 일을 하시잖아요. <strong>이 서비스가 잘 되면 AX나 디지털 트랜스포메이션이 훨씬 더 쉽게 흘러갈 수 있는</strong> 거죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>KIBS라는 말은 <strong>교수님의 지도교수(Ian Miles로 추정, ※녹취 불명확)가 만든(coining) 말</strong>이다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p><strong>우리 기업이 어디에 속하는지, 어디에 투자를 해야 되는 건지, 어떻게 변화할 수 있는 것인지</strong>를 파악하는 방법입니다. <strong>한번 본인이 속하신 기업들을 매칭 한번 해보세요.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>W02-1/12에서 &quot;전통 제조는 DUI에 STI(<strong>KIBS</strong>)를 결합한다&quot;고 했다. KIBS는 <strong>현장(DUI) 기업에 과학·기술 지식(STI)을 실어 나르는 다리</strong>다. 그래서 동심원형 혁신(AX의 산업별 확산)의 전달자가 된다.</p>
+</div>
+<details class="sec sec-fold" id="c08-discussion" data-sec="c08-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li><strong>Term paper 후보</strong>(수업노트 표시): 예나의 삼성페이 앱 개발을 <strong>정보집약형·KIBS 관점</strong>에서, <strong>AX를 매개하는 SI·KIBS의 역할</strong>로 분석.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>W03/03 Q6 보충 — &quot;<strong>파운데이션 모델을 만드는 것만 특징이 되어 있지, 동심원형 혁신으로 쫙 퍼져 나가야</strong>&quot; — 의 퍼져 나가는 통로가 KIBS다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-examples" data-sec="c08-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>삼성SDS·LG CNS·SK C&amp;C</strong> 같은 SI 기업, 그리고 액센츄어·딜로이트 같은 컨설팅이 대표적 KIBS다. 기업 AX 프로젝트의 상당수가 이들을 거쳐 실행된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-position" data-sec="c08-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS 분류의 마지막 확장(Pavitt → Tidd/Archibugi → <strong>Castellacci</strong>). 이근 연구진은 이 틀을 한국 산업에 적용했다 → <a href="W07-2.html#c09">W07-2/09</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-related" data-sec="c08-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Castellacci, F. (2008) Technological paradigms, regimes and trajectories: Manufacturing and service industries in a new taxonomy of sectoral patterns of innovation. <em>Research Policy</em> 37(6–7)</li>
+<li>연결: <a href="W07-2.html#c02">W07-2/02 Pavitt 분류</a> · <a href="W07-2.html#c03">W07-2/03 확장 분류</a> · <a href="W07-2.html#c04">W07-2/04 DUI·STI</a> · <a href="W07-2.html#c09">W07-2/09 한국 산업 사례</a> · <a href="W02-1.html#c12">W02-1/12 종합(KIBS)</a> · <a href="W03.html#c03">W03/03 동심원형 혁신</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c08-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Castellacci (2008)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-9</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=castellacci">castellacci</a> · <a href="map.html?tag=taxonomy">taxonomy</a> · <a href="map.html?tag=services">services</a> · <a href="map.html?tag=KIBS">KIBS</a> · <a href="map.html?tag=advanced-knowledge-providers">advanced-knowledge-providers</a> · <a href="map.html?tag=system-integration">system-integration</a> · <a href="map.html?tag=AX">AX</a> · <a href="map.html?tag=ian-miles">ian-miles</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c08-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Castellacci 분류의 네 범주를 쓰고, Pavitt 분류와 비교해 무엇이 확장되었는지 설명하라. <span class="tag">비교형</span></li>
+<li>KIBS란 무엇이며, 교수님이 &quot;AX를 하려면 이게 필요하다&quot;고 한 이유를 설명하라. <span class="tag">서술형</span></li>
+<li>본인 소속 기업을 Castellacci 분류에 매칭하고, 그 범주에서 혁신의 원천이 무엇인지 쓰라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c08">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c02">Pavitt 분류 — 혁신의 원천은 산업마다 다르다</a> · <a href="W07-2.html#c03">확장 분류 — Tidd의 정보집약형과 Archibugi의 패러다임별 기업 유형</a> · <a href="W07-2.html#c04">산업별 학습 방식 — DUI와 STI의 조합</a> · <a href="W07-2.html#c09">한국 산업 사례와 '사용자 공동혁신형' — 휴대폰·게임·음악재생기</a> · <a href="W02-1.html#c12">종합 — 지식 모드의 결합과 수요 중심 정책</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c09">
+  <h2 class="concept-title">한국 산업 사례와 '사용자 공동혁신형' — 휴대폰·게임·음악재생기</h2>
+  <p class="concept-en">Korean sector cases (Lee et al. 2014); user co-innovation type; demand-created markets</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 09</span>
+    <span>슬라이드 W07b p24, p25, p26, p27</span>
+    <span class="stars" title="시험 중요도 4/5 — 한국 산업 사례와 사용자 공동혁신형 — 게임·BTS·샤오미로 약 10분, '수요자가 창출하는 시장'이 W06 K-pop 논의와 이어지는(X30) 교수 관점. term paper 후보" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c09" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c09-definition"><h4>한 줄 정의</h4><p>이근·박태영 외(2014)는 Castellacci 틀로 한국 산업의 추격 경로를 비교했다. 이 발표는 거기에 <strong>&#39;사용자 공동혁신형&#39;</strong>(게임 등)이라는 범주를 새로 붙였다 — 이용자가 수요를 표현하는 데 그치지 않고 <strong>시험·피드백·콘텐츠·커뮤니티로 개발에 참여</strong>하는 산업. &quot;<strong>수요자가 창출하는 시장이 엄청나게 커졌습니다. 옛날에는 다 공급자가 창출하는 시장 얘기를 많이 했죠.</strong>&quot;</p>
+</div>
+<div class="sec sec-analogy" id="c09-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>옛날 식당은 주방장이 메뉴를 정하고 손님은 고르기만 했다. 지금 인기 식당은 <strong>단골들이 SNS에 레시피 변형을 올리고, 식당이 그걸 메뉴에 반영하고, 단골끼리 모임을 만든다.</strong> 손님이 메뉴 개발자이자 홍보팀이다. 게임·K-pop이 그런 산업이다.</p>
+</div>
+<div class="sec sec-core" id="c09-core"><h4>핵심 내용</h4><h3 id="c09-h-한국-산업-사례-분류-w07b-p24">한국 산업 사례 분류 (W07b p24)</h3>
+<figure class="slide"><img src="images/W07b/p24.jpg" alt="W07b p24 한국 산업 사례: 부문별 혁신체계와 추격 경로" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p24 한국 산업 사례: 부문별 혁신체계와 추격 경로</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>분류</th>
+<th>사례</th>
+<th>SIS에서 볼 핵심 질문</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>개인용 제품·서비스 — 공급자주도형 제품</td>
+<td>휴대폰, 휴대용 음악재생기</td>
+<td>공급망과 부품 기술은 제품 전환을 어떻게 조건짓나?</td>
+</tr>
+<tr>
+<td>개인용 제품·서비스 — <strong>사용자 공동혁신형</strong></td>
+<td><strong>게임</strong></td>
+<td>사용자의 요구·실험·콘텐츠는 개발에 어떻게 들어오나?</td>
+</tr>
+<tr>
+<td>대량생산 — 과학기반형</td>
+<td>제약</td>
+<td>과학지식·R&amp;D·임상·규제는 어떻게 연결되나?</td>
+</tr>
+<tr>
+<td>대량생산 — 과학기반형 + 규모집약형</td>
+<td><strong>DRAM</strong></td>
+<td>R&amp;D와 설비투자·수율학습은 어떻게 결합하나?</td>
+</tr>
+<tr>
+<td>대량생산 — 규모집약형</td>
+<td>자동차, 철강</td>
+<td>생산체계·투자·누적역량은 추격 속도를 어떻게 조건짓나?</td>
+</tr>
+</tbody></table></div>
+<p>주의: 하위 분류와 휴대폰·음악재생기 배치는 <strong>Castellacci 원 분류가 아니라 이 발표의 확장 적용</strong>. &quot;사용자 참여 혁신은 전 부문에서 나타나며, 참여 경로와 영향력은 산업마다 다르다.&quot;</p>
+<ul>
+<li>단서: <strong>2014년 책이라 대부분 제조업 이야기</strong>이고 소프트웨어 사례가 적다. 바뀐 상황을 잘 봐야 한다.</li>
+</ul>
+<h3 id="c09-h-1-휴대폰-단말기-기업-혼자가-아니다-w07b-p25">1) 휴대폰 — 단말기 기업 혼자가 아니다 (W07b p25)</h3>
+<figure class="slide"><img src="images/W07b/p25.jpg" alt="W07b p25 휴대폰" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p25 휴대폰</figcaption></figure>
+<ul>
+<li>&quot;휴대폰 혁신은 단말기 기업만이 아니라 <strong>통신망·표준·부품·사용자 수요가 함께</strong> 만든다.&quot;</li>
+<li>공급자들과 같이 움직여야 한다. (애플은 공급망을 중국에 두었다가 지금 머리 아플 것.)</li>
+</ul>
+<h3 id="c09-h-2-게임-이용자가-혁신-과정에-들어온다-w07b-p26">2) 게임 — 이용자가 혁신 과정에 들어온다 (W07b p26) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p26.jpg" alt="W07b p26 게임" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p26 게임</figcaption></figure>
+<ul>
+<li>이용자는 수요 표현에 그치지 않고 <strong>시험·피드백·모드·콘텐츠와 커뮤니티 활동</strong>에 참여. 온라인 운영은 <strong>출시 후에도 지속적인 학습과 제품 조정</strong>을 가능하게 함.</li>
+<li>&quot;게임에서는 사용자가 <strong>시장의 선택자이면서 개발·운영 과정의 참여자</strong>이기도 하다.&quot;</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p><strong>이건 우리가 기획하지 않았는데도 벌어지는 일이라서 놀라운 일인데</strong>, 유튜브를 보면 외국 사람들이 한국말을 너무 잘해요. &#39;수고하셨습니다&#39;를 어떻게 번역하냐에 따라 외국 사람들이 화낸다고, &#39;너도 고생하라는 얘기냐&#39; 이런 거까지. <strong>수요자가 창출하는 시장이 엄청나게 커졌습니다.</strong> 옛날에는 다 공급자가 창출하는 시장 얘기를 많이 했죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p>출시 후에도 지속적인 운영이 가능해진 것, 이게 가장 드라마틱한 사례가 뭡니까? <strong>BTS죠.</strong> 이게 누가 기획해서 만든 게 아니야. <strong>하이브 방시혁이 아미가 그렇게 있을 줄 알고 기획했겠어요?</strong> &#39;이런 게 생기네, 이거 좀 관리하자&#39; 이 정도 개념이었지, 그게 이렇게 파워풀할 줄.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li><strong>샤오미 연구</strong>(중국 연구자의 20년 데이터 분석 논문): <strong>클라우드 소싱 → 커뮤니티 → 생태계</strong>로 고객과의 관계망이 <strong>단절적으로 바뀌는 세 단계</strong>. 중국은 <strong>내부 시장이 너무 커서</strong> 디지털 시대에 그 역량이 엄청나게 작동한다.</li>
+<li><strong>개인화</strong>: 소비자 입장에서는 <em>personalization</em>, 기업 입장에서는 <em>customization</em>. 디지털 시대 비즈니스의 가장 큰 변화 중 하나.</li>
+<li>한국 대중문화의 저력: 게임은 <strong>디지털 기술의 힘</strong>. 봉준호·박찬욱·이창동·황동혁 등 <strong>유명 감독들이 다 계급과 사회 문제를 다룬다</strong>는 공통점.</li>
+</ul>
+<h3 id="c09-h-3-휴대용-음악재생기-기기가-아니라-생태계-w07b-p27">3) 휴대용 음악재생기 — 기기가 아니라 생태계 (W07b p27)</h3>
+<figure class="slide"><img src="images/W07b/p27.jpg" alt="W07b p27 휴대용 음악재생기" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p27 휴대용 음악재생기</figcaption></figure>
+<ul>
+<li>&quot;제품의 경쟁력은 <strong>기기 성능과 음원·소프트웨어 생태계의 결합</strong>에서 나온다.&quot;</li>
+<li>스티브 잡스와 iTunes가 <strong>음원 권리 관계를 해결</strong>하면서 음악재생기 시장이 사라졌다(휴대폰으로 컨버전스). 잘나가던 국내 MP3 업체도 사라졌다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>W01/11 Innovation Ecosystem의 <strong>하류 보완재 병목</strong>과 같은 이야기다. 한국 MP3 업체는 기기(부품)는 잘 만들었지만 <strong>음원 권리라는 보완재</strong>를 쥐지 못했다.</p>
+</div>
+<details class="sec sec-fold" id="c09-discussion" data-sec="c09-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span><strong>W06/06과 직결</strong>: W06에서 교수님은 국가가 고른 성장동력보다 <strong>유저 커뮤니티가 붙은</strong> K-pop·게임·화장품이 더 컸다고 했고 &quot;<strong>BTS가 그게 될 줄 누가 알았어</strong>&quot;라고 했다. W07에서 같은 사례를 <strong>SIS의 사용자 공동혁신형</strong>이라는 이름으로 다시 다뤘다.</li>
+<li><strong>Term paper 후보</strong>(수업노트 표시): <strong>사용자 공동혁신형 산업</strong>(게임·K-팝 팬덤 등 수요자 창출 시장)을 SIS로 분석 — 교수님이 &quot;이 책에는 아직 안 들어 있다&quot;, &quot;수요·유통 쪽은 더 연구해야 한다&quot;고 한 <strong>빈 영역</strong>.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>W02-1/07 Lundvall의 <strong>사용자–생산자 상호작용</strong>이 디지털 시대에 극단적으로 강해진 형태다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-examples" data-sec="c09-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>von Hippel의 사용자 혁신(user innovation)</strong>: 많은 혁신이 제조사가 아니라 <strong>선도 사용자(lead user)</strong>에게서 나온다는 연구. 게임 모드(mod) 커뮤니티에서 탄생한 <em>카운터스트라이크</em>, <em>DOTA</em>가 대표 사례다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-position" data-sec="c09-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS가 <strong>공급(생산) 중심</strong>이라는 한계를 교수님이 <strong>수요 쪽으로 확장</strong>하는 지점. W05 공급자 중심성 비판, W06 NIS 비판과 같은 방향의 교수님 관점이 SIS에서도 나타난다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-related" data-sec="c09-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>이근·박태영 외 (2014) 『산업의 추격, 추월, 추락』; Lee &amp; Malerba (2017)</li>
+<li>연결: <a href="W07-2.html#c08">W07-2/08 Castellacci</a> · <a href="W07-2.html#c07">W07-2/07 추격의 창</a> · <a href="W07-2.html#c10">W07-2/10 DRAM·기술 안보</a> · <a href="W06.html#c06">W06/06 정부가 사용자가 되다(K-pop)</a> · <a href="W01.html#c11">W01/11 Innovation Ecosystem</a> · <a href="W02-1.html#c07">W02-1/07 사용자–생산자 상호작용</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c09-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>이근·박태영 외 (2014) 산업의 추격, 추월, 추락 ★SIS Core Reading</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-10</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=korea">korea</a> · <a href="map.html?tag=keun-lee">keun-lee</a> · <a href="map.html?tag=mobile-phone">mobile-phone</a> · <a href="map.html?tag=game">game</a> · <a href="map.html?tag=user-co-innovation">user-co-innovation</a> · <a href="map.html?tag=xiaomi">xiaomi</a> · <a href="map.html?tag=personalization">personalization</a> · <a href="map.html?tag=BTS">BTS</a> · <a href="map.html?tag=fandom">fandom</a> · <a href="map.html?tag=iTunes">iTunes</a> · <a href="map.html?tag=MP3">MP3</a> · <a href="map.html?tag=demand-side">demand-side</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c09-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>&#39;사용자 공동혁신형&#39; 산업의 특징을 게임 사례로 설명하고, 교수님이 말한 &quot;수요자가 창출하는 시장&quot;의 의미를 쓰라. <span class="tag">서술형</span></li>
+<li>휴대용 음악재생기 사례에서 한국 MP3 업체가 사라진 이유를 SIS(또는 혁신 생태계) 관점에서 설명하라. <span class="tag">서술형</span></li>
+<li>비교형: W06(K-pop·게임, 유저 커뮤니티)과 W07(사용자 공동혁신형)의 사례 해석을 연결하라. <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c09">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c08">Castellacci 분류와 KIBS — 서비스업까지 넓히다</a> · <a href="W07-2.html#c07">물적 기반과 추격의 창 — 철강·카메라·와인</a> · <a href="W07-2.html#c10">대량생산 산업 사례와 기술 안보 — DRAM·자동차·철강·제약</a> · <a href="W06.html#c06">정부가 사용자가 되다 — 한국 vs 라틴아메리카</a> · <a href="W01.html#c11">Innovation Ecosystem — 병목·오케스트레이터·거버넌스</a> · <a href="W02-1.html#c07">사용자–생산자 상호작용과 조직화된 시장</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c10">
+  <h2 class="concept-title">대량생산 산업 사례와 기술 안보 — DRAM·자동차·철강·제약</h2>
+  <p class="concept-en">Mass-production sector cases; cumulativeness in DRAM; technological infrastructure and technological security</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 10</span>
+    <span>슬라이드 W07b p28, p29, p30, p31</span>
+    <span class="stars" title="시험 중요도 4/5 — 대량생산 사례와 기술 안보 — DRAM 누적성과 '기술 안보(소부장)' 발언이 길었고 Q2(뭘 넘기고 뭘 남길지) 토론까지 붙었다. 투자 정당성 네 번째(X31)" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c10" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c10-definition"><h4>한 줄 정의</h4><p>한국의 대량생산 산업들은 SIS 요소가 서로 다르게 작동한다. <strong>DRAM</strong>은 R&amp;D만으로 안 되고 <strong>대규모 생산 학습과 투자가 누적</strong>되어야 하며, <strong>자동차</strong>는 공급망 전체가 함께 움직여야 하고, <strong>철강</strong>은 공정·설비 역량이 핵심이며, <strong>제약</strong>은 STI가 압도적이다. 그리고 과학기술이 사회의 기반이 되면서, 과학기술 투자의 정당성에 <strong>기술 안보(technological security)</strong>가 추가된다 — <strong>소부장처럼 하나만 막혀도 통째로 무너지는</strong> 시대.</p>
+</div>
+<div class="sec sec-analogy" id="c10-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>맛집 레시피를 훔쳐 가도 <strong>10년 동안 불 조절하며 실패해 본 경험</strong>은 못 훔쳐 간다(DRAM 누적성). 그리고 요즘은 <strong>특정 양념 하나를 한 나라만 만드는데</strong> 그 나라가 수출을 막으면 전 세계 식당이 문을 닫는다(기술 안보).</p>
+</div>
+<div class="sec sec-core" id="c10-core"><h4>핵심 내용</h4><h3 id="c10-h-1-dram-과학기반-규모집약-w07b-p28">1) DRAM — 과학기반 + 규모집약 (W07b p28) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p28.jpg" alt="W07b p28 DRAM" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p28 DRAM</figcaption></figure>
+<ul>
+<li>설계·공정 지식, 미세화, <strong>수율 개선과 세대 전환 역량이 누적적으로 중요</strong>. 기술 세대 전환과 <strong>경기 변동의 창</strong>을 투자·개발·생산 학습으로 활용하는 능력이 추격을 좌우.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>DRAM은 <strong>연구개발만으로 설명되지 않으며 대규모 생산 학습과 투자가 함께 필요하다.</strong> <strong>이건 누적적인 거예요. 아무리 투자해도 그 시행착오를 겪지 않으면</strong> (그다음 단계로 못 들어가요). <strong>중국이 아무리 해도 할 수가 없는 거예요.</strong> 사람을 빼가서 그대로 카피해서 만들려고 해도, 빼가고 난 다음에 다시 그냥 떨어지면 실제로 어떤 일이 벌어지는지 잘 모르는 거야.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>단, 인력 이동을 일방적으로 비난하지는 않았다. 한국도 발전할 때 사람들이 회사를 옮겨 다니며 기술을 전파했다. <strong>기술 확산이라는 관점에서는 얼마든지 벌어질 수 있는 일</strong>이고, <strong>하나의 잣대로만 보지 말라.</strong> 하이닉스가 현대반도체 인수 이후 성공한 것도 현장의 고생 덕분이라며 박수를 쳤다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>W07-2/06 누적성과 대비: 전기차·바이브 코딩은 누적성이 <strong>치워진</strong> 사례, DRAM은 누적성이 <strong>여전히 지켜 주는</strong> 사례다. 둘을 묶으면 &quot;누적성은 산업마다 다르다&quot;는 SIS의 요점이 된다.</p>
+<h3 id="c10-h-2-자동차-공급망과-함께-w07b-p29">2) 자동차 — 공급망과 함께 (W07b p29)</h3>
+<figure class="slide"><img src="images/W07b/p29.jpg" alt="W07b p29 자동차" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p29 자동차</figcaption></figure>
+<ul>
+<li>&quot;자동차 추격은 기술 도입과 함께 <strong>생산조직·공급망·시장 접근 역량</strong>을 쌓는 과정이다.&quot;</li>
+<li>1차·2차 벤더가 쫙 깔려 있어 <strong>우리 회사만 잘해서는 안 되고 같이 움직여야</strong> 한다.</li>
+</ul>
+<h3 id="c10-h-3-기술-인프라와-기술-안보">3) 기술 인프라와 기술 안보 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p>여기서 중요한 개념 하나 등장할 수 있어요. <strong>테크놀로지컬 인프라.</strong> 과학기술의 포션이 점점 증가하고 있어 우리 사회를 만든. 아까 과학기술 투자를 학문적 우수성, 경제적 유용성, 사회적 유용성 이렇게 얘기했는데, 거기에 <strong>테크놀로지컬 시큐리티(기술 안보)</strong>라는 개념이 들어가지 않을 수가 없어요. 아주 쉽게 말해서 <strong>소부장</strong> — 저쪽에서 하나 딱 막아버리니까 통째로 (타격을 받는) 거죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p>그래서 <strong>대체 불가</strong>라는 말이 나오는 거예요. 그런 기술 한두 가지를 꽉 잡고 있으면 (상대가) 큰일 난다고 생각할 수밖에 없는 사회가 지금 돼가고 있다는 얘기지. 거꾸로 생각하면 우리가 당할 걸 잘 생각해야 돼요. <strong>정유·화학 이런 것들 놓치면 안 돼요. 중국한테 밀린다고 그래서 그냥 넘겨주면 안 돼요.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>W07-1/02의 <strong>정부 투자 세 정당성(학문적 우수성·경제적 유용성·사회적 유용성)</strong>에 교수님이 <strong>네 번째로 기술 안보</strong>를 붙인 것이다. 같은 날 앞 강의와 뒤 강의를 잇는 대목이라 비교형으로 좋다. W06/05 Freeman의 <strong>기술 인프라</strong>(연결된 국가 역량)가 이제 <strong>안보의 대상</strong>이 된다는 흐름이기도 하다.</p>
+<h3 id="c10-h-4-철강-공정-결합-역량-그리고-탄소-w07b-p30">4) 철강 — 공정 결합 역량, 그리고 탄소 (W07b p30)</h3>
+<figure class="slide"><img src="images/W07b/p30.jpg" alt="W07b p30 철강" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p30 철강</figcaption></figure>
+<ul>
+<li>&quot;철강에서는 새 기술의 가능성보다 <strong>이를 공정과 설비에 결합할 역량</strong>이 중요하다.&quot;</li>
+<li>20·21세기 문명의 기본 재료. 에너지 다소비 업종이라 CO₂가 엄청 나와 <strong>수소환원제철</strong>로 가려 하는데, 그러려면 <strong>전력이 엄청나게</strong> 필요하다. 원전에 반대한다면 <strong>그 리스크를 국제 무대에서 어떻게 해결할지</strong>까지 고민해야 한다. (우리가 안 만들면 동남아 시장을 다른 나라가 다 먹는다는 맥락도.)</li>
+</ul>
+<h3 id="c10-h-5-제약-sti가-압도적-w07b-p31">5) 제약 — STI가 압도적 (W07b p31)</h3>
+<figure class="slide"><img src="images/W07b/p31.jpg" alt="W07b p31 제약" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p31 제약</figcaption></figure>
+<ul>
+<li>&quot;과학기반 산업에서도 사용자 영향은 중요하지만 <strong>의료·규제 체계를 통해 매개</strong>된다.&quot;</li>
+<li><strong>DUI보다 STI가 훨씬 크다.</strong> <strong>싱가포르</strong>는 다국적 제약사의 R&amp;D 거점을 유치해 <strong>제약의 수도</strong>가 되었다 — 누적적이지 않고, 생산은 한국 같은 곳에 맡기고, 똑똑한 사람을 모으면 되니까. 다만 <strong>브레인층과 일반 노동자층의 계층 격차</strong>가 사회 통합 문제로 나타나고 있다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>제약은 <strong>누적성이 낮아서</strong> 인재 유치로 빨리 추격할 수 있었다. DRAM과 정반대 — 같은 &#39;과학기반형&#39;이라도 누적성이 다르면 추격 전략이 달라진다.</p>
+</div>
+<details class="sec sec-fold" id="c10-discussion" data-sec="c10-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li><strong>Q2. 사양산업에서 공급망 핵심 역량을 어떻게 지킬까</strong> (수업노트 W07 §6):</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>우리가 보면 <strong>사양 산업은 떠나라</strong>, 다른 쪽으로 넘겨라 얘기하잖아요. <strong>그거 다시 한 번 생각해 봐야 돼.</strong> 베트남으로 넘겨라 저기로 넘겨라 하지 말고 잘 생각해 봐요. <strong>뭘 넘겨야 될지, 뭘 남겨야 될지.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p>중요한 거를 넘기지 말아야 되는 게 있고, <strong>걔들이 따라 하려고 백날 애써도 쉽게 못 따라오는 거</strong>, 누적적인 이런 것들은 <strong>잡고 있어요.</strong> 그냥 쉽게 통짜로 하면 안 되고 <strong>기술 단위까지 내려가는 것</strong>도 생각을 해봐요. 어디서 지식이 형성됐는지도 따져봐야 돼.</p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p>그 지역에 <strong>장소 기반(place-based)의 암묵지라든지 크리티컬 지식이 가치를 좌우한다면 그런 데로 가야죠.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>판단 기준 두 가지: ① <strong>누적성</strong>(못 따라오는 것은 남긴다) ② <strong>지식이 형성되는 장소</strong>(현장의 암묵지가 가치를 좌우하면 그곳으로 간다). 산업 단위가 아니라 <strong>기술 단위</strong>로 쪼개서 판단하라는 것.</li>
+<li><strong>Term paper 후보</strong>(수업노트 표시): 사양산업의 <strong>기술 단위 역량 보존 전략</strong>(무엇을 넘기고 무엇을 남길지)을 공급망·누적성 관점에서 분석.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-examples" data-sec="c10-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>2019년 일본 수출규제</strong>: 일본이 불화수소·포토레지스트·플루오린 폴리이미드 3개 품목의 한국 수출을 규제하면서 &#39;소부장&#39; 국산화가 국가 과제가 됐다. 교수님이 말한 &quot;하나 딱 막아버리니까&quot;의 실제 사건이다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>ASML</strong>: 첨단 반도체 노광장비(EUV)를 사실상 독점 공급하는 네덜란드 기업. &#39;대체 불가&#39; 기술이 지정학적 무기가 되는 대표 사례.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-position" data-sec="c10-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS 강의의 실전 파트. 같은 &#39;대량생산&#39;이라도 <strong>누적성·공급망·STI 비중</strong>이 다르면 추격 경로와 정책이 달라진다는 것을 한국 사례로 보여 준다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-related" data-sec="c10-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>이근·박태영 외 (2014)</li>
+<li>연결: <a href="W07-2.html#c06">W07-2/06 기술체제와 누적성</a> · <a href="W07-2.html#c09">W07-2/09 한국 산업 사례(개인용)</a> · <a href="W07-2.html#c02">W07-2/02 Pavitt 분류</a> · <a href="W07-1.html#c02">W07-1/02 투자 정당성</a> · <a href="W06.html#c05">W06/05 기술 인프라</a> · <a href="W02-1.html#c02">W02-1/02 학습은 축적</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c10-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>이근·박태영 외 (2014)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-10</li><li>수업노트/W07_강의기록_261017.md §6 Q2</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=DRAM">DRAM</a> · <a href="map.html?tag=cumulativeness">cumulativeness</a> · <a href="map.html?tag=automobile">automobile</a> · <a href="map.html?tag=supply-chain">supply-chain</a> · <a href="map.html?tag=steel">steel</a> · <a href="map.html?tag=hydrogen-steelmaking">hydrogen-steelmaking</a> · <a href="map.html?tag=pharmaceutical">pharmaceutical</a> · <a href="map.html?tag=singapore">singapore</a> · <a href="map.html?tag=technological-security">technological-security</a> · <a href="map.html?tag=sobujang">sobujang</a> · <a href="map.html?tag=irreplaceability">irreplaceability</a> · <a href="map.html?tag=sunset-industry">sunset-industry</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c10-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>DRAM 산업에서 &quot;연구개발만으로 설명되지 않는다&quot;는 말의 의미를 누적성 개념으로 설명하라. 중국 전기차(누적성 무력화)와 비교하라. <span class="tag">비교형</span></li>
+<li>교수님이 과학기술 투자의 정당성에 &#39;기술 안보&#39;를 추가한 이유를 소부장 사례로 설명하라. (W07-1의 세 정당성과 연결) <span class="tag">서술형</span></li>
+<li>사양산업에서 &quot;무엇을 넘기고 무엇을 남길지&quot; 판단하는 교수님의 기준 두 가지를 쓰라. <span class="tag">서술형</span></li>
+<li>제약(싱가포르)과 DRAM은 같은 과학기반형인데 추격 전략이 왜 다른가? <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c10">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c06">기술체제와 누적성 — 전기차와 바이브 코딩</a> · <a href="W07-2.html#c09">한국 산업 사례와 '사용자 공동혁신형' — 휴대폰·게임·음악재생기</a> · <a href="W07-2.html#c02">Pavitt 분류 — 혁신의 원천은 산업마다 다르다</a> · <a href="W07-1.html#c02">과학기술혁신정책의 목적과 속성</a> · <a href="W06.html#c05">Freeman의 기술 인프라 — 액터가 아니라 네트워크</a> · <a href="W02-1.html#c02">학습 — 지식생산의 미시적 기초</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c11">
+  <h2 class="concept-title">SIS 분석 질문과 디지털의 산업별 확산 (SIS 정리)</h2>
+  <p class="concept-en">Digital diffusion differs by sector; SIS analytical questions; summary of Pavitt–Malerba–Castellacci–Lee</p>
+  <div class="concept-meta">
+    <span>W07-2 · 개념 11</span>
+    <span>슬라이드 W07b p32, p33, p34</span>
+    <span class="stars" title="시험 중요도 3/5 — SIS 분석 질문과 정리 — 마무리 슬라이드. 네 연구자 기여 요약과 다섯 분석 질문은 정리용이며 Q1(수요 부처) 논점이 붙는다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c11" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c11-definition"><h4>한 줄 정의</h4><p>디지털 기술도 <strong>산업마다 다른 속도와 방향</strong>으로 퍼진다. 전자·소프트웨어에서는 제품의 핵심 기능이 되고, 철강 같은 공정 산업에서는 <strong>제어·관리·효율 개선</strong>에 쓰이며 설비 주기의 제약을 받는다. SIS는 이를 <strong>다섯 가지 분석 질문</strong>(생산기반·지식과 학습·행위자와 관계·수요와 제도·변화의 경로)으로 본다. 결론: &quot;<strong>새로운 기술의 가치 창출 가능성은 산업의 물적 기반과 역량에 의해 다른 방향·속도로 실현된다.</strong>&quot;</p>
+</div>
+<div class="sec sec-analogy" id="c11-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>같은 스마트폰이 들어와도 <strong>은행</strong>은 앱 하나로 지점을 없애고, <strong>병원</strong>은 예약만 바뀌고 진료는 그대로, <strong>농장</strong>은 날씨 확인용으로만 쓴다. 기술이 같아도 <strong>업의 본질(물적 기반)</strong>이 다르면 쓰임새와 속도가 다르다.</p>
+</div>
+<div class="sec sec-core" id="c11-core"><h4>핵심 내용</h4><h3 id="c11-h-디지털-기술의-산업별-확산-w07b-p32">디지털 기술의 산업별 확산 (W07b p32)</h3>
+<figure class="slide"><img src="images/W07b/p32.jpg" alt="W07b p32 디지털 기술도 산업마다 다른 속도와 방향으로 확산된다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p32 디지털 기술도 산업마다 다른 속도와 방향으로 확산된다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>산업</th>
+<th>디지털의 역할</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>디지털·전자</td>
+<td>소프트웨어·데이터가 <strong>제품과 서비스의 핵심 기능</strong>. 제품 주기와 사용자 기반 변화가 빠름</td>
+</tr>
+<tr>
+<td>철강 등 공정 산업</td>
+<td><strong>제어·관리·효율 개선</strong>에 쓰임. 설비·공정·투자주기의 제약</td>
+</tr>
+<tr>
+<td>카메라·휴대전화</td>
+<td>전자·소프트웨어가 <strong>제품 기능과 시장을 재정의</strong>. 기업 역량과 선도권을 바꿀 수 있음</td>
+</tr>
+</tbody></table></div>
+<p class="supp"><span class="tag tag-supp">보충</span>W03/03 <strong>동심원형 혁신</strong>(AX가 기존 산업으로 퍼지는 것)을 SIS로 정밀하게 본 것이다. 동심원의 물결이 <strong>산업마다 다른 속도로</strong> 번진다.</p>
+<h3 id="c11-h-sis-분석-질문-w07b-p33">SIS 분석 질문 (W07b p33) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p33.jpg" alt="W07b p33 SIS로 산업을 분석할 때 던지는 질문" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p33 SIS로 산업을 분석할 때 던지는 질문</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>분석 초점</th>
+<th>질문</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>생산기반</strong></td>
+<td>무엇을 만들며 어떤 공정·설비·투입요소를 쓰는가?</td>
+</tr>
+<tr>
+<td><strong>지식과 학습</strong></td>
+<td>혁신은 어디에서 생기고 기업은 어떻게 배우는가?</td>
+</tr>
+<tr>
+<td><strong>행위자와 관계</strong></td>
+<td>누가 기술을 공급·사용·개발하며 어떤 협력이 있는가?</td>
+</tr>
+<tr>
+<td><strong>수요와 제도</strong></td>
+<td>사용자의 요구, 시장 구조, 규칙과 지원은 무엇을 바꾸는가?</td>
+</tr>
+<tr>
+<td><strong>변화의 경로</strong></td>
+<td>새 기술은 어떤 역량을 강화하거나 약화하며 변화 속도는 어떠한가?</td>
+</tr>
+</tbody></table></div>
+<p>&quot;이 질문들로 산업별 혁신의 <strong>방향·속도와 지속성</strong>을 설명한다.&quot;</p>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>Term paper에서 SIS를 쓴다면 이 표가 <strong>분석 목차</strong> 그대로다. 교수님 예시 &quot;SIS 퍼스펙티브로 정유 산업을 보겠다&quot;(W07 Term paper 오리엔테이션)에 이 다섯 질문을 대입하면 된다.</p>
+<h3 id="c11-h-핵심-정리-w07b-p34">핵심 정리 (W07b p34) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W07b/p34.jpg" alt="W07b p34 핵심 정리와 읽을거리" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W07b p34 핵심 정리와 읽을거리</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>연구자</th>
+<th>기여</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Pavitt</strong></td>
+<td>혁신의 원천과 방식이 산업별로 다르다는 점을 <strong>경험적으로 분류</strong></td>
+</tr>
+<tr>
+<td><strong>Malerba</strong></td>
+<td>지식·기술·수요·행위자·관계·제도가 결합하는 <strong>시스템으로 차이를 설명</strong></td>
+</tr>
+<tr>
+<td><strong>Castellacci</strong></td>
+<td><strong>서비스업과 산업 간 지식 연결</strong>까지 범위 확장</td>
+</tr>
+<tr>
+<td><strong>Lee &amp; Malerba</strong></td>
+<td>시스템 변화와 행위자 대응이 <strong>산업별 추격 경로</strong>를 달리하는 사례 비교</td>
+</tr>
+</tbody></table></div>
+<h3 id="c11-h-교수의-평가-수요-규제-쪽이-비어-있다">교수님의 평가 — 수요·규제 쪽이 비어 있다</h3>
+<ul>
+<li>기존 연구는 <strong>생산(production) 쪽이 훨씬 많이 강조</strong>되어 있고, <strong>규제·사용자 쪽은 더 연구해야</strong> 한다.</li>
+<li>&quot;근데 한국은 아직도 이 정도 수준까지도 <strong>분석을 별로 안 하고 있었다</strong>는 게 이해가 잘 안 되는데. <strong>정책 수준에서 그 정도 분석을 해서 움직여야 되는 게 맞는데.</strong>&quot;</li>
+</ul>
+</div>
+<details class="sec sec-fold" id="c11-discussion" data-sec="c11-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li><strong>Q1. 전통 제조업(로우텍)은 왜 R&amp;D 지원에서 밀리나</strong> (수업노트 W07 §6): <strong>AX 같은 걸 하는 게 더 잘 뽑히니까</strong> 그쪽으로 쏠린다. &quot;<strong>농업은 농업, 행안부는 행안부, 이렇게 수요 부처가 돼야 되는데, 다 공급 부처, 다 과기부 흉내를 내고 있어.</strong>&quot; 네덜란드 농업처럼 <strong>산업(부처)에 맞게</strong> 해야 한다 → <a href="W07-1.html#c01">W07-1/01</a>.<ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>SIS의 정책적 함의가 바로 이것이다. <strong>산업마다 혁신 방식이 다르면 정책도 산업마다 달라야 한다.</strong> 모든 부처가 같은 AI R&amp;D를 하는 것은 SIS 관점에서 가장 나쁜 정책이다. W07-1(정책)과 W07-2(SIS)가 여기서 만난다.</li>
+</ul>
+</li>
+<li><strong>W08(10/24) — &quot;SIS는 정보집약 산업 이전에 만든 틀이라 낡은 것 아니냐&quot;</strong> (수업노트 W08 §2-8 끼어든 질문):</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>Pavitt의 텍소노미는 옛날에 만들었기 때문에 그때는 인포메이션 인더스트리가 없었어요. 그런데 <strong>정보 산업이 확산될 때 어디에 먼저 확산될까, 어떤 산업이 이걸 쓰면서 경쟁력을 더 얻을까를 SIS를 놓고 볼 수가 있다</strong>는 겁니다. <strong>모든 산업에 다 퍼져가지 않아요. 편차가 있습니다.</strong> 그 편차를 볼 때 SIS를 보는 것이고.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li><strong>W08 Q16 — AI 도입이 산업마다 다른 이유를 SIS로 설명할 수 있나</strong>: Pavitt 분류(규모 집약, 공급자 주도, 과학 기반 등)에 따라 AX 도입에 차이가 난다. <strong>데이터가 쉽게 확보되고</strong> 그 데이터로 효율을 높일 수 있다고 보는 산업, <strong>표준 공정</strong>을 가진 산업은 AX가 빨리 된다.<ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>이 파일의 &quot;디지털도 산업마다 다른 속도로 퍼진다&quot;를 <strong>AI에 그대로 적용</strong>한 답이다. SIS를 왜 공부하는지에 대한 교수님의 직접적인 답.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-examples" data-sec="c11-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>산업별 맞춤 정책 예</strong>: 독일의 Industrie 4.0은 제조업(규모집약·전문공급자형)의 공정 디지털화에 초점을 맞췄고, 미국의 같은 시기 정책은 소프트웨어·플랫폼 쪽이 강했다. 같은 &#39;디지털 전환&#39;이라도 산업 구조에 따라 정책이 달랐다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-position" data-sec="c11-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>SIS 강의의 결론. 다음 회차 <strong>TIS</strong>(기술 단위 시스템)로 넘어가며, 분석 단위가 국가(NIS) → 산업(SIS) → 기술(TIS)로 좁아진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-related" data-sec="c11-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Pavitt (1984); Malerba &amp; Orsenigo (1997); Malerba (2002); Castellacci (2008); Lee &amp; Malerba (2017); 이근·박태영 외 (2014)</li>
+<li>연결: <a href="W07-2.html#c01">W07-2/01 SIS</a> · <a href="W07-2.html#c05">W07-2/05 Malerba 여섯 요소</a> · <a href="W07-2.html#c07">W07-2/07 물적 기반</a> · <a href="W07-1.html#c01">W07-1/01 한국의 R&amp;D 투자</a> · <a href="W03.html#c03">W03/03 동심원형 혁신</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c11-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Pavitt (1984)</li><li>Malerba &amp; Orsenigo (1997)</li><li>Malerba (2002)</li><li>Castellacci (2008)</li><li>Lee &amp; Malerba (2017)</li><li>이근·박태영 외 (2014)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W07_강의기록_261017.md §5-11</li><li>수업노트/W07_강의기록_261017.md §6 Q1</li><li>수업노트/W08_강의기록_261024.md §2-8 끼어든 질문, §3 Q16 — SIS는 낡았나, AI 도입의 산업별 차이</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=SIS">SIS</a> · <a href="map.html?tag=digital-diffusion">digital-diffusion</a> · <a href="map.html?tag=AX">AX</a> · <a href="map.html?tag=analytical-questions">analytical-questions</a> · <a href="map.html?tag=summary">summary</a> · <a href="map.html?tag=demand-side">demand-side</a> · <a href="map.html?tag=regulation">regulation</a> · <a href="map.html?tag=demand-ministry">demand-ministry</a> · <a href="map.html?tag=netherlands">netherlands</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c11-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Pavitt·Malerba·Castellacci·Lee &amp; Malerba가 SIS에 각각 기여한 바를 한 문장씩 쓰라. <span class="tag">서술형</span></li>
+<li>SIS의 다섯 분석 질문을 들고, 한 산업(예: 정유·철강·소프트웨어)에 적용해 보라. <span class="tag">서술형</span></li>
+<li>SIS 관점에서 &quot;모든 부처가 같은 AI R&amp;D를 하는 것&quot;을 비판하라. (수요 부처 vs 공급 부처, 네덜란드 사례) <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W07-2&amp;c=c11">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W07-2.html#c01">SIS — 같은 기술 변화도 산업마다 다른 혁신으로</a> · <a href="W07-2.html#c05">Malerba의 SIS — 산업을 이루는 여섯 요소와 그 작동</a> · <a href="W07-2.html#c07">물적 기반과 추격의 창 — 철강·카메라·와인</a> · <a href="W07-1.html#c01">한국의 R&amp;D 투자와 산업정책에서 과학기술혁신정책으로</a> · <a href="W03.html#c03">파도형 혁신 vs 동심원형 혁신</a> · <a href="W08.html#c02">NIS · SIS · TIS — 분석 단위가 다르다</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+    
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+  </main>
+</div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

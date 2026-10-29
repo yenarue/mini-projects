@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Term Paper 과제 안내와 진행 내용">
+  <title>Term Paper — 혁신생태계론</title>
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="week.css">
+</head>
+<body class="page-week page-termpaper">
+
+
+<header class="topbar">
+  <a class="topbar-home" href="../../index.html" title="KAIST ITM 대시보드로">← ITM</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
+  <nav class="topbar-nav">
+    <a href="index.html">학기 지도</a>
+    <a href="W01.html">주차별 개념</a>
+    <a href="core.html">핵심 개념</a>
+    <a href="quiz.html">퀴즈</a>
+    <a href="map.html">개념 지도</a>
+    <a href="termpaper.html" class="active">텀페이퍼</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
+    <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
+    </button>
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="개념 검색">
+    <input type="search" id="search-input" placeholder="개념명 · 영어 · 태그 · 본문 검색" autocomplete="off">
+    <ul class="search-results" id="search-results"></ul>
+    <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
+  </div>
+</div>
+<div class="layout" id="top">
+  
+<aside class="sidebar">
+  <div class="chapter-label">개인 케이스 스터디</div>
+  <h1>Term Paper</h1>
+  <p class="side-subtitle">Proposal 11/1 · 최종 제출 12/19</p>
+  <div class="side-progress">섹션 1개</div>
+  <div class="side-tools">
+    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
+    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
+  </div>
+  <nav><ul class="side-nav">
+    <li data-item="tp01" class="is-open">
+      <a href="#tp01" data-concept="tp01" class="active">
+        <span class="side-no">01</span>
+        <span class="side-title">과제 안내</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#tp01-h-일정-마감" class="side-sub-h" data-anchor="tp01-h-일정-마감">일정·마감</a></li>
+        <li><a href="#tp01-h-성적-비중" class="side-sub-h" data-anchor="tp01-h-성적-비중">성적 비중</a></li>
+        <li><a href="#tp01-h-proposal-요구사항" class="side-sub-h" data-anchor="tp01-h-proposal-요구사항">Proposal 요구사항</a></li>
+        <li><a href="#tp01-h-최종-term-paper-요건" class="side-sub-h" data-anchor="tp01-h-최종-term-paper-요건">최종 Term Paper 요건</a></li>
+        <li><a href="#tp01-h-쓸-수-있는-프레임" class="side-sub-h" data-anchor="tp01-h-쓸-수-있는-프레임">쓸 수 있는 프레임</a></li>
+      </ul>
+    </li></ul></nav>
+</aside>
+  <main>
+    <div class="week-intro">
+      <h1 class="week-title">Term Paper</h1>
+      <p class="week-meta">과제 안내와 내 Term Paper 진행 내용을 모아 두는 곳입니다.</p>
+    </div>
+    
+<section class="concept" id="tp01">
+  <h2 class="concept-title">과제 안내</h2>
+  <div class="concept-meta"><span>일정 · 요구사항 · 쓸 수 있는 프레임</span><span>갱신 2026-10-30</span></div>
+  <p>개인 단위 <strong>케이스 스터디</strong>. 수업에서 다룬 <strong>시스템 프레임 한두 가지</strong>로 관심 케이스의 <strong>시스템 혁신(system innovation)</strong>을 분석한다.</p>
+<h3 id="tp01-h-일정-마감">일정·마감</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>날짜</th>
+<th>항목</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>11/1 (일) 23:59</strong></td>
+<td><strong>Proposal (1–2 pages) 제출</strong></td>
+<td>KLMS 과제 제출</td>
+</tr>
+<tr>
+<td>11월 중</td>
+<td>교수님 피드백 반영 → 프레임·케이스 확정, 문헌 리뷰</td>
+<td></td>
+</tr>
+<tr>
+<td>11~12월</td>
+<td>데이터 수집·분석, 본문 작성</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>12/19 (토)</strong></td>
+<td><strong>Final Term Paper 제출</strong></td>
+<td>수업 없음</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>Proposal 마감 변천: 강의계획서 &quot;개강 후 6주&quot; → W06(10/10) 일정표 10/24 → W08(10/24) &quot;다음 주까지, 교수님 메일로&quot; → <strong>문자 공지로 KLMS 제출 · 11/1(일) 23:59 확정</strong>.</li>
+<li><strong>발표(Presentation 20%)</strong>: 강의계획서에는 &quot;Individual based term paper/case study&quot; 발표, 16주차 &quot;Research Paper Presentation&quot;으로 적혀 있다. 그러나 W01에서 12/19는 &quot;제출만, 수업 없음&quot;으로 안내됐다. 발표 시점·형식은 <strong>아직 정해지지 않았다</strong>.</li>
+</ul>
+<h3 id="tp01-h-성적-비중">성적 비중</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>비중</th>
+<th>Term Paper 관련</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Final (Term Paper)</td>
+<td>40%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>20%</td>
+<td>✅ (형식 미확정)</td>
+</tr>
+<tr>
+<td>Midterm (Proposal)</td>
+<td>10%</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Quiz</td>
+<td>20%</td>
+<td></td>
+</tr>
+<tr>
+<td>출석/참여</td>
+<td>10%</td>
+<td></td>
+</tr>
+</tbody></table></div>
+<p>성적의 <strong>70%</strong>가 Term Paper 라인에 걸려 있다.</p>
+<h3 id="tp01-h-proposal-요구사항">Proposal 요구사항</h3>
+<h4 id="tp01-h-강의계획서-기준">강의계획서 기준</h4>
+<blockquote>
+<p>&quot;The proposal must include the motivation, concrete theoretical background based on previous literatures, hypothesis, methodology, data availability, and research schedule.&quot;</p>
+</blockquote>
+<ul>
+<li><strong>Motivation</strong> — 왜 이 케이스·문제인가</li>
+<li><strong>Theoretical background</strong> — 선행연구 기반 이론 배경 (어떤 시스템 프레임인가)</li>
+<li><strong>Hypothesis</strong> (또는 연구 질문)</li>
+<li><strong>Methodology</strong> — 케이스 스터디 방식 (문헌·인터뷰·관찰·2차 자료 등)</li>
+<li><strong>Data availability</strong> — 실제로 구할 수 있는 자료인가</li>
+<li><strong>Research schedule</strong> — 12/19까지 역산 일정</li>
+</ul>
+<h4 id="tp01-h-수업-중-교수님-안내">수업 중 교수님 안내</h4>
+<ul>
+<li><strong>분량</strong>: 최대 2페이지, 1페이지면 충분. (W06)</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>두 페이지 이상은 절대 안 되고, 한 페이지면 돼.</p><footer class="quote-cite">교수님 · W06</footer></blockquote>
+<ul>
+<li><strong>최소 내용</strong>: 어떤 <strong>프레임워크</strong>로, 어떤 <strong>섹터</strong>에서, 어떤 <strong>형식의 시스템 혁신</strong>을 볼지. (W07)</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>한 페이지 정도만 해서, 어떤 프레임워크를 쓰고 어떤 섹터에서 어떤 형식의 시스템 혁신을 보려고 합니다. 이 정도만 해줘요.</p><footer class="quote-cite">교수님 · W07</footer></blockquote>
+<ul>
+<li>프레임을 아직 못 골랐으면 <strong>어느 섹터·분야의 어떤 문제를, 어떤 질문으로</strong> 보고 싶은지만 적어도 된다. 교수님이 어떤 시스템으로 접근할지 피드백을 주신다. (W08)</li>
+</ul>
+<p><strong>정리</strong>: 1페이지 안에 교수님 안내의 세 요소(프레임·섹터·시스템 혁신)를 뼈대로 쓰고, 강의계획서 여섯 요소는 한두 줄씩이라도 채워 두는 것이 안전하다.</p>
+<h3 id="tp01-h-최종-term-paper-요건">최종 Term Paper 요건</h3>
+<ul>
+<li><strong>케이스 스터디</strong>가 기본이고 형식은 자유. 이론 자체를 더 깊게 파는 것도 허용된다. (W07)</li>
+<li>수업의 <strong>시스템 프레임 한두 가지는 반드시</strong> 들어가야 한다. 섞어 써도 된다. (W08)</li>
+<li>핵심 키워드는 <strong>시스템 혁신</strong> — &quot;정유 산업을 SIS로 보겠다&quot; 또는 &quot;정유 산업의 전환을 보겠다&quot;. (W07 교수님 예시)</li>
+<li>좋은 예시 형태: GIS를 더 알고 싶다 → 내용 정리 → 문헌 리뷰 → 한 케이스 검토 → 내 관점에서 본 한계. (W08)</li>
+<li>강의계획서의 목적: 주제 선정 → 선행연구 리뷰 → 데이터 수집 → 실증 분석 → 결과 해석 → 결론까지, 연구 논문의 큰 그림을 그려 보는 것.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>AI를 쓰든 뭘 쓰든 아무 상관없는데, 텀페이퍼를 냈을 때 &#39;나는 무슨 얘기를 하고 싶다&#39;는 게 표현이 돼야 되는 것이고, 그때 우리가 배웠던 시스템 접근들 중에 한두 개는 쓸 수 있도록 하자는 얘기입니다.</p><footer class="quote-cite">교수님 · W08</footer></blockquote>
+<h3 id="tp01-h-쓸-수-있는-프레임">쓸 수 있는 프레임</h3>
+<p>W07 Term paper 오리엔테이션 슬라이드(W07a p24)의 이론 지도 기준. 진도는 2026-10-30 현재. 프레임 이름을 누르면 아래 설명 카드로 이동한다.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>계열</th>
+<th>프레임</th>
+<th>실제 진도</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>구조의 차이</td>
+<td><a href="#frame-nis">NIS 국가혁신시스템</a></td>
+<td>W06 (10/10) 다룸</td>
+</tr>
+<tr>
+<td>구조의 차이</td>
+<td><a href="#frame-sis">SIS 부문혁신시스템</a></td>
+<td>W07 (10/17) 다룸</td>
+</tr>
+<tr>
+<td>구조의 차이</td>
+<td><a href="#frame-ssip-bs">SSIP · 비즈니스 시스템(BS)</a></td>
+<td>아직 안 다룸</td>
+</tr>
+<tr>
+<td>구조의 변화</td>
+<td><a href="#frame-tis">TIS 기술혁신시스템 (7기능)</a></td>
+<td>W08 (10/24) 다룸</td>
+</tr>
+<tr>
+<td>구조의 변화</td>
+<td><a href="#frame-gis">GIS 글로벌혁신시스템</a></td>
+<td>W09 (10/31) 예정</td>
+</tr>
+<tr>
+<td>구조의 변화</td>
+<td><a href="#frame-sts">StS 사회기술시스템</a> · <a href="#frame-tsi">전환적 사회혁신</a></td>
+<td>11월 예정</td>
+</tr>
+<tr>
+<td>구조 변화의 기작</td>
+<td><a href="#frame-bmi">BMI</a> · <a href="#frame-social-practice-approach">Social Practice Approach</a> · <a href="#frame-moip">MOIP</a></td>
+<td>11월 예정</td>
+</tr>
+<tr>
+<td>구조 변화의 기작</td>
+<td><a href="#frame-innovation-ecosystem">Innovation Ecosystem 혁신생태계</a></td>
+<td>W01 (9/5) 다룸</td>
+</tr>
+<tr>
+<td>참고용</td>
+<td><a href="#frame-triple-helix">Triple Helix</a> · <a href="#frame-mode-2">Mode 2</a> · <a href="#frame-civic-epistemology">시민 인식론</a></td>
+<td>W05 다룸</td>
+</tr>
+</tbody></table></div>
+<h4 id="tp01-h-프레임별-설명">프레임별 설명</h4>
+<p>프레임마다 한두 줄 설명과 개념 페이지 바로가기. 아직 배우지 않은 프레임의 설명은 강의계획서 리딩과 업로드된 자료를 바탕으로 한 <span class="tag tag-supp">보충</span>수업 전 요약이다.</p>
+<div class="frame-group">
+<p class="frame-group-label">구조의 차이 — 나라·산업마다 혁신 방식이 왜 다른가</p>
+<div class="frame-grid">
+<article class="frame-card frame-done" id="frame-nis">
+  <header class="frame-head">
+    <h4 class="frame-name">NIS <span class="frame-ko">국가혁신시스템</span></h4>
+    <span class="frame-status">다룸 · W06 · 10/10</span>
+  </header>
+  <p class="frame-desc">혁신은 연구소 한 곳의 발명이 아니라 <strong>기업을 중심으로 대학·정부·노동·사용자가 주고받는 관계 속 학습과 역량 축적</strong>의 결과라고 본다. 나라별 차이를 설명한다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>한국 vs 라틴아메리카 — 한국은 <strong>정부가 까다로운 사용자</strong>가 되어 기업을 세계 시장 실적으로 규율했고, 라틴아메리카는 큰 내수 덕에 정부 눈만 맞추면 되는 수입대체 구조였다. (W06)</p>
+  
+  <p class="frame-links"><a class="btn btn-quiet" href="W06.html#c01">NIS 개요 →</a><a class="btn btn-quiet" href="W06.html#c04">Freeman vs Lundvall →</a><a class="btn btn-quiet" href="W06.html#c06">사례: 한국 vs 라틴아메리카 →</a></p>
+</article>
+<article class="frame-card frame-done" id="frame-sis">
+  <header class="frame-head">
+    <h4 class="frame-name">SIS <span class="frame-ko">부문혁신시스템</span></h4>
+    <span class="frame-status">다룸 · W07 · 10/17</span>
+  </header>
+  <p class="frame-desc">같은 과학기술 변화도 <strong>산업부문마다 다른 혁신</strong>으로 이어진다. Pavitt가 산업별 패턴을 분류했고, Malerba는 지식·행위자·수요·제도 등 <strong>여섯 요소의 시스템</strong>으로 설명한다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>한국 DRAM — R&amp;D만으로는 안 되고 <strong>대규모 생산 학습과 투자가 누적</strong>돼야 하는 산업. 같은 대량생산이라도 자동차는 공급망, 제약은 과학(STI)이 핵심이라 혁신 방식이 다르다. (W07)</p>
+  
+  <p class="frame-links"><a class="btn btn-quiet" href="W07-2.html#c01">SIS와 Pavitt →</a><a class="btn btn-quiet" href="W07-2.html#c05">Malerba 여섯 요소 →</a><a class="btn btn-quiet" href="W07-2.html#c11">SIS 분석 질문 →</a><a class="btn btn-quiet" href="W07-2.html#c10">사례: DRAM·자동차·제약 →</a></p>
+</article>
+<article class="frame-card frame-pending" id="frame-ssip-bs">
+  <header class="frame-head">
+    <h4 class="frame-name">SSIP · BS <span class="frame-ko">혁신과 생산의 사회시스템 · 비즈니스 시스템</span></h4>
+    <span class="frame-status">아직 안 다룸 · 계획 10/24</span>
+  </header>
+  <p class="frame-desc">교육·노동·금융 같은 제도들이 <strong>서로 보완하며</strong> 나라별로 다른 혁신·생산 양식과 기업 조직 방식을 만든다고 본다(제도적 보완성).</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span><span class="tag tag-supp">보충</span>독일 vs 미국 — 직업훈련·장기 은행 금융·노사 협력이 맞물린 독일은 기계·자동차의 <strong>점진적 혁신</strong>에, 유연한 노동시장·벤처캐피털의 미국은 바이오·소프트웨어의 <strong>급진적 혁신</strong>에 유리하다는 비교(자본주의 다양성 논의의 대표 사례).</p>
+  <p class="frame-note"><span class="tag tag-supp">보충</span>수업 전 요약 — Amable (2000), Casper &amp; Whitley (2004)</p>
+  
+</article>
+</div>
+</div>
+<div class="frame-group">
+<p class="frame-group-label">구조의 변화 — 구조가 어떻게 바뀌는가</p>
+<div class="frame-grid">
+<article class="frame-card frame-done" id="frame-tis">
+  <header class="frame-head">
+    <h4 class="frame-name">TIS <span class="frame-ko">기술혁신시스템</span></h4>
+    <span class="frame-status">다룸 · W08 · 10/24</span>
+  </header>
+  <p class="frame-desc"><strong>특정 기술 하나</strong>가 생겨나 사회에 자리 잡기까지를 추적한다. 지식 개발·시장 형성·정당성 형성 등 <strong>일곱 기능</strong>이 선순환하는지, 무엇이 막는지 진단한다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>IT 재택돌봄 — 고령화와 정부 R&amp;D가 밀어 줬지만 <strong>표준 부재로 시장이 쪼개지고</strong> 노인 수요가 표현되지 않아 정체. 한국 독거노인 비상벨도 같은 이유로 실패했고, 오히려 <strong>전화해 주는 서비스</strong>가 자리 잡았다. (W08)</p>
+  
+  <p class="frame-links"><a class="btn btn-quiet" href="W08.html#c01">TIS 개요 →</a><a class="btn btn-quiet" href="W08.html#c03">일곱 기능 →</a><a class="btn btn-quiet" href="W08.html#c02">NIS·SIS·TIS 비교 →</a><a class="btn btn-quiet" href="W08.html#c05">사례: IT 재택돌봄 →</a></p>
+</article>
+<article class="frame-card frame-planned" id="frame-gis">
+  <header class="frame-head">
+    <h4 class="frame-name">GIS <span class="frame-ko">글로벌혁신시스템</span></h4>
+    <span class="frame-status">예정 · W09 · 10/31</span>
+  </header>
+  <p class="frame-desc">혁신에 필요한 지식·투자·시장·정당성은 한 나라 안에 모여 있지 않다. NIS·SIS·TIS의 통찰을 <strong>국경을 넘는 네트워크</strong> 차원에서 연결해 산업 경쟁력이 어떻게 형성되는지 본다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span><span class="tag tag-supp">보충</span>태양광(PV) — 특허·공정 지식, 국제 금융, 표준화된 모듈이 세계 시장에서 가격 경쟁하는 &#39;자유 이동형&#39; GIS. 한 나라가 보조금으로 만든 시장의 이익이 <strong>자국 제조사에 남는다는 보장이 없다</strong>. (W08 업로드 자료, Binz &amp; Truffer 2017)</p>
+  <p class="frame-note"><span class="tag tag-supp">보충</span>수업 전 요약 — Binz &amp; Truffer (2017), W08 업로드 자료</p>
+  
+</article>
+<article class="frame-card frame-pending" id="frame-sts">
+  <header class="frame-head">
+    <h4 class="frame-name">StS <span class="frame-ko">사회기술시스템</span></h4>
+    <span class="frame-status">아직 안 다룸 · 계획 10/31</span>
+  </header>
+  <p class="frame-desc">분석 단위를 산업(공급)에서 <strong>이동·에너지·식량 같은 사회적 기능</strong>을 채우는 시스템으로 넓힌다. 기술·사용자·제도·문화가 함께 바뀌는 <strong>전환(transition)</strong>을 설명한다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span><span class="tag tag-supp">보충</span>범선 → 증기선, 마차 → 자동차 — 엔진 기술만이 아니라 항만·도로·연료 공급·규제·이용 습관이 <strong>함께 바뀐 전환</strong>. Geels가 다층적 관점(MLP)으로 분석한 대표 사례(Geels 2002, 2004에서 인용).</p>
+  <p class="frame-note"><span class="tag tag-supp">보충</span>수업 전 요약 — Geels (2004)</p>
+  <p class="frame-links"><a class="btn btn-quiet" href="W01.html#c02">인간–제도–과학기술 상호구성 →</a><a class="btn btn-quiet" href="W07-1.html#c07">Frame 3.0 사회적 기능 →</a></p>
+</article>
+<article class="frame-card frame-planned" id="frame-tsi">
+  <header class="frame-head">
+    <h4 class="frame-name">전환적 사회혁신 <span class="frame-ko">Transformative Social Innovation</span></h4>
+    <span class="frame-status">예정 · W10 · 11/7</span>
+  </header>
+  <p class="frame-desc">시민·공동체의 사회혁신이 기존 제도와 관계를 <strong>바꾸는 힘</strong>으로 커지는 과정을 본다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>덴마크 풍력 — 정부 주도 대형 R&amp;D는 실패했고, <strong>마을 공동체의 작은 풍차에서 바텀업으로</strong> 시작한 흐름이 산업과 에너지 체제를 바꿨다. (W08 교수님 설명)</p>
+  <p class="frame-note"><span class="tag tag-supp">보충</span>수업 전 요약 — Haxeltine et al. (2013), Murray et al. (2010)</p>
+  <p class="frame-links"><a class="btn btn-quiet" href="W08.html#c06">사례: 독일 풍력·덴마크 Vestas →</a></p>
+</article>
+</div>
+</div>
+<div class="frame-group">
+<p class="frame-group-label">구조 변화의 기작 — 바뀔 때 무엇이 작동하는가</p>
+<div class="frame-grid">
+<article class="frame-card frame-planned" id="frame-bmi">
+  <header class="frame-head">
+    <h4 class="frame-name">BMI <span class="frame-ko">비즈니스 모델 혁신</span></h4>
+    <span class="frame-status">예정 · W11 · 11/14</span>
+  </header>
+  <p class="frame-desc">기업이 가치를 만들고 거두는 방식(비즈니스 모델)이 전환을 <strong>밀어 주거나 막는</strong> 지점을 본다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span><span class="tag tag-supp">보충</span>카셰어링 — 차를 <strong>파는</strong> 대신 이동을 <strong>서비스로</strong> 팔아, 소유를 전제로 한 자동차 체제에 틈을 낸다. 전환 연구에서 제품–서비스 시스템(PSS)의 대표 예.</p>
+  <p class="frame-note"><span class="tag tag-supp">보충</span>수업 전 요약 — Sarasini &amp; Linder (2018), Bocken &amp; Short (2016)</p>
+  
+</article>
+<article class="frame-card frame-planned" id="frame-social-practice-approach">
+  <header class="frame-head">
+    <h4 class="frame-name">Social Practice Approach <span class="frame-ko">일상생활방식 접근</span></h4>
+    <span class="frame-status">예정 · W12 · 11/21</span>
+  </header>
+  <p class="frame-desc">개인의 선택이 아니라 <strong>일상의 관행(practice)</strong> 자체를 바꿔야 할 대상으로 본다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>에어컨 — 더워진 유럽에서도 &quot;며칠 참으면 된다&quot;며 에어컨을 잘 사지 않는다. 같은 기술이 있어도 <strong>생활 방식(입장)이 다르면</strong> 쓰임이 달라진다. (W05 교수님 설명)</p>
+  <p class="frame-note"><span class="tag tag-supp">보충</span>수업 전 요약 — Spurling et al. (2013), Shove &amp; Walker (2007)</p>
+  
+</article>
+<article class="frame-card frame-planned" id="frame-moip">
+  <header class="frame-head">
+    <h4 class="frame-name">MOIP <span class="frame-ko">임무지향형 혁신정책</span></h4>
+    <span class="frame-status">예정 · W13 · 11/28</span>
+  </header>
+  <p class="frame-desc">시장실패를 고치는 데서 멈추지 않고, 국가가 <strong>사회적 임무를 정하고 시장을 만들어</strong> 가는 정책을 다룬다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span><span class="tag tag-supp">보충</span>아폴로 계획 — &quot;10년 안에 달에 사람을 보낸다&quot;는 임무 하나가 소재·전자·컴퓨팅 등 여러 부문의 혁신을 끌어냈다. Mazzucato가 임무지향 정책의 원형으로 드는 사례.</p>
+  <p class="frame-note"><span class="tag tag-supp">보충</span>수업 전 요약 — Mazzucato (2016), Kirchherr et al. (2023)</p>
+  <p class="frame-links"><a class="btn btn-quiet" href="W07-1.html#c07">Frame 3.0 전환적 혁신정책 →</a></p>
+</article>
+<article class="frame-card frame-done" id="frame-innovation-ecosystem">
+  <header class="frame-head">
+    <h4 class="frame-name">Innovation Ecosystem <span class="frame-ko">혁신생태계</span></h4>
+    <span class="frame-status">다룸 · W01 · 9/5</span>
+  </header>
+  <p class="frame-desc">내 제품이 좋아도 <strong>남들이 제 몫을 해 주지 않으면</strong> 가치가 생기지 않는다. 병목이 어디인지, 누가 오케스트레이터인지, 파트너를 어떻게 정렬시키는지 묻는다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>HDTV (Adner 2006) — 필립스·소니가 수십억 달러를 쓰고도 <strong>방송사·콘텐츠·표준이 준비되지 않아</strong> 시장을 열지 못했다. 병목이 내 제품 밖에 있었던 경우. (W01)</p>
+  
+  <p class="frame-links"><a class="btn btn-quiet" href="W01.html#c11">Innovation Ecosystem →</a></p>
+</article>
+</div>
+</div>
+<div class="frame-group">
+<p class="frame-group-label">참고용 — 비즈니스와 직접 연결되진 않음</p>
+<div class="frame-grid">
+<article class="frame-card frame-ref" id="frame-triple-helix">
+  <header class="frame-head">
+    <h4 class="frame-name">Triple Helix <span class="frame-ko">대학–기업–정부 삼중나선</span></h4>
+    <span class="frame-status">참고용 · W05 · 10/3</span>
+  </header>
+  <p class="frame-desc">대학·기업·정부가 서로 엮이며 함께 발전해야 한다는 <strong>처방</strong>. 약점은 사회(시민)가 빠진다는 것. 셋 중 그나마 비즈니스와 연결된다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>한국의 기술이전법·대학 산학협력단 — 대학·기업·정부를 엮으라는 처방이 <strong>법과 조직</strong>으로 구현된 예. 다만 교수님은 &quot;실제로는 미국에서 시장이 끌고 간 것&quot;이라고 단서를 다셨다. (W05)</p>
+  
+  <p class="frame-links"><a class="btn btn-quiet" href="W05-1.html#c07">Triple Helix →</a><a class="btn btn-quiet" href="W05-1.html#c10">사례: 정책 구현 →</a></p>
+</article>
+<article class="frame-card frame-ref" id="frame-mode-2">
+  <header class="frame-head">
+    <h4 class="frame-name">Mode 2 <span class="frame-ko">새로운 지식 생산 방식</span></h4>
+    <span class="frame-status">참고용 · W05 · 10/3</span>
+  </header>
+  <p class="frame-desc">지식이 학문 분과 안이 아니라 <strong>현장의 문제를 풀기 위해</strong>, 여러 조직이 모인 팀에서 사회적 수용성까지 평가받으며 만들어진다는 관찰.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>공론화위원회·기술영향평가 — 지식의 질을 전문가끼리만 판단하지 않고 <strong>시민·이해관계자가 함께 평가</strong>하는 절차로 Mode 2가 구현된 예. (W05)</p>
+  
+  <p class="frame-links"><a class="btn btn-quiet" href="W05-1.html#c01">Mode 1 vs Mode 2 →</a><a class="btn btn-quiet" href="W05-1.html#c10">사례: 정책 구현 →</a></p>
+</article>
+<article class="frame-card frame-ref" id="frame-civic-epistemology">
+  <header class="frame-head">
+    <h4 class="frame-name">시민 인식론 <span class="frame-ko">Civic Epistemology</span></h4>
+    <span class="frame-status">참고용 · W05 · 10/3</span>
+  </header>
+  <p class="frame-desc">한 사회가 전문가의 지식 주장을 <strong>어떤 기준과 절차로 검증하고 승인하는가</strong>를 묻는다.</p>
+  <p class="frame-example"><span class="frame-example-label">예시</span>한국의 기술관료적 시민 인식론 — 정부가 조사하고 발표하면 믿던 구조라, <strong>정부가 신뢰를 잃자</strong> 대안적 검증 기구가 없어 음모론이 퍼지는 공민적 교란이 생긴다. (W05)</p>
+  
+  <p class="frame-links"><a class="btn btn-quiet" href="W05-2.html#c01">시민 인식론 →</a><a class="btn btn-quiet" href="W05-2.html#c05">사례: 한국의 시민 인식론 →</a></p>
+</article>
+</div>
+</div>
+
+<ul>
+<li>Triple Helix·Mode 2·시민 인식론은 비즈니스와 딱 연결되지는 않으니 참고만 하라고 하셨다(Triple Helix는 그나마 연결됨). (W07)</li>
+<li>아직 배우지 않은 프레임으로 정해도 된다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>여러 가지를 다 쓰셔도, 한두 가지를 섞어 쓰셔도 되고. 어쨌든 여기 있는 프레임워크들을 기반으로 해서 하나의 챕터를 정하고 하나의 케이스를 정하고 그 시스템 혁신이랄까, 이 혁신을 얘기하자.</p><footer class="quote-cite">교수님 · W07</footer></blockquote>
+
+  <p class="concept-top"><a href="#top">↑ 맨 위로</a></p>
+</section>
+    
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+  </main>
+</div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

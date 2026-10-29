@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="ko" data-header="two">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="국가혁신시스템 (NIS) 개념 정리 13개">
+  <title>W06 · 국가혁신시스템 (NIS) — 혁신생태계론</title>
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // 테마·글자크기를 body가 그려지기 전에 <html>에 붙인다("no-flash").
+    // localStorage에 저장된 값이 없으면 OS 다크모드 설정을 1회 참고한다.
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('ie-theme');
+        var dark = theme ? theme === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+        var fontsize = localStorage.getItem('ie-fontsize') || 'md';
+        if (fontsize !== 'sm' && fontsize !== 'md' && fontsize !== 'lg') fontsize = 'md';
+        root.setAttribute('data-fontsize', fontsize);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="week.css">
+</head>
+<body class="page-week">
+
+
+<header class="topbar">
+  <a class="topbar-home" href="../../index.html" title="KAIST ITM 대시보드로">← ITM</a>
+  <a class="topbar-brand" href="index.html"><span class="dot" aria-hidden="true"></span>혁신생태계론</a>
+  <nav class="topbar-nav">
+    <a href="index.html">학기 지도</a>
+    <a href="W01.html" class="active">주차별 개념</a>
+    <a href="core.html">핵심 개념</a>
+    <a href="quiz.html">퀴즈</a>
+    <a href="map.html">개념 지도</a>
+    <a href="termpaper.html">텀페이퍼</a>
+  </nav>
+  <div class="topbar-right">
+    <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">
+      <button type="button" data-fontsize="sm" aria-label="글자 작게">A−</button>
+      <button type="button" data-fontsize="md" aria-label="글자 보통">A</button>
+      <button type="button" data-fontsize="lg" aria-label="글자 크게">A+</button>
+    </div>
+    <button type="button" id="search-open" class="search-trigger" aria-label="검색 열기">
+      <span class="search-icon" aria-hidden="true"></span><span class="search-label">검색</span><kbd>/</kbd>
+    </button>
+    <button type="button" id="theme-toggle" class="icon-btn" aria-label="다크모드 전환">
+      <span class="theme-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="개념 검색">
+    <input type="search" id="search-input" placeholder="개념명 · 영어 · 태그 · 본문 검색" autocomplete="off">
+    <ul class="search-results" id="search-results"></ul>
+    <p class="search-hint">↑↓ 이동 · Enter 열기 · Esc 닫기</p>
+  </div>
+</div>
+
+<nav class="weeknav" aria-label="주차별 개념 바로가기"><a href="W01.html">W01</a><a href="W02-1.html">W02-1</a><a href="W02-2.html">W02-2</a><a href="W03.html">W03</a><a href="W05-1.html">W05-1</a><a href="W05-2.html">W05-2</a><a href="W06.html" class="active" aria-current="page">W06</a><a href="W07-1.html">W07-1</a><a href="W07-2.html">W07-2</a><a href="W08.html">W08</a></nav>
+<div class="layout" id="top">
+  
+<aside class="sidebar">
+  <div class="chapter-label">W06 · 10/10 · 개념 13개</div>
+  <h1>국가혁신시스템 (NIS)</h1>
+  <p class="side-subtitle">National Innovation System · 대면·Zoom 병행</p>
+  
+  <div class="side-tools">
+    <button type="button" id="expand-all" class="side-btn">전부 펼치기</button>
+    <button type="button" id="collapse-all" class="side-btn">전부 접기</button>
+  </div>
+  <nav><ul class="side-nav">
+    <li data-item="c01" class="is-open">
+      <a href="#c01" data-concept="c01" class="active">
+        <span class="side-no">01</span>
+        <span class="side-title">NIS — 혁신을 시스템의 상호작용으로 본다</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c01-h-슬라이드-w06-p6-7" class="side-sub-h" data-anchor="c01-h-슬라이드-w06-p6-7">슬라이드 (W06 p6–7)</a></li>
+        <li><a href="#c01-h-1-기업을-가운데-둔다" class="side-sub-h" data-anchor="c01-h-1-기업을-가운데-둔다">1) 기업을 가운데 둔다</a></li>
+        <li><a href="#c01-h-2-hayek와의-연결-분산된-지식을-제도-네트워크로-조직한다" class="side-sub-h" data-anchor="c01-h-2-hayek와의-연결-분산된-지식을-제도-네트워크로-조직한다">2) Hayek와의 연결 — 분산된 지식을 제도·네트워크로 조직한다</a></li>
+        <li><a href="#c01-h-3-핵심은-정보의-흐름" class="side-sub-h" data-anchor="c01-h-3-핵심은-정보의-흐름">3) 핵심은 정보의 흐름</a></li>
+        <li><a href="#c01-quiz" class="side-sub-quiz" data-anchor="c01-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c02">
+      <a href="#c02" data-concept="c02">
+        <span class="side-no">02</span>
+        <span class="side-title">NIS의 네 가지 질문과 수렴 vs 발산</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c02-h-슬라이드-w06-p8" class="side-sub-h" data-anchor="c02-h-슬라이드-w06-p8">슬라이드 (W06 p8)</a></li>
+        <li><a href="#c02-h-1-nis도-나라마다-다르다" class="side-sub-h" data-anchor="c02-h-1-nis도-나라마다-다르다">1) NIS도 나라마다 다르다</a></li>
+        <li><a href="#c02-h-2-수렴이냐-발산이냐" class="side-sub-h" data-anchor="c02-h-2-수렴이냐-발산이냐">2) 수렴이냐 발산이냐</a></li>
+        <li><a href="#c02-h-3-추격의-순서" class="side-sub-h" data-anchor="c02-h-3-추격의-순서">3) 추격의 순서</a></li>
+        <li><a href="#c02-quiz" class="side-sub-quiz" data-anchor="c02-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c03">
+      <a href="#c03" data-concept="c03">
+        <span class="side-no">03</span>
+        <span class="side-title">NIS의 계보 — List에서 Freeman·Lundvall까지</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c03-h-슬라이드-w06-p9" class="side-sub-h" data-anchor="c03-h-슬라이드-w06-p9">슬라이드 (W06 p9)</a></li>
+        <li><a href="#c03-h-1-freeman-용어를-만든-사람" class="side-sub-h" data-anchor="c03-h-1-freeman-용어를-만든-사람">1) Freeman — 용어를 만든 사람</a></li>
+        <li><a href="#c03-h-2-lundvall과-1988년-dosi-et-al" class="side-sub-h" data-anchor="c03-h-2-lundvall과-1988년-dosi-et-al">2) Lundvall과 1988년 Dosi et al.</a></li>
+        <li><a href="#c03-h-3-godin-역사적-검토" class="side-sub-h" data-anchor="c03-h-3-godin-역사적-검토">3) Godin — 역사적 검토</a></li>
+        <li><a href="#c03-h-4-한국에서의-nis" class="side-sub-h" data-anchor="c03-h-4-한국에서의-nis">4) 한국에서의 NIS</a></li>
+        <li><a href="#c03-quiz" class="side-sub-quiz" data-anchor="c03-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c04">
+      <a href="#c04" data-concept="c04">
+        <span class="side-no">04</span>
+        <span class="side-title">Freeman vs Lundvall — 서로 다른 층위의 출발</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c04-h-슬라이드-w06-p10" class="side-sub-h" data-anchor="c04-h-슬라이드-w06-p10">슬라이드 (W06 p10)</a></li>
+        <li><a href="#c04-h-1-매크로-vs-마이크로" class="side-sub-h" data-anchor="c04-h-1-매크로-vs-마이크로">1) 매크로 vs 마이크로</a></li>
+        <li><a href="#c04-h-2-lundvall의-시스템-기업에서-시작해-제도로-w06-p12" class="side-sub-h" data-anchor="c04-h-2-lundvall의-시스템-기업에서-시작해-제도로-w06-p12">2) Lundvall의 시스템: 기업에서 시작해 제도로 (W06 p12)</a></li>
+        <li><a href="#c04-h-3-두-출발의-장단점" class="side-sub-h" data-anchor="c04-h-3-두-출발의-장단점">3) 두 출발의 장단점</a></li>
+        <li><a href="#c04-quiz" class="side-sub-quiz" data-anchor="c04-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c05">
+      <a href="#c05" data-concept="c05">
+        <span class="side-no">05</span>
+        <span class="side-title">Freeman의 기술 인프라 — 액터가 아니라 네트워크</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c05-h-슬라이드-w06-p11" class="side-sub-h" data-anchor="c05-h-슬라이드-w06-p11">슬라이드 (W06 p11)</a></li>
+        <li><a href="#c05-h-1-액터만-만들어-놓은-문제" class="side-sub-h" data-anchor="c05-h-1-액터만-만들어-놓은-문제">1) 액터만 만들어 놓은 문제</a></li>
+        <li><a href="#c05-h-2-그래서-지역마다-다를-수밖에-없다" class="side-sub-h" data-anchor="c05-h-2-그래서-지역마다-다를-수밖에-없다">2) 그래서 지역마다 다를 수밖에 없다</a></li>
+        <li><a href="#c05-h-3-한국의-네트워크는-왜-작동했나-임베디드된-교육열" class="side-sub-h" data-anchor="c05-h-3-한국의-네트워크는-왜-작동했나-임베디드된-교육열">3) 한국의 네트워크는 왜 작동했나 — 임베디드된 교육열</a></li>
+        <li><a href="#c05-quiz" class="side-sub-quiz" data-anchor="c05-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c06">
+      <a href="#c06" data-concept="c06">
+        <span class="side-no">06</span>
+        <span class="side-title">정부가 사용자가 되다 — 한국 vs 라틴아메리카</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c06-h-1-같은-출발-다른-결과" class="side-sub-h" data-anchor="c06-h-1-같은-출발-다른-결과">1) 같은 출발, 다른 결과</a></li>
+        <li><a href="#c06-h-2-같은-원리로-본-k-콘텐츠-쓰는-사람이-붙어-있어야" class="side-sub-h" data-anchor="c06-h-2-같은-원리로-본-k-콘텐츠-쓰는-사람이-붙어-있어야">2) 같은 원리로 본 K-콘텐츠 — 쓰는 사람이 붙어 있어야</a></li>
+        <li><a href="#c06-quiz" class="side-sub-quiz" data-anchor="c06-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c07">
+      <a href="#c07" data-concept="c07">
+        <span class="side-no">07</span>
+        <span class="side-title">NIS 안의 STI·DUI 결합 — 지식이 역량이 되는 경로</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c07-h-슬라이드-w06-p13-14" class="side-sub-h" data-anchor="c07-h-슬라이드-w06-p13-14">슬라이드 (W06 p13–14)</a></li>
+        <li><a href="#c07-h-1-w02의-프레임이-nis-안으로-들어온다" class="side-sub-h" data-anchor="c07-h-1-w02의-프레임이-nis-안으로-들어온다">1) W02의 프레임이 NIS 안으로 들어온다</a></li>
+        <li><a href="#c07-h-2-피지컬-ai도-결국-암묵지를-형식지로" class="side-sub-h" data-anchor="c07-h-2-피지컬-ai도-결국-암묵지를-형식지로">2) 피지컬 AI도 결국 암묵지를 형식지로</a></li>
+        <li><a href="#c07-h-3-노나카의-seci와-일본의-한계" class="side-sub-h" data-anchor="c07-h-3-노나카의-seci와-일본의-한계">3) 노나카의 SECI와 일본의 한계</a></li>
+        <li><a href="#c07-quiz" class="side-sub-quiz" data-anchor="c07-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c08">
+      <a href="#c08" data-concept="c08">
+        <span class="side-no">08</span>
+        <span class="side-title">축적과 변화의 계보 — Smith·List·Schumpeter·NIS</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c08-h-슬라이드-w06-p15" class="side-sub-h" data-anchor="c08-h-슬라이드-w06-p15">슬라이드 (W06 p15)</a></li>
+        <li><a href="#c08-h-1-교수의-설명" class="side-sub-h" data-anchor="c08-h-1-교수의-설명">1) 교수님의 설명</a></li>
+        <li><a href="#c08-h-2-단서-schumpeter의-기업가-앞에는-커먼스가-있다" class="side-sub-h" data-anchor="c08-h-2-단서-schumpeter의-기업가-앞에는-커먼스가-있다">2) 단서 — Schumpeter의 기업가 앞에는 커먼스가 있다</a></li>
+        <li><a href="#c08-quiz" class="side-sub-quiz" data-anchor="c08-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c09">
+      <a href="#c09" data-concept="c09">
+        <span class="side-no">09</span>
+        <span class="side-title">정태적 배분 효율성 vs 동태적 효율성 (그리고 TFP)</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c09-h-슬라이드-w06-p16" class="side-sub-h" data-anchor="c09-h-슬라이드-w06-p16">슬라이드 (W06 p16)</a></li>
+        <li><a href="#c09-h-1-등량곡선으로-본-차이" class="side-sub-h" data-anchor="c09-h-1-등량곡선으로-본-차이">1) 등량곡선으로 본 차이</a></li>
+        <li><a href="#c09-h-2-효율성-개념과-생산성-지표의-구분-w06-p17" class="side-sub-h" data-anchor="c09-h-2-효율성-개념과-생산성-지표의-구분-w06-p17">2) 효율성 개념과 생산성 지표의 구분 (W06 p17)</a></li>
+        <li><a href="#c09-quiz" class="side-sub-quiz" data-anchor="c09-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c10">
+      <a href="#c10" data-concept="c10">
+        <span class="side-no">10</span>
+        <span class="side-title">NIS의 한계 ① — 권력정치와 시민의 자리</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c10-h-슬라이드-w06-p18" class="side-sub-h" data-anchor="c10-h-슬라이드-w06-p18">슬라이드 (W06 p18)</a></li>
+        <li><a href="#c10-h-1-매니저-입장" class="side-sub-h" data-anchor="c10-h-1-매니저-입장">1) 매니저 입장</a></li>
+        <li><a href="#c10-h-2-시민은-사용자-소비자를-넘어-의제-형성자다-w06-p19" class="side-sub-h" data-anchor="c10-h-2-시민은-사용자-소비자를-넘어-의제-형성자다-w06-p19">2) 시민은 사용자·소비자를 넘어 의제 형성자다 (W06 p19)</a></li>
+        <li><a href="#c10-h-3-nis가-시민을-다루는-방식은-이미-quot-사용자-quot-였다" class="side-sub-h" data-anchor="c10-h-3-nis가-시민을-다루는-방식은-이미-quot-사용자-quot-였다">3) NIS가 시민을 다루는 방식은 이미 &quot;사용자&quot;였다</a></li>
+        <li><a href="#c10-quiz" class="side-sub-quiz" data-anchor="c10-quiz">예상 퀴즈 포인트 4</a></li>
+      </ul>
+    </li>
+    <li data-item="c11">
+      <a href="#c11" data-concept="c11">
+        <span class="side-no">11</span>
+        <span class="side-title">NIS의 한계 ② — 역량 확대가 방향 전환을 보장하지 않는다</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c11-h-슬라이드-w06-p20" class="side-sub-h" data-anchor="c11-h-슬라이드-w06-p20">슬라이드 (W06 p20)</a></li>
+        <li><a href="#c11-h-1-역량이-방향을-정한다면-기후위기는-없어야" class="side-sub-h" data-anchor="c11-h-1-역량이-방향을-정한다면-기후위기는-없어야">1) 역량이 방향을 정한다면 기후위기는 없어야</a></li>
+        <li><a href="#c11-h-2-quot-계속-전진-맞아-quot" class="side-sub-h" data-anchor="c11-h-2-quot-계속-전진-맞아-quot">2) &quot;계속 전진 맞아?&quot;</a></li>
+        <li><a href="#c11-h-3-nis가-이것을-다루지-않은-이유-공정한-단서" class="side-sub-h" data-anchor="c11-h-3-nis가-이것을-다루지-않은-이유-공정한-단서">3) NIS가 이것을 다루지 않은 이유 — 공정한 단서</a></li>
+        <li><a href="#c11-quiz" class="side-sub-quiz" data-anchor="c11-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c12">
+      <a href="#c12" data-concept="c12">
+        <span class="side-no">12</span>
+        <span class="side-title">Lundvall의 응답 — 대체가 아니라 결합 (TIP)</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c12-h-슬라이드-w06-p21-세-프레임의-결합" class="side-sub-h" data-anchor="c12-h-슬라이드-w06-p21-세-프레임의-결합">슬라이드 (W06 p21) — 세 프레임의 결합</a></li>
+        <li><a href="#c12-h-슬라이드-w06-p22-변혁에-필요한-네-가지" class="side-sub-h" data-anchor="c12-h-슬라이드-w06-p22-변혁에-필요한-네-가지">슬라이드 (W06 p22) — 변혁에 필요한 네 가지</a></li>
+        <li><a href="#c12-h-슬라이드-w06-p23-평가-이론은-강하지만-실천은-남는다" class="side-sub-h" data-anchor="c12-h-슬라이드-w06-p23-평가-이론은-강하지만-실천은-남는다">슬라이드 (W06 p23) — 평가: 이론은 강하지만 실천은 남는다</a></li>
+        <li><a href="#c12-quiz" class="side-sub-quiz" data-anchor="c12-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li>
+    <li data-item="c13">
+      <a href="#c13" data-concept="c13">
+        <span class="side-no">13</span>
+        <span class="side-title">확장된 분석틀과 교수님의 통합 반대</span>
+        
+      </a>
+      <ul class="side-sub">
+        <li><a href="#c13-h-슬라이드-w06-p24" class="side-sub-h" data-anchor="c13-h-슬라이드-w06-p24">슬라이드 (W06 p24)</a></li>
+        <li><a href="#c13-h-1-그러나-교수는-이-연결에-반대한다" class="side-sub-h" data-anchor="c13-h-1-그러나-교수는-이-연결에-반대한다">1) 그러나 교수님은 이 연결에 반대한다</a></li>
+        <li><a href="#c13-h-2-q7-quot-따로-다룬다-quot-는-게-무슨-뜻인가" class="side-sub-h" data-anchor="c13-h-2-q7-quot-따로-다룬다-quot-는-게-무슨-뜻인가">2) Q7 — &quot;따로 다룬다&quot;는 게 무슨 뜻인가</a></li>
+        <li><a href="#c13-h-3-왜-이것이-w05의-연장선인가" class="side-sub-h" data-anchor="c13-h-3-왜-이것이-w05의-연장선인가">3) 왜 이것이 W05의 연장선인가</a></li>
+        <li><a href="#c13-h-w08-10-24-질문-토론에서-이어진-논의" class="side-sub-h" data-anchor="c13-h-w08-10-24-질문-토론에서-이어진-논의">W08(10/24) 질문 토론에서 이어진 논의</a></li>
+        <li><a href="#c13-quiz" class="side-sub-quiz" data-anchor="c13-quiz">예상 퀴즈 포인트 3</a></li>
+      </ul>
+    </li></ul></nav>
+</aside>
+  <main>
+    <div class="week-intro">
+      <h1 class="week-title">국가혁신시스템 (NIS)</h1>
+      <p class="week-meta">W06 · 2026-10-10 · National Innovation System · 대면·Zoom 병행</p>
+      <p class="legend">본문은 강의 내용 기준입니다. <span class="tag tag-supp">보충</span> 표지는 외부 지식입니다.</p>
+    </div>
+    
+<section class="concept" id="c01">
+  <h2 class="concept-title">NIS — 혁신을 시스템의 상호작용으로 본다</h2>
+  <p class="concept-en">National Innovation System (NIS) — innovation as systemic interaction</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 01</span>
+    <span>슬라이드 W06 p6, p7</span>
+    <span class="stars" title="시험 중요도 5/5 — NIS의 정의 — W06 전체의 출발점. '기업을 딱 가운데 둔다(연구소가 아니라)'는 교수 강조가 퀴즈에서 헷갈리기 쉬운 지점이고, Triple Helix(대학 중심)와의 비교형(X15)으로 직결된다" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c01" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c01-definition"><h4>한 줄 정의</h4><p><strong>국가혁신시스템(NIS)</strong>은 혁신이 연구소 한 곳의 발명이 아니라 <strong>기업을 중심으로 대학·정부·노동·사용자가 주고받는 관계 속에서 학습하고 역량을 쌓은 결과</strong>라고 보는 관점이다. &quot;혁신은 연구개발 투입만이 아니라 관계 속 학습과 역량 축적의 결과.&quot;</p>
+</div>
+<div class="sec sec-analogy" id="c01-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>맛집이 맛있는 이유를 <strong>주방장 한 사람의 레시피</strong>에서 찾는 게 아니라, 좋은 재료를 대주는 <strong>농가</strong>, 요리사를 길러 낸 <strong>요리학교</strong>, 위생·임대료 같은 <strong>규칙</strong>, 그리고 &quot;이건 짜요&quot; 하고 말해 주는 <strong>단골손님</strong>까지 <strong>식당을 둘러싼 연결망 전체</strong>에서 찾는 것이다.
+그리고 그 연결망의 한가운데 있는 건 요리학교가 아니라 <strong>식당(기업)</strong>이다. 실제로 음식을 만들어 손님에게 내놓는 곳이기 때문이다.</p>
+</div>
+<div class="sec sec-core" id="c01-core"><h4>핵심 내용</h4><h3 id="c01-h-슬라이드-w06-p6-7">슬라이드 (W06 p6–7)</h3>
+<figure class="slide"><img src="images/W06/p06.jpg" alt="W06 p6 국가혁신시스템의 이해와 향후 과제" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p6 국가혁신시스템의 이해와 향후 과제</figcaption></figure>
+<p>이 강의의 질문: <strong>&quot;혁신 역량은 어떻게 만들어지고, 그 방향은 어떻게 정해지는가.&quot;</strong> 앞부분(형성·작동·이론적 기여)은 &#39;어떻게 만들어지는가&#39;, 뒷부분(한계·TIP)은 &#39;방향은 누가 정하는가&#39;에 해당한다.</p>
+<figure class="slide"><img src="images/W06/p07.jpg" alt="W06 p7 NIS는 혁신을 시스템의 상호작용으로 본다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p7 NIS는 혁신을 시스템의 상호작용으로 본다</figcaption></figure>
+<p>다섯 요소: <strong>기업</strong>(생산과 혁신) — 국가·정책(제도와 규칙) / 지식 기반(대학·연구기관) / 노동과 조직(숙련·학습) / 사용자·시민(수요·사용·피드백)</p>
+<h3 id="c01-h-1-기업을-가운데-둔다">1) 기업을 가운데 둔다 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p><strong>기업을 딱 가운데 두고 있어.</strong> 근데 사람들은 기업을 가운데 두는 게 아니고 <strong>연구소를 두고</strong> 막 이렇게 해가지고 헷갈리는데, 그렇지 않고. 왜냐, <strong>혁신을 만들어내는 것은 기업</strong>이라는 관점 속에서, 국가 정책·노동과 조직·대학·시장이 기업과의 관계 속에서 네트워크로 주고받으며 <strong>지식이 움직여진다</strong>는 얘기죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>원래 혁신의 모습은 과학자가 &quot;땡&quot; 하고 발명해 오는 것이 아니라 <strong>기업이 시장으로 쭉 당기는 것</strong>이다.</li>
+<li>대비: <strong>Triple Helix</strong>는 <strong>대학이 스스로 기업이 되는</strong> 모습을 그린다(W05-1/07). NIS의 중심은 대학이 아니라 기업이다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>퀴즈에서 헷갈리기 쉬운 지점. &quot;국가&quot;혁신시스템이라는 이름 때문에 <strong>정부나 국책연구소가 중심</strong>이라고 쓰기 쉽다. 그림의 중심은 <strong>기업</strong>이고, &#39;국가&#39;는 <strong>분석 단위(국경 안의 제도 묶음)</strong>를 가리킨다.</p>
+<h3 id="c01-h-2-hayek와의-연결-분산된-지식을-제도-네트워크로-조직한다">2) Hayek와의 연결 — 분산된 지식을 제도·네트워크로 조직한다 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>사회 속 지식은 <strong>분산되어 있고(distributed knowledge)</strong>, 그것을 잘 조직하는 가장 좋은 방법이 시장이라는 것이 <strong>Hayek</strong>였다(W03/11). NIS는 같은 문제의식을 <strong>시장만이 아니라 제도와 네트워크로 확장</strong>한다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>근데 지금 무슨 일이 벌어지고 있어요? <strong>AI가 지금 그걸 해버리고 있어. AI가 분산된 지식을 쫙 다 당기고 있어요. 무서운 세상이 되겠죠.</strong> 옛날엔 이걸 할 수 없다고 생각했는데.</p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span>Hayek는 분산된 지식을 <strong>한곳에 모을 수 없기 때문에</strong> 중앙계획이 실패한다고 했다. 교수님의 AI 발언은 그 전제가 흔들리고 있다는 문제 제기다. 토론거리로 남겨 둘 만하다.</p>
+<h3 id="c01-h-3-핵심은-정보의-흐름">3) 핵심은 정보의 흐름</h3>
+<p>(§4-4 결론) <strong>개방성과 경쟁, 그리고 견제가 중요하다.</strong> Triple Helix든 NIS든 <strong>정보의 흐름이 핵심</strong>이고, 혁신은 한 사람의 머릿속에서 나오지 않는다.</p>
+<blockquote class="quote-prof quote-bare"><p><strong>가치가 어디서 발생하는지를 찾아낸 거예요.</strong> 그리고 그 플로우가 잘 흘러야 된다는 얘기를 하고. 그건 Smith나 Hayek와 별로 다르지 않습니다. 시장만 얘기했을 뿐이지, <strong>제도와 구조 속에서 벌어지고 있다</strong>는 얘기를.</p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span>정리하면 NIS의 주장은 세 문장이다.</p>
+<ol>
+<li>혁신의 주체는 <strong>기업</strong>이다.</li>
+<li>기업은 혼자 혁신하지 않고 <strong>상호작용 속에서 학습</strong>한다.</li>
+<li>그 상호작용이 얼마나 잘 흐르는지는 <strong>나라마다 다른 제도</strong>가 결정한다.</li>
+</ol>
+</div>
+<details class="sec sec-fold" id="c01-discussion" data-sec="c01-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W05 Q3 토론(같은 날 전반부)에서 교수님은 &quot;<strong>저는 개인적으로는 기업이 중요하다고 생각해요. 그리고 기업도 중요하지만 시장이 더 중요하다고 생각을 해요.</strong>&quot;라고 했다(, 수업노트 §1 Q3). 대학 중심의 Triple Helix보다 <strong>기업 중심의 NIS</strong> 쪽에 교수님의 무게가 실려 있다.</li>
+<li>휴식 직후 K-pop·게임 사례()도 같은 맥락이다. 시장에 <strong>쓰는 사람이 붙어 있어야</strong> 한다 → <a href="W06.html#c06">W06/06</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-examples" data-sec="c01-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>NIS가 정책 언어가 된 경위</strong>: OECD가 1990년대에 NIS를 공식 분석틀로 받아들이면서, 각국 정부가 R&amp;D 예산 총액만이 아니라 <strong>산학연 연계·인력 이동·기술 확산</strong> 같은 연결 지표를 함께 보게 됐다. 한국 과학기술정책 문서에서도 &#39;NIS&#39;는 익숙한 용어가 됐다. 다만 교수님은 한국에서 NIS가 철학적 개념보다 <strong>도구적 프레임</strong>으로 수입됐다고 본다(<a href="W06.html#c03">W06/03</a>).</li>
+<li class="supp"><span class="tag tag-supp">보충</span>반대 사례: R&amp;D 투자 비중이 세계 최상위인데도 성과가 기대에 못 미친다는 <strong>&quot;Korea R&amp;D Paradox&quot;</strong>(W01/04)는 NIS 관점에서 보면 <strong>투입은 많은데 연결이 약한 문제</strong>로 읽힌다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-position" data-sec="c01-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W01/10 강의 지도에서 NIS는 <strong>&quot;구조의 차이&quot;</strong>에 주목하는 첫 번째 시스템 이론이다(NIS·SIS·SSIP·BizS). 이후 SIS(산업별 차이), TIS(기술별 변화)가 같은 &#39;시스템&#39; 관점을 다른 단위로 적용한다.</li>
+<li>W02-1의 <strong>미시적 기초(사용자–생산자 상호작용, STI/DUI)</strong>를 국가 단위로 쌓아 올린 것이 NIS다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c01-related" data-sec="c01-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Freeman (1995) The &#39;National System of Innovation&#39; in historical perspective; Lundvall (2007) National Innovation Systems: Analytical Concept and Development Tool</li>
+<li>연결: <a href="W06.html#c02">W06/02 네 가지 질문과 수렴 vs 발산</a> · <a href="W06.html#c04">W06/04 Freeman vs Lundvall</a> · <a href="W06.html#c05">W06/05 기술 인프라</a> · <a href="W02-1.html#c07">W02-1/07 사용자–생산자 상호작용</a> · <a href="W03.html#c11">W03/11 Hayek</a> · <a href="W05-1.html#c07">W05-1/07 Triple Helix</a> · <a href="W01.html#c10">W01/10 혁신시스템 유형 3분류</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c01-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Freeman (1995)</li><li>Lundvall (2007)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §3-4</li><li>수업노트/W06_강의기록_261010.md §4-4</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=national-innovation-system">national-innovation-system</a> · <a href="map.html?tag=firm-centred">firm-centred</a> · <a href="map.html?tag=interactive-learning">interactive-learning</a> · <a href="map.html?tag=network">network</a> · <a href="map.html?tag=hayek">hayek</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c01-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>NIS가 혁신을 바라보는 관점을 설명하라. 특히 NIS 도식에서 <strong>무엇이 중심에 놓이며 왜 그런지</strong> 서술하라. <span class="tag">서술형</span></li>
+<li>비교형: NIS와 Triple Helix는 혁신의 중심 주체를 각각 어디에 두는가? 그 차이가 정책에 어떤 함의를 갖는가? <span class="tag">비교형</span></li>
+<li>NIS와 Hayek의 분산된 지식론은 어떤 문제의식을 공유하고, 무엇이 다른가? <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c01">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c02">NIS의 네 가지 질문과 수렴 vs 발산</a> · <a href="W06.html#c04">Freeman vs Lundvall — 서로 다른 층위의 출발</a> · <a href="W06.html#c05">Freeman의 기술 인프라 — 액터가 아니라 네트워크</a> · <a href="W02-1.html#c07">사용자–생산자 상호작용과 조직화된 시장</a> · <a href="W03.html#c11">Hayek — 분산된 지식과 발견 절차로서의 경쟁</a> · <a href="W05-1.html#c07">Triple Helix — 세 주체와 재조합의 지대</a> · <a href="W01.html#c09">혁신시스템 접근법의 계보</a> · <a href="W01.html#c10">혁신시스템 유형 3분류 — 강의 지도</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c02">
+  <h2 class="concept-title">NIS의 네 가지 질문과 수렴 vs 발산</h2>
+  <p class="concept-en">Where / what supports / how diffused / why nations differ — convergence vs divergence</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 02</span>
+    <span>슬라이드 W06 p8</span>
+    <span class="stars" title="시험 중요도 3/5 — 네 가지 질문과 수렴 vs 발산 — 약 9분으로 시간은 길었지만 축구 전술·추격 순서 같은 여담 비중이 크다. 국가별 차이는 시민 인식론 세 양식과 묶는 비교 소재" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c02" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c02-definition"><h4>한 줄 정의</h4><p>NIS는 혁신이 <strong>어디서 생기고, 무엇이 뒷받침하며, 어떻게 퍼지고, 왜 나라마다 다른가</strong>를 함께 묻는다. 그중 마지막 질문에서 나오는 쟁점이 <strong>수렴 vs 발산</strong>이다. 세계화 속에서 각국 시스템이 <strong>베스트 프랙티스로 닮아 가는가(수렴)</strong>, 아니면 <strong>각자의 역사·제도대로 달라지는가(발산)</strong>.</p>
+</div>
+<div class="sec sec-analogy" id="c02-analogy"><h4>쉽게 말하면</h4><p>교수님의 비유는 <strong>축구 전술</strong>이다. 스페인식 패스 축구가 잘되면 다들 따라 한다(수렴). 그러다 누군가 새 전술로 <strong>판을 깨면</strong> 다시 다들 그쪽으로 바뀐다. <span class="tag tag-supp">보충</span>그런데 같은 전술을 따라 해도 <strong>나라마다 선수 기질과 유소년 육성 방식이 달라서</strong> 결과는 똑같지 않다. 이것이 발산 쪽 논리다.</p>
+</div>
+<div class="sec sec-core" id="c02-core"><h4>핵심 내용</h4><h3 id="c02-h-슬라이드-w06-p8">슬라이드 (W06 p8)</h3>
+<figure class="slide"><img src="images/W06/p08.jpg" alt="W06 p8 NIS는 혁신의 형성·확산과 국가별 차이를 함께 묻는다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p8 NIS는 혁신의 형성·확산과 국가별 차이를 함께 묻는다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>질문</th>
+<th>보는 것</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>어디서 생기는가</strong></td>
+<td>기업 내부의 연구·생산·조직 변화 / 기업 간 경쟁·협력과 사용자 관계</td>
+</tr>
+<tr>
+<td><strong>무엇이 뒷받침하는가</strong></td>
+<td>지식기관·교육·노동·금융 / 정책·법·시장 제도</td>
+</tr>
+<tr>
+<td><strong>어떻게 확산되는가</strong></td>
+<td>기술 도입과 현장 적용 / 사용자 피드백과 후발기업 학습</td>
+</tr>
+<tr>
+<td><strong>왜 나라마다 다른가</strong></td>
+<td>역사적으로 형성된 제도와 역량 / 국제 연결과 국내 학습의 조합</td>
+</tr>
+</tbody></table></div>
+<p>&quot;혁신의 <strong>결과</strong>뿐 아니라 그 결과를 <strong>가능하게 만든 관계</strong>를 분석한다.&quot;</p>
+<h3 id="c02-h-1-nis도-나라마다-다르다">1) NIS도 나라마다 다르다</h3>
+<ul>
+<li><strong>시민 인식론이 나라마다 달랐듯(W05-2/04) NIS도 나라마다 다르다.</strong> 제조업의 위치, 일하는 방식(working practices)이 다르기 때문이다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>연결 포인트: W05-2에서 미국·영국·독일의 <strong>지식 검증 방식</strong>이 달랐다면, W06에서는 같은 나라들의 <strong>지식 생산·활용 방식</strong>이 다르다. &quot;국가별 차이&quot;라는 같은 질문을 공급 쪽(NIS)과 수요 쪽(시민 인식론)에서 각각 던진 셈이다.</p>
+<h3 id="c02-h-2-수렴이냐-발산이냐">2) 수렴이냐 발산이냐 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>글로벌화로 경쟁하면 <strong>베스트 프랙티스를 따라 수렴</strong>할 가능성이 크다. 그때 가장 큰 힘을 발휘하는 것은 <strong>금융(finance) — 어디에 투자하느냐</strong>다.</li>
+<li>그런데 지금은 <strong>수렴하다 말고 다들 벽을 치기</strong> 시작했다. (같은 날 Q3 토론의 자국 우선주의 논의와 이어진다.)</li>
+<li>축구 비유: 잘되는 전술을 따라 하다가 누가 판을 깨면 다시 바뀐다 — <strong>지배적 디자인(dominant design)</strong>과 같은 구조다(W01/05).</li>
+</ul>
+<h3 id="c02-h-3-추격의-순서">3) 추격의 순서</h3>
+<ul>
+<li>영국 산업혁명 → <strong>첫 번째 추격국 독일</strong>(비스마르크 이후) → 미국 → 일본 → 한국 → 중국.</li>
+<li>그래서 Freeman이 독일의 <strong>List</strong>를 인용한다(W06/03 계보).</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>추격의 역사가 곧 <strong>발산의 역사</strong>이기도 하다. 독일·일본·한국은 영국을 따라 했지만 영국과 똑같은 시스템을 만들지 않았다. 각자 자기 제도(독일의 직업교육, 일본의 계열, 한국의 재벌·정부 주도 금융)를 통해 추격했다.</p>
+</div>
+<details class="sec sec-fold" id="c02-discussion" data-sec="c02-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Q3 토론(, 수업노트 §1)에서 교수님은 한국이 <strong>글로벌화로 가장 득을 본 나라</strong>이며, 그 배경은 <strong>자유 시장 경쟁</strong>이었다고 했다. &quot;<strong>우리가 철벽을 쳤으면 우리는 그냥 안 돼요.</strong> 아담 스미스의 좋은 버전을 우리는 한 거예요.&quot; 벽을 칠 것인가, 같이 나갈 것인가가 <strong>세계사적으로 중요한 순간</strong>이라는 것. 수렴 vs 발산 논의의 현재형이다.</li>
+<li><strong>W08(10/24) Q11 — &quot;수렴할 때 큰 힘을 발휘하는 게 파이낸스&quot;의 의미</strong> (수업노트 W08 §1 Q11). 수렴은 &quot;시장경제가 되면 다 미국식으로 갈 것&quot;이라는 예상이다. 나라마다 생활 방식이 다른데 거기서 <strong>시장만 떼어 내면</strong> 평등한 계약 관계와 가격 신호만 남는다. 이 시스템은 <strong>영·미의 생활세계 방식에서 시작된 것</strong>이 추상화·세계화된 것이라 독일 등에는 안 맞을 수 있다. 그런데도 수렴을 밀어붙이는 힘이 <strong>파이낸스</strong> — 돈이 들어가면 사람들은 돈을 따라 움직이기 때문.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>새마을 시절이었다면 옆집 자전거포 김 씨 아저씨, 방앗간 박 씨 아저씨 — <strong>돈만으로 해결되는 게 아니잖아요. 관계라는 게 있잖아요. 시장은 관계보다 돈이 먼저</strong>인 거죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li><strong>W08 Q2 — 브렉시트 같은 결정은 어떻게 번복하나</strong>: <strong>Karl Polanyi의 생활세계 논리</strong> — 원래 시장 거래도 생활세계 속에서 움직였는데 <strong>시장이 생활세계에서 떨어져 나왔고</strong>, 그것이 세계화·신자유주의로 이어졌다. 비교우위론은 무역이 모두에게 좋다고 했지만 <strong>선진국 블루칼라에게 피해</strong>를 줬고, 제조업이 빠지면 <strong>기술 기반 사회 자체가 위험</strong>해질 수 있다는 점을 간과했다. 브렉시트 지지층에게는 <strong>생활세계의 회복</strong>이라는 의미가 있었다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>그냥 돈만 많이 벌고 이런 개념이 아니고 <strong>내 생활이 중요한 거예요.</strong> 내 생활을 국가 시스템이 어떻게 챙겨줄 것이냐. 유럽이 거기서 복지국가가 진도를 더 나갔어야 되는데, <strong>복지국가의 시스템 혁신이 안 일어났던 거죠.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li><strong>W08 Q10 — 뒤처지는 국가도 분석해야 하지 않나</strong>: 해야 하는데 <strong>사람들이 왜 뒤처졌는지 이야기를 안 하려 한다.</strong> 혁신학의 인사이트는 &quot;<strong>세상은 계속 변한다</strong>&quot; — 누군가 딴짓을 하는 놈이 있기 때문. 패권국은 변하지 않으면 무너진다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>비즈니스 오퍼튜니티가 아니고 <strong>삶의 방식에 대해서 문제 제기를 하는 사람들이 있단 말이에요.</strong> 그런 사람들이 있기 때문에 세상은 변한다. 그 변할 때 <strong>수단으로서 사이언스 테크놀로지가 굉장히 중요한 역할</strong>을 합니다.</p><footer class="quote-cite">교수님</footer></blockquote>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-examples" data-sec="c02-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>자본주의 다양성(Varieties of Capitalism, Hall &amp; Soskice 2001)</strong>: 미국·영국형 자유시장경제(LME)와 독일·일본형 조정시장경제(CME)가 세계화 속에서도 수렴하지 않고 각자의 강점(급진적 혁신 vs 점진적 혁신)을 유지한다는 주장. 발산론의 대표 논거다. 이 수업 계획표의 <strong>SSIP</strong>(혁신과 생산의 사회시스템) 주제와 이어진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-position" data-sec="c02-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>&#39;왜 나라마다 다른가&#39;는 W01/10 강의 지도의 <strong>&quot;구조의 차이&quot;</strong> 축 그 자체다.</li>
+<li>국경을 넘는 연결은 이후 <strong>GIS(글로벌혁신시스템)</strong> 주제에서 본격적으로 다룬다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c02-related" data-sec="c02-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Lundvall (2007, pp. 98–103)</li>
+<li>연결: <a href="W06.html#c01">W06/01 NIS 정의</a> · <a href="W06.html#c03">W06/03 NIS의 계보</a> · <a href="W05-2.html#c04">W05-2/04 미국·영국·독일 세 양식</a> · <a href="W01.html#c05">W01/05 세 가지 고착(지배적 디자인)</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c02-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Lundvall (2007)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §3-5</li><li>수업노트/W08_강의기록_261024.md §1 Q2, Q10, Q11 — 생활세계·뒤처지는 국가·파이낸스와 수렴</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=national-differences">national-differences</a> · <a href="map.html?tag=convergence">convergence</a> · <a href="map.html?tag=divergence">divergence</a> · <a href="map.html?tag=dominant-design">dominant-design</a> · <a href="map.html?tag=catch-up">catch-up</a> · <a href="map.html?tag=finance">finance</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c02-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>NIS가 던지는 네 가지 질문을 쓰고, &quot;왜 나라마다 다른가&quot;에 대한 NIS의 답을 설명하라. <span class="tag">서술형</span></li>
+<li>세계화 속에서 각국 혁신시스템은 수렴하는가 발산하는가? 수업에서 나온 근거(금융, 자국 우선주의, 지배적 디자인 비유)를 들어 논하라. <span class="tag">서술형</span></li>
+<li>비교형: W05-2의 국가별 시민 인식론 차이와 W06의 국가별 NIS 차이는 각각 무엇을 비교하는가? <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c02">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c01">NIS — 혁신을 시스템의 상호작용으로 본다</a> · <a href="W06.html#c03">NIS의 계보 — List에서 Freeman·Lundvall까지</a> · <a href="W05-2.html#c04">미국·영국·독일의 세 가지 양식</a> · <a href="W01.html#c05">세 가지 고착 — 조직·기술·사용자 lock-in</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c03">
+  <h2 class="concept-title">NIS의 계보 — List에서 Freeman·Lundvall까지</h2>
+  <p class="concept-en">Genealogy of NIS — List, Freeman, Lundvall, Nelson/OECD, Godin</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 03</span>
+    <span>슬라이드 W06 p9</span>
+    <span class="stars" title="시험 중요도 3/5 — NIS의 계보 — 약 4분. 'List는 선구이지 용어 창안자가 아니다'는 정의형 함정과 한국의 도구적 수입 논평 정도가 출제 포인트" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c03" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c03-definition"><h4>한 줄 정의</h4><p>NIS라는 <strong>말은 1980년대 Freeman이 만들었지만</strong>, 그 생각의 뿌리는 1841년 <strong>Friedrich List</strong>의 &quot;후발국은 국가가 산업과 학습을 키워야 추격할 수 있다&quot;는 주장에 있다. 이후 <strong>Lundvall</strong>이 사용자–생산자 상호작용으로 미시적 기초를 놓았고, 1990년대에 <strong>Nelson의 국가 비교와 OECD</strong>를 거쳐 정책 언어로 퍼졌다.</p>
+</div>
+<div class="sec sec-analogy" id="c03-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>족보로 보면 이렇다. <strong>할아버지 List</strong>가 &quot;우리 집안은 남의 집 따라잡으려면 집안 전체가 나서야 한다&quot;는 가훈을 남겼고, <strong>아버지 Freeman</strong>이 그걸 &quot;국가혁신시스템&quot;이라는 이름으로 문서화했다. <strong>작은아버지 Lundvall</strong>은 &quot;집안이 잘되는 건 결국 식구들끼리 얼마나 말을 주고받느냐에 달렸다&quot;고 집안 내부의 작동 원리를 밝혔다. 다만 슬라이드가 못 박듯 <strong>List는 개념의 선구이지 &#39;NIS&#39;라는 이름을 지은 사람은 아니다.</strong></p>
+</div>
+<div class="sec sec-core" id="c03-core"><h4>핵심 내용</h4><h3 id="c03-h-슬라이드-w06-p9">슬라이드 (W06 p9)</h3>
+<figure class="slide"><img src="images/W06/p09.jpg" alt="W06 p9 NIS의 계보" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p9 NIS의 계보</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>시기</th>
+<th>인물</th>
+<th>기여</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1841</strong></td>
+<td><strong>Friedrich List</strong></td>
+<td><em>The National System of Political Economy</em>. 후발국 추격에서 <strong>국가의 산업·학습 역할</strong>. 개념의 선구</td>
+</tr>
+<tr>
+<td><strong>1982 / 1987</strong></td>
+<td><strong>Christopher Freeman</strong></td>
+<td>OECD 기술 인프라 논의 / <strong>일본의 추격과 NIS</strong></td>
+</tr>
+<tr>
+<td><strong>1985 / 1992</strong></td>
+<td><strong>Bengt-Åke Lundvall</strong></td>
+<td><strong>사용자–생산자 관계, 상호작용적 학습</strong></td>
+</tr>
+<tr>
+<td><strong>1990년대 이후</strong></td>
+<td>Nelson, OECD, Godin</td>
+<td>국가 비교 연구, OECD 확산, Godin의 역사적 검토</td>
+</tr>
+</tbody></table></div>
+<p><span class="tag tag-exam">시험 포인트</span>&quot;List는 개념의 선구이지 &#39;NIS&#39;라는 용어의 창안자는 아니다.&quot;</p>
+<h3 id="c03-h-1-freeman-용어를-만든-사람">1) Freeman — 용어를 만든 사람 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>영국 케임브리지에서 경제학을 공부했고 <strong>&#39;National Innovation System&#39;이라는 말을 만든(coining)</strong> 사람이다. <strong>SPRU(Science Policy Research Unit)</strong>를 세웠다.</li>
+<li>Lundvall은 Freeman의 후배이며 둘은 <strong>사이좋게</strong> 이 개념을 함께 발전시켰다.</li>
+<li>출발점: 1980년대 초 <strong>OECD 과학기술·혁신 워킹그룹</strong>에 Freeman이 참여해 <strong>&#39;기술 인프라(technological infrastructure)&#39;</strong> 보고서를 쓰려 했다. 그런데 OECD 내부에서 <strong>&quot;너무 국가가 나서는 것 아니냐&quot;</strong>는 반발(기업 vs 국가 논쟁)이 있어 <strong>공식 발표되지 못했다.</strong> 그 내용이 나중에 1995년 논문에 담긴다.</li>
+<li><strong>1987년</strong> <em>Technology Policy and Economic Performance: Lessons from Japan</em> — 일본은 왜 잘 나가는가, 그 비결로 <strong>국가 시스템, 네트워크</strong>를 제시했다.</li>
+<li>Freeman 위로는 <em>The Social Function of Science</em>(<span class="tag tag-supp">보충</span>J.D. Bernal, 1939)를 쓴 케임브리지 과학자 전통이 있다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>Freeman의 1982년 OECD 원고는 &quot;Technological infrastructure and international competitiveness&quot;라는 제목으로, 한참 뒤인 2004년에 학술지(<em>Industrial and Corporate Change</em>)에 정식 게재됐다.</p>
+<h3 id="c03-h-2-lundvall과-1988년-dosi-et-al">2) Lundvall과 1988년 Dosi et al.</h3>
+<ul>
+<li><strong>1988년 Dosi et al. <em>Technical Change and Economic Theory</em></strong>: 당대 혁신 연구자들이 <strong>마르크스주의자까지 다 모여</strong> 쓴 책. 이 책에서 <strong>Freeman은 기술경제패러다임(W03/02)</strong>을, <strong>Lundvall은 사용자–생산자 관계의 상호작용 학습(interactive learning)</strong> 장을 썼다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>같은 책에 W03의 TEP와 W02-1의 사용자–생산자 상호작용이 나란히 실렸다는 점이 흥미롭다. 거시(패러다임)와 미시(상호작용) 두 층위가 NIS로 합쳐지는 출발점이다 → <a href="W06.html#c04">W06/04</a>.</p>
+<h3 id="c03-h-3-godin-역사적-검토">3) Godin — 역사적 검토</h3>
+<ul>
+<li><strong>Godin</strong>(캐나다 학자)은 과학기술 개념사를 역사학적으로 꾸준히 추적해 온 사람이다. NIS 개념이 어떻게 형성·확산됐는지를 검토했다(Godin 2009).</li>
+</ul>
+<h3 id="c03-h-4-한국에서의-nis">4) 한국에서의 NIS <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li><strong>김인수 교수님</strong>의 <em>Imitation to Innovation</em>(모방을 통한 혁신 — learning by doing, 역량 축적, 흡수 역량)이 <strong>기업 레벨 연구를 아주 초기에</strong> 해 큰 기여를 했다.</li>
+<li>한국에서는 NIS가 철학적 개념보다 <strong>&quot;급하니까 산업화하려면 어떻게 해야 하나&quot;라는 도구적 프레임</strong>으로 수입됐다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>이 대목은 W02-1/09(후발국의 역방향 기술 궤적)와 직결된다. 김인수의 <strong>모방 → 혁신</strong> 경로가 바로 그 역방향 궤적이다.</p>
+</div>
+<details class="sec sec-fold" id="c03-discussion" data-sec="c03-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>추격의 순서(영국 → 독일 → 미국 → 일본 → 한국 → 중국)를 설명하며, 첫 추격국이 독일이었기 때문에 Freeman이 <strong>독일의 List</strong>를 인용한다고 했다(수업노트 §3-5). 계보의 출발점이 왜 List인지에 대한 교수님의 설명이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-examples" data-sec="c03-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>List의 &#39;사다리 걷어차기&#39;</strong>: List는 영국이 자유무역을 설교하면서도 자신은 보호무역으로 성장했다고 비판했다. 후발국 독일에는 <strong>유치산업 보호와 국가의 교육·인프라 투자</strong>가 필요하다는 주장이다. 장하준의 <em>Kicking Away the Ladder</em>(2002)가 이 논리를 현대에 되살렸다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Nelson (1993) <em>National Innovation Systems: A Comparative Analysis</em></strong>: 15개국 NIS를 나란히 비교한 책. 슬라이드의 &quot;Nelson의 국가 비교&quot;가 이것이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-position" data-sec="c03-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W01/09 혁신시스템 접근법의 계보에서 NIS는 <strong>Innovation Studies 계열의 출발점</strong>이다. SIS·TIS·StS가 모두 이 &#39;시스템&#39; 관점에서 갈라져 나온다.</li>
+<li>계보 마지막의 Lundvall은 2024년 <strong>Transformative Innovation Policy</strong>로 자기 프레임을 다시 확장한다 → <a href="W06.html#c12">W06/12</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c03-related" data-sec="c03-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Freeman (1987, 1995); Lundvall (2007); Godin (2009); List (1841)</li>
+<li>연결: <a href="W06.html#c04">W06/04 Freeman vs Lundvall</a> · <a href="W06.html#c08">W06/08 축적과 변화의 계보</a> · <a href="W03.html#c02">W03/02 TEP</a> · <a href="W02-1.html#c07">W02-1/07 사용자–생산자 상호작용</a> · <a href="W02-1.html#c09">W02-1/09 후발국의 역방향 기술 궤적</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c03-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Freeman (1995)</li><li>Lundvall (2007)</li><li>Godin (2009)</li><li>List (1841)</li><li>Freeman (1987)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §3-1, §3-2</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=genealogy">genealogy</a> · <a href="map.html?tag=friedrich-list">friedrich-list</a> · <a href="map.html?tag=freeman">freeman</a> · <a href="map.html?tag=lundvall">lundvall</a> · <a href="map.html?tag=OECD">OECD</a> · <a href="map.html?tag=godin">godin</a> · <a href="map.html?tag=linsu-kim">linsu-kim</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c03-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>NIS 개념의 계보를 List–Freeman–Lundvall 순으로 설명하고, 각자의 기여를 한 문장씩 쓰라. <span class="tag">서술형</span></li>
+<li>&quot;List는 NIS의 선구이지만 용어의 창안자는 아니다&quot;는 말의 의미를 설명하라. <span class="tag">서술형</span></li>
+<li>한국에서 NIS가 &#39;도구적 프레임&#39;으로 수입됐다는 교수님의 평가는 무슨 뜻인가? <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c03">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c04">Freeman vs Lundvall — 서로 다른 층위의 출발</a> · <a href="W06.html#c08">축적과 변화의 계보 — Smith·List·Schumpeter·NIS</a> · <a href="W03.html#c02">기술경제패러다임(TEP)과 혁신의 네 층위</a> · <a href="W02-1.html#c07">사용자–생산자 상호작용과 조직화된 시장</a> · <a href="W02-1.html#c09">후발국의 역방향 기술 궤적</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c04">
+  <h2 class="concept-title">Freeman vs Lundvall — 서로 다른 층위의 출발</h2>
+  <p class="concept-en">Freeman (macro, national competitiveness) vs Lundvall (micro, user–producer interaction)</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 04</span>
+    <span>슬라이드 W06 p10, p12</span>
+    <span class="stars" title="시험 중요도 5/5 — ★★ Freeman vs Lundvall — p10 두 층위 비교표가 수업노트에서 '비교·서술형으로 나오기 좋은 지점'으로 명시됐다. 강의는 3분 남짓이지만 매크로/마이크로 대비가 W02-1 미시적 기초와 이어지는 전형적 비교형" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c04" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c04-definition"><h4>한 줄 정의</h4><p>NIS의 두 창시자는 <strong>출발점이 반대</strong>다. <strong>Freeman</strong>은 &quot;왜 어떤 나라는 잘 따라잡고 어떤 나라는 못 하나&quot;라는 <strong>국가 간 경쟁력 차이(매크로)</strong>에서 출발해 국가 제도로 내려갔다. <strong>Lundvall</strong>은 &quot;기업과 사용자가 어떻게 서로 배우나&quot;라는 <strong>생산 현장의 상호작용(마이크로)</strong>에서 출발해 국가 시스템으로 올라갔다.</p>
+</div>
+<div class="sec sec-analogy" id="c04-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>한 학교가 왜 공부를 잘하는지 알아보는 두 연구자가 있다.</p>
+<ul>
+<li><strong>Freeman</strong>은 교육청 자료부터 본다. 예산, 교사 수, 커리큘럼, 다른 학교와의 성적 비교. <strong>위에서 아래로.</strong></li>
+<li><strong>Lundvall</strong>은 교실에 들어가 본다. 학생이 질문하고 선생님이 답하고, 친구끼리 가르쳐 주는 장면. 그 장면이 학년 전체, 학교 전체로 이어지는 걸 따라 <strong>아래에서 위로.</strong></li>
+</ul>
+<p>둘 다 결국 &quot;학교 시스템&quot;을 그리지만 출발한 곳이 다르다.</p>
+</div>
+<div class="sec sec-core" id="c04-core"><h4>핵심 내용</h4><h3 id="c04-h-슬라이드-w06-p10">슬라이드 (W06 p10)</h3>
+<figure class="slide"><img src="images/W06/p10.jpg" alt="W06 p10 Freeman과 Lundvall은 서로 다른 층위에서 출발한다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p10 Freeman과 Lundvall은 서로 다른 층위에서 출발한다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Freeman</strong></th>
+<th><strong>Lundvall</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>출발</td>
+<td><strong>국가 간 경쟁력 차이</strong></td>
+<td><strong>생산 현장의 상호작용</strong></td>
+</tr>
+<tr>
+<td>초점</td>
+<td>기술 인프라와 국가 제도 / 산업정책·교육·R&amp;D의 결합</td>
+<td>사용자–생산자 관계 / 학습과 역량 축적</td>
+</tr>
+<tr>
+<td>사례·대상</td>
+<td>일본의 기술 추격과 역사적 전환</td>
+<td>기업 내부·기업 간 상호작용의 제도적 기반</td>
+</tr>
+<tr>
+<td>분석의 확대</td>
+<td>→ <strong>국가의 제도적 조건</strong></td>
+<td><strong>미시적 학습 → 국가 시스템</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="c04-h-1-매크로-vs-마이크로">1) 매크로 vs 마이크로 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p>Freeman은 좀 국가 차원, <strong>매크로</strong>한 차원에서 얘기를 더 했다면, Lundvall은 제가 저번에 얘기했지만 <strong>마이크로 파운데이션, 프로듀서–유저 릴레이션십 러닝</strong>, 이 얘기를 처음으로 <strong>이론적으로</strong> 만드신 분이에요. 프로듀서–유저 관계가 이쪽으로도 늘어나고 저쪽으로도 늘어나면 <strong>전체 시스템이 만들어지는 거죠. 혼자서 만드는 게 아니라 인터랙션을 통해서.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>Lundvall의 이 작업에서 <strong>학습경제(learning economy)·지식경제</strong> 같은 말이 나왔다.</li>
+<li><span class="tag tag-exam">시험 포인트</span>사용자–생산자 관계를 통한 학습은 <strong>혁신학을 다른 학문과 구별시키는 강한 마이크로 파운데이션</strong>이며, 다른 분야에서는 이런 이야기를 하지 않는다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>&quot;저번에 얘기했지만&quot; = W02-1/07. 9/12 수업의 사용자–생산자 상호작용·조직화된 시장이 바로 Lundvall의 미시적 기초다. W06은 그것이 <strong>국가 단위로 쌓이면</strong> NIS가 된다는 이야기다.</p>
+<h3 id="c04-h-2-lundvall의-시스템-기업에서-시작해-제도로-w06-p12">2) Lundvall의 시스템: 기업에서 시작해 제도로 (W06 p12)</h3>
+<figure class="slide"><img src="images/W06/p12.jpg" alt="W06 p12 Lundvall은 기업 간 상호작용을 핵심으로 제도 환경까지 확장한다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p12 Lundvall은 기업 간 상호작용을 핵심으로 제도 환경까지 확장한다</figcaption></figure>
+<ul>
+<li><strong>핵심</strong>: 기업 내부의 조직과 역량 / 기업 간 경쟁·협력·네트워크 / 기업과 대학·기술기관의 연결</li>
+<li><strong>넓은 환경</strong>: 교육·노동시장 / 금융·지식재산권 / 제품시장 경쟁·복지체제</li>
+<li>&quot;분석은 <strong>기업에서 시작해 국가 제도 차이로 올라갔다가 성과 설명으로 돌아온다</strong>.&quot;</li>
+</ul>
+<p>Lundvall은 <strong>굉장히 기업 중심적</strong>이지만 <strong>신자유주의자는 아니다.</strong> 복지 시스템과 국가 개입을 중요하게 보는 사람이다. 핵심은 <strong>새로운 가치가 어디서 발생하는가를 딱 짚었다</strong>는 것.</p>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>함정 포인트: &quot;기업 중심 = 시장주의&quot;가 아니다. Lundvall의 넓은 환경에 <strong>복지체제</strong>가 들어 있다. 덴마크 출신답게 노동자의 학습 역량을 지켜 주는 사회안전망을 혁신 조건으로 본다(<span class="tag tag-supp">보충</span>덴마크 유연안정성 flexicurity와 연결되는 대목).</p>
+<h3 id="c04-h-3-두-출발의-장단점">3) 두 출발의 장단점 <span class="tag tag-supp">보충</span></h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>Freeman (위에서)</th>
+<th>Lundvall (아래에서)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>잘 보이는 것</td>
+<td>산업정책·국가 전략·추격의 역사</td>
+<td>현장의 학습·암묵지·상호작용</td>
+</tr>
+<tr>
+<td>놓치기 쉬운 것</td>
+<td>현장 학습이 실제로 어떻게 일어나는지</td>
+<td>국가 간 권력·국제 경쟁 구도</td>
+</tr>
+<tr>
+<td>수업 연결</td>
+<td>W03 TEP(장기파동), W06/05 기술 인프라</td>
+<td>W02-1 STI/DUI, 사용자–생산자, W06/07</td>
+</tr>
+</tbody></table></div>
+<p class="supp"><span class="tag tag-supp">보충</span>두 사람의 차이는 <strong>대립이 아니라 분업</strong>에 가깝다. 교수님도 둘이 &quot;사이좋게&quot; 개념을 발전시켰다고 했다.</p>
+</div>
+<details class="sec sec-fold" id="c04-discussion" data-sec="c04-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>한국 vs 라틴아메리카 비교(§4-4)에서 교수님은 Lundvall의 <strong>사용자–생산자 상호작용</strong>을 국가 차원에 그대로 적용했다. &quot;<strong>정부가, 군대가 유저가 되는 거예요.</strong>&quot; 마이크로 개념이 매크로 설명에 쓰이는 예 → <a href="W06.html#c06">W06/06</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-examples" data-sec="c04-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Freeman의 일본 연구</strong>: 통상산업성(MITI)의 장기 비전, 기업 내 R&amp;D와 생산 현장의 긴밀한 연결, 역설계를 통한 도입 기술 개선, 대기업 계열 간 협력을 일본 추격의 비결로 꼽았다. &quot;기술 하나&quot;가 아니라 <strong>이것들이 맞물린 묶음</strong>이 핵심이라는 것 → <a href="W06.html#c05">W06/05</a>.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Lundvall (1992) <em>National Systems of Innovation: Towards a Theory of Innovation and Interactive Learning</em></strong>: 부제에 &#39;interactive learning&#39;이 들어간 책. 상호작용 학습을 국가 시스템 이론의 중심에 놓았다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-position" data-sec="c04-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W02-1(미시적 기초) → W03(거시적 속성) → W06(NIS)의 흐름에서, 두 층위가 처음으로 <strong>한 이론 안에서 만나는</strong> 지점이다.</li>
+<li>매크로–마이크로 대비는 이후 SIS·TIS를 볼 때도 &quot;이 이론은 어느 층위에서 출발했나&quot;를 묻는 기준이 된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c04-related" data-sec="c04-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Freeman (1995); Lundvall (2007, pp. 95–110)</li>
+<li>연결: <a href="W06.html#c03">W06/03 NIS의 계보</a> · <a href="W06.html#c05">W06/05 기술 인프라</a> · <a href="W06.html#c06">W06/06 정부가 사용자가 되다</a> · <a href="W02-1.html#c02">W02-1/02 학습</a> · <a href="W02-1.html#c07">W02-1/07 사용자–생산자 상호작용</a> · <a href="W03.html#c02">W03/02 TEP</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c04-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Freeman (1995)</li><li>Lundvall (2007)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §3-3</li><li>수업노트/W06_강의기록_261010.md §4-3</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=freeman">freeman</a> · <a href="map.html?tag=lundvall">lundvall</a> · <a href="map.html?tag=macro">macro</a> · <a href="map.html?tag=micro-foundation">micro-foundation</a> · <a href="map.html?tag=user-producer">user-producer</a> · <a href="map.html?tag=learning-economy">learning-economy</a> · <a href="map.html?tag=comparison">comparison</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c04-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Freeman과 Lundvall의 NIS 접근을 출발점·초점·분석의 확대 방향으로 비교하라. <span class="tag">비교형</span></li>
+<li>&quot;사용자–생산자 관계를 통한 학습은 혁신학의 강한 마이크로 파운데이션&quot;이라는 교수님의 말을 W02-1 내용과 연결해 설명하라. <span class="tag">서술형</span></li>
+<li>Lundvall은 기업 중심적이지만 신자유주의자가 아니라는 말은 무슨 뜻인가? (p12의 &#39;넓은 환경&#39; 요소를 근거로) <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c04">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c03">NIS의 계보 — List에서 Freeman·Lundvall까지</a> · <a href="W06.html#c05">Freeman의 기술 인프라 — 액터가 아니라 네트워크</a> · <a href="W06.html#c06">정부가 사용자가 되다 — 한국 vs 라틴아메리카</a> · <a href="W02-1.html#c02">학습 — 지식생산의 미시적 기초</a> · <a href="W02-1.html#c07">사용자–생산자 상호작용과 조직화된 시장</a> · <a href="W03.html#c02">기술경제패러다임(TEP)과 혁신의 네 층위</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c05">
+  <h2 class="concept-title">Freeman의 기술 인프라 — 액터가 아니라 네트워크</h2>
+  <p class="concept-en">Technological infrastructure as a bundle of connected national capabilities</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 05</span>
+    <span>슬라이드 W06 p11</span>
+    <span class="stars" title="시험 중요도 4/5 — 기술 인프라 — 약 6분. '액터가 아니라 네트워크', '지역에 가면 다 있어, 쓰질 않아'를 교수가 직접 길게 풀었고 토론·term paper 후보로 표시됐다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c05" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c05-definition"><h4>한 줄 정의</h4><p>Freeman이 말한 <strong>기술 인프라</strong>는 연구소 건물 같은 <strong>시설 하나가 아니라</strong>, 인력·기업 학습·지식 기관·정책 조정·시장 피드백이 <strong>서로 맞물려 돌아가는 역량과 제도의 묶음</strong>이다. 교수님의 요약: <strong>&quot;기본은 네트워크야. 액터가 아니라 네트워크.&quot;</strong></p>
+</div>
+<div class="sec sec-analogy" id="c05-analogy"><h4>쉽게 말하면</h4><p>교수님이 든 그림 그대로다. 지역에 가 보면 <strong>&quot;다 있어. 시설도 있고 다 있어. 쓰질 않아.&quot;</strong> <span class="tag tag-supp">보충</span>헬스장 회원권, 운동 기구, 트레이너가 다 있는데 <strong>운동하는 습관과 같이 가는 친구</strong>가 없으면 근육이 안 붙는 것과 같다. 기구(액터)가 아니라 <strong>기구를 쓰게 만드는 관계(네트워크)</strong>가 역량을 만든다.</p>
+</div>
+<div class="sec sec-core" id="c05-core"><h4>핵심 내용</h4><h3 id="c05-h-슬라이드-w06-p11">슬라이드 (W06 p11)</h3>
+<figure class="slide"><img src="images/W06/p11.jpg" alt="W06 p11 Freeman의 기술 인프라는 연결된 국가 역량이다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p11 Freeman의 기술 인프라는 연결된 국가 역량이다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>요소</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>인력과 교육</td>
+<td>공학·기술 인력, 기초 역량과 훈련</td>
+</tr>
+<tr>
+<td>기업 학습</td>
+<td>산업 R&amp;D, <strong>도입 기술의 개선</strong></td>
+</tr>
+<tr>
+<td>지식 기반</td>
+<td>과학·기술 기관, <strong>기업과의 연결</strong></td>
+</tr>
+<tr>
+<td>정책 조정</td>
+<td>산업의 장기 방향, 정부·기업·대학의 상호작용</td>
+</tr>
+<tr>
+<td>시장 피드백</td>
+<td>수출·사용자 반응, 통신과 국제 네트워크</td>
+</tr>
+</tbody></table></div>
+<p>&quot;일본의 추격은 <strong>기술 도입을 국내 생산·개선·확산 역량에 연결</strong>한 과정이었다.&quot; / &quot;<strong>기반 시설 하나가 아니라 서로 보완되는 능력과 제도의 묶음</strong>&quot;</p>
+<p>네트워크 = <strong>행위자(actor) + 연결(connection) + 그것을 쌓는 제도(institution)</strong>.</p>
+<h3 id="c05-h-1-액터만-만들어-놓은-문제">1) 액터만 만들어 놓은 문제 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p>현실적으로 어떻게 쓰이냐 하면, 후발국에 가면 지식 기반이 없어. 세워야지. 그래서 <strong>카이스트 만들고 베트남 카이스트도 만들고 태국 카이스트도 만들고</strong> 추진을 하는 거지. <strong>근데 그렇게 만들어 놓는다고 되는 게 아니잖아요. 기본은 네트워크야.</strong> 액터가 아니라 네트워크. 지역에 가면 <strong>다 있어. 시설도 있고 다 있어. 쓰질 않아.</strong> 그러니까 <strong>액터들만 다 만들어 놓은 거예요.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>지역 대학이 콧대를 높이면 지역 기업은 &quot;<strong>서울대랑 얘기하면 되지</strong>&quot; 하고 돌아선다. <strong>UNIST만 세워 놓는다고 되는 게 아니다.</strong></li>
+</ul>
+<h3 id="c05-h-2-그래서-지역마다-다를-수밖에-없다">2) 그래서 지역마다 다를 수밖에 없다 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>중앙에서 다 거버닝할 수는 없다. 그 지역 사람들이 <strong>조찬 모임</strong>을 하든 <strong>지역 대학 동문회</strong>를 쓰든 그 지역에 맞는 네트워크 작동 방식이 있다.</li>
+<li>이것은 <strong>시장의 거래로만 설명될 수 없다.</strong></li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>W03/17의 <strong>&quot;거버넌스는 국지적이어야 한다(부산은 부산 단위로)&quot;</strong>와 같은 주장이다. W03에서는 Hayek·Ostrom 논리로, W06에서는 Freeman의 네트워크 논리로 같은 결론에 도착한다.</p>
+<h3 id="c05-h-3-한국의-네트워크는-왜-작동했나-임베디드된-교육열">3) 한국의 네트워크는 왜 작동했나 — 임베디드된 교육열</h3>
+<blockquote class="quote-prof quote-bare"><p><strong>식민지를 딱 지나고 나서 봤더니 갑자기 중등교육 진학률이 미친 듯이 올라간다.</strong> 다른 나라 사람들이 봤을 때는 &#39;얘들 왜 이러지?&#39; 인류 역사상 별로 볼 일이 없던 거예요. 한국이나 중국은 당연한 건데. <strong>그게 우리의 시스템 안에 임베디드 돼 있었던 거예요.</strong> 식민지 시기를 거치며 안 되다가 해방 이후 발현이 된 거죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>과거제 전통에서 공부는 곧 <strong>신분 상승</strong>이었다. (같은 날 Q1 토론의 송나라 성리학·과거제·메리토크라시 이야기와 이어진다.)</li>
+<li><strong>일본</strong>도 전쟁에 졌지만 조직된 것이 있어 바로 추격에 나섰다. 그런데 <strong>왜 업그레이드가 안 됐나</strong> — 계속 영주 시스템에 머물렀고, 정부와 밀착해 <strong>은퇴 관료가 회사로 가서 뭉개는</strong> 구조가 됐다. 한국은 재벌 개혁 논쟁이라도 했다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>일본 사례는 W01/05 <strong>조직 고착</strong>과 W03/03 <strong>&quot;일본은 업그레이드(동심원형 혁신)에 실패했다&quot;</strong>와 연결된다. 추격을 잘하게 만든 네트워크가 나중에는 바뀌지 못하게 붙잡는 고착이 된 것이다.</p>
+</div>
+<details class="sec sec-fold" id="c05-discussion" data-sec="c05-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>수업노트에 <strong>토론 질문 후보</strong>로 표시됨: &quot;<strong>액터는 다 있는데 네트워크가 작동하지 않는</strong> 지역혁신의 문제를 NIS로 어떻게 설명할 것인가.&quot;</li>
+<li><strong>Term paper 후보</strong>로 표시됨: UNIST–울산 기업 간 네트워크 작동 여부 케이스.</li>
+<li>Q1 토론()의 결론 &quot;<strong>개방성을 얼마나 가지고 있느냐</strong>가 판단 기준&quot;도 같은 문제다. 네트워크는 <strong>새 아이디어에 열려 있어야</strong> 작동한다.</li>
+<li><strong>W08(10/24) Q1 — 일본의 NIS는 왜 효과가 떨어졌나</strong> (수업노트 W08 §1 Q1). 교수님의 네 요인:<ol>
+<li><strong>젊은 세대가 예전처럼 일하지 않는다</strong> — 패전에 대한 반작용으로 이뤄진 <strong>국민 동원(mobilization)</strong>이 더 이상 작동하지 않는다.</li>
+<li><strong>배태된 자율성이 무너졌다</strong> — 은퇴 공무원이 기업으로 낙하산을 타며 <strong>이권화</strong>되었다.</li>
+<li><strong>한국은 IMF가 판을 깼다</strong> — 대마불사가 사라지며 네이버 같은 테크 기업이 등장했고 <strong>내부 경쟁이 다시 살아났다.</strong></li>
+<li><strong>일본은 강한 생활세계 시민사회를 가졌지만 계급이 남아 있다</strong> — 지역 공동체는 강하지만 공적 공간에는 덜 신경 쓴다. 일본의 새로움은 아마 그 생활세계에서 나올 것.</li>
+</ol>
+</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>공무원들이 낙하산으로 다 기업으로 들어간 거예요. 은퇴하고서. 그러면서 <strong>이게 이권이 돼버렸어요.</strong> 새로운 발전을 하고 경쟁을 하는 게 아니고 <strong>타협하는 식으로</strong> 넘어가기 시작했어요.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>대만은 <strong>가족 중심 경영 + 미국 시장 납품 구조</strong>로 동력을 얻었고, 중국은 <strong>디지털 개발국가</strong>로 거대 내수가 끌었지만 개방이 안 된 것이 문제.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>위 본문의 &quot;은퇴 관료가 회사로 가서 뭉개는 구조&quot;를 W08에서 <strong>배태된 자율성(embedded autonomy)의 붕괴</strong>로 다시 설명했다 → <a href="W06.html#c06">W06/06</a>의 embedded autonomy와 짝.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-examples" data-sec="c05-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>테크노파크·혁신도시</strong>: 전국 각지에 산업단지·연구시설이 들어섰지만 입주 기관끼리 교류가 적다는 평가가 반복된다. 교수님이 말한 &quot;액터만 만들어 놓은&quot; 전형적 장면이다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>ANT와의 연결</strong>: W03/05의 기술경제적 네트워크(Callon)도 &quot;행위자 목록이 아니라 <strong>연결이 만들어지는 과정</strong>&quot;을 봤다. Freeman은 경제학, Callon은 사회학에서 출발했지만 <strong>네트워크가 단위</strong>라는 직관은 같다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-position" data-sec="c05-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>NIS를 실무에 쓸 때 가장 흔한 오해(기관을 세우면 시스템이 생긴다)를 바로잡는 개념이다.</li>
+<li>같은 &#39;연결된 역량&#39; 관점이 W02-1/08 <strong>생산 능력 vs 기술 역량</strong>(사 올 수 있는 것 vs 학습으로만 쌓이는 것)의 국가판이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c05-related" data-sec="c05-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Freeman (1987); Freeman (1995, pp. 13–15)</li>
+<li>연결: <a href="W06.html#c04">W06/04 Freeman vs Lundvall</a> · <a href="W06.html#c06">W06/06 정부가 사용자가 되다</a> · <a href="W03.html#c05">W03/05 TEN</a> · <a href="W03.html#c17">W03/17 제도 건축가</a> · <a href="W02-1.html#c08">W02-1/08 생산능력 vs 기술역량</a> · <a href="W01.html#c05">W01/05 세 가지 고착</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c05-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Freeman (1987)</li><li>Freeman (1995)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §4-1</li><li>수업노트/W06_강의기록_261010.md §4-2</li><li>수업노트/W08_강의기록_261024.md §1 Q1 — 일본 NIS는 왜 효과가 떨어졌나</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=freeman">freeman</a> · <a href="map.html?tag=technological-infrastructure">technological-infrastructure</a> · <a href="map.html?tag=network">network</a> · <a href="map.html?tag=regional-innovation">regional-innovation</a> · <a href="map.html?tag=embeddedness">embeddedness</a> · <a href="map.html?tag=japan">japan</a> · <a href="map.html?tag=education">education</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c05-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Freeman의 &#39;기술 인프라&#39;는 무엇인가? &quot;기반 시설 하나가 아니라 서로 보완되는 능력과 제도의 묶음&quot;이라는 말을 중심으로 설명하라. <span class="tag">서술형</span></li>
+<li>&quot;액터가 아니라 네트워크&quot;라는 교수님의 말을 지역혁신(대학·연구시설은 있는데 쓰이지 않는 문제) 사례로 설명하라. <span class="tag">서술형</span></li>
+<li>일본이 추격에는 성공했지만 업그레이드에 실패한 이유를 NIS와 고착 개념으로 설명하라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c05">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c04">Freeman vs Lundvall — 서로 다른 층위의 출발</a> · <a href="W06.html#c06">정부가 사용자가 되다 — 한국 vs 라틴아메리카</a> · <a href="W03.html#c05">기술경제적 네트워크(TEN) — 세 개의 극</a> · <a href="W03.html#c17">국가 역할의 전환 — 지휘관에서 제도 건축가로</a> · <a href="W02-1.html#c08">생산 능력 vs 기술 역량</a> · <a href="W01.html#c05">세 가지 고착 — 조직·기술·사용자 lock-in</a> · <a href="W07-2.html#c10">대량생산 산업 사례와 기술 안보 — DRAM·자동차·철강·제약</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c06">
+  <h2 class="concept-title">정부가 사용자가 되다 — 한국 vs 라틴아메리카</h2>
+  <p class="concept-en">State as demanding user; competition and discipline vs import substitution</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 06</span>
+    
+    <span class="stars" title="시험 중요도 4/5 — 정부가 사용자가 되다 — 슬라이드 없는 교수 구두 설명이지만 한국 vs 라틴아메리카(약 4분)와 K-pop·게임 사례(약 4분)를 합치면 비중이 크다. 사용자–생산자 상호작용의 국가판(X20), term paper 후보" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c06" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c06-definition"><h4>한 줄 정의</h4><p>비슷한 출발선에서 한국은 성공하고 라틴아메리카는 막힌 이유를 교수님은 <strong>사용자–생산자 상호작용</strong>으로 설명한다. 한국은 <strong>정부(와 군대)가 까다로운 사용자</strong> 역할을 하며 기업을 <strong>세계 시장에서 경쟁시키고 실적으로 규율</strong>했다. 라틴아메리카는 큰 내수 시장 덕에 <strong>정부 눈만 맞추면 되는</strong> 수입대체 구조였다.</p>
+</div>
+<div class="sec sec-analogy" id="c06-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>두 부모가 있다.</p>
+<ul>
+<li><strong>한국 부모</strong>: 학원비는 대주지만 &quot;<strong>전국 대회에서 성적 못 내면 지원 끊는다</strong>&quot;. 아이는 밖에서 경쟁하며 실력을 키운다.</li>
+<li><strong>라틴아메리카 부모</strong>: 집이 넓고 형제가 많아 <strong>집 안에서만 1등 하면</strong> 된다. 바깥 대회는 안 나가도 된다.</li>
+</ul>
+<p>둘 다 지원은 했다. 차이는 <strong>누가 성적을 매기느냐</strong>였다.</p>
+</div>
+<div class="sec sec-core" id="c06-core"><h4>핵심 내용</h4><h3 id="c06-h-1-같은-출발-다른-결과">1) 같은 출발, 다른 결과 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>당시 라틴아메리카와 한국은 비슷했고 오히려 <strong>라틴아메리카 시장이 더 컸다.</strong></li>
+<li>그런데 한국은 <strong>기업들을 경쟁시켰다.</strong> 자본이 없으니 국가가 은행을 쥐고 펀딩하되, <strong>세계 시장에서 성과를 못 내면 끝.</strong></li>
+<li>중국도 국내에서 싸움을 붙이지만, 국내 시장이 워낙 커서 해외에 안 나가도 된다. 대신 <strong>낭비(waste)</strong>가 엄청나다(공유자전거 쓰레기).</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>그게 아까 얘기했던, 기본적인 게 <strong>유저–프로듀서 인터랙션</strong>이에요. <strong>정부가, 군대가 유저가 되는 거예요.</strong> 그럼 프로듀서랑 붙어서 계속 얘기를 해. 근데 러시아·라틴아메리카는 <strong>정부 눈만 맞추면 되잖아.</strong> 걔네들은 <strong>시장이 크니까 경쟁을 안 한 거예요.</strong> 수입대체를 시행하는 바람에. <strong>우리는 경쟁을 시키고 디서플린(discipline)을 시킨 거예요.</strong> 그걸 embedded autonomy처럼 얘기했지만.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>물론 부패가 없었던 것은 아니다. 그래도 대체로 <strong>실적으로 규율</strong>했다.</li>
+<li>결론: <strong>개방성과 경쟁, 그리고 견제가 중요하다.</strong></li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>포인트는 &quot;정부 지원이 있었냐&quot;가 아니다. 둘 다 정부가 지원했다. 차이는 <strong>지원의 조건</strong>이었다.</p>
+<ul>
+<li>한국: 정부는 <strong>요구가 까다로운 사용자</strong> → 생산자(기업)와 계속 대화하며 학습 → 바깥 시장의 성적표가 기준.</li>
+<li>라틴아메리카: 정부는 <strong>보호자</strong> → 기업이 정부와의 관계만 관리 → 학습 압력 없음.</li>
+</ul>
+<h3 id="c06-h-2-같은-원리로-본-k-콘텐츠-쓰는-사람이-붙어-있어야">2) 같은 원리로 본 K-콘텐츠 — 쓰는 사람이 붙어 있어야 <span class="tag tag-exam">시험 포인트</span></h3>
+<p>같은 날 휴식 직후(수업노트 §2-2) 교수님은 반대 방향의 사례를 들었다.</p>
+<ul>
+<li>최근 자문 자리에서 보니, 국가가 <strong>20년 가까이 투자해 온 성장동력(로봇·바이오·소재)</strong>보다 국가가 별로 신경 쓰지 않은 <strong>식품·화장품·K-pop·게임</strong>이 오히려 더 크게 해외로 나가 있다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>왜 그랬을까. 제가 봤을 때는 <strong>유저 커뮤니티가 거기에 다 붙어 있어요. 시장이 다 붙어 있어요.</strong> 시장에 <strong>쓰는 사람이 다 붙어 있어야 돼.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>사례: 하이브·JYP·SM·YG 4사가 함께 여는 행사에서 <strong>팬덤에게 상을 주는 부문</strong>을 만든다고 한다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>유저 생태계와 같이 커나간다는 거, 그 포착을 잘한다는 게 새로운 비즈니스지. <strong>교과서에 있어서 따라 한 게 아니란 말이에요. 그냥 한 거예요.</strong> 시장에서. <strong>BTS가 그게 될 줄 누가 알았어. 아무도 몰랐어.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>두 사례를 나란히 놓으면 교수님의 메시지가 선명해진다.</p>
+<ul>
+<li>과거 추격기: <strong>정부가 사용자</strong> 역할을 대신했다.</li>
+<li>지금: 정부가 고른 분야보다 <strong>실제 사용자 커뮤니티가 붙은 분야</strong>가 잘된다.</li>
+<li>공통 원리: <strong>사용자–생산자 상호작용이 학습을 만든다.</strong> 그 사용자가 정부냐 팬덤이냐가 달라졌을 뿐이다.</li>
+<li>&quot;BTS가 될 줄 아무도 몰랐다&quot;는 W03/11 Hayek의 <strong>&quot;모르기 때문에 경쟁한다&quot;</strong>와 같은 말이다.</li>
+</ul>
+</div>
+<details class="sec sec-fold" id="c06-discussion" data-sec="c06-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Q3 토론(, 수업노트 §1): &quot;한민족 5천 년 역사가 <strong>이렇게 잘 나갔던 적이 없어요.</strong> 그런데 이렇게 잘 나가게 된 배경은 <strong>자유 시장 경쟁을 했기 때문</strong>이에요. <strong>우리가 철벽을 쳤으면 우리는 그냥 안 돼요.</strong> <strong>아담 스미스의 좋은 버전을 우리는 한 거예요.</strong>&quot; — 시장 크기가 생산성을 정한다는 Smith(W03/10)를 한국 성장에 적용.</li>
+<li>휴식 직후의 한글 사례(수업노트 §2-1)도 같은 논리다. <strong>쓰는 사람(양반가 여성)이 있었기 때문에</strong> 한글이 살아남았다 → <a href="W05-2.html#c02">W05-2/02 공동생산</a>.</li>
+<li>수업노트 토론 질문 후보: &quot;국가가 지정한 성장동력 vs 유저 커뮤니티가 붙은 산업 — NIS의 기업 중심 그림이 K-콘텐츠를 설명하는가.&quot;</li>
+<li><strong>Term paper 후보</strong>로 표시됨: K-pop·게임·화장품처럼 유저 커뮤니티가 붙은 산업 vs 국가 지정 성장동력 비교.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-examples" data-sec="c06-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Amsden (1989) <em>Asia&#39;s Next Giant</em></strong>: 한국 정부는 보조금을 주는 대신 <strong>수출 실적 같은 성과 기준(reciprocity)</strong>을 요구했다고 분석했다. 교수님이 말한 &quot;디서플린&quot;과 같은 이야기다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Evans (1995) <em>Embedded Autonomy</em></strong>: 관료가 기업과 긴밀히 연결돼 있으면서도(embedded) 특정 기업에 포획되지 않는(autonomy) 상태가 발전국가 성공의 조건이라고 봤다. 교수님이 언급한 embedded autonomy가 이것이다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>수입대체 산업화(ISI)</strong>: 1950~70년대 라틴아메리카는 수입을 막고 국내 생산으로 대체하는 전략을 썼다. 보호된 내수 시장 안에서 경쟁 압력이 약해 생산성 개선이 더뎠다는 평가가 많다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>방산 조달</strong>: 국방 조달은 &#39;정부가 사용자&#39;인 대표 사례다. W02-1/11의 <strong>공공조달·국산화 목표(demand-pull)</strong>와 같은 메커니즘이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-position" data-sec="c06-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W02-1의 <strong>수요 쪽 정책</strong>(W02-1/10 수요–공급–연계, W02-1/11 민간 R&amp;D 수요 창출 4대 동인)을 국가 비교로 확장한 사례다. 수업노트 정제 노트도 이 대목을 W02(Kim &amp; Dahlman, Evans)와 같은 이야기로 표시했다.</li>
+<li>이 수업 계획표 후반의 <strong>개발국가(Developmental State)</strong> 주제로 이어질 논점이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c06-related" data-sec="c06-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>교수님 구두 설명. 슬라이드 근거 없음. <span class="tag tag-supp">보충</span>Amsden (1989), Evans (1995)</li>
+<li>연결: <a href="W06.html#c04">W06/04 Freeman vs Lundvall</a> · <a href="W06.html#c05">W06/05 기술 인프라</a> · <a href="W02-1.html#c07">W02-1/07 사용자–생산자 상호작용</a> · <a href="W02-1.html#c10">W02-1/10 수요–공급–연계</a> · <a href="W02-1.html#c11">W02-1/11 민간 R&amp;D 수요 창출</a> · <a href="W03.html#c10">W03/10 Adam Smith</a> · <a href="W05-2.html#c02">W05-2/02 공동생산</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c06-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §4-4</li><li>수업노트/W06_강의기록_261010.md §2-2</li><li>수업노트/W06_강의기록_261010.md §1 Q3</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=user-producer">user-producer</a> · <a href="map.html?tag=korea">korea</a> · <a href="map.html?tag=latin-america">latin-america</a> · <a href="map.html?tag=import-substitution">import-substitution</a> · <a href="map.html?tag=discipline">discipline</a> · <a href="map.html?tag=embedded-autonomy">embedded-autonomy</a> · <a href="map.html?tag=user-community">user-community</a> · <a href="map.html?tag=k-content">k-content</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c06-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>한국과 라틴아메리카의 추격 결과가 달랐던 이유를 사용자–생산자 상호작용 관점에서 설명하라. (&quot;정부가 사용자가 되었다&quot;의 의미 포함) <span class="tag">서술형</span></li>
+<li>국가가 지정한 성장동력보다 K-pop·게임·화장품이 더 크게 성장한 이유에 대한 교수님의 설명을 쓰고, 그것이 NIS의 어떤 원리와 연결되는지 논하라. <span class="tag">서술형</span></li>
+<li>정부 지원 자체가 아니라 &#39;지원의 조건&#39;이 중요했다는 주장을 경쟁·규율(discipline) 개념으로 설명하라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c06">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c04">Freeman vs Lundvall — 서로 다른 층위의 출발</a> · <a href="W06.html#c05">Freeman의 기술 인프라 — 액터가 아니라 네트워크</a> · <a href="W02-1.html#c07">사용자–생산자 상호작용과 조직화된 시장</a> · <a href="W02-1.html#c10">수요–공급–연계 기술정책 프레임</a> · <a href="W02-1.html#c11">민간 R&amp;D 수요 창출 4대 동인</a> · <a href="W03.html#c10">Adam Smith — 분업과 생산성</a> · <a href="W05-2.html#c02">공동생산 (Co-production)</a> · <a href="W07-2.html#c09">한국 산업 사례와 '사용자 공동혁신형' — 휴대폰·게임·음악재생기</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c07">
+  <h2 class="concept-title">NIS 안의 STI·DUI 결합 — 지식이 역량이 되는 경로</h2>
+  <p class="concept-en">STI and DUI within NIS; from interaction to accumulated capabilities</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 07</span>
+    <span>슬라이드 W06 p13, p14</span>
+    <span class="stars" title="시험 중요도 3/5 — NIS 안의 STI·DUI — 2~3분, W02 프레임의 재확인. 피지컬 AI 발언이 응용형 소재지만 W02-1/03 답안에 흡수되기 쉽다" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c07" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c07-definition"><h4>한 줄 정의</h4><p>NIS 안에서 혁신은 <strong>과학 기반 학습(STI)</strong>과 <strong>경험 기반 학습(DUI)</strong>이 함께 작동해 일어난다. 현장에서 문제를 발견하고, 사용자·공급자·연구자와 주고받으며, 명시지와 암묵지를 공유·실험하고, 개선을 확산하는 과정을 거쳐 지식이 <strong>축적된 역량</strong>이 된다.</p>
+</div>
+<div class="sec sec-analogy" id="c07-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>요리를 배우는 두 길이 있다. <strong>레시피 책과 영양학(STI)</strong>, 그리고 <strong>주방에서 직접 해 보고 손님 반응 듣기(DUI)</strong>. 잘하는 식당은 둘 중 하나가 아니라 <strong>둘을 섞는 비율을 자기 메뉴에 맞게 정한다.</strong> 그리고 그렇게 쌓인 손맛은 레시피만 복사해 간다고 따라 할 수 없다.</p>
+</div>
+<div class="sec sec-core" id="c07-core"><h4>핵심 내용</h4><h3 id="c07-h-슬라이드-w06-p13-14">슬라이드 (W06 p13–14)</h3>
+<figure class="slide"><img src="images/W06/p13.jpg" alt="W06 p13 혁신은 과학기반 STI와 경험기반 DUI를 함께 포함한다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p13 혁신은 과학기반 STI와 경험기반 DUI를 함께 포함한다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>STI</strong> (Science · Technology · Innovation)</th>
+<th><strong>DUI</strong> (Doing · Using · Interacting)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>학습 방식</td>
+<td>R&amp;D와 과학적 탐색</td>
+<td>생산과 사용의 경험</td>
+</tr>
+<tr>
+<td>지식 형태</td>
+<td>명시적·코드화된 지식</td>
+<td>암묵적 지식과 숙련</td>
+</tr>
+<tr>
+<td>장소</td>
+<td>연구기관과 기술 전문성</td>
+<td>동료·부서·기업 간 학습</td>
+</tr>
+</tbody></table></div>
+<p>&quot;기업과 산업은 두 방식을 <strong>서로 다른 비중으로 결합</strong>한다.&quot;</p>
+<figure class="slide"><img src="images/W06/p14.jpg" alt="W06 p14 상호작용이 지식을 역량으로 바꾸는 경로" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p14 상호작용이 지식을 역량으로 바꾸는 경로</figcaption></figure>
+<p>경로: <strong>생산 경험</strong>(공정·조직에서 문제 발견) → <strong>상호작용</strong>(사용자·공급자·연구자와 교류) → <strong>학습</strong>(명시지와 암묵지를 공유·실험) → <strong>개선·확산</strong>(제품과 공정을 수정·적용) → <strong>축적된 역량</strong>(새 기술과 미래 선택지)</p>
+<p>&quot;지식 전달과 현장 학습은 <strong>서로 다른 통로이며 서로 보완</strong>한다.&quot; / &quot;시스템의 성과는 <strong>연결의 유무와 학습 기회의 분포</strong>에도 달려 있다.&quot;</p>
+<h3 id="c07-h-1-w02의-프레임이-nis-안으로-들어온다">1) W02의 프레임이 NIS 안으로 들어온다</h3>
+<ul>
+<li>W02에서 다룬 <strong>STI(과학 기반)와 DUI(경험 기반)</strong>가 NIS 안에서 함께 작동한다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>W02-1/03·04에서 Jensen et al.(2007)이 <strong>결합 모드 기업이 가장 혁신을 잘한다</strong>는 걸 보였다. W06은 그 결합이 기업 안에서만이 아니라 <strong>국가 시스템 차원에서</strong> 일어난다고 본다. 즉 STI를 맡는 대학·연구소와 DUI가 일어나는 현장이 <strong>연결돼 있는지</strong>가 국가 성과를 가른다.</p>
+<h3 id="c07-h-2-피지컬-ai도-결국-암묵지를-형식지로">2) 피지컬 AI도 결국 암묵지를 형식지로 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p>결국은 <strong>피지컬 AI니 뭐니 이런 것들이 다 현장에 있는 암묵지를 형식지로 바꾸는 작업들</strong>이죠. 근데 <strong>계속 암묵지도 나올 거예요.</strong> AI도 이렇게 물어보는 거랑 저렇게 물어보는 거랑 다르고, 한 두 번 더 치고 들어갈 때 다르고. 개인마다 그런 게 있듯이 <strong>현장에서는 더 그런 게 있는 거죠.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>&quot;AI가 암묵지를 다 형식지로 바꾸면 DUI는 필요 없어지나?&quot;에 대한 교수님의 답은 <strong>아니다</strong>. 형식지로 바꾸는 순간 <strong>AI를 다루는 새 암묵지</strong>(어떻게 물어보느냐)가 생긴다. DUI는 사라지지 않고 자리를 옮긴다.</p>
+<h3 id="c07-h-3-노나카의-seci와-일본의-한계">3) 노나카의 SECI와 일본의 한계</h3>
+<ul>
+<li>일본 경영학자 <strong>노나카 이쿠지로</strong>가 기업 안에서 암묵지가 형식지로 바뀌는 과정을 모델화했다(SECI).</li>
+<li>다만 일본은 더 큰 프레임에서 <strong>단절적으로 변해야 할 순간에 그걸 못 했다.</strong></li>
+<li>W01에서 말했듯 <strong>언러닝(unlearning)은 쉽지 않다.</strong></li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span>SECI = <strong>S</strong>ocialization(암묵→암묵, 같이 일하며 배움) → <strong>E</strong>xternalization(암묵→형식, 말·문서로 표현) → <strong>C</strong>ombination(형식→형식, 문서끼리 결합) → <strong>I</strong>nternalization(형식→암묵, 다시 몸에 익힘). Nonaka &amp; Takeuchi (1995) <em>The Knowledge-Creating Company</em>.</p>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>축적의 역설: <strong>학습을 잘해서 쌓은 역량이 다음 단계에서는 바꾸기 어려운 습관</strong>이 된다. W06/05의 일본 사례, W01/05 조직 고착, W02-1/12의 &quot;DUI의 경로의존 lock-in 돌파&quot;와 같은 문제다.</p>
+</div>
+<details class="sec sec-fold" id="c07-discussion" data-sec="c07-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>수업노트 정제 노트: 5-1절 STI/DUI는 <strong>W02 핵심 프레임을 NIS 안으로 가져온 것</strong>.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>p14의 마지막 문장 &quot;<strong>학습 기회의 분포</strong>&quot;는 뒤의 NIS 한계(W06/10 &quot;누가 역량을 얻고 잃는가&quot;)를 미리 깔아 두는 표현이다.</li>
+<li><strong>W08(10/24) Q6 — 측정할 수 없는 암묵지를 어떻게 결합하나</strong> (수업노트 W08 §1 Q6): <strong>Nonaka</strong>가 암묵지를 형식지로 만드는 프로세스를 정리했다. <strong>Mokyr</strong>(W02-1/05): 왜 되는지 모르지만 되는 DUI 지식(담금질, 증기)을 <strong>사이언스가 형식지화</strong>하자 장인 옆에서 배우지 않아도 되어 <strong>확산</strong>이 일어났다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>형식지가 있으면 장인한테 안 배워도 <strong>형식지 보고서 자기가 하면서 &#39;이거 이렇게 되네&#39; 하면서 깨달을 수가 있는 거죠.</strong> 저희가 지금 공부하는 것도 그래요. 제가 추상화된 얘기를 하면 여러분이 현장에서 느끼는 거랑 &#39;이게 맞아떨어지네&#39; 이렇게 되는 거잖아요.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li><strong>W08 Q12 — 언러닝의 예</strong>:</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>구글이 트랜스포머도 만들고 텐서플로우도, TPU도 다 만들었는데 <strong>왜 늦었냐. 지네 거 무너질까 봐 안 한 거잖아요.</strong> 검색으로 장사 잘하고 있는데 괜히 만들었다가. <strong>카니발리즘</strong>이라고 그러죠. <strong>언러닝을 했어야 되는데 잘 안 되죠.</strong> 러닝이라는 게 명시지뿐만 아니고 몸에도 배는 거잖아요. 제도에도 들어가 있다.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li><strong>W08 Q13 — 상호작용과 흡수역량의 관계</strong>: 측정은 Jensen et al.(2007, W02-1/04)에 나온다. 일본 QC 회의처럼 서로 묻고 주고받는 것이 다 상호작용. <strong>흡수역량(absorptive capacity)</strong>은 일본·한국처럼 <strong>외국에서 들여와 배우는 능력</strong>이고(김인수), 쌓이면 <strong>capability</strong>, 거기서 <strong>디자인 역량</strong>이 나온다. 따라서 <strong>상호작용은 흡수역량을 늘리는 방법</strong>이다(learning by doing·using·interacting).<ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>정리: <strong>상호작용(DUI) → 흡수역량 → 역량(capability) → 디자인 역량.</strong> W02-1/08 기술역량 3단계, W02-1/09 역방향 궤적과 같은 사다리다. 신주의 TSMC(W08/08)가 &quot;온갖 데랑 상호작용해서&quot; 역량을 쌓은 사례다.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-examples" data-sec="c07-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>스마트팩토리 도입 실패</strong>: 현장 숙련공의 노하우를 데이터로 옮기려 센서를 달았지만, 숙련공이 &quot;왜 그렇게 하는지&quot;를 말로 설명하지 못해 모델이 안 나오는 경우가 흔하다. Polanyi의 &quot;말할 수 있는 것보다 더 많이 안다&quot;(W02-1/01)가 실제로 부딪히는 장면이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-position" data-sec="c07-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>미시적 기초(W02-1) → 국가 시스템(W06)을 잇는 다리. NIS가 단지 &quot;기관 목록&quot;이 아니라 <strong>학습이 일어나는 장</strong>이라는 점을 보여 준다.</li>
+<li>p14의 &#39;축적된 역량 → 미래 선택지&#39;는 W06/09 <strong>동태적 효율성</strong>(미래 선택지를 넓히는 능력)으로 바로 이어진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c07-related" data-sec="c07-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Lundvall (2007, pp. 102–105); Jensen et al. (2007)</li>
+<li>연결: <a href="W02-1.html#c01">W02-1/01 암묵지와 형식지</a> · <a href="W02-1.html#c03">W02-1/03 STI/DUI</a> · <a href="W02-1.html#c04">W02-1/04 Jensen 실증</a> · <a href="W02-1.html#c12">W02-1/12 종합</a> · <a href="W06.html#c04">W06/04 Freeman vs Lundvall</a> · <a href="W06.html#c09">W06/09 동태적 효율성</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c07-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Lundvall (2007)</li><li>Jensen et al. (2007)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §5-1</li><li>수업노트/W08_강의기록_261024.md §1 Q6, Q12, Q13 — 암묵지 결합, 언러닝, 흡수역량</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=STI">STI</a> · <a href="map.html?tag=DUI">DUI</a> · <a href="map.html?tag=tacit-knowledge">tacit-knowledge</a> · <a href="map.html?tag=learning">learning</a> · <a href="map.html?tag=capability-accumulation">capability-accumulation</a> · <a href="map.html?tag=physical-AI">physical-AI</a> · <a href="map.html?tag=SECI">SECI</a> · <a href="map.html?tag=unlearning">unlearning</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c07-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>NIS에서 지식이 역량으로 바뀌는 경로(p14)를 단계별로 설명하고, STI와 DUI가 각각 어디에서 작동하는지 쓰라. <span class="tag">서술형</span></li>
+<li>&quot;피지컬 AI는 암묵지를 형식지로 바꾸는 작업이지만 암묵지는 계속 나온다&quot;는 교수님의 말을 DUI 개념으로 설명하라. <span class="tag">서술형</span></li>
+<li>비교형: W02-1의 STI/DUI(기업 단위)와 W06의 STI/DUI(국가 시스템 단위)는 무엇이 같고 무엇이 다른가? <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c07">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W02-1.html#c01">지식의 속성 — 암묵지와 형식지</a> · <a href="W02-1.html#c03">STI mode vs DUI mode</a> · <a href="W02-1.html#c04">Jensen et al. (2007) 실증 연구 — DISKO 데이터와 4개 클러스터</a> · <a href="W02-1.html#c12">종합 — 지식 모드의 결합과 수요 중심 정책</a> · <a href="W06.html#c04">Freeman vs Lundvall — 서로 다른 층위의 출발</a> · <a href="W06.html#c09">정태적 배분 효율성 vs 동태적 효율성 (그리고 TFP)</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c08">
+  <h2 class="concept-title">축적과 변화의 계보 — Smith·List·Schumpeter·NIS</h2>
+  <p class="concept-en">Accumulation and change — Smith, List, Schumpeter, NIS</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 08</span>
+    <span>슬라이드 W06 p15</span>
+    <span class="stars" title="시험 중요도 2/5 — 축적과 변화의 계보 — 1분 남짓 슬라이드를 읽고 지나갔다. 'Schumpeter 앞에는 커먼스'라는 단서 외에는 교수 강조가 약하다" aria-label="시험 중요도 2/5" role="img" data-stars="2"><span class="stars-on" aria-hidden="true">★★</span><span class="stars-off" aria-hidden="true">★★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c08" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c08-definition"><h4>한 줄 정의</h4><p>NIS는 <strong>시간 속에서 역량이 쌓이고(축적) 경제 구조가 바뀌는(변화) 과정</strong>을 경제 분석의 중심에 둔다. 이 문제의식은 Smith(분업이 숙련을 쌓는다) → List(국가가 후발국의 학습을 이끈다) → Schumpeter(새 결합이 구조를 바꾼다) → NIS(기업·제도·네트워크의 상호작용이 학습을 조직한다)로 이어진다. 단 &quot;<strong>각 이론의 질문은 서로 다르다</strong>.&quot;</p>
+</div>
+<div class="sec sec-analogy" id="c08-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>같은 산을 네 사람이 다른 질문으로 오른다.</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">Smith</th><td class="deflist-desc">&quot;길을 나눠 맡으면 각자 더 빨리 익숙해지지 않을까?&quot; (분업 → 숙련)</td></tr>
+<tr><th scope="row" class="deflist-term">List</th><td class="deflist-desc">&quot;늦게 출발한 팀은 누가 길을 안내해 줘야 하지 않을까?&quot; (국가 → 추격)</td></tr>
+<tr><th scope="row" class="deflist-term">Schumpeter</th><td class="deflist-desc">&quot;누군가 아예 새 길을 뚫으면 산 전체 지도가 바뀌지 않을까?&quot; (기업가 → 창조적 파괴)</td></tr>
+<tr><th scope="row" class="deflist-term">NIS</th><td class="deflist-desc">&quot;팀원·안내소·지도 제작자가 얼마나 잘 연락하느냐가 오르는 속도를 정하지 않을까?&quot; (상호작용 → 학습)</td></tr>
+</tbody></table>
+</div>
+<div class="sec sec-core" id="c08-core"><h4>핵심 내용</h4><h3 id="c08-h-슬라이드-w06-p15">슬라이드 (W06 p15)</h3>
+<figure class="slide"><img src="images/W06/p15.jpg" alt="W06 p15 NIS는 시간 속 역량 축적을 경제 분석의 중심에 둔다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p15 NIS는 시간 속 역량 축적을 경제 분석의 중심에 둔다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>이론가</th>
+<th>질문</th>
+<th><span class="tag tag-supp">보충</span>무엇이 축적·변화를 만드나</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Adam Smith</strong></td>
+<td>분업과 전문화가 생산 경험과 숙련을 쌓는다</td>
+<td>시장 확대 → 분업 → 숙련</td>
+</tr>
+<tr>
+<td><strong>Friedrich List</strong></td>
+<td>국가의 생산역량과 후발국의 학습·추격을 본다</td>
+<td>국가의 거버넌스·지원</td>
+</tr>
+<tr>
+<td><strong>Joseph Schumpeter</strong></td>
+<td>새 결합과 기술 변화가 경제의 구조를 바꾼다</td>
+<td>기업가의 창조적 파괴</td>
+</tr>
+<tr>
+<td><strong>NIS</strong></td>
+<td>기업·제도·네트워크의 상호작용이 학습과 혁신을 조직한다</td>
+<td>관계 속 학습</td>
+</tr>
+</tbody></table></div>
+<p>&quot;연결되는 문제의식은 <strong>축적과 변화</strong>이며, 각 이론의 질문은 서로 다르다.&quot;</p>
+<h3 id="c08-h-1-교수의-설명">1) 교수님의 설명</h3>
+<ul>
+<li><strong>Smith</strong>: 분업과 전문화가 생산 경험과 숙련을 쌓는다. 시장에서 주고받으며 <strong>전체 부가 커진다.</strong></li>
+<li><strong>List</strong>: 국가가 생산 역량과 후발국의 학습·추격을 <strong>거버넌스하고 지원</strong>할 수 있다.</li>
+<li><strong>Schumpeter</strong>: 새 결합과 기술 변화가 경제 구조를 바꾼다. <strong>창조적 파괴, 치고 나가는 기업가.</strong></li>
+<li>연결되는 문제의식은 <strong>축적과 변화</strong>.</li>
+</ul>
+<h3 id="c08-h-2-단서-schumpeter의-기업가-앞에는-커먼스가-있다">2) 단서 — Schumpeter의 기업가 앞에는 커먼스가 있다 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>W03에서 말했듯 Schumpeter의 기업가 앞에는 <strong>커먼스(Potts)</strong>가 있다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>교수님이 이 계보에 꼭 붙이는 단서다. W03/15 새로운 혁신관 3단계로 보면:</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">Phase 0 (Potts 혁신 공유지)</th><td class="deflist-desc">아직 가격도 없는 단계, 모여서 얘기하며 발견한다.</td></tr>
+<tr><th scope="row" class="deflist-term">Phase 1 (Hayek)</th><td class="deflist-desc">시장 경쟁으로 발견을 검증한다.</td></tr>
+<tr><th scope="row" class="deflist-term">Phase 2 (Smith)</th><td class="deflist-desc">분업으로 규모를 키운다.</td></tr>
+</tbody></table>
+<p>슬라이드의 계보에는 Phase 0이 없다. Schumpeter의 영웅적 기업가가 혼자 &quot;새 결합&quot;을 해내는 것처럼 보이지만, 교수님은 그 앞에 <strong>집단적 발견의 장(커먼스)</strong>이 있다고 본다. W05-1/13 공급자 중심성 비판에서 &quot;<strong>Schumpeter의 초인적 기업가 개념이 남아 있다</strong>&quot;고 한 것도 같은 맥락이다.</p>
+</div>
+<details class="sec sec-fold" id="c08-discussion" data-sec="c08-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Q3 토론에서 Smith를 한국 성장에 적용: &quot;<strong>아담 스미스의 좋은 버전을 우리는 한 거예요.</strong> 스미스가 마켓 사이즈에 따라서 생산성이 결정된다고 했잖아요.&quot;(, 수업노트 §1)</li>
+<li>NIS의 결론 정리에서도 Smith·Hayek와의 연속성을 강조: &quot;그건 Smith나 Hayek와 별로 다르지 않습니다. 시장만 얘기했을 뿐이지, <strong>제도와 구조 속에서 벌어지고 있다</strong>는 얘기를.&quot;(, §7-5)</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-examples" data-sec="c08-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Smith의 핀 공장</strong>: 한 사람이 혼자 하루 핀 1개도 못 만들던 것이 18단계로 나누자 10명이 하루 48,000개를 만들었다(W03/10). &#39;축적&#39;의 고전적 예.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Schumpeter의 새 결합 다섯 가지</strong>: 새 제품, 새 생산 방법, 새 시장, 새 원료 공급원, 새 조직. &#39;변화&#39;의 고전적 정의.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-position" data-sec="c08-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>NIS를 경제사상의 흐름 속에 놓는 슬라이드. 바로 다음 장(p16)이 이 계보를 <strong>동태적 효율성</strong>이라는 개념으로 묶는다 → <a href="W06.html#c09">W06/09</a>.</li>
+<li>W03(Smith–Hayek–Potts)과 W06(Smith–List–Schumpeter–NIS)은 <strong>두 개의 다른 계보</strong>다. W03은 &quot;발견은 어떻게 일어나나&quot;, W06은 &quot;역량은 어떻게 쌓이나&quot;를 묻는다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c08-related" data-sec="c08-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Smith (1776); List (1841); Schumpeter (1934 [1911])</li>
+<li>연결: <a href="W06.html#c03">W06/03 NIS의 계보</a> · <a href="W06.html#c09">W06/09 동태적 효율성</a> · <a href="W03.html#c10">W03/10 Adam Smith</a> · <a href="W03.html#c12">W03/12 혁신 공유지</a> · <a href="W03.html#c15">W03/15 새로운 혁신관 3단계</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성 비판</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c08-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Smith (1776)</li><li>List (1841)</li><li>Schumpeter (1934)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §5-2</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=adam-smith">adam-smith</a> · <a href="map.html?tag=friedrich-list">friedrich-list</a> · <a href="map.html?tag=schumpeter">schumpeter</a> · <a href="map.html?tag=creative-destruction">creative-destruction</a> · <a href="map.html?tag=accumulation">accumulation</a> · <a href="map.html?tag=potts">potts</a> · <a href="map.html?tag=commons">commons</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c08-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>Smith·List·Schumpeter·NIS가 &#39;축적과 변화&#39;에 대해 각각 던진 질문을 비교하라. <span class="tag">비교형</span></li>
+<li>비교형: W03의 Smith–Hayek–Potts 계보와 W06의 Smith–List–Schumpeter–NIS 계보는 각각 무엇을 설명하려 하는가? <span class="tag">비교형</span></li>
+<li>&quot;Schumpeter의 기업가 앞에는 커먼스가 있다&quot;는 교수님의 단서를 설명하라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c08">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c03">NIS의 계보 — List에서 Freeman·Lundvall까지</a> · <a href="W06.html#c09">정태적 배분 효율성 vs 동태적 효율성 (그리고 TFP)</a> · <a href="W03.html#c10">Adam Smith — 분업과 생산성</a> · <a href="W03.html#c12">Ostrom의 공유지와 Potts의 혁신 공유지 (Phase 0)</a> · <a href="W03.html#c15">새로운 혁신관 3단계 — Phase 0 / 1 / 2</a> · <a href="W01.html#c03">인간에 대한 4가지 기본 이해</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c09">
+  <h2 class="concept-title">정태적 배분 효율성 vs 동태적 효율성 (그리고 TFP)</h2>
+  <p class="concept-en">Static allocative efficiency vs dynamic efficiency; Spence, Ocampo, TFP</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 09</span>
+    <span>슬라이드 W06 p16, p17</span>
+    <span class="stars" title="시험 중요도 5/5 — ★★ 정태적 배분 효율성 vs 동태적 효율성 — 'NIS의 이론적 기여'라는 슬라이드 제목 자체가 정의형이고, p16–17이 수업노트에서 비교·서술형 포인트로 명시됐다. 강의는 3분 남짓이지만 TFP 구분까지 함정이 많다" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c09" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c09-definition"><h4>한 줄 정의</h4><p><strong>배분 효율성</strong>은 &quot;지금 가진 기술과 자원을 <strong>얼마나 잘 나눠 쓰는가</strong>&quot;이고, <strong>동태적 효율성</strong>은 &quot;학습과 혁신으로 <strong>미래의 역량과 선택지를 얼마나 넓히는가</strong>&quot;다. <strong>NIS의 이론적 기여는 동태적 효율성을 설명하는 데 있다.</strong> TFP는 둘 중 어느 것도 아닌 <strong>측정 지표</strong>일 뿐이다.</p>
+</div>
+<div class="sec sec-analogy" id="c09-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>같은 냉장고 재료로 저녁을 만든다.</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">배분 효율성</th><td class="deflist-desc">재료를 <strong>버리는 것 없이 제일 맛있게 나눠</strong> 쓰는 능력. 오늘 저녁의 문제.</td></tr>
+<tr><th scope="row" class="deflist-term">동태적 효율성</th><td class="deflist-desc">요리를 하면서 <strong>실력이 늘어</strong> 다음 달엔 같은 재료로 전혀 새로운 요리를 할 수 있게 되는 것. 미래의 문제.</td></tr>
+<tr><th scope="row" class="deflist-term">TFP</th><td class="deflist-desc">가계부에서 &quot;재료비랑 요리 시간으로는 설명이 안 되는데 <strong>왜 이번 달 음식이 더 맛있었지?</strong>&quot; 하고 남는 <strong>차액</strong>. 실력이 늘어서일 수도, 운 좋게 좋은 재료를 샀을 수도, 그냥 계산을 잘못했을 수도 있다.</td></tr>
+</tbody></table>
+</div>
+<div class="sec sec-core" id="c09-core"><h4>핵심 내용</h4><h3 id="c09-h-슬라이드-w06-p16">슬라이드 (W06 p16)</h3>
+<figure class="concept-diagram">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" role="img" aria-labelledby="w06c09-title">
+  <title id="w06c09-title">노동(L)·자본(K) 평면의 등량곡선. 곡선 위에서 가장 싼 점을 고르는 것이 배분 효율성, 학습과 혁신으로 곡선 자체가 원점 쪽으로 옮겨 가는 것이 동태적 효율성</title>
+  <defs>
+    <marker id="w06c09-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--ink)"></path>
+    </marker>
+    <marker id="w06c09-shift" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="var(--term)"></path>
+    </marker>
+  </defs>
+
+  <path d="M50,290 L50,20" stroke="var(--ink)" stroke-width="1.4" marker-end="url(#w06c09-arrow)"></path>
+  <path d="M40,280 L360,280" stroke="var(--ink)" stroke-width="1.4" marker-end="url(#w06c09-arrow)"></path>
+  <text x="58" y="26" font-size="12" font-weight="700" fill="var(--ink)">자본 K</text>
+  <text x="356" y="298" text-anchor="end" font-size="12" font-weight="700" fill="var(--ink)">노동 L</text>
+
+  <line x1="80" y1="70" x2="260" y2="250" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4,4"></line>
+  <text x="262" y="264" font-size="10" fill="var(--muted)">비용선</text>
+
+  <path d="M110.0,40.0 L115.4,59.8 L120.8,76.6 L126.2,91.0 L131.6,103.5 L137.0,114.5 L142.4,124.2 L147.8,132.8 L153.2,140.5 L158.6,147.4 L164.0,153.7 L169.4,159.4 L174.8,164.6 L180.2,169.4 L185.6,173.8 L191.0,177.9 L196.4,181.6 L201.8,185.1 L207.2,188.4 L212.6,191.4 L218.0,194.3 L223.4,197.0 L228.8,199.5 L234.2,201.8 L239.6,204.1 L245.0,206.2 L250.4,208.1 L255.8,210.0 L261.2,211.8 L266.6,213.5 L272.0,215.1 L277.4,216.7 L282.8,218.1 L288.2,219.5 L293.6,220.9 L299.0,222.2 L304.4,223.4 L309.8,224.6 L315.2,225.7 L320.6,226.8 L326.0,227.8" fill="none" stroke="var(--brand)" stroke-width="2.2"></path>
+  <text x="330" y="222" font-size="11" font-weight="700" fill="var(--brand)">지금 기술</text>
+
+  <path d="M86.0,60.0 L91.7,90.1 L97.4,112.9 L103.1,130.8 L108.8,145.3 L114.5,157.2 L120.2,167.2 L125.9,175.7 L131.6,182.9 L137.3,189.3 L143.0,194.8 L148.7,199.8 L154.4,204.1 L160.1,208.1 L165.8,211.6 L171.5,214.8 L177.2,217.7 L182.9,220.4 L188.6,222.9 L194.3,225.1 L200.0,227.2 L205.7,229.1 L211.4,230.9 L217.1,232.6 L222.8,234.2 L228.5,235.6 L234.2,237.0 L239.9,238.3 L245.6,239.5 L251.3,240.7 L257.0,241.7 L262.7,242.8 L268.4,243.7 L274.1,244.7 L279.8,245.5 L285.5,246.4 L291.2,247.2 L296.9,247.9 L302.6,248.6 L308.3,249.3 L314.0,250.0" fill="none" stroke="var(--term)" stroke-width="2.2" stroke-dasharray="6,4"></path>
+  <text x="318" y="262" font-size="11" font-weight="700" fill="var(--term)">학습 후 기술</text>
+
+  <circle cx="170" cy="160" r="5" fill="var(--brand)"></circle>
+  <text x="182" y="132" font-size="11.5" font-weight="700" fill="var(--brand)">배분 효율성</text>
+  <text x="182" y="147" font-size="10" fill="var(--muted)">곡선 위에서 가장 싼 조합 고르기</text>
+
+  <path d="M236,203 L206,233" stroke="var(--term)" stroke-width="2" marker-end="url(#w06c09-shift)"></path>
+  <text x="246" y="176" font-size="11.5" font-weight="700" fill="var(--term)">동태적 효율성</text>
+  <text x="246" y="191" font-size="10" fill="var(--muted)">곡선 자체가 원점 쪽으로</text>
+
+  <text x="50" y="318" font-size="10" fill="var(--muted)">곡선 = 같은 양을 만드는 L·K 조합(등량곡선)</text>
+  <text x="50" y="334" font-size="10" fill="var(--muted)">학습하면 더 적은 투입으로 같은 양을 만든다</text>
+</svg>
+<figcaption class="diagram-caption"><span class="tag tag-supp">보충</span>이 그림은 강의 슬라이드가 아니라, 이해를 돕기 위해 직접 정리한 보충 다이어그램입니다.</figcaption>
+</figure>
+<figure class="slide"><img src="images/W06/p16.jpg" alt="W06 p16 NIS의 이론적 기여는 동태적 효율성을 설명하는 데 있다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p16 NIS의 이론적 기여는 동태적 효율성을 설명하는 데 있다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>정태적 배분 효율성</th>
+<th>동태적 효율성</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>질문</td>
+<td>주어진 기술과 자원 안에서 <strong>현재 선택</strong>을 얼마나 효율적으로 하는가</td>
+<td>학습과 혁신으로 <strong>미래의 역량과 선택지</strong>를 어떻게 넓히는가</td>
+</tr>
+</tbody></table></div>
+<p>경로: 분업과 경험 → 상호작용 학습과 축적 → 새 역량과 기술. &quot;현재의 배분과 미래의 역량 형성은 <strong>모두</strong> 경제 성과에 중요하다.&quot;</p>
+<h3 id="c09-h-1-등량곡선으로-본-차이">1) 등량곡선으로 본 차이 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p>여러분 아마 이 그래프 보셨을 거예요. 여기는 레이버, 여기는 캐피탈. 기술이라는 게 생산 곡선이죠. <strong>기술이 좋아진다는 건 이 곡선이 이렇게 원점 쪽으로 옮겨 가는</strong> 거예요. 그게 주류 경제학에서 설명한 기술의 모습이고, L에 얼마 C에 얼마가 <strong>배분 효율성</strong>이라면, <strong>동태적 효율성은 (곡선 자체가 옮겨 가는) 부분</strong>입니다. <strong>노동력도 학습을 통해서 역량이 늘어나고 기술도 계속 개선되는</strong> 거죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span>교수님이 말로 설명한 그래프 읽는 법 (사이트에는 보충 다이어그램으로 실림):</p>
+<ul>
+<li>가로축 노동(L), 세로축 자본(K). 곡선(등량곡선)은 <strong>같은 양을 생산할 수 있는 L·K 조합</strong>이다.</li>
+<li><strong>배분 효율성</strong> = 곡선 <strong>위에서</strong> 가장 싼 조합을 고르는 것. 기술은 그대로.</li>
+<li><strong>동태적 효율성</strong> = 학습과 혁신으로 <strong>곡선 자체가 원점 쪽으로 이동</strong>하는 것. 같은 양을 더 적은 투입으로 만들게 된다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>주류 경제학은 곡선 이동(기술 변화)을 <strong>밖에서 주어지는 것</strong>으로 다뤘다. NIS는 바로 그 <strong>이동이 어떻게 일어나는지(학습·상호작용·제도)</strong>를 설명한다. 그래서 &quot;NIS의 이론적 기여 = 동태적 효율성&quot;이다.</p>
+<h3 id="c09-h-2-효율성-개념과-생산성-지표의-구분-w06-p17">2) 효율성 개념과 생산성 지표의 구분 (W06 p17) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W06/p17.jpg" alt="W06 p17 효율성 개념과 생산성 지표의 구분" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p17 효율성 개념과 생산성 지표의 구분</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심 질문</th>
+<th>분석 대상·작동 원리</th>
+<th>TFP와의 관계</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>배분 효율성</strong></td>
+<td>현재의 자원 배분과 생산 구성이 <strong>수요에 맞는가</strong></td>
+<td>주어진 기술·자원에서 상대가격과 시장 조정이 구성을 정함</td>
+<td><strong>별개 차원.</strong> TFP가 높아도 산출 구성이 사회적 수요에 맞는지는 따로 판단</td>
+</tr>
+<tr>
+<td><strong>동태적 기술 효율성</strong> (Spence 1984)</td>
+<td>산업이 시간이 지나며 <strong>혁신을 얼마나 만들어 내는가</strong></td>
+<td>시장구조와 경쟁이 R&amp;D·비용 절감·혁신 유인에 미치는 효과</td>
+<td>결과가 TFP에 반영될 수 있지만 개념과 지표는 다름</td>
+</tr>
+<tr>
+<td><strong>동태적 효율성</strong> (Ocampo)</td>
+<td><strong>생산구조 자체</strong>가 혁신과 학습을 낳고 <strong>구조 전환</strong>을 이끌 수 있는가</td>
+<td>생산구조의 보완성과 연계, 학습·확산, 요소공급의 탄력성</td>
+<td>TFP로는 <strong>구조의 질과 방향</strong>, 혁신 역량을 포착 못함</td>
+</tr>
+<tr>
+<td><strong>총요소생산성</strong> (TFP/MFP)</td>
+<td>노동·자본 투입 증가로 <strong>설명되지 않는 산출 증가</strong>는 얼마인가</td>
+<td>성장회계의 <strong>잔차</strong>. 기술변화 외에 규모효과·가동률·측정오차도 섞임</td>
+<td><strong>측정 지표</strong>다. 메커니즘 자체가 아님</td>
+</tr>
+</tbody></table></div>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>퀴즈용 구분 포인트 세 가지:</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">Spence vs Ocampo</th><td class="deflist-desc">둘 다 &#39;동태적&#39;이지만 Spence는 <strong>산업 내 경쟁이 혁신을 얼마나 낳나</strong>(시장구조), Ocampo는 <strong>생산구조 전체가 구조 전환을 이끌 수 있나</strong>(경제 전체의 구성)를 본다. Ocampo 쪽이 NIS의 관심에 더 가깝다.</td></tr>
+<tr><th scope="row" class="deflist-term">TFP ≠ 동태적 효율성</th><td class="deflist-desc">TFP는 &quot;설명 안 되는 나머지&quot;를 재는 숫자다. 그 안에 학습 효과도 있지만 경기 변동, 측정 오차도 섞여 있다. <strong>숫자가 올랐다고 학습 메커니즘이 작동했다고 단정할 수 없다.</strong></td></tr>
+<tr><th scope="row" class="deflist-term">TFP와 배분 효율성도 별개</th><td class="deflist-desc">생산성이 높아도 <strong>사회가 필요로 하는 걸 만드는지</strong>는 다른 질문이다. → 이 논리가 W06/11(역량 확대 ≠ 방향 전환)로 이어진다.</td></tr>
+</tbody></table>
+</div>
+<details class="sec sec-fold" id="c09-discussion" data-sec="c09-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span>W03/14 <strong>경제활동 비용의 3종류</strong>와 짝을 이룬다. 신고전파는 <strong>생산비용(transformation cost)</strong>을 보고 배분 효율성을 따진다. 진화경제학은 <strong>발견비용</strong>을 보고 동태적 효율성을 따진다. 같은 대립축이다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>W01/03 &#39;인간에 대한 4가지 이해&#39;의 <strong>학습하는 인간 → Dynamic efficiency</strong>가 여기서 본편이 된다.</li>
+<li><strong>W08(10/24) Q14 — 경제학의 효율성 외에 다른 차원이 있나</strong> (수업노트 W08 §1 Q14): 경제학은 원래 <strong>배분적 효율성</strong>만 따졌고, 기술이 시간에 따라 바뀌니 <strong>동태적 효율성</strong>이 나왔으며, 그것이 시스템 차원으로 확대되었다. 교수님은 &quot;현재로서는 거기까지인 걸로 알고 있다, <strong>경제학 전공자에게 한 번 더 확인</strong>해 보라&quot;고 답했다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-examples" data-sec="c09-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>한국 반도체</strong>: 1980년대 초 삼성의 메모리 진출은 당시 배분 효율성 기준으로는 비합리적이었다(비교우위 없음, 막대한 손실). 그러나 학습을 통해 생산구조 자체가 바뀌었다. 동태적 효율성으로만 설명되는 선택이다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>&#39;Solow의 역설&#39;</strong>: &quot;컴퓨터 시대는 생산성 통계만 빼고 어디서나 보인다&quot;(Solow 1987). 기술 변화가 TFP 같은 지표에 바로 잡히지 않는다는 유명한 말. TFP가 측정 지표에 불과하다는 점을 보여 준다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-position" data-sec="c09-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>NIS의 <strong>이론적 정당성</strong>이 걸린 지점. NIS가 단지 정책 체크리스트가 아니라 <strong>주류 경제학이 설명하지 못한 것(기술 변화의 내생적 과정)</strong>을 설명한다는 주장이다.</li>
+<li>바로 뒤에서 교수님은 이 &#39;역량 축적&#39; 관점의 한계(방향은 누가 정하나)를 짚는다 → <a href="W06.html#c10">W06/10</a>, <a href="W06.html#c11">W06/11</a>.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c09-related" data-sec="c09-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Lundvall et al. (2002, pp. 213–220); Lundvall (2007, pp. 107–110); Spence (1984); Ahn (2002); Ocampo (2020, pp. 9–10); OECD (2001)</li>
+<li>연결: <a href="W06.html#c07">W06/07 STI·DUI 결합</a> · <a href="W06.html#c08">W06/08 축적과 변화의 계보</a> · <a href="W01.html#c03">W01/03 인간에 대한 4가지 이해</a> · <a href="W03.html#c13">W03/13 시장 실패 vs 발견 실패</a> · <a href="W03.html#c14">W03/14 경제활동 비용의 3종류</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c09-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Lundvall et al. (2002)</li><li>Lundvall (2007)</li><li>Spence (1984)</li><li>Ocampo (2020)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §6</li><li>수업노트/W08_강의기록_261024.md §1 Q14 — 효율성 개념의 다른 차원</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=dynamic-efficiency">dynamic-efficiency</a> · <a href="map.html?tag=allocative-efficiency">allocative-efficiency</a> · <a href="map.html?tag=TFP">TFP</a> · <a href="map.html?tag=spence">spence</a> · <a href="map.html?tag=ocampo">ocampo</a> · <a href="map.html?tag=isoquant">isoquant</a> · <a href="map.html?tag=theoretical-contribution">theoretical-contribution</a> · <a href="map.html?tag=comparison">comparison</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c09-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>정태적 배분 효율성과 동태적 효율성을 구분하고, NIS의 이론적 기여가 왜 동태적 효율성에 있는지 설명하라. (등량곡선 그림 활용 가능) <span class="tag">서술형</span></li>
+<li>배분 효율성·동태적 기술 효율성(Spence)·동태적 효율성(Ocampo)·TFP를 구분하라. 특히 TFP가 &quot;측정 지표일 뿐 메커니즘이 아니다&quot;라는 말의 의미를 쓰라. <span class="tag">서술형</span></li>
+<li>비교형: W03의 생산비용 vs 발견비용 구분과 W06의 배분 효율성 vs 동태적 효율성 구분은 어떻게 대응하는가? <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c09">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c07">NIS 안의 STI·DUI 결합 — 지식이 역량이 되는 경로</a> · <a href="W06.html#c08">축적과 변화의 계보 — Smith·List·Schumpeter·NIS</a> · <a href="W01.html#c03">인간에 대한 4가지 기본 이해</a> · <a href="W03.html#c13">시장 실패 vs 발견 실패</a> · <a href="W03.html#c14">경제활동 비용의 3종류</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c10">
+  <h2 class="concept-title">NIS의 한계 ① — 권력정치와 시민의 자리</h2>
+  <p class="concept-en">What NIS under-explains — power politics; citizens as agenda-setters</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 10</span>
+    <span>슬라이드 W06 p18, p19</span>
+    <span class="stars" title="시험 중요도 5/5 — ★★ NIS의 한계 ① 권력정치와 시민 — '매니저 입장' 비판과 시민의 확장된 자리(p18–19)가 수업노트에서 출제 포인트로 명시됐다. W05 공급자 중심성(X16)·시민 계보(X17) 비교형의 중심" aria-label="시험 중요도 5/5" role="img" data-stars="5"><span class="stars-on" aria-hidden="true">★★★★★</span><span class="stars-off" aria-hidden="true"></span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c10" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c10-definition"><h4>한 줄 정의</h4><p>NIS는 정부의 기술·산업정책은 잘 분석하지만 <strong>누가 의제를 정하고, 누가 이득과 손해를 보며, 누가 목소리를 내는가</strong>라는 <strong>권력정치</strong>는 덜 설명한다. <strong>&quot;잘하는 것만 보고 있는 거예요. 매니저 입장이지.&quot;</strong> 그래서 시민도 NIS 안에서는 <strong>사용·채택·피드백·수요</strong>를 하는 존재로만 나온다. 슬라이드는 시민을 <strong>문제를 정의하고 방향을 정하는 의제 형성자</strong>로 확장하자고 제안한다.</p>
+</div>
+<div class="sec sec-analogy" id="c10-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>축구팀 분석 보고서가 있다. 패스 성공률, 전술 완성도, 유소년 시스템은 꼼꼼히 분석한다. 그런데 <strong>누가 감독을 뽑았는지, 연봉은 누구에게 몰리는지, 벤치 선수와 팬은 어떤 팀을 원하는지</strong>는 안 다룬다. 팀이 <strong>얼마나 잘하는지</strong>는 알려 주지만 <strong>누구를 위한 팀인지</strong>는 알려 주지 않는다.</p>
+</div>
+<div class="sec sec-core" id="c10-core"><h4>핵심 내용</h4><h3 id="c10-h-슬라이드-w06-p18">슬라이드 (W06 p18)</h3>
+<figure class="slide"><img src="images/W06/p18.jpg" alt="W06 p18 NIS는 국가정책을 포함하지만 권력정치는 덜 설명한다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p18 NIS는 국가정책을 포함하지만 권력정치는 덜 설명한다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>분석에 잘 들어오는 정치</th>
+<th>더 깊은 분석이 필요한 정치</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>정부의 기술·산업정책</td>
+<td><strong>누가 의제와 우선순위를 정하는가</strong></td>
+</tr>
+<tr>
+<td>교육·노동·금융 제도</td>
+<td><strong>누가 역량을 얻고 기존 역량을 잃는가</strong></td>
+</tr>
+<tr>
+<td>규제와 공공 연구 기반</td>
+<td><strong>혁신의 이익과 비용은 어떻게 나뉘는가</strong></td>
+</tr>
+<tr>
+<td>국가별 제도의 차이</td>
+<td><strong>누가 정책 결정에 목소리를 내는가</strong></td>
+</tr>
+</tbody></table></div>
+<p>&quot;학습과 혁신은 생산성을 높이지만 <strong>소득·고용의 양극화</strong>도 낳을 수 있다.&quot;</p>
+<h3 id="c10-h-1-매니저-입장">1) 매니저 입장 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p><strong>NIS는 잘하는 것만 보고 있는 거예요.</strong> 이렇게 하면 잘 되지, 성공하지, 쫓아가지. <strong>매니저 입장이지.</strong> 따라가는 사람 입장에서는 &#39;저쪽은 아닌데&#39; 하고 반대로 볼 수도 있는 거고, <strong>그런 거는 설명하지 못합니다.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>왼쪽 열은 모두 <strong>&quot;어떻게 하면 역량이 커지나&quot;</strong>를 묻는 제도다. 오른쪽 열은 <strong>&quot;그 역량이 누구에게 가나&quot;</strong>를 묻는다. NIS는 왼쪽의 언어로 만들어진 이론이라 오른쪽 질문이 자연스럽게 빠진다.</p>
+<h3 id="c10-h-2-시민은-사용자-소비자를-넘어-의제-형성자다-w06-p19">2) 시민은 사용자·소비자를 넘어 의제 형성자다 (W06 p19) <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W06/p19.jpg" alt="W06 p19 시민은 사용자·소비자를 넘어 혁신의 의제 형성자다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p19 시민은 사용자·소비자를 넘어 혁신의 의제 형성자다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>시민의 세 얼굴</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>시민–사용자</strong></td>
+<td>경험과 피드백, 서비스의 공동창출</td>
+</tr>
+<tr>
+<td><strong>시민–소비자</strong></td>
+<td>생활양식과 실천, 수요와 가치의 형성</td>
+</tr>
+<tr>
+<td><strong>시민–시티즌십 구성원</strong></td>
+<td>권리·규범과 공적 의제, <strong>기술 선택의 정당성</strong></td>
+</tr>
+</tbody></table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>NIS에서 더 익숙한 자리</th>
+<th>확장할 자리</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>사용 · 채택 · 피드백 · 수요</td>
+<td><strong>문제 정의 · 방향 설정 · 공적 판단</strong></td>
+</tr>
+</tbody></table></div>
+<ul>
+<li>NIS에서 시민은 <strong>기업을 따라가는 시장 수요자</strong> 역할이다.</li>
+<li>Lundvall의 <em>Transformative Innovation Policy</em>(2024) 논의가 이 비판에 대한 응답이다 → <a href="W06.html#c12">W06/12</a>.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>이 슬라이드의 참고문헌에 <strong>임홍탁 (2025) 「혁신주체로서의 시민」</strong>이 들어 있다. 교수님 본인의 연구이며 W15 Core Reading이다. 세 번째 얼굴(시티즌십 구성원)이 교수님이 학기 내내 강조하는 지점이다.</p>
+<h3 id="c10-h-3-nis가-시민을-다루는-방식은-이미-quot-사용자-quot-였다">3) NIS가 시민을 다루는 방식은 이미 &quot;사용자&quot;였다 <span class="tag tag-supp">보충</span></h3>
+<p class="supp"><span class="tag tag-supp">보충</span>주의: NIS에 시민이 <strong>아예 없는 건 아니다.</strong> Lundvall의 사용자–생산자 상호작용에서 사용자는 중요한 학습 파트너다(W02-1/07). p7 도식에도 &#39;사용자·시민&#39;이 있다. 문제는 <strong>그 자리가 수요·피드백에 머문다</strong>는 것이다. 제품이 나온 <strong>뒤에</strong> 반응하는 역할이지, 무엇을 만들지를 <strong>앞에서</strong> 정하는 역할이 아니다.</p>
+</div>
+<details class="sec sec-fold" id="c10-discussion" data-sec="c10-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span><strong>W05-1/13 공급자 중심성 비판의 NIS판</strong>이다. W05에서 교수님은 Mode 2·Triple Helix가 모두 &quot;공급자 입장&quot;이라고 했다. W06에서도 같은 판정을 내린다: NIS는 <strong>매니저 입장</strong>이고, 7-6절에서는 &quot;<strong>NIS나 이런 것들은 지나치게 공급 중심적인 경향</strong>&quot;이라고 직접 말한다 → <a href="W06.html#c13">W06/13</a>.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>W05-1/09 세 모델 비교에서 &quot;TH는 시민을 <strong>소비자·수혜자</strong>로 본다&quot;는 판정과도 같은 구조다.</li>
+<li>같은 날 Q2 토론: &quot;소버린 AI에서는 <strong>시민이 없지. 시민이 없죠.</strong>&quot;(, 수업노트 §1) — 국가 전략 논의에서 시민이 빠지는 현재 사례.</li>
+<li><strong>W08(10/24) Q3 — 혁신의 성공은 어떤 기준으로 평가해야 하나</strong> (수업노트 W08 §1 Q3). NIS는 원래 유럽 연구자들이 <strong>일본의 성공을 설명하려고</strong> 만든 틀로, 국가 안에서 <strong>기업 경쟁력을 강화하는 네트워크와 제도를 종합</strong>한 것이다. 그래서 NIS가 <strong>신자유주의적</strong>이라는 비판도 있다(시장주의자보다는 훨씬 시스템을 생각하지만).<ul>
+<li>일본의 <strong>종신고용</strong>을 중요하게 본 이유는 <strong>역량 축적</strong> 때문이었는데, 신자유주의로 가며 노동 유연화가 진행됐다. <strong>52시간제</strong> 같은 문제가 바로 걸린다 — &quot;혁신을 위해 노동 환경은 등한시해도 되는가.&quot;</li>
+</ul>
+</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>과연 혁신을 위해서 노동 환경 이런 거는 등한시해도 되느냐. <strong>이거는 숙제예요. NIS가 풀어주는 건 아니고 이거는 저희가 풀어야 되는 겁니다.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p><strong>암묵지가 굉장히 중요한 산업은, 노동자가 자기가 언제 잘릴지 모르는 상황에서는 그걸 누가 고민하겠어요?</strong> 딴 생각만 하지. 근데 &#39;야 우리 같이 가자&#39; 이런 식으로 되면 열심히 하지, 경쟁력을 올릴 수 있는 것이고.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>위 슬라이드의 &quot;<strong>누가 역량을 얻고 잃나, 이익과 비용은 어떻게 나뉘나</strong>&quot;를 노동 문제로 구체화한 답이다. 산업 성격(암묵지 중심 vs 벤처)에 따라 답이 다르다는 단서는 SIS(W07-2/04)와 이어진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-examples" data-sec="c10-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>자동화와 일자리 양극화</strong>: 학습과 혁신으로 생산성은 오르지만 중간 숙련 일자리가 줄고 고숙련·저숙련으로 갈라지는 현상(Autor 등의 job polarisation 연구). p18 마지막 문장의 실제 모습이다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>시민이 의제를 정한 사례</strong>: 영국 NHS의 환자·시민 참여 우선순위 설정(James Lind Alliance)은 <strong>어떤 연구를 먼저 할지</strong>를 환자·간병인·의료진이 함께 정한다. &#39;확장할 자리(문제 정의)&#39;의 실제 예다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-position" data-sec="c10-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W01의 세 번째 문제의식 <strong>공공가치와 Civic Actor / Citizenship</strong>(W01/07·08)이 NIS 비판의 기준으로 쓰인다.</li>
+<li>W03/16(Smith·Hayek·Potts에서 시민의 자리), W05-1/09(Mode1·Mode2·TH에서 시민의 자리)에 이어 <strong>NIS에서 시민의 자리</strong>를 묻는 세 번째 비교다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c10-related" data-sec="c10-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Lundvall et al. (2002, p. 227); Lundvall (2007, pp. 102–103, 107, 113); Godin (2009, pp. 493–495); 임홍탁 (2025, pp. 75–106)</li>
+<li>연결: <a href="W06.html#c11">W06/11 역량 확대 ≠ 방향 전환</a> · <a href="W06.html#c13">W06/13 확장된 분석틀과 통합 반대</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성 비판</a> · <a href="W05-1.html#c09">W05-1/09 세 모델 비교</a> · <a href="W03.html#c16">W03/16 혁신 주체로서 시민</a> · <a href="W01.html#c07">W01/07 공공가치와 Civic Actor</a> · <a href="W01.html#c08">W01/08 시민성</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c10-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Lundvall et al. (2002)</li><li>Lundvall (2007)</li><li>Godin (2009)</li><li>임홍탁 (2025)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §7-1, §7-2</li><li>수업노트/W08_강의기록_261024.md §1 Q3 — 혁신의 성공 기준, 종신고용과 52시간제</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=critique">critique</a> · <a href="map.html?tag=power">power</a> · <a href="map.html?tag=politics">politics</a> · <a href="map.html?tag=distribution">distribution</a> · <a href="map.html?tag=polarisation">polarisation</a> · <a href="map.html?tag=citizen">citizen</a> · <a href="map.html?tag=agenda-setting">agenda-setting</a> · <a href="map.html?tag=manager-view">manager-view</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c10-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>NIS가 &quot;잘 설명하는 정치&quot;와 &quot;덜 설명하는 정치&quot;를 구분하고, 교수님이 NIS를 &quot;매니저 입장&quot;이라고 평가한 이유를 쓰라. <span class="tag">서술형</span></li>
+<li>NIS에서 시민은 어떤 자리에 있으며, 슬라이드가 제안하는 &#39;확장할 자리&#39;는 무엇인가? 시민의 세 얼굴(사용자·소비자·시티즌십 구성원)을 들어 설명하라. <span class="tag">서술형</span></li>
+<li>비교형: W05의 공급자 중심성 비판과 W06의 NIS 한계 비판은 어떻게 같은 구조인가? <span class="tag">비교형</span></li>
+<li>비교형: Smith·Hayek·Potts / Mode1·Mode2·TH / NIS에서 시민의 역할은 각각 어떻게 다른가? <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c10">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c11">NIS의 한계 ② — 역량 확대가 방향 전환을 보장하지 않는다</a> · <a href="W06.html#c13">확장된 분석틀과 교수님의 통합 반대</a> · <a href="W05-1.html#c13">공급자 중심성 비판 (교수님의 핵심 주장)</a> · <a href="W01.html#c07">공공가치와 Civic Actor</a> · <a href="W01.html#c08">시민성 — 사회계약과 네 가지 유형</a> · <a href="W03.html#c16">혁신 주체로서 시민의 역할</a> · <a href="W05-1.html#c09">세 모델 구조 비교 — Mode 1 / Mode 2 / Triple Helix</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c11">
+  <h2 class="concept-title">NIS의 한계 ② — 역량 확대가 방향 전환을 보장하지 않는다</h2>
+  <p class="concept-en">Capability expansion does not guarantee directional change</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 11</span>
+    <span>슬라이드 W06 p20</span>
+    <span class="stars" title="시험 중요도 4/5 — NIS의 한계 ② 역량 ≠ 방향 — '계속 전진 맞아?'를 중심으로 약 5분, 교수 발언이 길게 이어졌고 토론 질문 후보로 표시됐다" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c11" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c11-definition"><h4>한 줄 정의</h4><p>NIS는 <strong>혁신 역량을 어떻게 키우는가</strong>는 잘 설명하지만, 그 역량이 <strong>어느 방향으로 쓰일지</strong>는 보장하지 않는다. 역량이 커져서 방향도 저절로 바뀐다면 <strong>&quot;기후 온난화가 벌어지면 안 된다.&quot;</strong> 이제는 &quot;<strong>계속 전진 맞아?</strong>&quot;를 물어야 할 때다.</p>
+</div>
+<div class="sec sec-analogy" id="c11-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>자동차 <strong>엔진 성능</strong>을 계속 높이는 것과 <strong>어디로 갈지</strong> 정하는 것은 다른 문제다. NIS는 엔진(역량)을 키우는 법은 잘 알려 준다. 그런데 엔진이 좋아졌다고 차가 저절로 <strong>올바른 목적지</strong>로 가지는 않는다. 오히려 더 빨리 <strong>잘못된 방향으로</strong> 갈 수도 있다.</p>
+</div>
+<div class="sec sec-core" id="c11-core"><h4>핵심 내용</h4><h3 id="c11-h-슬라이드-w06-p20">슬라이드 (W06 p20)</h3>
+<figure class="slide"><img src="images/W06/p20.jpg" alt="W06 p20 혁신 역량의 확대가 사회적 방향 전환을 보장하지 않는다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p20 혁신 역량의 확대가 사회적 방향 전환을 보장하지 않는다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>NIS가 강하게 설명한 목표</th>
+<th>정책 실천에서 우선된 문제</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>기업의 기술·조직 역량</td>
+<td>경제성장과 수출 경쟁</td>
+</tr>
+<tr>
+<td>생산성과 경쟁력</td>
+<td><strong>환경 부담과 기후위기</strong></td>
+</tr>
+<tr>
+<td>기술의 확산과 활용</td>
+<td><strong>소득·고용 불평등</strong></td>
+</tr>
+</tbody></table></div>
+<p>&quot;NIS는 대안적 이론 틀을 제안했지만, 정책의 실제 번역은 <strong>기득권과 경로의존성</strong>에 좌우될 수 있다.&quot;</p>
+<h3 id="c11-h-1-역량이-방향을-정한다면-기후위기는-없어야">1) 역량이 방향을 정한다면 기후위기는 없어야 <span class="tag tag-exam">시험 포인트</span></h3>
+<ul>
+<li>역량이 커졌다고 방향이 바뀌는 건 아니다. <strong>그랬다면 기후 온난화가 벌어지면 안 된다.</strong></li>
+<li><strong>그린 케인지어니즘</strong>, W02의 <strong>frugal vs responsible innovation</strong>을 다시 언급했다.</li>
+<li>중국은 태양광에 엄청나게 투자하면서 <strong>쓰레기도 엄청나게 만든다.</strong> 그게 과연 성장이라고 할 수 있느냐.</li>
+</ul>
+<h3 id="c11-h-2-quot-계속-전진-맞아-quot">2) &quot;계속 전진 맞아?&quot; <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p>NIS나 우리 기술경영 쪽도 보면 기본적인 취지는 <strong>일단 잘 먹고 잘 살자</strong>는 거. <strong>끝없는 전진</strong>이죠. 근데 &#39;<strong>잠깐, 계속 전진 맞아? 다시 전진 맞아?</strong>&#39;라는 질문을 할 때가 된 거예요.</p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p><strong>AI 논쟁도 다 그렇습니다.</strong> AI가 가져다주는 편안함 여러 가지 있지만, 그래서 일자리를 다 잃어버리고, <strong>정말 그걸 원해? 그런 라이프스타일을 원해?</strong>라는 질문을 이제 하는 거죠.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>현재 사례: 한 대기업 회장이 광주에 &quot;무슨 일이 있어도 여기 짓는다&quot;고 한 대형 시설(※녹취상 AI 데이터센터로 추정)을 두고 <strong>전력·용수 문제로 환경단체 반발</strong>이 커졌다.</li>
+<li>이는 <strong>정치 진영의 문제가 아니라 &quot;얼마나 갈 것인가&quot;를 물을 때가 됐다</strong>는 뜻이다.</li>
+</ul>
+<h3 id="c11-h-3-nis가-이것을-다루지-않은-이유-공정한-단서">3) NIS가 이것을 다루지 않은 이유 — 공정한 단서</h3>
+<ul>
+<li>NIS가 이를 깊이 다루지 않은 것은 당시 <strong>가난 탈출이 지상 목표</strong>였기 때문이다.</li>
+<li>쉽지 않지만 <strong>과제가 있다는 것을 부정할 수는 없고, 적어도 그 질문은 하고 가야</strong> 한다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>교수님의 비판은 &quot;NIS가 틀렸다&quot;가 아니다. <strong>NIS가 만들어진 시대의 질문(어떻게 따라잡나)과 지금의 질문(어디로 가야 하나)이 달라졌다</strong>는 것이다. W06/09의 동태적 효율성은 &quot;<strong>선택지를 넓히는 능력</strong>&quot;인데, 넓어진 선택지 중 <strong>무엇을 고를지</strong>는 그 개념 밖에 있다.</p>
+</div>
+<details class="sec sec-fold" id="c11-discussion" data-sec="c11-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>수업노트 <strong>토론 질문 후보</strong>: &quot;혁신 역량 확대와 방향 전환 — &#39;계속 전진 맞아?&#39;를 기술경영 관점에서 어떻게 다룰 것인가.&quot;</li>
+<li class="supp"><span class="tag tag-supp">보충</span>W05-2/07 <strong>기술 수용 기준의 전환(경제적 타당성 → 사회적 타당성)</strong>과 같은 주장이다. 역량(할 수 있느냐)과 수용(해야 하느냐)은 다른 질문이다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span>W01/06 <strong>시장 실패 · 시스템 실패 · 전환 실패</strong>에서 세 번째(전환 실패)가 바로 이 문제다. 역량이 있어도 방향을 못 바꾸는 실패.</li>
+<li>Q4 토론(같은 날)에서 &quot;공적 정당화는 비용 아니냐&quot;는 질문에 교수님은 &quot;<strong>이거는 정치적인 문제입니다. 정답이 있는 문제가 아닙니다</strong>&quot;라고 답했다(, 수업노트 §1). 방향 설정은 기술적 최적화가 아니라 <strong>정치적 결정</strong>이라는 같은 입장이다.</li>
+<li><strong>W08(10/24) Q5 — AI 속도를 국가가 규제하면 NIS가 오히려 혁신을 저해하지 않나</strong> (수업노트 W08 §1 Q5). 교수님이 놀라워한 것은 <strong>미국에서 브레이크 얘기가 나오기 시작했다</strong>는 것. 원자력의 선례(Atoms for Peace)처럼, 이번엔 <strong>통제하자는 얘기를 회사(Anthropic의 Dario Amodei)가 먼저 했다</strong> — 통제를 말하면서 진도도 계속 나가고 있다.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>미국이라는 나라는 원래 <strong>프론티어리즘</strong>입니다. 서부로 계속 전진, 전진, 전진. 이제 우주로 나가잖아요. <strong>그런 나라에서 잠깐 브레이크를 잡는 얘기들이 나오기 시작했다는 게 놀랍기는 해요.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li class="supp"><span class="tag tag-supp">보충</span>위 본문의 &quot;<strong>계속 전진 맞아?</strong>&quot;가 실제로 미국에서 제기되기 시작했다는 관찰. W07-1/05 Frame 1.0의 <strong>&#39;끝없는 프론티어&#39; 상상력</strong>과 대비된다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-examples" data-sec="c11-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>제번스 역설·반등 효과</strong>: 연료 효율이 좋아지면 오히려 총 사용량이 늘 수 있다(W01/05 사용자 고착의 rebound effect). 역량(효율) 향상이 방향(감축)을 보장하지 않는 대표 사례.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>Mission-oriented innovation policy (Mazzucato)</strong>: &quot;방향성(directionality)&quot;을 정책의 중심에 두자는 흐름. 이 수업 후반부 MOIP 주제로 이어진다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-position" data-sec="c11-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W01/10 강의 지도의 <strong>&quot;구조의 차이&quot;(NIS) → &quot;구조의 변화&quot;(TIS·StS·Transition)</strong>로 넘어가는 이유를 보여 주는 슬라이드다. NIS는 차이를 설명하지만, 방향 전환은 다음 이론들의 몫이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c11-related" data-sec="c11-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Godin (2009, pp. 493–495); Lundvall (2007, pp. 113–114); Lundvall (2024, pp. 297–300)</li>
+<li>연결: <a href="W06.html#c09">W06/09 동태적 효율성</a> · <a href="W06.html#c10">W06/10 권력정치와 시민</a> · <a href="W06.html#c12">W06/12 Lundvall의 응답</a> · <a href="W01.html#c05">W01/05 세 가지 고착</a> · <a href="W01.html#c06">W01/06 시장·시스템·전환 실패</a> · <a href="W05-2.html#c07">W05-2/07 기술 수용 기준의 전환</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c11-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Godin (2009)</li><li>Lundvall (2007)</li><li>Lundvall (2024)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §7-3</li><li>수업노트/W08_강의기록_261024.md §1 Q5 — AI 발전 속도를 국가가 규제해야 하나</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=critique">critique</a> · <a href="map.html?tag=directionality">directionality</a> · <a href="map.html?tag=climate">climate</a> · <a href="map.html?tag=inequality">inequality</a> · <a href="map.html?tag=growth">growth</a> · <a href="map.html?tag=frugal-innovation">frugal-innovation</a> · <a href="map.html?tag=responsible-innovation">responsible-innovation</a> · <a href="map.html?tag=AI">AI</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c11-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>&quot;혁신 역량의 확대가 사회적 방향 전환을 보장하지 않는다&quot;는 주장을 설명하고, 수업에서 든 근거(기후위기, 중국 태양광, AI 논쟁)를 들어 논하라. <span class="tag">서술형</span></li>
+<li>NIS가 방향 전환 문제를 깊이 다루지 않은 이유에 대한 교수님의 설명은 무엇인가? <span class="tag">서술형</span></li>
+<li>비교형: W06의 &#39;역량 vs 방향&#39; 문제와 W01/06의 &#39;전환 실패&#39;는 어떻게 연결되는가? <span class="tag">비교형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c11">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c09">정태적 배분 효율성 vs 동태적 효율성 (그리고 TFP)</a> · <a href="W06.html#c10">NIS의 한계 ① — 권력정치와 시민의 자리</a> · <a href="W06.html#c12">Lundvall의 응답 — 대체가 아니라 결합 (TIP)</a> · <a href="W01.html#c05">세 가지 고착 — 조직·기술·사용자 lock-in</a> · <a href="W01.html#c06">시장 실패·시스템 실패·전환 실패</a> · <a href="W05-2.html#c07">기술 수용 기준의 전환 — 경제적 타당성에서 사회적 타당성으로</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c12">
+  <h2 class="concept-title">Lundvall의 응답 — 대체가 아니라 결합 (TIP)</h2>
+  <p class="concept-en">Lundvall's response — combining frames for Transformative Innovation Policy</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 12</span>
+    <span>슬라이드 W06 p21, p22, p23</span>
+    <span class="stars" title="시험 중요도 3/5 — Lundvall의 응답 — 약 4분, 슬라이드 위주. '대체가 아니라 결합'과 '이론은 강하지만 실천은 숙제'라는 평가 정도가 출제 포인트" aria-label="시험 중요도 3/5" role="img" data-stars="3"><span class="stars-on" aria-hidden="true">★★★</span><span class="stars-off" aria-hidden="true">★★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c12" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c12-definition"><h4>한 줄 정의</h4><p>NIS가 성장주의라는 비판에 대해 Lundvall(2024)은 <strong>NIS를 버리지 말고 다른 프레임과 결합하자</strong>고 답한다. <strong>성장·과학기술 프레임 + NIS 프레임 + TIP·STS 프레임</strong>을 함께 써서 기후변화와 불평등에 대응하자는 것. 평가: <strong>이론적 응답은 강하지만, 실제로 어떻게 할지는 여전히 숙제다.</strong></p>
+</div>
+<div class="sec sec-analogy" id="c12-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>엔진(NIS 역량)이 좋은 차가 엉뚱한 데로 간다는 비판을 받았다. Lundvall의 대답은 &quot;<strong>엔진을 버리자는 게 아니라, 내비게이션(방향 설정)과 운전 연수(실험·학습)를 추가하자</strong>&quot;다. 문제는 <strong>누가 목적지를 입력하느냐</strong>가 여전히 정해지지 않았다는 것이다.</p>
+</div>
+<div class="sec sec-core" id="c12-core"><h4>핵심 내용</h4><h3 id="c12-h-슬라이드-w06-p21-세-프레임의-결합">슬라이드 (W06 p21) — 세 프레임의 결합</h3>
+<figure class="slide"><img src="images/W06/p21.jpg" alt="W06 p21 Lundvall의 응답은 대체가 아니라 결합이다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p21 Lundvall의 응답은 대체가 아니라 결합이다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>프레임</th>
+<th>초점</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>성장·과학기술 프레임</td>
+<td>지식 투자와 생산 역량</td>
+</tr>
+<tr>
+<td>NIS 프레임</td>
+<td>기업·제도·네트워크의 학습</td>
+</tr>
+<tr>
+<td>TIP·STS 프레임</td>
+<td><strong>방향성·실험·사회기술시스템 전환</strong></td>
+</tr>
+</tbody></table></div>
+<p>→ &quot;함께 적용해 <strong>기후변화와 불평등</strong>에 대응&quot;</p>
+<ul>
+<li>Freeman은 작고했고 Lundvall은 여전히 활동 중이라 이런 비판에 <strong>직접 응답</strong>한다. 그는 시장주의자라기보다 사회 구조적 관점을 가진 사람이라 <strong>자기 프레임을 어디에 쓸 것인가</strong>를 계속 고민해 왔다.</li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>이 세 프레임은 W01 R1 리딩(Schot &amp; Steinmueller 2018)의 <strong>혁신정책 세 프레임</strong>(Frame 1 R&amp;D / Frame 2 NIS / Frame 3 Transformative change)과 거의 같은 구조다. Lundvall은 &quot;3이 1·2를 <strong>대체</strong>한다&quot;가 아니라 &quot;<strong>셋을 겹쳐 쓰자</strong>&quot;는 입장이다. W07에서 이 세 프레임을 직접 강의했다 → <a href="W07-1.html#c04">W07-1/04 혁신정책의 세 프레임</a></p>
+<h3 id="c12-h-슬라이드-w06-p22-변혁에-필요한-네-가지">슬라이드 (W06 p22) — 변혁에 필요한 네 가지</h3>
+<figure class="slide"><img src="images/W06/p22.jpg" alt="W06 p22 변혁에는 새 기술과 제도, 학습의 방향 전환이 함께 필요하다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p22 변혁에는 새 기술과 제도, 학습의 방향 전환이 함께 필요하다</figcaption></figure>
+<ol>
+<li><strong>기술궤적</strong> — 기존 경로와 <strong>잠금(lock-in)</strong> 효과를 진단</li>
+<li><strong>새 방향</strong> — 환경·사회 목표를 <strong>정책 기준에 반영</strong></li>
+<li><strong>실험과 확산</strong> — 새 기술을 시험하고, 쓸 수 있는 기술은 확산</li>
+<li><strong>참여와 거버넌스</strong> — <strong>노동자·농민·시민</strong>의 학습과 국제 협력</li>
+</ol>
+<p>&quot;정책의 관건은 <strong>기존 시스템의 역량을 새 사회적 목적에 동원</strong>하는 것.&quot;</p>
+<ul>
+<li>관련 개념: <strong>디커플링</strong>(성장은 하되 CO₂는 덜), <strong>도넛 경제</strong>(바깥은 생태적 한계, 안쪽은 사회적 기본권, 그 사이에서만 경제 활동).</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>그럼에도 불구하고 사람들은 계속 <strong>프로그레스하는 걸 원한단 말이에요.</strong> 그렇다고 <strong>&#39;나는 자연인이다&#39; 따라 할 수는 없잖아요.</strong> 그 접점을 찾아야 되는데 <strong>아직 다들 못 잡고 있는 거예요.</strong> 유럽은 &#39;스톱&#39; 하는 전투를 너무 세게 한 거고, 미국은 &#39;그냥 가, 계속 가&#39;, 우리도 막 가는 거였고, 중국은 더 가는 거였고. 그래서 <strong>유럽이 뒤처졌다</strong>는 얘기가 나오고, 극우가 &#39;쟤네들 다 나가는데 우리는 뭐야&#39; 하는 거지.</p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span>W03/08에서 교수님이 CTA를 평가하며 &quot;<strong>유럽은 그러는 사이 미중에 밀렸다</strong>&quot;고 한 것과 같은 판단이다. 방향을 묻는 것 자체는 옳지만, 성장과의 접점을 못 찾으면 정치적 반발을 부른다.</p>
+<h3 id="c12-h-슬라이드-w06-p23-평가-이론은-강하지만-실천은-남는다">슬라이드 (W06 p23) — 평가: 이론은 강하지만 실천은 남는다 <span class="tag tag-exam">시험 포인트</span></h3>
+<figure class="slide"><img src="images/W06/p23.jpg" alt="W06 p23 이론적 응답은 강하지만 정책 실천의 설명은 남는다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p23 이론적 응답은 강하지만 정책 실천의 설명은 남는다</figcaption></figure>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>설득력 있게 한 일</th>
+<th>추가 설명이 필요한 지점</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NIS는 본질적으로 성장주의라고 단정할 수 없음</strong>을 보인다</td>
+<td><strong>기득권과 경로의존성</strong>을 실제로 깨는 제도와 주체</td>
+</tr>
+<tr>
+<td>NIS 안의 학습·확산·경로 전환 자원을 재구성한다</td>
+<td><strong>시민이 의제를 정하고 정책을 바꿀 권한과 절차</strong></td>
+</tr>
+<tr>
+<td>기후변화와 불평등을 한 정책 의제로 결합한다</td>
+<td>전환의 비용·이익 배분과 글로벌 거버넌스의 실행</td>
+</tr>
+</tbody></table></div>
+<p>&quot;<strong>개념적 가능성을 보이는 것과 역사적 정책 성과를 설명하는 것은 다르다.</strong>&quot;</p>
+<blockquote class="quote-prof quote-bare"><p><strong>말은 좋은데 실제로 어떻게 해야 될지에 대한 얘기들은 여러분 숙제로 남아 있습니다.</strong> NIS는 본질적으로 성장주의라고 단정할 수 없음을 봅니다. <strong>가치가 어디서 발생하는지를 찾아낸 거예요.</strong> 그리고 그 플로우가 잘 흘러야 된다는 얘기를 하고.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>글로벌 거버넌스 논의에 대해: 유럽 학자들은 세계를 경험해 봤기 때문에 글로벌 거버넌스가 빠지지 않고 나오지만, 실제로 <strong>쉽지 않다.</strong></li>
+</ul>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>오른쪽 열 두 번째 줄(&quot;시민이 의제를 정할 권한과 절차&quot;)이 W06/10의 비판과 정확히 겹친다. Lundvall의 응답이 <strong>시민의 자리 문제는 풀지 못했다</strong>는 것이 슬라이드의 판정이다.</p>
+</div>
+<details class="sec sec-fold" id="c12-discussion" data-sec="c12-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span>Lundvall의 응답 구조는 W05-1/11·12의 <strong>Shinn 비판</strong>과 대비해 보면 좋다. Shinn은 Mode 2·TH를 <strong>바깥에서 비판</strong>했고, Lundvall은 NIS를 <strong>안에서 확장</strong>했다. 교수님은 둘 다 공급자 쪽 논의라고 볼 것이다 → <a href="W06.html#c13">W06/13</a>.</li>
+<li><strong>W08(10/24) Q9 — NIS는 ESG까지 다뤄야 하지 않나</strong> (수업노트 W08 §1 Q9): 기업들이 ESG·CSR·CSV로 노력하지만 <strong>ESG의 가장 큰 약점은 서류상으로만 돈다는 것</strong> — 리포트를 투자자가 보고 OK 하는 구조이고, 현장을 로버스트하게 측정하기 어렵다. <strong>현장 사람들이 하드 에비던스를 갖고 있으니 무엇이 바뀌어야 하는지 현장에서 말해 줘야</strong> 한다. 기후변화에서는 <strong>감축(mitigation)보다 적응(adaptation)</strong>이 더 현실적일 수 있다.<ul>
+<li class="supp"><span class="tag tag-supp">보충</span>위 슬라이드의 남은 과제(&quot;개념적 가능성 ≠ 정책 성과&quot;)의 기업판이다. ESG도 <strong>보고서상의 가능성</strong>과 <strong>현장의 변화</strong>가 다르다.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c12-examples" data-sec="c12-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>도넛 경제(Raworth 2017)</strong>: 안쪽 원은 식량·주거·교육 같은 <strong>사회적 기초</strong>, 바깥 원은 기후·생물다양성 같은 <strong>생태적 한계</strong>. 경제는 그 사이 도넛 모양 공간에 있어야 한다는 모델. 암스테르담시가 2020년 도시 전략에 채택했다.</li>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>디커플링 논쟁</strong>: 유럽 여러 나라는 GDP가 늘면서 국내 배출량은 줄었다(상대적·절대적 디커플링). 다만 수입품에 담긴 배출까지 따지면 효과가 작아진다는 반론이 있다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c12-position" data-sec="c12-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>NIS(구조의 차이)에서 <strong>TIS·StS·Transition(구조의 변화)</strong>으로 넘어가는 다리. Lundvall 스스로 &quot;TIP·STS 프레임&quot;을 끌어들인다는 것 자체가 다음 이론들의 필요성을 보여 준다.</li>
+<li>W01 Core Reading <strong>Lundvall (2024) Transformative innovation policy</strong>(R3)의 본편이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c12-related" data-sec="c12-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>Lundvall (2024) Transformative innovation policy. <em>Innovation and Development</em>, 14(2), 297–314</li>
+<li>연결: <a href="W06.html#c10">W06/10 권력정치와 시민</a> · <a href="W06.html#c11">W06/11 역량 vs 방향</a> · <a href="W06.html#c13">W06/13 확장된 분석틀과 통합 반대</a> · <a href="W01.html#c05">W01/05 세 가지 고착</a> · <a href="W03.html#c08">W03/08 CTA</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c12-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Lundvall (2024)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §7-4, §7-5</li><li>수업노트/W08_강의기록_261024.md §1 Q9 — NIS는 ESG까지 다뤄야 하나</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=lundvall">lundvall</a> · <a href="map.html?tag=transformative-innovation-policy">transformative-innovation-policy</a> · <a href="map.html?tag=TIP">TIP</a> · <a href="map.html?tag=STS">STS</a> · <a href="map.html?tag=decoupling">decoupling</a> · <a href="map.html?tag=doughnut-economics">doughnut-economics</a> · <a href="map.html?tag=lock-in">lock-in</a> · <a href="map.html?tag=critique">critique</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c12-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>NIS가 성장주의라는 비판에 대한 Lundvall(2024)의 응답을 &#39;대체가 아니라 결합&#39;이라는 표현을 중심으로 설명하라. <span class="tag">서술형</span></li>
+<li>Lundvall의 응답이 설득력 있게 한 일과 여전히 남은 과제를 각각 쓰라. 특히 &quot;개념적 가능성을 보이는 것과 정책 성과를 설명하는 것은 다르다&quot;의 의미를 설명하라. <span class="tag">서술형</span></li>
+<li>변혁에 필요한 네 요소(기술궤적·새 방향·실험과 확산·참여와 거버넌스)를 쓰라. <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c12">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c10">NIS의 한계 ① — 권력정치와 시민의 자리</a> · <a href="W06.html#c11">NIS의 한계 ② — 역량 확대가 방향 전환을 보장하지 않는다</a> · <a href="W06.html#c13">확장된 분석틀과 교수님의 통합 반대</a> · <a href="W01.html#c05">세 가지 고착 — 조직·기술·사용자 lock-in</a> · <a href="W03.html#c08">구성적 기술평가(CTA)</a> · <a href="W07-1.html#c04">혁신정책의 세 프레임 (Frame 1.0 · 2.0 · 3.0)</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+
+<section class="concept" id="c13">
+  <h2 class="concept-title">확장된 분석틀과 교수님의 통합 반대</h2>
+  <p class="concept-en">Extended framework (civil-society agenda × NIS capability) — and the professor's case for keeping them separate</p>
+  <div class="concept-meta">
+    <span>W06 · 개념 13</span>
+    <span>슬라이드 W06 p24</span>
+    <span class="stars" title="시험 중요도 4/5 — 확장된 분석틀과 통합 반대 — 교수가 '개인적으로 동의하지 않는다'고 밝힌 자기 입장이고 수업 말미 Q7로 다시 설명했다(합쳐 약 4분). 토론 질문 후보 1순위" aria-label="시험 중요도 4/5" role="img" data-stars="4"><span class="stars-on" aria-hidden="true">★★★★</span><span class="stars-off" aria-hidden="true">★</span></span>
+    
+    <button type="button" class="focus-btn" data-focus-target="c13" aria-label="집중 모드로 보기" title="집중 모드 (F)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg><span>집중해서 읽기</span></button>
+  </div>
+  <div class="sec sec-definition" id="c13-definition"><h4>한 줄 정의</h4><p>슬라이드는 <strong>시민사회의 의제(문제·필요·위험)</strong>와 <strong>NIS의 역량(기업·연구·노동·학습)</strong>을 권력관계·분배 정책으로 연결하는 <strong>종합 도식</strong>을 제시한다. 그런데 교수님은 이 <strong>이론적 통합에 반대</strong>한다. NIS는 <strong>지나치게 공급 중심적</strong>이라, 시민 인식론 쪽은 <strong>따로 만들고 나중에 만나는 게 낫다</strong>는 것이다. 단 &quot;<strong>실제는 같이 가겠죠.</strong>&quot;</p>
+</div>
+<div class="sec sec-analogy" id="c13-analogy"><h4>쉽게 말하면 <span class="tag tag-supp">보충</span></h4><p>공장 생산관리 매뉴얼(NIS)에 &quot;고객 목소리&quot; 장을 한 챕터 끼워 넣을 수는 있다. 하지만 그렇게 하면 고객의 목소리가 <strong>공장의 언어(효율·품질 지표)로 번역</strong>되어 버린다. 교수님의 생각은 <strong>고객 쪽 이론은 고객의 언어로 따로 쓰고</strong>, 실제 현장에서는 둘이 만나 협의하면 된다는 것이다.</p>
+</div>
+<div class="sec sec-core" id="c13-core"><h4>핵심 내용</h4><h3 id="c13-h-슬라이드-w06-p24">슬라이드 (W06 p24)</h3>
+<figure class="slide"><img src="images/W06/p24.jpg" alt="W06 p24 확장된 분석틀은 시민의 의제와 NIS의 역량을 연결한다" loading="lazy" decoding="async" width="1400" height="788"><figcaption>W06 p24 확장된 분석틀은 시민의 의제와 NIS의 역량을 연결한다</figcaption></figure>
+<p>흐름: <strong>시민사회</strong>(문제·필요·위험) → 공적 의제와 민주적 방향 설정 → <strong>NIS의 역량</strong>(기업·연구·노동·학습) → <strong>사회적 결과</strong>(기후·불평등·복지). 이 사이를 <strong>권력관계와 분배 정책·제도</strong>가 매개한다. &quot;성과를 시민사회가 다시 평가하며 다음 의제와 학습을 형성.&quot;</p>
+<p>종합 도식 출처: Freeman 1995; Lundvall 2007, 2024; Godin 2009; <strong>임홍탁 2025</strong>.</p>
+<p class="supp"><span class="tag tag-supp">보충</span>W06/10(시민은 의제 형성자)과 W06/12(남은 과제: 시민이 의제를 정할 권한과 절차)를 한 장의 그림으로 이은 것이다.</p>
+<h3 id="c13-h-1-그러나-교수는-이-연결에-반대한다">1) 그러나 교수님은 이 연결에 반대한다 <span class="tag tag-exam">시험 포인트</span></h3>
+<blockquote class="quote-prof quote-bare"><p><strong>저는 개인적으로는 이 연결을 별로 바람직하다고 생각하지 않았다.</strong> 아직까지는. 왜냐면 <strong>NIS나 이런 것들은 지나치게 공급 중심적인 경향</strong>을 띠고 있어요. 아예 <strong>따로 따로 하는 게 맞아.</strong> 시민 인식론 쪽은 따로 얘기해서 따로 만들고 나중에 만나는 게 낫지, <strong>이걸 한꺼번에 엮으려는 거는 저는 아니라고 봅니다.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<h3 id="c13-h-2-q7-quot-따로-다룬다-quot-는-게-무슨-뜻인가">2) Q7 — &quot;따로 다룬다&quot;는 게 무슨 뜻인가 <span class="tag tag-exam">시험 포인트</span></h3>
+<p>수업 말미 한 참석자가 이 대목을 질문했다.</p>
+<blockquote class="quote-prof quote-bare"><p><strong>이론적으로 통합하는 시도를 굳이 할 필요는 없을 것 같다</strong>는 생각이 드는 거예요. <strong>실제는 같이 가겠죠.</strong> 실제 기술 혁신을 할 때는 참여해서 얘기도 하고 다 같이 가야 되는데, 이론적으로 NIS를 가지고 이렇게 하는 것보다는 오히려 <strong>복지 쪽</strong>, 복지 입장에서는 <strong>과학기술을 아직 제대로 얘기 못하고 있거든요. 그냥 자원 배분 수준의 얘기지.</strong> 거기서 뭔가 얘기를 만들어내는 게.</p><footer class="quote-cite">교수님</footer></blockquote>
+<p class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>정리하면 교수님의 입장은 세 겹이다.</p>
+<table class="deflist"><tbody>
+<tr><th scope="row" class="deflist-term">이론 차원</th><td class="deflist-desc">NIS에 시민 의제를 끼워 넣지 말 것. 공급 중심 이론에 넣으면 시민이 <strong>또 공급자의 언어로</strong> 다뤄진다.</td></tr>
+<tr><th scope="row" class="deflist-term">실천 차원</th><td class="deflist-desc">실제 혁신 현장에서는 <strong>함께 간다.</strong> 참여와 협의는 필요하다.</td></tr>
+<tr><th scope="row" class="deflist-term">대안</th><td class="deflist-desc">시민 쪽 이론은 오히려 <strong>복지 이론</strong> 쪽에서 출발하는 게 낫다. 복지 쪽은 과학기술을 <strong>자원 배분 수준</strong>으로만 다루고 있어서 빈자리가 있다.</td></tr>
+</tbody></table>
+<h3 id="c13-h-3-왜-이것이-w05의-연장선인가">3) 왜 이것이 W05의 연장선인가 <span class="tag tag-supp">보충</span></h3>
+<p class="supp"><span class="tag tag-supp">보충</span>W05-1/13에서 교수님은 Mode 2의 아고라조차 &quot;<strong>우리가 하는데 와서 얘기하세요</strong>&quot;라는 <strong>공급자의 자기보호적 해법</strong>이라고 비판했다. p24 도식에 대한 반대도 같은 논리다. NIS 도식에 시민을 연결하면 결국 <strong>NIS가 주최하는 회의에 시민을 초대하는</strong> 꼴이 된다. 그래서 수요 쪽(시민 인식론)은 <strong>독립된 이론</strong>으로 세워야 한다는 것이다.</p>
+</div>
+<details class="sec sec-fold" id="c13-discussion" data-sec="c13-discussion">
+  <summary>수업에서 나온 논점<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>수업노트 <strong>토론 질문 후보</strong> 1순위: &quot;NIS와 시민 의제를 <strong>이론적으로 통합해야 하나, 따로 가야 하나</strong> — 슬라이드 도식과 교수님 개인 입장이 엇갈리는 지점.&quot;</li>
+<li><span class="tag tag-supp">보충</span>반론 거리(토론용):<ul>
+<li>따로 만든 두 이론이 <strong>어디서, 어떻게 만나는지</strong>는 누가 설계하나? &quot;나중에 만난다&quot;는 말만으로는 Lundvall이 받은 비판(실천 경로 부재)을 그대로 받을 수 있다.</li>
+<li>슬라이드의 종합 도식 출처에 <strong>교수님 본인의 2025 논문</strong>이 들어 있다. 교수님은 도식은 보여 주되 &quot;아직까지는&quot; 동의하지 않는다고 했다. 입장이 열려 있다는 뜻으로 읽을 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="c13-h-w08-10-24-질문-토론에서-이어진-논의">W08(10/24) 질문 토론에서 이어진 논의 <span class="tag tag-exam">시험 포인트</span></h3>
+<p>이 개념은 다음 주(W08) NIS 질문 토론에서 가장 길게 이어졌다(수업노트 W08 §1 Q4·Q7·Q8, 약 25분).</p>
+<p><strong>Q4 — 따로 하면 기업·정부가 기술 범위를 먼저 정해 버리지 않나?</strong> 교수님이 <strong>본인이 고민 중인 구상</strong>을 밝혔다: NIS의 축을 <strong>기업에서 시민(소비자)으로</strong> 바꿔 보는 것.</p>
+<blockquote class="quote-prof quote-bare"><p>NIS는 워낙에 <strong>기업을 중심으로</strong> 형성이 되어 있기 때문에 거기다 시민을 붙이면 얘기가 복잡하게 꼬여버려요. 제가 요즘 생각하는 건, <strong>그거를 소비자 중심으로 바꿔볼 수도 있을 것 같아요.</strong> 축을.</p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p>그 사람이 소비를 하든, 기업을 하든, 노동자가 되든 간에, <strong>자기의 경쟁력과 혁신성과 삶의 코스트를 줄일 수 있도록</strong> — 컴피턴스라는 말도 좀 그렇고 — 그걸 확대 강화시키는 방향으로 <strong>어떻게 시스템을 구성할 수 있을까.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p>기업에다 대고 소비자를 붙이는 방식으로 하지 말고, <strong>아예 시민을 따로 놓고</strong>, 그의 역량이 강화될 수 있는 방향으로, <strong>그가 이노베이션할 수 있는 방향으로 내셔널 시스템을 구성해 보는 건 어떨까.</strong> 그러면 퍼블릭 섹터 서비스도 들어가고.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>구체적 그림: 지하철·철도 같은 SOC는 대부분 <strong>생산을 위해</strong> 만들었다. 이것을 <strong>사람을 위해</strong> 만든다면 — 노인 버스비 무료, AI 무료 사용 범위 확대, 교육·의료·전력처럼 <strong>개인의 역량을 결정하는 인프라</strong>. 그러면 <strong>국가가 여는 시장, 개인이 여는 시장</strong>이 새로 생긴다(노인 버스 무료 → 자율주행 도입).</li>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>위의 &quot;<strong>이론은 따로</strong>&quot; 입장이 &quot;<strong>시민 쪽 시스템을 따로 세운다</strong>&quot;는 적극적 구상으로 발전한 것이다. W05-2/07(응급 서비스를 기본권으로), W07-1/07(시골 노인의 자율주행)과 같은 논리.</li>
+</ul>
+<p><strong>Q7 (김예나) — 시민사회가 잘못된 방향으로 움직이면? 문화대혁명 사례.</strong> 시민 인식론이 잘 작동하는지 판단할 기준 세 가지를 제안: ① 서로 다른 증거와 주장을 <strong>자유롭게 검토</strong>할 수 있었나 ② 정치적 권위에 반하는 지식도 <strong>정당성을 인정</strong>받을 수 있었나 ③ 집단적 결정이 잘못됐을 때 <strong>오류를 발견하고 수정</strong>할 수 있었나.</p>
+<blockquote class="quote-prof quote-bare"><p><strong>시민사회가 항상 옳은 얘기를 하는 것도 아니고</strong> 항상 그런 건 아닙니다. 그래서 <strong>시민 인식론</strong>이라는 얘기가 중요한 겁니다.</p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li>한국의 <strong>광우병, 황우석, 후쿠시마 오염수</strong> 때 이 세 기준에서 <strong>밸런스가 안 맞춰진 부분이 분명히 있었다.</strong> 방사성 폐기물 처분장은 10여 년째 부지를 못 찾다가, <strong>처분장이 아니라 실험만 하는 지하연구시설</strong>에 <strong>태백이 혼자 손을 들었다.</strong></li>
+<li>해법: W03의 <strong>혁신 공유지</strong>처럼 <strong>정보를 투명하게 공개하고 의견이 다른 전문가들이 다 나와서 이야기하게</strong> 하는 것 — <strong>NIS를 시민의 입장에서 재구성하는</strong> 또 하나의 방법.</li>
+</ul>
+<blockquote class="quote-prof quote-bare"><p>시민들이 서로 다른 증거와 주장을 자유롭게 검토할 수 있는 <strong>장치를 마련</strong>한다는 얘기죠. <strong>지금은 그런 장치가 사실상 따로 없습니다.</strong> 비용이 안 들 수는 없지만 거기에 투자를 하는 거죠. 새로운 시대의 내셔널 이노베이션 시스템을 — <strong>내셔널 에피스테믹 시스템</strong>이라고 부를지 모르겠다.</p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p><strong>폴리틱스가 먼저냐, 지식이 먼저냐.</strong> (…) <strong>저도 잘 대답을 못하겠더라고요. 부딪혀 봐야 됩니다. 부딪혀 보는 장치를 만들어야 돼.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<blockquote class="quote-prof quote-bare"><p>집단적 결정이 잘못됐으면 분명히 오류가 나타나겠죠. 그전에 발견하느냐 안 하느냐인데, <strong>그전에 발견을 못해서 우리나라가 식민지를 겪은 거 아니야.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<p><strong>Q8 (김예나) — p24처럼 시민사회와 연결된 확장된 NIS를 실제로 작동시킨 나라가 있나?</strong> 개별 국가보다 <strong>기후·환경 의제가 NIS로 다시 들어오는</strong> 형태로 나타나는데, 결국 <strong>태양광·전기차·ESS 산업 경쟁력</strong> 이야기로 넘어가고 기후 문제 해결은 딴 데 가 있다.</p>
+<blockquote class="quote-prof quote-bare"><p>그게 NIS가 <strong>기업으로 중심이 돼 있기 때문에</strong> 발생하는 것이죠. <strong>만약에 시민으로 그 포인트를 바꿨다면 다른 얘기를 좀 할 수 있었을 수도 있죠.</strong></p><footer class="quote-cite">교수님</footer></blockquote>
+<ul>
+<li class="supp"><span class="tag tag-supp">보충</span><span class="tag tag-exam">시험 포인트</span>Q8의 답이 이 파일의 결론을 <strong>실제 사례로 확인</strong>해 준다. 시민 의제를 기업 중심 NIS에 연결하면 의제가 <strong>산업 경쟁력으로 번역</strong>되어 버린다. 그래서 교수님은 축을 바꾸거나(Q4) 시민 쪽 장치를 따로 만들자고(Q7) 한다.</li>
+<li>수업노트 W08 <strong>토론 질문 후보</strong>: &quot;NIS의 축을 기업에서 시민으로 옮기면 무엇이 달라지나&quot;(교수님 본인이 고민 중이라 밝힌 구상). <strong>Term paper 후보</strong>: 시민 중심 NIS 관점에서 공공 서비스(노인 이동, 돌봄)를 재구성할 때 열리는 시장 분석.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c13-examples" data-sec="c13-examples">
+  <summary>보충 사례 <span class="tag tag-supp">보충</span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li class="supp"><span class="tag tag-supp">보충</span><strong>복지국가와 과학기술</strong>: 북유럽 혁신 연구 일부는 복지제도(실업보험·재교육)가 노동자가 <strong>기술 변화를 덜 두려워하게</strong> 만들어 혁신 수용성을 높인다고 본다. 교수님이 말한 &quot;복지 쪽에서 과학기술 이야기를 만들어 내기&quot;의 한 방향이다. Lundvall(덴마크)의 넓은 환경에 <strong>복지체제</strong>가 들어간 것도(W06/04) 이 맥락이다.</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c13-position" data-sec="c13-position">
+  <summary>수업 프레임에서의 위치<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>W06의 <strong>마지막 결론</strong>이자 교수님의 입장 표명. &quot;공급 쪽 이론(NIS) ↔ 수요 쪽 이론(시민 인식론)&quot;을 <strong>분리해서 유지</strong>하자는 학기 전체 구도를 보여 준다.</li>
+<li>이 수업 계획표 마지막 회차 <strong>&quot;시스템 전환과 시민의 역할: 신시민성&quot;</strong>(임홍탁 2025)이 교수님이 말한 &quot;따로 만드는&quot; 시민 쪽 이론의 자리로 보인다(<span class="tag tag-supp">보충</span>추정).</li>
+</ul>
+</div>
+</details>
+<details class="sec sec-fold" id="c13-related" data-sec="c13-related">
+  <summary>관련 개념 · 논문<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body"><ul>
+<li>종합 도식: Freeman 1995; Lundvall 2007, 2024; Godin 2009; 임홍탁 2025</li>
+<li>연결: <a href="W06.html#c10">W06/10 권력정치와 시민</a> · <a href="W06.html#c12">W06/12 Lundvall의 응답</a> · <a href="W05-1.html#c13">W05-1/13 공급자 중심성 비판</a> · <a href="W05-2.html#c01">W05-2/01 시민 인식론</a> · <a href="W05-2.html#c07">W05-2/07 기술 수용 기준의 전환</a></li>
+</ul>
+</div>
+</details>
+
+<details class="sec-fold source-panel" data-sec="c13-source">
+  <summary>출처 · 태그<svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+  <div class="sec-body">
+    <h5>리딩</h5><ul class="source-list"><li>Freeman (1995)</li><li>Lundvall (2007, 2024)</li><li>Godin (2009)</li><li>임홍탁 (2025)</li></ul>
+    <h5>수업노트</h5><ul class="source-list"><li>수업노트/W06_강의기록_261010.md §7-6</li><li>수업노트/W06_강의기록_261010.md §8 Q7</li><li>수업노트/W08_강의기록_261024.md §1 Q4, Q7, Q8 — 시민 중심 NIS, 시민 인식론 세 기준(김예나), 확장된 NIS의 실제 사례(김예나)</li></ul>
+    <h5>태그</h5><p class="source-tags"><a href="map.html?tag=NIS">NIS</a> · <a href="map.html?tag=civic-epistemology">civic-epistemology</a> · <a href="map.html?tag=integration">integration</a> · <a href="map.html?tag=supply-side">supply-side</a> · <a href="map.html?tag=welfare">welfare</a> · <a href="map.html?tag=professor-argument">professor-argument</a> · <a href="map.html?tag=citizen-agenda">citizen-agenda</a></p>
+  </div>
+</details>
+<div class="sec sec-quiz" id="c13-quiz">
+  <h4>예상 퀴즈 포인트</h4>
+  <ol class="quiz-list">
+<li>p24 확장된 분석틀의 구조를 설명하고, 교수님이 이 이론적 통합에 반대한 이유를 쓰라. <span class="tag">서술형</span></li>
+<li>&quot;이론적으로는 따로, 실제는 같이&quot;라는 교수님의 입장을 W05의 공급자 중심성 비판과 연결해 설명하라. <span class="tag">서술형</span></li>
+<li>비판적 검토: NIS와 시민 의제를 이론적으로 통합하는 것과 분리하는 것의 장단점을 논하라. (토론 질문 후보) <span class="tag">서술형</span></li>
+</ol>
+  <p class="sec-quiz-link"><a href="quiz.html?week=W06&amp;c=c13">퀴즈 모드로 풀기 →</a></p>
+</div>
+
+  <p class="concept-related">관련: <a href="W06.html#c10">NIS의 한계 ① — 권력정치와 시민의 자리</a> · <a href="W06.html#c12">Lundvall의 응답 — 대체가 아니라 결합 (TIP)</a> · <a href="W05-1.html#c13">공급자 중심성 비판 (교수님의 핵심 주장)</a> · <a href="W05-2.html#c01">시민 인식론의 정의</a> · <a href="W05-2.html#c07">기술 수용 기준의 전환 — 경제적 타당성에서 사회적 타당성으로</a></p>
+  <p class="concept-top"><a href="#top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a></p>
+</section>
+    
+<footer class="site-footer">
+  <p style="margin: 0 0 12px 0;">Made by <strong>Yena Kim (Yenarue)</strong> · <span class="footer-year"></span></p>
+  <div class="site-footer-icons">
+    <a href="mailto:yenarue@gmail.com" title="Email" onmouseover="this.style.color='#EA4335'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yena-kim-yenarue" target="_blank" rel="noopener noreferrer" title="LinkedIn" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://github.com/yenarue" target="_blank" rel="noopener noreferrer" title="GitHub" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/yenarue" target="_blank" rel="noopener noreferrer" title="Instagram" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#666'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+    </a>
+  </div>
+</footer>
+  </main>
+</div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
