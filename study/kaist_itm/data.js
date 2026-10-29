@@ -212,25 +212,31 @@ window.ITM = {
   ],
 
   // 프로젝트 종류 — 프로젝트가 늘면 여기서 추가·수정한다
+  // 이 순서가 About 페이지의 분류 순서다. 아래 projects 배열도 같은 분류 순서로 적는다
   projectCategories: [
     { id: 'research', label: '연구', desc: '논문·특허처럼 새로운 지식을 만드는 작업' },
     { id: 'analysis', label: '분석', desc: '데이터를 모으고 패턴을 찾는 작업' },
+    // 분류명은 임시 — 비슷한 프로젝트가 늘면 다시 정한다
+    { id: 'service', label: '서비스', desc: '실제로 배포해 동작하는 AI 서비스와 스킬' },
     { id: 'study', label: '학습', desc: '수업 내용을 정리하고 복습하는 도구' },
     { id: 'presentation', label: '발표', desc: '수업 발표와 미니세미나 자료' }
   ],
 
+  // 대시보드는 이 배열 순서대로 카드를 보여준다
   projects: [
-    { title: '그림을 그리지 않고, 그림을 만드는 방법', desc: 'Mermaid와 생성형 AI를 활용한 다이어그램 시각화 · 모노즈쿠리 W08 미니세미나', category: 'presentation', courses: ['ITM60062'], url: 'projects/mermaid-dsm-presentation/', status: 'live', linkLabel: '발표 보기' },
     // 심사 중 논문 — 상세 페이지는 공개 가능한 범위의 개요만 담는다
     { title: 'AI를 많이 쓰면 성과가 날까?', desc: '기업의 AI 활용이 성과로 이어지는 조직적 조건에 대한 연구 · 해외 저널 Information & Management 투고', category: 'research', courses: ['ITM89912'], url: 'projects/genai-paper/', status: 'live', linkLabel: '공개 개요 보기', badge: 'Under Review' },
     { title: 'AI와 인간의 의도 차이 식별 및 처리 방법', desc: '특허 아이디에이션 및 구체화 진행중 · 로봇 심리학/행동학 관련으로 Zoom In 피보팅 진행중', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
     { title: '대한민국 생성형 AI 연구 지도', desc: 'NTIS 국가 R&D 721개 프로젝트를 지역·기관·주제로 탐색 (W03 과제2)', category: 'analysis', courses: ['ITM69000'], url: 'projects/korea-genai-research-atlas/', status: 'live' },
     // 과목 외 활동 — 제목은 분석 주제, 대회명은 설명·활동 태그로
     { title: 'AI 모델 증류 방지 특허 분석 및 전략 수립', desc: '2026 캠퍼스 특허 유니버시아드 특허전략수립 부문 장려상 수상 · 특허 5,575건으로 찾은 기술 공백과 IP 전략 · 주제 출제 기관: 한국특허정보원', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드 2026', url: 'projects/cpu-2026-ai-distillation/', status: 'live', badge: '🏆 장려상' },
+    { title: 'Digital Key Spec Intelligence', desc: '디지털키 스펙에서 요구사항을 찾고 원문 근거·버전 차이를 보여주는 RAG 웹앱 + Codex 스킬 2종 · 데모용 가상 데이터 사용 (W07 과제)', category: 'service', courses: ['ITM69000'], url: 'https://digital-key-spec-intelligence.vercel.app/', status: 'live', linkLabel: '웹앱 열기',
+      extraLinks: [{ label: '🧩 스킬', url: 'https://github.com/yenarue/digital-key-spec-intelligence/tree/main/.agents/skills' }, { label: 'GitHub', url: 'https://github.com/yenarue/digital-key-spec-intelligence' }] },
     { title: 'KAIST ITM 학업 대시보드', desc: '과목·일정·개념정리·프로젝트를 링크 하나로 (W03 과제1)', category: 'study', courses: ['ITM69000'], url: 'index.html', status: 'live' },
     { title: '혁신생태계론 개념정리 사이트', desc: '주차별 개념 정리와 검색, 주차를 넘나드는 개념 지도, 누적 범위 퀴즈 셀프테스트', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/', status: 'live',
       extraLinks: [{ label: '🗺️ 개념 지도', url: 'notes/innovation_ecosystem/map.html' }, { label: '🏷️ 퀴즈', url: 'notes/innovation_ecosystem/quiz.html' }] },
-    { title: '이노베이션 경영 개념 정리', desc: '기말시험 대비 핵심 개념 요약', category: 'study', courses: ['ITM50001'], url: 'notes/innovation_management_review/', status: 'live' }
+    { title: '이노베이션 경영 개념 정리', desc: '기말시험 대비 핵심 개념 요약', category: 'study', courses: ['ITM50001'], url: 'notes/innovation_management_review/', status: 'live' },
+    { title: '그림을 그리지 않고, 그림을 만드는 방법', desc: 'Mermaid와 생성형 AI를 활용한 다이어그램 시각화 · 모노즈쿠리 W08 미니세미나', category: 'presentation', courses: ['ITM60062'], url: 'projects/mermaid-dsm-presentation/', status: 'live', linkLabel: '발표 보기' }
   ],
 
   // 'KAIST ITM에서 이렇게 공부합니다' 섹션 설명
