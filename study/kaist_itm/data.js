@@ -70,6 +70,7 @@ window.ITM = {
         { title: '결제를 수행하는 전자 장치 및 방법', year: '2016' }
       ],
       awards: [
+        { title: '제19회 캠퍼스특허유니버시아드 특허전략수립 부문 장려상', year: '2026' },
         { title: '제1회 예술데이터가 바꾸는 세상 우수상', year: '2020' },
         { title: '한국지능로봇경진대회 특허청장상', year: '2013' },
         { title: '창의작품경진대회 대상', year: '2013' },
@@ -225,7 +226,7 @@ window.ITM = {
     { title: 'AI와 인간의 의도 차이 식별 및 처리 방법', desc: '특허 아이디에이션 및 구체화 진행중 · 로봇 심리학/행동학 관련으로 Zoom In 피보팅 진행중', category: 'research', courses: ['ITM50023'], status: 'private', label: '출원 전 비공개' },
     { title: '대한민국 생성형 AI 연구 지도', desc: 'NTIS 국가 R&D 721개 프로젝트를 지역·기관·주제로 탐색 (W03 과제2)', category: 'analysis', courses: ['ITM69000'], url: 'projects/korea-genai-research-atlas/', status: 'live' },
     // 과목 외 활동 — 제목은 분석 주제, 대회명은 설명·활동 태그로
-    { title: 'AI 모델 증류 방지 특허 분석', desc: '2026 캠퍼스 특허 유니버시아드 · 특허 5,575건으로 찾은 기술 공백과 IP 전략', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드 2026', url: 'projects/cpu-2026-ai-distillation/', status: 'live' },
+    { title: 'AI 모델 증류 방지 특허 분석 및 전략 수립', desc: '2026 캠퍼스 특허 유니버시아드 특허전략수립 부문 장려상 수상 · 특허 5,575건으로 찾은 기술 공백과 IP 전략 · 주제 출제 기관: 한국특허정보원', category: 'analysis', courses: [], activity: '캠퍼스 특허 유니버시아드 2026', url: 'projects/cpu-2026-ai-distillation/', status: 'live', badge: '🏆 장려상' },
     { title: 'KAIST ITM 학업 대시보드', desc: '과목·일정·개념정리·프로젝트를 링크 하나로 (W03 과제1)', category: 'study', courses: ['ITM69000'], url: 'index.html', status: 'live' },
     { title: '혁신생태계론 개념정리 사이트', desc: '주차별 개념 정리와 검색, 주차를 넘나드는 개념 지도, 누적 범위 퀴즈 셀프테스트', category: 'study', courses: ['ITM60034'], url: 'notes/innovation_ecosystem/', status: 'live',
       extraLinks: [{ label: '🗺️ 개념 지도', url: 'notes/innovation_ecosystem/map.html' }, { label: '🏷️ 퀴즈', url: 'notes/innovation_ecosystem/quiz.html' }] },
