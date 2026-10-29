@@ -92,6 +92,26 @@ no: 5
   슬라이드·다이어그램을 포함한 전체 자료는 인라인하지 않고 개념 페이지로
   링크한다 — quiz.html은 "답안을 구성하는 연습" 용도라 원문 재현이 아니다.
 
+## 텀페이퍼 페이지 (termpaper.html)
+
+상단 메뉴 **텀페이퍼**. 원본은 Google Drive `TermPaper/web/*.md`(경로는 `config.json`의
+`termPaperDir`, 선택 항목)이고 `lib/termpaper.mjs`가 읽어 `templates/termpaper.mjs`로 그린다.
+
+- 파일 하나 = 섹션 하나(사이드바 항목 하나), **파일명 순서**대로 싣는다. 지금은
+  `01-과제안내.md`뿐이고, Proposal·본문 정리는 `02-…`, `03-…`로 이어 붙이면 된다.
+- frontmatter(전부 선택): `title`(없으면 첫 `# 제목`), `subtitle`, `updated`, `draft`.
+  `draft: true`와 `_`로 시작하는 파일은 싣지 않는다.
+- 본문 제목은 한 단계씩 내려 렌더한다 — `##`가 h3가 되어 사이드바 하위 목차로 쓰인다.
+- 주차 페이지처럼 `polishHtml`을 거친다 — `> 🗣 [W06] "…"`는 따옴표 장식 인용, 💡는 "보충" 표지.
+- ```` ```frames ```` 코드 블록(YAML 목록)은 프레임 카드로 바뀐다(`renderFrames`). `links`의 `ref`
+  (`W06/1`)가 아직 없는 개념이면 버튼을 빼고 `[termpaper]` 경고를 낸다. 카드 스타일은
+  `assets/styles.css` 끝의 "텀페이퍼 — 프레임 카드".
+- 카드 앵커는 `frame-<id>`(`frameId`) — `id`가 없으면 name의 영숫자로 만든다. 한글 앵커는 marked가
+  href를 퍼센트 인코딩해 링크 검사와 어긋나므로, 한글 이름 카드엔 영문 `id`를 단다(없으면 경고).
+- 폴더가 없거나 비어 있어도 페이지는 "아직 올린 내용이 없습니다"로 생성된다(topbar가
+  모든 페이지에서 링크하므로 빠지면 깨진 링크가 된다).
+- 검색 인덱스에는 넣지 않는다(개념 검색 전용).
+
 ## 데이터 파일 세 가지 — comparisons.yml / core-concepts.json / importance.json
 
 이 셋은 서로 역할이 다르고 관리 빈도도 다르다.

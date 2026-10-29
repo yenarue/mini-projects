@@ -27,6 +27,7 @@ export function topbar({ active = '', weeks = [] } = {}) {
     ${link('core.html', '핵심 개념', 'core')}
     ${link('quiz.html', '퀴즈', 'quiz')}
     ${link('map.html', '개념 지도', 'map')}
+    ${link('termpaper.html', '텀페이퍼', 'termpaper')}
   </nav>
   <div class="topbar-right">
     <div class="fontsize-control" id="fontsize-control" role="group" aria-label="글자 크기">

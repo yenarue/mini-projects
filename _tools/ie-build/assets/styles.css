@@ -1379,3 +1379,54 @@ a.badge-core:hover { border-color: var(--term); }
 .deferred-topic { display: block; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--ink); }
 .deferred-sub { display: block; margin-top: 2px; font-size: 12.5px; color: var(--muted); }
 .deferred-note { display: block; margin-top: 4px; font-size: 12.5px; color: var(--muted); }
+
+/* ============================================================
+   텀페이퍼 — 프레임 카드 (termpaper.html, lib/termpaper.mjs renderFrames)
+   계열(group)마다 라벨 + 2열 그리드. 상태는 왼쪽 띠 색으로 구분한다:
+   다룸=brand, 예정=note, 아직 안 다룸=line, 참고용=slide.
+   ============================================================ */
+.frame-group { margin: 18px 0 22px; }
+.frame-group-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 8px;
+}
+.frame-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.frame-card {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 14px 16px; background: var(--surface);
+  border: 1px solid var(--line); border-left: 3px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.frame-done    { border-left-color: var(--brand); }
+.frame-planned { border-left-color: var(--note); }
+.frame-ref     { border-left-color: var(--slide); }
+.frame-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 10px; }
+.concept .frame-name { margin: 0; font-size: 16px; font-weight: 700; color: var(--ink); }
+.frame-ko { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); }
+.frame-status {
+  font-size: 12px; font-weight: 600; white-space: nowrap;
+  padding: 2px 8px; border-radius: var(--radius-pill);
+  color: var(--muted); background: var(--surface-2);
+}
+.frame-done .frame-status    { color: var(--brand); background: var(--brand-soft); }
+.frame-planned .frame-status { color: var(--note); background: var(--note-soft); }
+.frame-ref .frame-status     { color: var(--slide); background: var(--slide-soft); }
+.concept .frame-desc { margin: 0; font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+.concept .frame-note { margin: 0; font-size: 12.5px; line-height: 1.6; color: var(--muted); }
+.concept .frame-links { margin: auto 0 0; padding-top: 4px; display: flex; flex-wrap: wrap; gap: 6px; }
+.frame-links .btn { font-size: 12.5px; padding: 4px 10px; }
+@media (max-width: 720px) {
+  .frame-grid { grid-template-columns: 1fr; }
+}
+/* 요약 표의 프레임 이름 링크(#frame-…)로 건너왔을 때: 고정 헤더에 가리지 않게 띄우고 잠깐 강조 */
+.frame-card { scroll-margin-top: calc(var(--header-h) + 14px); }
+.frame-card:target { box-shadow: 0 0 0 2px var(--brand-soft), var(--shadow); border-color: var(--brand); }
+.concept .frame-example {
+  margin: 0; padding: 8px 10px; font-size: 13.5px; line-height: 1.65; color: var(--ink-soft);
+  background: var(--surface-2); border-radius: var(--radius-sm);
+}
+.frame-example-label {
+  display: inline-block; margin-right: 6px; padding: 0 6px;
+  font-size: 11.5px; font-weight: 700; color: var(--prof); background: var(--prof-soft);
+  border-radius: var(--radius-pill);
+}

@@ -114,7 +114,7 @@ const STRONG_KO_RULE = /^\*\*(?!\*)(?!\s)([\s\S]+?)\*\*(?!\*)/;
  */
 const STRICT_DEL_RE = /^~~(?=[^\s~])((?:\\.|[^\\])*?(?:\\.|[^\s~\\]))~~(?=[^~]|$)/;
 
-function strictDelTokenizer(src) {
+export function strictDelTokenizer(src) {
   const cap = STRICT_DEL_RE.exec(src);
   if (!cap) return undefined;
   return {
@@ -125,7 +125,7 @@ function strictDelTokenizer(src) {
   };
 }
 
-const strongKoExtension = {
+export const strongKoExtension = {
   name: 'strongKo',
   level: 'inline',
   start(src) {

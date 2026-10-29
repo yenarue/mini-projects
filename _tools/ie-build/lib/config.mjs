@@ -20,6 +20,8 @@ export function loadConfig(dir) {
     outDir: path.resolve(dir, raw.outDir),
     baseHref: raw.baseHref ?? '/',
     jpegQuality: raw.jpegQuality ?? 82,
+    // 선택 항목 — 없으면 Term Paper 페이지가 빈 상태로 만들어진다.
+    termPaperDir: raw.termPaperDir ? path.resolve(dir, raw.termPaperDir) : null,
   };
 
   for (const key of REQUIRED_DIRS) {

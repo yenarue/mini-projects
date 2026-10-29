@@ -160,6 +160,18 @@ async function main() {
     `core.html 생성 (세트 ${coreSets.length}개 · 항목 ${coreSets.reduce((n, s) => n + s.items.length, 0)}개)`
   );
 
+  // Term Paper 페이지 — 원본(TermPaper/web/)이 없거나 비어 있어도 페이지는 만든다.
+  // topbar가 모든 페이지에서 termpaper.html로 링크하므로, 빠지면 깨진 링크가 된다.
+  const { collectTermPaper } = await import('./lib/termpaper.mjs');
+  const { renderTermPaperPage } = await import('./templates/termpaper.mjs');
+  const tpSections = collectTermPaper(cfg.termPaperDir, warnings, existingKeys);
+  fsp.writeFileSync(
+    path.join(cfg.outDir, 'termpaper.html'),
+    renderTermPaperPage({ sections: tpSections, weeks: orderedWeeks }),
+    'utf8'
+  );
+  console.log(`termpaper.html 생성 (섹션 ${tpSections.length}개)`);
+
   const { buildSearchIndex, estimateSize, trimIfLarge } = await import('./lib/searchindex.mjs');
   let searchIndex = buildSearchIndex(concepts, orderedWeeks);
   const trimResult = trimIfLarge(searchIndex);
