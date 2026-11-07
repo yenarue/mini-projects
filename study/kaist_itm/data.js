@@ -187,14 +187,14 @@ window.ITM = {
     { date: '2026-10-24', course: 'ITM60062', type: 'class', title: 'GPU 특강 (문성재님)', note: 'Zoom 진행' },
     { date: '2026-10-31', course: 'ITM60062', type: 'class', title: '전략론 (포지셔닝 vs 캐퍼빌리티) · 공리적 설계+DSM 논문' },
     { date: '2026-11-06', course: 'ITM60062', type: 'assignment', title: '5 Force 분석', note: '23:59 · 자기 산업 또는 텀페이퍼 산업 · KLMS는 11/13' },
-    { date: '2026-11-07', course: 'ITM60062', type: 'class', title: '제품의 구조적 이해 · 플랫폼 전략', tentative: true },
+    { date: '2026-11-07', course: 'ITM60062', type: 'class', title: '전략론 리뷰 (SCP · 핵심역량) · 아키텍처 포트폴리오 DMM · 디지털 카메라의 아키텍처', note: '엑셀 실습: 아키텍처 포트폴리오' },
     { date: '2026-11-08', course: 'ITM60062', type: 'assignment', title: '텀페이퍼 주제 사전 검토 (NotebookLM 영상)', note: '23:59 · 관심 주제 자료로 NotebookLM 영상 → 내 유튜브 → 공용 시트에 링크 · 교수 확인' },
     { date: '2026-11-14', course: 'ITM60062', type: 'class', title: '제품개발 프로세스', tentative: true },
     { date: '2026-11-21', course: 'ITM60062', type: 'class', title: '소프트웨어가 아키텍처에 주는 영향', tentative: true },
     { date: '2026-11-28', course: 'ITM60062', type: 'class', title: '자동차 산업의 아키텍처 경쟁', tentative: true },
-    { date: '2026-12-05', course: 'ITM60062', type: 'class', title: '전자·컴퓨터 / 제철 산업의 아키텍처 경쟁', tentative: true },
-    { date: '2026-12-12', course: 'ITM60062', type: 'class', title: '아키텍처의 동태성 · R&D 조직', tentative: true },
-    { date: '2026-12-19', course: 'ITM60062', type: 'presentation', title: 'Term Project 발표', tentative: true },
+    { date: '2026-12-05', course: 'ITM60062', type: 'presentation', title: 'Term Project 발표 (1) 2명', note: '수업 발표는 5명만 · 개인 발표 영상은 전원 유튜브 업로드 (마감 미확인)' },
+    { date: '2026-12-12', course: 'ITM60062', type: 'presentation', title: 'Term Project 발표 (2) 3명 · 쫑파티', note: '개인 발표 영상은 전원 유튜브 업로드 (마감 미확인)' },
+    { date: '2026-12-19', course: 'ITM60062', type: 'holiday', title: '기말고사 기간 휴강' },
 
     // ITM50023 인공지능 특허전략 (토) — 발명 내용은 적지 않는다
     { date: '2026-09-05', course: 'ITM50023', type: 'class', title: '주제 선정 · 아이디어 발상' },
