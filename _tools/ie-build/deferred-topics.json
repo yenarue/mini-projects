@@ -1,14 +1,14 @@
 [
   {
-    "topic": "혁신과 생산의 사회시스템 (SSIP) + 비즈니스 시스템 (BS)",
-    "subtitle": "Social Systems of Innovation and Production · Business Systems",
-    "plannedDate": "2026-10-24",
-    "note": "계획은 10/24였으나 아직 수업에서 다루지 않음"
-  },
-  {
     "topic": "사회기술시스템 (StS)",
     "subtitle": "Socio-technical System",
     "plannedDate": "2026-10-31",
     "note": "계획은 10/31였으나 아직 수업에서 다루지 않음"
+  },
+  {
+    "topic": "시스템 전환론 I: 전환적 사회혁신",
+    "subtitle": "Transformative Social Innovation",
+    "plannedDate": "2026-11-07",
+    "note": "계획은 11/7였으나 아직 수업에서 다루지 않음"
   }
 ]

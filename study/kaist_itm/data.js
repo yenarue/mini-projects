@@ -163,7 +163,7 @@ window.ITM = {
     { date: '2026-10-24', course: 'ITM60034', type: 'class', title: 'SSIP + 비즈니스 시스템 (Zoom)', note: '실제 진도: 기술혁신시스템 (TIS)' },
     { date: '2026-10-31', course: 'ITM60034', type: 'exam', title: 'Quiz 3 · 사회기술시스템 (StS)', note: '실제 진도: 글로벌혁신시스템 (GIS)' },
     { date: '2026-11-01', course: 'ITM60034', type: 'assignment', title: 'Term Paper Proposal 제출 (1–2p)', note: '23:59 마감 · KLMS 과제 제출' },
-    { date: '2026-11-07', course: 'ITM60034', type: 'class', title: '시스템 전환론 I: 전환적 사회혁신' },
+    { date: '2026-11-07', course: 'ITM60034', type: 'class', title: '시스템 전환론 I: 전환적 사회혁신', note: '실제 진도: 비즈니스 시스템 (BS) + SSIP' },
     { date: '2026-11-14', course: 'ITM60034', type: 'exam', title: 'Quiz 4 · 시스템 전환론 II: BMI' },
     { date: '2026-11-21', course: 'ITM60034', type: 'class', title: '시스템 전환론 III: 일상생활방식 접근' },
     { date: '2026-11-28', course: 'ITM60034', type: 'exam', title: 'Quiz 5 · 시스템 전환론 IV: 임무지향형 혁신정책' },
