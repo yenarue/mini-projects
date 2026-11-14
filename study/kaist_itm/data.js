@@ -191,7 +191,7 @@ window.ITM = {
     { date: '2026-11-08', course: 'ITM60062', type: 'assignment', title: '텀페이퍼 주제 사전 검토 (NotebookLM 영상)', note: '23:59 · 관심 주제 자료로 NotebookLM 영상 → 내 유튜브 → 공용 시트에 링크 · 교수 확인' },
     { date: '2026-11-14', course: 'ITM60062', type: 'class', title: '디자인 룰 · 모듈러 오퍼레이터 · 자동차 아키텍처' },
     { date: '2026-11-21', course: 'ITM60062', type: 'class', title: '소프트웨어가 아키텍처에 주는 영향', tentative: true },
-    { date: '2026-11-28', course: 'ITM60062', type: 'presentation', title: 'Term Project 발표 (1) 4명' },
+    { date: '2026-11-28', course: 'ITM60062', type: 'class', title: '수강생 Term Project 발표 (4명)', note: '내 발표 아님 · 12/12 내 발표 형식·분량 참고' },
     { date: '2026-12-05', course: 'ITM60062', type: 'class', title: '기술경영인의 밤', note: '17:00~ · 문지캠퍼스 스펙스홀 · 보강 12/6(일)' },
     { date: '2026-12-06', course: 'ITM60062', type: 'class', title: '보강', note: '일요일 16:00–18:00' },
     { date: '2026-12-12', course: 'ITM60062', type: 'presentation', title: 'Term Project 발표 (2) 4명 · 내 발표 · 쫑파티' },
