@@ -94,7 +94,7 @@ test('프로젝트: 종류·과목·상태 유효', () => {
     if (p.badge !== undefined) assert.ok(typeof p.badge === 'string' && p.badge, p.title + ' badge');
     (p.extraLinks || []).forEach(l => {
       assert.ok(l.label && l.url, p.title + ' extraLinks');
-      assert.ok(fs.existsSync(path.join(SITE, l.url)), p.title + ' → 없음: ' + l.url);
+      if (!/^https?:\/\//.test(l.url)) assert.ok(fs.existsSync(path.join(SITE, l.url)), p.title + ' → 없음: ' + l.url);
     });
   });
 });
