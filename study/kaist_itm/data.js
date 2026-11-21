@@ -148,8 +148,8 @@ window.ITM = {
     { date: '2026-11-12', course: 'ITM69000', type: 'class', title: '실습 (3) 멀티에이전트 시스템' },
     { date: '2026-11-19', course: 'ITM69000', type: 'class', title: '법적 쟁점 (3) AI와 지식재산권' },
     { date: '2026-11-26', course: 'ITM69000', type: 'holiday', title: '휴강 (입학전형 면접)' },
-    { date: '2026-12-03', course: 'ITM69000', type: 'presentation', title: '기말 발표 (1) AI 서비스 MVP + 법적 쟁점' },
-    { date: '2026-12-10', course: 'ITM69000', type: 'presentation', title: '기말 발표 (2) AI 서비스 MVP + 법적 쟁점' },
+    { date: '2026-12-03', course: 'ITM69000', type: 'class', title: '수강생 기말 발표 (1) AI 서비스 MVP + 법적 쟁점 (6명)', note: '내 발표 아님 · 순서는 랜덤 추첨 예정' },
+    { date: '2026-12-10', course: 'ITM69000', type: 'presentation', title: '기말 발표 (2) AI 서비스 MVP + 법적 쟁점 (6명) · 내 발표', note: '순서는 랜덤 추첨 예정 · 공용 시트에 선정 주제 · 발표 링크(URL) 기입' },
     { date: '2026-12-17', course: 'ITM69000', type: 'holiday', title: '기말고사 기간 (보강 예비일)' },
 
     // ITM60034 혁신생태계론 (토 13:00)
