@@ -81,7 +81,7 @@ test('로컬 링크: live 개념정리·live 결과물 경로가 실제로 존�
 
 test('프로젝트: 종류·과목·상태 유효', () => {
   const cats = ITM.projectCategories.map(c => c.id);
-  assert.deepEqual([...cats], ['research', 'analysis', 'study']);
+  assert.deepEqual([...cats], ['research', 'analysis', 'service', 'study', 'presentation']);
   const codes = new Set(allCourses.map(c => c.code));
   ITM.projects.forEach(p => {
     assert.ok(cats.includes(p.category), p.title);
