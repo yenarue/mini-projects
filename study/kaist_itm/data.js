@@ -166,7 +166,7 @@ window.ITM = {
     { date: '2026-11-07', course: 'ITM60034', type: 'class', title: '시스템 전환론 I: 전환적 사회혁신', note: '실제 진도: 비즈니스 시스템 (BS) + SSIP' },
     { date: '2026-11-14', course: 'ITM60034', type: 'exam', title: 'Quiz 4 · 시스템 전환론 II: BMI', note: '실제 진도: 사회기술시스템 (StS, Geels MLP) + 중간정리' },
     { date: '2026-11-21', course: 'ITM60034', type: 'class', title: '시스템 전환론 III: 일상생활방식 접근', note: '실제 진도: 비즈니스 모델 혁신 (BMI)' },
-    { date: '2026-11-28', course: 'ITM60034', type: 'exam', title: 'Quiz 5 · 시스템 전환론 IV: 임무지향형 혁신정책' },
+    { date: '2026-11-28', course: 'ITM60034', type: 'exam', title: 'Quiz 5 · 시스템 전환론 IV: 임무지향형 혁신정책', note: '실제 진도: 사회적 실천 (SPT)으로서의 소비' },
     { date: '2026-12-05', course: 'ITM60034', type: 'class', title: '시스템 전환과 국가의 역할: 개발국가' },
     { date: '2026-12-12', course: 'ITM60034', type: 'exam', title: 'Quiz 6 · 시스템 전환과 시민의 역할' },
     { date: '2026-12-19', course: 'ITM60034', type: 'assignment', title: 'Final: Term Paper 제출' },

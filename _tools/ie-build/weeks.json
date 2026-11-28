@@ -104,45 +104,45 @@
     "date": "2026-10-31",
     "topic": "글로벌혁신시스템 (GIS)",
     "subtitle": "Global Innovation System",
-    "source": "",
+    "source": "W08_혁신생태계론_Global Innovation System_261024.pdf",
     "quiz": 3,
-    "lectured": false
+    "lectured": true
   },
   {
     "id": "W10",
     "date": "2026-11-07",
     "topic": "비즈니스 시스템 (BS) + 혁신과 생산의 사회시스템 (SSIP)",
     "subtitle": "Business Systems · Social Systems of Innovation and Production",
-    "source": "",
+    "source": "W10_Biz system 혁신생태계론 261107.pdf · W10_혁신생산사회적 시스템 혁신생태계론 261107.pdf",
     "quiz": null,
-    "lectured": false
+    "lectured": true
   },
   {
     "id": "W11",
     "date": "2026-11-14",
-    "topic": "시스템 전환론 II: 비즈니스 모델 혁신",
-    "subtitle": "BMI",
-    "source": "",
+    "topic": "사회기술시스템 (StS)",
+    "subtitle": "Socio-technical System · Geels의 MLP와 그 비판적 확장 + 중간정리",
+    "source": "W11_기술혁신에서 사회기술시스템 전환으로_ Geels의 MLP와 그 비판적 확장.pdf · W11_혁신생태계론_중간정리.pdf",
     "quiz": 4,
-    "lectured": false
+    "lectured": true
   },
   {
     "id": "W12",
     "date": "2026-11-21",
-    "topic": "시스템 전환론 III: 일상생활방식 접근",
-    "subtitle": "Social Practice Approach",
-    "source": "",
+    "topic": "비즈니스 모델 혁신 (BMI)",
+    "subtitle": "Business Model Innovation · 1부 개념과 작동 논리 / 2부 BMI와 디지털 전환",
+    "source": "W12_비즈니스 모델의 개념과 작동 논리 _ 1부.pdf · W12_비즈니스 모델 혁신과 디지털 전환 261121.pdf",
     "quiz": null,
-    "lectured": false
+    "lectured": true
   },
   {
     "id": "W13",
     "date": "2026-11-28",
-    "topic": "시스템 전환론 IV: 임무지향형 혁신정책",
-    "subtitle": "MOIP",
-    "source": "",
+    "topic": "사회적 실천으로서의 소비",
+    "subtitle": "Social Practice Approach · 일상생활방식 접근",
+    "source": "W13_사회적 실천으로서의 소비 1128.pdf",
     "quiz": 5,
-    "lectured": false
+    "lectured": true
   },
   {
     "id": "W14",

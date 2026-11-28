@@ -1,14 +1,20 @@
 [
   {
-    "topic": "사회기술시스템 (StS)",
-    "subtitle": "Socio-technical System",
-    "plannedDate": "2026-10-31",
-    "note": "계획은 10/31였으나 아직 수업에서 다루지 않음"
-  },
-  {
     "topic": "시스템 전환론 I: 전환적 사회혁신",
     "subtitle": "Transformative Social Innovation",
     "plannedDate": "2026-11-07",
     "note": "계획은 11/7였으나 아직 수업에서 다루지 않음"
+  },
+  {
+    "topic": "시스템 전환론 IV: 임무지향형 혁신정책 (MOIP)",
+    "subtitle": "Mission-Oriented Innovation Policy",
+    "plannedDate": "2026-11-28",
+    "note": "계획은 11/28였으나 아직 수업에서 다루지 않음"
+  },
+  {
+    "topic": "비즈니스 모델과 사회적 실천",
+    "subtitle": "지속가능성 전환을 누가 시작하고 움직이는가",
+    "plannedDate": "2026-11-28",
+    "note": "W13(11/28)에 자료만 업로드되고 수업에서는 다루지 않음"
   }
 ]
